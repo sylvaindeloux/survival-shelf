@@ -104,8 +104,9 @@ export const CATALOG: CatalogItem[] = [
 
   // Specific needs: per household, whatever the number of people. Pet items are per animal.
   item('cat-food', { en: 'Dry cat food', fr: 'Croquettes pour chat' }, 'pets', KG, { daily: 0.06, per: 'household', shelfLife: 12, need: 'cat' }),
-  item('cat-litter', { en: 'Cat litter', fr: 'Litière pour chat' }, 'pets', KG, { daily: 0.15, per: 'household', need: 'cat' }),
-  item('dog-food', { en: 'Dry dog food', fr: 'Croquettes pour chien' }, 'pets', KG, { daily: 0.25, per: 'household', shelfLife: 12, need: 'dog' }),
+  item('cat-litter', { en: 'Clumping cat litter', fr: 'Litière agglomérante' }, 'pets', KG, { daily: 0.4, per: 'household', need: 'cat' }),
+  // A medium dog (20 to 25 kg): about 0.15 kg for a small dog, 0.45 kg for a large one.
+  item('dog-food', { en: 'Dry dog food', fr: 'Croquettes pour chien' }, 'pets', KG, { daily: 0.3, per: 'household', shelfLife: 12, need: 'dog' }),
   item('daily-medicine', { en: 'Daily medicine', fr: 'Traitement quotidien' }, 'medical', TABLET, { daily: 1, per: 'household', shelfLife: 24, need: 'treatment' }),
 
   // Hygiene.

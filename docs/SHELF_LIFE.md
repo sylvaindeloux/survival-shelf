@@ -53,6 +53,14 @@ checked against ANSES, DGCCRF, EU law, USDA and US university extensions. Resear
 | Coffee | 18 | Only the aroma fades. | [Segafredo](https://cdn.api.groupe-pomona.fr/public/products/0088360/branch/es/medias/cafe-en-grains-emozioni-100-arabica-en-paquet-1-kg-segafredo_0088360_es_technical.pdf) |
 | Tea | 18 | From 12 to 24 months depending on the brand. | [Clemson](https://hgic.clemson.edu/factsheet/food-storage-pantry) |
 
+## Pets
+
+| Product | Months | Note | Sources |
+|---|---|---|---|
+| Dry cat food | 12 | Planned at 60 g per cat and per day (a 4 kg adult cat). An opened bag keeps about a month. | [Hill's](https://www.hillspet.co.uk/cat-food/sp-feline-adult-chicken-dry), [WSAVA](https://wsava.org/wp-content/uploads/2020/07/Calorie-Needs-for-Healthy-Adult-Cats-updated-July-2020.pdf), [Royal Canin](https://www.royalcanin.com/fr/about-us/faqs) |
+| Dry dog food | 12 | Planned at 300 g per dog and per day (a 20 to 25 kg dog): about 150 g for a small dog, 450 g for a large one. | [Royal Canin Medium](https://pro.royalcanin.co.uk/products/dog/medium-adult/), [Hill's](https://www.hillspet.ae/dog-food/science-plan-adult-medium-chicken-dry), [Whole Dog Journal](https://www.whole-dog-journal.com/food/how-long-does-dry-dog-food-last) |
+| Clumping cat litter | does not expire | Planned at 0.4 kg per cat and per day, about 12 kg a month (an estimate: no manufacturer publishes it). Silica litter lasts much longer (about 75 g a day). Keep it dry. | [Catsan](https://www.catsan.fr/faq-litieres), [Litter-Robot](https://www.litter-robot.com/eu/fr/blog/how-much-cat-litter-to-use/), [PrettyLitter](https://help.prettylitter.com/hc/en-us/articles/8507867182359-Does-PrettyLitter-expire) |
+
 ## Health, hygiene and energy
 
 | Product | Months | Note | Sources |
