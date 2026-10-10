@@ -1,0 +1,38 @@
+{
+  "name": "survival-shelf",
+  "version": "0.1.0",
+  "description": "Offline-first PWA to manage a survival stock: expiry tracking, autonomy estimates and progressive rotation. Data lives in a human-editable Markdown file.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:single": "vite build --mode single",
+    "build:all": "npm run build && npm run build:single && node -e \"require('fs').copyFileSync('dist-single/index.html', 'dist/survival-shelf.html')\"",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@lucide/svelte": "^1.54.0",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@tsconfig/svelte": "^5.0.8",
+    "@types/node": "^22.20.5",
+    "svelte": "^5.57.2",
+    "svelte-check": "^4.7.6",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.4",
+    "vite-plugin-pwa": "^2.0.0",
+    "vitest": "^5.0.3",
+    "workbox-window": "^7.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sylvaindeloux/survival-shelf.git"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}
