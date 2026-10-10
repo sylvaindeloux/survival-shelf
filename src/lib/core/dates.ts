@@ -42,6 +42,13 @@ export function parseDay(text: string): Day | null {
   return dayFromParts(year, month, day);
 }
 
+/** The month `months` months after a day, as `YYYY-MM` (end of that month). */
+export function monthsLater(day: Day, months: number): string {
+  const date = new Date(day * MS_PER_DAY);
+  const total = date.getUTCFullYear() * 12 + date.getUTCMonth() + months;
+  return `${Math.floor(total / 12)}-${String((total % 12) + 1).padStart(2, '0')}`;
+}
+
 export function isValidDate(text: string): boolean {
   return parseDay(text) !== null;
 }

@@ -21,6 +21,8 @@ export interface CatalogItem {
   target: number | null;
   /** Typical shelf life in months when stored well, null when it does not really expire. */
   shelfLife: number | null;
+  /** What to check from time to time, for things that do not expire but still age. */
+  advice?: { en: string; fr: string };
   /** Proposed by default in the starter plan. */
   starter?: boolean;
   /** Only proposed for a household with this need. */
@@ -65,7 +67,7 @@ export const CATALOG: CatalogItem[] = [
   item('water-pack', { en: 'Water pack 6 × 1.5 L', fr: 'Pack d’eau 6 × 1,5 L' }, 'water', PACK, { water: 9, shelfLife: 24 }),
   item('water-can', { en: 'Water can 5 L', fr: 'Bidon d’eau 5 L' }, 'water', UNIT, { water: 5, shelfLife: 24 }),
   item('water', { en: 'Water', fr: 'Eau' }, 'water', L, { water: 1, shelfLife: 24 }),
-  item('water-filter', { en: 'Water filter (1500 L)', fr: 'Filtre à eau (1500 L)' }, 'water-treatment', UNIT, { water: 1500, starter: true }),
+  item('water-filter', { en: 'Water filter (1500 L)', fr: 'Filtre à eau (1500 L)' }, 'water-treatment', UNIT, { water: 1500, starter: true, advice: { en: 'Check it after 5 years. Never let it freeze once it has been used.', fr: 'À contrôler au bout de 5 ans. Ne jamais le laisser geler une fois utilisé.' } }),
   item('purification-tablets', { en: 'Purification tablets (box of 50)', fr: 'Pastilles de purification (boîte de 50)' }, 'water-treatment', BOX, { water: 50, shelfLife: 60 }),
 
   // Food: daily use per person, the starter menu adds up to about 2200 kcal.
@@ -77,27 +79,27 @@ export const CATALOG: CatalogItem[] = [
   item('lentils', { en: 'Dried lentils', fr: 'Lentilles sèches' }, 'legumes', KG, { kcal: 3500, daily: 0.04, shelfLife: 24, starter: true }),
   item('chickpeas', { en: 'Dried chickpeas', fr: 'Pois chiches secs' }, 'legumes', KG, { kcal: 3600, shelfLife: 24 }),
   item('beans', { en: 'Dried beans', fr: 'Haricots secs' }, 'legumes', KG, { kcal: 3400, shelfLife: 24 }),
-  item('tuna', { en: 'Canned tuna 140 g', fr: 'Thon en boîte 140 g' }, 'canned', CAN, { kcal: 150, daily: 0.25, shelfLife: 48, starter: true }),
+  item('tuna', { en: 'Canned tuna 140 g', fr: 'Thon en boîte 140 g' }, 'canned', CAN, { kcal: 150, daily: 0.25, shelfLife: 36, starter: true }),
   item('sardines', { en: 'Canned sardines', fr: 'Sardines à l’huile' }, 'canned', CAN, { kcal: 250, shelfLife: 60 }),
   item('vegetables', { en: 'Canned vegetables 400 g', fr: 'Légumes en conserve 400 g' }, 'canned', CAN, { kcal: 120, daily: 0.5, shelfLife: 36, starter: true }),
   item('canned-beans', { en: 'Canned beans 400 g', fr: 'Haricots en conserve 400 g' }, 'canned', CAN, { kcal: 300, shelfLife: 36 }),
   item('fruit', { en: 'Canned fruit 400 g', fr: 'Fruits au sirop 400 g' }, 'canned', CAN, { kcal: 250, daily: 0.15, shelfLife: 24, starter: true }),
   item('ready-meal', { en: 'Canned ready meal 800 g', fr: 'Plat cuisiné en boîte 800 g' }, 'ready-meals', CAN, { kcal: 700, daily: 0.15, shelfLife: 36, starter: true }),
-  item('freeze-dried', { en: 'Freeze-dried meal', fr: 'Repas lyophilisé' }, 'ready-meals', POUCH, { kcal: 500, shelfLife: 300 }),
+  item('freeze-dried', { en: 'Freeze-dried meal', fr: 'Repas lyophilisé' }, 'ready-meals', POUCH, { kcal: 500, shelfLife: 48 }),
   item('ration', { en: 'Emergency ration 2400 kcal', fr: 'Ration de survie 2400 kcal' }, 'ready-meals', PACK, { kcal: 2400, shelfLife: 60 }),
-  item('milk-powder', { en: 'Milk powder', fr: 'Lait en poudre' }, 'dairy', KG, { kcal: 4900, daily: 0.025, shelfLife: 18, starter: true }),
-  item('uht-milk', { en: 'UHT milk', fr: 'Lait UHT' }, 'dairy', L, { kcal: 460, shelfLife: 6 }),
-  item('oil', { en: 'Vegetable oil', fr: 'Huile végétale' }, 'fats', L, { kcal: 8200, daily: 0.03, shelfLife: 18, starter: true }),
+  item('milk-powder', { en: 'Milk powder', fr: 'Lait en poudre' }, 'dairy', KG, { kcal: 4900, daily: 0.025, shelfLife: 12, starter: true }),
+  item('uht-milk', { en: 'UHT milk', fr: 'Lait UHT' }, 'dairy', L, { kcal: 460, shelfLife: 3 }),
+  item('oil', { en: 'Vegetable oil', fr: 'Huile végétale' }, 'fats', L, { kcal: 8200, daily: 0.03, shelfLife: 12, starter: true }),
   item('peanut-butter', { en: 'Peanut butter 350 g', fr: 'Beurre de cacahuète 350 g' }, 'fats', JAR, { kcal: 2100, daily: 0.04, shelfLife: 12, starter: true }),
   item('sugar', { en: 'Sugar', fr: 'Sucre' }, 'sweets', KG, { kcal: 4000, daily: 0.03, starter: true }),
-  item('honey', { en: 'Honey', fr: 'Miel' }, 'sweets', KG, { kcal: 3000 }),
+  item('honey', { en: 'Honey', fr: 'Miel' }, 'sweets', KG, { kcal: 3000, shelfLife: 24 }),
   item('jam', { en: 'Jam 370 g', fr: 'Confiture 370 g' }, 'sweets', JAR, { kcal: 900, daily: 0.05, shelfLife: 24, starter: true }),
   item('chocolate', { en: 'Chocolate 100 g', fr: 'Chocolat 100 g' }, 'sweets', BAR, { kcal: 550, daily: 0.1, shelfLife: 12, starter: true }),
-  item('biscuits', { en: 'Biscuits 200 g', fr: 'Biscuits 200 g' }, 'sweets', PACK, { kcal: 950, daily: 0.15, shelfLife: 12, starter: true }),
+  item('biscuits', { en: 'Biscuits 200 g', fr: 'Biscuits 200 g' }, 'sweets', PACK, { kcal: 950, daily: 0.15, shelfLife: 9, starter: true }),
   item('nuts', { en: 'Nuts', fr: 'Fruits secs (noix, amandes)' }, 'sweets', KG, { kcal: 6000, daily: 0.02, shelfLife: 12, starter: true }),
   item('dried-fruit', { en: 'Dried fruit', fr: 'Fruits séchés' }, 'sweets', KG, { kcal: 3000, shelfLife: 12 }),
-  item('coffee', { en: 'Coffee', fr: 'Café' }, 'drinks', KG, { shelfLife: 24 }),
-  item('tea', { en: 'Tea', fr: 'Thé' }, 'drinks', PACK, { shelfLife: 24 }),
+  item('coffee', { en: 'Coffee', fr: 'Café' }, 'drinks', KG, { shelfLife: 18 }),
+  item('tea', { en: 'Tea', fr: 'Thé' }, 'drinks', PACK, { shelfLife: 18 }),
   item('salt', { en: 'Salt', fr: 'Sel' }, 'condiments', KG, { daily: 0.005, starter: true }),
 
   // Specific needs: per household, whatever the number of people. Pet items are per animal.
@@ -113,24 +115,24 @@ export const CATALOG: CatalogItem[] = [
   item('bin-bags', { en: 'Bin bags (roll of 20)', fr: 'Sacs poubelle (rouleau de 20)' }, 'hygiene', ROLL, { daily: 0.05, per: 'household', starter: true }),
 
   // Health and first aid.
-  item('first-aid-kit', { en: 'First aid kit', fr: 'Trousse de secours' }, 'medical', UNIT, { target: 1, per: 'household', starter: true }),
+  item('first-aid-kit', { en: 'First aid kit', fr: 'Trousse de secours' }, 'medical', UNIT, { target: 1, per: 'household', starter: true, advice: { en: 'Check its contents every year: dressings, gloves and medicines have dates.', fr: 'Vérifier son contenu tous les ans : pansements, gants et médicaments ont une date.' } }),
   item('paracetamol', { en: 'Paracetamol 500 mg', fr: 'Paracétamol 500 mg' }, 'medical', BOX, { target: 2, per: 'household', shelfLife: 36, starter: true }),
 
   // Energy and light.
   item('aa-batteries', { en: 'AA batteries', fr: 'Piles AA' }, 'energy', UNIT, { target: 12, per: 'household', shelfLife: 120, starter: true }),
   item('candles', { en: 'Candles', fr: 'Bougies' }, 'energy', UNIT, { daily: 0.2, per: 'household', starter: true }),
-  item('gas-cartridge', { en: 'Gas cartridge', fr: 'Cartouche de gaz' }, 'energy', CARTRIDGE, { daily: 0.2, starter: true }),
+  item('gas-cartridge', { en: 'Gas cartridge', fr: 'Cartouche de gaz' }, 'energy', CARTRIDGE, { daily: 0.2, starter: true, advice: { en: 'The gas keeps but the seals age: replace after about 7 years, or sooner if rusty or dented.', fr: 'Le gaz se garde mais les joints vieillissent : à remplacer au bout de 7 ans environ, plus tôt si rouillée ou cabossée.' } }),
   item('matches', { en: 'Matches', fr: 'Allumettes' }, 'energy', BOX, { target: 3, per: 'household', starter: true }),
 
   // Gear.
-  item('headlamp', { en: 'Headlamp', fr: 'Lampe frontale' }, 'tools', UNIT, { target: 1, starter: true }),
-  item('radio', { en: 'Hand-crank radio', fr: 'Radio à dynamo' }, 'tools', UNIT, { target: 1, per: 'household', starter: true }),
-  item('stove', { en: 'Camping stove', fr: 'Réchaud à gaz' }, 'tools', UNIT, { target: 1, per: 'household', starter: true }),
+  item('headlamp', { en: 'Headlamp', fr: 'Lampe frontale' }, 'tools', UNIT, { target: 1, starter: true, advice: { en: 'Store it without batteries: they can leak.', fr: 'À ranger sans les piles : elles peuvent couler.' } }),
+  item('radio', { en: 'Hand-crank radio', fr: 'Radio à dynamo' }, 'tools', UNIT, { target: 1, per: 'household', starter: true, advice: { en: 'Store it without batteries. A built-in battery needs charging every 3 months.', fr: 'À ranger sans les piles. Une batterie intégrée se recharge tous les 3 mois.' } }),
+  item('stove', { en: 'Camping stove', fr: 'Réchaud à gaz' }, 'tools', UNIT, { target: 1, per: 'household', starter: true, advice: { en: 'Check the seals before using it.', fr: 'Vérifier les joints avant de s’en servir.' } }),
   item('can-opener', { en: 'Manual can opener', fr: 'Ouvre-boîte manuel' }, 'tools', UNIT, { target: 1, per: 'household', starter: true }),
   item('multitool', { en: 'Multi-tool knife', fr: 'Couteau multifonction' }, 'tools', UNIT, { target: 1, per: 'household', starter: true }),
   item('survival-blanket', { en: 'Survival blanket', fr: 'Couverture de survie' }, 'tools', UNIT, { target: 1, starter: true }),
-  item('jerrycan', { en: 'Jerrycan 20 L (empty)', fr: 'Jerrican 20 L (vide)' }, 'tools', UNIT, { target: 1, per: 'household' }),
-  item('power-bank', { en: 'Power bank', fr: 'Batterie externe' }, 'energy', UNIT, { target: 1, per: 'household' }),
+  item('jerrycan', { en: 'Jerrycan 20 L (empty)', fr: 'Jerrican 20 L (vide)' }, 'tools', UNIT, { target: 1, per: 'household', advice: { en: 'Water you fill it with yourself is renewed every 6 months.', fr: 'L’eau que tu y mets toi-même se renouvelle tous les 6 mois.' } }),
+  item('power-bank', { en: 'Power bank', fr: 'Batterie externe' }, 'energy', UNIT, { target: 1, per: 'household', advice: { en: 'Recharge it every 3 months and store it about half charged.', fr: 'À recharger tous les 3 mois, et à stocker à moitié chargée.' } }),
 ];
 
 /** Catalog entry whose English or French name matches, if any. */

@@ -1,3 +1,4 @@
+import type { CatalogItem } from '../core/catalog';
 import { findCategory } from '../core/categories';
 import { daysLeft, expiryStatus, type ExpiryStatus } from '../core/status';
 import type { Day } from '../core/dates';
@@ -160,4 +161,10 @@ export function formatLiters(liters: number): string {
 /** Whole days, rounded down: "23". */
 export function wholeDays(days: number): string {
   return Number.isFinite(days) ? formatNumber(Math.floor(days), 0) : '∞';
+}
+
+/** How long a catalog product usually keeps, and what to check on things that do not expire. */
+export function keepsText(entry: CatalogItem): string {
+  const keeps = entry.shelfLife === null ? t('keeps.never') : t('keeps.months', { months: entry.shelfLife });
+  return entry.advice ? `${keeps} ${entry.advice[i18n.lang]}` : keeps;
 }

@@ -196,6 +196,9 @@ export const en = {
 
   'expiry.none': 'No expiry',
 
+  'keeps.months': 'Usually keeps about {months} months.',
+  'keeps.never': 'Does not expire when stored dry.',
+
   'lot.addTitle': 'Add to stock',
   'lot.editTitle': 'Edit lot',
   'lot.product': 'Product',
@@ -208,7 +211,7 @@ export const en = {
   'lot.precisionMonth': 'Month only',
   'lot.precisionNone': 'No expiry',
   'lot.monthHint': 'Counts as the last day of the month.',
-  'lot.shelfLife': 'Usually keeps about {months} months.',
+  'lot.estimated': 'Estimated from how long it usually keeps: enter the date on the packaging if you have it.',
   'lot.location': 'Location',
   'lot.locationPlaceholder': 'Cellar, garage, bag…',
   'lot.saveAndNext': 'Add & next',

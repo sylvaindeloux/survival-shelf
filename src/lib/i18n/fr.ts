@@ -199,6 +199,9 @@ export const fr: Record<keyof typeof en, string> = {
 
   'expiry.none': 'Sans date',
 
+  'keeps.months': 'Se conserve en général environ {months} mois.',
+  'keeps.never': 'Ne périme pas s’il est stocké au sec.',
+
   'lot.addTitle': 'Ajouter au stock',
   'lot.editTitle': 'Modifier le lot',
   'lot.product': 'Produit',
@@ -212,7 +215,7 @@ export const fr: Record<keyof typeof en, string> = {
   'lot.precisionMonth': 'Mois seulement',
   'lot.precisionNone': 'Sans date',
   'lot.monthHint': 'Compte comme le dernier jour du mois.',
-  'lot.shelfLife': 'Se conserve en général environ {months} mois.',
+  'lot.estimated': 'Date estimée d’après sa durée de conservation habituelle : mets celle de l’emballage si tu l’as.',
   'lot.location': 'Emplacement',
   'lot.locationPlaceholder': 'Cellier, garage, sac…',
   'lot.saveAndNext': 'Ajouter et continuer',

@@ -9,7 +9,7 @@
   import type { Per, Product } from '../core/types';
   import { i18n, t, tn } from '../i18n/index.svelte';
   import Dialog from './Dialog.svelte';
-  import { inputNumber, quantity, tierLabel } from './format';
+  import { inputNumber, keepsText, quantity, tierLabel } from './format';
   import { dialogs } from './state.svelte';
 
   /** Product to edit; absent to create one. */
@@ -33,6 +33,7 @@
 
   // svelte-ignore state_referenced_locally
   const lotCount = product ? lotsOf(app.shelf, product.name).length : 0;
+  const catalogEntry = $derived(findCatalogItem(name));
   const customCategory = $derived(findCategory(category) ? null : category);
   const suggestions = $derived(
     CATALOG.map((entry) => entry.name[i18n.lang]).filter((candidate) => !findProduct(app.shelf, candidate)),
@@ -128,6 +129,7 @@
         </datalist>
       {/if}
       {#if nameTaken}<span class="hint error">{t('product.nameTaken')}</span>{/if}
+      {#if catalogEntry}<span class="hint">{keepsText(catalogEntry)}</span>{/if}
     </label>
     <div class="grid-2">
       <label class="field">

@@ -32,7 +32,9 @@ keeps your data in a **plain Markdown file** you can read and edit by hand.
   badges, search, filters by status and location. Consume or discard oldest first (FEFO), with undo.
 - **Autonomy**: how many days your household can live on the stock, for food (calories) and water. The
   estimate simulates eating oldest first and counts what would expire before its turn.
-- **Built-in catalog** of about 60 common items with approximate calories and shelf life.
+- **Built-in catalog** of about 60 common items with approximate calories and researched
+  [shelf lives](docs/SHELF_LIFE.md): when you skip the date of a lot, the app estimates one, and tells you what
+  to check on things that do not expire (recharge the power bank, review the first aid kit…).
 - **Printable inventory** with room to tally what you take, for when there is no power.
 - English and French, light and dark themes, phone and desktop layouts.
 
