@@ -1,0 +1,532 @@
+import { normalizeCategory } from './categories';
+import { DEFAULT_SETTINGS, SECTION_ORDER, defaultLayout, defaultSectionLayout } from './defaults';
+import { isValidDate, normalizeDate } from './dates';
+import { newLotId } from './ids';
+import { formatTable, isSeparatorRow, isTableLine, splitRow } from './table';
+import { formatNumber, normalizeKey, parseNumber, sameName } from './text';
+import type {
+  Extra,
+  LogAction,
+  LogEntry,
+  Lot,
+  ParseIssue,
+  ParseResult,
+  Product,
+  SectionLayout,
+  SectionName,
+  Settings,
+  SettingRow,
+  Shelf,
+  TableLayout,
+} from './types';
+
+interface ColumnDef {
+  key: string;
+  label: string;
+  aliases: string[];
+  /** Written even when no row has a value. */
+  always?: boolean;
+}
+
+const SECTION_ALIASES: Record<string, SectionName> = Object.fromEntries(
+  (
+    [
+      ['settings', ['settings', 'parameters', 'parametres', 'reglages', 'configuration', 'config']],
+      ['products', ['products', 'produits', 'catalog', 'catalogue']],
+      ['stock', ['stock', 'stocks', 'inventory', 'inventaire', 'lots']],
+      ['log', ['log', 'journal', 'history', 'historique']],
+    ] as [SectionName, string[]][]
+  ).flatMap(([name, aliases]) => aliases.map((alias) => [alias, name])),
+);
+
+const SETTINGS_COLUMNS: ColumnDef[] = [
+  { key: 'label', label: 'Setting', aliases: ['setting', 'parameter', 'name', 'key', 'parametre', 'reglage', 'nom', 'cle'], always: true },
+  { key: 'value', label: 'Value', aliases: ['value', 'valeur'], always: true },
+];
+
+const PRODUCT_COLUMNS: ColumnDef[] = [
+  { key: 'name', label: 'Product', aliases: ['product', 'name', 'produit', 'nom', 'item', 'article'], always: true },
+  { key: 'category', label: 'Category', aliases: ['category', 'categorie', 'cat'], always: true },
+  { key: 'unit', label: 'Unit', aliases: ['unit', 'unite', 'units', 'unites'], always: true },
+  {
+    key: 'kcal',
+    label: 'Kcal/unit',
+    aliases: ['kcalunit', 'kcal', 'calories', 'kcalperunit', 'kcalparunite', 'kcalunite', 'energy', 'energie'],
+    always: true,
+  },
+  {
+    key: 'water',
+    label: 'Water L/unit',
+    aliases: ['waterlunit', 'water', 'waterl', 'waterperunit', 'eau', 'eaul', 'eaulunite', 'eauunite'],
+    always: true,
+  },
+  { key: 'target', label: 'Target', aliases: ['target', 'objectif', 'cible', 'goal', 'min', 'minimum'], always: true },
+  { key: 'notes', label: 'Notes', aliases: ['notes', 'note', 'remarques', 'remarque', 'comment', 'comments', 'commentaire', 'commentaires'] },
+];
+
+const STOCK_COLUMNS: ColumnDef[] = [
+  { key: 'product', label: 'Product', aliases: ['product', 'produit', 'name', 'nom', 'item', 'article'], always: true },
+  { key: 'qty', label: 'Qty', aliases: ['qty', 'quantity', 'quantite', 'qte', 'qt'], always: true },
+  {
+    key: 'expires',
+    label: 'Expires',
+    aliases: ['expires', 'expiry', 'expiration', 'bestbefore', 'useby', 'peremption', 'dlc', 'ddm', 'dluo', 'exp'],
+    always: true,
+  },
+  { key: 'location', label: 'Location', aliases: ['location', 'emplacement', 'lieu', 'place', 'where', 'ou'], always: true },
+  { key: 'added', label: 'Added', aliases: ['added', 'ajoute', 'ajout', 'purchased', 'bought', 'achat', 'achete'] },
+];
+
+const LOG_COLUMNS: ColumnDef[] = [
+  { key: 'date', label: 'Date', aliases: ['date', 'jour', 'day'], always: true },
+  { key: 'product', label: 'Product', aliases: ['product', 'produit', 'name', 'nom', 'item', 'article'], always: true },
+  { key: 'qty', label: 'Qty', aliases: ['qty', 'quantity', 'quantite', 'qte', 'qt'], always: true },
+  { key: 'action', label: 'Action', aliases: ['action', 'type', 'event', 'evenement'], always: true },
+  { key: 'note', label: 'Note', aliases: ['note', 'notes', 'comment', 'commentaire', 'remarque'] },
+];
+
+const COLUMNS: Record<SectionName, ColumnDef[]> = {
+  settings: SETTINGS_COLUMNS,
+  products: PRODUCT_COLUMNS,
+  stock: STOCK_COLUMNS,
+  log: LOG_COLUMNS,
+};
+
+interface SettingDef {
+  field: keyof Settings;
+  label: string;
+  aliases: string[];
+  min: number;
+}
+
+const SETTING_DEFS: SettingDef[] = [
+  { field: 'people', label: 'People', aliases: ['people', 'persons', 'personnes', 'household', 'foyer', 'nbpersonnes'], min: 1 },
+  {
+    field: 'kcalPerPersonPerDay',
+    label: 'Kcal per person per day',
+    aliases: ['kcalperpersonperday', 'kcalperperson', 'kcalparpersonneparjour', 'kcalparpersonne', 'caloriesperpersonperday'],
+    min: 1,
+  },
+  {
+    field: 'waterPerPersonPerDay',
+    label: 'Water L per person per day',
+    aliases: ['waterlperpersonperday', 'waterperpersonperday', 'eaulparpersonneparjour', 'eauparpersonneparjour'],
+    min: 0,
+  },
+  {
+    field: 'targetDays',
+    label: 'Target autonomy days',
+    aliases: ['targetautonomydays', 'targetdays', 'targetautonomy', 'objectifautonomiejours', 'objectifautonomie', 'objectifjours'],
+    min: 1,
+  },
+  {
+    field: 'warningDays',
+    label: 'Expiry warning days',
+    aliases: ['expirywarningdays', 'warningdays', 'expirywarning', 'alerteperemptionjours', 'alerteperemption', 'alertejours'],
+    min: 0,
+  },
+  {
+    field: 'rotationMarginDays',
+    label: 'Rotation margin days',
+    aliases: ['rotationmargindays', 'rotationmargin', 'margerotationjours', 'margederotationjours', 'margerotation', 'margederotation'],
+    min: 0,
+  },
+];
+
+const SETTING_BY_ALIAS = new Map<string, SettingDef>(
+  SETTING_DEFS.flatMap((def) => [normalizeKey(def.label), ...def.aliases].map((alias) => [alias, def] as const)),
+);
+
+const ACTION_ALIASES: Record<string, LogAction> = {
+  consumed: 'consumed',
+  consume: 'consumed',
+  eaten: 'consumed',
+  used: 'consumed',
+  consomme: 'consumed',
+  mange: 'consumed',
+  utilise: 'consumed',
+  discarded: 'discarded',
+  discard: 'discarded',
+  wasted: 'discarded',
+  thrown: 'discarded',
+  lost: 'discarded',
+  jete: 'discarded',
+  perdu: 'discarded',
+  gaspille: 'discarded',
+};
+
+interface Chunk {
+  /** Heading text, null for the content before the first `##` heading. */
+  heading: string | null;
+  /** 1-based line number of the heading (or of the first line for the preamble). */
+  line: number;
+  lines: string[];
+}
+
+function splitChunks(text: string): Chunk[] {
+  const lines = text.replace(/\r\n?/g, '\n').split('\n');
+  const chunks: Chunk[] = [{ heading: null, line: 1, lines: [] }];
+  let fence: string | null = null;
+  lines.forEach((line, index) => {
+    const fenceMatch = /^\s*(`{3,}|~{3,})/.exec(line);
+    if (fenceMatch) {
+      const marker = fenceMatch[1][0];
+      if (fence === null) fence = marker;
+      else if (fence === marker) fence = null;
+    }
+    const heading = fence === null ? /^##\s+(.+?)\s*#*\s*$/.exec(line) : null;
+    if (heading) {
+      chunks.push({ heading: heading[1], line: index + 1, lines: [] });
+    } else {
+      chunks[chunks.length - 1].lines.push(line);
+    }
+  });
+  return chunks;
+}
+
+function trimBlankLines(lines: string[]): string {
+  let start = 0;
+  let end = lines.length;
+  while (start < end && lines[start].trim() === '') start++;
+  while (end > start && lines[end - 1].trim() === '') end--;
+  return lines.slice(start, end).join('\n');
+}
+
+interface RawRow {
+  line: number;
+  values: Record<string, string>;
+  extra: Extra;
+}
+
+interface ParsedSection {
+  layout: SectionLayout;
+  rows: RawRow[];
+}
+
+function parseSection(
+  name: SectionName,
+  chunk: Chunk & { heading: string },
+  issues: ParseIssue[],
+): ParsedSection {
+  const { lines } = chunk;
+  const columns = COLUMNS[name];
+  const firstLine = chunk.line + 1;
+  const start = lines.findIndex((line, i) => isTableLine(line) && i + 1 < lines.length && isSeparatorRow(lines[i + 1]));
+  if (start === -1) {
+    return { layout: { heading: chunk.heading, before: trimBlankLines(lines), after: '', table: null }, rows: [] };
+  }
+
+  const headers = splitRow(lines[start]);
+  const keys: (string | null)[] = [];
+  headers.forEach((header, i) => {
+    const normalized = normalizeKey(header);
+    const def = columns.find((column) => column.aliases.includes(normalized) || normalizeKey(column.label) === normalized);
+    if (def && keys.includes(def.key)) {
+      issues.push({ level: 'warning', line: firstLine + start, code: 'duplicateColumn', params: { column: header } });
+      keys.push(null);
+    } else if (def) {
+      keys.push(def.key);
+    } else if (name === 'settings' && i < 2 && !keys.includes(i === 0 ? 'label' : 'value')) {
+      // Settings tables are plain key/value pairs: accept any header for the first two columns.
+      keys.push(i === 0 ? 'label' : 'value');
+    } else {
+      keys.push(null);
+    }
+  });
+
+  let end = start + 2;
+  const rows: RawRow[] = [];
+  while (end < lines.length && lines[end].trim() !== '' && isTableLine(lines[end])) {
+    const cells = splitRow(lines[end]);
+    if (cells.some((cell) => cell !== '')) {
+      const row: RawRow = { line: firstLine + end, values: {}, extra: {} };
+      if (cells.length > headers.length) {
+        issues.push({ level: 'warning', line: row.line, code: 'tooManyCells' });
+      }
+      headers.forEach((header, i) => {
+        const key = keys[i];
+        const value = cells[i] ?? '';
+        if (key) row.values[key] = value;
+        else if (header !== '' && value !== '') row.extra[header] = value;
+      });
+      rows.push(row);
+    }
+    end++;
+  }
+
+  return {
+    layout: {
+      heading: chunk.heading,
+      before: trimBlankLines(lines.slice(0, start)),
+      after: trimBlankLines(lines.slice(end)),
+      table: { headers, keys } satisfies TableLayout,
+    },
+    rows,
+  };
+}
+
+function readNumber(
+  row: RawRow,
+  key: string,
+  issues: ParseIssue[],
+  options: { required?: boolean; min?: number } = {},
+): number | null | undefined {
+  const text = row.values[key] ?? '';
+  const value = parseNumber(text);
+  if (value === null) {
+    if (options.required) {
+      issues.push({ level: 'error', line: row.line, code: 'missingValue', params: { column: key } });
+      return undefined;
+    }
+    return null;
+  }
+  if (Number.isNaN(value) || (options.min !== undefined && value < options.min)) {
+    issues.push({ level: 'error', line: row.line, code: 'invalidNumber', params: { column: key, value: text } });
+    return undefined;
+  }
+  return value;
+}
+
+function readSettings(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
+  for (const row of rows) {
+    const label = row.values.label ?? '';
+    const value = row.values.value ?? '';
+    const def = SETTING_BY_ALIAS.get(normalizeKey(label));
+    if (!def) {
+      shelf.settingsExtra.push({ label, value });
+      continue;
+    }
+    const number = parseNumber(value);
+    if (number === null || Number.isNaN(number) || number < def.min) {
+      issues.push({ level: 'warning', line: row.line, code: 'invalidSetting', params: { setting: label, value } });
+      continue;
+    }
+    shelf.settings[def.field] = number;
+    shelf.layout.settingsLabels[def.field] = label;
+  }
+}
+
+function readProducts(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
+  for (const row of rows) {
+    const name = (row.values.name ?? '').trim();
+    if (name === '') {
+      issues.push({ level: 'error', line: row.line, code: 'missingValue', params: { column: 'name' } });
+      continue;
+    }
+    if (shelf.products.some((product) => sameName(product.name, name))) {
+      issues.push({ level: 'error', line: row.line, code: 'duplicateProduct', params: { product: name } });
+      continue;
+    }
+    const kcal = readNumber(row, 'kcal', issues, { min: 0 });
+    const water = readNumber(row, 'water', issues, { min: 0 });
+    const target = readNumber(row, 'target', issues, { min: 0 });
+    if (kcal === undefined || water === undefined || target === undefined) continue;
+    shelf.products.push({
+      name,
+      category: normalizeCategory(row.values.category ?? ''),
+      unit: (row.values.unit ?? '').trim(),
+      kcal,
+      water,
+      target,
+      notes: (row.values.notes ?? '').trim(),
+      extra: row.extra,
+    });
+  }
+}
+
+function findOrCreateProduct(shelf: Shelf, name: string, line: number, issues: ParseIssue[]): Product {
+  const existing = shelf.products.find((product) => sameName(product.name, name));
+  if (existing) return existing;
+  const product: Product = {
+    name,
+    category: 'other',
+    unit: '',
+    kcal: null,
+    water: null,
+    target: null,
+    notes: '',
+    extra: {},
+  };
+  shelf.products.push(product);
+  issues.push({ level: 'info', line, code: 'productCreated', params: { product: name } });
+  return product;
+}
+
+function readStock(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
+  for (const row of rows) {
+    const name = (row.values.product ?? '').trim();
+    if (name === '') {
+      issues.push({ level: 'error', line: row.line, code: 'missingValue', params: { column: 'product' } });
+      continue;
+    }
+    const qty = readNumber(row, 'qty', issues, { required: true, min: 0 });
+    if (qty === undefined || qty === null) continue;
+    const expires = (row.values.expires ?? '').trim();
+    if (expires !== '' && !isValidDate(expires)) {
+      issues.push({ level: 'error', line: row.line, code: 'invalidExpiry', params: { value: expires } });
+      continue;
+    }
+    const added = (row.values.added ?? '').trim();
+    if (added !== '' && !isValidDate(added)) {
+      issues.push({ level: 'warning', line: row.line, code: 'invalidDate', params: { column: 'added', value: added } });
+    }
+    const product = findOrCreateProduct(shelf, name, row.line, issues);
+    shelf.lots.push({
+      id: newLotId(),
+      product: product.name,
+      qty,
+      expires: expires === '' ? '' : normalizeDate(expires),
+      location: (row.values.location ?? '').trim(),
+      added: added !== '' && isValidDate(added) ? normalizeDate(added) : added,
+      extra: row.extra,
+    });
+  }
+}
+
+function readLog(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
+  for (const row of rows) {
+    const qty = readNumber(row, 'qty', issues, { required: true, min: 0 });
+    if (qty === undefined || qty === null) continue;
+    const date = (row.values.date ?? '').trim();
+    if (!isValidDate(date)) {
+      issues.push({ level: 'warning', line: row.line, code: 'invalidDate', params: { column: 'date', value: date } });
+    }
+    const actionText = row.values.action ?? '';
+    let action = ACTION_ALIASES[normalizeKey(actionText)];
+    if (!action) {
+      issues.push({ level: 'warning', line: row.line, code: 'invalidAction', params: { value: actionText } });
+      action = 'consumed';
+    }
+    shelf.log.push({
+      date: isValidDate(date) ? normalizeDate(date) : date,
+      product: (row.values.product ?? '').trim(),
+      qty,
+      action,
+      note: (row.values.note ?? '').trim(),
+      extra: row.extra,
+    });
+  }
+}
+
+/** Reads a Survival Shelf Markdown file. Never throws: problems are reported as issues. */
+export function parseShelf(text: string): ParseResult {
+  const issues: ParseIssue[] = [];
+  const shelf: Shelf = {
+    settings: { ...DEFAULT_SETTINGS },
+    settingsExtra: [],
+    products: [],
+    lots: [],
+    log: [],
+    layout: { blocks: [], sections: {}, settingsLabels: {} },
+  };
+  const parsed: Partial<Record<SectionName, RawRow[]>> = {};
+
+  for (const chunk of splitChunks(text)) {
+    if (chunk.heading === null) {
+      const preamble = trimBlankLines(chunk.lines);
+      if (preamble !== '') shelf.layout.blocks.push({ type: 'raw', text: preamble });
+      continue;
+    }
+    const name = SECTION_ALIASES[normalizeKey(chunk.heading)];
+    if (!name || parsed[name]) {
+      if (name) issues.push({ level: 'warning', line: chunk.line, code: 'duplicateSection', params: { section: chunk.heading } });
+      shelf.layout.blocks.push({ type: 'raw', text: trimBlankLines([`## ${chunk.heading}`, ...chunk.lines]) });
+      continue;
+    }
+    const section = parseSection(name, chunk as Chunk & { heading: string }, issues);
+    shelf.layout.sections[name] = section.layout;
+    shelf.layout.blocks.push({ type: 'section', name });
+    parsed[name] = section.rows;
+  }
+
+  // Products first, so that stock rows can refer to them whatever the section order.
+  readSettings(parsed.settings ?? [], shelf, issues);
+  readProducts(parsed.products ?? [], shelf, issues);
+  readStock(parsed.stock ?? [], shelf, issues);
+  readLog(parsed.log ?? [], shelf, issues);
+
+  if (shelf.layout.blocks.length === 0) shelf.layout = defaultLayout();
+  return { shelf, issues };
+}
+
+function settingsRows(shelf: Shelf): Record<string, string>[] {
+  const known = SETTING_DEFS.map((def) => ({
+    label: shelf.layout.settingsLabels[def.field] ?? def.label,
+    value: formatNumber(shelf.settings[def.field]),
+  }));
+  return [...known, ...shelf.settingsExtra.map((row: SettingRow) => ({ ...row }))];
+}
+
+function productRow(product: Product): Record<string, string> {
+  return {
+    name: product.name,
+    category: product.category,
+    unit: product.unit,
+    kcal: formatNumber(product.kcal),
+    water: formatNumber(product.water),
+    target: formatNumber(product.target),
+    notes: product.notes,
+  };
+}
+
+function lotRow(lot: Lot): Record<string, string> {
+  return { product: lot.product, qty: formatNumber(lot.qty), expires: lot.expires, location: lot.location, added: lot.added };
+}
+
+function logRow(entry: LogEntry): Record<string, string> {
+  return { date: entry.date, product: entry.product, qty: formatNumber(entry.qty), action: entry.action, note: entry.note };
+}
+
+function renderTable(
+  name: SectionName,
+  layout: TableLayout | null,
+  rows: { values: Record<string, string>; extra: Extra }[],
+): string {
+  const columns = COLUMNS[name];
+  const headers = layout ? [...layout.headers] : [];
+  const keys = layout ? [...layout.keys] : [];
+  for (const column of columns) {
+    if (keys.includes(column.key)) continue;
+    const used = column.always || rows.some((row) => (row.values[column.key] ?? '') !== '');
+    if (used) {
+      headers.push(column.label);
+      keys.push(column.key);
+    }
+  }
+  const cells = rows.map((row) => keys.map((key, i) => (key ? (row.values[key] ?? '') : (row.extra[headers[i]] ?? ''))));
+  return formatTable(headers, cells);
+}
+
+function renderSection(name: SectionName, shelf: Shelf): string {
+  const layout = shelf.layout.sections[name] ?? defaultSectionLayout(name);
+  let rows: { values: Record<string, string>; extra: Extra }[];
+  switch (name) {
+    case 'settings':
+      rows = settingsRows(shelf).map((values) => ({ values, extra: {} }));
+      break;
+    case 'products':
+      rows = shelf.products.map((product) => ({ values: productRow(product), extra: product.extra }));
+      break;
+    case 'stock':
+      rows = shelf.lots.map((lot) => ({ values: lotRow(lot), extra: lot.extra }));
+      break;
+    case 'log':
+      rows = shelf.log.map((entry) => ({ values: logRow(entry), extra: entry.extra }));
+      break;
+  }
+  return [`## ${layout.heading}`, layout.before, renderTable(name, layout.table, rows), layout.after]
+    .filter((part) => part !== '')
+    .join('\n\n');
+}
+
+/** Writes the shelf back to Markdown, keeping the user's layout and unknown content. */
+export function serializeShelf(shelf: Shelf): string {
+  const blocks = [...shelf.layout.blocks];
+  for (const name of SECTION_ORDER) {
+    if (!blocks.some((block) => block.type === 'section' && block.name === name)) {
+      blocks.push({ type: 'section', name });
+    }
+  }
+  const parts = blocks.map((block) => (block.type === 'raw' ? block.text : renderSection(block.name, shelf)));
+  return `${parts.join('\n\n')}\n`;
+}

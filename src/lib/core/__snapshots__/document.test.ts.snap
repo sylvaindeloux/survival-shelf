@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`serializeShelf > writes a complete commented template for a new shelf 1`] = `
+"# Survival Shelf
+
+> Data file of [Survival Shelf](https://github.com/sylvaindeloux/survival-shelf).
+> You can edit it with any text editor: keep the \`## Section\` titles and the table header rows.
+> Dates are written \`YYYY-MM-DD\`, or \`YYYY-MM\` for "end of that month". Decimals use a dot.
+> Full syntax: https://github.com/sylvaindeloux/survival-shelf/blob/main/docs/FILE_FORMAT.md
+
+## Settings
+
+| Setting                    | Value |
+|----------------------------|-------|
+| People                     | 2     |
+| Kcal per person per day    | 2200  |
+| Water L per person per day | 3     |
+| Target autonomy days       | 30    |
+| Expiry warning days        | 60    |
+| Rotation margin days       | 30    |
+
+## Products
+
+<!-- One row per product. Kcal and Water are per unit. Target is the quantity you want to keep in stock. -->
+
+| Product | Category | Unit | Kcal/unit | Water L/unit | Target |
+|---------|----------|------|-----------|--------------|--------|
+
+## Stock
+
+<!-- One row per lot: same product, same expiry date, same location. -->
+
+| Product | Qty | Expires | Location |
+|---------|-----|---------|----------|
+
+## Log
+
+<!-- What was consumed or discarded. Action is "consumed" or "discarded". -->
+
+| Date | Product | Qty | Action |
+|------|---------|-----|--------|
+"
+`;
