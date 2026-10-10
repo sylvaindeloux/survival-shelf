@@ -12,6 +12,12 @@ export interface Category {
 
 export const CATEGORIES: Category[] = [
   { key: 'water', icon: '💧', label: { en: 'Water', fr: 'Eau' }, consumable: true },
+  {
+    key: 'water-treatment',
+    icon: '🚰',
+    label: { en: 'Water treatment', fr: 'Traitement de l’eau' },
+    aliases: ['water-filter', 'filter', 'filters', 'filtre', 'filtres', 'purification', 'traitement-eau', 'traitement de l eau'],
+  },
   { key: 'grains', icon: '🌾', label: { en: 'Grains & starches', fr: 'Féculents' }, aliases: ['starches', 'cereals', 'cereales'], consumable: true },
   { key: 'legumes', icon: '🫘', label: { en: 'Legumes', fr: 'Légumineuses' }, aliases: ['pulses', 'beans'], consumable: true },
   { key: 'canned', icon: '🥫', label: { en: 'Canned food', fr: 'Conserves' }, aliases: ['cans'], consumable: true },
@@ -42,8 +48,21 @@ export function findCategory(text: string): Category | undefined {
   return BY_ALIAS.get(normalizeKey(text));
 }
 
+type Nature = { category: string; kcal: number | null; water: number | null };
+
+/** Filters and tablets: their water is the volume they can make drinkable, not stored water. */
+export function isWaterTreatment(product: { category: string }): boolean {
+  return findCategory(product.category)?.key === 'water-treatment';
+}
+
+/** Stored drinking water: bottles, jerrycans… Counted in liters against the water need. */
+export function isStoredWater(product: Nature): boolean {
+  return (product.water ?? 0) > 0 && !isWaterTreatment(product);
+}
+
 /** True for food and water: things that are eaten and can be rotated. */
-export function isConsumable(product: { category: string; kcal: number | null; water: number | null }): boolean {
+export function isConsumable(product: Nature): boolean {
+  if (isWaterTreatment(product)) return false;
   return (product.kcal ?? 0) > 0 || (product.water ?? 0) > 0 || findCategory(product.category)?.consumable === true;
 }
 

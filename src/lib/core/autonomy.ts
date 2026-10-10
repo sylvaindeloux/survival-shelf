@@ -1,3 +1,4 @@
+import { isStoredWater, isWaterTreatment } from './categories';
 import type { Day } from './dates';
 import { findProduct, lotExpiry } from './stock';
 import type { Shelf } from './types';
@@ -19,7 +20,10 @@ export interface ResourceAutonomy {
 
 export interface Autonomy {
   food: ResourceAutonomy;
+  /** Stored drinking water only: treating water needs time, gear and a source. */
   water: ResourceAutonomy;
+  /** Liters that water treatment in stock (filters, tablets) can make drinkable. */
+  treatmentLiters: number;
   /** Overall autonomy: the weakest of food and water. */
   days: number;
   limitedBy: 'food' | 'water' | null;
@@ -60,8 +64,9 @@ function resource(shelf: Shelf, today: Day, field: 'kcal' | 'water', dailyNeed: 
   const portions: Portion[] = [];
   let expired = 0;
   for (const lot of shelf.lots) {
-    const perUnit = findProduct(shelf, lot.product)?.[field] ?? 0;
-    const amount = lot.qty * perUnit;
+    const product = findProduct(shelf, lot.product);
+    if (!product || (field === 'water' && !isStoredWater(product))) continue;
+    const amount = lot.qty * (product[field] ?? 0);
     if (amount <= 0) continue;
     // A lot expiring on day D can still be used on day D.
     const end = lotExpiry(lot) - today + 1;
@@ -84,8 +89,13 @@ export function computeAutonomy(shelf: Shelf, today: Day): Autonomy {
   const { people, kcalPerPersonPerDay, waterPerPersonPerDay } = shelf.settings;
   const food = resource(shelf, today, 'kcal', people * kcalPerPersonPerDay);
   const water = resource(shelf, today, 'water', people * waterPerPersonPerDay);
+  let treatmentLiters = 0;
+  for (const lot of shelf.lots) {
+    const product = findProduct(shelf, lot.product);
+    if (product && isWaterTreatment(product) && lotExpiry(lot) >= today) treatmentLiters += lot.qty * (product.water ?? 0);
+  }
   const days = Math.min(food.days, water.days);
   let limitedBy: Autonomy['limitedBy'] = null;
   if (Number.isFinite(days)) limitedBy = food.days <= water.days ? 'food' : 'water';
-  return { food, water, days, limitedBy };
+  return { food, water, treatmentLiters, days, limitedBy };
 }

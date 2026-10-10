@@ -25,7 +25,18 @@ export function byExpiry(a: Lot, b: Lot): number {
 }
 
 export function emptyProduct(name: string): Product {
-  return { name, category: 'other', unit: '', kcal: null, water: null, target: null, notes: '', extra: {} };
+  return {
+    name,
+    category: 'other',
+    unit: '',
+    kcal: null,
+    water: null,
+    daily: null,
+    per: 'person',
+    target: null,
+    notes: '',
+    extra: {},
+  };
 }
 
 /**

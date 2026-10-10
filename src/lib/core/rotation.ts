@@ -18,6 +18,8 @@ export interface RotationItem {
   consumeBy: Day;
   /** True when the next lot is already within the rotation margin. */
   due: boolean;
+  /** Quantity in the lots that have an expiry date and are not expired. */
+  qty: number;
 }
 
 export interface RotationPlan {
@@ -57,7 +59,7 @@ export function rotationPlan(shelf: Shelf, today: Day): RotationPlan {
       perWeek = Math.max(perWeek, (cumulative / available) * 7);
     }
     const consumeBy = lotExpiry(lots[0]) - margin;
-    items.push({ product, perWeek: round(perWeek, 2), nextLot: lots[0], consumeBy, due: consumeBy <= today });
+    items.push({ product, perWeek: round(perWeek, 2), nextLot: lots[0], consumeBy, due: consumeBy <= today, qty: round(cumulative) });
   }
 
   items.sort((a, b) => a.consumeBy - b.consumeBy);

@@ -1,13 +1,20 @@
 import type { Layout, SectionLayout, SectionName, Settings, Shelf } from './types';
 
+export const DEFAULT_TIERS = [7, 30, 365];
+
 export const DEFAULT_SETTINGS: Settings = {
-  people: 2,
+  people: 1,
   kcalPerPersonPerDay: 2200,
   waterPerPersonPerDay: 3,
-  targetDays: 30,
+  tiers: DEFAULT_TIERS,
+  rhythm: 'weekly',
   warningDays: 60,
   rotationMarginDays: 30,
 };
+
+export function defaultSettings(): Settings {
+  return { ...DEFAULT_SETTINGS, tiers: [...DEFAULT_TIERS] };
+}
 
 export const SECTION_ORDER: SectionName[] = ['settings', 'products', 'stock', 'log'];
 
@@ -23,7 +30,8 @@ const SECTION_DEFAULTS: Record<SectionName, SectionLayout> = {
   settings: { heading: 'Settings', before: '', after: '', table: null },
   products: {
     heading: 'Products',
-    before: '<!-- One row per product. Kcal and Water are per unit. Target is the quantity you want to keep in stock. -->',
+    before:
+      '<!-- One row per product. Kcal and Water are per unit. Daily use sets what each tier needs, Target is a minimum to own. Per: person or household. -->',
     after: '',
     table: null,
   },
@@ -55,7 +63,7 @@ export function defaultLayout(): Layout {
 
 export function emptyShelf(): Shelf {
   return {
-    settings: { ...DEFAULT_SETTINGS },
+    settings: defaultSettings(),
     settingsExtra: [],
     products: [],
     lots: [],

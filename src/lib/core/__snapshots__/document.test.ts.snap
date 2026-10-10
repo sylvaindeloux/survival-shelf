@@ -10,21 +10,22 @@ exports[`serializeShelf > writes a complete commented template for a new shelf 1
 
 ## Settings
 
-| Setting                    | Value |
-|----------------------------|-------|
-| People                     | 2     |
-| Kcal per person per day    | 2200  |
-| Water L per person per day | 3     |
-| Target autonomy days       | 30    |
-| Expiry warning days        | 60    |
-| Rotation margin days       | 30    |
+| Setting                    | Value      |
+|----------------------------|------------|
+| People                     | 1          |
+| Kcal per person per day    | 2200       |
+| Water L per person per day | 3          |
+| Tiers (days)               | 7, 30, 365 |
+| Check-in                   | weekly     |
+| Expiry warning days        | 60         |
+| Rotation margin days       | 30         |
 
 ## Products
 
-<!-- One row per product. Kcal and Water are per unit. Target is the quantity you want to keep in stock. -->
+<!-- One row per product. Kcal and Water are per unit. Daily use sets what each tier needs, Target is a minimum to own. Per: person or household. -->
 
-| Product | Category | Unit | Kcal/unit | Water L/unit | Target |
-|---------|----------|------|-----------|--------------|--------|
+| Product | Category | Unit | Kcal/unit | Water L/unit | Daily use | Per | Target |
+|---------|----------|------|-----------|--------------|-----------|-----|--------|
 
 ## Stock
 

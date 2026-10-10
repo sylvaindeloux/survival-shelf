@@ -1,19 +1,26 @@
 /** Values of columns the app does not know about, keyed by their header text. */
 export type Extra = Record<string, string>;
 
+/** How often the app prepares the list of what to consume, buy and discard. */
+export type Rhythm = 'weekly' | 'monthly';
+
 export interface Settings {
   /** Number of people living on the stock. */
   people: number;
   kcalPerPersonPerDay: number;
   /** Liters of water per person per day (drinking + cooking + minimal hygiene). */
   waterPerPersonPerDay: number;
-  /** Autonomy goal, in days. */
-  targetDays: number;
+  /** Autonomy tiers to build up, in days, ascending (1 week, 1 month, 1 year by default). */
+  tiers: number[];
+  rhythm: Rhythm;
   /** A lot is "expiring soon" when it expires within this many days. */
   warningDays: number;
   /** Rotation aims to consume each lot this many days before it expires. */
   rotationMarginDays: number;
 }
+
+/** Whether a product's quantities are per person or for the whole household. */
+export type Per = 'person' | 'household';
 
 export interface Product {
   name: string;
@@ -22,9 +29,12 @@ export interface Product {
   unit: string;
   /** Energy per unit. */
   kcal: number | null;
-  /** Liters of drinkable water per unit. */
+  /** Liters of drinkable water per unit (or liters it can make drinkable, for water treatment). */
   water: number | null;
-  /** Quantity (in units) to keep in stock. */
+  /** Units used per day, per person or for the household (see `per`). Sets the target of each tier. */
+  daily: number | null;
+  per: Per;
+  /** Minimum quantity to own whatever the tier (gear, first aid…), per person or for the household. */
   target: number | null;
   notes: string;
   extra: Extra;

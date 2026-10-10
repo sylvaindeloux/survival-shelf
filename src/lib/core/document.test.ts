@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { parseShelf, serializeShelf } from './document';
 import { emptyShelf } from './defaults';
+import { emptyProduct } from './stock';
 
 const SAMPLE = `# My stock
 
@@ -124,6 +125,53 @@ Beans | can | red \\| white
     expect(issues.map((issue) => issue.code)).toEqual(['duplicateSection', 'duplicateProduct']);
   });
 
+  it('reads daily use, per, tiers and check-in rhythm', () => {
+    const { shelf, issues } = parseShelf(`## Paramètres
+
+| Réglage | Valeur |
+|---|---|
+| Paliers | 3; 90, 7 |
+| Rendez-vous | mensuel |
+
+## Produits
+
+| Produit | Unité | Conso/jour | Par | Objectif |
+|---|---|---|---|---|
+| Riz | kg | 0,08 | personne | |
+| Couches | pièce | 6 | foyer | |
+| Lampe | pièce | | | 1 |
+| Savon | pièce | 0.03 | everyone | |
+`);
+    expect(shelf.settings.tiers).toEqual([3, 7, 90]);
+    expect(shelf.settings.rhythm).toBe('monthly');
+    expect(shelf.products.map((p) => [p.name, p.daily, p.per, p.target])).toEqual([
+      ['Riz', 0.08, 'person', null],
+      ['Couches', 6, 'household', null],
+      ['Lampe', null, 'person', 1],
+      ['Savon', 0.03, 'person', null],
+    ]);
+    expect(issues).toEqual([{ level: 'warning', line: 15, code: 'invalidPer', params: { value: 'everyone' } }]);
+    const text = serializeShelf(shelf);
+    expect(text).toContain('| Paliers                    | 3, 7, 90 |');
+    expect(text).toContain('| Rendez-vous                | monthly  |');
+    expect(text).toContain('| Couches | pièce | 6          | household |          |');
+    expect(text).toContain('| Lampe   | pièce |            | person    | 1        |');
+    expect(parseShelf(text).shelf.products).toEqual(shelf.products);
+  });
+
+  it('keeps the default tiers when the setting is invalid', () => {
+    const { shelf, issues } = parseShelf(`## Settings
+
+| Setting | Value |
+|---|---|
+| Tiers (days) | 7, one month |
+| Check-in | daily |
+`);
+    expect(shelf.settings.tiers).toEqual([7, 30, 365]);
+    expect(shelf.settings.rhythm).toBe('weekly');
+    expect(issues.map((issue) => issue.code)).toEqual(['invalidSetting', 'invalidSetting']);
+  });
+
   it('returns a default shelf for an empty file', () => {
     const { shelf, issues } = parseShelf('');
     expect(issues).toEqual([]);
@@ -136,7 +184,7 @@ describe('serializeShelf', () => {
     const { shelf } = parseShelf(SAMPLE);
     const text = serializeShelf(shelf);
     expect(text).toContain('# My stock\n\nSome notes about my cellar.');
-    expect(text).toContain('| Favourite colour           | green |');
+    expect(text).toContain('| Favourite colour           | green      |');
     expect(text).toContain('| Brand        |');
     expect(text).toContain('<!-- one row per lot -->');
     expect(text).toContain('Text after the table.');
@@ -171,16 +219,7 @@ describe('serializeShelf', () => {
 
   it('escapes pipes and newlines in cells', () => {
     const shelf = emptyShelf();
-    shelf.products.push({
-      name: 'A | B',
-      category: 'other',
-      unit: '',
-      kcal: null,
-      water: null,
-      target: null,
-      notes: 'line 1\nline 2',
-      extra: {},
-    });
+    shelf.products.push({ ...emptyProduct('A | B'), notes: 'line 1\nline 2' });
     const text = serializeShelf(shelf);
     expect(text).toContain('A \\| B');
     expect(parseShelf(text).shelf.products[0]).toMatchObject({ name: 'A | B', notes: 'line 1 line 2' });

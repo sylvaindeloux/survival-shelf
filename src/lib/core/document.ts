@@ -1,5 +1,5 @@
 import { normalizeCategory } from './categories';
-import { DEFAULT_SETTINGS, SECTION_ORDER, defaultLayout, defaultSectionLayout } from './defaults';
+import { SECTION_ORDER, defaultLayout, defaultSectionLayout, defaultSettings } from './defaults';
 import { isValidDate, normalizeDate } from './dates';
 import { newLotId } from './ids';
 import { formatTable, isSeparatorRow, isTableLine, splitRow } from './table';
@@ -10,8 +10,10 @@ import type {
   LogEntry,
   Lot,
   ParseIssue,
+  Per,
   ParseResult,
   Product,
+  Rhythm,
   SectionLayout,
   SectionName,
   Settings,
@@ -60,9 +62,36 @@ const PRODUCT_COLUMNS: ColumnDef[] = [
     aliases: ['waterlunit', 'water', 'waterl', 'waterperunit', 'eau', 'eaul', 'eaulunite', 'eauunite'],
     always: true,
   },
-  { key: 'target', label: 'Target', aliases: ['target', 'objectif', 'cible', 'goal', 'min', 'minimum'], always: true },
+  {
+    key: 'daily',
+    label: 'Daily use',
+    aliases: ['dailyuse', 'daily', 'perday', 'useperday', 'dailyusage', 'consojour', 'consoparjour', 'conso', 'consommation', 'consommationjour', 'consommationparjour', 'parjour'],
+    always: true,
+  },
+  { key: 'per', label: 'Per', aliases: ['per', 'par', 'basis', 'base', 'pour', 'for'], always: true },
+  { key: 'target', label: 'Target', aliases: ['target', 'objectif', 'cible', 'goal', 'min', 'minimum', 'own', 'avoir'], always: true },
   { key: 'notes', label: 'Notes', aliases: ['notes', 'note', 'remarques', 'remarque', 'comment', 'comments', 'commentaire', 'commentaires'] },
 ];
+
+const PER_ALIASES: Record<string, Per> = {
+  person: 'person',
+  persons: 'person',
+  people: 'person',
+  pers: 'person',
+  each: 'person',
+  personne: 'person',
+  personnes: 'person',
+  chacun: 'person',
+  household: 'household',
+  home: 'household',
+  family: 'household',
+  fixed: 'household',
+  total: 'household',
+  foyer: 'household',
+  maison: 'household',
+  famille: 'household',
+  fixe: 'household',
+};
 
 const STOCK_COLUMNS: ColumnDef[] = [
   { key: 'product', label: 'Product', aliases: ['product', 'produit', 'name', 'nom', 'item', 'article'], always: true },
@@ -92,45 +121,88 @@ const COLUMNS: Record<SectionName, ColumnDef[]> = {
   log: LOG_COLUMNS,
 };
 
+const RHYTHM_ALIASES: Record<string, Rhythm> = {
+  weekly: 'weekly',
+  week: 'weekly',
+  hebdo: 'weekly',
+  hebdomadaire: 'weekly',
+  semaine: 'weekly',
+  monthly: 'monthly',
+  month: 'monthly',
+  mensuel: 'monthly',
+  mois: 'monthly',
+};
+
 interface SettingDef {
   field: keyof Settings;
   label: string;
   aliases: string[];
-  min: number;
+  /** Parsed value, or undefined when the text is invalid. */
+  read: (text: string) => Settings[keyof Settings] | undefined;
+  write: (settings: Settings) => string;
+}
+
+function numberSetting(field: keyof Settings, label: string, aliases: string[], min: number): SettingDef {
+  return {
+    field,
+    label,
+    aliases,
+    read: (text) => {
+      const value = parseNumber(text);
+      return value === null || Number.isNaN(value) || value < min ? undefined : value;
+    },
+    write: (settings) => formatNumber(settings[field] as number),
+  };
+}
+
+/** "7, 30, 365": positive whole numbers of days, any separator. */
+export function parseTiers(text: string): number[] | undefined {
+  const parts = text.split(/[\s,;/]+/).filter((part) => part !== '');
+  const days = parts.map((part) => parseNumber(part));
+  if (days.length === 0 || days.some((day) => day === null || !Number.isInteger(day) || day <= 0)) return undefined;
+  return [...new Set(days as number[])].sort((a, b) => a - b);
 }
 
 const SETTING_DEFS: SettingDef[] = [
-  { field: 'people', label: 'People', aliases: ['people', 'persons', 'personnes', 'household', 'foyer', 'nbpersonnes'], min: 1 },
+  numberSetting('people', 'People', ['people', 'persons', 'personnes', 'household', 'foyer', 'nbpersonnes'], 1),
+  numberSetting(
+    'kcalPerPersonPerDay',
+    'Kcal per person per day',
+    ['kcalperpersonperday', 'kcalperperson', 'kcalparpersonneparjour', 'kcalparpersonne', 'caloriesperpersonperday'],
+    1,
+  ),
+  numberSetting(
+    'waterPerPersonPerDay',
+    'Water L per person per day',
+    ['waterlperpersonperday', 'waterperpersonperday', 'eaulparpersonneparjour', 'eauparpersonneparjour'],
+    0,
+  ),
   {
-    field: 'kcalPerPersonPerDay',
-    label: 'Kcal per person per day',
-    aliases: ['kcalperpersonperday', 'kcalperperson', 'kcalparpersonneparjour', 'kcalparpersonne', 'caloriesperpersonperday'],
-    min: 1,
+    field: 'tiers',
+    label: 'Tiers (days)',
+    aliases: ['tiers', 'tiersdays', 'autonomytiers', 'paliers', 'paliersjours', 'paliersdautonomie', 'niveaux'],
+    read: parseTiers,
+    write: (settings) => settings.tiers.join(', '),
   },
   {
-    field: 'waterPerPersonPerDay',
-    label: 'Water L per person per day',
-    aliases: ['waterlperpersonperday', 'waterperpersonperday', 'eaulparpersonneparjour', 'eauparpersonneparjour'],
-    min: 0,
+    field: 'rhythm',
+    label: 'Check-in',
+    aliases: ['checkin', 'rhythm', 'frequency', 'rendezvous', 'rythme', 'frequence'],
+    read: (text) => RHYTHM_ALIASES[normalizeKey(text)],
+    write: (settings) => settings.rhythm,
   },
-  {
-    field: 'targetDays',
-    label: 'Target autonomy days',
-    aliases: ['targetautonomydays', 'targetdays', 'targetautonomy', 'objectifautonomiejours', 'objectifautonomie', 'objectifjours'],
-    min: 1,
-  },
-  {
-    field: 'warningDays',
-    label: 'Expiry warning days',
-    aliases: ['expirywarningdays', 'warningdays', 'expirywarning', 'alerteperemptionjours', 'alerteperemption', 'alertejours'],
-    min: 0,
-  },
-  {
-    field: 'rotationMarginDays',
-    label: 'Rotation margin days',
-    aliases: ['rotationmargindays', 'rotationmargin', 'margerotationjours', 'margederotationjours', 'margerotation', 'margederotation'],
-    min: 0,
-  },
+  numberSetting(
+    'warningDays',
+    'Expiry warning days',
+    ['expirywarningdays', 'warningdays', 'expirywarning', 'alerteperemptionjours', 'alerteperemption', 'alertejours'],
+    0,
+  ),
+  numberSetting(
+    'rotationMarginDays',
+    'Rotation margin days',
+    ['rotationmargindays', 'rotationmargin', 'margerotationjours', 'margederotationjours', 'margerotation', 'margederotation'],
+    0,
+  ),
 ];
 
 const SETTING_BY_ALIAS = new Map<string, SettingDef>(
@@ -296,12 +368,12 @@ function readSettings(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
       shelf.settingsExtra.push({ label, value });
       continue;
     }
-    const number = parseNumber(value);
-    if (number === null || Number.isNaN(number) || number < def.min) {
+    const parsed = def.read(value);
+    if (parsed === undefined) {
       issues.push({ level: 'warning', line: row.line, code: 'invalidSetting', params: { setting: label, value } });
       continue;
     }
-    shelf.settings[def.field] = number;
+    (shelf.settings as unknown as Record<string, unknown>)[def.field] = parsed;
     shelf.layout.settingsLabels[def.field] = label;
   }
 }
@@ -319,14 +391,24 @@ function readProducts(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
     }
     const kcal = readNumber(row, 'kcal', issues, { min: 0 });
     const water = readNumber(row, 'water', issues, { min: 0 });
+    const daily = readNumber(row, 'daily', issues, { min: 0 });
     const target = readNumber(row, 'target', issues, { min: 0 });
-    if (kcal === undefined || water === undefined || target === undefined) continue;
+    if (kcal === undefined || water === undefined || daily === undefined || target === undefined) continue;
+    const perText = (row.values.per ?? '').trim();
+    let per: Per = 'person';
+    if (perText !== '') {
+      const known = PER_ALIASES[normalizeKey(perText)];
+      if (known) per = known;
+      else issues.push({ level: 'warning', line: row.line, code: 'invalidPer', params: { value: perText } });
+    }
     shelf.products.push({
       name,
       category: normalizeCategory(row.values.category ?? ''),
       unit: (row.values.unit ?? '').trim(),
       kcal,
       water,
+      daily,
+      per,
       target,
       notes: (row.values.notes ?? '').trim(),
       extra: row.extra,
@@ -343,6 +425,8 @@ function findOrCreateProduct(shelf: Shelf, name: string, line: number, issues: P
     unit: '',
     kcal: null,
     water: null,
+    daily: null,
+    per: 'person',
     target: null,
     notes: '',
     extra: {},
@@ -412,7 +496,7 @@ function readLog(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
 export function parseShelf(text: string): ParseResult {
   const issues: ParseIssue[] = [];
   const shelf: Shelf = {
-    settings: { ...DEFAULT_SETTINGS },
+    settings: defaultSettings(),
     settingsExtra: [],
     products: [],
     lots: [],
@@ -452,7 +536,7 @@ export function parseShelf(text: string): ParseResult {
 function settingsRows(shelf: Shelf): Record<string, string>[] {
   const known = SETTING_DEFS.map((def) => ({
     label: shelf.layout.settingsLabels[def.field] ?? def.label,
-    value: formatNumber(shelf.settings[def.field]),
+    value: def.write(shelf.settings),
   }));
   return [...known, ...shelf.settingsExtra.map((row: SettingRow) => ({ ...row }))];
 }
@@ -464,6 +548,9 @@ function productRow(product: Product): Record<string, string> {
     unit: product.unit,
     kcal: formatNumber(product.kcal),
     water: formatNumber(product.water),
+    daily: formatNumber(product.daily),
+    // "person" is the default: only spelled out when it matters.
+    per: product.per === 'household' || product.daily !== null || product.target !== null ? product.per : '',
     target: formatNumber(product.target),
     notes: product.notes,
   };
