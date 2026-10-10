@@ -23,9 +23,9 @@ keeps your data in a **plain Markdown file** you can read and edit by hand.
 - **Autonomy tiers**: 1 week, 1 month and 1 year by default (editable). Each product has a use per day or a
   minimum to own, per person or for the household; the app works out what every tier needs and shows how far
   along you are. Beyond a month of stored water, filters and purification tablets take over.
-- **Weekly or monthly check-in**: one list with the expired lots to discard, what to eat this week so nothing
-  expires (progressive rotation, oldest first), and what to buy for the tier being built. Tick things off in
-  one tap, share or copy the list.
+- **Check-in every week, month, quarter or 6 months**: one list with the expired lots to discard, what to eat
+  so nothing expires (progressive rotation, oldest first), and what to buy for the tier being built. Tick things
+  off in one tap, share or copy the list.
 - **Calendar reminder**: without a server the app cannot notify you, so it gives you a recurring `.ics` event
   for your calendar (iPhone, Google, Outlook…).
 - **Stock by product and lot**: quantity, expiry date (day or month precision), location. Color-coded expiry

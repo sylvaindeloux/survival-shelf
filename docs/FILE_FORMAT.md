@@ -50,12 +50,13 @@ A two-column table: `Setting | Value`.
 | `Kcal per person per day`    | 2200         | Daily energy need of one person                                         |
 | `Water L per person per day` | 3            | Liters of water per person per day (drinking, cooking, hygiene)         |
 | `Tiers (days)`               | `7, 30, 365` | Autonomy tiers to build, in days, separated by commas or spaces         |
-| `Check-in`                   | `weekly`     | How often the app lists what to discard, eat and buy: `weekly` or `monthly` |
+| `Check-in`                   | `weekly`     | How often the app lists what to discard, eat and buy: `weekly`, `monthly`, `quarterly` or `semiannual` |
 | `Expiry warning days`        | 60           | Lots expiring within this delay are flagged as "expiring soon"          |
 | `Rotation margin days`       | 30           | The rotation aims to finish each lot this long before it expires        |
 
 French names work too (`Personnes`, `Paliers`, `Rendez-vous`…), as do French values for the check-in
-(`hebdo`, `mensuel`). Unknown settings are kept as is. An invalid value is reported and the default is used.
+(`hebdo`, `mensuel`, `trimestriel`, `semestriel` or `6 mois`). Unknown settings are kept as is. An invalid value
+is reported and the default is used.
 
 ## Products
 

@@ -433,9 +433,10 @@ textarea {
 }
 
 .segmented button {
-  flex: 1;
+  flex: 1 1 auto;
   min-height: 34px;
-  padding: 0 0.75rem;
+  padding: 0 0.5rem;
+  white-space: nowrap;
   border: none;
   border-radius: 999px;
   background: transparent;
@@ -443,6 +444,14 @@ textarea {
   font-weight: 600;
   color: var(--muted);
   cursor: pointer;
+}
+
+/* Small phones: four choices still fit on one line. */
+@media (max-width: 359px) {
+  .segmented button {
+    padding: 0 0.35rem;
+    font-size: 0.8rem;
+  }
 }
 
 .segmented button.active {

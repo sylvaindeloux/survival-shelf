@@ -15,6 +15,8 @@ export const fr: Record<keyof typeof en, string> = {
   'nav.stock': 'Stock',
   'nav.checkinWeekly': 'Semaine',
   'nav.checkinMonthly': 'Mois',
+  'nav.checkinQuarterly': 'Trimestre',
+  'nav.checkinSemiannual': '6 mois',
   'nav.plan': 'Plan',
   'nav.settings': 'Réglages',
 
@@ -124,8 +126,12 @@ export const fr: Record<keyof typeof en, string> = {
 
   'checkin.titleWeekly': 'Cette semaine',
   'checkin.titleMonthly': 'Ce mois-ci',
+  'checkin.titleQuarterly': 'Ce trimestre',
+  'checkin.titleSemiannual': 'Ce semestre',
   'checkin.subtitleWeekly': 'Ton rendez-vous de la semaine : jeter, manger, acheter.',
   'checkin.subtitleMonthly': 'Ton rendez-vous du mois : jeter, manger, acheter.',
+  'checkin.subtitleQuarterly': 'Ton rendez-vous du trimestre : jeter, manger, acheter.',
+  'checkin.subtitleSemiannual': 'Ton rendez-vous des 6 mois : jeter, manger, acheter.',
   'checkin.discardTitle': 'À jeter',
   'checkin.discardText': 'Périmés : vérifie-les, puis jette-les ou mange-les s’ils sont encore bons.',
   'checkin.discarded': 'Jeté',
@@ -134,6 +140,10 @@ export const fr: Record<keyof typeof en, string> = {
     'Mange ça cette semaine depuis ton stock, puis remplace-le : chaque lot est fini {margin} jours avant sa date.',
   'checkin.consumeTextMonthly':
     'Mange ça ce mois-ci depuis ton stock, puis remplace-le : chaque lot est fini {margin} jours avant sa date.',
+  'checkin.consumeTextQuarterly':
+    'Mange ça d’ici 3 mois depuis ton stock, puis remplace-le : chaque lot est fini {margin} jours avant sa date.',
+  'checkin.consumeTextSemiannual':
+    'Mange ça d’ici 6 mois depuis ton stock, puis remplace-le : chaque lot est fini {margin} jours avant sa date.',
   'checkin.consumeEmpty': 'Rien à manger en avance : aucun lot n’approche de sa date.',
   'checkin.done': 'C’est fait',
   'checkin.overload': 'C’est plus que ce que tu peux manger : pense à donner ce que tu ne finiras pas à temps.',
@@ -260,6 +270,8 @@ export const fr: Record<keyof typeof en, string> = {
   'settings.rhythm': 'Rendez-vous',
   'settings.weekly': 'Semaine',
   'settings.monthly': 'Mois',
+  'settings.quarterly': 'Trimestre',
+  'settings.semiannual': '6 mois',
   'settings.rhythmHint': 'À quelle fréquence l’appli liste quoi jeter, manger et acheter.',
 
   'settings.alerts': 'Alertes et rotation',

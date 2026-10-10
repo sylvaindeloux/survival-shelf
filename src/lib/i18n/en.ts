@@ -14,6 +14,8 @@ export const en = {
   'nav.stock': 'Stock',
   'nav.checkinWeekly': 'This week',
   'nav.checkinMonthly': 'This month',
+  'nav.checkinQuarterly': 'This quarter',
+  'nav.checkinSemiannual': 'Half-year',
   'nav.plan': 'Plan',
   'nav.settings': 'Settings',
 
@@ -121,8 +123,12 @@ export const en = {
 
   'checkin.titleWeekly': 'This week',
   'checkin.titleMonthly': 'This month',
+  'checkin.titleQuarterly': 'This quarter',
+  'checkin.titleSemiannual': 'This half-year',
   'checkin.subtitleWeekly': 'Your weekly check-in: discard, eat, buy.',
   'checkin.subtitleMonthly': 'Your monthly check-in: discard, eat, buy.',
+  'checkin.subtitleQuarterly': 'Your quarterly check-in: discard, eat, buy.',
+  'checkin.subtitleSemiannual': 'Your half-yearly check-in: discard, eat, buy.',
   'checkin.discardTitle': 'To discard',
   'checkin.discardText': 'Expired: check them, then discard them or eat them if they are still fine.',
   'checkin.discarded': 'Discarded',
@@ -131,6 +137,10 @@ export const en = {
     'Eat this from your stock this week, then replace it: every lot is finished {margin} days before its date.',
   'checkin.consumeTextMonthly':
     'Eat this from your stock this month, then replace it: every lot is finished {margin} days before its date.',
+  'checkin.consumeTextQuarterly':
+    'Eat this from your stock over the next 3 months, then replace it: every lot is finished {margin} days before its date.',
+  'checkin.consumeTextSemiannual':
+    'Eat this from your stock over the next 6 months, then replace it: every lot is finished {margin} days before its date.',
   'checkin.consumeEmpty': 'Nothing to eat in advance: no lot is close to its date.',
   'checkin.done': 'Done',
   'checkin.overload': 'That is more than you can eat: consider donating what you will not finish in time.',
@@ -255,6 +265,8 @@ export const en = {
   'settings.rhythm': 'Check-in',
   'settings.weekly': 'Week',
   'settings.monthly': 'Month',
+  'settings.quarterly': 'Quarter',
+  'settings.semiannual': '6 months',
   'settings.rhythmHint': 'How often the app lists what to discard, eat and buy.',
 
   'settings.alerts': 'Alerts & rotation',

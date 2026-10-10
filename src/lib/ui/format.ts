@@ -2,7 +2,7 @@ import { findCategory } from '../core/categories';
 import { daysLeft, expiryStatus, type ExpiryStatus } from '../core/status';
 import type { Day } from '../core/dates';
 import type { Lot, Product, Rhythm, Settings } from '../core/types';
-import { formatDate, formatNumber, formatRelative, i18n, t } from '../i18n/index.svelte';
+import { formatDate, formatNumber, formatRelative, i18n, t, type MessageKey } from '../i18n/index.svelte';
 
 export function categoryIcon(category: string): string {
   return findCategory(category)?.icon ?? '📦';
@@ -77,9 +77,41 @@ export function tierLabel(days: number): string {
   return format(days, 'day');
 }
 
-/** "This week" or "This month", depending on the check-in rhythm. */
+/** Texts that depend on the check-in rhythm. */
+export const RHYTHM_TEXTS = {
+  weekly: {
+    choice: 'settings.weekly',
+    nav: 'nav.checkinWeekly',
+    title: 'checkin.titleWeekly',
+    subtitle: 'checkin.subtitleWeekly',
+    consume: 'checkin.consumeTextWeekly',
+  },
+  monthly: {
+    choice: 'settings.monthly',
+    nav: 'nav.checkinMonthly',
+    title: 'checkin.titleMonthly',
+    subtitle: 'checkin.subtitleMonthly',
+    consume: 'checkin.consumeTextMonthly',
+  },
+  quarterly: {
+    choice: 'settings.quarterly',
+    nav: 'nav.checkinQuarterly',
+    title: 'checkin.titleQuarterly',
+    subtitle: 'checkin.subtitleQuarterly',
+    consume: 'checkin.consumeTextQuarterly',
+  },
+  semiannual: {
+    choice: 'settings.semiannual',
+    nav: 'nav.checkinSemiannual',
+    title: 'checkin.titleSemiannual',
+    subtitle: 'checkin.subtitleSemiannual',
+    consume: 'checkin.consumeTextSemiannual',
+  },
+} satisfies Record<Rhythm, Record<string, MessageKey>>;
+
+/** "This week", "This month"…, depending on the check-in rhythm. */
 export function checkinTitle(rhythm: Rhythm): string {
-  return rhythm === 'monthly' ? t('checkin.titleMonthly') : t('checkin.titleWeekly');
+  return t(RHYTHM_TEXTS[rhythm].title);
 }
 
 /** Rotation pace, per week, month or year depending on what reads best. */

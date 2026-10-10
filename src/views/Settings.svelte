@@ -10,12 +10,13 @@
   import Unlink from '@lucide/svelte/icons/unlink';
   import X from '@lucide/svelte/icons/x';
   import { app, issueMessage } from '../lib/app.svelte';
+  import { RHYTHMS } from '../lib/core/checkin';
   import { updateSettings } from '../lib/core/stock';
   import { parseNumber } from '../lib/core/text';
   import type { Rhythm, Settings } from '../lib/core/types';
   import { i18n, t, tn, type LangPreference } from '../lib/i18n/index.svelte';
   import { canShareFiles } from '../lib/storage/files';
-  import { tierLabel } from '../lib/ui/format';
+  import { RHYTHM_TEXTS, tierLabel } from '../lib/ui/format';
   import { preferences, type Theme } from '../lib/ui/state.svelte';
 
   const REPO = 'https://github.com/sylvaindeloux/survival-shelf';
@@ -153,8 +154,9 @@
     <div class="field">
       <span>{t('settings.rhythm')}</span>
       <div class="segmented rhythm" role="group" aria-label={t('settings.rhythm')}>
-        <button type="button" class:active={app.shelf.settings.rhythm === 'weekly'} onclick={() => setRhythm('weekly')}>{t('settings.weekly')}</button>
-        <button type="button" class:active={app.shelf.settings.rhythm === 'monthly'} onclick={() => setRhythm('monthly')}>{t('settings.monthly')}</button>
+        {#each RHYTHMS as rhythm (rhythm)}
+          <button type="button" class:active={app.shelf.settings.rhythm === rhythm} onclick={() => setRhythm(rhythm)}>{t(RHYTHM_TEXTS[rhythm].choice)}</button>
+        {/each}
       </div>
       <span class="hint">{t('settings.rhythmHint')}</span>
     </div>
