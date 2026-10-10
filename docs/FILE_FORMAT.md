@@ -73,7 +73,7 @@ is reported and the default is used.
 | `Notes`        | Note, Remarques, Commentaire           |          | Anything you want                                            |
 
 Categories: `water`, `water-treatment`, `grains`, `legumes`, `canned`, `ready-meals`, `dairy`, `fats`,
-`sweets`, `drinks`, `condiments`, `baby`, `pets`, `hygiene`, `medical`, `energy`, `tools`, `other`. Their
+`sweets`, `drinks`, `condiments`, `pets`, `hygiene`, `medical`, `energy`, `tools`, `other`. Their
 English or French labels are accepted too (`Eau`, `Conserves`…). Food and water categories, and any product
 with calories or water, are part of the rotation.
 
@@ -93,7 +93,7 @@ the 1-week tier, 6 kg for the 1-month tier and 73 kg for the 1-year tier. A head
 person needs 2 for every tier.
 
 `Per` accepts `person` (also `personne`, `each`) and `household` (also `foyer`, `fixed`, `total`). Use
-`household` for what does not depend on the number of people: a radio, a first aid kit, a baby's diapers.
+`household` for what does not depend on the number of people: a radio, a first aid kit, pet food.
 
 **Water** is planned from the `Water L per person per day` setting, not with its own daily use:
 

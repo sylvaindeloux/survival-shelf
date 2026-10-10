@@ -17,7 +17,7 @@ keeps your data in a **plain Markdown file** you can read and edit by hand.
 
 ## Features
 
-- **Starter plan**: answer two questions (how many people, any baby, pet or daily medicine) and get a
+- **Starter plan**: answer a few questions (how many people, cats and dogs, any daily medicine) and get a
   balanced plan of about 2200 kcal per person per day, plus water, hygiene, first aid, energy and gear.
   Untick what does not suit you and adjust the amounts.
 - **Autonomy tiers**: 1 week, 1 month and 1 year by default (editable). Each product has a use per day or a

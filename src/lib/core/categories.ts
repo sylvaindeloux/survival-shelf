@@ -27,7 +27,6 @@ export const CATEGORIES: Category[] = [
   { key: 'sweets', icon: '🍫', label: { en: 'Sugar & snacks', fr: 'Sucré & en-cas' }, aliases: ['sugar', 'snacks', 'sucre'], consumable: true },
   { key: 'drinks', icon: '☕', label: { en: 'Drinks', fr: 'Boissons' }, consumable: true },
   { key: 'condiments', icon: '🧂', label: { en: 'Condiments & spices', fr: 'Condiments & épices' }, aliases: ['spices', 'epices'], consumable: true },
-  { key: 'baby', icon: '🍼', label: { en: 'Baby', fr: 'Bébé' }, consumable: true },
   { key: 'pets', icon: '🐾', label: { en: 'Pets', fr: 'Animaux' }, consumable: true },
   { key: 'hygiene', icon: '🧼', label: { en: 'Hygiene', fr: 'Hygiène' } },
   { key: 'medical', icon: '🩹', label: { en: 'Health & first aid', fr: 'Santé & secours' }, aliases: ['health', 'first-aid', 'sante', 'medicaments'] },

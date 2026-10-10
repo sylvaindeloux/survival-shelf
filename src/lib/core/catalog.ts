@@ -27,7 +27,10 @@ export interface CatalogItem {
   need?: Need;
 }
 
-export type Need = 'baby' | 'pet' | 'treatment';
+export type Need = 'cat' | 'dog' | 'treatment';
+
+/** Setup wizard answers: number of cats and dogs, 1 for a daily medicine. */
+export type Needs = Partial<Record<Need, number>>;
 
 const KG = { en: 'kg', fr: 'kg' };
 const L = { en: 'L', fr: 'L' };
@@ -97,10 +100,10 @@ export const CATALOG: CatalogItem[] = [
   item('tea', { en: 'Tea', fr: 'Thé' }, 'drinks', PACK, { shelfLife: 24 }),
   item('salt', { en: 'Salt', fr: 'Sel' }, 'condiments', KG, { daily: 0.005, starter: true }),
 
-  // Specific needs: per household, whatever the number of people.
-  item('infant-formula', { en: 'Infant formula 800 g', fr: 'Lait infantile 800 g' }, 'baby', CAN, { daily: 0.12, per: 'household', shelfLife: 18, need: 'baby' }),
-  item('diapers', { en: 'Diapers', fr: 'Couches' }, 'baby', UNIT, { daily: 6, per: 'household', need: 'baby' }),
-  item('pet-food', { en: 'Pet food (dry)', fr: 'Croquettes' }, 'pets', KG, { daily: 0.15, per: 'household', shelfLife: 12, need: 'pet' }),
+  // Specific needs: per household, whatever the number of people. Pet items are per animal.
+  item('cat-food', { en: 'Dry cat food', fr: 'Croquettes pour chat' }, 'pets', KG, { daily: 0.06, per: 'household', shelfLife: 12, need: 'cat' }),
+  item('cat-litter', { en: 'Cat litter', fr: 'Litière pour chat' }, 'pets', KG, { daily: 0.15, per: 'household', need: 'cat' }),
+  item('dog-food', { en: 'Dry dog food', fr: 'Croquettes pour chien' }, 'pets', KG, { daily: 0.25, per: 'household', shelfLife: 12, need: 'dog' }),
   item('daily-medicine', { en: 'Daily medicine', fr: 'Traitement quotidien' }, 'medical', TABLET, { daily: 1, per: 'household', shelfLife: 24, need: 'treatment' }),
 
   // Hygiene.
@@ -136,8 +139,15 @@ export function findCatalogItem(name: string): CatalogItem | undefined {
 }
 
 /** Items proposed by the setup wizard for a household with these needs. */
-export function starterItems(needs: Need[]): CatalogItem[] {
-  return CATALOG.filter((entry) => entry.starter || (entry.need !== undefined && needs.includes(entry.need)));
+export function starterItems(needs: Needs): CatalogItem[] {
+  return CATALOG.filter((entry) => entry.starter || (entry.need !== undefined && (needs[entry.need] ?? 0) > 0));
+}
+
+/** Suggested daily use or minimum to own in the starter plan: pet items count once per animal. */
+export function starterAmount(entry: CatalogItem, needs: Needs): number | null {
+  const amount = entry.daily ?? entry.target;
+  if (amount === null || entry.need === undefined) return amount;
+  return Math.round(amount * (needs[entry.need] ?? 1) * 1000) / 1000;
 }
 
 /** A product ready to add to the shelf, named in the given language. */

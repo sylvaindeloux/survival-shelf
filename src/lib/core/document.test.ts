@@ -138,7 +138,7 @@ Beans | can | red \\| white
 | Produit | Unité | Conso/jour | Par | Objectif |
 |---|---|---|---|---|
 | Riz | kg | 0,08 | personne | |
-| Couches | pièce | 6 | foyer | |
+| Croquettes | kg | 0,06 | foyer | |
 | Lampe | pièce | | | 1 |
 | Savon | pièce | 0.03 | everyone | |
 `);
@@ -146,7 +146,7 @@ Beans | can | red \\| white
     expect(shelf.settings.rhythm).toBe('monthly');
     expect(shelf.products.map((p) => [p.name, p.daily, p.per, p.target])).toEqual([
       ['Riz', 0.08, 'person', null],
-      ['Couches', 6, 'household', null],
+      ['Croquettes', 0.06, 'household', null],
       ['Lampe', null, 'person', 1],
       ['Savon', 0.03, 'person', null],
     ]);
@@ -154,8 +154,8 @@ Beans | can | red \\| white
     const text = serializeShelf(shelf);
     expect(text).toContain('| Paliers                    | 3, 7, 90 |');
     expect(text).toContain('| Rendez-vous                | monthly  |');
-    expect(text).toContain('| Couches | pièce | 6          | household |          |');
-    expect(text).toContain('| Lampe   | pièce |            | person    | 1        |');
+    expect(text).toContain('| Croquettes | kg    | 0.06       | household |          |');
+    expect(text).toContain('| Lampe      | pièce |            | person    | 1        |');
     expect(parseShelf(text).shelf.products).toEqual(shelf.products);
   });
 
