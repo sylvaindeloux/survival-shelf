@@ -15,6 +15,8 @@ export const fr: Record<keyof typeof en, string> = {
   'nav.stock': 'Stock',
   'nav.checkinWeekly': 'Semaine',
   'nav.checkinMonthly': 'Mois',
+  'nav.checkinQuarterly': 'Trimestre',
+  'nav.checkinSemiannual': '6 mois',
   'nav.plan': 'Plan',
   'nav.settings': 'Réglages',
 
@@ -69,13 +71,14 @@ export const fr: Record<keyof typeof en, string> = {
   'setup.back': 'Retour',
   'setup.next': 'Suivant',
   'setup.householdTitle': 'Ton foyer',
-  'setup.householdText': 'Deux questions pour préparer un plan de départ. Tu pourras tout modifier ensuite.',
+  'setup.householdText': 'Quelques questions pour préparer un plan de départ. Tu pourras tout modifier ensuite.',
   'setup.people': 'Combien de personnes ?',
-  'setup.needs': 'Des besoins particuliers ?',
-  'setup.needBaby': 'Un bébé',
-  'setup.needBabyHint': 'Lait infantile, couches',
-  'setup.needPet': 'Un animal',
-  'setup.needPetHint': 'Croquettes',
+  'setup.needs': 'Un besoin particulier ?',
+  'setup.pets': 'Des animaux ?',
+  'setup.cats': 'Chats',
+  'setup.catsHint': 'Croquettes, litière',
+  'setup.dogs': 'Chiens',
+  'setup.dogsHint': 'Croquettes',
   'setup.needTreatment': 'Un traitement quotidien',
   'setup.needTreatmentHint': 'Un médicament à ne pas manquer',
   'setup.planTitle': 'Ton plan de départ',
@@ -124,8 +127,12 @@ export const fr: Record<keyof typeof en, string> = {
 
   'checkin.titleWeekly': 'Cette semaine',
   'checkin.titleMonthly': 'Ce mois-ci',
+  'checkin.titleQuarterly': 'Ce trimestre',
+  'checkin.titleSemiannual': 'Ce semestre',
   'checkin.subtitleWeekly': 'Ton rendez-vous de la semaine : jeter, manger, acheter.',
   'checkin.subtitleMonthly': 'Ton rendez-vous du mois : jeter, manger, acheter.',
+  'checkin.subtitleQuarterly': 'Ton rendez-vous du trimestre : jeter, manger, acheter.',
+  'checkin.subtitleSemiannual': 'Ton rendez-vous des 6 mois : jeter, manger, acheter.',
   'checkin.discardTitle': 'À jeter',
   'checkin.discardText': 'Périmés : vérifie-les, puis jette-les ou mange-les s’ils sont encore bons.',
   'checkin.discarded': 'Jeté',
@@ -134,6 +141,10 @@ export const fr: Record<keyof typeof en, string> = {
     'Mange ça cette semaine depuis ton stock, puis remplace-le : chaque lot est fini {margin} jours avant sa date.',
   'checkin.consumeTextMonthly':
     'Mange ça ce mois-ci depuis ton stock, puis remplace-le : chaque lot est fini {margin} jours avant sa date.',
+  'checkin.consumeTextQuarterly':
+    'Mange ça d’ici 3 mois depuis ton stock, puis remplace-le : chaque lot est fini {margin} jours avant sa date.',
+  'checkin.consumeTextSemiannual':
+    'Mange ça d’ici 6 mois depuis ton stock, puis remplace-le : chaque lot est fini {margin} jours avant sa date.',
   'checkin.consumeEmpty': 'Rien à manger en avance : aucun lot n’approche de sa date.',
   'checkin.done': 'C’est fait',
   'checkin.overload': 'C’est plus que ce que tu peux manger : pense à donner ce que tu ne finiras pas à temps.',
@@ -188,6 +199,9 @@ export const fr: Record<keyof typeof en, string> = {
 
   'expiry.none': 'Sans date',
 
+  'keeps.months': 'Se conserve en général environ {months} mois.',
+  'keeps.never': 'Ne périme pas s’il est stocké au sec.',
+
   'lot.addTitle': 'Ajouter au stock',
   'lot.editTitle': 'Modifier le lot',
   'lot.product': 'Produit',
@@ -201,7 +215,7 @@ export const fr: Record<keyof typeof en, string> = {
   'lot.precisionMonth': 'Mois seulement',
   'lot.precisionNone': 'Sans date',
   'lot.monthHint': 'Compte comme le dernier jour du mois.',
-  'lot.shelfLife': 'Se conserve en général environ {months} mois.',
+  'lot.estimated': 'Date estimée d’après sa durée de conservation habituelle : mets celle de l’emballage si tu l’as.',
   'lot.location': 'Emplacement',
   'lot.locationPlaceholder': 'Cellier, garage, sac…',
   'lot.saveAndNext': 'Ajouter et continuer',
@@ -260,6 +274,8 @@ export const fr: Record<keyof typeof en, string> = {
   'settings.rhythm': 'Rendez-vous',
   'settings.weekly': 'Semaine',
   'settings.monthly': 'Mois',
+  'settings.quarterly': 'Trimestre',
+  'settings.semiannual': '6 mois',
   'settings.rhythmHint': 'À quelle fréquence l’appli liste quoi jeter, manger et acheter.',
 
   'settings.alerts': 'Alertes et rotation',

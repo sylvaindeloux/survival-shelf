@@ -17,22 +17,24 @@ keeps your data in a **plain Markdown file** you can read and edit by hand.
 
 ## Features
 
-- **Starter plan**: answer two questions (how many people, any baby, pet or daily medicine) and get a
+- **Starter plan**: answer a few questions (how many people, cats and dogs, any daily medicine) and get a
   balanced plan of about 2200 kcal per person per day, plus water, hygiene, first aid, energy and gear.
   Untick what does not suit you and adjust the amounts.
 - **Autonomy tiers**: 1 week, 1 month and 1 year by default (editable). Each product has a use per day or a
   minimum to own, per person or for the household; the app works out what every tier needs and shows how far
   along you are. Beyond a month of stored water, filters and purification tablets take over.
-- **Weekly or monthly check-in**: one list with the expired lots to discard, what to eat this week so nothing
-  expires (progressive rotation, oldest first), and what to buy for the tier being built. Tick things off in
-  one tap, share or copy the list.
+- **Check-in every week, month, quarter or 6 months**: one list with the expired lots to discard, what to eat
+  so nothing expires (progressive rotation, oldest first), and what to buy for the tier being built. Tick things
+  off in one tap, share or copy the list.
 - **Calendar reminder**: without a server the app cannot notify you, so it gives you a recurring `.ics` event
   for your calendar (iPhone, Google, Outlook…).
 - **Stock by product and lot**: quantity, expiry date (day or month precision), location. Color-coded expiry
   badges, search, filters by status and location. Consume or discard oldest first (FEFO), with undo.
 - **Autonomy**: how many days your household can live on the stock, for food (calories) and water. The
   estimate simulates eating oldest first and counts what would expire before its turn.
-- **Built-in catalog** of about 60 common items with approximate calories and shelf life.
+- **Built-in catalog** of about 60 common items with approximate calories and researched
+  [shelf lives](docs/SHELF_LIFE.md): when you skip the date of a lot, the app estimates one, and tells you what
+  to check on things that do not expire (recharge the power bank, review the first aid kit…).
 - **Printable inventory** with room to tally what you take, for when there is no power.
 - English and French, light and dark themes, phone and desktop layouts.
 

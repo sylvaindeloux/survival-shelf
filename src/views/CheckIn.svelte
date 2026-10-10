@@ -13,14 +13,14 @@
   import { formatDate, i18n, t } from '../lib/i18n/index.svelte';
   import ExpiryBadge from '../lib/ui/ExpiryBadge.svelte';
   import ReminderCard from '../lib/ui/ReminderCard.svelte';
-  import { categoryIcon, checkinTitle, formatLiters, quantity, tierLabel } from '../lib/ui/format';
+  import { categoryIcon, checkinTitle, formatLiters, quantity, RHYTHM_TEXTS, tierLabel } from '../lib/ui/format';
   import { dialogs, router } from '../lib/ui/state.svelte';
 
   const settings = $derived(app.shelf.settings);
   const checkin = $derived(app.checkin);
   const buy = $derived(checkin.buy);
   const water = $derived(buy ? waterWithoutProduct(buy) : { stored: 0, treatment: 0 });
-  const monthly = $derived(settings.rhythm === 'monthly');
+  const texts = $derived(RHYTHM_TEXTS[settings.rhythm]);
   const foodShort = $derived(buy !== null && buy.foodDays < buy.days && !buy.missing.some((line) => (line.product.kcal ?? 0) > 0));
   const overload = $derived(app.rotation.shareOfNeeds > 1);
   const canShare = typeof navigator.share === 'function';
@@ -75,7 +75,7 @@
   <header class="page-head">
     <div>
       <h1>{checkinTitle(settings.rhythm)}</h1>
-      <p class="muted">{monthly ? t('checkin.subtitleMonthly') : t('checkin.subtitleWeekly')}</p>
+      <p class="muted">{t(texts.subtitle)}</p>
     </div>
     <div class="row">
       {#if canShare}
@@ -110,7 +110,7 @@
   <section class="card step">
     <h2><span class="num-badge">{checkin.discard.length > 0 ? 2 : 1}</span>{t('checkin.consumeTitle')}</h2>
     <p class="small muted">
-      {monthly ? t('checkin.consumeTextMonthly', { margin: settings.rotationMarginDays }) : t('checkin.consumeTextWeekly', { margin: settings.rotationMarginDays })}
+      {t(texts.consume, { margin: settings.rotationMarginDays })}
     </p>
     {#if checkin.consume.length === 0}
       <p class="empty small">{t('checkin.consumeEmpty')}</p>

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { dayFromParts, formatDay, normalizeDate, parseDay, today } from './dates';
+import { dayFromParts, formatDay, monthsLater, normalizeDate, parseDay, today } from './dates';
 import { formatNumber, parseNumber } from './text';
 
 describe('dates', () => {
@@ -19,6 +19,12 @@ describe('dates', () => {
   it('normalizes while keeping month precision', () => {
     expect(normalizeDate('2027/3')).toBe('2027-03');
     expect(normalizeDate('2027.3.5')).toBe('2027-03-05');
+  });
+
+  it('estimates a month a number of months later', () => {
+    expect(monthsLater(dayFromParts(2026, 10, 10), 24)).toBe('2028-10');
+    expect(monthsLater(dayFromParts(2026, 10, 31), 3)).toBe('2027-01');
+    expect(monthsLater(dayFromParts(2026, 12, 1), 12)).toBe('2027-12');
   });
 
   it('uses the local calendar day', () => {

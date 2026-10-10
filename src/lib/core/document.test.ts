@@ -138,7 +138,7 @@ Beans | can | red \\| white
 | Produit | Unité | Conso/jour | Par | Objectif |
 |---|---|---|---|---|
 | Riz | kg | 0,08 | personne | |
-| Couches | pièce | 6 | foyer | |
+| Croquettes | kg | 0,06 | foyer | |
 | Lampe | pièce | | | 1 |
 | Savon | pièce | 0.03 | everyone | |
 `);
@@ -146,7 +146,7 @@ Beans | can | red \\| white
     expect(shelf.settings.rhythm).toBe('monthly');
     expect(shelf.products.map((p) => [p.name, p.daily, p.per, p.target])).toEqual([
       ['Riz', 0.08, 'person', null],
-      ['Couches', 6, 'household', null],
+      ['Croquettes', 0.06, 'household', null],
       ['Lampe', null, 'person', 1],
       ['Savon', 0.03, 'person', null],
     ]);
@@ -154,9 +154,18 @@ Beans | can | red \\| white
     const text = serializeShelf(shelf);
     expect(text).toContain('| Paliers                    | 3, 7, 90 |');
     expect(text).toContain('| Rendez-vous                | monthly  |');
-    expect(text).toContain('| Couches | pièce | 6          | household |          |');
-    expect(text).toContain('| Lampe   | pièce |            | person    | 1        |');
+    expect(text).toContain('| Croquettes | kg    | 0.06       | household |          |');
+    expect(text).toContain('| Lampe      | pièce |            | person    | 1        |');
     expect(parseShelf(text).shelf.products).toEqual(shelf.products);
+  });
+
+  it('reads the quarterly and half-yearly check-in in English or French', () => {
+    const rhythmOf = (value: string) => parseShelf(`## Settings\n\n| Setting | Value |\n|---|---|\n| Check-in | ${value} |\n`).shelf.settings.rhythm;
+    expect(['quarterly', 'Trimestriel', 'trimestre', '3 mois'].map(rhythmOf)).toEqual(Array(4).fill('quarterly'));
+    expect(['semiannual', 'Semestriel', '6 mois', 'half-year', '6 months'].map(rhythmOf)).toEqual(Array(5).fill('semiannual'));
+
+    const { shelf } = parseShelf('## Réglages\n\n| Réglage | Valeur |\n|---|---|\n| Rendez-vous | 6 mois |\n');
+    expect(serializeShelf(shelf)).toMatch(/\| Rendez-vous +\| semiannual +\|/);
   });
 
   it('keeps the default tiers when the setting is invalid', () => {

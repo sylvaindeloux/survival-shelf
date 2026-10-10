@@ -5,7 +5,10 @@ import { expiryAlerts } from './status';
 import { roundQuantity } from './text';
 import type { Lot, Product, Rhythm, Shelf } from './types';
 
-export const PERIOD_DAYS: Record<Rhythm, number> = { weekly: 7, monthly: 30 };
+export const PERIOD_DAYS: Record<Rhythm, number> = { weekly: 7, monthly: 30, quarterly: 91, semiannual: 182 };
+
+/** Check-in rhythms, from the most to the least frequent. */
+export const RHYTHMS = Object.keys(PERIOD_DAYS) as Rhythm[];
 
 export interface ConsumeItem {
   product: Product;
@@ -17,7 +20,7 @@ export interface ConsumeItem {
   due: boolean;
 }
 
-/** The regular check-in: what to discard, consume and buy this week or this month. */
+/** The regular check-in: what to discard, consume and buy until the next one. */
 export interface CheckIn {
   periodDays: number;
   /** Expired lots. */
