@@ -16,7 +16,7 @@ export const DEFAULT_PREAMBLE = `# Survival Shelf
 > Data file of [Survival Shelf](https://github.com/sylvaindeloux/survival-shelf).
 > You can edit it with any text editor: keep the \`## Section\` titles and the table header rows.
 > Dates are written \`YYYY-MM-DD\`, or \`YYYY-MM\` for "end of that month". Decimals use a dot.
-> Full syntax: https://github.com/sylvaindeloux/survival-shelf/blob/main/docs/FILE_FORMAT.md
+> Full syntax: https://github.com/sylvaindeloux/survival-shelf/blob/master/docs/FILE_FORMAT.md
 `;
 
 const SECTION_DEFAULTS: Record<SectionName, SectionLayout> = {

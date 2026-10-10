@@ -139,7 +139,7 @@
       </div>
     {/if}
 
-    <a class="small doc-link" href="{REPO}/blob/main/docs/FILE_FORMAT.md" target="_blank" rel="noopener">
+    <a class="small doc-link" href="{REPO}/blob/master/docs/FILE_FORMAT.md" target="_blank" rel="noopener">
       <FileText size={15} />{t('settings.formatDoc')}<ExternalLink size={13} />
     </a>
   </section>
