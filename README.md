@@ -1,33 +1,44 @@
 # Survival Shelf
 
-**Know how long your supplies last, and never let them expire.**
+**Build your survival stock step by step, and never let it expire.**
 
-Survival Shelf is a free, open-source app to manage a survival stock (food, water, first aid, batteries…):
-expiry dates, household autonomy estimates and a progressive rotation plan. It runs **100% offline** in any
-modern browser, installs as an app (PWA), needs **no account and no server**, and keeps your data in a
-**plain Markdown file** you can read and edit by hand.
+Survival Shelf is a free, open-source app to build and keep a survival stock (food, water, hygiene, first
+aid, energy, gear…). It helps you start from nothing, tier by tier (1 week, then 1 month, then 1 year),
+and once a week tells you what to discard, what to eat before it expires and what to buy next. It runs
+**100% offline** in any modern browser, installs as an app (PWA), needs **no account and no server**, and
+keeps your data in a **plain Markdown file** you can read and edit by hand.
 
 <p align="center">
-  <img src="docs/screenshots/overview-mobile.png" width="240" alt="Overview on a phone">
-  <img src="docs/screenshots/rotation-mobile.png" width="240" alt="Rotation plan on a phone">
-  <img src="docs/screenshots/stock-mobile-fr-dark.png" width="240" alt="Stock in French, dark theme">
+  <img src="docs/screenshots/overview-mobile.png" width="200" alt="Overview with autonomy and tiers">
+  <img src="docs/screenshots/checkin-mobile.png" width="200" alt="Weekly check-in: discard, eat, buy">
+  <img src="docs/screenshots/setup-mobile-fr.png" width="200" alt="Starter plan, in French">
+  <img src="docs/screenshots/plan-mobile-fr-dark.png" width="200" alt="Plan with per-tier targets, dark theme">
 </p>
 
 ## Features
 
+- **Starter plan**: answer two questions (how many people, any baby, pet or daily medicine) and get a
+  balanced plan of about 2200 kcal per person per day, plus water, hygiene, first aid, energy and gear.
+  Untick what does not suit you and adjust the amounts.
+- **Autonomy tiers**: 1 week, 1 month and 1 year by default (editable). Each product has a use per day or a
+  minimum to own, per person or for the household; the app works out what every tier needs and shows how far
+  along you are. Beyond a month of stored water, filters and purification tablets take over.
+- **Weekly or monthly check-in**: one list with the expired lots to discard, what to eat this week so nothing
+  expires (progressive rotation, oldest first), and what to buy for the tier being built. Tick things off in
+  one tap, share or copy the list.
+- **Calendar reminder**: without a server the app cannot notify you, so it gives you a recurring `.ics` event
+  for your calendar (iPhone, Google, Outlook…).
 - **Stock by product and lot**: quantity, expiry date (day or month precision), location. Color-coded expiry
-  badges, search, filters by status and location.
-- **Autonomy**: how many days your household can live on the stock, for food (calories) and water, limited by
-  the weakest. The estimate simulates eating oldest first and counts what would expire before its turn.
-- **Progressive rotation**: instead of eating everything right before it expires, the app gives a steady pace
-  per product ("≈ 2.6 cans per week") that finishes every lot before its date, and tells you if that pace is
-  more than your household can eat.
-- **Consume or discard in one tap**, oldest expiry first (FEFO), with undo. Everything is logged.
-- **Expiry alerts** for expired and soon-to-expire lots.
-- **Shopping list**: products below their target, plus what is missing to reach your autonomy goal.
+  badges, search, filters by status and location. Consume or discard oldest first (FEFO), with undo.
+- **Autonomy**: how many days your household can live on the stock, for food (calories) and water. The
+  estimate simulates eating oldest first and counts what would expire before its turn.
+- **Built-in catalog** of about 60 common items with approximate calories and shelf life.
 - **Printable inventory** with room to tally what you take, for when there is no power.
-- **Presets** for common items (rice, pasta, canned food, water…) with approximate calories.
 - English and French, light and dark themes, phone and desktop layouts.
+
+<p align="center">
+  <img src="docs/screenshots/overview-desktop.png" width="720" alt="Overview on a computer">
+</p>
 
 ## Your data
 
@@ -69,7 +80,8 @@ for the service worker, [Lucide](https://lucide.dev) icons. No CSS framework, no
 
 ```
 src/
-  lib/core/      Pure logic, no UI: Markdown parser/writer, stock operations, autonomy, rotation, shopping
+  lib/core/      Pure logic, no UI: Markdown parser/writer, stock operations, autonomy, rotation,
+                 tiers (plan.ts), check-in, calendar reminder (ics.ts), catalog
   lib/storage/   IndexedDB working copy and file access (File System Access API, import/export)
   lib/i18n/      English (reference) and French messages
   lib/ui/        Shared components and dialogs
@@ -85,9 +97,8 @@ The business logic in `src/lib/core` is covered by unit tests; please add tests 
 
 - Autonomy over time chart ("how long will I last in 6 months if I do nothing?").
 - Several kits (cellar, car, 72-hour bag) with a go-bag checklist.
-- Calendar export (`.ics`) of expiry dates.
 - Grace period for "best before" items, still edible after the date.
-- Nutrition beyond calories (proteins…), specific needs (babies, pets, vital medicine).
+- Nutrition beyond calories (proteins…), and a finer balance between food groups.
 - Barcode scanning without any online database.
 
 ## License
