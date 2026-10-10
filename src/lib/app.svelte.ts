@@ -1,11 +1,12 @@
 import { computeAutonomy } from './core/autonomy';
+import { checkIn } from './core/checkin';
 import { today as currentDay, type Day } from './core/dates';
-import { rotationPlan } from './core/rotation';
-import { autonomyGap, shoppingList } from './core/shopping';
-import { expiryAlerts, summarizeProducts } from './core/status';
 import { emptyShelf } from './core/defaults';
 import { parseShelf, serializeShelf } from './core/document';
-import type { ParseIssue, Shelf } from './core/types';
+import { menuKcal, tierPlan } from './core/plan';
+import { rotationPlan } from './core/rotation';
+import { expiryAlerts, summarizeProducts } from './core/status';
+import type { ParseIssue, Product, Shelf } from './core/types';
 import { demoShelf } from './demo';
 import { i18n, t, type MessageKey } from './i18n/index.svelte';
 import { idbDelete, idbGet, idbSet } from './storage/idb';
@@ -87,8 +88,10 @@ class App {
   autonomy = $derived(computeAutonomy(this.shelf, this.today));
   rotation = $derived(rotationPlan(this.shelf, this.today));
   alerts = $derived(expiryAlerts(this.shelf, this.today));
-  shopping = $derived(shoppingList(this.shelf, this.today));
-  gap = $derived(autonomyGap(this.shelf, this.autonomy));
+  plan = $derived(tierPlan(this.shelf, this.autonomy, this.today));
+  checkin = $derived(checkIn(this.shelf, this.today, this.rotation, this.plan.current));
+  /** Calories per person per day planned by the products' daily use. */
+  menu = $derived(menuKcal(this.shelf));
   locations = $derived(
     [...new Set(this.shelf.lots.map((lot) => lot.location).filter((location) => location !== ''))].sort((a, b) =>
       a.localeCompare(b),
@@ -170,9 +173,11 @@ class App {
 
   // --- Starting -------------------------------------------------------------
 
-  async startNew(people: number) {
+  /** Starts a new stock from the plan chosen in the setup wizard. */
+  async startWithPlan(people: number, products: Product[]) {
     const shelf = emptyShelf();
     shelf.settings.people = people;
+    shelf.products = products;
     await this.#replace(shelf, [], { demo: false });
   }
 

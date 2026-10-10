@@ -10,10 +10,11 @@
   import Utensils from '@lucide/svelte/icons/utensils';
   import { app } from '../lib/app.svelte';
   import { CATEGORIES } from '../lib/core/categories';
+  import { productTarget } from '../lib/core/plan';
   import { expiryStatus, type ProductSummary } from '../lib/core/status';
   import { formatDate, t, tn } from '../lib/i18n/index.svelte';
   import ExpiryBadge from '../lib/ui/ExpiryBadge.svelte';
-  import { categoryIcon, categoryLabel, quantity } from '../lib/ui/format';
+  import { categoryIcon, categoryLabel, quantity, tierLabel } from '../lib/ui/format';
   import { dialogs } from '../lib/ui/state.svelte';
 
   type Filter = 'all' | 'expired' | 'soon';
@@ -120,6 +121,7 @@
         {#each group.items as summary (summary.product.name)}
           {@const open = expanded[summary.product.name] ?? false}
           {@const lots = visibleLots(summary)}
+          {@const goal = app.plan.current ? productTarget(summary.product, app.shelf.settings, app.plan.current.days) : null}
           <li class="product" class:open>
             <div class="product-row">
               <button
@@ -129,8 +131,8 @@
               >
                 <span class="name">
                   <strong>{summary.product.name}</strong>
-                  {#if summary.product.target !== null && summary.usableQty < summary.product.target}
-                    <span class="small muted">{t('stock.belowTarget', { qty: quantity(summary.product.target, summary.product) })}</span>
+                  {#if app.plan.current && goal && summary.usableQty < goal}
+                    <span class="small muted">{t('stock.belowTarget', { tier: tierLabel(app.plan.current.days), qty: quantity(goal, summary.product) })}</span>
                   {:else if summary.product.notes}
                     <span class="small muted">{summary.product.notes}</span>
                   {/if}

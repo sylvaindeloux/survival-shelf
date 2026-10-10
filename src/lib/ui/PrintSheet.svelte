@@ -60,7 +60,7 @@
 
   {#if app.rotation.items.length > 0}
     <section>
-      <h2>{t('rotation.title')}</h2>
+      <h2>{t('print.rotation')}</h2>
       <table>
         <thead>
           <tr>

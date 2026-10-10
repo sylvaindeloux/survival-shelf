@@ -1,7 +1,7 @@
 import { findCategory } from '../core/categories';
 import { daysLeft, expiryStatus, type ExpiryStatus } from '../core/status';
 import type { Day } from '../core/dates';
-import type { Lot, Product, Settings } from '../core/types';
+import type { Lot, Product, Rhythm, Settings } from '../core/types';
 import { formatDate, formatNumber, formatRelative, i18n, t } from '../i18n/index.svelte';
 
 export function categoryIcon(category: string): string {
@@ -43,10 +43,43 @@ function unitFor(qty: number, unit: string): string {
   return UNIT_PLURALS[unit.toLocaleLowerCase()] ?? unit;
 }
 
-/** "3 kg", "12 cans": quantity with the product unit. */
-export function quantity(qty: number, product: Product | undefined): string {
+/** "3 kg", "12 cans", "80 g": quantity with the product unit, small weights and volumes in g and mL. */
+export function quantity(qty: number, product: Pick<Product, 'unit'> | undefined): string {
   const unit = product?.unit ?? '';
+  const lower = unit.toLowerCase();
+  if (qty > 0 && qty < 1 && (lower === 'kg' || lower === 'l')) {
+    return `${formatNumber(qty * 1000, 0)} ${lower === 'kg' ? 'g' : 'mL'}`;
+  }
   return unit === '' ? formatNumber(qty, 2) : `${formatNumber(qty, 2)} ${unitFor(qty, unit)}`;
+}
+
+/** "0.1 kg per person per day", "6 per day for the household". */
+export function dailyLabel(product: Product): string {
+  if (product.daily === null) return '';
+  const what = quantity(product.daily, product);
+  return product.per === 'household' ? t('plan.perDayHousehold', { qty: what }) : t('plan.perDayPerson', { qty: what });
+}
+
+/** "own 1", "own 1 per person". */
+export function targetLabel(product: Product): string {
+  if (product.target === null) return '';
+  const what = quantity(product.target, product);
+  return product.per === 'household' ? t('plan.ownHousehold', { qty: what }) : t('plan.ownPerson', { qty: what });
+}
+
+/** A tier's duration in words: "1 week", "1 month", "1 year", "10 days". */
+export function tierLabel(days: number): string {
+  const format = (value: number, unit: 'day' | 'week' | 'month' | 'year') =>
+    new Intl.NumberFormat(i18n.lang, { style: 'unit', unit, unitDisplay: 'long' }).format(value);
+  if (days % 365 === 0) return format(days / 365, 'year');
+  if (days % 30 === 0) return format(days / 30, 'month');
+  if (days % 7 === 0) return format(days / 7, 'week');
+  return format(days, 'day');
+}
+
+/** "This week" or "This month", depending on the check-in rhythm. */
+export function checkinTitle(rhythm: Rhythm): string {
+  return rhythm === 'monthly' ? t('checkin.titleMonthly') : t('checkin.titleWeekly');
 }
 
 /** Rotation pace, per week, month or year depending on what reads best. */
@@ -74,6 +107,12 @@ export function expiryLabel(lot: Lot, settings: Settings, today: Day): ExpiryLab
   const date = formatDate(lot.expires);
   if (status === 'ok') return { status, text: date, title: formatRelative(left) };
   return { status, text: formatRelative(left), title: date };
+}
+
+/** A number to put in an input: decimal separator of the language, no grouping (parseNumber reads it back). */
+export function inputNumber(value: number | null): string {
+  if (value === null || !Number.isFinite(value)) return '';
+  return new Intl.NumberFormat(i18n.lang, { useGrouping: false, maximumFractionDigits: 3 }).format(value);
 }
 
 /** Big numbers in kcal: "12 400 kcal" or "1.2 M kcal". */

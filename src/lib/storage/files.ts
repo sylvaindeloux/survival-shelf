@@ -70,8 +70,8 @@ export function pickFileWithInput(): Promise<File | null> {
   });
 }
 
-export function downloadText(text: string, fileName: string): void {
-  const url = URL.createObjectURL(new Blob([text], { type: 'text/markdown;charset=utf-8' }));
+export function downloadText(text: string, fileName: string, type = 'text/markdown;charset=utf-8'): void {
+  const url = URL.createObjectURL(new Blob([text], { type }));
   const link = document.createElement('a');
   link.href = url;
   link.download = fileName;
@@ -98,6 +98,18 @@ export function canShareFiles(): boolean {
 export async function shareText(text: string, fileName: string): Promise<boolean> {
   try {
     await navigator.share({ files: [markdownFile(text, fileName)], title: fileName });
+    return true;
+  } catch (error) {
+    if (isAbort(error)) return false;
+    throw error;
+  }
+}
+
+/** Shares any file through the system share sheet. Returns false when cancelled or not supported. */
+export async function shareFile(file: File): Promise<boolean> {
+  try {
+    if (typeof navigator.canShare !== 'function' || !navigator.canShare({ files: [file] })) return false;
+    await navigator.share({ files: [file], title: file.name });
     return true;
   } catch (error) {
     if (isAbort(error)) return false;

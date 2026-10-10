@@ -3,12 +3,12 @@
   import Plus from '@lucide/svelte/icons/plus';
   import { app } from '../app.svelte';
   import { byExpiry, findProduct, lotsOf, takeFromLot, takeFromProduct } from '../core/stock';
-  import { formatNumber, parseNumber } from '../core/text';
+  import { parseNumber } from '../core/text';
   import type { LogAction } from '../core/types';
   import { t } from '../i18n/index.svelte';
   import Dialog from './Dialog.svelte';
   import ExpiryBadge from './ExpiryBadge.svelte';
-  import { quantity } from './format';
+  import { inputNumber, quantity } from './format';
   import { dialogs, type TakeDialogState } from './state.svelte';
 
   let { request }: { request: TakeDialogState } = $props();
@@ -25,7 +25,9 @@
   let action = $state<LogAction>(request.action);
   // Discarding a lot usually means all of it.
   // svelte-ignore state_referenced_locally
-  let qty = $state(formatNumber(request.action === 'discarded' && lot ? lot.qty : Math.min(1, available)));
+  let qty = $state(
+    inputNumber(request.action === 'discarded' && lot ? lot.qty : Math.min(request.qty ?? 1, available)),
+  );
   let note = $state('');
 
   const value = $derived(parseNumber(qty));
@@ -33,7 +35,7 @@
 
   function step(delta: number) {
     const current = value !== null && !Number.isNaN(value) ? value : 0;
-    qty = formatNumber(Math.min(available, Math.max(0, current + delta)));
+    qty = inputNumber(Math.min(available, Math.max(0, current + delta)));
   }
 
   function submit(event: SubmitEvent) {
@@ -92,43 +94,6 @@
 </Dialog>
 
 <style>
-  .segmented {
-    display: flex;
-    padding: 3px;
-    border-radius: 999px;
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-  }
-
-  .segmented button {
-    flex: 1;
-    min-height: 36px;
-    border: none;
-    border-radius: 999px;
-    background: transparent;
-    font-weight: 600;
-    color: var(--muted);
-    cursor: pointer;
-  }
-
-  .segmented button.active {
-    background: var(--surface);
-    color: var(--text);
-    box-shadow: 0 1px 3px rgb(0 0 0 / 12%);
-  }
-
-  .stepper {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .stepper .input {
-    text-align: center;
-    font-size: 1.25rem;
-    font-weight: 700;
-  }
-
   .danger-fill,
   .danger-fill:hover {
     background: var(--danger);

@@ -3,41 +3,74 @@
   import ExternalLink from '@lucide/svelte/icons/external-link';
   import FileText from '@lucide/svelte/icons/file-text';
   import FolderOpen from '@lucide/svelte/icons/folder-open';
+  import Plus from '@lucide/svelte/icons/plus';
   import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
   import Save from '@lucide/svelte/icons/save';
   import Share2 from '@lucide/svelte/icons/share-2';
   import Unlink from '@lucide/svelte/icons/unlink';
+  import X from '@lucide/svelte/icons/x';
   import { app, issueMessage } from '../lib/app.svelte';
   import { updateSettings } from '../lib/core/stock';
   import { parseNumber } from '../lib/core/text';
-  import type { Settings } from '../lib/core/types';
+  import type { Rhythm, Settings } from '../lib/core/types';
   import { i18n, t, tn, type LangPreference } from '../lib/i18n/index.svelte';
   import { canShareFiles } from '../lib/storage/files';
+  import { tierLabel } from '../lib/ui/format';
   import { preferences, type Theme } from '../lib/ui/state.svelte';
 
   const REPO = 'https://github.com/sylvaindeloux/survival-shelf';
   const canShare = canShareFiles();
   let confirmReset = $state(false);
 
-  const fields: { key: keyof Settings; label: () => string; hint: () => string; min: number; step: string }[] = [
+  const MAX_TIERS = 6;
+
+  type NumberSetting = 'people' | 'kcalPerPersonPerDay' | 'waterPerPersonPerDay' | 'warningDays' | 'rotationMarginDays';
+  const fields: { key: NumberSetting; label: () => string; hint: () => string; min: number; step: string }[] = [
     { key: 'people', label: () => t('settings.people'), hint: () => '', min: 1, step: '1' },
     { key: 'kcalPerPersonPerDay', label: () => t('settings.kcal'), hint: () => t('settings.kcalHint'), min: 1, step: '50' },
     { key: 'waterPerPersonPerDay', label: () => t('settings.water'), hint: () => t('settings.waterHint'), min: 0, step: '0.5' },
   ];
-  const goalFields: typeof fields = [
-    { key: 'targetDays', label: () => t('settings.targetDays'), hint: () => t('settings.targetDaysHint'), min: 1, step: '1' },
+  const alertFields: typeof fields = [
     { key: 'warningDays', label: () => t('settings.warningDays'), hint: () => t('settings.warningDaysHint'), min: 0, step: '1' },
     { key: 'rotationMarginDays', label: () => t('settings.margin'), hint: () => t('settings.marginHint'), min: 0, step: '1' },
   ];
 
-  function change(key: keyof Settings, min: number, event: Event) {
+  function change(key: NumberSetting, min: number, event: Event) {
     const input = event.currentTarget as HTMLInputElement;
     const value = parseNumber(input.value);
     if (value === null || Number.isNaN(value) || value < min) {
       input.value = String(app.shelf.settings[key]);
       return;
     }
-    app.update((shelf) => updateSettings(shelf, { ...shelf.settings, [key]: value }));
+    save({ [key]: value });
+  }
+
+  function save(changes: Partial<Settings>) {
+    app.update((shelf) => updateSettings(shelf, { ...shelf.settings, ...changes }));
+  }
+
+  const tiers = $derived(app.shelf.settings.tiers);
+
+  function saveTiers(list: number[]) {
+    save({ tiers: [...new Set(list)].sort((a, b) => a - b) });
+  }
+
+  function changeTier(index: number, event: Event) {
+    const input = event.currentTarget as HTMLInputElement;
+    const value = parseNumber(input.value);
+    if (value === null || !Number.isInteger(value) || value < 1) {
+      input.value = String(tiers[index]);
+      return;
+    }
+    saveTiers(tiers.map((days, position) => (position === index ? value : days)));
+  }
+
+  function addTier() {
+    saveTiers([...tiers, (tiers.at(-1) ?? 7) * 2]);
+  }
+
+  function setRhythm(rhythm: Rhythm) {
+    if (rhythm !== app.shelf.settings.rhythm) save({ rhythm });
   }
 
   const fileStatus = $derived.by(() => {
@@ -85,8 +118,51 @@
   </section>
 
   <section class="card stack">
-    <h2>{t('settings.goals')}</h2>
-    <div class="grid-3">{@render numberFields(goalFields)}</div>
+    <h2>{t('settings.tiersTitle')}</h2>
+    <div class="field">
+      <span>{t('settings.tiers')}</span>
+      <ul class="tiers">
+        {#each tiers as days, index (days)}
+          <li>
+            <input
+              class="input num"
+              type="number"
+              inputmode="numeric"
+              min="1"
+              step="1"
+              value={days}
+              onchange={(event) => changeTier(index, event)}
+              aria-label={tierLabel(days)}
+            />
+            <span class="small muted">{t('settings.daysUnit')} · <strong>{tierLabel(days)}</strong></span>
+            <button
+              class="icon-btn"
+              onclick={() => saveTiers(tiers.filter((_, position) => position !== index))}
+              disabled={tiers.length <= 1}
+              aria-label={t('action.delete')}
+              title={t('action.delete')}><X size={18} /></button
+            >
+          </li>
+        {/each}
+      </ul>
+      {#if tiers.length < MAX_TIERS}
+        <div><button class="btn small" onclick={addTier}><Plus size={16} />{t('settings.addTier')}</button></div>
+      {/if}
+      <span class="hint">{t('settings.tiersHint')}</span>
+    </div>
+    <div class="field">
+      <span>{t('settings.rhythm')}</span>
+      <div class="segmented rhythm" role="group" aria-label={t('settings.rhythm')}>
+        <button type="button" class:active={app.shelf.settings.rhythm === 'weekly'} onclick={() => setRhythm('weekly')}>{t('settings.weekly')}</button>
+        <button type="button" class:active={app.shelf.settings.rhythm === 'monthly'} onclick={() => setRhythm('monthly')}>{t('settings.monthly')}</button>
+      </div>
+      <span class="hint">{t('settings.rhythmHint')}</span>
+    </div>
+  </section>
+
+  <section class="card stack">
+    <h2>{t('settings.alerts')}</h2>
+    <div class="grid-2">{@render numberFields(alertFields)}</div>
   </section>
 
   <section class="card stack" id="file">
@@ -204,6 +280,34 @@
 </div>
 
 <style>
+  .tiers {
+    list-style: none;
+    margin: 0 0 0.25rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .tiers li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .tiers .input {
+    width: 6rem;
+    flex: none;
+  }
+
+  .tiers .icon-btn {
+    margin-left: auto;
+  }
+
+  .rhythm {
+    max-width: 360px;
+  }
+
   .issues {
     padding: 0.75rem 1rem;
     border-radius: var(--radius-sm);

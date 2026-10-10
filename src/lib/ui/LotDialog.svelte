@@ -3,12 +3,12 @@
   import { app } from '../app.svelte';
   import { CATEGORIES } from '../core/categories';
   import { isValidDate } from '../core/dates';
-  import { PRESETS } from '../core/presets';
+  import { CATALOG, findCatalogItem } from '../core/catalog';
   import { addLot, deleteLot, emptyProduct, findProduct, updateLot, upsertProduct } from '../core/stock';
-  import { parseNumber, sameName } from '../core/text';
+  import { parseNumber } from '../core/text';
   import { i18n, t } from '../i18n/index.svelte';
   import Dialog from './Dialog.svelte';
-  import { categoryIcon, categoryLabel, quantity } from './format';
+  import { categoryIcon, categoryLabel, inputNumber, quantity } from './format';
   import { dialogs, type LotDialogState } from './state.svelte';
 
   let { request }: { request: LotDialogState } = $props();
@@ -21,7 +21,7 @@
   // svelte-ignore state_referenced_locally
   let productName = $state(editing?.product ?? request.product ?? '');
   // svelte-ignore state_referenced_locally
-  let qty = $state(String(editing?.qty ?? request.qty ?? 1));
+  let qty = $state(inputNumber(editing?.qty ?? request.qty ?? 1));
   let precision = $state<Precision>(
     editing ? (editing.expires === '' ? 'none' : /^\d{4}-\d{2}$/.test(editing.expires) ? 'month' : 'day') : 'day',
   );
@@ -34,7 +34,6 @@
   let unit = $state('');
   let kcal = $state('');
   let water = $state('');
-  let target = $state('');
 
   const existing = $derived(findProduct(app.shelf, productName));
   const isNew = $derived(productName.trim() !== '' && !existing);
@@ -43,7 +42,7 @@
     product: productName.trim() === '',
     qty: qtyValue === null || Number.isNaN(qtyValue) || qtyValue <= 0,
     expires: precision !== 'none' && !isValidDate(expires),
-    numbers: [kcal, water, target].some((value) => {
+    numbers: [kcal, water].some((value) => {
       const number = parseNumber(value);
       return number !== null && (Number.isNaN(number) || number < 0);
     }),
@@ -52,19 +51,24 @@
 
   const suggestions = $derived([
     ...app.shelf.products.map((product) => product.name),
-    ...PRESETS.map((preset) => preset.name[i18n.lang]).filter((name) => !findProduct(app.shelf, name)),
+    ...CATALOG.map((entry) => entry.name[i18n.lang]).filter((name) => !findProduct(app.shelf, name)),
   ]);
-  const unitSuggestions = $derived([...new Set(PRESETS.map((preset) => preset.unit[i18n.lang]))]);
+  const unitSuggestions = $derived([...new Set(CATALOG.map((entry) => entry.unit[i18n.lang]))]);
+  /** Typical shelf life, to help when the date is hard to read on the packaging. */
+  const shelfLife = $derived(findCatalogItem(productName)?.shelfLife ?? null);
 
-  function applyPreset() {
+  function applyCatalog() {
     if (existing) return;
-    const preset = PRESETS.find((candidate) => sameName(candidate.name[i18n.lang], productName));
-    if (!preset) return;
-    category = preset.category;
-    unit = preset.unit[i18n.lang];
-    kcal = preset.kcal === null ? '' : String(preset.kcal);
-    water = preset.water === null ? '' : String(preset.water);
+    const entry = findCatalogItem(productName);
+    if (!entry) return;
+    category = entry.category;
+    unit = entry.unit[i18n.lang];
+    kcal = inputNumber(entry.kcal);
+    water = inputNumber(entry.water);
   }
+
+  // Asked to add a product that is not in the list yet (water from the check-in): fill it from the catalog.
+  applyCatalog();
 
   function setPrecision(next: Precision) {
     if (next === 'month' && /^\d{4}-\d{2}/.test(expires)) expires = expires.slice(0, 7);
@@ -92,7 +96,6 @@
           unit: unit.trim(),
           kcal: optionalNumber(kcal),
           water: optionalNumber(water),
-          target: optionalNumber(target),
         });
       }
       if (editing) return updateLot(next, editing.id, { product, qty: qtyValue, expires: lotExpires, location });
@@ -134,8 +137,8 @@
         class="input"
         list="product-suggestions"
         bind:value={productName}
-        oninput={applyPreset}
-        onchange={applyPreset}
+        oninput={applyCatalog}
+        onchange={applyCatalog}
         placeholder={t('lot.productPlaceholder')}
         autocomplete="off"
         aria-invalid={submitted && errors.product}
@@ -167,7 +170,7 @@
             <input class="input" list="unit-suggestions" bind:value={unit} placeholder={t('product.unitPlaceholder')} />
           </label>
         </div>
-        <div class="grid-3">
+        <div class="grid-2">
           <label class="field">
             <span>{t('product.kcal')}</span>
             <input class="input" inputmode="decimal" bind:value={kcal} placeholder="0" />
@@ -175,10 +178,6 @@
           <label class="field">
             <span>{t('product.water')}</span>
             <input class="input" inputmode="decimal" bind:value={water} placeholder="0" />
-          </label>
-          <label class="field">
-            <span>{t('product.target')}</span>
-            <input class="input" inputmode="decimal" bind:value={target} placeholder="—" />
           </label>
         </div>
         <p class="hint">{t('lot.newProductHint')}</p>
@@ -209,6 +208,9 @@
           aria-invalid={submitted && errors.expires}
         />
         <span class="hint">{t('lot.monthHint')}</span>
+      {/if}
+      {#if shelfLife && precision !== 'none'}
+        <span class="hint">{t('lot.shelfLife', { months: shelfLife })}</span>
       {/if}
     </div>
 
@@ -262,30 +264,7 @@
   }
 
   .segmented {
-    display: flex;
-    padding: 3px;
-    border-radius: 999px;
-    background: var(--surface-2);
-    border: 1px solid var(--border);
     margin-bottom: 0.25rem;
-  }
-
-  .segmented button {
-    flex: 1;
-    min-height: 34px;
-    border: none;
-    border-radius: 999px;
-    background: transparent;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--muted);
-    cursor: pointer;
-  }
-
-  .segmented button.active {
-    background: var(--surface);
-    color: var(--text);
-    box-shadow: 0 1px 3px rgb(0 0 0 / 12%);
   }
 
   .error {

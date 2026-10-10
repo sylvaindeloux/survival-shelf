@@ -1,7 +1,7 @@
 import type { LogAction } from '../core/types';
 
-export type Route = 'home' | 'stock' | 'rotation' | 'shopping' | 'settings';
-const ROUTES: Route[] = ['home', 'stock', 'rotation', 'shopping', 'settings'];
+export type Route = 'home' | 'checkin' | 'stock' | 'plan' | 'settings';
+const ROUTES: Route[] = ['home', 'checkin', 'stock', 'plan', 'settings'];
 
 function routeFromHash(): Route {
   const name = location.hash.replace(/^#\/?/, '').split('?')[0];
@@ -37,12 +37,19 @@ export interface TakeDialogState {
   action: LogAction;
   product?: string;
   lotId?: string;
+  /** Suggested quantity. */
+  qty?: number;
+}
+
+export interface ProductDialogState {
+  /** Product to edit; absent to create one. */
+  name?: string;
 }
 
 /** Which dialog is open, shared by all views. */
 class Dialogs {
   lot = $state<LotDialogState | null>(null);
-  product = $state<{ name: string } | null>(null);
+  product = $state<ProductDialogState | null>(null);
   take = $state<TakeDialogState | null>(null);
 }
 

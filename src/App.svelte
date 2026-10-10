@@ -1,11 +1,11 @@
 <script lang="ts">
+  import CalendarCheck from '@lucide/svelte/icons/calendar-check';
   import CircleCheck from '@lucide/svelte/icons/circle-check';
+  import ClipboardList from '@lucide/svelte/icons/clipboard-list';
   import HardDrive from '@lucide/svelte/icons/hard-drive';
   import House from '@lucide/svelte/icons/house';
   import Package from '@lucide/svelte/icons/package';
-  import RefreshCw from '@lucide/svelte/icons/refresh-cw';
   import SettingsIcon from '@lucide/svelte/icons/settings';
-  import ShoppingCart from '@lucide/svelte/icons/shopping-cart';
   import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
   import { onMount, type Component } from 'svelte';
   import { app } from './lib/app.svelte';
@@ -18,27 +18,27 @@
   import TakeDialog from './lib/ui/TakeDialog.svelte';
   import Toasts from './lib/ui/Toasts.svelte';
   import { dialogs, preferences, router, type Route } from './lib/ui/state.svelte';
+  import CheckIn from './views/CheckIn.svelte';
   import Home from './views/Home.svelte';
-  import Rotation from './views/Rotation.svelte';
+  import Plan from './views/Plan.svelte';
   import Settings from './views/Settings.svelte';
-  import Shopping from './views/Shopping.svelte';
   import Stock from './views/Stock.svelte';
   import Welcome from './views/Welcome.svelte';
 
-  const NAV: { route: Route; label: MessageKey; icon: Component }[] = [
+  const NAV = $derived<{ route: Route; label: MessageKey; icon: Component }[]>([
     { route: 'home', label: 'nav.home', icon: House },
+    { route: 'checkin', label: app.shelf.settings.rhythm === 'monthly' ? 'nav.checkinMonthly' : 'nav.checkinWeekly', icon: CalendarCheck },
     { route: 'stock', label: 'nav.stock', icon: Package },
-    { route: 'rotation', label: 'nav.rotation', icon: RefreshCw },
-    { route: 'shopping', label: 'nav.shopping', icon: ShoppingCart },
+    { route: 'plan', label: 'nav.plan', icon: ClipboardList },
     { route: 'settings', label: 'nav.settings', icon: SettingsIcon },
-  ];
+  ]);
 
-  const VIEWS: Record<Route, Component> = { home: Home, stock: Stock, rotation: Rotation, shopping: Shopping, settings: Settings };
+  const VIEWS: Record<Route, Component> = { home: Home, checkin: CheckIn, stock: Stock, plan: Plan, settings: Settings };
   const View = $derived(VIEWS[router.route]);
 
+  // Only what needs doing: expired lots to discard and lots due for rotation.
   const badges = $derived<Partial<Record<Route, number>>>({
-    stock: app.alerts.expired.length + app.alerts.soon.length,
-    shopping: app.shopping.length,
+    checkin: app.checkin.discard.length + app.checkin.consume.filter((item) => item.due).length,
   });
   const fileWarning = $derived(app.fileState !== 'none' && app.fileState !== 'linked');
 
@@ -48,6 +48,11 @@
 
   $effect(() => {
     document.documentElement.lang = i18n.lang;
+  });
+
+  // Starting (setup, demo, file) comes from a long page: show the overview from its top.
+  $effect(() => {
+    if (app.started) window.scrollTo({ top: 0 });
   });
 
   $effect(() => {

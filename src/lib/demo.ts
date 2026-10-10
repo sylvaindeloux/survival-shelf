@@ -1,6 +1,6 @@
+import { CATALOG, productFromCatalog, starterItems } from './core/catalog';
 import { formatDay, type Day } from './core/dates';
 import { emptyShelf } from './core/defaults';
-import { PRESETS } from './core/presets';
 import { addLot, upsertProduct } from './core/stock';
 import type { Shelf } from './core/types';
 import type { Lang } from './i18n/index.svelte';
@@ -17,47 +17,58 @@ const LOCATIONS: Record<Lang, Record<DemoLot['where'], string>> = {
   fr: { cellar: 'Cellier', kitchen: 'Cuisine', garage: 'Garage', bag: 'Sac 72h' },
 };
 
-/** Preset English name, target, lots. */
-const DEMO: [string, number, DemoLot[]][] = [
-  ['Water pack 6 × 1.5 L', 10, [{ qty: 4, in: 200, where: 'garage' }, { qty: 3, in: 480, where: 'garage' }]],
-  ['Water bottle 1.5 L', 4, [{ qty: 4, in: 300, where: 'bag' }]],
-  ['Rice', 10, [{ qty: 3, in: 40, where: 'kitchen' }, { qty: 5, in: 700, where: 'cellar' }]],
-  ['Pasta', 8, [{ qty: 2, in: 25, where: 'kitchen' }, { qty: 4, in: 320, where: 'cellar' }]],
-  ['Dried lentils', 4, [{ qty: 2, in: 540, where: 'cellar' }]],
-  ['Canned tuna 140 g', 24, [{ qty: 6, in: 45, where: 'kitchen' }, { qty: 12, in: 900, where: 'cellar' }]],
-  ['Canned vegetables 400 g', 20, [{ qty: 4, in: -12, where: 'cellar' }, { qty: 8, in: 400, where: 'cellar' }]],
-  ['Freeze-dried meal', 12, [{ qty: 6, in: 2400, where: 'cellar' }, { qty: 3, in: 2400, where: 'bag' }]],
-  ['Vegetable oil', 3, [{ qty: 2, in: 150, where: 'kitchen' }]],
-  ['Sugar', 2, [{ qty: 2, in: null, where: 'cellar' }]],
-  ['Chocolate 100 g', 10, [{ qty: 4, in: 80, where: 'kitchen' }]],
-  ['AA batteries', 24, [{ qty: 16, in: 2900, where: 'garage' }]],
-  ['First aid kit', 2, [{ qty: 1, in: null, where: 'bag' }]],
-  ['Paracetamol', 2, [{ qty: 1, in: 20, where: 'bag' }]],
-  ['Candles', 20, [{ qty: 20, in: null, where: 'garage' }]],
-];
+/** Lots by catalog id: the first tier is nearly complete, the next ones are under way. */
+const DEMO_LOTS: Record<string, DemoLot[]> = {
+  'water-bottle': [{ qty: 24, in: 300, where: 'garage' }, { qty: 12, in: 500, where: 'garage' }],
+  rice: [{ qty: 3, in: 40, where: 'kitchen' }, { qty: 5, in: 700, where: 'cellar' }],
+  pasta: [{ qty: 2, in: 25, where: 'kitchen' }, { qty: 4, in: 320, where: 'cellar' }],
+  oats: [{ qty: 1, in: 150, where: 'kitchen' }],
+  lentils: [{ qty: 2, in: 540, where: 'cellar' }],
+  tuna: [{ qty: 6, in: 45, where: 'kitchen' }, { qty: 12, in: 900, where: 'cellar' }],
+  vegetables: [{ qty: 4, in: -12, where: 'cellar' }, { qty: 8, in: 400, where: 'cellar' }],
+  fruit: [{ qty: 3, in: 200, where: 'cellar' }],
+  'ready-meal': [{ qty: 4, in: 600, where: 'cellar' }],
+  'milk-powder': [{ qty: 0.5, in: 250, where: 'kitchen' }],
+  oil: [{ qty: 2, in: 150, where: 'kitchen' }],
+  'peanut-butter': [{ qty: 1, in: 120, where: 'kitchen' }],
+  sugar: [{ qty: 2, in: null, where: 'cellar' }],
+  jam: [{ qty: 2, in: 400, where: 'cellar' }],
+  chocolate: [{ qty: 4, in: 80, where: 'kitchen' }],
+  biscuits: [{ qty: 3, in: 100, where: 'kitchen' }],
+  nuts: [{ qty: 0.5, in: 160, where: 'kitchen' }],
+  salt: [{ qty: 1, in: null, where: 'kitchen' }],
+  'toilet-paper': [{ qty: 12, in: null, where: 'garage' }],
+  soap: [{ qty: 2, in: 1000, where: 'garage' }],
+  toothpaste: [{ qty: 2, in: 500, where: 'garage' }],
+  'bin-bags': [{ qty: 1, in: null, where: 'garage' }],
+  'first-aid-kit': [{ qty: 1, in: null, where: 'bag' }],
+  paracetamol: [{ qty: 1, in: 20, where: 'bag' }],
+  'aa-batteries': [{ qty: 16, in: 2900, where: 'garage' }],
+  candles: [{ qty: 20, in: null, where: 'garage' }],
+  'gas-cartridge': [{ qty: 4, in: null, where: 'garage' }],
+  matches: [{ qty: 3, in: null, where: 'garage' }],
+  headlamp: [{ qty: 1, in: null, where: 'bag' }],
+  radio: [{ qty: 1, in: null, where: 'garage' }],
+  stove: [{ qty: 1, in: null, where: 'garage' }],
+  'can-opener': [{ qty: 1, in: null, where: 'kitchen' }],
+  'survival-blanket': [{ qty: 2, in: null, where: 'bag' }],
+};
 
-/** A realistic sample stock, with dates relative to today so every state shows up. */
+/** A realistic sample stock for 2 people, with dates relative to today so every state shows up. */
 export function demoShelf(today: Day, lang: Lang): Shelf {
   let shelf = emptyShelf();
-  for (const [name, target, lots] of DEMO) {
-    const preset = PRESETS.find((candidate) => candidate.name.en === name);
-    if (!preset) continue;
-    const productName = preset.name[lang];
-    shelf = upsertProduct(shelf, {
-      name: productName,
-      category: preset.category,
-      unit: preset.unit[lang],
-      kcal: preset.kcal,
-      water: preset.water,
-      target,
-      notes: '',
-      extra: {},
-    });
+  shelf.settings.people = 2;
+  for (const entry of starterItems([])) {
+    shelf = upsertProduct(shelf, productFromCatalog(entry, lang));
+  }
+  for (const [id, lots] of Object.entries(DEMO_LOTS)) {
+    const entry = CATALOG.find((candidate) => candidate.id === id);
+    if (!entry) continue;
     for (const lot of lots) {
       shelf = addLot(
         shelf,
         {
-          product: productName,
+          product: entry.name[lang],
           qty: lot.qty,
           expires: lot.in === null ? '' : formatDay(today + lot.in),
           location: LOCATIONS[lang][lot.where],
