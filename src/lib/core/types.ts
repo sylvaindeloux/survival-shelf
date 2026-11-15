@@ -7,6 +7,9 @@ export type Rhythm = 'weekly' | 'monthly' | 'quarterly' | 'semiannual';
 export interface Settings {
   /** Number of people living on the stock. */
   people: number;
+  /** Number of cats and dogs: products planned "per cat" or "per dog" count once per animal. */
+  cats: number;
+  dogs: number;
   kcalPerPersonPerDay: number;
   /** Liters of water per person per day (drinking + cooking + minimal hygiene). */
   waterPerPersonPerDay: number;
@@ -19,8 +22,8 @@ export interface Settings {
   rotationMarginDays: number;
 }
 
-/** Whether a product's quantities are per person or for the whole household. */
-export type Per = 'person' | 'household';
+/** Who a product's quantities are for: each person, the whole household, each cat or each dog. */
+export type Per = 'person' | 'household' | 'cat' | 'dog';
 
 export interface Product {
   name: string;

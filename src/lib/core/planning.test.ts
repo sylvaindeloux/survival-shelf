@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { computeAutonomy, simulate } from './autonomy';
+import { computeAutonomy, simulate, waterNeed } from './autonomy';
 import { dayFromParts, formatDay } from './dates';
 import { emptyShelf } from './defaults';
-import { CATALOG, starterAmount, starterItems } from './catalog';
+import { CATALOG, starterItems } from './catalog';
 import { buyCount, checkIn, waterWithoutProduct } from './checkin';
 import { reminderCalendar } from './ics';
 import { menuKcal, productTarget, tierPlan, tierStatus } from './plan';
@@ -54,6 +54,15 @@ describe('computeAutonomy', () => {
     expect(autonomy.water.expired).toBe(100);
     expect(autonomy.days).toBe(6);
     expect(autonomy.limitedBy).toBe('water');
+  });
+
+  it('adds what cats and dogs drink to the water need, not to the food need', () => {
+    const shelf = household(); // 2 people × 2.5 L
+    shelf.settings = { ...shelf.settings, cats: 2, dogs: 1 };
+    expect(waterNeed(shelf.settings)).toBe(7); // 5 L + 2 × 0.25 L + 1.5 L
+    const autonomy = computeAutonomy(shelf, TODAY);
+    expect(autonomy.water.dailyNeed).toBe(7);
+    expect(autonomy.food.dailyNeed).toBe(4000);
   });
 
   it('accounts for food expiring before it can be eaten', () => {
@@ -124,6 +133,19 @@ describe('plan and tiers', () => {
     expect(productTarget({ ...matches, per: 'person' }, shelf.settings, 7)).toBe(4);
     expect(productTarget(water, shelf.settings, 7)).toBeNull();
     expect(menuKcal(shelf)).toBe(2000);
+  });
+
+  it('counts pet products once per cat or per dog', () => {
+    let shelf = household();
+    shelf.settings = { ...shelf.settings, cats: 2 };
+    shelf = upsertProduct(shelf, { ...emptyProduct('Cat food'), category: 'pets', unit: 'kg', daily: 0.06, per: 'cat' });
+    shelf = upsertProduct(shelf, { ...emptyProduct('Dog food'), category: 'pets', unit: 'kg', daily: 0.3, per: 'dog' });
+    const [catFood, dogFood] = shelf.products.slice(-2);
+    expect(productTarget(catFood, shelf.settings, 30)).toBe(3.6); // 0.06 kg × 2 cats × 30 days
+    expect(productTarget(dogFood, shelf.settings, 30)).toBe(0); // no dog
+    const tier = tierStatus(shelf, computeAutonomy(shelf, TODAY), TODAY, 30);
+    expect(tier.lines.map((line) => line.product.name)).toContain('Cat food');
+    expect(tier.lines.map((line) => line.product.name)).not.toContain('Dog food');
   });
 
   it('lists what a tier misses, rounding counted things up', () => {
@@ -283,15 +305,13 @@ describe('catalog', () => {
     expect(starterItems({ cat: 0, dog: 1 }).filter((entry) => entry.need).map((entry) => entry.id)).toEqual(['dog-food']);
   });
 
-  it('counts pet items once per animal', () => {
-    const needs = { cat: 2, treatment: 1 };
-    const amounts = starterItems(needs)
-      .filter((entry) => entry.need)
-      .map((entry) => [entry.id, starterAmount(entry, needs), (entry.daily ?? 0) * (entry.need === 'cat' ? 2 : 1)]);
-    expect(amounts.map(([id]) => id)).toEqual(['cat-food', 'cat-litter', 'daily-medicine']);
-    for (const [, amount, expected] of amounts) expect(amount).toBeCloseTo(expected as number, 6);
-    const rice = CATALOG.find((entry) => entry.id === 'rice');
-    expect(rice && starterAmount(rice, needs)).toBe(rice?.daily);
+  it('plans pet items per cat or per dog', () => {
+    const pets = CATALOG.filter((entry) => entry.need === 'cat' || entry.need === 'dog');
+    expect(pets.map((entry) => [entry.id, entry.per])).toEqual([
+      ['cat-food', 'cat'],
+      ['cat-litter', 'cat'],
+      ['dog-food', 'dog'],
+    ]);
   });
 
   it('uses unique ids and known categories', () => {

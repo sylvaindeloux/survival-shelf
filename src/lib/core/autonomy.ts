@@ -1,7 +1,8 @@
 import { isStoredWater, isWaterTreatment } from './categories';
 import type { Day } from './dates';
+import { PET_WATER_PER_DAY } from './defaults';
 import { findProduct, lotExpiry } from './stock';
-import type { Shelf } from './types';
+import type { Settings, Shelf } from './types';
 
 export interface ResourceAutonomy {
   /** Household need per day (kcal or liters). */
@@ -85,10 +86,15 @@ function resource(shelf: Shelf, today: Day, field: 'kcal' | 'water', dailyNeed: 
   };
 }
 
+/** Liters of water the household needs per day: people, plus what the cats and dogs drink. */
+export function waterNeed(settings: Settings): number {
+  return settings.people * settings.waterPerPersonPerDay + settings.cats * PET_WATER_PER_DAY.cat + settings.dogs * PET_WATER_PER_DAY.dog;
+}
+
 export function computeAutonomy(shelf: Shelf, today: Day): Autonomy {
-  const { people, kcalPerPersonPerDay, waterPerPersonPerDay } = shelf.settings;
+  const { people, kcalPerPersonPerDay } = shelf.settings;
   const food = resource(shelf, today, 'kcal', people * kcalPerPersonPerDay);
-  const water = resource(shelf, today, 'water', people * waterPerPersonPerDay);
+  const water = resource(shelf, today, 'water', waterNeed(shelf.settings));
   let treatmentLiters = 0;
   for (const lot of shelf.lots) {
     const product = findProduct(shelf, lot.product);
