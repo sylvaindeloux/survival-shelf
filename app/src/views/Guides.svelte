@@ -1,17 +1,14 @@
 <script lang="ts">
   import ArrowLeft from '@lucide/svelte/icons/arrow-left';
   import ChevronRight from '@lucide/svelte/icons/chevron-right';
-  import ExternalLink from '@lucide/svelte/icons/external-link';
+  import Info from '@lucide/svelte/icons/info';
   import Printer from '@lucide/svelte/icons/printer';
   import Search from '@lucide/svelte/icons/search';
-  import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
   import { loadGuides } from 'virtual:guides';
   import { guideLang, searchGuides, type Guide, type GuideLang, type GuideLibrary, type GuideTheme } from '../lib/guides/library';
   import { i18n, t, tn } from '../lib/i18n/index.svelte';
   import { router } from '../lib/ui/state.svelte';
 
-  /** The same guides as plain Markdown files, for whoever wants them without the app. */
-  const FILES = 'https://github.com/sylvaindeloux/survival-shelf/tree/master/guides';
 
   // The guides are the Markdown files of the repository's guides/ folder, rendered at build time
   // and loaded one language at a time.
@@ -89,7 +86,7 @@
       <p class="muted">{t('guides.intro')}</p>
     </header>
 
-    <p class="notice"><TriangleAlert size={18} /><span>{t('guides.notice')}</span></p>
+    <p class="notice muted small"><Info size={16} /><span>{t('guides.notice')}</span></p>
 
     <label class="search">
       <span class="visually-hidden">{t('guides.search')}</span>
@@ -123,14 +120,6 @@
       {/each}
       <p class="muted small">{t('guides.more')}</p>
     {/if}
-
-    <section class="card stack">
-      <h2>{t('guides.offlineTitle')}</h2>
-      <p class="small">{t('guides.offlineText')}</p>
-      <p>
-        <a class="btn" href={FILES} target="_blank" rel="noopener"><ExternalLink size={18} />{t('guides.files')}</a>
-      </p>
-    </section>
   </div>
 {/if}
 
@@ -139,20 +128,15 @@
     margin-bottom: 0.25rem;
   }
 
+  /* The warning stays in view without shouting: small grey text, no frame. */
   .notice {
     display: flex;
-    gap: 0.6rem;
-    padding: 0.75rem 1rem;
-    border: 1.5px solid color-mix(in srgb, var(--warn) 40%, var(--border));
-    border-radius: var(--radius);
-    background: var(--warn-soft);
-    font-size: 0.9rem;
+    gap: 0.5rem;
   }
 
   .notice :global(svg) {
     flex: none;
     margin-top: 0.15rem;
-    color: var(--warn);
   }
 
   .search {

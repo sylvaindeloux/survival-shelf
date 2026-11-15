@@ -382,10 +382,6 @@ export const fr: Record<keyof typeof en, string> = {
   'guides.results_other': '{count} fiches pour « {query} »',
   'guides.noResult': 'Aucune fiche pour « {query} ». Essaie un autre mot.',
   'guides.more': 'D’autres thèmes sont en cours d’écriture.',
-  'guides.offlineTitle': 'Garde-les sans l’appli',
-  'guides.offlineText':
-    'Les fiches sont aussi de simples fichiers texte, dans le dossier « guides » du projet : copie-les sur un téléphone ou une clé USB, ou imprime celles qui comptent pour toi.',
-  'guides.files': 'Voir les fichiers sur GitHub',
   'guides.all': 'Toutes les fiches',
   'guides.print': 'Imprimer',
   'guides.notFound': 'Cette fiche n’existe pas, ou plus.',

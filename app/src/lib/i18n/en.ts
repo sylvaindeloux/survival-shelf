@@ -377,10 +377,6 @@ export const en = {
   'guides.results_other': '{count} guides for “{query}”',
   'guides.noResult': 'No guide for “{query}”. Try another word.',
   'guides.more': 'More themes are being written.',
-  'guides.offlineTitle': 'Keep them without the app',
-  'guides.offlineText':
-    'The guides are also plain text files, in the “guides” folder of the project: copy them to a phone or a USB stick, or print the ones that matter to you.',
-  'guides.files': 'See the files on GitHub',
   'guides.all': 'All guides',
   'guides.print': 'Print',
   'guides.notFound': 'This guide does not exist, or not anymore.',
