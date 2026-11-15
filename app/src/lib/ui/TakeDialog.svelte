@@ -2,24 +2,38 @@
   import Minus from '@lucide/svelte/icons/minus';
   import Plus from '@lucide/svelte/icons/plus';
   import { app } from '../app.svelte';
+  import { KINDS } from '../core/categories';
   import { byExpiry, findProduct, lotsOf, takeFromLot, takeFromProduct } from '../core/stock';
   import { parseNumber } from '../core/text';
   import type { LogAction } from '../core/types';
-  import { t } from '../i18n/index.svelte';
+  import { i18n, t } from '../i18n/index.svelte';
   import Dialog from './Dialog.svelte';
   import ExpiryBadge from './ExpiryBadge.svelte';
-  import { inputNumber, quantity } from './format';
+  import { inputNumber, kindLabel, quantity } from './format';
   import { dialogs, type TakeDialogState } from './state.svelte';
 
   let { request }: { request: TakeDialogState } = $props();
 
   // svelte-ignore state_referenced_locally
   const lot = request.lotId ? app.shelf.lots.find((candidate) => candidate.id === request.lotId) : undefined;
+  // Neither a lot nor a product ("I ate or used something"): the user picks one of the products in stock.
   // svelte-ignore state_referenced_locally
-  const productName = lot?.product ?? request.product ?? '';
-  const product = findProduct(app.shelf, productName);
-  const lots = lot ? [lot] : lotsOf(app.shelf, productName).sort(byExpiry);
-  const available = lots.reduce((sum, candidate) => sum + candidate.qty, 0);
+  const picking = !lot && !request.product;
+  // svelte-ignore state_referenced_locally
+  let productName = $state(lot?.product ?? request.product ?? '');
+  const product = $derived(findProduct(app.shelf, productName));
+  const lots = $derived(lot ? [lot] : lotsOf(app.shelf, productName).sort(byExpiry));
+  const available = $derived(lots.reduce((sum, candidate) => sum + candidate.qty, 0));
+  /** The products with something left, by kind, for the picker. */
+  const inStock = picking
+    ? KINDS.map((kind) => ({
+        kind,
+        names: app.shelf.products
+          .filter((candidate) => candidate.kind === kind && lotsOf(app.shelf, candidate.name).some((other) => other.qty > 0))
+          .map((candidate) => candidate.name)
+          .sort((a, b) => a.localeCompare(b, i18n.lang)),
+      })).filter((group) => group.names.length > 0)
+    : [];
 
   // svelte-ignore state_referenced_locally
   let action = $state<LogAction>(request.action);
@@ -32,6 +46,11 @@
 
   const value = $derived(parseNumber(qty));
   const valid = $derived(value !== null && !Number.isNaN(value) && value > 0 && value <= available);
+
+  function pick(name: string) {
+    productName = name;
+    qty = inputNumber(Math.min(1, available));
+  }
 
   function step(delta: number) {
     const current = value !== null && !Number.isNaN(value) ? value : 0;
@@ -54,34 +73,52 @@
   }
 </script>
 
-<Dialog title={productName} onclose={() => (dialogs.take = null)}>
+<Dialog title={picking ? t('take.anyTitle') : productName} onclose={() => (dialogs.take = null)}>
   <form id="take-form" class="stack" novalidate onsubmit={submit}>
     <div class="segmented" role="group">
       <button type="button" class:active={action === 'consumed'} onclick={() => (action = 'consumed')}>{t('take.consume')}</button>
       <button type="button" class:active={action === 'discarded'} onclick={() => (action = 'discarded')}>{t('take.discard')}</button>
     </div>
 
-    <div class="field">
-      <span>{t('take.qty')}{product?.unit ? ` (${product.unit})` : ''}</span>
-      <div class="stepper">
-        <button type="button" class="icon-btn outlined" onclick={() => step(-1)} aria-label="−1"><Minus size={20} /></button>
-        <input class="input num" inputmode="decimal" bind:value={qty} aria-invalid={!valid} />
-        <button type="button" class="icon-btn outlined" onclick={() => step(1)} aria-label="+1"><Plus size={20} /></button>
-      </div>
-      <span class="hint">{t('take.available', { qty: quantity(available, product) })}</span>
-    </div>
-
-    {#if lot}
-      <p class="small muted">{t('take.fromLot')} <ExpiryBadge {lot} />{lot.location ? ` · ${lot.location}` : ''}</p>
-    {:else if lots.length > 1}
-      <p class="small muted">{t('take.fefo')}</p>
+    {#if picking}
+      <label class="field">
+        <span>{t('take.what')}</span>
+        <select class="select" value={productName} onchange={(event) => pick(event.currentTarget.value)}>
+          <option value="" disabled>{t('take.pick')}</option>
+          {#each inStock as group (group.kind)}
+            <optgroup label={kindLabel(group.kind)}>
+              {#each group.names as name (name)}
+                <option value={name}>{name}</option>
+              {/each}
+            </optgroup>
+          {/each}
+        </select>
+      </label>
     {/if}
 
-    {#if action === 'discarded'}
-      <label class="field">
-        <span>{t('take.note')}</span>
-        <input class="input" bind:value={note} placeholder={t('take.notePlaceholder')} />
-      </label>
+    {#if productName !== ''}
+      <div class="field">
+        <span>{t('take.qty')}{product?.unit ? ` (${product.unit})` : ''}</span>
+        <div class="stepper">
+          <button type="button" class="icon-btn outlined" onclick={() => step(-1)} aria-label="−1"><Minus size={20} /></button>
+          <input class="input num" inputmode="decimal" bind:value={qty} aria-invalid={!valid} />
+          <button type="button" class="icon-btn outlined" onclick={() => step(1)} aria-label="+1"><Plus size={20} /></button>
+        </div>
+        <span class="hint">{t('take.available', { qty: quantity(available, product) })}</span>
+      </div>
+
+      {#if lot}
+        <p class="small muted">{t('take.fromLot')} <ExpiryBadge {lot} />{lot.location ? ` · ${lot.location}` : ''}</p>
+      {:else if lots.length > 1}
+        <p class="small muted">{t('take.fefo')}</p>
+      {/if}
+
+      {#if action === 'discarded'}
+        <label class="field">
+          <span>{t('take.note')}</span>
+          <input class="input" bind:value={note} placeholder={t('take.notePlaceholder')} />
+        </label>
+      {/if}
     {/if}
   </form>
 

@@ -88,6 +88,11 @@ export function formatDate(value: string | Day): string {
   }).format(new Date(day * 86_400_000));
 }
 
+/** A time of the day: "14:05", "2:05 PM". */
+export function formatTime(time: number): string {
+  return new Intl.DateTimeFormat(i18n.lang, { hour: 'numeric', minute: '2-digit' }).format(new Date(time));
+}
+
 /** "in 3 days", "2 months ago", "today". */
 export function formatRelative(days: number): string {
   const format = new Intl.RelativeTimeFormat(i18n.lang, { numeric: 'auto' });
