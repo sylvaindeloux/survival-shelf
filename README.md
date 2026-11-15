@@ -157,7 +157,7 @@ where do I find some when the tap runs dry…), start with the essentials and li
 **[Read the guides](guides/en/README.md)**
 
 <p align="center">
-  <img src="docs/screenshots/en/guides.png" width="260" alt="The Guides page: a search box and the list of the water guides">
+  <img src="docs/screenshots/en/guides.png" width="260" alt="The Guides page: a search box and the guides sorted by theme">
   <img src="docs/screenshots/en/guide.png" width="260" alt="A guide: make water safe to drink, starting with its summary">
 </p>
 
@@ -166,7 +166,7 @@ where do I find some when the tap runs dry…), start with the essentials and li
 - **Without the app**, they are plain text files in the [`guides`](guides/) folder, sorted by language and
   theme: read them here on GitHub, copy them to a phone or a USB stick, or print the ones that matter to you.
 
-The first theme, water, is there. The others are being written: basics, food, cold and heat, fire and power,
+Four themes are there: basics, water, cold and heat, fire and power. The others are being written: food,
 health and first aid, hygiene, communication and navigation, disasters, at home, in the car, outdoors and
 hostile environments. The guides do not replace instructions from the authorities or first-aid training: read
 the [disclaimer](#disclaimer).
