@@ -1,0 +1,56 @@
+name: Bug report / Bug
+description: Something does not work as it should. / Quelque chose ne marche pas comme prévu.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Write in English or French. / Tu peux écrire en français.
+        Do not paste personal data: remove what you do not want to make public. / Ne colle pas de données personnelles.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened? / Que s'est-il passé ?
+      description: And what did you expect instead? / Et qu'attendais-tu à la place ?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / Étapes pour reproduire
+      placeholder: |
+        1. Open Stock
+        2. Add a lot of rice without a date
+        3. …
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: How do you use the app? / Comment utilises-tu l'appli ?
+      options:
+        - Installed on a phone or computer (PWA) / Installée (PWA)
+        - Single HTML file / Fichier HTML unique
+        - Hosted on my own server / Sur mon propre serveur
+        - Online copy on GitHub Pages / Copie en ligne sur GitHub Pages
+        - Other / Autre
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and browser / Appareil et navigateur
+      placeholder: iPhone 15, Safari / Windows 11, Firefox 140
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version / Version de l'appli
+      description: Shown in Settings → About, like v15. / Affichée dans Réglages → À propos, par exemple v15.
+  - type: textarea
+    id: file
+    attributes:
+      label: Data file excerpt / Extrait du fichier de données
+      description: The lines of your survival-shelf.md involved, if any. / Les lignes concernées de ton fichier, s'il y en a.
+      render: markdown

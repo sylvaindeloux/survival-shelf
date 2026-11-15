@@ -1,0 +1,43 @@
+name: New language / Nouvelle langue
+description: Translate the app into a new language. / Traduire l'appli dans une nouvelle langue.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! Please read the [translation guide](https://github.com/sylvaindeloux/survival-shelf/blob/master/.github/TRANSLATING.md) first,
+        and check that nobody is already translating this language in the open issues.
+        Merci ! Lis d'abord le guide de traduction (en anglais) et vérifie que personne ne traduit déjà cette langue.
+  - type: input
+    id: language
+    attributes:
+      label: Language / Langue
+      description: Its name and two-letter code. / Son nom et son code à deux lettres.
+      placeholder: Deutsch (de)
+    validations:
+      required: true
+  - type: dropdown
+    id: fluency
+    attributes:
+      label: Your level / Ton niveau
+      options:
+        - Native speaker / Langue maternelle
+        - Fluent / Courant
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: What you plan to translate / Ce que tu comptes traduire
+      options:
+        - label: The app and its data file (required) / L'appli et son fichier de données (obligatoire)
+          required: true
+        - label: The built-in catalog / Le catalogue intégré
+        - label: README and file format / README et format du fichier
+        - label: Practical guides / Fiches pratiques
+        - label: I can also do the small code changes / Je peux aussi faire les petites modifications de code
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else? / Autre chose ?
+      description: Special characters, plural forms, regional variants… / Caractères spéciaux, pluriels, variantes régionales…

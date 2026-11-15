@@ -1,0 +1,39 @@
+name: Data or guide correction / Correction de données ou de fiche
+description: A shelf life, an amount, a catalog item or a practical guide is wrong or outdated. / Une durée de conservation, une quantité, un produit du catalogue ou une fiche pratique est faux ou dépassé.
+labels: [documentation]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Write in English or French. / Tu peux écrire en français.
+        People may rely on this information in an emergency, so every correction needs a reliable source. /
+        Ces informations peuvent servir en situation d'urgence : chaque correction a besoin d'une source fiable.
+  - type: input
+    id: where
+    attributes:
+      label: Where is it? / Où est-ce ?
+      description: A file, a guide title, or a screen of the app. / Un fichier, le titre d'une fiche ou un écran de l'appli.
+      placeholder: docs/SHELF_LIFE.md, "White rice"
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong? / Qu'est-ce qui ne va pas ?
+    validations:
+      required: true
+  - type: textarea
+    id: right
+    attributes:
+      label: What should it say? / Que faudrait-il écrire ?
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: |
+        Links to official or reliable sources: health or food safety agencies, civil protection, Red Cross,
+        manufacturers' technical sheets… / Liens vers des sources officielles ou fiables.
+    validations:
+      required: true

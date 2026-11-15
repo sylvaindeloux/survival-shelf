@@ -183,8 +183,8 @@ Yes, any product, with how much your household uses per day or the minimum you w
 ## Contribute
 
 Survival Shelf is a personal project that welcomes help: report a bug or suggest an idea in the
-[issues](https://github.com/sylvaindeloux/survival-shelf/issues), translate the app into your language, or
-improve the code. Everything you need is in [CONTRIBUTING.md](.github/CONTRIBUTING.md).
+[issues](https://github.com/sylvaindeloux/survival-shelf/issues), [translate the app](.github/TRANSLATING.md)
+into your language, or improve the code. Everything you need is in [CONTRIBUTING.md](.github/CONTRIBUTING.md).
 
 ## License
 
