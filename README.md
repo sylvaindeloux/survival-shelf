@@ -14,7 +14,8 @@
 </p>
 
 <p align="center">
-  <a href="https://sylvaindeloux.github.io/survival-shelf/"><b>Open the app →</b></a>
+  <a href="https://sylvaindeloux.github.io/survival-shelf/"><b>Try it online →</b></a><br>
+  <sub>then <a href="#get-started">keep your own copy</a>: the app is meant to run on your devices, offline</sub>
 </p>
 
 <p align="center">
@@ -94,20 +95,28 @@ And for the day the power is out: print your inventory, with room to note what y
 
 ## Get started
 
-Survival Shelf is made to **run on your own device**, with no online service behind it. Once it is there, it
-works **fully offline**. Pick the way that suits you:
+Survival Shelf is made to **run on your own devices**, with no online service behind it. Once you have your
+copy, it works **fully offline**.
 
-- **Install it from the web page** (easiest). Open
-  [sylvaindeloux.github.io/survival-shelf](https://sylvaindeloux.github.io/survival-shelf/), then:
+> [!CAUTION]
+> **Don't depend on the online version.** The page at sylvaindeloux.github.io is hosted by GitHub, an American
+> company: it needs internet, and nothing guarantees it will stay reachable during a crisis or a conflict. Use it
+> to try the app and to get your own copy, then keep that copy at home.
+
+- **Keep your own copy** (recommended). Download `survival-shelf.html`, from the app (*Settings → About →
+  Download the single-file version*) or
+  [directly](https://sylvaindeloux.github.io/survival-shelf/survival-shelf.html) (right-click → *Save link
+  as…*). It is one file that opens in any browser on a computer, from the disk, a USB key or a shared folder:
+  nothing to install, no network needed. Keep a few copies, for example on a USB key next to your data file.
+- **Host it at home.** Put that same file on a web server you own (a NAS, a Raspberry Pi…) to reach it from
+  every device of the house over your home network, or build the full app from the sources (see
+  [CONTRIBUTING.md](CONTRIBUTING.md)).
+- **Install it on your phone.** Open the web page, then:
   - iPhone or iPad (Safari): Share button → *Add to Home Screen*;
-  - Android (Chrome): menu ⋮ → *Install app* or *Add to Home screen*;
-  - computer (Chrome, Edge): the install icon in the address bar.
+  - Android (Chrome): menu ⋮ → *Install app* or *Add to Home screen*.
 
-  The app is then stored on your device and opens like any other app, with or without network.
-- **Keep it in a single file.** In *Settings → About*, download `survival-shelf.html`: one file that opens in
-  any browser, from your computer, a USB key or a shared folder. Nothing to install, no network needed.
-- **Host it at home.** Put that same file on any web server you own (a NAS, a Raspberry Pi…) to reach it from
-  every device of the house, or build the full app from the sources (see [CONTRIBUTING.md](CONTRIBUTING.md)).
+  The app is then stored on your phone and opens like any other app, with or without network. Handy, but
+  reinstalling or updating it depends on GitHub: keep the single file too.
 
 Then choose **Start my stock**, or **Try with sample data** to look around first.
 
@@ -151,8 +160,8 @@ written and will be linked here.
 Yes. Free and open source (MIT license), with no ads and no account.
 
 **Do I need an internet connection?**
-Only to get the app the first time. After that, it works offline. The single-file version needs no network
-at all.
+Only to get your copy the first time. After that, it works offline. Don't count on the online page in a
+crisis: keep the single-file version, which needs no network at all.
 
 **Can my family use it on several phones?**
 Each device keeps its own copy. To share, keep the file in a shared folder and open it from there, or export it

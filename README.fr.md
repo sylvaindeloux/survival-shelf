@@ -14,7 +14,8 @@
 </p>
 
 <p align="center">
-  <a href="https://sylvaindeloux.github.io/survival-shelf/"><b>Ouvrir l’appli →</b></a>
+  <a href="https://sylvaindeloux.github.io/survival-shelf/"><b>Essayer en ligne →</b></a><br>
+  <sub>puis <a href="#pour-commencer">garde ta propre copie</a> : l’appli est faite pour tourner chez toi, hors ligne</sub>
 </p>
 
 <p align="center">
@@ -100,22 +101,29 @@ prends.
 
 ## Pour commencer
 
-Survival Shelf est fait pour **tourner chez toi, sur ton propre appareil**, sans aucun service en ligne
-derrière. Une fois en place, il marche **entièrement hors ligne**. Choisis la façon qui te va :
+Survival Shelf est fait pour **tourner chez toi, sur tes propres appareils**, sans aucun service en ligne
+derrière. Une fois que tu as ta copie, il marche **entièrement hors ligne**.
 
-- **L’installer depuis la page web** (le plus simple). Ouvre
-  [sylvaindeloux.github.io/survival-shelf](https://sylvaindeloux.github.io/survival-shelf/), puis :
-  - iPhone ou iPad (Safari) : bouton Partager → *Sur l’écran d’accueil* ;
-  - Android (Chrome) : menu ⋮ → *Installer l’application* ou *Ajouter à l’écran d’accueil* ;
-  - ordinateur (Chrome, Edge) : l’icône d’installation dans la barre d’adresse.
+> [!CAUTION]
+> **Ne dépends pas de la version en ligne.** La page sylvaindeloux.github.io est hébergée par GitHub, une
+> entreprise américaine : il faut internet, et rien ne garantit qu’elle restera accessible en cas de crise ou de
+> conflit. Sers-t’en pour essayer l’appli et récupérer ta propre copie, puis garde cette copie chez toi.
 
-  L’appli est alors enregistrée sur ton appareil et s’ouvre comme n’importe quelle appli, avec ou sans réseau.
-- **La garder dans un seul fichier.** Dans *Réglages → À propos*, télécharge `survival-shelf.html` : un seul
-  fichier qui s’ouvre dans n’importe quel navigateur, depuis ton ordinateur, une clé USB ou un dossier partagé.
-  Rien à installer, pas besoin de réseau.
+- **Garder ta propre copie** (recommandé). Télécharge `survival-shelf.html`, depuis l’appli (*Réglages →
+  À propos → Télécharger la version fichier unique*) ou
+  [directement](https://sylvaindeloux.github.io/survival-shelf/survival-shelf.html) (clic droit →
+  *Enregistrer le lien sous…*). C’est un seul fichier qui s’ouvre dans n’importe quel navigateur sur un
+  ordinateur, depuis le disque, une clé USB ou un dossier partagé : rien à installer, pas besoin de réseau.
+  Garde-en plusieurs copies, par exemple sur une clé USB à côté de ton fichier de données.
 - **L’héberger chez toi.** Mets ce même fichier sur un serveur web à toi (un NAS, un Raspberry Pi…) pour y
-  accéder depuis tous les appareils de la maison, ou construis l’appli complète depuis les sources (voir
-  [CONTRIBUTING.md](CONTRIBUTING.md), en anglais).
+  accéder depuis tous les appareils de la maison par ton réseau local, ou construis l’appli complète depuis les
+  sources (voir [CONTRIBUTING.md](CONTRIBUTING.md), en anglais).
+- **L’installer sur ton téléphone.** Ouvre la page web, puis :
+  - iPhone ou iPad (Safari) : bouton Partager → *Sur l’écran d’accueil* ;
+  - Android (Chrome) : menu ⋮ → *Installer l’application* ou *Ajouter à l’écran d’accueil*.
+
+  L’appli est alors enregistrée sur ton téléphone et s’ouvre comme n’importe quelle appli, avec ou sans réseau.
+  Pratique, mais la réinstaller ou la mettre à jour dépend de GitHub : garde aussi le fichier unique.
 
 Ensuite, choisis **Démarrer mon stock**, ou **Essayer avec un exemple** pour faire un tour d’abord.
 
@@ -159,8 +167,8 @@ n’importe quel appareil. Elles sont en cours d’écriture et seront listées 
 Oui. Gratuit et open source (licence MIT), sans pub et sans compte.
 
 **Il faut une connexion internet ?**
-Seulement pour récupérer l’appli la première fois. Ensuite, elle marche hors ligne. La version fichier unique
-n’a besoin d’aucun réseau.
+Seulement pour récupérer ta copie la première fois. Ensuite, elle marche hors ligne. Ne compte pas sur la page
+en ligne en cas de crise : garde la version fichier unique, qui n’a besoin d’aucun réseau.
 
 **Ma famille peut l’utiliser sur plusieurs téléphones ?**
 Chaque appareil garde sa propre copie. Pour partager, range le fichier dans un dossier partagé et ouvre-le
