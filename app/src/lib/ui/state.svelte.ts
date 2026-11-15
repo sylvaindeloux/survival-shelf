@@ -2,8 +2,8 @@ import { KINDS } from '../core/categories';
 import { formatDay, parseDay, type Day } from '../core/dates';
 import type { Kind, LogAction } from '../core/types';
 
-export type Route = 'home' | 'checkin' | 'stock' | 'plan' | 'guides' | 'settings';
-const ROUTES: Route[] = ['home', 'checkin', 'stock', 'plan', 'guides', 'settings'];
+export type Route = 'home' | 'checkin' | 'stock' | 'guides' | 'settings';
+const ROUTES: Route[] = ['home', 'checkin', 'stock', 'guides', 'settings'];
 
 /** `#/guides/fr/eau/stocker-de-l-eau` is the route `guides` with the path `fr/eau/stocker-de-l-eau`. */
 function readHash(): { route: Route; path: string } {
@@ -67,7 +67,7 @@ class Dialogs {
 
 export const dialogs = new Dialogs();
 
-/** `#/stock/gear` opens the gear of the stock: the Stock and Plan screens have one sub-page per kind. */
+/** `#/stock/gear` opens the gear of the stock: the Stocks tab has one sub-page per kind. */
 export function kindOfPath(path: string): Kind | null {
   return (KINDS as string[]).includes(path) ? (path as Kind) : null;
 }

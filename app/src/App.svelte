@@ -19,7 +19,6 @@
   import CheckIn from './views/CheckIn.svelte';
   import Guides from './views/Guides.svelte';
   import Home from './views/Home.svelte';
-  import Plan from './views/Plan.svelte';
   import Settings from './views/Settings.svelte';
   import Stock from './views/Stock.svelte';
   import Welcome from './views/Welcome.svelte';
@@ -32,10 +31,8 @@
     { route: 'guides', label: 'nav.guides', icon: BookOpen },
   ];
 
-  const VIEWS: Record<Route, Component> = { home: Home, checkin: CheckIn, stock: Stock, plan: Plan, guides: Guides, settings: Settings };
+  const VIEWS: Record<Route, Component> = { home: Home, checkin: CheckIn, stock: Stock, guides: Guides, settings: Settings };
   const View = $derived(VIEWS[router.route]);
-  // The plan sets the targets of the stock, so it lights up the Stock tab.
-  const tab = $derived<Route>(router.route === 'plan' ? 'stock' : router.route);
 
   // Only what needs doing: expired lots to discard, lots due for rotation and supplies due for replacement.
   const badges = $derived<Partial<Record<Route, number>>>({
@@ -88,7 +85,7 @@
         <a class="brand" href="#/" aria-label="Survival Shelf"><Logo size={32} /><span class="brand-name">Survival Shelf</span></a>
         <nav class="tabs" aria-label={t('nav.label')}>
           {#each TABS as item (item.route)}
-            <a class="tab" href={item.route === 'home' ? '#/' : `#/${item.route}`} aria-current={tab === item.route ? 'page' : undefined}>
+            <a class="tab" href={item.route === 'home' ? '#/' : `#/${item.route}`} aria-current={router.route === item.route ? 'page' : undefined}>
               <item.icon size={24} />
               <span class="tab-label">{t(item.label)}</span>
               {#if badges[item.route]}<span class="count">{badges[item.route]}</span>{/if}

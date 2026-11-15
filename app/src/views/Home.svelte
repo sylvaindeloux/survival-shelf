@@ -3,9 +3,9 @@
   import Can from '@lucide/svelte/icons/can';
   import Check from '@lucide/svelte/icons/check';
   import ChevronRight from '@lucide/svelte/icons/chevron-right';
-  import ClipboardList from '@lucide/svelte/icons/clipboard-list';
   import Droplets from '@lucide/svelte/icons/droplets';
   import Flame from '@lucide/svelte/icons/flame';
+  import Package from '@lucide/svelte/icons/package';
   import Plus from '@lucide/svelte/icons/plus';
   import Sparkles from '@lucide/svelte/icons/sparkles';
   import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
@@ -49,7 +49,7 @@
       <h2>{t('home.emptyTitle')}</h2>
       <p class="muted">{t('home.emptyText')}</p>
       <div class="row wrap center">
-        <button class="btn primary" onclick={() => router.go('plan')}><ClipboardList size={18} />{t('home.openPlan')}</button>
+        <button class="btn primary" onclick={() => router.go('stock')}><Package size={18} />{t('home.openStock')}</button>
         <button class="btn" onclick={() => (dialogs.lot = {})}><Plus size={18} />{t('stock.addLot')}</button>
         {#if !app.demo}
           <button class="btn ghost" onclick={() => app.startDemo()}><Sparkles size={18} />{t('welcome.demo')}</button>
@@ -135,7 +135,7 @@
           <TriangleAlert size={16} />
           <span>
             {t('home.lowMenu', { menu: formatKcal(app.menu), need: formatKcal(settings.kcalPerPersonPerDay) })}
-            <button class="link" onclick={() => router.go('plan')}>{t('home.adjustPlan')}</button>
+            <button class="link" onclick={() => router.go('stock', 'food')}>{t('home.adjustTargets')}</button>
           </span>
         </p>
       {/if}

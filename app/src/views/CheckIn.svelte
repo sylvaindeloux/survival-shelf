@@ -254,7 +254,7 @@
           <TriangleAlert size={16} />
           <span>
             {t('checkin.foodShort', { days: Math.floor(buy.foodDays), tier: tierLabel(buy.days) })}
-            <button class="link" onclick={() => router.go('plan')}>{t('home.adjustPlan')}</button>
+            <button class="link" onclick={() => router.go('stock', 'food')}>{t('home.adjustTargets')}</button>
           </span>
         </p>
       {/if}

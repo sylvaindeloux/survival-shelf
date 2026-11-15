@@ -33,6 +33,9 @@ const UNIT_PLURALS: Record<string, string> = {
   bar: 'bars',
   box: 'boxes',
   bag: 'bags',
+  tube: 'tubes',
+  cartridge: 'cartridges',
+  tablet: 'tablets',
   boîte: 'boîtes',
   pot: 'pots',
   paquet: 'paquets',
@@ -45,6 +48,7 @@ const UNIT_PLURALS: Record<string, string> = {
   bocal: 'bocaux',
   brique: 'briques',
   cartouche: 'cartouches',
+  comprimé: 'comprimés',
 };
 
 function unitFor(qty: number, unit: string): string {
@@ -60,6 +64,16 @@ export function quantity(qty: number, product: Pick<Product, 'unit'> | undefined
     return `${formatNumber(qty * 1000, 0)} ${lower === 'kg' ? 'g' : 'mL'}`;
   }
   return unit === '' ? formatNumber(qty, 2) : `${formatNumber(qty, 2)} ${unitFor(qty, unit)}`;
+}
+
+/** "6 of 5.4 kg"; a target under 1 kg or 1 L is in grams or milliliters: "200 of 500 g", "2 kg of 180 g". */
+export function ofTarget(have: number, target: number, product: Pick<Product, 'unit'>): string {
+  const lower = product.unit.toLowerCase();
+  if (target > 0 && target < 1 && (lower === 'kg' || lower === 'l')) {
+    const shown = have > 0 && have < 1 ? formatNumber(have * 1000, 0) : quantity(have, product);
+    return t('stock.ofTarget', { have: shown, target: quantity(target, product) });
+  }
+  return t('stock.ofTarget', { have: formatNumber(have, 2), target: quantity(target, product) });
 }
 
 const DAILY_LABELS: Record<Per, MessageKey> = {
