@@ -172,8 +172,8 @@ where do I find some when the tap runs dry…), start with the essentials and li
 - **Without the app**, they are plain text files in the [`guides`](guides/) folder, sorted by language and
   theme: read them here on GitHub, copy them to a phone or a USB stick, or print the ones that matter to you.
 
-Seven themes are there: basics, water, cold and heat, fire and power, health and first aid, hygiene, disasters.
-The others are being written: food, communication and navigation, at home, in the car, outdoors and hostile
+Eleven themes are there: basics, water, food, cold and heat, fire and power, health and first aid, hygiene,
+communication and navigation, disasters, at home, in the car. Two more are being written: outdoors and hostile
 environments. The guides do not replace instructions from the authorities or first-aid training: read the
 [disclaimer](#disclaimer).
 
