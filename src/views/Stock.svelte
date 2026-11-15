@@ -14,7 +14,8 @@
   import { expiryStatus, type ProductSummary } from '../lib/core/status';
   import { formatDate, t, tn } from '../lib/i18n/index.svelte';
   import ExpiryBadge from '../lib/ui/ExpiryBadge.svelte';
-  import { categoryIcon, categoryLabel, quantity, tierLabel } from '../lib/ui/format';
+  import CategoryIcon from '../lib/ui/CategoryIcon.svelte';
+  import { categoryLabel, quantity, tierLabel } from '../lib/ui/format';
   import { dialogs } from '../lib/ui/state.svelte';
 
   type Filter = 'all' | 'expired' | 'soon';
@@ -116,7 +117,7 @@
 
   {#each groups as group (group.category)}
     <section class="group">
-      <h2 class="group-title"><span aria-hidden="true">{categoryIcon(group.category)}</span> {categoryLabel(group.category)}</h2>
+      <h2 class="group-title"><CategoryIcon category={group.category} />{categoryLabel(group.category)}</h2>
       <ul class="products card">
         {#each group.items as summary (summary.product.name)}
           {@const open = expanded[summary.product.name] ?? false}
@@ -219,8 +220,8 @@
     gap: 0.5rem;
     padding: 0 0.9rem;
     min-height: 46px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--control);
     background: var(--surface);
     color: var(--muted);
   }
@@ -250,36 +251,38 @@
     gap: 0.35rem;
     min-height: 36px;
     padding: 0.3rem 0.85rem;
-    border-radius: 999px;
-    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--control);
     background: var(--surface);
     font-weight: 600;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     cursor: pointer;
   }
 
   .chips button.active {
     background: var(--text);
     border-color: var(--text);
-    color: var(--bg);
+    color: var(--surface);
+    font-weight: 700;
   }
 
   .count {
     min-width: 1.3rem;
     padding: 0 0.35rem;
-    border-radius: 999px;
+    border-radius: 4px;
     font-size: 0.75rem;
+    font-weight: 700;
     text-align: center;
   }
 
   .count.expired {
     background: var(--danger);
-    color: #fff;
+    color: var(--surface);
   }
 
   .count.soon {
     background: var(--warn);
-    color: #fff;
+    color: var(--surface);
   }
 
   .location {
@@ -288,8 +291,8 @@
     gap: 0.35rem;
     padding: 0 0.4rem 0 0.75rem;
     min-height: 36px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--control);
     background: var(--surface);
     color: var(--muted);
   }
@@ -304,8 +307,10 @@
   }
 
   .group-title {
-    font-size: 0.95rem;
-    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
     margin: 0.25rem 0 0.5rem 0.25rem;
   }
 
@@ -490,11 +495,12 @@
     justify-content: center;
     width: 58px;
     height: 58px;
-    border-radius: 18px;
+    border-radius: 10px;
     border: none;
+    border-bottom: 4px solid var(--primary-edge);
     background: var(--primary);
     color: var(--on-primary);
-    box-shadow: 0 8px 24px color-mix(in srgb, var(--primary) 40%, transparent);
+    box-shadow: 0 6px 16px rgb(0 0 0 / 22%);
     cursor: pointer;
   }
 

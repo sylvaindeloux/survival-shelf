@@ -6,8 +6,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 import { inlineSingleFile } from './build/inline-single-file.ts';
 import pkg from './package.json' with { type: 'json' };
 
-const THEME_COLOR = '#2f5d46';
-const BACKGROUND_COLOR = '#f6f4ee';
+const THEME_COLOR = '#4b5320';
+const BACKGROUND_COLOR = '#ebeadf';
 
 export default defineConfig(({ mode }) => {
   // `--mode single` builds one self-contained HTML file (no service worker).
@@ -50,7 +50,7 @@ export default defineConfig(({ mode }) => {
               file_handlers: [{ action: './', accept: { 'text/markdown': ['.md', '.markdown'] } }],
             },
             workbox: {
-              globPatterns: ['**/*.{js,css,html,svg,png,webmanifest}'],
+              globPatterns: ['**/*.{js,css,html,svg,png,woff2,webmanifest}'],
               navigateFallback: 'index.html',
             },
           }),

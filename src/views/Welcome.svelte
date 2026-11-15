@@ -70,9 +70,7 @@
     align-items: center;
     gap: 2rem;
     padding: max(2rem, env(safe-area-inset-top)) 1rem calc(2rem + var(--safe-bottom));
-    background:
-      radial-gradient(90% 60% at 50% 0%, color-mix(in srgb, var(--primary) 16%, transparent), transparent 70%),
-      var(--bg);
+    background: var(--bg);
   }
 
   .hero {
@@ -86,8 +84,6 @@
 
   .logo {
     display: inline-flex;
-    border-radius: 18px;
-    box-shadow: 0 10px 30px color-mix(in srgb, var(--primary) 35%, transparent);
   }
 
   h1 {
@@ -142,13 +138,13 @@
   }
 
   .choice.main {
-    border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+    border-color: var(--primary);
   }
 
   .lang select {
-    border: 1px solid var(--border);
+    border: 1.5px solid var(--control);
     background: var(--surface);
-    border-radius: 999px;
+    border-radius: var(--radius-sm);
     padding: 0.4rem 0.8rem;
   }
 </style>

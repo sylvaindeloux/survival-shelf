@@ -107,3 +107,5 @@ The business logic in `src/lib/core` is covered by unit tests; please add tests 
 ## License
 
 [MIT](LICENSE) © Sylvain Deloux
+
+Bundled fonts: [Barlow and Barlow Semi Condensed](src/assets/fonts/README.md), SIL Open Font License 1.1. Icons: [Lucide](https://lucide.dev), ISC license.

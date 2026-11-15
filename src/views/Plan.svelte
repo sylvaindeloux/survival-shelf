@@ -14,7 +14,8 @@
   import { STORED_WATER_DAYS, isPlanned, isWaterProduct, productTarget } from '../lib/core/plan';
   import type { ProductSummary } from '../lib/core/status';
   import { formatNumber, t, tn } from '../lib/i18n/index.svelte';
-  import { categoryIcon, categoryLabel, dailyLabel, formatKcal, formatLiters, quantity, targetLabel, tierLabel } from '../lib/ui/format';
+  import CategoryIcon from '../lib/ui/CategoryIcon.svelte';
+  import { categoryLabel, dailyLabel, formatKcal, formatLiters, quantity, targetLabel, tierLabel } from '../lib/ui/format';
   import { dialogs, router } from '../lib/ui/state.svelte';
 
   const settings = $derived(app.shelf.settings);
@@ -66,7 +67,7 @@
 
   <section class="card stack">
     <div class="section-title">
-      <h2>💧 {t('plan.waterTitle')}</h2>
+      <h2 class="icon-title"><CategoryIcon category="water" size={22} />{t('plan.waterTitle')}</h2>
     </div>
     <p class="small muted">{t('plan.waterText', { liters: `${formatNumber(dailyWater, 2)} L`, days: STORED_WATER_DAYS })}</p>
     <ul class="list">
@@ -88,7 +89,7 @@
       <div class="chips">
         {#each waterProducts as summary (summary.product.name)}
           <button class="chip" onclick={() => (dialogs.product = { name: summary.product.name })}>
-            {categoryIcon(summary.product.category)} {summary.product.name} · {quantity(summary.usableQty, summary.product)}
+            <CategoryIcon category={summary.product.category} size={16} />{summary.product.name} · {quantity(summary.usableQty, summary.product)}
           </button>
         {/each}
       </div>
@@ -106,7 +107,7 @@
 
   {#each planned as [category, list] (category)}
     <section class="group">
-      <h2 class="group-title"><span aria-hidden="true">{categoryIcon(category)}</span> {categoryLabel(category)}</h2>
+      <h2 class="group-title"><CategoryIcon {category} />{categoryLabel(category)}</h2>
       <ul class="card products">
         {#each list as summary (summary.product.name)}
           {@const product = summary.product}
@@ -143,7 +144,7 @@
       <div class="chips">
         {#each unplanned as summary (summary.product.name)}
           <button class="chip" onclick={() => (dialogs.product = { name: summary.product.name })}>
-            {categoryIcon(summary.product.category)} {summary.product.name}
+            <CategoryIcon category={summary.product.category} size={16} />{summary.product.name}
           </button>
         {/each}
       </div>
@@ -167,7 +168,8 @@
     align-items: center;
     gap: 0.4rem;
     padding: 0.4rem 0.75rem;
-    border-radius: 999px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
     background: var(--surface-2);
     font-weight: 600;
     font-size: 0.9rem;
@@ -200,9 +202,12 @@
   }
 
   .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     padding: 0.35rem 0.75rem;
-    border-radius: 999px;
-    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--control);
     background: var(--surface);
     font-size: 0.875rem;
     font-weight: 600;
@@ -228,8 +233,15 @@
     text-align: center;
   }
 
+  .group-title,
+  .icon-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   .group-title {
-    font-size: 0.95rem;
+    font-size: 1.25rem;
     margin: 0 0 0.5rem 0.25rem;
   }
 
@@ -275,7 +287,7 @@
     align-items: center;
     gap: 0.2rem;
     padding: 0.05rem 0.5rem;
-    border-radius: 999px;
+    border-radius: 4px;
     background: var(--surface-2);
     color: var(--muted);
     font-size: 0.78rem;

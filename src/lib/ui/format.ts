@@ -5,10 +5,6 @@ import type { Day } from '../core/dates';
 import type { Lot, Per, Product, Rhythm, Settings } from '../core/types';
 import { formatDate, formatNumber, formatRelative, i18n, t, type MessageKey } from '../i18n/index.svelte';
 
-export function categoryIcon(category: string): string {
-  return findCategory(category)?.icon ?? '📦';
-}
-
 export function categoryLabel(category: string): string {
   return findCategory(category)?.label[i18n.lang] ?? category;
 }

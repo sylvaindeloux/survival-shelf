@@ -13,7 +13,8 @@
   import { formatDate, i18n, t } from '../lib/i18n/index.svelte';
   import ExpiryBadge from '../lib/ui/ExpiryBadge.svelte';
   import ReminderCard from '../lib/ui/ReminderCard.svelte';
-  import { categoryIcon, checkinTitle, formatLiters, quantity, RHYTHM_TEXTS, tierLabel } from '../lib/ui/format';
+  import CategoryIcon from '../lib/ui/CategoryIcon.svelte';
+  import { checkinTitle, formatLiters, quantity, RHYTHM_TEXTS, tierLabel } from '../lib/ui/format';
   import { dialogs, router } from '../lib/ui/state.svelte';
 
   const settings = $derived(app.shelf.settings);
@@ -93,7 +94,7 @@
         {#each checkin.discard as lot (lot.id)}
           {@const product = findProduct(app.shelf, lot.product)}
           <li>
-            <span class="icon" aria-hidden="true">{categoryIcon(product?.category ?? '')}</span>
+            <span class="icon"><CategoryIcon category={product?.category ?? ''} /></span>
             <span class="grow">
               <strong>{lot.product}</strong>
               <span class="small muted">{[quantity(lot.qty, product), formatDate(lot.expires), lot.location].filter(Boolean).join(' · ')}</span>
@@ -118,7 +119,7 @@
       <ul class="list">
         {#each checkin.consume as item (item.product.name)}
           <li>
-            <span class="icon" aria-hidden="true">{categoryIcon(item.product.category)}</span>
+            <span class="icon"><CategoryIcon category={item.product.category} /></span>
             <span class="grow">
               <strong>{item.product.name} <span class="qty num">{quantity(item.qty, item.product)}</span></strong>
               <span class="small muted lot">
@@ -149,7 +150,7 @@
       <ul class="list">
         {#each buy.missing as line (line.product.name)}
           <li>
-            <span class="icon" aria-hidden="true">{categoryIcon(line.product.category)}</span>
+            <span class="icon"><CategoryIcon category={line.product.category} /></span>
             <span class="grow">
               <strong>{line.product.name} <span class="qty num">+{quantity(line.missing, line.product)}</span></strong>
               <span class="small muted">
@@ -167,7 +168,7 @@
         {/each}
         {#if water.stored > 0}
           <li>
-            <span class="icon" aria-hidden="true">💧</span>
+            <span class="icon"><CategoryIcon category="water" /></span>
             <span class="grow">
               <strong>{t('checkin.drinkingWater')} <span class="qty num">+{formatLiters(water.stored)}</span></strong>
               <span class="small muted">{t('checkin.noWaterProduct')}</span>
@@ -227,7 +228,7 @@
     justify-content: center;
     width: 1.6rem;
     height: 1.6rem;
-    border-radius: 50%;
+    border-radius: 5px;
     background: var(--primary-soft);
     color: var(--primary);
     font-size: 0.85rem;

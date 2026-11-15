@@ -50,10 +50,11 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.6rem 0.5rem 0.6rem 1rem;
-    border-radius: 12px;
-    background: #1e2622;
-    color: #f1f3ef;
-    box-shadow: 0 8px 30px rgb(0 0 0 / 25%);
+    border-radius: var(--radius-sm);
+    border-bottom: 3px solid rgb(0 0 0 / 35%);
+    background: #1c1e16;
+    color: #e8e7dc;
+    box-shadow: 0 6px 20px rgb(0 0 0 / 25%);
     pointer-events: auto;
     animation: rise 0.2s ease-out;
   }
@@ -70,7 +71,7 @@
   .action {
     border: none;
     background: transparent;
-    color: #9fd8b6;
+    color: #c9d18f;
     font-weight: 700;
     cursor: pointer;
     padding: 0.4rem 0.5rem;
