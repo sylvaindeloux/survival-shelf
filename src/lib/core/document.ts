@@ -131,6 +131,19 @@ const RHYTHM_ALIASES: Record<string, Rhythm> = {
   month: 'monthly',
   mensuel: 'monthly',
   mois: 'monthly',
+  quarterly: 'quarterly',
+  quarter: 'quarterly',
+  '3months': 'quarterly',
+  trimestriel: 'quarterly',
+  trimestre: 'quarterly',
+  '3mois': 'quarterly',
+  semiannual: 'semiannual',
+  halfyearly: 'semiannual',
+  halfyear: 'semiannual',
+  '6months': 'semiannual',
+  semestriel: 'semiannual',
+  semestre: 'semiannual',
+  '6mois': 'semiannual',
 };
 
 interface SettingDef {

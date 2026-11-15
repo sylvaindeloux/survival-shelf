@@ -1,15 +1,15 @@
 <script lang="ts">
   import ArrowLeft from '@lucide/svelte/icons/arrow-left';
   import ArrowRight from '@lucide/svelte/icons/arrow-right';
-  import Baby from '@lucide/svelte/icons/baby';
+  import Cat from '@lucide/svelte/icons/cat';
   import Check from '@lucide/svelte/icons/check';
+  import Dog from '@lucide/svelte/icons/dog';
   import Minus from '@lucide/svelte/icons/minus';
-  import PawPrint from '@lucide/svelte/icons/paw-print';
   import Pill from '@lucide/svelte/icons/pill';
   import Plus from '@lucide/svelte/icons/plus';
   import type { Component } from 'svelte';
   import { app } from '../lib/app.svelte';
-  import { productFromCatalog, starterItems, type CatalogItem, type Need } from '../lib/core/catalog';
+  import { productFromCatalog, starterAmount, starterItems, type CatalogItem, type Needs } from '../lib/core/catalog';
   import { CATEGORIES, isWaterTreatment } from '../lib/core/categories';
   import { DEFAULT_SETTINGS } from '../lib/core/defaults';
   import { parseNumber } from '../lib/core/text';
@@ -19,10 +19,9 @@
 
   let { onback }: { onback: () => void } = $props();
 
-  const NEEDS: { need: Need; icon: Component; label: MessageKey; hint: MessageKey }[] = [
-    { need: 'baby', icon: Baby, label: 'setup.needBaby', hint: 'setup.needBabyHint' },
-    { need: 'pet', icon: PawPrint, label: 'setup.needPet', hint: 'setup.needPetHint' },
-    { need: 'treatment', icon: Pill, label: 'setup.needTreatment', hint: 'setup.needTreatmentHint' },
+  const PETS: { need: 'cat' | 'dog'; icon: Component; label: MessageKey; hint: MessageKey }[] = [
+    { need: 'cat', icon: Cat, label: 'setup.cats', hint: 'setup.catsHint' },
+    { need: 'dog', icon: Dog, label: 'setup.dogs', hint: 'setup.dogsHint' },
   ];
 
   interface Choice {
@@ -34,7 +33,7 @@
 
   let step = $state<1 | 2>(1);
   let people = $state(1);
-  let needs = $state<Need[]>([]);
+  let needs = $state<Needs>({ cat: 0, dog: 0, treatment: 0 });
   let choices = $state<Choice[]>([]);
 
   const categoryOrder = new Map(CATEGORIES.map((category, index) => [category.key, index]));
@@ -58,12 +57,12 @@
   const selectedCount = $derived(choices.filter((choice) => choice.selected).length);
   const tiers = $derived(DEFAULT_SETTINGS.tiers.map(tierLabel).join(', '));
 
-  function toggleNeed(need: Need) {
-    needs = needs.includes(need) ? needs.filter((candidate) => candidate !== need) : [...needs, need];
+  function count(need: 'cat' | 'dog', delta: number) {
+    needs[need] = Math.max(0, (needs[need] ?? 0) + delta);
   }
 
   function toPlan() {
-    choices = starterItems(needs).map((entry) => ({ entry, selected: true, amount: inputNumber(entry.daily ?? entry.target) }));
+    choices = starterItems(needs).map((entry) => ({ entry, selected: true, amount: inputNumber(starterAmount(entry, needs)) }));
     step = 2;
     window.scrollTo({ top: 0 });
   }
@@ -136,19 +135,36 @@
         </div>
       </div>
 
+      <div class="card stack pets">
+        <span class="label">{t('setup.pets')}</span>
+        {#each PETS as pet (pet.need)}
+          <div class="pet">
+            <span class="need-icon"><pet.icon size={22} /></span>
+            <span class="grow">
+              <strong>{t(pet.label)}</strong>
+              <span class="small muted">{t(pet.hint)}</span>
+            </span>
+            <div class="stepper">
+              <button class="icon-btn outlined" onclick={() => count(pet.need, -1)} disabled={!needs[pet.need]} aria-label={`${t(pet.label)} −1`}
+                ><Minus size={18} /></button
+              >
+              <span class="count num" aria-live="polite">{needs[pet.need]}</span>
+              <button class="icon-btn outlined" onclick={() => count(pet.need, 1)} aria-label={`${t(pet.label)} +1`}><Plus size={18} /></button>
+            </div>
+          </div>
+        {/each}
+      </div>
+
       <div class="stack needs">
         <span class="label">{t('setup.needs')}</span>
-        {#each NEEDS as option (option.need)}
-          {@const active = needs.includes(option.need)}
-          <button class="card need" class:active aria-pressed={active} onclick={() => toggleNeed(option.need)}>
-            <span class="need-icon"><option.icon size={22} /></span>
-            <span class="grow">
-              <strong>{t(option.label)}</strong>
-              <span class="small muted">{t(option.hint)}</span>
-            </span>
-            <span class="check" aria-hidden="true">{#if active}<Check size={18} />{/if}</span>
-          </button>
-        {/each}
+        <button class="card need" class:active={needs.treatment} aria-pressed={!!needs.treatment} onclick={() => (needs.treatment = needs.treatment ? 0 : 1)}>
+          <span class="need-icon"><Pill size={22} /></span>
+          <span class="grow">
+            <strong>{t('setup.needTreatment')}</strong>
+            <span class="small muted">{t('setup.needTreatmentHint')}</span>
+          </span>
+          <span class="check" aria-hidden="true">{#if needs.treatment}<Check size={18} />{/if}</span>
+        </button>
       </div>
 
       <div class="actions">
@@ -257,6 +273,19 @@
 
   .needs {
     gap: 0.6rem;
+  }
+
+  .pet {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .count {
+    min-width: 1.75rem;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 700;
   }
 
   .need {

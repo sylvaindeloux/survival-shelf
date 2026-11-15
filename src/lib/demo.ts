@@ -58,7 +58,7 @@ const DEMO_LOTS: Record<string, DemoLot[]> = {
 export function demoShelf(today: Day, lang: Lang): Shelf {
   let shelf = emptyShelf();
   shelf.settings.people = 2;
-  for (const entry of starterItems([])) {
+  for (const entry of starterItems({})) {
     shelf = upsertProduct(shelf, productFromCatalog(entry, lang));
   }
   for (const [id, lots] of Object.entries(DEMO_LOTS)) {

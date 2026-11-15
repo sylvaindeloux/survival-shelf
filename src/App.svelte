@@ -14,6 +14,7 @@
   import LotDialog from './lib/ui/LotDialog.svelte';
   import Logo from './lib/ui/Logo.svelte';
   import PrintSheet from './lib/ui/PrintSheet.svelte';
+  import { RHYTHM_TEXTS } from './lib/ui/format';
   import ProductDialog from './lib/ui/ProductDialog.svelte';
   import TakeDialog from './lib/ui/TakeDialog.svelte';
   import Toasts from './lib/ui/Toasts.svelte';
@@ -27,7 +28,7 @@
 
   const NAV = $derived<{ route: Route; label: MessageKey; icon: Component }[]>([
     { route: 'home', label: 'nav.home', icon: House },
-    { route: 'checkin', label: app.shelf.settings.rhythm === 'monthly' ? 'nav.checkinMonthly' : 'nav.checkinWeekly', icon: CalendarCheck },
+    { route: 'checkin', label: RHYTHM_TEXTS[app.shelf.settings.rhythm].nav, icon: CalendarCheck },
     { route: 'stock', label: 'nav.stock', icon: Package },
     { route: 'plan', label: 'nav.plan', icon: ClipboardList },
     { route: 'settings', label: 'nav.settings', icon: SettingsIcon },

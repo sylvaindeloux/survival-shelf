@@ -2,7 +2,7 @@
 export type Extra = Record<string, string>;
 
 /** How often the app prepares the list of what to consume, buy and discard. */
-export type Rhythm = 'weekly' | 'monthly';
+export type Rhythm = 'weekly' | 'monthly' | 'quarterly' | 'semiannual';
 
 export interface Settings {
   /** Number of people living on the stock. */

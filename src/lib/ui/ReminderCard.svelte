@@ -3,11 +3,13 @@
   import CalendarPlus from '@lucide/svelte/icons/calendar-plus';
   import Share2 from '@lucide/svelte/icons/share-2';
   import { app } from '../app.svelte';
+  import { RHYTHMS } from '../core/checkin';
   import { reminderCalendar } from '../core/ics';
   import { updateSettings } from '../core/stock';
   import type { Rhythm } from '../core/types';
   import { t } from '../i18n/index.svelte';
   import { downloadText, shareFile } from '../storage/files';
+  import { RHYTHM_TEXTS } from './format';
 
   const FILE_NAME = 'survival-shelf-reminder.ics';
 
@@ -67,8 +69,9 @@
     <div class="field">
       <span>{t('reminder.every')}</span>
       <div class="segmented" role="group" aria-label={t('reminder.every')}>
-        <button type="button" class:active={rhythm === 'weekly'} onclick={() => setRhythm('weekly')}>{t('settings.weekly')}</button>
-        <button type="button" class:active={rhythm === 'monthly'} onclick={() => setRhythm('monthly')}>{t('settings.monthly')}</button>
+        {#each RHYTHMS as option (option)}
+          <button type="button" class:active={rhythm === option} onclick={() => setRhythm(option)}>{t(RHYTHM_TEXTS[option].choice)}</button>
+        {/each}
       </div>
     </div>
   </div>

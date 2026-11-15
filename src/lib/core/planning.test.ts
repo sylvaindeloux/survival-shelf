@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { computeAutonomy, simulate } from './autonomy';
 import { dayFromParts, formatDay } from './dates';
 import { emptyShelf } from './defaults';
-import { CATALOG, starterItems } from './catalog';
+import { CATALOG, starterAmount, starterItems } from './catalog';
 import { buyCount, checkIn, waterWithoutProduct } from './checkin';
 import { reminderCalendar } from './ics';
 import { menuKcal, productTarget, tierPlan, tierStatus } from './plan';
@@ -206,6 +206,17 @@ describe('check-in', () => {
     const month = checkIn(shelf, TODAY, rotationPlan(shelf, TODAY), plan.current);
     // Tuna's pace (0.4 can a month) rounds to nothing: it shows up when it is due.
     expect(month.consume.map((item) => [item.product.name, item.qty])).toEqual([['Rice', 4.29]]);
+
+    shelf.settings.rhythm = 'quarterly';
+    const quarter = checkIn(shelf, TODAY, rotationPlan(shelf, TODAY), plan.current);
+    expect(quarter.periodDays).toBe(91);
+    // Rice expires before the next check-in: all of it goes now.
+    expect(quarter.consume.map((item) => [item.product.name, item.qty])).toEqual([['Rice', 10], ['Tuna', 1]]);
+
+    shelf.settings.rhythm = 'semiannual';
+    const half = checkIn(shelf, TODAY, rotationPlan(shelf, TODAY), plan.current);
+    expect(half.periodDays).toBe(182);
+    expect(half.consume.map((item) => [item.product.name, item.qty])).toEqual([['Rice', 10], ['Tuna', 3]]);
   });
 
   it('still asks for water when no water product is in the list', () => {
@@ -251,18 +262,36 @@ describe('reminder calendar', () => {
     const last = reminderCalendar({ start: '2026-10-31T09:30', rhythm: 'monthly', title: 'x', description: 'y', now });
     expect(last).toContain('RRULE:FREQ=MONTHLY;BYDAY=-1SA');
   });
+
+  it('repeats every 3 or 6 months on the same weekday of the month', () => {
+    const quarter = reminderCalendar({ start: '2026-10-10T09:30', rhythm: 'quarterly', title: 'x', description: 'y', now });
+    expect(quarter).toContain('RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=2SA\r\n');
+    const half = reminderCalendar({ start: '2026-10-31T09:30', rhythm: 'semiannual', title: 'x', description: 'y', now });
+    expect(half).toContain('RRULE:FREQ=MONTHLY;INTERVAL=6;BYDAY=-1SA\r\n');
+  });
 });
 
 describe('catalog', () => {
   it('has a starter menu close to 2200 kcal per person per day', () => {
-    const kcal = starterItems([]).reduce((sum, entry) => sum + (entry.per === 'person' ? (entry.daily ?? 0) * (entry.kcal ?? 0) : 0), 0);
+    const kcal = starterItems({}).reduce((sum, entry) => sum + (entry.per === 'person' ? (entry.daily ?? 0) * (entry.kcal ?? 0) : 0), 0);
     expect(kcal).toBeGreaterThan(2150);
     expect(kcal).toBeLessThan(2250);
   });
 
   it('only proposes specific needs when asked', () => {
-    expect(starterItems([]).some((entry) => entry.need)).toBe(false);
-    expect(starterItems(['baby']).filter((entry) => entry.need).map((entry) => entry.id)).toEqual(['infant-formula', 'diapers']);
+    expect(starterItems({}).some((entry) => entry.need)).toBe(false);
+    expect(starterItems({ cat: 0, dog: 1 }).filter((entry) => entry.need).map((entry) => entry.id)).toEqual(['dog-food']);
+  });
+
+  it('counts pet items once per animal', () => {
+    const needs = { cat: 2, treatment: 1 };
+    const amounts = starterItems(needs)
+      .filter((entry) => entry.need)
+      .map((entry) => [entry.id, starterAmount(entry, needs), (entry.daily ?? 0) * (entry.need === 'cat' ? 2 : 1)]);
+    expect(amounts.map(([id]) => id)).toEqual(['cat-food', 'cat-litter', 'daily-medicine']);
+    for (const [, amount, expected] of amounts) expect(amount).toBeCloseTo(expected as number, 6);
+    const rice = CATALOG.find((entry) => entry.id === 'rice');
+    expect(rice && starterAmount(rice, needs)).toBe(rice?.daily);
   });
 
   it('uses unique ids and known categories', () => {

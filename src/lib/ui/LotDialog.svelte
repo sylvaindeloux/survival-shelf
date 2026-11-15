@@ -2,13 +2,13 @@
   import Trash from '@lucide/svelte/icons/trash';
   import { app } from '../app.svelte';
   import { CATEGORIES } from '../core/categories';
-  import { isValidDate } from '../core/dates';
+  import { isValidDate, monthsLater } from '../core/dates';
   import { CATALOG, findCatalogItem } from '../core/catalog';
   import { addLot, deleteLot, emptyProduct, findProduct, updateLot, upsertProduct } from '../core/stock';
   import { parseNumber } from '../core/text';
   import { i18n, t } from '../i18n/index.svelte';
   import Dialog from './Dialog.svelte';
-  import { categoryIcon, categoryLabel, inputNumber, quantity } from './format';
+  import { categoryIcon, categoryLabel, inputNumber, keepsText, quantity } from './format';
   import { dialogs, type LotDialogState } from './state.svelte';
 
   let { request }: { request: LotDialogState } = $props();
@@ -26,6 +26,8 @@
     editing ? (editing.expires === '' ? 'none' : /^\d{4}-\d{2}$/.test(editing.expires) ? 'month' : 'day') : 'day',
   );
   let expires = $state(editing?.expires ?? '');
+  /** The date was filled in by the app from the typical shelf life, not by the user. */
+  let estimated = $state(false);
   let location = $state(editing?.location ?? '');
   let submitted = $state(false);
 
@@ -55,7 +57,7 @@
   ]);
   const unitSuggestions = $derived([...new Set(CATALOG.map((entry) => entry.unit[i18n.lang]))]);
   /** Typical shelf life, to help when the date is hard to read on the packaging. */
-  const shelfLife = $derived(findCatalogItem(productName)?.shelfLife ?? null);
+  const catalogEntry = $derived(findCatalogItem(productName));
 
   function applyCatalog() {
     if (existing) return;
@@ -67,10 +69,29 @@
     water = inputNumber(entry.water);
   }
 
+  /** New lot: estimates the expiry from the typical shelf life, until the user enters a date. */
+  function estimate() {
+    if (editing || !(estimated || (precision === 'day' && expires === ''))) return;
+    const entry = findCatalogItem(productName);
+    if (!entry) {
+      if (estimated) [precision, expires, estimated] = ['day', '', false];
+      return;
+    }
+    precision = entry.shelfLife === null ? 'none' : 'month';
+    expires = entry.shelfLife === null ? '' : monthsLater(app.today, entry.shelfLife);
+    estimated = true;
+  }
+
+  function productChanged() {
+    applyCatalog();
+    estimate();
+  }
+
   // Asked to add a product that is not in the list yet (water from the check-in): fill it from the catalog.
-  applyCatalog();
+  productChanged();
 
   function setPrecision(next: Precision) {
+    estimated = false;
     if (next === 'month' && /^\d{4}-\d{2}/.test(expires)) expires = expires.slice(0, 7);
     else if (next === 'day' && !/^\d{4}-\d{2}-\d{2}$/.test(expires)) expires = '';
     precision = next;
@@ -105,7 +126,8 @@
     if (keepOpen) {
       productName = '';
       qty = '1';
-      expires = precision === 'month' ? '' : expires;
+      if (estimated) [precision, expires, estimated] = ['day', '', false];
+      else expires = precision === 'month' ? '' : expires;
       submitted = false;
       document.getElementById('lot-product')?.focus();
     } else {
@@ -137,8 +159,8 @@
         class="input"
         list="product-suggestions"
         bind:value={productName}
-        oninput={applyCatalog}
-        onchange={applyCatalog}
+        oninput={productChanged}
+        onchange={productChanged}
         placeholder={t('lot.productPlaceholder')}
         autocomplete="off"
         aria-invalid={submitted && errors.product}
@@ -197,20 +219,31 @@
         <button type="button" class:active={precision === 'none'} onclick={() => setPrecision('none')}>{t('lot.precisionNone')}</button>
       </div>
       {#if precision === 'day'}
-        <input class="input" type="date" bind:value={expires} aria-label={t('lot.expires')} aria-invalid={submitted && errors.expires} />
+        <input
+          class="input"
+          type="date"
+          bind:value={expires}
+          oninput={() => (estimated = false)}
+          aria-label={t('lot.expires')}
+          aria-invalid={submitted && errors.expires}
+        />
       {:else if precision === 'month'}
         <input
           class="input"
           type="month"
           bind:value={expires}
+          oninput={() => (estimated = false)}
           placeholder="YYYY-MM"
           aria-label={t('lot.expires')}
           aria-invalid={submitted && errors.expires}
         />
-        <span class="hint">{t('lot.monthHint')}</span>
+        {#if !estimated}<span class="hint">{t('lot.monthHint')}</span>{/if}
       {/if}
-      {#if shelfLife && precision !== 'none'}
-        <span class="hint">{t('lot.shelfLife', { months: shelfLife })}</span>
+      {#if estimated && precision !== 'none'}
+        <span class="hint estimated">{t('lot.estimated')}</span>
+      {/if}
+      {#if catalogEntry}
+        <span class="hint">{keepsText(catalogEntry)}</span>
       {/if}
     </div>
 
@@ -265,6 +298,11 @@
 
   .segmented {
     margin-bottom: 0.25rem;
+  }
+
+  .estimated {
+    color: var(--primary);
+    font-weight: 600;
   }
 
   .error {
