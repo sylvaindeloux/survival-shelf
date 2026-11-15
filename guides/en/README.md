@@ -4,7 +4,7 @@
 
 Short guides to act when things go wrong. Each guide answers one question, starts with the essentials ("In short") and lists its sources.
 
-> **Important**: these guides do not replace instructions from the authorities or first-aid training. In a life-threatening emergency, call your local emergency number (112 in Europe, 911 in North America).
+> **Important**: these guides give general information, with no warranty. They may contain mistakes, be out of date or not fit your situation: you follow them at your own risk. They do not replace instructions from the authorities, professional advice or first-aid training. In a life-threatening emergency, call your local emergency number (112 in Europe, 911 in North America).
 
 ## Read the guides without the app
 
@@ -15,7 +15,7 @@ The guides are plain text files, sorted by theme in this folder. You can:
 - copy them to your phone, your computer or a USB stick, then open them with any text editor;
 - print the ones that matter to you.
 
-To get everything at once, use the "Download all guides" button in the app, or the green "Code" button then "Download ZIP" on the project's GitHub page.
+To get everything at once, use the green "Code" button then "Download ZIP" on the project's GitHub page: the guides are in the `guides` folder.
 
 ## Water
 

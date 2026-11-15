@@ -173,12 +173,13 @@ officielles.
   les lire avant même d’avoir un stock.
 - **Sans l’appli**, ce sont de simples fichiers texte rangés par langue et par thème dans le dossier
   [`guides`](guides/) : lis-les ici sur GitHub, copie-les sur un téléphone ou une clé USB, ou imprime celles
-  qui comptent pour toi. L’appli a un bouton « Télécharger toutes les fiches ».
+  qui comptent pour toi.
 
 Le premier thème, l’eau, est disponible. Les autres sont en cours d’écriture : les bases, la nourriture, le
 froid et la chaleur, le feu et l’énergie, la santé et les premiers secours, l’hygiène, la communication et
 l’orientation, les catastrophes, à la maison, en voiture, en extérieur et les milieux hostiles. Les fiches ne
-remplacent ni les consignes des autorités ni une formation aux premiers secours.
+remplacent ni les consignes des autorités ni une formation aux premiers secours : lis
+l’[avertissement](#avertissement).
 
 ## Questions
 
@@ -206,6 +207,25 @@ c’est différent : ne compte plus dessus après leur date. Détails dans les
 
 **Je peux ajouter mes propres produits ?**
 Oui, n’importe quel produit, avec ce que ton foyer en utilise par jour ou le minimum que tu veux avoir.
+
+## Avertissement
+
+Survival Shelf est un projet personnel et bénévole. Ce n’est pas une source officielle, et il ne remplace ni
+les consignes des autorités, ni l’avis d’un professionnel (médecin, pharmacien, pompier…), ni une formation
+aux premiers secours.
+
+- **L’appli donne des estimations.** Les quantités, les jours d’autonomie et les durées de conservation sont
+  des repères généraux : vérifie-les avec ton foyer et les étiquettes de tes produits.
+- **Les fiches donnent des informations générales.** Elles sont écrites avec soin à partir de sources
+  officielles, mais elles peuvent contenir des erreurs, ne plus être à jour, ou ne pas convenir à ta situation
+  ou à ton pays.
+
+Tu utilises l’appli et les fiches sous ta seule responsabilité. Elles sont fournies « en l’état », sans aucune
+garantie, et leurs auteurs et contributeurs ne peuvent pas être tenus responsables des conséquences de leur
+utilisation, comme le prévoit la [licence MIT](LICENSE). En cas d’urgence vitale, appelle le 112.
+
+Tu as repéré une erreur ? [Signale-la dans les issues](https://github.com/sylvaindeloux/survival-shelf/issues) :
+la corriger peut aider quelqu’un d’autre.
 
 ## Contribuer
 

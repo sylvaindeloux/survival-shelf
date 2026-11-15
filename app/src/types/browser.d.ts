@@ -29,5 +29,3 @@ interface Window {
 }
 
 declare const __APP_VERSION__: string;
-/** True in the single-file build, which ships without the files served next to the app. */
-declare const __SINGLE_FILE__: boolean;

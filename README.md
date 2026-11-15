@@ -165,11 +165,11 @@ where do I find some when the tap runs dry…), start with the essentials and li
   you have any stock.
 - **Without the app**, they are plain text files in the [`guides`](guides/) folder, sorted by language and
   theme: read them here on GitHub, copy them to a phone or a USB stick, or print the ones that matter to you.
-  The app has a "Download all guides" button.
 
 The first theme, water, is there. The others are being written: basics, food, cold and heat, fire and power,
 health and first aid, hygiene, communication and navigation, disasters, at home, in the car, outdoors and
-hostile environments. The guides do not replace instructions from the authorities or first-aid training.
+hostile environments. The guides do not replace instructions from the authorities or first-aid training: read
+the [disclaimer](#disclaimer).
 
 ## Questions
 
@@ -196,6 +196,25 @@ and water purification tablets are different: do not rely on them after their da
 
 **Can I add my own products?**
 Yes, any product, with how much your household uses per day or the minimum you want to own.
+
+## Disclaimer
+
+Survival Shelf is a personal, volunteer project. It is not an official source, and it replaces neither
+instructions from the authorities, nor the advice of a professional (doctor, pharmacist, firefighter…), nor
+first-aid training.
+
+- **The app gives estimates.** Quantities, days of autonomy and shelf lives are general starting points: check
+  them against your household and the labels of your products.
+- **The guides give general information.** They are written with care from official sources, but they may
+  contain mistakes, be out of date, or not fit your situation or your country.
+
+You use the app and the guides at your own risk. They are provided "as is", without warranty of any kind, and
+their authors and contributors cannot be held liable for the consequences of their use, as the
+[MIT license](LICENSE) states. In a life-threatening emergency, call your local emergency number (112 in
+Europe, 911 in North America).
+
+Found a mistake? [Open an issue](https://github.com/sylvaindeloux/survival-shelf/issues): fixing it may help
+someone else.
 
 ## Contribute
 

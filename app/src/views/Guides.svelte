@@ -1,7 +1,7 @@
 <script lang="ts">
   import ArrowLeft from '@lucide/svelte/icons/arrow-left';
   import ChevronRight from '@lucide/svelte/icons/chevron-right';
-  import Download from '@lucide/svelte/icons/download';
+  import ExternalLink from '@lucide/svelte/icons/external-link';
   import Printer from '@lucide/svelte/icons/printer';
   import Search from '@lucide/svelte/icons/search';
   import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
@@ -11,7 +11,8 @@
   import { i18n, t, tn } from '../lib/i18n/index.svelte';
   import { router } from '../lib/ui/state.svelte';
 
-  const canDownload = !__SINGLE_FILE__ && location.protocol !== 'file:';
+  /** The same guides as plain Markdown files, for whoever wants them without the app. */
+  const FILES = 'https://github.com/sylvaindeloux/survival-shelf/tree/master/guides';
 
   // The guides are the Markdown files of the repository's guides/ folder, rendered at build time
   // and loaded one language at a time.
@@ -126,9 +127,9 @@
     <section class="card stack">
       <h2>{t('guides.offlineTitle')}</h2>
       <p class="small">{t('guides.offlineText')}</p>
-      {#if canDownload}
-        <p><a class="btn" href="./survival-shelf-guides.zip" download><Download size={18} />{t('guides.download')}</a></p>
-      {/if}
+      <p>
+        <a class="btn" href={FILES} target="_blank" rel="noopener"><ExternalLink size={18} />{t('guides.files')}</a>
+      </p>
     </section>
   </div>
 {/if}

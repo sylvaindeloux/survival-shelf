@@ -4,7 +4,7 @@
 
 Des fiches courtes pour agir quand tout va mal. Chaque fiche répond à une seule question, commence par l’essentiel (« En bref ») et cite ses sources.
 
-> **Important** : ces fiches ne remplacent ni les consignes des autorités ni une formation aux premiers secours. En cas d’urgence vitale, appelle le 112.
+> **Important** : ces fiches donnent des informations générales, sans garantie. Elles peuvent contenir des erreurs, ne plus être à jour ou ne pas convenir à ta situation : tu les appliques sous ta seule responsabilité. Elles ne remplacent ni les consignes des autorités, ni l’avis d’un professionnel, ni une formation aux premiers secours. En cas d’urgence vitale, appelle le 112.
 
 ## Lire les fiches sans l’appli
 
@@ -15,7 +15,7 @@ Les fiches sont de simples fichiers texte, rangés par thème dans ce dossier. T
 - les copier sur ton téléphone, ton ordinateur ou une clé USB, puis les ouvrir avec n’importe quel éditeur de texte ;
 - imprimer celles qui comptent pour toi.
 
-Pour tout récupérer d’un coup, utilise le bouton « Télécharger toutes les fiches » de l’appli, ou le bouton vert « Code » puis « Download ZIP » sur la page GitHub du projet.
+Pour tout récupérer d’un coup, utilise le bouton vert « Code » puis « Download ZIP » sur la page GitHub du projet : les fiches sont dans le dossier `guides`.
 
 ## Eau
 

@@ -34,14 +34,12 @@ export default defineConfig(({ mode }) => {
     base: './',
     define: {
       __APP_VERSION__: JSON.stringify(appVersion()),
-      // The single file has nothing next to it: no archive of the guides to download.
-      __SINGLE_FILE__: JSON.stringify(single),
     },
     publicDir: single ? false : 'public',
     plugins: [
       svelte(),
       // The practical guides live at the root of the repository, readable without the app.
-      guides(resolve(import.meta.dirname, '../guides'), { inline: single, archive: !single }),
+      guides(resolve(import.meta.dirname, '../guides'), { inline: single }),
       single
         ? inlineSingleFile(resolve(import.meta.dirname, 'public'))
         : VitePWA({
@@ -71,7 +69,7 @@ export default defineConfig(({ mode }) => {
               file_handlers: [{ action: './', accept: { 'text/markdown': ['.md', '.markdown'] } }],
             },
             workbox: {
-              globPatterns: ['**/*.{js,css,html,svg,png,woff2,webmanifest,zip}'],
+              globPatterns: ['**/*.{js,css,html,svg,png,woff2,webmanifest}'],
               navigateFallback: 'index.html',
             },
           }),

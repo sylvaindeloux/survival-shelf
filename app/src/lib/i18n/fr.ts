@@ -326,6 +326,9 @@ export const fr: Record<keyof typeof en, string> = {
   'settings.about': 'À propos',
   'settings.aboutText':
     'Survival Shelf est une appli libre et gratuite. Pas de compte, pas de serveur : tes données ne quittent jamais ton appareil.',
+  'settings.disclaimerTitle': 'Avertissement',
+  'settings.disclaimer':
+    'Survival Shelf est un projet personnel et bénévole, pas une source officielle. Ses estimations (quantités, jours d’autonomie, durées de conservation) et ses fiches sont des informations générales, fournies en l’état, sans garantie : tu les utilises sous ta seule responsabilité. Elles ne remplacent ni les consignes des autorités, ni l’avis d’un professionnel, ni une formation aux premiers secours.',
   'settings.license': 'licence MIT',
   'settings.singleFile': 'Télécharger la version fichier unique',
   'settings.singleFileHint': 'un seul fichier HTML qui marche sans installation, depuis un disque ou une clé USB.',
@@ -373,7 +376,7 @@ export const fr: Record<keyof typeof en, string> = {
   'guides.title': 'Fiches pratiques',
   'guides.intro': 'Des fiches courtes pour agir quand tout va mal. Elles marchent hors ligne, comme le reste de l’appli.',
   'guides.notice':
-    'Ces fiches ne remplacent ni les consignes des autorités ni une formation aux premiers secours. En cas d’urgence vitale, appelle le 112.',
+    'Informations générales, sans garantie : ces fiches ne remplacent ni les consignes des autorités, ni l’avis d’un professionnel, ni une formation aux premiers secours. En cas d’urgence vitale, appelle le 112.',
   'guides.search': 'Chercher dans les fiches',
   'guides.results_one': '{count} fiche pour « {query} »',
   'guides.results_other': '{count} fiches pour « {query} »',
@@ -381,8 +384,8 @@ export const fr: Record<keyof typeof en, string> = {
   'guides.more': 'D’autres thèmes sont en cours d’écriture.',
   'guides.offlineTitle': 'Garde-les sans l’appli',
   'guides.offlineText':
-    'Les fiches sont de simples fichiers texte : copie-les sur un téléphone ou une clé USB, ou imprime celles qui comptent pour toi.',
-  'guides.download': 'Télécharger toutes les fiches',
+    'Les fiches sont aussi de simples fichiers texte, dans le dossier « guides » du projet : copie-les sur un téléphone ou une clé USB, ou imprime celles qui comptent pour toi.',
+  'guides.files': 'Voir les fichiers sur GitHub',
   'guides.all': 'Toutes les fiches',
   'guides.print': 'Imprimer',
   'guides.notFound': 'Cette fiche n’existe pas, ou plus.',

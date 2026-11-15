@@ -3,11 +3,8 @@ import { join, relative, sep } from 'node:path';
 import type { Plugin } from 'vite';
 import { LANGS, type Lang } from '../src/lib/core/types.ts';
 import { buildLibrary } from '../src/lib/guides/build.ts';
-import { zip } from './zip.ts';
 
 const VIRTUAL = 'virtual:guides';
-/** Archive of all the guides, served next to the app. */
-export const GUIDES_ZIP = 'survival-shelf-guides.zip';
 
 /** Every Markdown file of the guides folder, keyed by its path relative to that folder. */
 function readGuides(root: string): Record<string, string> {
@@ -20,23 +17,14 @@ function readGuides(root: string): Record<string, string> {
   return files;
 }
 
-/** The whole guides folder, as it is in the repository. */
-function guidesArchive(root: string): Buffer {
-  const files = Object.entries(readGuides(root))
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([path, content]) => [`survival-shelf-guides/${path}`, content]);
-  return zip(Object.fromEntries(files));
-}
-
 /**
- * Makes the Markdown guides of the repository available to the app:
- * - `virtual:guides` exports `loadGuides(lang)`, the guides of a language already rendered to
- *   HTML, so the app needs no Markdown parser and reads them offline. Each language is a chunk
- *   of its own, loaded when first needed, or part of the main script with `inline` (the
- *   single-file build has no other file to load);
- * - with `archive`, a ZIP of the whole folder is written next to the app.
+ * Makes the Markdown guides of the repository available to the app: `virtual:guides` exports
+ * `loadGuides(lang)`, the guides of a language already rendered to HTML, so the app needs no
+ * Markdown parser and reads them offline. Each language is a chunk of its own, loaded when first
+ * needed, or part of the main script with `inline` (the single-file build has no other file to
+ * load).
  */
-export function guides(root: string, options: { inline: boolean; archive: boolean }): Plugin {
+export function guides(root: string, options: { inline: boolean }): Plugin {
   return {
     name: 'survival-shelf:guides',
     resolveId(id) {
@@ -62,15 +50,6 @@ export function guides(root: string, options: { inline: boolean; archive: boolea
       const files = readGuides(root);
       for (const path of Object.keys(files)) this.addWatchFile(join(root, path));
       return `export default ${JSON.stringify(buildLibrary(files, lang as Lang))};`;
-    },
-    generateBundle() {
-      if (options.archive) this.emitFile({ type: 'asset', fileName: GUIDES_ZIP, source: guidesArchive(root) });
-    },
-    configureServer(server) {
-      server.middlewares.use(`/${GUIDES_ZIP}`, (_request, response) => {
-        response.setHeader('Content-Type', 'application/zip');
-        response.end(guidesArchive(root));
-      });
     },
   };
 }

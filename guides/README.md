@@ -7,4 +7,8 @@ Des fiches de survie courtes, en texte simple : trouver de l’eau, la rendre po
 - **English**: [open the guides](en/README.md)
 - **Français** : [ouvrir les fiches](fr/README.md)
 
+> **Important**: these guides give general information, with no warranty, and you follow them at your own risk. They do not replace instructions from the authorities, professional advice or first-aid training.
+>
+> **Important** : ces fiches donnent des informations générales, sans garantie, et tu les appliques sous ta seule responsabilité. Elles ne remplacent ni les consignes des autorités, ni l’avis d’un professionnel, ni une formation aux premiers secours.
+
 To write or fix a guide, read [CONTRIBUTING.md](CONTRIBUTING.md).

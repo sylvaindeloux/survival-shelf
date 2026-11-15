@@ -321,6 +321,9 @@ export const en = {
   'settings.about': 'About',
   'settings.aboutText':
     'Survival Shelf is a free, open-source app. It needs no account and no server: your data never leaves your device.',
+  'settings.disclaimerTitle': 'Disclaimer',
+  'settings.disclaimer':
+    'Survival Shelf is a personal, volunteer project, not an official source. Its estimates (quantities, days of autonomy, shelf lives) and its guides are general information, provided as is, with no warranty: you use them at your own risk. They do not replace instructions from the authorities, professional advice or first-aid training.',
   'settings.license': 'MIT license',
   'settings.singleFile': 'Download the single-file version',
   'settings.singleFileHint': 'one HTML file that runs without installation, from a disk or a USB key.',
@@ -368,7 +371,7 @@ export const en = {
   'guides.title': 'Practical guides',
   'guides.intro': 'Short guides to act when things go wrong. They work offline, like the rest of the app.',
   'guides.notice':
-    'These guides do not replace instructions from the authorities or first-aid training. In a life-threatening emergency, call your local emergency number (112 in Europe, 911 in North America).',
+    'General information, with no warranty: these guides do not replace instructions from the authorities, professional advice or first-aid training. In a life-threatening emergency, call your local emergency number (112 in Europe, 911 in North America).',
   'guides.search': 'Search the guides',
   'guides.results_one': '{count} guide for “{query}”',
   'guides.results_other': '{count} guides for “{query}”',
@@ -376,8 +379,8 @@ export const en = {
   'guides.more': 'More themes are being written.',
   'guides.offlineTitle': 'Keep them without the app',
   'guides.offlineText':
-    'The guides are plain text files: copy them to a phone or a USB stick, or print the ones that matter to you.',
-  'guides.download': 'Download all guides',
+    'The guides are also plain text files, in the “guides” folder of the project: copy them to a phone or a USB stick, or print the ones that matter to you.',
+  'guides.files': 'See the files on GitHub',
   'guides.all': 'All guides',
   'guides.print': 'Print',
   'guides.notFound': 'This guide does not exist, or not anymore.',
