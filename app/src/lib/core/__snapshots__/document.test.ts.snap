@@ -32,6 +32,20 @@ exports[`serializeShelf > writes a complete commented template for a new shelf 1
 |------------------|-------------|---------------------------------------|-------|
 | Emergency number | Emergencies | all emergencies, everywhere in the EU | 112   |
 
+## Go-bags
+
+<!-- One row per bag, one per person. Its name is also the location of its lots in the stock. Checked: day of the last check, once a year. -->
+
+| Bag | Stored | Checked | Notes |
+|-----|--------|---------|-------|
+
+## Go-bag contents
+
+<!-- One row per item and per bag. Ready: yes or no, ticked by hand. Product: a product of the stock, ready when one of its lots is stored in the bag. -->
+
+| Bag | Group | Item | Ready | Product |
+|-----|-------|------|-------|---------|
+
 ## Products
 
 <!-- One row per product. Type: food, consumable or gear. Kcal and Water are per unit. Daily use sets what each tier needs, Target is a minimum to own. Per: person, household, cat or dog. -->
@@ -86,6 +100,20 @@ exports[`serializeShelf > writes a complete commented template for a new shelf 2
 | Rubrique         | Nom      | Détail                                 | Téléphone |
 |------------------|----------|----------------------------------------|-----------|
 | Numéro d’urgence | Urgences | toutes les urgences, partout dans l’UE | 112       |
+
+## Sacs
+
+<!-- Une ligne par sac, un par personne. Son nom est aussi l’emplacement de ses lots dans le stock. Vérifié le : jour de la dernière vérification, une fois par an. -->
+
+| Sac | Rangé | Vérifié le | Notes |
+|-----|-------|------------|-------|
+
+## Contenu des sacs
+
+<!-- Une ligne par article et par sac. Prêt : oui ou non, coché à la main. Produit : un produit du stock, prêt quand un de ses lots est rangé dans le sac. -->
+
+| Sac | Rubrique | Article | Prêt | Produit |
+|-----|----------|---------|------|---------|
 
 ## Produits
 

@@ -9,6 +9,7 @@
   import { onMount, type Component } from 'svelte';
   import { app } from './lib/app.svelte';
   import { i18n, t, type MessageKey } from './lib/i18n/index.svelte';
+  import BagDialog from './lib/ui/BagDialog.svelte';
   import Banners from './lib/ui/Banners.svelte';
   import EmergencyDialog from './lib/ui/EmergencyDialog.svelte';
   import LotDialog from './lib/ui/LotDialog.svelte';
@@ -46,16 +47,19 @@
   const View = $derived(VIEWS[router.route]);
 
   // Only what needs doing: expired lots to discard, lots due for rotation and supplies due for replacement,
-  // and the emergency info to read again.
+  // the emergency info to read again and the bags to check.
   const badges = $derived<Partial<Record<Route, number>>>({
     checkin:
       app.checkin.discard.length +
       app.checkin.consume.filter((item) => item.due).length +
       app.checkin.replace.filter((item) => item.due).length +
-      (app.emergency.reviewDue ? 1 : 0),
+      (app.emergency.reviewDue ? 1 : 0) +
+      app.bags.filter((bag) => bag.checkDue).length,
   });
-  // Printing a guide or the emergency info prints the page on screen, anywhere else the inventory sheet.
-  const printsPage = $derived(router.route === 'guides' || (router.route === 'emergency' && router.path === 'info'));
+  // Printing a guide, the emergency info or a bag prints the page on screen, anywhere else the inventory sheet.
+  const printsPage = $derived(
+    router.route === 'guides' || (router.route === 'emergency' && (router.path === 'info' || router.path.split('/')[0] === 'bags')),
+  );
 
   onMount(() => {
     void app.init();
@@ -130,6 +134,9 @@
 {/if}
 {#if dialogs.emergency}
   <EmergencyDialog request={dialogs.emergency} />
+{/if}
+{#if dialogs.bag}
+  <BagDialog request={dialogs.bag} />
 {/if}
 <Toasts />
 

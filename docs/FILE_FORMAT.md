@@ -28,12 +28,14 @@ and columns, and any title or header you renamed by hand are kept as they are.
 
 ## Structure
 
-The file contains up to five sections, each one starting with a level-2 title (`## `) followed by a table:
+The file contains up to seven sections, each one starting with a level-2 title (`## `) followed by a table:
 
 | Section     | French title  | Also accepted                          | Content                          |
 |-------------|---------------|----------------------------------------|----------------------------------|
 | `Settings`  | `Paramètres`  | Réglages, Configuration                | Household and app settings       |
 | `Emergency info` | `Infos d’urgence` | Emergency plan, Household plan, Urgence | The household plan: numbers, contacts, meeting points… |
+| `Go-bags`   | `Sacs`        | Bags, Evacuation bags, Emergency kits, Sacs d’évacuation | One row per go-bag |
+| `Go-bag contents` | `Contenu des sacs` | Bag contents, Bag items, Packing list, Contenu du sac | One row per item and per bag |
 | `Products`  | `Produits`    | Catalog, Catalogue                     | One row per kind of product      |
 | `Stock`     | `Stock`       | Inventory, Inventaire, Lots            | One row per lot in your stock    |
 | `Log`       | `Journal`     | History, Historique                    | What was consumed or discarded   |
@@ -120,6 +122,54 @@ The household plan of the **Emergency** tab, as advised by the guide
 - The `Emergency info reviewed` setting is set to the day you tap **I reviewed it** or save the emergency info.
   Six months later, the to-do list asks you to go through it again with your household. When it is empty, the
   app never asks.
+
+## Go-bags
+
+The go-bags of the **Emergency** tab, as advised by the guide [Pack a go-bag](../guides/en/basics/pack-a-go-bag.md):
+one bag per person, with enough for 3 days. One section lists the bags, the next one what goes in them.
+
+| Column    | French header | Also accepted                                  | Content                                              |
+|-----------|---------------|------------------------------------------------|------------------------------------------------------|
+| `Bag`     | `Sac`         | Name, Nom, Kit                                 | Unique name of the bag, like `Alex’s bag`            |
+| `Stored`  | `Rangé`       | Where, Place, Location, Emplacement, Lieu      | Where the bag is kept: hall, closet, car…            |
+| `Checked` | `Vérifié le`  | Checked on, Last check, Vérifié, Vérification  | Day of the last check, `YYYY-MM-DD`                  |
+| `Notes`   | `Notes`       | Note, Remarques, Commentaire                   | Anything you want                                    |
+
+### Go-bag contents
+
+| Column    | French header | Also accepted                              | Content                                                   |
+|-----------|---------------|--------------------------------------------|-----------------------------------------------------------|
+| `Bag`     | `Sac`         | Kit                                        | Name of the bag the item goes in                          |
+| `Group`   | `Rubrique`    | Topic, Category, Catégorie, Theme, Section | One of the groups below, or any text for a group of your own |
+| `Item`    | `Article`     | Name, Nom, What, Quoi, Objet               | What goes in the bag                                      |
+| `Ready`   | `Prêt`        | Packed, Done, OK, Fait, Check, Coché       | `yes` or `no`, for an item ticked by hand                 |
+| `Product` | `Produit`     | Stock, Produit du stock                    | A product of the stock the item follows: see below        |
+
+| Group                   | French                     | Items of the guide                                              |
+|-------------------------|----------------------------|-----------------------------------------------------------------|
+| `Water and food`        | `Eau et nourriture`        | Water for 3 days, food that needs no cooking, can opener        |
+| `Information and light` | `S’informer et s’éclairer` | Radio, flashlight, spare batteries, phone charger               |
+| `Health`                | `Se soigner`               | First aid kit, medicines and prescriptions, spare glasses       |
+| `Protection`            | `Se protéger`              | Warm clothes, emergency blanket, rain gear, sturdy shoes        |
+| `Tools`                 | `Outils`                   | Multi-purpose tool, lighter or matches, whistle, masks          |
+| `Documents and money`   | `Papiers et argent`        | Copies of documents, cash, spare keys, contact list on paper    |
+
+- **A lot is in a bag** when its `Location` in the stock is the name of the bag. Its dates are followed like
+  any other lot: the to-do list tells when to eat, replace or discard it. Renaming a bag in the app renames that
+  location too; deleting a bag keeps its lots in the stock.
+- **An item that follows a product** is ready when a lot of that product is in the bag and not expired, and the
+  bag shows its date. Its `Ready` cell stays empty. **Any other item is ticked by hand**: `Ready` is `yes`
+  (`x` and `✓` work too) or `no`, and an empty cell is `no`.
+- **Add a bag** in the app writes the items of the guide, in the language of the app: the things that expire
+  (water, food, spare batteries, medicines) follow a matching product of the stock, and any item follows the
+  product of a lot already stored in the bag. Rename, remove or add items as you like: the items the app wrote
+  are translated when the language changes, yours are kept as you wrote them. A row without a group takes the
+  group of the guide's item of the same name.
+- The lots stored in a bag that no item follows are shown apart, under **Also in the bag**.
+- `Checked` is set to the day you tap **I checked it**. A year later, the to-do list asks you to check the bag:
+  dates, batteries, children’s clothing sizes. A bag never checked is not asked for.
+- A file without these sections works as before: the app adds them, empty, when it saves. A row of
+  `Go-bag contents` whose bag is missing from `Go-bags` adds the bag, and the app tells you.
 
 ## Products
 

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import english from '../../../../docs/examples/survival-shelf.md?raw';
 import french from '../../../../docs/examples/survival-shelf.fr.md?raw';
+import { localizedItemName } from './bags';
 import { CATALOG } from './catalog';
 import { parseShelf, serializeShelf } from './document';
 import { LANGS, type Translated } from './languages';
@@ -55,5 +56,18 @@ describe('example files', () => {
     const lines = (entries: typeof en.emergency) => entries.map(({ topic, phone }) => ({ topic, phone }));
     expect(lines(fr.emergency)).toEqual(lines(en.emergency));
     expect(en.emergency.length).toBeGreaterThan(0);
+    // The same bag, named after the location of its lots, with the same list.
+    expect(fr.bags.map((bag) => ({ name: LOCATIONS_FR_TO_EN[bag.name], checked: bag.checked }))).toEqual(
+      en.bags.map((bag) => ({ name: bag.name, checked: bag.checked })),
+    );
+    expect(
+      fr.bagItems.map(({ bag, name, product, extra: _extra, ...item }) => ({
+        ...item,
+        bag: LOCATIONS_FR_TO_EN[bag],
+        name: localizedItemName(name, 'en'),
+        product: product === '' ? '' : inEnglish(product).name,
+      })),
+    ).toEqual(en.bagItems.map(({ extra: _extra, ...item }) => item));
+    expect(en.bagItems.length).toBeGreaterThan(0);
   });
 });

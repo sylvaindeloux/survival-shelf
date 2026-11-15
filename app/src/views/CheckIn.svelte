@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Backpack from '@lucide/svelte/icons/backpack';
   import Check from '@lucide/svelte/icons/check';
   import CircleCheck from '@lucide/svelte/icons/circle-check';
   import Copy from '@lucide/svelte/icons/copy';
@@ -18,6 +19,7 @@
   import { findProduct } from '../lib/core/stock';
   import type { Lot } from '../lib/core/types';
   import { formatDate, localize, t, tn } from '../lib/i18n/index.svelte';
+  import { bagHref, markChecked } from '../lib/ui/bags';
   import { markReviewed } from '../lib/ui/emergency';
   import ExpiryBadge from '../lib/ui/ExpiryBadge.svelte';
   import ReminderCard from '../lib/ui/ReminderCard.svelte';
@@ -35,12 +37,14 @@
 
   const toBuy = $derived(buyCount(buy));
   const review = $derived(app.emergency.reviewDue);
+  /** Bags checked more than a year ago. */
+  const bags = $derived(app.bags.filter((bag) => bag.checkDue));
   /** Everything to do, all actions together. */
-  const count = $derived(checkin.discard.length + checkin.consume.length + checkin.replace.length + toBuy + (review ? 1 : 0));
+  const count = $derived(checkin.discard.length + checkin.consume.length + checkin.replace.length + toBuy + (review ? 1 : 0) + bags.length);
   // A tier can be short of food with nothing to buy (a light menu): the buy card then only shows why.
   const showBuy = $derived(buy !== null && (toBuy > 0 || foodShort));
   const cards = $derived(
-    [checkin.discard.length > 0, checkin.consume.length > 0, checkin.replace.length > 0, showBuy, review].filter(Boolean).length,
+    [checkin.discard.length > 0, checkin.consume.length > 0, checkin.replace.length > 0, showBuy, review].filter(Boolean).length + bags.length,
   );
 
   /** What to buy, by kind: the shopping list follows the shop's aisles. Water without a product goes with the food. */
@@ -88,6 +92,7 @@
       }
     }
     if (review) lines.push('', t('checkin.reviewTitle'));
+    for (const bag of bags) lines.push('', t('checkin.bagTitle', { bag: bag.bag.name }));
     return lines.join('\n');
   }
 
@@ -242,6 +247,17 @@
           </div>
         </section>
       {/if}
+
+      {#each bags as bag (bag.bag.name)}
+        <section class="card action review">
+          <h2 class="action-head"><Backpack size={20} />{t('checkin.bagTitle', { bag: bag.bag.name })}</h2>
+          <p class="lead small muted">{t('checkin.bagText', { date: formatDate(bag.bag.checked) })}</p>
+          <div class="row wrap review-actions">
+            <a class="btn small" href={bagHref(bag.bag.name)}>{t('checkin.openInfo')}</a>
+            <button class="btn small" onclick={() => markChecked(bag.bag.name)}><Check size={16} />{t('bags.checked')}</button>
+          </div>
+        </section>
+      {/each}
     </div>
   {/if}
 

@@ -43,6 +43,43 @@
 | Couper           | Électricité         | tableau dans l’entrée                                   |                |
 | Santé            | Alex                | allergique à la pénicilline                             |                |
 
+## Sacs
+
+<!-- Une ligne par sac, un par personne. Son nom est aussi l’emplacement de ses lots dans le stock. Vérifié le : jour de la dernière vérification, une fois par an. -->
+
+| Sac     | Rangé  | Vérifié le | Notes |
+|---------|--------|------------|-------|
+| Sac 72h | Entrée | 2026-09-10 |       |
+
+## Contenu des sacs
+
+<!-- Une ligne par article et par sac. Prêt : oui ou non, coché à la main. Produit : un produit du stock, prêt quand un de ses lots est rangé dans le sac. -->
+
+| Sac     | Rubrique                 | Article                                 | Prêt | Produit              |
+|---------|--------------------------|-----------------------------------------|------|----------------------|
+| Sac 72h | Eau et nourriture        | Eau pour 3 jours, en petites bouteilles | non  |                      |
+| Sac 72h | Eau et nourriture        | Nourriture sans cuisson                 | non  |                      |
+| Sac 72h | Eau et nourriture        | Ouvre-boîte                             | oui  |                      |
+| Sac 72h | S’informer et s’éclairer | Radio à piles ou à manivelle            | non  |                      |
+| Sac 72h | S’informer et s’éclairer | Lampe de poche                          |      | Lampe frontale       |
+| Sac 72h | S’informer et s’éclairer | Piles de rechange                       | oui  |                      |
+| Sac 72h | S’informer et s’éclairer | Chargeur et batterie externe            | non  |                      |
+| Sac 72h | Se soigner               | Trousse de secours                      |      | Trousse de secours   |
+| Sac 72h | Se soigner               | Médicaments et ordonnances              |      | Paracétamol 500 mg   |
+| Sac 72h | Se soigner               | Lunettes de secours                     | non  |                      |
+| Sac 72h | Se protéger              | Vêtements chauds                        | oui  |                      |
+| Sac 72h | Se protéger              | Couverture de survie                    |      | Couverture de survie |
+| Sac 72h | Se protéger              | Vêtement de pluie                       | oui  |                      |
+| Sac 72h | Se protéger              | Chaussures solides                      | non  |                      |
+| Sac 72h | Outils                   | Couteau multifonction                   | non  |                      |
+| Sac 72h | Outils                   | Briquet ou allumettes                   | oui  |                      |
+| Sac 72h | Outils                   | Sifflet                                 | oui  |                      |
+| Sac 72h | Outils                   | Masques                                 | non  |                      |
+| Sac 72h | Papiers et argent        | Copies des papiers                      | oui  |                      |
+| Sac 72h | Papiers et argent        | Argent liquide                          | non  |                      |
+| Sac 72h | Papiers et argent        | Double des clés                         | non  |                      |
+| Sac 72h | Papiers et argent        | Contacts sur papier                     | oui  |                      |
+
 ## Produits
 
 <!-- Une ligne par produit. Type : vivres, consommable ou matériel. Kcal et Eau sont par unité. Conso/jour fixe ce qu’il faut pour chaque palier, Objectif est un minimum à avoir. Par : personne, foyer, chat ou chien. -->

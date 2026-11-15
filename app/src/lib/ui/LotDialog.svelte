@@ -5,7 +5,7 @@
   import { isValidDate, monthsLater } from '../core/dates';
   import { CATALOG, findCatalogItem } from '../core/catalog';
   import { addLot, deleteLot, emptyProduct, findProduct, replaceLot, updateLot, upsertProduct } from '../core/stock';
-  import { parseNumber } from '../core/text';
+  import { parseNumber, sameName } from '../core/text';
   import type { Kind } from '../core/types';
   import { localize, t } from '../i18n/index.svelte';
   import Dialog from './Dialog.svelte';
@@ -34,7 +34,8 @@
   let expires = $state(editing?.expires ?? '');
   /** The date was filled in by the app from the typical shelf life, not by the user. */
   let estimated = $state(false);
-  let location = $state(editing?.location ?? replaced?.location ?? '');
+  // svelte-ignore state_referenced_locally
+  let location = $state(editing?.location ?? replaced?.location ?? request.location ?? '');
   let submitted = $state(false);
 
   // Fields of a new product.
@@ -70,6 +71,11 @@
     ...CATALOG.map((entry) => localize(entry.name)).filter((name) => !findProduct(app.shelf, name)),
   ]);
   const unitSuggestions = $derived([...new Set(CATALOG.map((entry) => localize(entry.unit)))]);
+  /** The places already used, and the go-bags: a lot is in a bag when its location is the bag's name. */
+  const locationSuggestions = $derived([
+    ...app.locations,
+    ...app.shelf.bags.map((bag) => bag.name).filter((name) => !app.locations.some((location) => sameName(location, name))),
+  ]);
   /** Typical shelf life, to help when the date is hard to read on the packaging. */
   const catalogEntry = $derived(findCatalogItem(productName));
 
@@ -284,7 +290,7 @@
       <span>{t('lot.location')}</span>
       <input class="input" list="location-suggestions" bind:value={location} placeholder={t('lot.locationPlaceholder')} />
       <datalist id="location-suggestions">
-        {#each app.locations as option (option)}
+        {#each locationSuggestions as option (option)}
           <option value={option}></option>
         {/each}
       </datalist>

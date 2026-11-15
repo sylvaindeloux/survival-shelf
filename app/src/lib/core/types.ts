@@ -104,7 +104,38 @@ export interface EmergencyEntry {
   extra: Extra;
 }
 
-export type SectionName = 'settings' | 'emergency' | 'products' | 'stock' | 'log';
+/** An evacuation bag. Its name is also the location of its lots in the stock. */
+export interface Bag {
+  name: string;
+  /** Where the bag is kept: the hall, a closet… */
+  stored: string;
+  /** Day the bag was last checked, `YYYY-MM-DD`, or empty when it never was. */
+  checked: string;
+  notes: string;
+  extra: Extra;
+}
+
+/**
+ * Groups of the list of a bag, from the guide "Pack a go-bag": water and food, to keep informed and lit,
+ * to keep healthy, to keep protected, tools, documents and money.
+ */
+export type BagGroup = 'water-food' | 'light' | 'health' | 'protection' | 'tools' | 'papers';
+
+/** One thing to pack in a bag. */
+export interface BagItem {
+  /** Name of the bag. */
+  bag: string;
+  /** Group key (see BagGroup) or any free text, for a group of the user's own. */
+  group: string;
+  name: string;
+  /** Packed, ticked by hand. An item that follows a product of the stock is packed when a lot is in the bag. */
+  ready: boolean;
+  /** Product of the stock that tells whether the item is in the bag and until when, or empty. */
+  product: string;
+  extra: Extra;
+}
+
+export type SectionName = 'settings' | 'emergency' | 'bags' | 'bagItems' | 'products' | 'stock' | 'log';
 
 /** How a table was laid out in the file, so it can be written back the same way. */
 export interface TableLayout {
@@ -147,6 +178,9 @@ export interface Shelf {
   log: LogEntry[];
   /** The household's emergency info, in the order of the file. */
   emergency: EmergencyEntry[];
+  bags: Bag[];
+  /** What goes in each bag, in the order of the file. */
+  bagItems: BagItem[];
   layout: Layout;
 }
 

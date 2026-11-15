@@ -1,3 +1,4 @@
+import { addBag, localizedItemName } from './core/bags';
 import { CATALOG, productFromCatalog, starterItems } from './core/catalog';
 import { formatDay, type Day } from './core/dates';
 import { emptyShelf } from './core/defaults';
@@ -9,19 +10,26 @@ interface DemoLot {
   qty: number;
   /** Days from today, null for no expiry. */
   in: number | null;
-  where: 'cellar' | 'kitchen' | 'garage' | 'bag';
+  where: 'cellar' | 'kitchen' | 'garage' | 'alex' | 'sam';
 }
 
 const LOCATIONS: Record<DemoLot['where'], Translated> = {
   cellar: { en: 'Cellar', fr: 'Cellier' },
   kitchen: { en: 'Kitchen', fr: 'Cuisine' },
   garage: { en: 'Garage', fr: 'Garage' },
-  bag: { en: '72h bag', fr: 'Sac 72h' },
+  // The go-bags: the location of a lot in a bag is the bag's name.
+  alex: { en: 'Alex’s bag', fr: 'Sac d’Alex' },
+  sam: { en: 'Sam’s bag', fr: 'Sac de Sam' },
 };
 
 /** Lots by catalog id: the first tier is nearly complete, the next ones are under way. */
 const DEMO_LOTS: Record<string, DemoLot[]> = {
-  'water-bottle': [{ qty: 24, in: 300, where: 'garage' }, { qty: 12, in: 500, where: 'garage' }],
+  'water-bottle': [
+    { qty: 24, in: 300, where: 'garage' },
+    { qty: 12, in: 500, where: 'garage' },
+    { qty: 4, in: 450, where: 'alex' },
+    { qty: 4, in: -6, where: 'sam' },
+  ],
   rice: [{ qty: 3, in: 40, where: 'kitchen' }, { qty: 5, in: 700, where: 'cellar' }],
   pasta: [{ qty: 2, in: 25, where: 'kitchen' }, { qty: 4, in: 320, where: 'cellar' }],
   oats: [{ qty: 1, in: 150, where: 'kitchen' }],
@@ -35,26 +43,55 @@ const DEMO_LOTS: Record<string, DemoLot[]> = {
   'peanut-butter': [{ qty: 1, in: 120, where: 'kitchen' }],
   sugar: [{ qty: 2, in: null, where: 'cellar' }],
   jam: [{ qty: 2, in: 400, where: 'cellar' }],
-  chocolate: [{ qty: 4, in: 80, where: 'kitchen' }],
-  biscuits: [{ qty: 3, in: 100, where: 'kitchen' }],
+  chocolate: [{ qty: 4, in: 80, where: 'kitchen' }, { qty: 1, in: 80, where: 'alex' }],
+  biscuits: [{ qty: 3, in: 100, where: 'kitchen' }, { qty: 2, in: 140, where: 'alex' }],
   nuts: [{ qty: 0.5, in: 160, where: 'kitchen' }],
   salt: [{ qty: 1, in: null, where: 'kitchen' }],
   'toilet-paper': [{ qty: 12, in: null, where: 'garage' }],
   soap: [{ qty: 2, in: 1000, where: 'garage' }],
   toothpaste: [{ qty: 2, in: 500, where: 'garage' }],
   'bin-bags': [{ qty: 1, in: null, where: 'garage' }],
-  'first-aid-kit': [{ qty: 1, in: null, where: 'bag' }],
-  paracetamol: [{ qty: 1, in: 20, where: 'bag' }],
-  'aa-batteries': [{ qty: 16, in: 2900, where: 'garage' }],
+  'first-aid-kit': [{ qty: 1, in: null, where: 'alex' }],
+  paracetamol: [{ qty: 1, in: 20, where: 'alex' }],
+  'aa-batteries': [{ qty: 16, in: 2900, where: 'garage' }, { qty: 8, in: 2900, where: 'alex' }],
   candles: [{ qty: 20, in: null, where: 'garage' }],
   'gas-cartridge': [{ qty: 4, in: null, where: 'garage' }],
   matches: [{ qty: 3, in: null, where: 'garage' }],
-  headlamp: [{ qty: 1, in: null, where: 'bag' }],
+  headlamp: [{ qty: 1, in: null, where: 'alex' }],
   radio: [{ qty: 1, in: null, where: 'garage' }],
   stove: [{ qty: 1, in: null, where: 'garage' }],
   'can-opener': [{ qty: 1, in: null, where: 'kitchen' }],
-  'survival-blanket': [{ qty: 2, in: null, where: 'bag' }],
+  'survival-blanket': [{ qty: 1, in: null, where: 'alex' }, { qty: 1, in: null, where: 'sam' }],
 };
+
+/**
+ * One bag per person. Alex's is nearly ready and was checked two months ago; Sam's is barely started, its
+ * water expired and it was checked more than a year ago, so the to-do list asks to check it.
+ */
+const DEMO_BAGS: { where: 'alex' | 'sam'; checked: number; ticked: string[] }[] = [
+  {
+    where: 'alex',
+    checked: -60,
+    ticked: [
+      'Can opener',
+      'Phone charger and backup battery',
+      'Warm clothes',
+      'Rain gear',
+      'Sturdy shoes',
+      'Lighter or matches',
+      'Whistle',
+      'Copies of documents',
+      'Spare keys',
+      'Contact list on paper',
+    ],
+  },
+  {
+    where: 'sam',
+    checked: -400,
+    ticked: ['Phone charger and backup battery', 'Warm clothes', 'Rain gear', 'Sturdy shoes', 'Lighter or matches', 'Whistle', 'Contact list on paper'],
+  },
+];
+const HALL: Translated = { en: 'Hall', fr: 'Entrée' };
 
 /**
  * A household plan under way, with nothing but fictional names: no phone number, so that the demo never
@@ -100,5 +137,13 @@ export function demoShelf(today: Day, lang: Lang): Shelf {
   );
   // Read more than six months ago: the to-do list asks to read it again.
   shelf.settings.emergencyReviewed = formatDay(today - 200);
+  for (const { where, checked, ticked } of DEMO_BAGS) {
+    const name = inLang(LOCATIONS[where], lang);
+    shelf = addBag(shelf, { name, stored: inLang(HALL, lang) }, lang);
+    shelf.bags = shelf.bags.map((bag) => (bag.name === name ? { ...bag, checked: formatDay(today + checked) } : bag));
+    shelf.bagItems = shelf.bagItems.map((item) =>
+      item.bag === name && item.product === '' && ticked.includes(localizedItemName(item.name, 'en')) ? { ...item, ready: true } : item,
+    );
+  }
   return shelf;
 }

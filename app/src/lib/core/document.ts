@@ -1,3 +1,4 @@
+import { isBagGroup, localizedItemName, templateGroup } from './bags';
 import { categoryLabel, defaultKind, normalizeCategory } from './categories';
 import {
   DEFAULT_PREAMBLE,
@@ -17,6 +18,9 @@ import { formatTable, isSeparatorRow, isTableLine, splitRow } from './table';
 import { formatNumber, normalizeKey, parseNumber, sameName } from './text';
 import {
   LANGS,
+  type Bag,
+  type BagGroup,
+  type BagItem,
   type EmergencyEntry,
   type EmergencyTopic,
   type Extra,
@@ -76,6 +80,14 @@ const SECTION_ALIASES: Record<string, SectionName> = Object.fromEntries(
           'plandufoyer',
           'planfamilial',
         ],
+      ],
+      [
+        'bags',
+        ['bags', 'gobag', 'gobags', 'evacuationbags', 'emergencybags', 'bugoutbags', 'emergencykits', 'sacs', 'sacsdevacuation', 'sacsdurgence', 'kitsdurgence'],
+      ],
+      [
+        'bagItems',
+        ['bagcontents', 'bagcontent', 'gobagcontents', 'bagitems', 'packinglist', 'contenudessacs', 'contenudusac', 'contenusacs', 'listedessacs'],
       ],
       ['products', ['catalog', 'catalogue']],
       ['stock', ['stocks', 'inventory', 'inventaire', 'lots']],
@@ -266,9 +278,94 @@ const TOPIC_ALIASES: Record<string, EmergencyTopic> = {
   allergies: 'health',
 };
 
+const BAG_COLUMNS: ColumnDef[] = [
+  { key: 'bag', label: { en: 'Bag', fr: 'Sac' }, aliases: ['name', 'nom', 'kit'], always: true },
+  { key: 'stored', label: { en: 'Stored', fr: 'Rangé' }, aliases: ['where', 'ou', 'place', 'location', 'emplacement', 'lieu'], always: true },
+  { key: 'checked', label: { en: 'Checked', fr: 'Vérifié le' }, aliases: ['checkedon', 'lastcheck', 'verifie', 'verification'], always: true },
+  { key: 'notes', label: { en: 'Notes', fr: 'Notes' }, aliases: ['note', 'remarques', 'remarque', 'comment', 'commentaire'], always: true },
+];
+
+const BAG_ITEM_COLUMNS: ColumnDef[] = [
+  { key: 'bag', label: { en: 'Bag', fr: 'Sac' }, aliases: ['kit'], always: true },
+  { key: 'group', label: { en: 'Group', fr: 'Rubrique' }, aliases: ['topic', 'category', 'categorie', 'theme', 'section'], always: true },
+  { key: 'item', label: { en: 'Item', fr: 'Article' }, aliases: ['name', 'nom', 'what', 'quoi', 'objet'], always: true },
+  { key: 'ready', label: { en: 'Ready', fr: 'Prêt' }, aliases: ['packed', 'done', 'ok', 'fait', 'check', 'coche'], always: true },
+  { key: 'product', label: { en: 'Product', fr: 'Produit' }, aliases: ['stock', 'produitdustock'], always: true },
+];
+
+/** Values of the Group column written by the app. */
+const GROUP_LABELS: Record<BagGroup, Translated> = {
+  'water-food': { en: 'Water and food', fr: 'Eau et nourriture' },
+  light: { en: 'Information and light', fr: 'S’informer et s’éclairer' },
+  health: { en: 'Health', fr: 'Se soigner' },
+  protection: { en: 'Protection', fr: 'Se protéger' },
+  tools: { en: 'Tools', fr: 'Outils' },
+  papers: { en: 'Documents and money', fr: 'Papiers et argent' },
+};
+
+const GROUP_ALIASES: Record<string, BagGroup> = {
+  waterandfood: 'water-food',
+  foodandwater: 'water-food',
+  food: 'water-food',
+  water: 'water-food',
+  eau: 'water-food',
+  nourriture: 'water-food',
+  eaunourriture: 'water-food',
+  information: 'light',
+  light: 'light',
+  lighting: 'light',
+  radio: 'light',
+  sinformer: 'light',
+  seclairer: 'light',
+  eclairage: 'light',
+  sante: 'health',
+  soins: 'health',
+  medical: 'health',
+  firstaid: 'health',
+  clothes: 'protection',
+  clothing: 'protection',
+  vetements: 'protection',
+  tool: 'tools',
+  outil: 'tools',
+  documents: 'papers',
+  papers: 'papers',
+  money: 'papers',
+  papiers: 'papers',
+  argent: 'papers',
+};
+
+/** Values of the Ready column written by the app. */
+const READY_LABELS: Record<'yes' | 'no', Translated> = {
+  yes: { en: 'yes', fr: 'oui' },
+  no: { en: 'no', fr: 'non' },
+};
+
+const READY_ALIASES: Record<string, 'yes' | 'no'> = {
+  y: 'yes',
+  x: 'yes',
+  v: 'yes',
+  ok: 'yes',
+  true: 'yes',
+  '1': 'yes',
+  done: 'yes',
+  packed: 'yes',
+  fait: 'yes',
+  pret: 'yes',
+  n: 'no',
+  false: 'no',
+  '0': 'no',
+  missing: 'no',
+  manque: 'no',
+};
+
+/** A tick, as drawn by hand in a cell: these marks have no letters for the aliases above. */
+const TICK = /^[✓✔☑✅]$/u;
+
 const COLUMNS: Record<SectionName, ColumnDef[]> = {
   settings: SETTINGS_COLUMNS,
   emergency: EMERGENCY_COLUMNS,
+  bags: BAG_COLUMNS,
+  bagItems: BAG_ITEM_COLUMNS,
   products: PRODUCT_COLUMNS,
   stock: STOCK_COLUMNS,
   log: LOG_COLUMNS,
@@ -727,6 +824,72 @@ function readEmergency(rows: RawRow[], shelf: Shelf) {
   }
 }
 
+function readBags(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
+  for (const row of rows) {
+    const name = (row.values.bag ?? '').trim();
+    if (name === '') {
+      issues.push({ level: 'error', line: row.line, code: 'missingValue', params: { column: 'bag' } });
+      continue;
+    }
+    if (shelf.bags.some((bag) => sameName(bag.name, name))) {
+      issues.push({ level: 'warning', line: row.line, code: 'duplicateBag', params: { bag: name } });
+      continue;
+    }
+    const checked = (row.values.checked ?? '').trim();
+    if (checked !== '' && !isValidDate(checked)) {
+      issues.push({ level: 'warning', line: row.line, code: 'invalidDate', params: { column: 'checked', value: checked } });
+    }
+    shelf.bags.push({
+      name,
+      stored: (row.values.stored ?? '').trim(),
+      checked: checked !== '' && isValidDate(checked) ? normalizeDate(checked) : checked,
+      notes: (row.values.notes ?? '').trim(),
+      extra: row.extra,
+    });
+  }
+}
+
+function findOrCreateBag(shelf: Shelf, name: string, line: number, issues: ParseIssue[]): Bag {
+  const existing = shelf.bags.find((bag) => sameName(bag.name, name));
+  if (existing) return existing;
+  const bag: Bag = { name, stored: '', checked: '', notes: '', extra: {} };
+  shelf.bags.push(bag);
+  issues.push({ level: 'info', line, code: 'bagCreated', params: { bag: name } });
+  return bag;
+}
+
+function readReady(text: string, line: number, issues: ParseIssue[]): boolean {
+  const trimmed = text.trim();
+  if (trimmed === '') return false;
+  if (TICK.test(trimmed)) return true;
+  const value = readValue(trimmed, READY_LABELS, READY_ALIASES);
+  if (value === undefined) issues.push({ level: 'warning', line, code: 'invalidReady', params: { value: trimmed } });
+  return value === 'yes';
+}
+
+function readBagItems(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
+  for (const row of rows) {
+    const bagName = (row.values.bag ?? '').trim();
+    const name = (row.values.item ?? '').trim();
+    if (bagName === '' || name === '') {
+      issues.push({ level: 'error', line: row.line, code: 'missingValue', params: { column: bagName === '' ? 'bag' : 'item' } });
+      continue;
+    }
+    const bag = findOrCreateBag(shelf, bagName, row.line, issues);
+    const text = (row.values.group ?? '').trim();
+    // A group of the user's own is kept as written; an item of the guide's list knows its group.
+    const group = text === '' ? (templateGroup(name) ?? '') : (readValue(text, GROUP_LABELS, GROUP_ALIASES) ?? text);
+    shelf.bagItems.push({
+      bag: bag.name,
+      group,
+      name,
+      ready: readReady(row.values.ready ?? '', row.line, issues),
+      product: (row.values.product ?? '').trim(),
+      extra: row.extra,
+    });
+  }
+}
+
 function readLog(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
   for (const row of rows) {
     const qty = readNumber(row, 'qty', issues, { required: true, min: 0 });
@@ -770,6 +933,8 @@ export function parseShelf(text: string, options: ParseOptions = {}): ParseResul
     lots: [],
     log: [],
     emergency: [],
+    bags: [],
+    bagItems: [],
     layout: { blocks: [], sections: {}, settingsLabels: {} },
   };
   const parsed: Partial<Record<SectionName, RawRow[]>> = {};
@@ -798,6 +963,8 @@ export function parseShelf(text: string, options: ParseOptions = {}): ParseResul
   readProducts(parsed.products ?? [], shelf, issues);
   readStock(parsed.stock ?? [], shelf, issues);
   readLog(parsed.log ?? [], shelf, issues);
+  readBags(parsed.bags ?? [], shelf, issues);
+  readBagItems(parsed.bagItems ?? [], shelf, issues);
   // A file from before the emergency info gets the same start as a new one: the European 112.
   if (parsed.emergency === undefined) shelf.emergency = defaultEmergency(shelf.settings.lang);
   else readEmergency(parsed.emergency, shelf);
@@ -841,6 +1008,21 @@ function lotRow(lot: Lot, lang: Lang): Record<string, string> {
 function emergencyRow(entry: EmergencyEntry, lang: Lang): Record<string, string> {
   const { name, details } = localizedEntry(entry, lang);
   return { topic: isTopic(entry.topic) ? inLang(TOPIC_LABELS[entry.topic], lang) : entry.topic, name, details, phone: entry.phone };
+}
+
+function bagRow(bag: Bag): Record<string, string> {
+  return { bag: bag.name, stored: bag.stored, checked: bag.checked, notes: bag.notes };
+}
+
+function bagItemRow(item: BagItem, lang: Lang): Record<string, string> {
+  return {
+    bag: item.bag,
+    group: isBagGroup(item.group) ? inLang(GROUP_LABELS[item.group], lang) : item.group,
+    item: localizedItemName(item.name, lang),
+    // An item that follows a product is ready when a lot is in the bag: the stock tells, not this column.
+    ready: item.product === '' ? inLang(READY_LABELS[item.ready ? 'yes' : 'no'], lang) : '',
+    product: item.product,
+  };
 }
 
 function logRow(entry: LogEntry, lang: Lang): Record<string, string> {
@@ -891,6 +1073,12 @@ function renderSection(name: SectionName, shelf: Shelf, lang: Lang): string {
       break;
     case 'emergency':
       rows = shelf.emergency.map((entry) => ({ values: emergencyRow(entry, lang), extra: entry.extra }));
+      break;
+    case 'bags':
+      rows = shelf.bags.map((bag) => ({ values: bagRow(bag), extra: bag.extra }));
+      break;
+    case 'bagItems':
+      rows = shelf.bagItems.map((item) => ({ values: bagItemRow(item, lang), extra: item.extra }));
       break;
     case 'products':
       rows = shelf.products.map((product) => ({ values: productRow(product, lang), extra: product.extra }));
