@@ -94,6 +94,40 @@ Pour tout récupérer d’un coup, utilise le bouton vert « Code » puis « Dow
 - [Gérer les règles et les couches](hygiene/gerer-les-regles-et-les-couches.md) : la réserve à prévoir, quand changer, comment laver et jeter.
 - [Laver le linge et la vaisselle avec peu d’eau](hygiene/laver-le-linge-et-la-vaisselle-avec-peu-d-eau.md) : laver en bassines, désinfecter après une inondation, tout faire sécher.
 
+## Catastrophes
+
+- [Inondation](catastrophes/inondation.md) : monter à l’étage, ne pas prendre la voiture, et rentrer chez soi sans danger.
+- [Tempête et vents violents](catastrophes/tempete-et-vents-violents.md) : s’abriter avant les rafales, se méfier des arbres et des fils tombés.
+- [Cyclone et ouragan](catastrophes/cyclone-et-ouragan.md) : se préparer dès la pré-alerte, rester confiné, se méfier de l’œil et de l’après.
+- [Orage, foudre et grêle](catastrophes/orage-foudre-et-grele.md) : où s’abriter, quoi éviter dehors, la règle des 30 minutes.
+- [Tornade](catastrophes/tornade.md) : reconnaître les signes et s’abriter au plus bas d’un bâtiment solide.
+- [Canicule](catastrophes/canicule.md) : boire, se rafraîchir, garder le logement frais et veiller sur les plus fragiles.
+- [Sécheresse](catastrophes/secheresse.md) : suivre les restrictions, économiser l’eau, éviter le feu.
+- [Grand froid, neige et verglas](catastrophes/grand-froid-neige-et-verglas.md) : se couvrir, se chauffer sans s’intoxiquer, quoi faire bloqué en voiture.
+- [Séisme](catastrophes/seisme.md) : se baisser, s’abriter, tenir bon, puis sortir et se méfier des répliques.
+- [Tsunami](catastrophes/tsunami.md) : les signes naturels, partir à pied vers les hauteurs, attendre la fin de l’alerte.
+- [Éruption volcanique](catastrophes/eruption-volcanique.md) : évacuer sur consigne, se protéger des cendres et des gaz.
+- [Glissement de terrain et coulée de boue](catastrophes/glissement-de-terrain-et-coulee-de-boue.md) : les signes annonciateurs, et partir avant.
+- [Avalanche](catastrophes/avalanche.md) : préparer sa sortie, quoi faire emporté par la neige, chercher une victime.
+- [Feu de forêt](catastrophes/feu-de-foret.md) : débroussailler, donner l’alerte, s’abriter dans un bâtiment en dur.
+- [Incendie dans le logement](catastrophes/incendie-dans-le-logement.md) : sortir ou rester, fermer les portes, ne jamais traverser la fumée.
+- [Fuite de gaz](catastrophes/fuite-de-gaz.md) : ni flamme ni interrupteur, aérer, sortir, appeler de l’extérieur.
+- [Accident industriel et nuage toxique](catastrophes/accident-industriel-et-nuage-toxique.md) : se mettre à l’abri, tout fermer, écouter la radio.
+- [Accident nucléaire](catastrophes/accident-nucleaire.md) : se mettre à l’abri, l’iode sur consigne seulement, se préparer à évacuer.
+- [Rupture de barrage](catastrophes/rupture-de-barrage.md) : reconnaître la corne de brume et gagner tout de suite les hauteurs.
+- [Coupure de courant prolongée](catastrophes/coupure-de-courant-prolongee.md) : s’éclairer, garder les aliments, se chauffer sans monoxyde de carbone.
+- [Coupure d’eau ou eau du robinet non potable](catastrophes/coupure-d-eau-ou-eau-du-robinet-non-potable.md) : comprendre la consigne, faire bouillir ou passer à l’eau en bouteille.
+- [Panne des réseaux et des paiements](catastrophes/panne-des-reseaux-et-des-paiements.md) : s’informer, communiquer et payer sans téléphone, internet ni carte.
+- [Pénurie de carburant, de nourriture ou de médicaments](catastrophes/penurie-de-carburant-de-nourriture-ou-de-medicaments.md) : faire ses réserves avant, n’acheter que le nécessaire, ne pas arrêter un traitement.
+- [Cyberattaque, arnaques et désinformation](catastrophes/cyberattaque-arnaques-et-desinformation.md) : protéger ses comptes, repérer une arnaque ou une fausse voix, vérifier avant de partager.
+- [Épidémie et pandémie](catastrophes/epidemie-et-pandemie.md) : les gestes barrières, rester chez soi malade, protéger les plus fragiles.
+- [Attentat](catastrophes/attentat.md) : s’échapper, se cacher, alerter, et quoi faire à l’arrivée des forces de l’ordre.
+- [Émeutes et troubles](catastrophes/emeutes-et-troubles.md) : se tenir à l’écart, rester chez soi, réagir aux gaz lacrymogènes.
+- [Conflit armé et bombardement](catastrophes/conflit-arme-et-bombardement.md) : s’abriter des tirs, évacuer sur consigne, ne toucher aucun objet inconnu.
+- [Guerre civile](catastrophes/guerre-civile.md) : rester discret, protéger son logement, être prévenu d’une intrusion, savoir quand partir.
+- [Explosion nucléaire](catastrophes/explosion-nucleaire.md) : entrer, rester à l’abri au moins 24 heures, écouter la radio, se décontaminer.
+- [Attaque par une intelligence artificielle](catastrophes/attaque-par-une-intelligence-artificielle.md) : un scénario hypothétique, et ce qui protège d’une grande panne ou d’une manipulation.
+
 ## Thèmes à venir
 
-Nourriture, communication et orientation, catastrophes, à la maison, en voiture, en extérieur, milieux hostiles.
+Nourriture, communication et orientation, à la maison, en voiture, en extérieur, milieux hostiles.

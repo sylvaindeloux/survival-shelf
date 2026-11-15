@@ -94,6 +94,40 @@ To get everything at once, use the green "Code" button then "Download ZIP" on th
 - [Manage periods and diapers](hygiene/manage-periods-and-diapers.md): what to keep in reserve, when to change, how to wash and throw away.
 - [Wash clothes and dishes with little water](hygiene/wash-clothes-and-dishes-with-little-water.md): wash in basins, sanitize after a flood, dry everything.
 
+## Disasters
+
+- [Flood](disasters/flood.md): go upstairs, leave the car, and return home safely.
+- [Storm and high winds](disasters/storm-and-high-winds.md): shelter before the gusts, beware of trees and fallen wires.
+- [Cyclone and hurricane](disasters/cyclone-and-hurricane.md): get ready at the first alert, stay confined, beware of the eye and the aftermath.
+- [Thunderstorm, lightning and hail](disasters/thunderstorm-lightning-and-hail.md): where to shelter, what to avoid outside, the 30-minute rule.
+- [Tornado](disasters/tornado.md): recognize the signs and shelter at the lowest level of a sturdy building.
+- [Heat wave](disasters/heat-wave.md): drink, cool down, keep your home cool and watch over vulnerable people.
+- [Drought](disasters/drought.md): follow the restrictions, save water, avoid fire.
+- [Extreme cold, snow and ice](disasters/extreme-cold-snow-and-ice.md): dress warmly, heat without poisoning yourself, what to do when stuck in a car.
+- [Earthquake](disasters/earthquake.md): drop, cover, hold on, then get out and expect aftershocks.
+- [Tsunami](disasters/tsunami.md): the natural signs, leave on foot for high ground, wait for the all-clear.
+- [Volcanic eruption](disasters/volcanic-eruption.md): evacuate when told, protect yourself from ash and gases.
+- [Landslide and mudflow](disasters/landslide-and-mudflow.md): the warning signs, and leaving beforehand.
+- [Avalanche](disasters/avalanche.md): prepare your outing, what to do when the snow takes you, search for a victim.
+- [Wildfire](disasters/wildfire.md): clear the brush, raise the alarm, evacuate when told or shelter in a solid building.
+- [Home fire](disasters/home-fire.md): get out or stay put, close the doors, never go through smoke.
+- [Gas leak](disasters/gas-leak.md): no flame and no switch, air the place, get out, call from outside.
+- [Industrial accident and toxic cloud](disasters/industrial-accident-and-toxic-cloud.md): take shelter, close everything, listen to the radio.
+- [Nuclear accident](disasters/nuclear-accident.md): take shelter, iodine only when told, get ready to evacuate.
+- [Dam failure](disasters/dam-failure.md): know the warning signal and get to high ground at once.
+- [Long power outage](disasters/long-power-outage.md): lighting, keeping food safe, keeping warm without carbon monoxide.
+- [Water outage or unsafe tap water](disasters/water-outage-or-unsafe-tap-water.md): understand the advisory, boil or switch to bottled water.
+- [Network and payment outage](disasters/network-and-payment-outage.md): keep informed, communicate and pay without phone, internet or cards.
+- [Fuel, food or medicine shortage](disasters/fuel-food-or-medicine-shortage.md): build reserves beforehand, buy only what you need, never stop a treatment.
+- [Cyberattack, scams and disinformation](disasters/cyberattack-scams-and-disinformation.md): protect your accounts, spot a scam or a fake voice, check before you share.
+- [Epidemic and pandemic](disasters/epidemic-and-pandemic.md): hygiene measures, staying home when ill, protecting vulnerable people.
+- [Terrorist attack](disasters/terrorist-attack.md): escape, hide, raise the alarm, and what to do when the police arrive.
+- [Riots and unrest](disasters/riots-and-unrest.md): keep away, stay home, deal with tear gas.
+- [Armed conflict and shelling](disasters/armed-conflict-and-shelling.md): shelter from gunfire and strikes, evacuate when told, touch no unknown object.
+- [Civil war](disasters/civil-war.md): stay discreet, protect your home, be warned of an intrusion, know when to leave.
+- [Nuclear explosion](disasters/nuclear-explosion.md): get inside, stay sheltered for at least 24 hours, listen to the radio, decontaminate.
+- [Attack by an artificial intelligence](disasters/attack-by-an-artificial-intelligence.md): a hypothetical scenario, and what protects you from a large outage or from manipulation.
+
 ## Coming next
 
-Food, communication and navigation, disasters, at home, in the car, outdoors, hostile environments.
+Food, communication and navigation, at home, in the car, outdoors, hostile environments.
