@@ -311,6 +311,7 @@ export const en = {
   'settings.formatDoc': 'File syntax',
   'settings.appearance': 'Appearance',
   'settings.language': 'Language',
+  'settings.languageHint': 'Your data file is written in this language too.',
   'settings.theme': 'Theme',
   'settings.auto': 'Automatic',
   'settings.light': 'Light',
@@ -334,6 +335,7 @@ export const en = {
   'file.opened': '{name} opened',
   'file.imported': '{name} imported',
   'file.reloaded': '{name} was modified outside the app: reloaded',
+  'file.langApplied': 'The app is now in English, the language saved in this file.',
   'file.error': 'File error: {message}',
 
   'banner.demo': 'You are looking at sample data. Start your own stock when you are ready.',

@@ -1,3 +1,11 @@
+/** Languages the app and the data file can be written in. */
+export type Lang = 'en' | 'fr';
+
+export const LANGS: Lang[] = ['en', 'fr'];
+
+/** A text in every supported language. */
+export type Translated = Record<Lang, string>;
+
 /** Values of columns the app does not know about, keyed by their header text. */
 export type Extra = Record<string, string>;
 
@@ -5,6 +13,8 @@ export type Extra = Record<string, string>;
 export type Rhythm = 'monthly' | 'quarterly' | 'semiannual';
 
 export interface Settings {
+  /** Language the file is written in, also applied to the app when the file is opened. */
+  lang: Lang;
   /** Number of people living on the stock. */
   people: number;
   /** Number of cats and dogs: products planned "per cat" or "per dog" count once per animal. */

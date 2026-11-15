@@ -1,13 +1,13 @@
 import { formatDay, parseDay, type Day } from '../core/dates';
+import { LANGS, type Lang } from '../core/types';
 import { en } from './en';
 import { fr } from './fr';
 
 export type MessageKey = keyof typeof en;
-export type Lang = 'en' | 'fr';
+export { LANGS, type Lang };
 export type LangPreference = Lang | 'auto';
 type PluralKey = { [K in MessageKey]: K extends `${infer Base}_one` ? Base : never }[MessageKey];
 
-export const LANGS: Lang[] = ['en', 'fr'];
 const DICTIONARIES: Record<Lang, Record<MessageKey, string>> = { en, fr };
 const PREF_KEY = 'survival-shelf:lang';
 

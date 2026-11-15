@@ -1,3 +1,5 @@
+import type { Lang } from './types';
+
 /** Lowercases, strips accents and anything that is not a letter or a digit. */
 export function normalizeKey(text: string): string {
   return text
@@ -25,10 +27,11 @@ export function parseNumber(text: string): number | null {
   return Number(compact.replace(',', '.'));
 }
 
-/** Formats a number for the file: dot decimal separator, at most 3 decimals. */
-export function formatNumber(value: number | null): string {
+/** Formats a number for the file: at most 3 decimals, comma decimal separator in French. */
+export function formatNumber(value: number | null, lang: Lang = 'en'): string {
   if (value === null || !Number.isFinite(value)) return '';
-  return String(Math.round(value * 1000) / 1000);
+  const text = String(Math.round(value * 1000) / 1000);
+  return lang === 'fr' ? text.replace('.', ',') : text;
 }
 
 const BULK_UNITS = new Set(['kg', 'g', 'l', 'cl', 'ml', 'lb', 'oz', 'gal']);
