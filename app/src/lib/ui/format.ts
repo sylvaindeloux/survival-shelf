@@ -33,6 +33,9 @@ const UNIT_PLURALS: Record<string, string> = {
   bar: 'bars',
   box: 'boxes',
   bag: 'bags',
+  tube: 'tubes',
+  cartridge: 'cartridges',
+  tablet: 'tablets',
   boîte: 'boîtes',
   pot: 'pots',
   paquet: 'paquets',
@@ -45,6 +48,7 @@ const UNIT_PLURALS: Record<string, string> = {
   bocal: 'bocaux',
   brique: 'briques',
   cartouche: 'cartouches',
+  comprimé: 'comprimés',
 };
 
 function unitFor(qty: number, unit: string): string {
