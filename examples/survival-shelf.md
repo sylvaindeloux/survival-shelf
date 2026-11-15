@@ -7,17 +7,17 @@
 
 ## Settings
 
-| Setting                    | Value      |
-|----------------------------|------------|
-| People                     | 2          |
-| Cats                       | 0          |
-| Dogs                       | 0          |
-| Kcal per person per day    | 2200       |
-| Water L per person per day | 3          |
-| Tiers (days)               | 7, 30, 365 |
-| Check-in                   | weekly     |
-| Expiry warning days        | 60         |
-| Rotation margin days       | 30         |
+| Setting                    | Value         |
+|----------------------------|---------------|
+| People                     | 2             |
+| Cats                       | 0             |
+| Dogs                       | 0             |
+| Kcal per person per day    | 2200          |
+| Water L per person per day | 3             |
+| Tiers (days)               | 3, 7, 30, 365 |
+| Check-in                   | weekly        |
+| Expiry warning days        | 60            |
+| Rotation margin days       | 30            |
 
 ## Products
 

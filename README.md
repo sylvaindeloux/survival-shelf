@@ -3,7 +3,7 @@
 **Build your survival stock step by step, and never let it expire.**
 
 Survival Shelf is a free, open-source app to build and keep a survival stock (food, water, hygiene, first
-aid, energy, gear…). It helps you start from nothing, tier by tier (1 week, then 1 month, then 1 year),
+aid, energy, gear…). It helps you start from nothing, tier by tier (3 days, then 1 week, 1 month and 1 year),
 and once a week tells you what to discard, what to eat before it expires and what to buy next. It runs
 **100% offline** in any modern browser, installs as an app (PWA), needs **no account and no server**, and
 keeps your data in a **plain Markdown file** you can read and edit by hand.
@@ -20,7 +20,7 @@ keeps your data in a **plain Markdown file** you can read and edit by hand.
 - **Starter plan**: answer a few questions (how many people, cats and dogs, any daily medicine) and get a
   balanced plan of about 2200 kcal per person per day, plus water, hygiene, first aid, energy and gear.
   Untick what does not suit you and adjust the amounts.
-- **Autonomy tiers**: 1 week, 1 month and 1 year by default (editable). Each product has a use per day or a
+- **Autonomy tiers**: 3 days, 1 week, 1 month and 1 year by default (editable). Each product has a use per day or a
   minimum to own, per person or for the household; the app works out what every tier needs and shows how far
   along you are. Beyond a month of stored water, filters and purification tablets take over.
 - **Check-in every week, month, quarter or 6 months**: one list with the expired lots to discard, what to eat

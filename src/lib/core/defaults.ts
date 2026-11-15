@@ -1,6 +1,6 @@
 import type { Layout, SectionLayout, SectionName, Settings, Shelf } from './types';
 
-export const DEFAULT_TIERS = [7, 30, 365];
+export const DEFAULT_TIERS = [3, 7, 30, 365];
 
 export const DEFAULT_SETTINGS: Settings = {
   people: 1,

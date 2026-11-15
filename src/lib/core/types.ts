@@ -13,7 +13,7 @@ export interface Settings {
   kcalPerPersonPerDay: number;
   /** Liters of water per person per day (drinking + cooking + minimal hygiene). */
   waterPerPersonPerDay: number;
-  /** Autonomy tiers to build up, in days, ascending (1 week, 1 month, 1 year by default). */
+  /** Autonomy tiers to build up, in days, ascending (3 days, 1 week, 1 month, 1 year by default). */
   tiers: number[];
   rhythm: Rhythm;
   /** A lot is "expiring soon" when it expires within this many days. */
