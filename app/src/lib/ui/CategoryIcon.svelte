@@ -47,7 +47,7 @@
   const Icon = $derived(ICONS[known?.key ?? 'other'] ?? Package);
   // Water in blue, food in orange, everything else stays neutral.
   const tone = $derived(
-    known?.key === 'water' || known?.key === 'water-treatment' ? 'water' : known?.consumable ? 'food' : 'other',
+    known?.key === 'water' || known?.key === 'water-treatment' ? 'water' : known?.kind === 'food' ? 'food' : 'other',
   );
 </script>
 

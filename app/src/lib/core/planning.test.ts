@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { computeAutonomy, simulate, waterNeed } from './autonomy';
+import { computeAutonomy, simulate, suppliesAutonomy, waterNeed } from './autonomy';
 import { dayFromParts, formatDay } from './dates';
 import { emptyShelf } from './defaults';
 import { CATALOG, starterItems } from './catalog';
-import { buyCount, checkIn, waterWithoutProduct } from './checkin';
+import { buyCount, checkIn, replacements, waterWithoutProduct } from './checkin';
 import { reminderCalendar } from './ics';
-import { menuKcal, productTarget, tierPlan, tierStatus } from './plan';
+import { gearStatus, menuKcal, productTarget, tierPlan, tierStatus } from './plan';
 import { rotationPlan } from './rotation';
 import { expiryAlerts, summarizeProducts } from './status';
 import { addLot, emptyProduct, upsertProduct } from './stock';
@@ -17,9 +17,9 @@ const inDays = (days: number) => formatDay(TODAY + days);
 function household(): Shelf {
   let shelf = emptyShelf();
   shelf.settings = { ...shelf.settings, people: 2, kcalPerPersonPerDay: 2000, waterPerPersonPerDay: 2.5, rotationMarginDays: 0 };
-  shelf = upsertProduct(shelf, { ...emptyProduct('Rice'), category: 'grains', unit: 'kg', kcal: 4000, daily: 0.5 });
-  shelf = upsertProduct(shelf, { ...emptyProduct('Water'), category: 'water', unit: 'L', water: 1 });
-  shelf = upsertProduct(shelf, { ...emptyProduct('Matches'), category: 'tools', unit: 'box', target: 2, per: 'household' });
+  shelf = upsertProduct(shelf, { ...emptyProduct('Rice'), kind: 'food', category: 'grains', unit: 'kg', kcal: 4000, daily: 0.5 });
+  shelf = upsertProduct(shelf, { ...emptyProduct('Water'), kind: 'food', category: 'water', unit: 'L', water: 1 });
+  shelf = upsertProduct(shelf, { ...emptyProduct('Matches'), kind: 'gear', category: 'tools', unit: 'box', target: 2, per: 'household' });
   return shelf;
 }
 
@@ -138,8 +138,8 @@ describe('plan and tiers', () => {
   it('counts pet products once per cat or per dog', () => {
     let shelf = household();
     shelf.settings = { ...shelf.settings, cats: 2 };
-    shelf = upsertProduct(shelf, { ...emptyProduct('Cat food'), category: 'pets', unit: 'kg', daily: 0.06, per: 'cat' });
-    shelf = upsertProduct(shelf, { ...emptyProduct('Dog food'), category: 'pets', unit: 'kg', daily: 0.3, per: 'dog' });
+    shelf = upsertProduct(shelf, { ...emptyProduct('Cat food'), kind: 'food', category: 'pets', unit: 'kg', daily: 0.06, per: 'cat' });
+    shelf = upsertProduct(shelf, { ...emptyProduct('Dog food'), kind: 'food', category: 'pets', unit: 'kg', daily: 0.3, per: 'dog' });
     const [catFood, dogFood] = shelf.products.slice(-2);
     expect(productTarget(catFood, shelf.settings, 30)).toBe(3.6); // 0.06 kg × 2 cats × 30 days
     expect(productTarget(dogFood, shelf.settings, 30)).toBe(0); // no dog
@@ -150,7 +150,7 @@ describe('plan and tiers', () => {
 
   it('lists what a tier misses, rounding counted things up', () => {
     let shelf = household();
-    shelf = upsertProduct(shelf, { ...emptyProduct('Tuna'), category: 'canned', unit: 'can', kcal: 150, daily: 0.3 });
+    shelf = upsertProduct(shelf, { ...emptyProduct('Tuna'), kind: 'food', category: 'canned', unit: 'can', kcal: 150, daily: 0.3 });
     shelf = addLot(shelf, { product: 'Rice', qty: 3, expires: '', location: '' }, TODAY);
     shelf = addLot(shelf, { product: 'Matches', qty: 2, expires: '', location: '' }, TODAY);
     const week = tierStatus(shelf, computeAutonomy(shelf, TODAY), TODAY, 7);
@@ -212,7 +212,7 @@ describe('plan and tiers', () => {
 describe('check-in', () => {
   it('lists what to discard, what to eat this period and what to buy', () => {
     let shelf = household();
-    shelf = upsertProduct(shelf, { ...emptyProduct('Tuna'), category: 'canned', unit: 'can', kcal: 150 });
+    shelf = upsertProduct(shelf, { ...emptyProduct('Tuna'), kind: 'food', category: 'canned', unit: 'can', kcal: 150 });
     shelf = addLot(shelf, { product: 'Rice', qty: 10, expires: inDays(69), location: '' }, TODAY); // 1 kg per week
     shelf = addLot(shelf, { product: 'Tuna', qty: 3, expires: inDays(209), location: '' }, TODAY); // 0.1 can per week
     shelf = addLot(shelf, { product: 'Water', qty: 4, expires: inDays(-3), location: '' }, TODAY);
@@ -251,6 +251,90 @@ describe('check-in', () => {
     const year = tierStatus(shelf, autonomy, TODAY, 365);
     expect(waterWithoutProduct(year)).toEqual({ stored: 150, treatment: 1675 });
     expect(buyCount(null)).toBe(0);
+  });
+});
+
+describe('consumables and gear', () => {
+  function equipped(): Shelf {
+    let shelf = household(); // 2 people, Matches: gear, 2 for the household
+    shelf.settings.rotationMarginDays = 30;
+    shelf = upsertProduct(shelf, { ...emptyProduct('Gas'), kind: 'consumable', category: 'energy', unit: 'cartridge', daily: 0.2 });
+    shelf = upsertProduct(shelf, {
+      ...emptyProduct('Candles'),
+      kind: 'consumable',
+      category: 'energy',
+      unit: 'unit',
+      daily: 0.5,
+      per: 'household',
+    });
+    shelf = upsertProduct(shelf, {
+      ...emptyProduct('Batteries'),
+      kind: 'consumable',
+      category: 'energy',
+      unit: 'unit',
+      target: 12,
+      per: 'household',
+    });
+    shelf = upsertProduct(shelf, { ...emptyProduct('Tablets'), kind: 'consumable', category: 'water-treatment', unit: 'box', water: 50, daily: 1 });
+    shelf = upsertProduct(shelf, { ...emptyProduct('Headlamp'), kind: 'gear', category: 'tools', unit: 'unit', target: 1 });
+    shelf = upsertProduct(shelf, { ...emptyProduct('Cat carrier'), kind: 'gear', category: 'tools', unit: 'unit', target: 1, per: 'cat' });
+    return shelf;
+  }
+
+  it('tells how long each consumable used every day lasts, shortest first', () => {
+    let shelf = equipped();
+    shelf = addLot(shelf, { product: 'Gas', qty: 4, expires: '', location: '' }, TODAY);
+    shelf = addLot(shelf, { product: 'Candles', qty: 6, expires: inDays(-1), location: '' }, TODAY);
+    shelf = addLot(shelf, { product: 'Candles', qty: 10, expires: '', location: '' }, TODAY);
+    shelf = addLot(shelf, { product: 'Tablets', qty: 2, expires: '', location: '' }, TODAY);
+    // Gas: 0.2 a day per person for 2 people. Expired candles do not count. Tablets count with the water.
+    const supplies = suppliesAutonomy(shelf, TODAY);
+    expect(supplies.map((supply) => [supply.product.name, supply.dailyNeed, supply.days])).toEqual([
+      ['Gas', 0.4, 10],
+      ['Candles', 0.5, 20],
+    ]);
+    const autonomy = computeAutonomy(shelf, TODAY);
+    expect(autonomy.supplies).toEqual(supplies);
+    // Running out of gas does not end the autonomy: no food and no water does.
+    expect(autonomy.days).toBe(0);
+    expect(autonomy.limitedBy).toBe('food');
+  });
+
+  it('counts the gear owned, whatever the tier', () => {
+    let shelf = equipped();
+    shelf = addLot(shelf, { product: 'Headlamp', qty: 2, expires: '', location: '' }, TODAY);
+    shelf = addLot(shelf, { product: 'Matches', qty: 1, expires: '', location: '' }, TODAY);
+    const gear = gearStatus(shelf, TODAY);
+    // No cat in the settings: the cat carrier is not needed.
+    expect([gear.total, gear.ready]).toEqual([2, 1]);
+    expect(gear.missing.map((product) => product.name)).toEqual(['Matches']);
+  });
+
+  it('replaces what is not eaten when it reaches the rotation margin before the next check-in', () => {
+    let shelf = equipped();
+    shelf = addLot(shelf, { product: 'Batteries', qty: 2, expires: inDays(-2), location: '' }, TODAY);
+    shelf = addLot(shelf, { product: 'Batteries', qty: 4, expires: inDays(20), location: '' }, TODAY);
+    shelf = addLot(shelf, { product: 'Batteries', qty: 8, expires: inDays(50), location: '' }, TODAY);
+    shelf = addLot(shelf, { product: 'Batteries', qty: 12, expires: inDays(90), location: '' }, TODAY);
+    shelf = addLot(shelf, { product: 'Headlamp', qty: 1, expires: inDays(10), location: '' }, TODAY);
+    shelf = addLot(shelf, { product: 'Gas', qty: 4, expires: '', location: '' }, TODAY);
+    shelf = addLot(shelf, { product: 'Rice', qty: 5, expires: inDays(40), location: '' }, TODAY);
+
+    // Monthly with a 30-day margin: what expires within 60 days. Expired lots are discarded, food is eaten.
+    const month = replacements(shelf, TODAY, 30);
+    expect(month.map((item) => [item.product.name, item.lot.qty, item.due])).toEqual([
+      ['Headlamp', 1, true],
+      ['Batteries', 4, true],
+      ['Batteries', 8, false],
+    ]);
+    expect(month[2].replaceBy).toBe(TODAY + 20);
+    expect(replacements(shelf, TODAY, 91).map((item) => item.lot.qty)).toEqual([1, 4, 8, 12]);
+
+    const autonomy = computeAutonomy(shelf, TODAY);
+    const checkin = checkIn(shelf, TODAY, rotationPlan(shelf, TODAY), tierPlan(shelf, autonomy, TODAY).current);
+    expect(checkin.replace).toEqual(month);
+    expect(checkin.consume.map((item) => item.product.name)).toEqual(['Rice']);
+    expect(checkin.discard.map((lot) => lot.product)).toEqual(['Batteries']);
   });
 });
 
@@ -310,6 +394,17 @@ describe('catalog', () => {
       ['cat-litter', 'cat'],
       ['dog-food', 'dog'],
     ]);
+  });
+
+  it('sorts every item into food, consumables or gear', () => {
+    const kinds = (...ids: string[]) => ids.map((id) => CATALOG.find((entry) => entry.id === id)?.kind);
+    expect(kinds('rice', 'water-bottle', 'cat-food')).toEqual(['food', 'food', 'food']);
+    expect(kinds('aa-batteries', 'paracetamol', 'purification-tablets', 'cat-litter', 'gas-cartridge')).toEqual(
+      Array(5).fill('consumable'),
+    );
+    expect(kinds('headlamp', 'water-filter', 'first-aid-kit', 'power-bank')).toEqual(Array(4).fill('gear'));
+    // Whatever has calories is eaten.
+    for (const entry of CATALOG) if ((entry.kcal ?? 0) > 0) expect(entry.kind, entry.id).toBe('food');
   });
 
   it('uses unique ids and known categories', () => {

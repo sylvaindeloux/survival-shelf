@@ -22,45 +22,45 @@
 
 ## Produits
 
-<!-- Une ligne par produit. Kcal et Eau sont par unité. Conso/jour fixe ce qu’il faut pour chaque palier, Objectif est un minimum à avoir. Par : personne, foyer, chat ou chien. -->
+<!-- Une ligne par produit. Type : vivres, consommable ou matériel. Kcal et Eau sont par unité. Conso/jour fixe ce qu’il faut pour chaque palier, Objectif est un minimum à avoir. Par : personne, foyer, chat ou chien. -->
 
-| Produit                       | Catégorie           | Unité     | Kcal/unité | Eau L/unité | Conso/jour | Par      | Objectif |
-|-------------------------------|---------------------|-----------|------------|-------------|------------|----------|----------|
-| Bouteille d’eau 1,5 L         | Eau                 | bouteille |            | 1,5         |            |          |          |
-| Filtre à eau (1500 L)         | Traitement de l’eau | pièce     |            | 1500        |            |          |          |
-| Riz                           | Féculents           | kg        | 3600       |             | 0,1        | personne |          |
-| Pâtes                         | Féculents           | kg        | 3550       |             | 0,09       | personne |          |
-| Flocons d’avoine              | Féculents           | kg        | 3800       |             | 0,055      | personne |          |
-| Lentilles sèches              | Légumineuses        | kg        | 3500       |             | 0,04       | personne |          |
-| Thon en boîte 140 g           | Conserves           | boîte     | 150        |             | 0,25       | personne |          |
-| Légumes en conserve 400 g     | Conserves           | boîte     | 120        |             | 0,5        | personne |          |
-| Fruits au sirop 400 g         | Conserves           | boîte     | 250        |             | 0,15       | personne |          |
-| Plat cuisiné en boîte 800 g   | Plats préparés      | boîte     | 700        |             | 0,15       | personne |          |
-| Lait en poudre                | Produits laitiers   | kg        | 4900       |             | 0,025      | personne |          |
-| Huile végétale                | Matières grasses    | L         | 8200       |             | 0,03       | personne |          |
-| Beurre de cacahuète 350 g     | Matières grasses    | pot       | 2100       |             | 0,04       | personne |          |
-| Sucre                         | Sucré & en-cas      | kg        | 4000       |             | 0,03       | personne |          |
-| Confiture 370 g               | Sucré & en-cas      | pot       | 900        |             | 0,05       | personne |          |
-| Chocolat 100 g                | Sucré & en-cas      | tablette  | 550        |             | 0,1        | personne |          |
-| Biscuits 200 g                | Sucré & en-cas      | paquet    | 950        |             | 0,15       | personne |          |
-| Fruits secs (noix, amandes)   | Sucré & en-cas      | kg        | 6000       |             | 0,02       | personne |          |
-| Sel                           | Condiments & épices | kg        |            |             | 0,005      | personne |          |
-| Papier toilette               | Hygiène             | rouleau   |            |             | 0,2        | personne |          |
-| Savon                         | Hygiène             | tablette  |            |             | 0,03       | personne |          |
-| Dentifrice 75 ml              | Hygiène             | tube      |            |             | 0,015      | personne |          |
-| Sacs poubelle (rouleau de 20) | Hygiène             | rouleau   |            |             | 0,05       | foyer    |          |
-| Trousse de secours            | Santé & secours     | pièce     |            |             |            | foyer    | 1        |
-| Paracétamol 500 mg            | Santé & secours     | boîte     |            |             |            | foyer    | 2        |
-| Piles AA                      | Énergie & éclairage | pièce     |            |             |            | foyer    | 12       |
-| Bougies                       | Énergie & éclairage | pièce     |            |             | 0,2        | foyer    |          |
-| Cartouche de gaz              | Énergie & éclairage | cartouche |            |             | 0,2        | personne |          |
-| Allumettes                    | Énergie & éclairage | boîte     |            |             |            | foyer    | 3        |
-| Lampe frontale                | Outils & matériel   | pièce     |            |             |            | personne | 1        |
-| Radio à dynamo                | Outils & matériel   | pièce     |            |             |            | foyer    | 1        |
-| Réchaud à gaz                 | Outils & matériel   | pièce     |            |             |            | foyer    | 1        |
-| Ouvre-boîte manuel            | Outils & matériel   | pièce     |            |             |            | foyer    | 1        |
-| Couteau multifonction         | Outils & matériel   | pièce     |            |             |            | foyer    | 1        |
-| Couverture de survie          | Outils & matériel   | pièce     |            |             |            | personne | 1        |
+| Produit                       | Type        | Catégorie           | Unité     | Kcal/unité | Eau L/unité | Conso/jour | Par      | Objectif |
+|-------------------------------|-------------|---------------------|-----------|------------|-------------|------------|----------|----------|
+| Bouteille d’eau 1,5 L         | vivres      | Eau                 | bouteille |            | 1,5         |            |          |          |
+| Filtre à eau (1500 L)         | matériel    | Traitement de l’eau | pièce     |            | 1500        |            |          |          |
+| Riz                           | vivres      | Féculents           | kg        | 3600       |             | 0,1        | personne |          |
+| Pâtes                         | vivres      | Féculents           | kg        | 3550       |             | 0,09       | personne |          |
+| Flocons d’avoine              | vivres      | Féculents           | kg        | 3800       |             | 0,055      | personne |          |
+| Lentilles sèches              | vivres      | Légumineuses        | kg        | 3500       |             | 0,04       | personne |          |
+| Thon en boîte 140 g           | vivres      | Conserves           | boîte     | 150        |             | 0,25       | personne |          |
+| Légumes en conserve 400 g     | vivres      | Conserves           | boîte     | 120        |             | 0,5        | personne |          |
+| Fruits au sirop 400 g         | vivres      | Conserves           | boîte     | 250        |             | 0,15       | personne |          |
+| Plat cuisiné en boîte 800 g   | vivres      | Plats préparés      | boîte     | 700        |             | 0,15       | personne |          |
+| Lait en poudre                | vivres      | Produits laitiers   | kg        | 4900       |             | 0,025      | personne |          |
+| Huile végétale                | vivres      | Matières grasses    | L         | 8200       |             | 0,03       | personne |          |
+| Beurre de cacahuète 350 g     | vivres      | Matières grasses    | pot       | 2100       |             | 0,04       | personne |          |
+| Sucre                         | vivres      | Sucré & en-cas      | kg        | 4000       |             | 0,03       | personne |          |
+| Confiture 370 g               | vivres      | Sucré & en-cas      | pot       | 900        |             | 0,05       | personne |          |
+| Chocolat 100 g                | vivres      | Sucré & en-cas      | tablette  | 550        |             | 0,1        | personne |          |
+| Biscuits 200 g                | vivres      | Sucré & en-cas      | paquet    | 950        |             | 0,15       | personne |          |
+| Fruits secs (noix, amandes)   | vivres      | Sucré & en-cas      | kg        | 6000       |             | 0,02       | personne |          |
+| Sel                           | vivres      | Condiments & épices | kg        |            |             | 0,005      | personne |          |
+| Papier toilette               | consommable | Hygiène             | rouleau   |            |             | 0,2        | personne |          |
+| Savon                         | consommable | Hygiène             | tablette  |            |             | 0,03       | personne |          |
+| Dentifrice 75 ml              | consommable | Hygiène             | tube      |            |             | 0,015      | personne |          |
+| Sacs poubelle (rouleau de 20) | consommable | Hygiène             | rouleau   |            |             | 0,05       | foyer    |          |
+| Trousse de secours            | matériel    | Santé & secours     | pièce     |            |             |            | foyer    | 1        |
+| Paracétamol 500 mg            | consommable | Santé & secours     | boîte     |            |             |            | foyer    | 2        |
+| Piles AA                      | consommable | Énergie & éclairage | pièce     |            |             |            | foyer    | 12       |
+| Bougies                       | consommable | Énergie & éclairage | pièce     |            |             | 0,2        | foyer    |          |
+| Cartouche de gaz              | consommable | Énergie & éclairage | cartouche |            |             | 0,2        | personne |          |
+| Allumettes                    | consommable | Énergie & éclairage | boîte     |            |             |            | foyer    | 3        |
+| Lampe frontale                | matériel    | Outils & matériel   | pièce     |            |             |            | personne | 1        |
+| Radio à dynamo                | matériel    | Outils & matériel   | pièce     |            |             |            | foyer    | 1        |
+| Réchaud à gaz                 | matériel    | Outils & matériel   | pièce     |            |             |            | foyer    | 1        |
+| Ouvre-boîte manuel            | matériel    | Outils & matériel   | pièce     |            |             |            | foyer    | 1        |
+| Couteau multifonction         | matériel    | Outils & matériel   | pièce     |            |             |            | foyer    | 1        |
+| Couverture de survie          | matériel    | Outils & matériel   | pièce     |            |             |            | personne | 1        |
 
 ## Stock
 

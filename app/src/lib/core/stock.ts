@@ -1,4 +1,4 @@
-import { normalizeCategory } from './categories';
+import { defaultKind, normalizeCategory } from './categories';
 import { formatDay, normalizeDate, parseDay, type Day } from './dates';
 import { newLotId } from './ids';
 import { sameName } from './text';
@@ -27,6 +27,7 @@ export function byExpiry(a: Lot, b: Lot): number {
 export function emptyProduct(name: string): Product {
   return {
     name,
+    kind: defaultKind({ category: 'other', kcal: null, water: null }),
     category: 'other',
     unit: '',
     kcal: null,
@@ -186,6 +187,16 @@ export function takeFromLot(shelf: Shelf, lotId: string, qty: number, action: Lo
   const lot = shelf.lots.find((candidate) => candidate.id === lotId);
   if (!lot) return { shelf, taken: 0 };
   return take(shelf, [lot], qty, action, today, note, lot.product);
+}
+
+/**
+ * Replaces a lot with a new one (batteries, medicine… renewed before their date):
+ * the old lot is logged as used, then the new one is added.
+ */
+export function replaceLot(shelf: Shelf, oldLotId: string, input: LotInput, today: Day): Shelf {
+  const old = shelf.lots.find((lot) => lot.id === oldLotId);
+  const used = old ? takeFromLot(shelf, old.id, old.qty, 'consumed', today).shelf : shelf;
+  return addLot(used, input, today);
 }
 
 export function updateSettings(shelf: Shelf, settings: Settings): Shelf {

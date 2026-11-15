@@ -1,4 +1,4 @@
-import { isConsumable } from './categories';
+import { isFood } from './categories';
 import type { Day } from './dates';
 import { byExpiry, lotExpiry } from './stock';
 import { round } from './status';
@@ -42,8 +42,8 @@ export function rotationPlan(shelf: Shelf, today: Day): RotationPlan {
   const items: RotationItem[] = [];
 
   for (const product of shelf.products) {
-    // Medicine, batteries… are replaced, not eaten: the expiry alerts cover them.
-    if (!isConsumable(product)) continue;
+    // Medicine, batteries… are not eaten: the check-in replaces them before their date instead.
+    if (!isFood(product)) continue;
     const lots = shelf.lots
       .filter((lot) => sameName(lot.product, product.name) && lot.qty > 0)
       .filter((lot) => Number.isFinite(lotExpiry(lot)) && lotExpiry(lot) >= today)

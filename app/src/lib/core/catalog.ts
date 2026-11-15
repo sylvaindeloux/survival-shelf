@@ -1,6 +1,7 @@
+import { categoryKind } from './categories';
 import { inLang, translations, type Lang, type Translated } from './languages';
 import { sameName } from './text';
-import type { Per, Product } from './types';
+import type { Kind, Per, Product } from './types';
 
 /**
  * Built-in catalog of common survival stock items, with approximate values,
@@ -11,6 +12,8 @@ export interface CatalogItem {
   /** Stable identifier (English slug). */
   id: string;
   name: Translated;
+  /** Food, consumable or gear: the kind of its category unless set. */
+  kind: Kind;
   category: string;
   unit: Translated;
   kcal: number | null;
@@ -59,7 +62,20 @@ function item(
   unit: CatalogItem['unit'],
   values: Partial<Values>,
 ): CatalogItem {
-  return { id, name, category, unit, kcal: null, water: null, daily: null, per: 'person', target: null, shelfLife: null, ...values };
+  return {
+    id,
+    name,
+    kind: categoryKind(category),
+    category,
+    unit,
+    kcal: null,
+    water: null,
+    daily: null,
+    per: 'person',
+    target: null,
+    shelfLife: null,
+    ...values,
+  };
 }
 
 export const CATALOG: CatalogItem[] = [
@@ -68,7 +84,7 @@ export const CATALOG: CatalogItem[] = [
   item('water-pack', { en: 'Water pack 6 × 1.5 L', fr: 'Pack d’eau 6 × 1,5 L' }, 'water', PACK, { water: 9, shelfLife: 24 }),
   item('water-can', { en: 'Water can 5 L', fr: 'Bidon d’eau 5 L' }, 'water', UNIT, { water: 5, shelfLife: 24 }),
   item('water', { en: 'Water', fr: 'Eau' }, 'water', L, { water: 1, shelfLife: 24 }),
-  item('water-filter', { en: 'Water filter (1500 L)', fr: 'Filtre à eau (1500 L)' }, 'water-treatment', UNIT, { water: 1500, starter: true, advice: { en: 'Check it after 5 years. Never let it freeze once it has been used.', fr: 'À contrôler au bout de 5 ans. Ne jamais le laisser geler une fois utilisé.' } }),
+  item('water-filter', { en: 'Water filter (1500 L)', fr: 'Filtre à eau (1500 L)' }, 'water-treatment', UNIT, { kind: 'gear', water: 1500, starter: true, advice: { en: 'Check it after 5 years. Never let it freeze once it has been used.', fr: 'À contrôler au bout de 5 ans. Ne jamais le laisser geler une fois utilisé.' } }),
   item('purification-tablets', { en: 'Purification tablets (box of 50)', fr: 'Pastilles de purification (boîte de 50)' }, 'water-treatment', BOX, { water: 50, shelfLife: 60 }),
 
   // Food: daily use per person, the starter menu adds up to about 2200 kcal.
@@ -105,7 +121,7 @@ export const CATALOG: CatalogItem[] = [
 
   // Specific needs. Pet items are per cat or per dog: the Cats and Dogs settings multiply them.
   item('cat-food', { en: 'Dry cat food', fr: 'Croquettes pour chat' }, 'pets', KG, { daily: 0.06, per: 'cat', shelfLife: 12, need: 'cat' }),
-  item('cat-litter', { en: 'Clumping cat litter', fr: 'Litière agglomérante' }, 'pets', KG, { daily: 0.4, per: 'cat', need: 'cat' }),
+  item('cat-litter', { en: 'Clumping cat litter', fr: 'Litière agglomérante' }, 'pets', KG, { kind: 'consumable', daily: 0.4, per: 'cat', need: 'cat' }),
   // A medium dog (20 to 25 kg): about 0.15 kg for a small dog, 0.45 kg for a large one.
   item('dog-food', { en: 'Dry dog food', fr: 'Croquettes pour chien' }, 'pets', KG, { daily: 0.3, per: 'dog', shelfLife: 12, need: 'dog' }),
   item('daily-medicine', { en: 'Daily medicine', fr: 'Traitement quotidien' }, 'medical', TABLET, { daily: 1, per: 'household', shelfLife: 24, need: 'treatment' }),
@@ -117,7 +133,7 @@ export const CATALOG: CatalogItem[] = [
   item('bin-bags', { en: 'Bin bags (roll of 20)', fr: 'Sacs poubelle (rouleau de 20)' }, 'hygiene', ROLL, { daily: 0.05, per: 'household', starter: true }),
 
   // Health and first aid.
-  item('first-aid-kit', { en: 'First aid kit', fr: 'Trousse de secours' }, 'medical', UNIT, { target: 1, per: 'household', starter: true, advice: { en: 'Check its contents every year: dressings, gloves and medicines have dates.', fr: 'Vérifier son contenu tous les ans : pansements, gants et médicaments ont une date.' } }),
+  item('first-aid-kit', { en: 'First aid kit', fr: 'Trousse de secours' }, 'medical', UNIT, { kind: 'gear', target: 1, per: 'household', starter: true, advice: { en: 'Check its contents every year: dressings, gloves and medicines have dates.', fr: 'Vérifier son contenu tous les ans : pansements, gants et médicaments ont une date.' } }),
   item('paracetamol', { en: 'Paracetamol 500 mg', fr: 'Paracétamol 500 mg' }, 'medical', BOX, { target: 2, per: 'household', shelfLife: 36, starter: true }),
 
   // Energy and light.
@@ -134,7 +150,7 @@ export const CATALOG: CatalogItem[] = [
   item('multitool', { en: 'Multi-tool knife', fr: 'Couteau multifonction' }, 'tools', UNIT, { target: 1, per: 'household', starter: true }),
   item('survival-blanket', { en: 'Survival blanket', fr: 'Couverture de survie' }, 'tools', UNIT, { target: 1, starter: true }),
   item('jerrycan', { en: 'Jerrycan 20 L (empty)', fr: 'Jerrican 20 L (vide)' }, 'tools', UNIT, { target: 1, per: 'household', advice: { en: 'Water you fill it with yourself is renewed every 6 months.', fr: 'L’eau que tu y mets toi-même se renouvelle tous les 6 mois.' } }),
-  item('power-bank', { en: 'Power bank', fr: 'Batterie externe' }, 'energy', UNIT, { target: 1, per: 'household', advice: { en: 'Recharge it every 3 months and store it about half charged.', fr: 'À recharger tous les 3 mois, et à stocker à moitié chargée.' } }),
+  item('power-bank', { en: 'Power bank', fr: 'Batterie externe' }, 'energy', UNIT, { kind: 'gear', target: 1, per: 'household', advice: { en: 'Recharge it every 3 months and store it about half charged.', fr: 'À recharger tous les 3 mois, et à stocker à moitié chargée.' } }),
 ];
 
 /** Catalog entry whose name matches in any language, if any. */
@@ -151,6 +167,7 @@ export function starterItems(needs: Needs): CatalogItem[] {
 export function productFromCatalog(entry: CatalogItem, lang: Lang): Product {
   return {
     name: inLang(entry.name, lang),
+    kind: entry.kind,
     category: entry.category,
     unit: inLang(entry.unit, lang),
     kcal: entry.kcal,

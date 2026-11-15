@@ -43,9 +43,12 @@
   const VIEWS: Record<Route, Component> = { home: Home, checkin: CheckIn, stock: Stock, plan: Plan, guides: Guides, settings: Settings };
   const View = $derived(VIEWS[router.route]);
 
-  // Only what needs doing: expired lots to discard and lots due for rotation.
+  // Only what needs doing: expired lots to discard, lots due for rotation and supplies due for replacement.
   const badges = $derived<Partial<Record<Route, number>>>({
-    checkin: app.checkin.discard.length + app.checkin.consume.filter((item) => item.due).length,
+    checkin:
+      app.checkin.discard.length +
+      app.checkin.consume.filter((item) => item.due).length +
+      app.checkin.replace.filter((item) => item.due).length,
   });
   const fileWarning = $derived(app.fileState !== 'none' && app.fileState !== 'linked');
   // Printing from the guides prints the guide on screen, anywhere else the inventory sheet.
@@ -150,7 +153,7 @@
   <LotDialog request={dialogs.lot} />
 {/if}
 {#if dialogs.product}
-  <ProductDialog name={dialogs.product.name} />
+  <ProductDialog name={dialogs.product.name} kind={dialogs.product.kind} />
 {/if}
 {#if dialogs.take}
   <TakeDialog request={dialogs.take} />

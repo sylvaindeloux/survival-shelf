@@ -74,7 +74,7 @@ A two-column table: `Setting | Value` (`Paramètre | Valeur` in French).
 | `Kcal per person per day`    | 2200            | Daily energy need of one person                                         |
 | `Water L per person per day` | 3               | Liters of water per person per day (drinking, cooking, hygiene)         |
 | `Tiers (days)`               | `3, 7, 30, 365` | Autonomy tiers to build, in days, separated by commas or spaces         |
-| `Check-in`                   | `monthly`       | How often the app lists what to discard, eat and buy: `monthly`, `quarterly` or `semiannual` |
+| `Check-in`                   | `monthly`       | How often the app lists what to discard, eat, replace and buy: `monthly`, `quarterly` or `semiannual` |
 | `Expiry warning days`        | 60              | Lots expiring within this delay are flagged as "expiring soon"          |
 | `Rotation margin days`       | 30              | The rotation aims to finish each lot this long before it expires        |
 
@@ -88,6 +88,7 @@ current language of the app.
 | Column         | French header  | Also accepted                  | Required | Content                                                      |
 |----------------|----------------|--------------------------------|----------|--------------------------------------------------------------|
 | `Product`      | `Produit`      | Name, Nom, Item                | yes      | Unique name of the product                                   |
+| `Type`         | `Type`         | Kind, Family, Famille, Nature, Genre |    | `food`, `consumable` or `gear`: see below                    |
 | `Category`     | `Catégorie`    | Cat                            |          | One of the categories below, or any text                     |
 | `Unit`         | `Unité`        | Units                          |          | Free text: `kg`, `L`, `can`, `pack`…                         |
 | `Kcal/unit`    | `Kcal/unité`   | Kcal, Calories, Energy         |          | Energy of one unit, used for the food autonomy               |
@@ -119,8 +120,36 @@ Categories, as written in English and French files:
 | `Tools & gear`        | `Outils & matériel`    | `tools`           |
 | `Other`               | `Divers`               | `other`           |
 
-The key is accepted too, as is any other text for a category of your own. Food and water categories, and
-any product with calories or water, are part of the rotation.
+The key is accepted too, as is any other text for a category of your own.
+
+### Type: food, consumables and gear
+
+| English      | French        | What it is                                       | How the app looks after it                  |
+|--------------|---------------|--------------------------------------------------|---------------------------------------------|
+| `food`       | `vivres`      | Water, food, pet food                            | Eaten and replaced as you go (rotation)     |
+| `consumable` | `consommable` | Batteries, gas, candles, medicine, hygiene…      | Used up or aging: replaced before its date  |
+| `gear`       | `matériel`    | Tools, lamps, stove, radio, first aid kit…       | Durable: you only need to own it            |
+
+Also accepted: `water`, `food and water`, `nourriture`, `aliment`, `denrée` for food; `consumables`,
+`consommables`; `equipment`, `tool`, `durable`, `équipement`, `outil` for gear. An unknown value is reported
+and the default is used.
+
+An empty `Type` follows the product: anything with calories or drinking water is `food`, the rest follows
+its category. `Tools & gear` is `gear`; `Water treatment`, `Hygiene`, `Health & first aid`, `Energy & light`,
+`Other` and categories of your own are `consumable`; the food categories, `Water` and `Pets` are `food`.
+
+What the type changes:
+
+- **Food** follows the rotation: the check-in lists what to eat from the stock and buy again, so that each lot
+  is finished `Rotation margin days` before its date.
+- **Consumables** are not eaten: the check-in lists them under "To replace" when a lot reaches
+  `Rotation margin days` before its date by the next check-in. Use it up in daily life, then mark it as
+  replaced: the old lot is logged as `consumed` and the new one is added. A consumable with a `Daily use`
+  (gas, candles) shows how many days it lasts, apart from the autonomy days.
+- **Gear** with a `Target` is ready or missing, the same for every tier. Gear with an expiry date (a first aid
+  kit) is listed under "To replace" too.
+
+Water treatment products count in liters with the water, whatever their type.
 
 ### The plan: daily use, per and target
 
@@ -212,11 +241,11 @@ buy, give your products a daily use:
 
 ## Products
 
-| Product | Unit | Kcal/unit | Daily use | Per | Target |
-|---|---|---|---|---|---|
-| Rice | kg | 3600 | 0.1 | person | |
-| Toilet paper | roll | | 0.2 | person | |
-| Radio | unit | | | household | 1 |
+| Product | Type | Unit | Kcal/unit | Daily use | Per | Target |
+|---|---|---|---|---|---|---|
+| Rice | food | kg | 3600 | 0.1 | person | |
+| Toilet paper | consumable | roll | | 0.2 | person | |
+| Radio | gear | unit | | | household | 1 |
 ```
 
 ## Tips

@@ -82,7 +82,7 @@ Un tableau à deux colonnes : `Paramètre | Valeur` (`Setting | Value` en anglai
 | `Kcal par personne par jour`  | 2200               | Besoin d'énergie quotidien d'une personne                            |
 | `Eau L par personne par jour` | 3                  | Litres d'eau par personne et par jour (boire, cuisiner, hygiène)     |
 | `Paliers (jours)`             | `3, 7, 30, 365`    | Paliers d'autonomie à construire, en jours, séparés par des virgules ou des espaces |
-| `Rendez-vous`                 | `mensuel`          | À quelle fréquence l'appli liste quoi jeter, manger et acheter : `mensuel`, `trimestriel` ou `semestriel` |
+| `Rendez-vous`                 | `mensuel`          | À quelle fréquence l'appli liste quoi jeter, manger, remplacer et acheter : `mensuel`, `trimestriel` ou `semestriel` |
 | `Alerte péremption (jours)`   | 60                 | Les lots qui périment dans ce délai sont signalés « bientôt périmés » |
 | `Marge de rotation (jours)`   | 30                 | La rotation vise à finir chaque lot ce nombre de jours avant sa péremption |
 
@@ -97,6 +97,7 @@ l'appli.
 | Colonne        | En-tête anglais | Aussi accepté                  | Obligatoire | Contenu                                                     |
 |----------------|-----------------|--------------------------------|-------------|-------------------------------------------------------------|
 | `Produit`      | `Product`       | Nom, Name, Article             | oui         | Nom unique du produit                                       |
+| `Type`         | `Type`          | Famille, Nature, Genre, Kind, Family |       | `vivres`, `consommable` ou `matériel` : voir plus bas       |
 | `Catégorie`    | `Category`      | Cat                            |             | Une des catégories ci-dessous, ou n'importe quel texte      |
 | `Unité`        | `Unit`          | Unités                         |             | Texte libre : `kg`, `L`, `boîte`, `paquet`…                 |
 | `Kcal/unité`   | `Kcal/unit`     | Kcal, Calories, Énergie        |             | Énergie d'une unité, pour l'autonomie en nourriture         |
@@ -128,8 +129,37 @@ Les catégories, telles qu'écrites dans les fichiers en français et en anglais
 | `Outils & matériel`    | `Tools & gear`        | `tools`           |
 | `Divers`               | `Other`               | `other`           |
 
-La clé est acceptée aussi, tout comme n'importe quel autre texte pour une catégorie à toi. Les catégories
-de nourriture et d'eau, et tout produit qui a des calories ou de l'eau, font partie de la rotation.
+La clé est acceptée aussi, tout comme n'importe quel autre texte pour une catégorie à toi.
+
+### Type : vivres, consommables et matériel
+
+| Français      | Anglais      | Ce que c'est                                     | Comment l'appli s'en occupe                     |
+|---------------|--------------|--------------------------------------------------|-------------------------------------------------|
+| `vivres`      | `food`       | Eau, nourriture, croquettes                      | Mangé et remplacé au fur et à mesure (rotation) |
+| `consommable` | `consumable` | Piles, gaz, bougies, médicaments, hygiène…       | S'use ou vieillit : remplacé avant sa date      |
+| `matériel`    | `gear`       | Outils, lampes, réchaud, radio, trousse de secours… | Durable : il suffit de l'avoir               |
+
+Aussi acceptés : `nourriture`, `aliment`, `denrée`, `water`, `food and water` pour les vivres ;
+`consommables`, `consumables` ; `équipement`, `outil`, `durable`, `equipment`, `tool` pour le matériel. Une
+valeur inconnue est signalée et la valeur par défaut est utilisée.
+
+Un `Type` vide suit le produit : tout ce qui a des calories ou de l'eau potable est `vivres`, le reste suit
+sa catégorie. `Outils & matériel` donne `matériel` ; `Traitement de l'eau`, `Hygiène`, `Santé & secours`,
+`Énergie & éclairage`, `Divers` et tes propres catégories donnent `consommable` ; les catégories de
+nourriture, `Eau` et `Animaux` donnent `vivres`.
+
+Ce que le type change :
+
+- Les **vivres** suivent la rotation : le rendez-vous liste quoi manger depuis le stock puis racheter, pour
+  que chaque lot soit fini `Marge de rotation (jours)` avant sa date.
+- Les **consommables** ne se mangent pas : le rendez-vous les liste dans « À remplacer » quand un lot
+  atteint `Marge de rotation (jours)` avant sa date d'ici le prochain rendez-vous. Utilise-le au quotidien,
+  puis marque-le comme remplacé : l'ancien lot est noté `consommé` et le nouveau est ajouté. Un consommable
+  qui a une `Conso/jour` (gaz, bougies) indique combien de jours il tient, à part des jours d'autonomie.
+- Le **matériel** avec un `Objectif` est prêt ou manquant, pareil pour tous les paliers. Le matériel qui a
+  une date (une trousse de secours) est aussi listé dans « À remplacer ».
+
+Les produits de traitement de l'eau comptent en litres avec l'eau, quel que soit leur type.
 
 ### Le plan : conso par jour, par et objectif
 
@@ -226,11 +256,11 @@ prévoir aussi quoi acheter, donne une conso par jour à tes produits :
 
 ## Produits
 
-| Produit | Unité | Kcal/unité | Conso/jour | Par | Objectif |
-|---|---|---|---|---|---|
-| Riz | kg | 3600 | 0,1 | personne | |
-| Papier toilette | rouleau | | 0,2 | personne | |
-| Radio | pièce | | | foyer | 1 |
+| Produit | Type | Unité | Kcal/unité | Conso/jour | Par | Objectif |
+|---|---|---|---|---|---|---|
+| Riz | vivres | kg | 3600 | 0,1 | personne | |
+| Papier toilette | consommable | rouleau | | 0,2 | personne | |
+| Radio | matériel | pièce | | | foyer | 1 |
 ```
 
 ## Astuces

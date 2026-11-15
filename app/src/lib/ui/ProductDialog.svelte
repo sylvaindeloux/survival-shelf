@@ -2,18 +2,19 @@
   import Trash from '@lucide/svelte/icons/trash';
   import { app } from '../app.svelte';
   import { CATALOG, findCatalogItem } from '../core/catalog';
-  import { CATEGORIES, findCategory } from '../core/categories';
+  import { CATEGORIES, defaultKind, findCategory, isWaterTreatment } from '../core/categories';
   import { headcount, isWaterProduct, productTarget } from '../core/plan';
   import { deleteProduct, emptyProduct, findProduct, lotsOf, upsertProduct } from '../core/stock';
   import { parseNumber, sameName } from '../core/text';
-  import type { Per, Product } from '../core/types';
+  import type { Kind, Per, Product } from '../core/types';
   import { localize, t, tn } from '../i18n/index.svelte';
   import Dialog from './Dialog.svelte';
+  import KindPicker from './KindPicker.svelte';
   import { inputNumber, keepsText, quantity, tierLabel } from './format';
   import { dialogs } from './state.svelte';
 
-  /** Product to edit; absent to create one. */
-  let { name: originalName }: { name?: string } = $props();
+  /** Product to edit (absent to create one), and the kind a new product starts with. */
+  let { name: originalName, kind: initialKind }: { name?: string; kind?: Kind } = $props();
 
   // The dialog is recreated for every request: reading the props once is intended.
   // svelte-ignore state_referenced_locally
@@ -28,6 +29,11 @@
   let per = $state<Per>(product?.per ?? 'person');
   let target = $state(inputNumber(product?.target ?? null));
   let notes = $state(product?.notes ?? '');
+  // svelte-ignore state_referenced_locally
+  let kind = $state<Kind>(product?.kind ?? initialKind ?? defaultKind({ category: 'other', kcal: null, water: null }));
+  /** Picked by the user or given by the page: a new category no longer changes it, the catalog still does. */
+  // svelte-ignore state_referenced_locally
+  let kindChosen = !creating || initialKind !== undefined;
   let submitted = $state(false);
   let confirmDelete = $state(false);
 
@@ -49,19 +55,23 @@
     return number === null || Number.isNaN(number) ? null : number;
   }
 
+  /** Calories only make sense for food, liters for food and water treatment (the volume it makes drinkable). */
+  const showKcal = $derived(kind === 'food');
+  const showWater = $derived(kind === 'food' || isWaterTreatment({ category }));
   const nameTaken = $derived(
     !(product && sameName(name, product.name)) && app.shelf.products.some((candidate) => sameName(candidate.name, name)),
   );
-  const valid = $derived(name.trim() !== '' && !nameTaken && ![kcal, water, daily, target].some(invalidNumber));
+  const valid = $derived(name.trim() !== '' && !nameTaken && ![showKcal ? kcal : '', showWater ? water : '', daily, target].some(invalidNumber));
 
   /** The product as currently filled in, for the tier preview and saving. */
   const draft = $derived<Product>({
     ...(product ?? emptyProduct(name.trim())),
     name: name.trim(),
+    kind,
     category,
     unit: unit.trim(),
-    kcal: optionalNumber(kcal),
-    water: optionalNumber(water),
+    kcal: showKcal ? optionalNumber(kcal) : null,
+    water: showWater ? optionalNumber(water) : null,
     daily: optionalNumber(daily),
     per,
     target: optionalNumber(target),
@@ -89,12 +99,18 @@
     const entry = findCatalogItem(name);
     if (!entry) return;
     category = entry.category;
+    kind = entry.kind;
     unit = localize(entry.unit);
     kcal = inputNumber(entry.kcal);
     water = inputNumber(entry.water);
     daily = inputNumber(entry.daily);
     per = entry.per;
     target = inputNumber(entry.target);
+  }
+
+  /** A new category gives its kind until the user picks one. */
+  function categoryChanged() {
+    if (!kindChosen) kind = defaultKind({ category, kcal: optionalNumber(kcal), water: optionalNumber(water) });
   }
 
   function save(event: SubmitEvent) {
@@ -140,10 +156,11 @@
       {#if nameTaken}<span class="hint error">{t('product.nameTaken')}</span>{/if}
       {#if catalogEntry}<span class="hint">{keepsText(catalogEntry)}</span>{/if}
     </label>
+    <KindPicker bind:value={kind} onpick={() => (kindChosen = true)} />
     <div class="grid-2">
       <label class="field">
         <span>{t('product.category')}</span>
-        <select class="select" bind:value={category}>
+        <select class="select" bind:value={category} onchange={categoryChanged}>
           {#each CATEGORIES as option (option.key)}
             <option value={option.key}>{localize(option.label)}</option>
           {/each}
@@ -157,16 +174,24 @@
         <input class="input" bind:value={unit} placeholder={t('product.unitPlaceholder')} />
       </label>
     </div>
-    <div class="grid-2">
-      <label class="field">
-        <span>{t('product.kcal')}</span>
-        <input class="input" inputmode="decimal" bind:value={kcal} placeholder="0" aria-invalid={submitted && invalidNumber(kcal)} />
-      </label>
-      <label class="field">
-        <span>{t('product.water')}</span>
-        <input class="input" inputmode="decimal" bind:value={water} placeholder="0" aria-invalid={submitted && invalidNumber(water)} />
-      </label>
-    </div>
+    {#if showKcal || showWater}
+      <div class="grid-2">
+        {#if showKcal}
+          <label class="field">
+            <span>{t('product.kcal')}</span>
+            <input class="input" inputmode="decimal" bind:value={kcal} placeholder="0" aria-invalid={submitted && invalidNumber(kcal)} />
+          </label>
+        {/if}
+        {#if showWater}
+          <label class="field">
+            <span>{t('product.water')}</span>
+            <input class="input" inputmode="decimal" bind:value={water} placeholder="0" aria-invalid={submitted && invalidNumber(water)} />
+          </label>
+        {/if}
+      </div>
+    {:else}
+      <p class="hint">{t('product.foodOnly')}</p>
+    {/if}
 
     <fieldset class="plan stack">
       <legend>{t('product.planTitle')}</legend>

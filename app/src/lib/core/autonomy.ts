@@ -1,8 +1,9 @@
 import { isStoredWater, isWaterTreatment } from './categories';
 import type { Day } from './dates';
 import { PET_WATER_PER_DAY } from './defaults';
-import { findProduct, lotExpiry } from './stock';
-import type { Settings, Shelf } from './types';
+import { headcount, isWaterProduct } from './plan';
+import { findProduct, lotExpiry, lotsOf } from './stock';
+import type { Lot, Product, Settings, Shelf } from './types';
 
 export interface ResourceAutonomy {
   /** Household need per day (kcal or liters). */
@@ -19,15 +20,29 @@ export interface ResourceAutonomy {
   lost: number;
 }
 
+/** How long a consumable used every day (gas, candles, toilet paper…) lasts. */
+export interface SupplyAutonomy {
+  product: Product;
+  /** Units used per day by the household. */
+  dailyNeed: number;
+  /** Days it lasts, oldest lot first, losing what expires on the way. */
+  days: number;
+}
+
 export interface Autonomy {
   food: ResourceAutonomy;
   /** Stored drinking water only: treating water needs time, gear and a source. */
   water: ResourceAutonomy;
   /** Liters that water treatment in stock (filters, tablets) can make drinkable. */
   treatmentLiters: number;
-  /** Overall autonomy: the weakest of food and water. */
+  /**
+   * Overall autonomy: the weakest of food and water. Running out of a consumable
+   * makes life harder but does not end it, so `supplies` is shown apart.
+   */
   days: number;
   limitedBy: 'food' | 'water' | null;
+  /** Consumables with a daily use, the shortest-lasting first. */
+  supplies: SupplyAutonomy[];
 }
 
 interface Portion {
@@ -61,6 +76,11 @@ export function simulate(portions: Portion[], dailyNeed: number): { days: number
   return { days: time, lost };
 }
 
+/** Day offset (from today) after which a lot is no longer usable: a lot expiring on day D can still be used on day D. */
+function lotEnd(lot: Lot, today: Day): number {
+  return lotExpiry(lot) - today + 1;
+}
+
 function resource(shelf: Shelf, today: Day, field: 'kcal' | 'water', dailyNeed: number): ResourceAutonomy {
   const portions: Portion[] = [];
   let expired = 0;
@@ -69,8 +89,7 @@ function resource(shelf: Shelf, today: Day, field: 'kcal' | 'water', dailyNeed: 
     if (!product || (field === 'water' && !isStoredWater(product))) continue;
     const amount = lot.qty * (product[field] ?? 0);
     if (amount <= 0) continue;
-    // A lot expiring on day D can still be used on day D.
-    const end = lotExpiry(lot) - today + 1;
+    const end = lotEnd(lot, today);
     if (end <= 0) expired += amount;
     else portions.push({ amount, end });
   }
@@ -91,6 +110,24 @@ export function waterNeed(settings: Settings): number {
   return settings.people * settings.waterPerPersonPerDay + settings.cats * PET_WATER_PER_DAY.cat + settings.dogs * PET_WATER_PER_DAY.dog;
 }
 
+/**
+ * How long each consumable with a daily use lasts, shortest first. Water
+ * treatment is left out: it is counted in liters with the water.
+ */
+export function suppliesAutonomy(shelf: Shelf, today: Day): SupplyAutonomy[] {
+  const supplies: SupplyAutonomy[] = [];
+  for (const product of shelf.products) {
+    if (product.kind !== 'consumable' || isWaterProduct(product)) continue;
+    const dailyNeed = (product.daily ?? 0) * headcount(product, shelf.settings);
+    if (dailyNeed <= 0) continue;
+    const portions = lotsOf(shelf, product.name)
+      .map((lot) => ({ amount: lot.qty, end: lotEnd(lot, today) }))
+      .filter((portion) => portion.amount > 0 && portion.end > 0);
+    supplies.push({ product, dailyNeed, days: simulate(portions, dailyNeed).days });
+  }
+  return supplies.sort((a, b) => a.days - b.days);
+}
+
 export function computeAutonomy(shelf: Shelf, today: Day): Autonomy {
   const { people, kcalPerPersonPerDay } = shelf.settings;
   const food = resource(shelf, today, 'kcal', people * kcalPerPersonPerDay);
@@ -103,5 +140,5 @@ export function computeAutonomy(shelf: Shelf, today: Day): Autonomy {
   const days = Math.min(food.days, water.days);
   let limitedBy: Autonomy['limitedBy'] = null;
   if (Number.isFinite(days)) limitedBy = food.days <= water.days ? 'food' : 'water';
-  return { food, water, treatmentLiters, days, limitedBy };
+  return { food, water, treatmentLiters, days, limitedBy, supplies: suppliesAutonomy(shelf, today) };
 }
