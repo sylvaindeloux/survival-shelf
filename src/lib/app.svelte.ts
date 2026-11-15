@@ -2,7 +2,8 @@ import { computeAutonomy } from './core/autonomy';
 import { checkIn } from './core/checkin';
 import { today as currentDay, type Day } from './core/dates';
 import { emptyShelf } from './core/defaults';
-import { parseShelf, sameContent, serializeShelf } from './core/document';
+import { sameContent, serializeShelf } from './core/document';
+import { openShelf, withLanguage } from './core/language';
 import { menuKcal, tierPlan } from './core/plan';
 import { rotationPlan } from './core/rotation';
 import { expiryAlerts, summarizeProducts } from './core/status';
@@ -181,7 +182,7 @@ class App {
     i18n.setPreference(preference);
     if (this.started && this.shelf.settings.lang !== i18n.lang) {
       const lang = i18n.lang;
-      this.update((shelf) => ({ ...shelf, settings: { ...shelf.settings, lang } }));
+      this.update((shelf) => withLanguage(shelf, lang));
     }
   }
 
@@ -328,10 +329,9 @@ class App {
    * that does not say its language is taken as written in the current one.
    */
   #parse(text: string, options: { announce: boolean }) {
-    const result = parseShelf(text, { lang: i18n.lang });
-    const { lang } = result.shelf.settings;
-    if (lang !== i18n.lang) {
-      i18n.setPreference(lang);
+    const result = openShelf(text, i18n.lang);
+    if (result.switchTo) {
+      i18n.setPreference(result.switchTo);
       if (options.announce) this.toast(t('file.langApplied'));
     }
     return result;
