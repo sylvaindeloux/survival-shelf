@@ -47,14 +47,13 @@ function utcStamp(date: Date): string {
   return date.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
 }
 
-const MONTHS: Record<Exclude<Rhythm, 'weekly'>, number> = { monthly: 1, quarterly: 3, semiannual: 6 };
+const MONTHS: Record<Rhythm, number> = { monthly: 1, quarterly: 3, semiannual: 6 };
 
 /**
- * Recurrence: every week, or every 1, 3 or 6 months on the same weekday of the
- * month ("2nd Saturday", "last Sunday").
+ * Recurrence: every 1, 3 or 6 months on the same weekday of the month
+ * ("2nd Saturday", "last Sunday").
  */
 function recurrence(year: number, month: number, day: number, rhythm: Rhythm): string {
-  if (rhythm === 'weekly') return 'FREQ=WEEKLY';
   const weekday = WEEKDAYS[new Date(Date.UTC(year, month - 1, day)).getUTCDay()];
   const nth = Math.ceil(day / 7);
   const interval = MONTHS[rhythm] > 1 ? `;INTERVAL=${MONTHS[rhythm]}` : '';

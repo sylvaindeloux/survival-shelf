@@ -9,7 +9,7 @@ export const DEFAULT_SETTINGS: Settings = {
   kcalPerPersonPerDay: 2200,
   waterPerPersonPerDay: 3,
   tiers: DEFAULT_TIERS,
-  rhythm: 'weekly',
+  rhythm: 'monthly',
   warningDays: 60,
   rotationMarginDays: 30,
 };

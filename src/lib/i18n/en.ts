@@ -12,7 +12,6 @@ export const en = {
   'nav.label': 'Main navigation',
   'nav.home': 'Overview',
   'nav.stock': 'Stock',
-  'nav.checkinWeekly': 'This week',
   'nav.checkinMonthly': 'This month',
   'nav.checkinQuarterly': 'This quarter',
   'nav.checkinSemiannual': 'Half-year',
@@ -63,7 +62,7 @@ export const en = {
   'home.emptyText': 'Create your plan to know what to buy, or add what you already have.',
   'home.readyAction': 'What to buy',
   'home.readyText':
-    'Start with the first tier: this week’s list tells you what to buy. Already have some supplies? Add them to the stock.',
+    'Start with the first tier: your check-in list tells you what to buy. Already have some supplies? Add them to the stock.',
   'home.readyTitle': 'Your plan is ready',
 
   'setup.step': 'Step {step} of {total}',
@@ -136,11 +135,9 @@ export const en = {
   'plan.unplannedTitle': 'Not in the plan',
   'plan.unplannedText': 'In your stock but not counted in the tiers. Tap one to give it a use per day.',
 
-  'checkin.titleWeekly': 'This week',
   'checkin.titleMonthly': 'This month',
   'checkin.titleQuarterly': 'This quarter',
   'checkin.titleSemiannual': 'This half-year',
-  'checkin.subtitleWeekly': 'Your weekly check-in: discard, eat, buy.',
   'checkin.subtitleMonthly': 'Your monthly check-in: discard, eat, buy.',
   'checkin.subtitleQuarterly': 'Your quarterly check-in: discard, eat, buy.',
   'checkin.subtitleSemiannual': 'Your half-yearly check-in: discard, eat, buy.',
@@ -148,8 +145,6 @@ export const en = {
   'checkin.discardText': 'Expired: check them, then discard them or eat them if they are still fine.',
   'checkin.discarded': 'Discarded',
   'checkin.consumeTitle': 'To eat',
-  'checkin.consumeTextWeekly':
-    'Eat this from your stock this week, then replace it: every lot is finished {margin} days before its date.',
   'checkin.consumeTextMonthly':
     'Eat this from your stock this month, then replace it: every lot is finished {margin} days before its date.',
   'checkin.consumeTextQuarterly':
@@ -288,7 +283,6 @@ export const en = {
   'settings.addTier': 'Add a tier',
   'settings.tiersHint': 'Built one after the other: the app helps you complete the first, then the next.',
   'settings.rhythm': 'Check-in',
-  'settings.weekly': 'Week',
   'settings.monthly': 'Month',
   'settings.quarterly': 'Quarter',
   'settings.semiannual': '6 months',

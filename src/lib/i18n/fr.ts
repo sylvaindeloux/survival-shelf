@@ -13,7 +13,6 @@ export const fr: Record<keyof typeof en, string> = {
   'nav.label': 'Navigation principale',
   'nav.home': 'Accueil',
   'nav.stock': 'Stock',
-  'nav.checkinWeekly': 'Semaine',
   'nav.checkinMonthly': 'Mois',
   'nav.checkinQuarterly': 'Trimestre',
   'nav.checkinSemiannual': '6 mois',
@@ -64,7 +63,7 @@ export const fr: Record<keyof typeof en, string> = {
   'home.emptyText': 'Crée ton plan pour savoir quoi acheter, ou ajoute ce que tu as déjà.',
   'home.readyAction': 'Quoi acheter',
   'home.readyText':
-    'Commence par le premier palier : la liste de la semaine te dit quoi acheter. Tu as déjà des réserves ? Ajoute-les au stock.',
+    'Commence par le premier palier : la liste de ton rendez-vous te dit quoi acheter. Tu as déjà des réserves ? Ajoute-les au stock.',
   'home.readyTitle': 'Ton plan est prêt',
 
   'setup.step': 'Étape {step} sur {total}',
@@ -138,11 +137,9 @@ export const fr: Record<keyof typeof en, string> = {
   'plan.unplannedText':
     'Dans ton stock mais pas comptés dans les paliers. Touche-en un pour lui donner une conso par jour.',
 
-  'checkin.titleWeekly': 'Cette semaine',
   'checkin.titleMonthly': 'Ce mois-ci',
   'checkin.titleQuarterly': 'Ce trimestre',
   'checkin.titleSemiannual': 'Ce semestre',
-  'checkin.subtitleWeekly': 'Ton rendez-vous de la semaine : jeter, manger, acheter.',
   'checkin.subtitleMonthly': 'Ton rendez-vous du mois : jeter, manger, acheter.',
   'checkin.subtitleQuarterly': 'Ton rendez-vous du trimestre : jeter, manger, acheter.',
   'checkin.subtitleSemiannual': 'Ton rendez-vous des 6 mois : jeter, manger, acheter.',
@@ -150,8 +147,6 @@ export const fr: Record<keyof typeof en, string> = {
   'checkin.discardText': 'Périmés : vérifie-les, puis jette-les ou mange-les s’ils sont encore bons.',
   'checkin.discarded': 'Jeté',
   'checkin.consumeTitle': 'À manger',
-  'checkin.consumeTextWeekly':
-    'Mange ça cette semaine depuis ton stock, puis remplace-le : chaque lot est fini {margin} jours avant sa date.',
   'checkin.consumeTextMonthly':
     'Mange ça ce mois-ci depuis ton stock, puis remplace-le : chaque lot est fini {margin} jours avant sa date.',
   'checkin.consumeTextQuarterly':
@@ -292,7 +287,6 @@ export const fr: Record<keyof typeof en, string> = {
   'settings.addTier': 'Ajouter un palier',
   'settings.tiersHint': 'Construits l’un après l’autre : l’appli t’aide à compléter le premier, puis le suivant.',
   'settings.rhythm': 'Rendez-vous',
-  'settings.weekly': 'Semaine',
   'settings.monthly': 'Mois',
   'settings.quarterly': 'Trimestre',
   'settings.semiannual': '6 mois',

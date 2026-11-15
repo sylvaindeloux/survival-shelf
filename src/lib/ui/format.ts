@@ -92,13 +92,6 @@ export function tierLabel(days: number): string {
 
 /** Texts that depend on the check-in rhythm. */
 export const RHYTHM_TEXTS = {
-  weekly: {
-    choice: 'settings.weekly',
-    nav: 'nav.checkinWeekly',
-    title: 'checkin.titleWeekly',
-    subtitle: 'checkin.subtitleWeekly',
-    consume: 'checkin.consumeTextWeekly',
-  },
   monthly: {
     choice: 'settings.monthly',
     nav: 'nav.checkinMonthly',
@@ -122,7 +115,7 @@ export const RHYTHM_TEXTS = {
   },
 } satisfies Record<Rhythm, Record<string, MessageKey>>;
 
-/** "This week", "This month"…, depending on the check-in rhythm. */
+/** "This month", "This quarter"…, depending on the check-in rhythm. */
 export function checkinTitle(rhythm: Rhythm): string {
   return t(RHYTHM_TEXTS[rhythm].title);
 }

@@ -4,13 +4,13 @@
 
 Survival Shelf is a free, open-source app to build and keep a survival stock (food, water, hygiene, first
 aid, energy, gear…). It helps you start from nothing, tier by tier (3 days, then 1 week, 1 month and 1 year),
-and once a week tells you what to discard, what to eat before it expires and what to buy next. It runs
+and once a month tells you what to discard, what to eat before it expires and what to buy next. It runs
 **100% offline** in any modern browser, installs as an app (PWA), needs **no account and no server**, and
 keeps your data in a **plain Markdown file** you can read and edit by hand.
 
 <p align="center">
   <img src="docs/screenshots/overview-mobile.png" width="200" alt="Overview with autonomy and tiers">
-  <img src="docs/screenshots/checkin-mobile.png" width="200" alt="Weekly check-in: discard, eat, buy">
+  <img src="docs/screenshots/checkin-mobile.png" width="200" alt="Monthly check-in: discard, eat, buy">
   <img src="docs/screenshots/setup-mobile-fr.png" width="200" alt="Starter plan, in French">
   <img src="docs/screenshots/plan-mobile-fr-dark.png" width="200" alt="Plan with per-tier targets, dark theme">
 </p>
@@ -23,7 +23,7 @@ keeps your data in a **plain Markdown file** you can read and edit by hand.
 - **Autonomy tiers**: 3 days, 1 week, 1 month and 1 year by default (editable). Each product has a use per day or a
   minimum to own, per person or for the household; the app works out what every tier needs and shows how far
   along you are. Beyond a month of stored water, filters and purification tablets take over.
-- **Check-in every week, month, quarter or 6 months**: one list with the expired lots to discard, what to eat
+- **Check-in every month, quarter or 6 months**: one list with the expired lots to discard, what to eat
   so nothing expires (progressive rotation, oldest first), and what to buy for the tier being built. Tick things
   off in one tap, share or copy the list.
 - **Calendar reminder**: without a server the app cannot notify you, so it gives you a recurring `.ics` event
