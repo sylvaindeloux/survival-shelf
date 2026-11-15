@@ -19,6 +19,29 @@
 | Check-in                   | monthly       |
 | Expiry warning days        | 60            |
 | Rotation margin days       | 30            |
+| Emergency info reviewed    | 2026-09-10    |
+
+## Emergency info
+
+<!-- The household plan, one row per line. Topic: emergency number, out-of-area contact, contact, meeting point, who does what, shut-off or health. Write SMS before a number that only takes text messages. -->
+
+| Topic               | Name                     | Details                                           | Phone          |
+|---------------------|--------------------------|---------------------------------------------------|----------------|
+| Emergency number    | Emergencies              | all emergencies, everywhere in the EU             | 112            |
+| Emergency number    | SAMU                     | medical emergency                                 | 15             |
+| Emergency number    | Police                   | police or gendarmerie                             | 17             |
+| Emergency number    | Fire brigade             | fire, accident, person in danger                  | 18             |
+| Emergency number    | By text                  | deaf or hard of hearing, or when you cannot speak | SMS 114        |
+| Out-of-area contact | Claire, Alex’s sister    | in Lyon                                           | 06 00 00 00 00 |
+| Contact             | Dr Martin                | family doctor                                     | 01 00 00 00 00 |
+| Meeting point       | Outside our home         | the gate, street side                             |                |
+| Meeting point       | Outside the neighborhood |                                                   |                |
+| Who does what       | Alex                     | takes the bags, shuts off the gas                 |                |
+| Who does what       | Sam                      | follows the radio, warns the neighbor             |                |
+| Shut-off            | Gas                      | valve under the sink                              |                |
+| Shut-off            | Water                    | meter in the garage                               |                |
+| Shut-off            | Electricity              | panel in the hall                                 |                |
+| Health              | Alex                     | allergic to penicillin                            |                |
 
 ## Products
 

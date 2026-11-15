@@ -6,6 +6,7 @@
   import RefreshCw from '@lucide/svelte/icons/refresh-cw';
   import Share2 from '@lucide/svelte/icons/share-2';
   import ShoppingCart from '@lucide/svelte/icons/shopping-cart';
+  import Siren from '@lucide/svelte/icons/siren';
   import Trash from '@lucide/svelte/icons/trash';
   import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
   import Utensils from '@lucide/svelte/icons/utensils';
@@ -16,7 +17,8 @@
   import type { TierLine } from '../lib/core/plan';
   import { findProduct } from '../lib/core/stock';
   import type { Lot } from '../lib/core/types';
-  import { localize, t, tn } from '../lib/i18n/index.svelte';
+  import { formatDate, localize, t, tn } from '../lib/i18n/index.svelte';
+  import { markReviewed } from '../lib/ui/emergency';
   import ExpiryBadge from '../lib/ui/ExpiryBadge.svelte';
   import ReminderCard from '../lib/ui/ReminderCard.svelte';
   import { checkinTitle, formatLiters, kindLabel, ofTarget, quantity, RHYTHM_TEXTS, tierLabel } from '../lib/ui/format';
@@ -32,12 +34,13 @@
   const canShare = typeof navigator.share === 'function';
 
   const toBuy = $derived(buyCount(buy));
+  const review = $derived(app.emergency.reviewDue);
   /** Everything to do, all actions together. */
-  const count = $derived(checkin.discard.length + checkin.consume.length + checkin.replace.length + toBuy);
+  const count = $derived(checkin.discard.length + checkin.consume.length + checkin.replace.length + toBuy + (review ? 1 : 0));
   // A tier can be short of food with nothing to buy (a light menu): the buy card then only shows why.
   const showBuy = $derived(buy !== null && (toBuy > 0 || foodShort));
   const cards = $derived(
-    [checkin.discard.length > 0, checkin.consume.length > 0, checkin.replace.length > 0, showBuy].filter(Boolean).length,
+    [checkin.discard.length > 0, checkin.consume.length > 0, checkin.replace.length > 0, showBuy, review].filter(Boolean).length,
   );
 
   /** What to buy, by kind: the shopping list follows the shop's aisles. Water without a product goes with the food. */
@@ -84,6 +87,7 @@
         if (water.treatment > 0) lines.push(`- ${t('checkin.waterTreatment')}: ${formatLiters(water.treatment)}`);
       }
     }
+    if (review) lines.push('', t('checkin.reviewTitle'));
     return lines.join('\n');
   }
 
@@ -227,6 +231,17 @@
           {/if}
         </section>
       {/if}
+
+      {#if review}
+        <section class="card action review">
+          <h2 class="action-head"><Siren size={20} />{t('checkin.reviewTitle')}</h2>
+          <p class="lead small muted">{t('checkin.reviewText', { date: formatDate(settings.emergencyReviewed) })}</p>
+          <div class="row wrap review-actions">
+            <a class="btn small" href="#/emergency/info">{t('checkin.openInfo')}</a>
+            <button class="btn small" onclick={markReviewed}><Check size={16} />{t('emergency.reviewed')}</button>
+          </div>
+        </section>
+      {/if}
     </div>
   {/if}
 
@@ -283,6 +298,15 @@
     border-left-color: var(--primary);
   }
 
+  .review {
+    border-left-color: var(--info);
+  }
+
+  .review-actions {
+    justify-content: flex-end;
+    padding: 0.25rem 0 0.75rem;
+  }
+
   .action-head {
     display: flex;
     align-items: center;
@@ -301,6 +325,10 @@
 
   .replace .action-head :global(svg) {
     color: var(--warn);
+  }
+
+  .review .action-head :global(svg) {
+    color: var(--info);
   }
 
   .count {

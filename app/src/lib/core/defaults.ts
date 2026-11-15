@@ -1,3 +1,4 @@
+import { defaultEmergency } from './emergency';
 import { inLang, translations } from './languages';
 import { type Lang, type Layout, type SectionLayout, type SectionName, type Settings, type Shelf, type Translated } from './types';
 
@@ -14,6 +15,7 @@ export const DEFAULT_SETTINGS: Settings = {
   rhythm: 'monthly',
   warningDays: 60,
   rotationMarginDays: 30,
+  emergencyReviewed: '',
 };
 
 /**
@@ -28,7 +30,8 @@ export function defaultSettings(): Settings {
   return { ...DEFAULT_SETTINGS, tiers: [...DEFAULT_TIERS] };
 }
 
-export const SECTION_ORDER: SectionName[] = ['settings', 'products', 'stock', 'log'];
+/** The emergency info comes right after the settings: it is what someone reads first in a crisis. */
+export const SECTION_ORDER: SectionName[] = ['settings', 'emergency', 'products', 'stock', 'log'];
 
 const REPO = 'https://github.com/sylvaindeloux/survival-shelf';
 
@@ -51,6 +54,7 @@ export const DEFAULT_PREAMBLE: Translated = {
 /** Section titles written by the app. */
 export const SECTION_HEADINGS: Record<SectionName, Translated> = {
   settings: { en: 'Settings', fr: 'Paramètres' },
+  emergency: { en: 'Emergency info', fr: 'Infos d’urgence' },
   products: { en: 'Products', fr: 'Produits' },
   stock: { en: 'Stock', fr: 'Stock' },
   log: { en: 'Log', fr: 'Journal' },
@@ -59,6 +63,10 @@ export const SECTION_HEADINGS: Record<SectionName, Translated> = {
 /** Help comments written under the section titles. */
 export const SECTION_COMMENTS: Record<SectionName, Translated> = {
   settings: { en: '', fr: '' },
+  emergency: {
+    en: '<!-- The household plan, one row per line. Topic: emergency number, out-of-area contact, contact, meeting point, who does what, shut-off or health. Write SMS before a number that only takes text messages. -->',
+    fr: '<!-- Le plan du foyer, une ligne par info. Rubrique : numéro d’urgence, contact éloigné, contact, rendez-vous, qui fait quoi, couper ou santé. Écris SMS devant un numéro qui ne prend que les SMS. -->',
+  },
   products: {
     en: '<!-- One row per product. Type: food, consumable or gear. Kcal and Water are per unit. Daily use sets what each tier needs, Target is a minimum to own. Per: person, household, cat or dog. -->',
     fr: '<!-- Une ligne par produit. Type : vivres, consommable ou matériel. Kcal et Eau sont par unité. Conso/jour fixe ce qu’il faut pour chaque palier, Objectif est un minimum à avoir. Par : personne, foyer, chat ou chien. -->',
@@ -101,6 +109,7 @@ export function emptyShelf(lang: Lang = 'en'): Shelf {
     products: [],
     lots: [],
     log: [],
+    emergency: defaultEmergency(lang),
     layout: defaultLayout(lang),
   };
 }

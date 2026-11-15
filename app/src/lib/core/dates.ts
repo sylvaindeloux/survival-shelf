@@ -49,6 +49,15 @@ export function monthsLater(day: Day, months: number): string {
   return `${Math.floor(total / 12)}-${String((total % 12) + 1).padStart(2, '0')}`;
 }
 
+/** The same day `months` months later, or the last day of that month when it is shorter (Aug 31 + 6 months = Feb 28). */
+export function addMonths(day: Day, months: number): Day {
+  const date = new Date(day * MS_PER_DAY);
+  const total = date.getUTCFullYear() * 12 + date.getUTCMonth() + months;
+  const year = Math.floor(total / 12);
+  const month = (total % 12) + 1;
+  return dayFromParts(year, month, Math.min(date.getUTCDate(), daysInMonth(year, month)));
+}
+
 export function isValidDate(text: string): boolean {
   return parseDay(text) !== null;
 }

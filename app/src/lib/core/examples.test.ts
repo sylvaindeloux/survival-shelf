@@ -51,5 +51,9 @@ describe('example files', () => {
       })),
     ).toEqual(en.lots.map(({ id: _id, ...lot }) => lot));
     expect(fr.log.map((entry) => ({ ...entry, product: inEnglish(entry.product).name }))).toEqual(en.log);
+    // The emergency info is written by the household: the same lines, in each language.
+    const lines = (entries: typeof en.emergency) => entries.map(({ topic, phone }) => ({ topic, phone }));
+    expect(lines(fr.emergency)).toEqual(lines(en.emergency));
+    expect(en.emergency.length).toBeGreaterThan(0);
   });
 });

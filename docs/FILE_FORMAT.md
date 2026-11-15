@@ -28,11 +28,12 @@ and columns, and any title or header you renamed by hand are kept as they are.
 
 ## Structure
 
-The file contains up to four sections, each one starting with a level-2 title (`## `) followed by a table:
+The file contains up to five sections, each one starting with a level-2 title (`## `) followed by a table:
 
 | Section     | French title  | Also accepted                          | Content                          |
 |-------------|---------------|----------------------------------------|----------------------------------|
 | `Settings`  | `Paramètres`  | Réglages, Configuration                | Household and app settings       |
+| `Emergency info` | `Infos d’urgence` | Emergency plan, Household plan, Urgence | The household plan: numbers, contacts, meeting points… |
 | `Products`  | `Produits`    | Catalog, Catalogue                     | One row per kind of product      |
 | `Stock`     | `Stock`       | Inventory, Inventaire, Lots            | One row per lot in your stock    |
 | `Log`       | `Journal`     | History, Historique                    | What was consumed or discarded   |
@@ -77,11 +78,48 @@ A two-column table: `Setting | Value` (`Paramètre | Valeur` in French).
 | `Check-in`                   | `monthly`       | How often the app lists what to discard, eat, replace and buy: `monthly`, `quarterly` or `semiannual` |
 | `Expiry warning days`        | 60              | Lots expiring within this delay are flagged as "expiring soon"          |
 | `Rotation margin days`       | 30              | The rotation aims to finish each lot this long before it expires        |
+| `Emergency info reviewed`    | empty           | Day the household last went through its emergency info, `YYYY-MM-DD`: see below |
 
 French names work too (`Langue`, `Personnes`, `Chats`, `Chiens`, `Paliers (jours)`, `Rendez-vous`…), as do French values for
 the check-in (`mensuel`, `trimestriel`, `semestriel` or `6 mois`). Unknown settings are kept as is. An invalid
 value is reported and the default is used. A file without a `Language` setting is taken as written in the
 current language of the app.
+
+## Emergency info
+
+The household plan of the **Emergency** tab, as advised by the guide
+[Make a household plan](../guides/en/basics/make-a-household-plan.md): one row per line of the plan.
+
+| Column    | French header | Also accepted                        | Content                                                  |
+|-----------|---------------|--------------------------------------|----------------------------------------------------------|
+| `Topic`   | `Rubrique`    | Type, Category, Kind, Theme          | One of the topics below, or any text for a topic of your own |
+| `Name`    | `Nom`         | Who, What, Item                      | A person, a place, a number, a valve…                    |
+| `Details` | `Détail`      | Description, Info, Notes, Where      | Where, how, what to know                                 |
+| `Phone`   | `Téléphone`   | Tel, Number, Mobile, Call            | A phone number, written as you like                      |
+
+| Topic                 | French             | What goes in it                                                      | Each row needs |
+|-----------------------|--------------------|----------------------------------------------------------------------|----------------|
+| `Emergency number`    | `Numéro d’urgence` | 112 and the numbers of your country                                  | a phone number              |
+| `Out-of-area contact` | `Contact éloigné`  | Someone far enough away not to be affected, whom everyone calls or texts | a phone number          |
+| `Contact`             | `Contact`          | Doctor, school, neighbor, insurance…                                 | a phone number              |
+| `Meeting point`       | `Rendez-vous`      | One right outside your home, one outside your neighborhood           | details                     |
+| `Who does what`       | `Qui fait quoi`    | Who takes the bags, the pets, helps the vulnerable, follows the news | details                     |
+| `Shut-off`            | `Couper`           | Gas, water, electricity: where and how                               | details                     |
+| `Health`              | `Santé`            | Treatments and allergies of each person                              | details                     |
+
+- The titles shown in the app work too (`Emergency numbers`, `Meeting points`, `Lieux de rendez-vous`…). A row
+  without a topic is a `Contact`. Any other topic is yours: it is kept as you wrote it and shown at the end of
+  the sheet, and its rows need details or a phone number.
+- A row without what its topic needs is shown as **to fill in**. A topic of the plan is filled in when it has
+  rows and none is left to fill in. The emergency numbers are shown apart and do not count in the six topics.
+- **Phone numbers** are called by their digits: spaces, dots and dashes do not matter (`06 12 34 56 78`,
+  `+33 6.12.34.56.78`). Write `SMS` before a number that only takes text messages, like `SMS 114` (the French
+  emergency number by text): the app texts it instead of calling it.
+- A file without this section gets the European emergency number, 112, like a new file. If you do not want it,
+  keep the section and delete its rows: an empty section stays empty.
+- The `Emergency info reviewed` setting is set to the day you tap **I reviewed it** or save the emergency info.
+  Six months later, the to-do list asks you to go through it again with your household. When it is empty, the
+  app never asks.
 
 ## Products
 
