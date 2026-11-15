@@ -68,6 +68,7 @@
   --font: 'Barlow', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
   /* Titles, numbers and buttons. */
   --font-display: 'Barlow Semi Condensed', 'Barlow', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  /* The tab bar at the bottom of phone screens. */
   --nav-height: 64px;
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   color-scheme: light;
@@ -131,6 +132,13 @@
   --food: #ff8a47;
   --shadow: none;
   color-scheme: dark;
+}
+
+/* The bottom tab bar is for phones: wider screens have their tabs on top. */
+@media (min-width: 720px) {
+  :root {
+    --nav-height: 0px;
+  }
 }
 
 /* Base ------------------------------------------------------------------- */

@@ -12,11 +12,8 @@ export const fr: Record<keyof typeof en, string> = {
 
   'nav.label': 'Navigation principale',
   'nav.home': 'Accueil',
-  'nav.stock': 'Stock',
-  'nav.checkinMonthly': 'Mois',
-  'nav.checkinQuarterly': 'Trimestre',
-  'nav.checkinSemiannual': '6 mois',
-  'nav.plan': 'Plan',
+  'nav.todo': 'À faire',
+  'nav.stock': 'Stocks',
   'nav.guides': 'Fiches',
   'nav.settings': 'Réglages',
 

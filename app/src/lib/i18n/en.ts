@@ -11,11 +11,8 @@ export const en = {
 
   'nav.label': 'Main navigation',
   'nav.home': 'Overview',
+  'nav.todo': 'To do',
   'nav.stock': 'Stock',
-  'nav.checkinMonthly': 'This month',
-  'nav.checkinQuarterly': 'This quarter',
-  'nav.checkinSemiannual': 'Half-year',
-  'nav.plan': 'Plan',
   'nav.guides': 'Guides',
   'nav.settings': 'Settings',
 

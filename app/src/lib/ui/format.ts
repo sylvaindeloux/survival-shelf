@@ -102,21 +102,18 @@ export function tierLabel(days: number): string {
 export const RHYTHM_TEXTS = {
   monthly: {
     choice: 'settings.monthly',
-    nav: 'nav.checkinMonthly',
     title: 'checkin.titleMonthly',
     subtitle: 'checkin.subtitleMonthly',
     consume: 'checkin.consumeTextMonthly',
   },
   quarterly: {
     choice: 'settings.quarterly',
-    nav: 'nav.checkinQuarterly',
     title: 'checkin.titleQuarterly',
     subtitle: 'checkin.subtitleQuarterly',
     consume: 'checkin.consumeTextQuarterly',
   },
   semiannual: {
     choice: 'settings.semiannual',
-    nav: 'nav.checkinSemiannual',
     title: 'checkin.titleSemiannual',
     subtitle: 'checkin.subtitleSemiannual',
     consume: 'checkin.consumeTextSemiannual',
