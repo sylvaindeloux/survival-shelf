@@ -1,0 +1,40 @@
+# Keeps dependencies up to date with monthly, grouped pull requests.
+# Security updates are separate: Dependabot opens them as soon as an advisory
+# is published, and the cooldown below does not delay them.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    # Only propose releases that have been public for a while: most broken or
+    # compromised releases are caught and pulled within days.
+    cooldown:
+      default-days: 7
+      semver-major-days: 30
+    groups:
+      # Minor and patch updates in one pull request; each major gets its own.
+      npm-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+    ignore:
+      # @types/node follows the oldest supported Node.js (engines.node), not
+      # the latest one: raise both together, by hand.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
+      # TypeScript 7 is not supported by svelte-check 4 (peer ^5 || ^6).
+      # Remove once svelte-check supports it.
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns:
+          - "*"
