@@ -12,6 +12,7 @@
       "vite-plugin-pwa/client"
     ],
     "noEmit": true,
+    "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

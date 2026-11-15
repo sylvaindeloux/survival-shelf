@@ -1,21 +1,25 @@
 import { formatDay, parseDay, type Day } from '../core/dates';
 import type { LogAction } from '../core/types';
 
-export type Route = 'home' | 'checkin' | 'stock' | 'plan' | 'settings';
-const ROUTES: Route[] = ['home', 'checkin', 'stock', 'plan', 'settings'];
+export type Route = 'home' | 'checkin' | 'stock' | 'plan' | 'guides' | 'settings';
+const ROUTES: Route[] = ['home', 'checkin', 'stock', 'plan', 'guides', 'settings'];
 
-function routeFromHash(): Route {
-  const name = location.hash.replace(/^#\/?/, '').split('?')[0];
-  return (ROUTES as string[]).includes(name) ? (name as Route) : 'home';
+/** `#/guides/fr/eau/stocker-de-l-eau` is the route `guides` with the path `fr/eau/stocker-de-l-eau`. */
+function readHash(): { route: Route; path: string } {
+  const [name = '', ...rest] = location.hash.replace(/^#\/?/, '').split('?')[0].split('/');
+  if (!(ROUTES as string[]).includes(name)) return { route: 'home', path: '' };
+  return { route: name as Route, path: rest.filter(Boolean).join('/') };
 }
 
 /** Hash based routing: works offline, from file:// and keeps the back button. */
 class Router {
-  route = $state<Route>(routeFromHash());
+  route = $state<Route>(readHash().route);
+  /** What follows the route in the address, for the pages that have sub-pages. */
+  path = $state(readHash().path);
 
   constructor() {
     window.addEventListener('hashchange', () => {
-      this.route = routeFromHash();
+      ({ route: this.route, path: this.path } = readHash());
       window.scrollTo({ top: 0 });
     });
   }

@@ -105,8 +105,14 @@ Reading accepts every language, so a file written in one language still opens in
   `readme: 'README.de.md#los-gehts'`. The app links to it.
 - `docs/FILE_FORMAT.de.md`, a translation of `docs/FILE_FORMAT.md`, declared as
   `fileFormat: 'docs/FILE_FORMAT.de.md'`. The app links to it from its settings.
-- The practical guides in `guides/de/`, following `guides/CONTRIBUTING.md`. They are a big job: one pull
-  request per theme is fine.
+- The [practical guides](../guides/). Until they exist in your language, the app shows the English ones.
+  The guides are checked by `npm test` against a template written for English and French, and every guide
+  is paired with its version in the other language, so a third language needs a few changes in
+  `app/src/lib/guides/` first (its section headings, its summary and "checked in" lines, and which version
+  each guide links to). Say in the issue that you want to translate them, and we will set it up together.
+  Then follow [`guides/CONTRIBUTING.md`](../guides/CONTRIBUTING.md): adapt each guide to your readers rather
+  than translating it word for word, and check its sources (official ones from your country are welcome).
+  It is a big job: one pull request per theme is fine.
 
 README screenshots are taken by a maintainer once the language is in.
 

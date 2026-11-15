@@ -4,6 +4,7 @@ import { execFileSync } from 'node:child_process';
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
+import { guides } from './build/guides.ts';
 import { inlineSingleFile } from './build/inline-single-file.ts';
 
 const THEME_COLOR = '#4b5320';
@@ -37,6 +38,8 @@ export default defineConfig(({ mode }) => {
     publicDir: single ? false : 'public',
     plugins: [
       svelte(),
+      // The practical guides live at the root of the repository, readable without the app.
+      guides(resolve(import.meta.dirname, '../guides'), { inline: single }),
       single
         ? inlineSingleFile(resolve(import.meta.dirname, 'public'))
         : VitePWA({

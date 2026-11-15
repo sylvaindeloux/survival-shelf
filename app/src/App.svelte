@@ -1,4 +1,6 @@
 <script lang="ts">
+  import ArrowLeft from '@lucide/svelte/icons/arrow-left';
+  import BookOpen from '@lucide/svelte/icons/book-open';
   import CalendarCheck from '@lucide/svelte/icons/calendar-check';
   import CircleCheck from '@lucide/svelte/icons/circle-check';
   import ClipboardList from '@lucide/svelte/icons/clipboard-list';
@@ -20,6 +22,7 @@
   import Toasts from './lib/ui/Toasts.svelte';
   import { dialogs, preferences, router, type Route } from './lib/ui/state.svelte';
   import CheckIn from './views/CheckIn.svelte';
+  import Guides from './views/Guides.svelte';
   import Home from './views/Home.svelte';
   import Plan from './views/Plan.svelte';
   import Settings from './views/Settings.svelte';
@@ -31,10 +34,13 @@
     { route: 'checkin', label: RHYTHM_TEXTS[app.shelf.settings.rhythm].nav, icon: CalendarCheck },
     { route: 'stock', label: 'nav.stock', icon: Package },
     { route: 'plan', label: 'nav.plan', icon: ClipboardList },
+    { route: 'guides', label: 'nav.guides', icon: BookOpen },
     { route: 'settings', label: 'nav.settings', icon: SettingsIcon },
   ]);
+  // Phones have room for five tabs: the settings are behind the gear of the top bar.
+  const TABS = $derived(NAV.filter((item) => item.route !== 'settings'));
 
-  const VIEWS: Record<Route, Component> = { home: Home, checkin: CheckIn, stock: Stock, plan: Plan, settings: Settings };
+  const VIEWS: Record<Route, Component> = { home: Home, checkin: CheckIn, stock: Stock, plan: Plan, guides: Guides, settings: Settings };
   const View = $derived(VIEWS[router.route]);
 
   // Only what needs doing: expired lots to discard and lots due for rotation.
@@ -42,6 +48,8 @@
     checkin: app.checkin.discard.length + app.checkin.consume.filter((item) => item.due).length,
   });
   const fileWarning = $derived(app.fileState !== 'none' && app.fileState !== 'linked');
+  // Printing from the guides prints the guide on screen, anywhere else the inventory sheet.
+  const printsPage = $derived(router.route === 'guides');
 
   onMount(() => {
     void app.init();
@@ -77,9 +85,20 @@
 {#if !app.ready}
   <div class="splash" aria-busy="true"><Logo size={64} /></div>
 {:else if !app.started}
-  <Welcome />
+  {#if router.route === 'guides'}
+    <!-- The guides can be read before any stock exists. -->
+    <div class="guest">
+      <header class="guest-bar no-print">
+        <a class="brand" href="#/"><Logo size={30} /><span>Survival Shelf</span></a>
+        <a class="btn ghost small" href="#/"><ArrowLeft size={18} />{t('guides.back')}</a>
+      </header>
+      <main><Guides /></main>
+    </div>
+  {:else}
+    <Welcome />
+  {/if}
 {:else}
-  <div class="layout screen-only">
+  <div class="layout" class:screen-only={!printsPage}>
     <aside class="sidebar">
       <a class="brand" href="#/"><Logo size={36} /><span>Survival Shelf</span></a>
       <nav aria-label={t('nav.label')}>
@@ -99,16 +118,21 @@
 
     <header class="topbar">
       <a class="brand" href="#/"><Logo size={30} /><span>Survival Shelf</span></a>
-      {@render fileChip()}
+      <span class="topbar-actions">
+        {@render fileChip()}
+        <a class="icon-btn" href="#/settings" aria-label={t('nav.settings')} aria-current={router.route === 'settings' ? 'page' : undefined}>
+          <SettingsIcon size={22} />
+        </a>
+      </span>
     </header>
 
     <main>
-      <Banners />
+      <div class="no-print"><Banners /></div>
       <View />
     </main>
 
     <nav class="tabbar" aria-label={t('nav.label')}>
-      {#each NAV as item (item.route)}
+      {#each TABS as item (item.route)}
         <a class="tab" href={item.route === 'home' ? '#/' : `#/${item.route}`} aria-current={router.route === item.route ? 'page' : undefined}>
           <span class="tab-icon">
             <item.icon size={22} />
@@ -119,7 +143,7 @@
       {/each}
     </nav>
   </div>
-  <PrintSheet />
+  {#if !printsPage}<PrintSheet />{/if}
 {/if}
 
 {#if dialogs.lot}
@@ -207,8 +231,40 @@
     border-bottom: 1.5px solid var(--border);
   }
 
+  .topbar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.35rem;
+    min-width: 0;
+  }
+
+  /* A long file name is cut with an ellipsis instead of pushing the gear off the screen. */
+  .topbar .brand {
+    flex: none;
+  }
+
   .topbar .file-chip {
-    max-width: 50%;
+    min-width: 0;
+  }
+
+  .topbar .icon-btn[aria-current='page'] {
+    color: var(--primary);
+  }
+
+  /* Reading the guides before starting: a plain page with a way back. */
+  .guest-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: calc(0.6rem + env(safe-area-inset-top)) 1rem 0.6rem;
+    background: var(--surface);
+    border-bottom: 1.5px solid var(--border);
+  }
+
+  .guest main {
+    padding-bottom: 3rem;
   }
 
   .tabbar {
@@ -352,6 +408,24 @@
       padding: 0 0.85rem;
       font-size: 0.75rem;
       color: var(--muted);
+    }
+  }
+
+  /* A page that prints itself (a guide): drop the navigation, keep the content. */
+  @media print {
+    .layout {
+      display: block;
+    }
+
+    .sidebar,
+    .topbar,
+    .tabbar {
+      display: none;
+    }
+
+    main {
+      max-width: none;
+      padding: 0;
     }
   }
 </style>

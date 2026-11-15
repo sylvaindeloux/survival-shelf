@@ -272,6 +272,7 @@
   <section class="card stack">
     <h2>{t('settings.about')}</h2>
     <p class="small">{t('settings.aboutText')}</p>
+    <p class="small"><strong>{t('settings.disclaimerTitle')}</strong><br />{t('settings.disclaimer')}</p>
     {#if location.protocol !== 'file:'}
       <p class="small">
         <a href="./survival-shelf.html" download>{t('settings.singleFile')}</a>

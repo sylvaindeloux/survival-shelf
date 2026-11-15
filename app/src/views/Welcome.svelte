@@ -1,5 +1,6 @@
 <script lang="ts">
   import ArrowRight from '@lucide/svelte/icons/arrow-right';
+  import BookOpen from '@lucide/svelte/icons/book-open';
   import FolderOpen from '@lucide/svelte/icons/folder-open';
   import ShieldCheck from '@lucide/svelte/icons/shield-check';
   import Sparkles from '@lucide/svelte/icons/sparkles';
@@ -57,6 +58,8 @@
       <button class="btn" onclick={() => app.startDemo()}><Sparkles size={18} />{t('welcome.demo')}</button>
     </section>
   </div>
+
+  <a class="btn ghost" href="#/guides"><BookOpen size={18} />{t('welcome.guides')}</a>
 
   <label class="lang">
     <span class="visually-hidden">{t('settings.language')}</span>

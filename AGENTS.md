@@ -31,6 +31,8 @@ app/src/lib/core/      Pure TypeScript logic, no UI, unit-tested (*.test.ts next
                        document.ts (Markdown file parser/writer), defaults.ts, categories.ts, catalog.ts,
                        stock.ts, plan.ts (tiers), autonomy.ts, rotation.ts, checkin.ts, ics.ts, language.ts
 app/src/lib/core/languages.ts  Languages: names, decimal comma, translated docs; fallback to English
+app/src/lib/guides/    Practical guides in the app: table of contents, search, Markdown to HTML at build
+                       time, and the checks `npm test` runs on the guides/ folder
 app/src/lib/i18n/      en.ts (reference), one dictionary per language, dictionaries.ts lists them
 app/src/lib/storage/   IndexedDB working copy, linked file (File System Access API), import/export
 app/src/lib/ui/        Shared components and dialogs
@@ -38,6 +40,8 @@ app/src/lib/app.svelte.ts  App state: loading, saving, syncing with the linked f
 app/src/views/         Screens
 app/src/app.css        Design tokens (olive palette, light and dark)
 docs/                  FILE_FORMAT.md / .fr.md, SHELF_LIFE.md, examples/, screenshots/
+guides/                Practical guides in plain Markdown: <lang>/README.md (table of contents, read by the
+                       app) and <lang>/<theme>/<guide>.md. Rules and template: guides/CONTRIBUTING.md
 ```
 
 Generated, never edit by hand: `app/dist/`, `app/dist-single/`, `package-lock.json` (use npm).

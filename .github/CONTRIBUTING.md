@@ -20,6 +20,7 @@ The root stays short so that people who only want the app, the guides or the doc
 .claude/   entry point for Claude Code, which imports AGENTS.md
 app/       the app: code, assets, build and tool configs
 docs/      file format, shelf lives, example data files, README screenshots
+guides/    practical survival guides in plain Markdown, by language and theme, readable without the app
 AGENTS.md  instructions for AI coding agents
 ```
 
@@ -109,15 +110,18 @@ app/
   src/
     lib/core/      Pure logic, no UI: Markdown parser/writer, stock operations, autonomy, rotation,
                    tiers (plan.ts), check-in, calendar reminder (ics.ts), catalog
+    lib/guides/    Practical guides: table of contents, search, Markdown to HTML at build time, and the
+                   checks that `npm test` runs on the guides/ folder
     lib/storage/   IndexedDB working copy and file access (File System Access API, import/export)
     lib/i18n/      English (reference) and French messages
     lib/ui/        Shared components and dialogs
     lib/app.svelte.ts  App state: loading, saving, syncing with the linked file
     views/         Screens
   public/          Favicon and app icons, copied as is
-  build/           Single-file build plugin and icon sources
+  build/           Build plugins (single file, guides) and icon sources
 docs/              File format, shelf lives and README screenshots
   examples/        Example data files (English and French)
+guides/            Practical guides: <lang>/README.md is the table of contents, <lang>/<theme>/ the guides
 ```
 
 ## Tests
@@ -145,8 +149,9 @@ translate, the few code changes to plug the language in, and how to check the re
 
 ## Practical guides
 
-The practical guides are plain Markdown pages, readable without the app, in `guides/<lang>/<theme>/`. Their
-detailed writing rules and template are in `guides/CONTRIBUTING.md`. In short:
+The practical guides are plain Markdown pages, readable without the app, in
+[`guides/<lang>/<theme>/`](../guides/). Their detailed writing rules and template are in
+[`guides/CONTRIBUTING.md`](../guides/CONTRIBUTING.md). In short:
 
 - One guide answers one practical question, with the summary first and the sources last.
 - File names are translated, in lowercase, without accents, with hyphens.
