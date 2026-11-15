@@ -221,7 +221,7 @@ export const fr: Record<keyof typeof en, string> = {
   'reminder.eventTitle': 'Survival Shelf : point sur le stock',
   'reminder.eventText': 'Ouvre Survival Shelf pour voir quoi jeter, manger, remplacer et acheter.',
 
-  'stock.title': 'Stock',
+  'stock.title': 'Stocks',
   'stock.summary_one': '{count} produit · {lots} lots',
   'stock.summary_other': '{count} produits · {lots} lots',
   'stock.print': 'Imprimer',
