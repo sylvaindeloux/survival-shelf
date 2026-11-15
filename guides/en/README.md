@@ -59,6 +59,41 @@ To get everything at once, use the green "Code" button then "Download ZIP" on th
 - [Store fuel safely](fire-and-power/store-fuel-safely.md): gas, gasoline, firewood, where and how to keep them.
 - [Put out a small fire](fire-and-power/put-out-a-small-fire.md): when to try, how to do it, when to get out.
 
+## Health and first aid
+
+- [Protect, call for help, give first aid](health-and-first-aid/protect-call-for-help-give-first-aid.md): the three things to do at an accident, in order.
+- [Stop severe bleeding](health-and-first-aid/stop-severe-bleeding.md): press hard on the wound, and when to use a tourniquet.
+- [Unconscious person who is breathing](health-and-first-aid/unconscious-person-who-is-breathing.md): open the airway, turn them on their side, watch their breathing.
+- [Cardiac arrest](health-and-first-aid/cardiac-arrest.md): call, push on the chest, use a defibrillator, for an adult, a child or a baby.
+- [Choking](health-and-first-aid/choking.md): back blows and thrusts, for an adult, a child or a baby.
+- [Burns](health-and-first-aid/burns.md): cool under water, cover, know when to call.
+- [Wounds and infections](health-and-first-aid/wounds-and-infections.md): clean, cover, watch for signs of infection.
+- [Broken bones and sprains](health-and-first-aid/broken-bones-and-sprains.md): support without straightening, apply cold, know when to call.
+- [Hypothermia and frostbite](health-and-first-aid/hypothermia-and-frostbite.md): rewarm gently, and what you must never do.
+- [Heatstroke](health-and-first-aid/heatstroke.md): recognize it and cool the person down while help is on its way.
+- [Carbon monoxide poisoning](health-and-first-aid/carbon-monoxide-poisoning.md): recognize the signs, air the place, get out, call.
+- [Recognize a stroke or a heart attack](health-and-first-aid/recognize-a-stroke-or-a-heart-attack.md): the signs that mean call right now.
+- [Dehydration and diarrhea](health-and-first-aid/dehydration-and-diarrhea.md): give fluids, make a rehydration solution, spot the serious signs.
+- [Drowning](health-and-first-aid/drowning.md): rescue without getting in the water, and what to do once the person is out.
+- [Bites and stings](health-and-first-aid/bites-and-stings.md): dog, cat, snake, tick, wasp, and when to call.
+- [Severe allergic reaction](health-and-first-aid/severe-allergic-reaction.md): recognize the signs and use an adrenaline auto-injector.
+- [Electric shock](health-and-first-aid/electric-shock.md): cut the power before you touch the person, then give first aid.
+- [Chemical poisoning](health-and-first-aid/chemical-poisoning.md): product swallowed, on the skin, in the eye or breathed in, who to call and what to do.
+- [Get through a crisis with a medical treatment](health-and-first-aid/get-through-a-crisis-with-a-medical-treatment.md): medicine reserve, prescriptions, medicines kept cold, electric devices.
+- [Shock, stress and supporting others](health-and-first-aid/shock-stress-and-supporting-others.md): normal reactions, how to help, when to see a doctor.
+- [Put together a first aid kit](health-and-first-aid/put-together-a-first-aid-kit.md): what to put in it, where to keep it, when to check it.
+- [Move an injured person](health-and-first-aid/move-an-injured-person.md): only when danger is immediate, and how to drag them to safety.
+
+## Hygiene
+
+- [Set up an emergency toilet](hygiene/set-up-an-emergency-toilet.md): flush without tap water, or switch to a bucket and bags.
+- [Wash yourself with little water](hygiene/wash-yourself-with-little-water.md): a basin, a washcloth, soap, and in which order.
+- [Wash your hands without running water](hygiene/wash-your-hands-without-running-water.md): set up a handwashing station, and when sanitizer is enough.
+- [Handle household trash](hygiene/handle-household-trash.md): reduce it, seal it and store it when collection stops.
+- [Avoid disease when hygiene breaks down](hygiene/avoid-disease-when-hygiene-breaks-down.md): water, hands, food, human waste, cleaning up after a flood.
+- [Manage periods and diapers](hygiene/manage-periods-and-diapers.md): what to keep in reserve, when to change, how to wash and throw away.
+- [Wash clothes and dishes with little water](hygiene/wash-clothes-and-dishes-with-little-water.md): wash in basins, sanitize after a flood, dry everything.
+
 ## Coming next
 
-Food, health and first aid, hygiene, communication and navigation, disasters, at home, in the car, outdoors, hostile environments.
+Food, communication and navigation, disasters, at home, in the car, outdoors, hostile environments.
