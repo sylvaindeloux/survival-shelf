@@ -3,7 +3,7 @@ import { formatDay, type Day } from './core/dates';
 import { emptyShelf } from './core/defaults';
 import { addLot, upsertProduct } from './core/stock';
 import type { Shelf } from './core/types';
-import type { Lang } from './i18n/index.svelte';
+import { inLang, type Lang, type Translated } from './core/languages';
 
 interface DemoLot {
   qty: number;
@@ -12,9 +12,11 @@ interface DemoLot {
   where: 'cellar' | 'kitchen' | 'garage' | 'bag';
 }
 
-const LOCATIONS: Record<Lang, Record<DemoLot['where'], string>> = {
-  en: { cellar: 'Cellar', kitchen: 'Kitchen', garage: 'Garage', bag: '72h bag' },
-  fr: { cellar: 'Cellier', kitchen: 'Cuisine', garage: 'Garage', bag: 'Sac 72h' },
+const LOCATIONS: Record<DemoLot['where'], Translated> = {
+  cellar: { en: 'Cellar', fr: 'Cellier' },
+  kitchen: { en: 'Kitchen', fr: 'Cuisine' },
+  garage: { en: 'Garage', fr: 'Garage' },
+  bag: { en: '72h bag', fr: 'Sac 72h' },
 };
 
 /** Lots by catalog id: the first tier is nearly complete, the next ones are under way. */
@@ -68,10 +70,10 @@ export function demoShelf(today: Day, lang: Lang): Shelf {
       shelf = addLot(
         shelf,
         {
-          product: entry.name[lang],
+          product: inLang(entry.name, lang),
           qty: lot.qty,
           expires: lot.in === null ? '' : formatDay(today + lot.in),
-          location: LOCATIONS[lang][lot.where],
+          location: inLang(LOCATIONS[lot.where], lang),
           added: formatDay(today - 30),
         },
         today,

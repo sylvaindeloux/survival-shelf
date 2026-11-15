@@ -54,9 +54,10 @@ asked to change, so when in doubt, ask in an issue first.
 
 ### Content
 
-- **Every language together.** Every app message and every label written in the data file exists in each
-  language of the app (English and French today, see [translating](TRANSLATING.md)), and the user docs and
-  practical guides exist in English and French. French texts address the reader with "tu", like the app.
+- **English and French always complete.** Every app message and every label written in the data file exists
+  in English and French, and so do the user docs (README, file format) and the practical guides. Other
+  languages may be partial: a text they do not translate yet shows in English (see the
+  [translation guide](TRANSLATING.md)). French texts address the reader with "tu", like the app.
 - **No made-up facts.** People may rely on this information in an emergency. Shelf lives, daily amounts,
   calories, water needs and advice come from reliable sources, cited next to them (see
   [`docs/SHELF_LIFE.md`](../docs/SHELF_LIFE.md)). Prefer official sources: health and food safety agencies,

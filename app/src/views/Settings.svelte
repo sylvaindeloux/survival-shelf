@@ -12,6 +12,7 @@
   import { app, issueMessage } from '../lib/app.svelte';
   import { RHYTHMS } from '../lib/core/checkin';
   import { PET_WATER_PER_DAY } from '../lib/core/defaults';
+  import { docPath, LANGS, LANGUAGES } from '../lib/core/languages';
   import { updateSettings } from '../lib/core/stock';
   import { parseNumber } from '../lib/core/text';
   import type { Rhythm, Settings } from '../lib/core/types';
@@ -231,7 +232,7 @@
       </div>
     {/if}
 
-    <a class="small doc-link" href="{REPO}/blob/master/docs/{i18n.lang === 'fr' ? 'FILE_FORMAT.fr.md' : 'FILE_FORMAT.md'}" target="_blank" rel="noopener">
+    <a class="small doc-link" href="{REPO}/blob/master/{docPath(i18n.lang, 'fileFormat')}" target="_blank" rel="noopener">
       <FileText size={15} />{t('settings.formatDoc')}<ExternalLink size={13} />
     </a>
   </section>
@@ -247,8 +248,9 @@
           onchange={(event) => app.setLanguage((event.currentTarget as HTMLSelectElement).value as LangPreference)}
         >
           <option value="auto">{t('settings.auto')}</option>
-          <option value="en">English</option>
-          <option value="fr">Français</option>
+          {#each LANGS as lang (lang)}
+            <option value={lang}>{LANGUAGES[lang].name}</option>
+          {/each}
         </select>
         <span class="hint">{t('settings.languageHint')}</span>
       </label>

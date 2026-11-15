@@ -15,7 +15,7 @@
   import { DEFAULT_SETTINGS } from '../lib/core/defaults';
   import { parseNumber } from '../lib/core/text';
   import type { Per } from '../lib/core/types';
-  import { formatNumber, i18n, t, type MessageKey } from '../lib/i18n/index.svelte';
+  import { formatNumber, i18n, localize, t, type MessageKey } from '../lib/i18n/index.svelte';
   import Logo from '../lib/ui/Logo.svelte';
   import CategoryIcon from '../lib/ui/CategoryIcon.svelte';
   import { categoryLabel, formatKcal, inputNumber, quantity, tierLabel } from '../lib/ui/format';
@@ -83,7 +83,7 @@
     const amount = amountOf(choice);
     if (choice.entry.daily === null || amount === null || amount === 0) return '';
     const count = countFor(choice.entry.per);
-    const unit = { unit: choice.entry.unit[i18n.lang] };
+    const unit = { unit: localize(choice.entry.unit) };
     return t('setup.perWeek', { qty: quantity(Math.round(amount * count * 7 * 100) / 100, unit) });
   }
 
@@ -111,7 +111,7 @@
   /** "kg per person per day", "rolls for the household", "kg per cat per day"… next to the amount. */
   function amountLabel(entry: CatalogItem): string {
     const labels = entry.daily !== null ? DAILY_LABELS : OWN_LABELS;
-    return t(labels[entry.per], { unit: entry.unit[i18n.lang] });
+    return t(labels[entry.per], { unit: localize(entry.unit) });
   }
 
   function create() {
@@ -212,7 +212,7 @@
               <li class:off={!choice.selected}>
                 <input {id} type="checkbox" bind:checked={choice.selected} />
                 <div class="item">
-                  <label for={id}><strong>{choice.entry.name[i18n.lang]}</strong></label>
+                  <label for={id}><strong>{localize(choice.entry.name)}</strong></label>
                   {#if editable}
                     <div class="amount">
                       <input
@@ -220,7 +220,7 @@
                         inputmode="decimal"
                         bind:value={choice.amount}
                         disabled={!choice.selected}
-                        aria-label={`${choice.entry.name[i18n.lang]}: ${amountLabel(choice.entry)}`}
+                        aria-label={`${localize(choice.entry.name)}: ${amountLabel(choice.entry)}`}
                         aria-invalid={choice.amount.trim() !== '' && amountOf(choice) === null}
                       />
                       <span class="small">{amountLabel(choice.entry)}</span>

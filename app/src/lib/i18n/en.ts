@@ -1,4 +1,4 @@
-/** English messages. This file is the reference: every other language must have the same keys. */
+/** English messages. This file is the reference: other languages use the same keys. */
 export const en = {
   'action.add': 'Add',
   'action.cancel': 'Cancel',
@@ -406,3 +406,6 @@ export const en = {
   'issue.tooManyCells': 'This row has more cells than the header: extra cells ignored.',
   'issue.productCreated': 'Product "{product}" was not in the Products section: added automatically.',
 };
+
+/** Messages of a language: every key of the English reference is optional, missing ones are shown in English. */
+export type Dictionary = Partial<Record<keyof typeof en, string>>;

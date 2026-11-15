@@ -7,7 +7,7 @@
   import { deleteProduct, emptyProduct, findProduct, lotsOf, upsertProduct } from '../core/stock';
   import { parseNumber, sameName } from '../core/text';
   import type { Per, Product } from '../core/types';
-  import { i18n, t, tn } from '../i18n/index.svelte';
+  import { localize, t, tn } from '../i18n/index.svelte';
   import Dialog from './Dialog.svelte';
   import { inputNumber, keepsText, quantity, tierLabel } from './format';
   import { dialogs } from './state.svelte';
@@ -36,7 +36,7 @@
   const catalogEntry = $derived(findCatalogItem(name));
   const customCategory = $derived(findCategory(category) ? null : category);
   const suggestions = $derived(
-    CATALOG.map((entry) => entry.name[i18n.lang]).filter((candidate) => !findProduct(app.shelf, candidate)),
+    CATALOG.map((entry) => localize(entry.name)).filter((candidate) => !findProduct(app.shelf, candidate)),
   );
 
   function invalidNumber(value: string): boolean {
@@ -89,7 +89,7 @@
     const entry = findCatalogItem(name);
     if (!entry) return;
     category = entry.category;
-    unit = entry.unit[i18n.lang];
+    unit = localize(entry.unit);
     kcal = inputNumber(entry.kcal);
     water = inputNumber(entry.water);
     daily = inputNumber(entry.daily);
@@ -145,7 +145,7 @@
         <span>{t('product.category')}</span>
         <select class="select" bind:value={category}>
           {#each CATEGORIES as option (option.key)}
-            <option value={option.key}>{option.label[i18n.lang]}</option>
+            <option value={option.key}>{localize(option.label)}</option>
           {/each}
           {#if customCategory}
             <option value={customCategory}>{customCategory}</option>

@@ -1,4 +1,4 @@
-import type { Lang } from './types';
+import { LANGUAGES, type Lang } from './languages';
 
 /** Lowercases, strips accents and anything that is not a letter or a digit. */
 export function normalizeKey(text: string): string {
@@ -27,11 +27,11 @@ export function parseNumber(text: string): number | null {
   return Number(compact.replace(',', '.'));
 }
 
-/** Formats a number for the file: at most 3 decimals, comma decimal separator in French. */
+/** Formats a number for the file: at most 3 decimals, with a decimal comma in the languages that use one. */
 export function formatNumber(value: number | null, lang: Lang = 'en'): string {
   if (value === null || !Number.isFinite(value)) return '';
   const text = String(Math.round(value * 1000) / 1000);
-  return lang === 'fr' ? text.replace('.', ',') : text;
+  return LANGUAGES[lang].decimalComma ? text.replace('.', ',') : text;
 }
 
 const BULK_UNITS = new Set(['kg', 'g', 'l', 'cl', 'ml', 'lb', 'oz', 'gal']);

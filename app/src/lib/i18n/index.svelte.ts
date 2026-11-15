@@ -1,14 +1,13 @@
 import { formatDay, parseDay, type Day } from '../core/dates';
-import { LANGS, type Lang } from '../core/types';
+import { inLang, LANGS, type Lang, type Translated } from '../core/languages';
+import { DICTIONARIES } from './dictionaries';
 import { en } from './en';
-import { fr } from './fr';
 
 export type MessageKey = keyof typeof en;
 export { LANGS, type Lang };
 export type LangPreference = Lang | 'auto';
 type PluralKey = { [K in MessageKey]: K extends `${infer Base}_one` ? Base : never }[MessageKey];
 
-const DICTIONARIES: Record<Lang, Record<MessageKey, string>> = { en, fr };
 const PREF_KEY = 'survival-shelf:lang';
 
 function browserLang(): Lang {
@@ -58,6 +57,11 @@ function interpolate(template: string, params?: Record<string, string | number>)
 /** Translates a message, replacing `{name}` placeholders. */
 export function t(key: MessageKey, params?: Record<string, string | number>): string {
   return interpolate(DICTIONARIES[i18n.lang][key] ?? en[key], params);
+}
+
+/** A text of the app's data (catalog, categories…) in the current language, in English when not translated. */
+export function localize(text: Translated): string {
+  return inLang(text, i18n.lang);
 }
 
 /** Translates a message with a plural form (`key_one` / `key_other`), `{count}` is available. */

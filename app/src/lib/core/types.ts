@@ -1,10 +1,5 @@
-/** Languages the app and the data file can be written in. */
-export type Lang = 'en' | 'fr';
-
-export const LANGS: Lang[] = ['en', 'fr'];
-
-/** A text in every supported language. */
-export type Translated = Record<Lang, string>;
+export { LANGS, type Lang, type Translated } from './languages';
+import type { Lang } from './languages';
 
 /** Values of columns the app does not know about, keyed by their header text. */
 export type Extra = Record<string, string>;

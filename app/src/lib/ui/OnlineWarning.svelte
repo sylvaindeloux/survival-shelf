@@ -3,18 +3,19 @@
   import Save from '@lucide/svelte/icons/save';
   import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
   import { ONLINE_WARNING_SNOOZE_DAYS, showOnlineWarning } from '../core/hosting';
+  import { docPath } from '../core/languages';
   import { app } from '../app.svelte';
   import { i18n, t } from '../i18n/index.svelte';
   import Dialog from './Dialog.svelte';
   import { preferences } from './state.svelte';
 
-  const README = 'https://github.com/sylvaindeloux/survival-shelf';
+  const REPO = 'https://github.com/sylvaindeloux/survival-shelf';
 
   let open = $state(false);
   const visible = $derived(showOnlineWarning(location.hostname, preferences.onlineWarningUntil, app.today));
   /** Data only worth taking along once there is some of the user's own. */
   const hasData = $derived(app.started && !app.demo);
-  const why = $derived(i18n.lang === 'fr' ? `${README}/blob/master/README.fr.md#pour-commencer` : `${README}#get-started`);
+  const why = $derived(`${REPO}/blob/master/${docPath(i18n.lang, 'readme')}`);
 </script>
 
 {#if visible}

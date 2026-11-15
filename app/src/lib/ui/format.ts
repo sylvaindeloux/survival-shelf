@@ -1,12 +1,13 @@
 import type { CatalogItem } from '../core/catalog';
-import { findCategory } from '../core/categories';
+import { categoryLabel as labelOf } from '../core/categories';
 import { daysLeft, expiryStatus, type ExpiryStatus } from '../core/status';
 import type { Day } from '../core/dates';
+import { inLang } from '../core/languages';
 import type { Lot, Per, Product, Rhythm, Settings } from '../core/types';
 import { formatDate, formatNumber, formatRelative, i18n, t, type MessageKey } from '../i18n/index.svelte';
 
 export function categoryLabel(category: string): string {
-  return findCategory(category)?.label[i18n.lang] ?? category;
+  return labelOf(category, i18n.lang);
 }
 
 /** Plurals of the usual units (units are free text, others are shown as written). */
@@ -167,5 +168,5 @@ export function wholeDays(days: number): string {
 /** How long a catalog product usually keeps, and what to check on things that do not expire. */
 export function keepsText(entry: CatalogItem): string {
   const keeps = entry.shelfLife === null ? t('keeps.never') : t('keeps.months', { months: entry.shelfLife });
-  return entry.advice ? `${keeps} ${entry.advice[i18n.lang]}` : keeps;
+  return entry.advice ? `${keeps} ${inLang(entry.advice, i18n.lang)}` : keeps;
 }
