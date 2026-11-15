@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/icons/icon-192.png" width="88" alt="">
+  <img src="app/public/icons/icon-192.png" width="88" alt="">
 </p>
 
 <h1 align="center">Survival Shelf</h1>
@@ -110,7 +110,7 @@ copy, it works **fully offline**.
   nothing to install, no network needed. Keep a few copies, for example on a USB key next to your data file.
 - **Host it at home.** Put that same file on a web server you own (a NAS, a Raspberry Pi…) to reach it from
   every device of the house over your home network, or build the full app from the sources (see
-  [CONTRIBUTING.md](CONTRIBUTING.md)).
+  [CONTRIBUTING.md](.github/CONTRIBUTING.md)).
 - **Install it on your phone.** Open the web page, then:
   - iPhone or iPad (Safari): Share button → *Add to Home Screen*;
   - Android (Chrome): menu ⋮ → *Install app* or *Add to Home screen*.
@@ -134,7 +134,7 @@ your list would still be right there:
 | Rice               | 5   | 2028-09-09 | Cellar   | 2026-09-10 |
 ```
 
-See a [complete example](examples/survival-shelf.md) and the [file format](docs/FILE_FORMAT.md) if you want to
+See a [complete example](docs/examples/survival-shelf.md) and the [file format](docs/FILE_FORMAT.md) if you want to
 edit it by hand.
 
 How the file is kept up to date depends on your browser:
@@ -184,11 +184,11 @@ Yes, any product, with how much your household uses per day or the minimum you w
 
 Survival Shelf is a personal project that welcomes help: report a bug or suggest an idea in the
 [issues](https://github.com/sylvaindeloux/survival-shelf/issues), translate the app into your language, or
-improve the code. Everything you need is in [CONTRIBUTING.md](CONTRIBUTING.md).
+improve the code. Everything you need is in [CONTRIBUTING.md](.github/CONTRIBUTING.md).
 
 ## License
 
 [MIT](LICENSE) © Sylvain Deloux
 
-Bundled fonts: [Barlow and Barlow Semi Condensed](src/assets/fonts/README.md), SIL Open Font License 1.1.
+Bundled fonts: [Barlow and Barlow Semi Condensed](app/src/assets/fonts/README.md), SIL Open Font License 1.1.
 Icons: [Lucide](https://lucide.dev), ISC license.

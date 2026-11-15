@@ -6,8 +6,8 @@ Survival Shelf keeps all your data in **one Markdown file**. It is plain text: y
 edit it with any text editor (Notepad, TextEdit, VS Code, Obsidian…), keep it in a synced folder or in git.
 It also renders as nice tables on GitHub or in any Markdown viewer.
 
-A complete example lives in [`examples/survival-shelf.md`](../examples/survival-shelf.md) (in French:
-[`examples/survival-shelf.fr.md`](../examples/survival-shelf.fr.md)).
+A complete example lives in [`examples/survival-shelf.md`](examples/survival-shelf.md) (in French:
+[`examples/survival-shelf.fr.md`](examples/survival-shelf.fr.md)).
 
 > **You are responsible for what you type.** The app is tolerant, but a row it cannot understand is
 > ignored (and reported). When the app is linked to your file, it **stops saving into it** as soon as

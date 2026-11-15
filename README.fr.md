@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/icons/icon-192.png" width="88" alt="">
+  <img src="app/public/icons/icon-192.png" width="88" alt="">
 </p>
 
 <h1 align="center">Survival Shelf</h1>
@@ -117,7 +117,7 @@ derrière. Une fois que tu as ta copie, il marche **entièrement hors ligne**.
   Garde-en plusieurs copies, par exemple sur une clé USB à côté de ton fichier de données.
 - **L’héberger chez toi.** Mets ce même fichier sur un serveur web à toi (un NAS, un Raspberry Pi…) pour y
   accéder depuis tous les appareils de la maison par ton réseau local, ou construis l’appli complète depuis les
-  sources (voir [CONTRIBUTING.md](CONTRIBUTING.md), en anglais).
+  sources (voir [CONTRIBUTING.md](.github/CONTRIBUTING.md), en anglais).
 - **L’installer sur ton téléphone.** Ouvre la page web, puis :
   - iPhone ou iPad (Safari) : bouton Partager → *Sur l’écran d’accueil* ;
   - Android (Chrome) : menu ⋮ → *Installer l’application* ou *Ajouter à l’écran d’accueil*.
@@ -141,7 +141,7 @@ Si l’appli ne marchait plus demain, ta liste serait toujours là :
 | Riz                   | 5        | 2028-09-09 | Cellier     | 2026-09-10 |
 ```
 
-Regarde un [exemple complet](examples/survival-shelf.fr.md) et le [format du fichier](docs/FILE_FORMAT.fr.md)
+Regarde un [exemple complet](docs/examples/survival-shelf.fr.md) et le [format du fichier](docs/FILE_FORMAT.fr.md)
 si tu veux le modifier à la main.
 
 La façon dont le fichier est tenu à jour dépend de ton navigateur :
@@ -192,11 +192,11 @@ Oui, n’importe quel produit, avec ce que ton foyer en utilise par jour ou le m
 
 Survival Shelf est un projet perso ouvert à toutes les aides : signale un bug ou propose une idée dans les
 [issues](https://github.com/sylvaindeloux/survival-shelf/issues), traduis l’appli dans ta langue, ou améliore
-le code. Tout est expliqué dans [CONTRIBUTING.md](CONTRIBUTING.md) (en anglais).
+le code. Tout est expliqué dans [CONTRIBUTING.md](.github/CONTRIBUTING.md) (en anglais).
 
 ## Licence
 
 [MIT](LICENSE) © Sylvain Deloux
 
-Polices intégrées : [Barlow et Barlow Semi Condensed](src/assets/fonts/README.md), licence SIL Open Font 1.1.
+Polices intégrées : [Barlow et Barlow Semi Condensed](app/src/assets/fonts/README.md), licence SIL Open Font 1.1.
 Icônes : [Lucide](https://lucide.dev), licence ISC.
