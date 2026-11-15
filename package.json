@@ -1,6 +1,5 @@
 {
   "name": "survival-shelf",
-  "version": "0.1.0",
   "description": "Offline-first PWA to manage a survival stock: expiry tracking, autonomy estimates and progressive rotation. Data lives in a human-editable Markdown file.",
   "private": true,
   "type": "module",
