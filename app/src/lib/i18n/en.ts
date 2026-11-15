@@ -325,6 +325,7 @@ export const en = {
   'settings.disclaimer':
     'Survival Shelf is a personal, volunteer project, not an official source. Its estimates (quantities, days of autonomy, shelf lives) and its guides are general information, provided as is, with no warranty: you use them at your own risk. They do not replace instructions from the authorities, professional advice or first-aid training.',
   'settings.license': 'MIT license',
+  'settings.sponsor': 'Support the project',
   'settings.singleFile': 'Download the single-file version',
   'settings.singleFileHint': 'one HTML file that runs without installation, from a disk or a USB key.',
   'settings.reset': 'Reset the app',
