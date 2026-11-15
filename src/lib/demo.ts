@@ -56,7 +56,7 @@ const DEMO_LOTS: Record<string, DemoLot[]> = {
 
 /** A realistic sample stock for 2 people, with dates relative to today so every state shows up. */
 export function demoShelf(today: Day, lang: Lang): Shelf {
-  let shelf = emptyShelf();
+  let shelf = emptyShelf(lang);
   shelf.settings.people = 2;
   for (const entry of starterItems({})) {
     shelf = upsertProduct(shelf, productFromCatalog(entry, lang));

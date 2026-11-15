@@ -8,7 +8,7 @@ import { rotationPlan } from './core/rotation';
 import { expiryAlerts, summarizeProducts } from './core/status';
 import type { ParseIssue, Product, Settings, Shelf } from './core/types';
 import { demoShelf } from './demo';
-import { i18n, t, type MessageKey } from './i18n/index.svelte';
+import { i18n, t, type LangPreference, type MessageKey } from './i18n/index.svelte';
 import { idbDelete, idbGet, idbSet } from './storage/idb';
 import {
   DEFAULT_FILE_NAME,
@@ -67,7 +67,7 @@ const EXPORT_REMINDER_DAYS = 7;
 const WRITE_DELAY_MS = 300;
 
 class App {
-  shelf = $state<Shelf>(emptyShelf());
+  shelf = $state<Shelf>(emptyShelf(i18n.lang));
   issues = $state<ParseIssue[]>([]);
   ready = $state(false);
   started = $state(false);
@@ -121,7 +121,7 @@ class App {
     this.changedSinceExport = this.#meta.changedSinceExport;
 
     const text = await idbGet<string>('doc');
-    if (text !== undefined) this.#load(text);
+    if (text !== undefined) this.#load(text, { announce: false });
 
     const handle = await idbGet<FileSystemFileHandle>('file');
     if (handle && canLinkFiles) {
@@ -171,11 +171,20 @@ class App {
     this.toasts = this.toasts.filter((toast) => toast.id !== id);
   }
 
+  /** Changes the app language; the data file follows it. */
+  setLanguage(preference: LangPreference) {
+    i18n.setPreference(preference);
+    if (this.started && this.shelf.settings.lang !== i18n.lang) {
+      const lang = i18n.lang;
+      this.update((shelf) => ({ ...shelf, settings: { ...shelf.settings, lang } }));
+    }
+  }
+
   // --- Starting -------------------------------------------------------------
 
   /** Starts a new stock from the plan chosen in the setup wizard. */
   async startWithPlan(household: Pick<Settings, 'people' | 'cats' | 'dogs'>, products: Product[]) {
-    const shelf = emptyShelf();
+    const shelf = emptyShelf(i18n.lang);
     shelf.settings = { ...shelf.settings, ...household };
     shelf.products = products;
     await this.#replace(shelf, [], { demo: false });
@@ -192,7 +201,7 @@ class App {
     this.fileName = '';
     this.fileState = 'none';
     this.issues = [];
-    this.shelf = emptyShelf();
+    this.shelf = emptyShelf(i18n.lang);
     this.#meta = { ...DEFAULT_META };
     this.started = false;
     this.demo = false;
@@ -241,7 +250,7 @@ class App {
   /** Replaces the data with the content of a file, without linking it. */
   async importFile(file: File) {
     this.unlink();
-    const { shelf, issues } = parseShelf(await file.text());
+    const { shelf, issues } = this.#parse(await file.text(), { announce: true });
     await this.#replace(shelf, issues, { demo: false });
     this.toast(t('file.imported', { name: file.name }), issues.some((i) => i.level === 'error') ? 'error' : 'success');
   }
@@ -299,7 +308,7 @@ class App {
     if (fileText === null || !this.#handle) return;
     if (keep === 'file') {
       this.#meta.fileLastModified = await lastModifiedOf(this.#handle);
-      this.#load(fileText);
+      this.#load(fileText, { announce: true });
       await this.#saveLocalCopy();
       this.#updateFileState('granted');
     } else {
@@ -309,8 +318,22 @@ class App {
 
   // --- Internals ------------------------------------------------------------
 
-  #load(text: string) {
-    const { shelf, issues } = parseShelf(text);
+  /**
+   * Reads a file. Its language setting wins: the app switches to it. A file
+   * that does not say its language is taken as written in the current one.
+   */
+  #parse(text: string, options: { announce: boolean }) {
+    const result = parseShelf(text, { lang: i18n.lang });
+    const { lang } = result.shelf.settings;
+    if (lang !== i18n.lang) {
+      i18n.setPreference(lang);
+      if (options.announce) this.toast(t('file.langApplied'));
+    }
+    return result;
+  }
+
+  #load(text: string, options: { announce: boolean }) {
+    const { shelf, issues } = this.#parse(text, options);
     this.shelf = shelf;
     this.issues = issues;
   }
@@ -331,7 +354,7 @@ class App {
     await idbSet('file', handle);
     const { text, lastModified } = await readHandle(handle);
     this.#meta.fileLastModified = lastModified;
-    this.#load(text);
+    this.#load(text, { announce: true });
     this.started = true;
     this.demo = false;
     await this.#saveLocalCopy();
@@ -364,7 +387,7 @@ class App {
       } else {
         this.#meta.fileLastModified = lastModified;
         if (this.started) this.toast(t('file.reloaded', { name: this.fileName }));
-        this.#load(text);
+        this.#load(text, { announce: this.started });
         this.started = true;
         this.demo = false;
         await this.#saveLocalCopy();

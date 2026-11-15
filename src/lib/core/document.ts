@@ -1,129 +1,151 @@
-import { normalizeCategory } from './categories';
-import { SECTION_ORDER, defaultLayout, defaultSectionLayout, defaultSettings } from './defaults';
+import { findCategory, normalizeCategory } from './categories';
+import {
+  DEFAULT_PREAMBLE,
+  SECTION_COMMENTS,
+  SECTION_HEADINGS,
+  SECTION_ORDER,
+  defaultLayout,
+  defaultSectionLayout,
+  defaultSettings,
+  translateDefault,
+} from './defaults';
 import { isValidDate, normalizeDate } from './dates';
 import { newLotId } from './ids';
 import { formatTable, isSeparatorRow, isTableLine, splitRow } from './table';
 import { formatNumber, normalizeKey, parseNumber, sameName } from './text';
-import type {
-  Extra,
-  LogAction,
-  LogEntry,
-  Lot,
-  ParseIssue,
-  Per,
-  ParseResult,
-  Product,
-  Rhythm,
-  SectionLayout,
-  SectionName,
-  Settings,
-  SettingRow,
-  Shelf,
-  TableLayout,
+import {
+  LANGS,
+  type Extra,
+  type LogAction,
+  type LogEntry,
+  type Lot,
+  type ParseIssue,
+  type Per,
+  type ParseResult,
+  type Product,
+  type Rhythm,
+  type SectionLayout,
+  type SectionName,
+  type Settings,
+  type SettingRow,
+  type Shelf,
+  type TableLayout,
+  type Lang,
+  type Translated,
 } from './types';
 
 interface ColumnDef {
   key: string;
-  label: string;
+  /** Header written by the app, in each language. */
+  label: Translated;
+  /** Other headers accepted when reading (normalized). */
   aliases: string[];
   /** Written even when no row has a value. */
   always?: boolean;
 }
 
+/** True when `text` is what the app writes, in any language. */
+function isCanonical(text: string, label: Translated): boolean {
+  const key = normalizeKey(text);
+  return LANGS.some((lang) => normalizeKey(label[lang]) === key);
+}
+
 const SECTION_ALIASES: Record<string, SectionName> = Object.fromEntries(
   (
     [
-      ['settings', ['settings', 'parameters', 'parametres', 'reglages', 'configuration', 'config']],
-      ['products', ['products', 'produits', 'catalog', 'catalogue']],
-      ['stock', ['stock', 'stocks', 'inventory', 'inventaire', 'lots']],
-      ['log', ['log', 'journal', 'history', 'historique']],
+      ['settings', ['parameters', 'reglages', 'configuration', 'config']],
+      ['products', ['catalog', 'catalogue']],
+      ['stock', ['stocks', 'inventory', 'inventaire', 'lots']],
+      ['log', ['history', 'historique']],
     ] as [SectionName, string[]][]
-  ).flatMap(([name, aliases]) => aliases.map((alias) => [alias, name])),
+  ).flatMap(([name, aliases]) =>
+    [...LANGS.map((lang) => normalizeKey(SECTION_HEADINGS[name][lang])), ...aliases].map((alias) => [alias, name]),
+  ),
 );
 
 const SETTINGS_COLUMNS: ColumnDef[] = [
-  { key: 'label', label: 'Setting', aliases: ['setting', 'parameter', 'name', 'key', 'parametre', 'reglage', 'nom', 'cle'], always: true },
-  { key: 'value', label: 'Value', aliases: ['value', 'valeur'], always: true },
+  { key: 'label', label: { en: 'Setting', fr: 'Paramètre' }, aliases: ['parameter', 'name', 'key', 'reglage', 'nom', 'cle'], always: true },
+  { key: 'value', label: { en: 'Value', fr: 'Valeur' }, aliases: [], always: true },
 ];
 
 const PRODUCT_COLUMNS: ColumnDef[] = [
-  { key: 'name', label: 'Product', aliases: ['product', 'name', 'produit', 'nom', 'item', 'article'], always: true },
-  { key: 'category', label: 'Category', aliases: ['category', 'categorie', 'cat'], always: true },
-  { key: 'unit', label: 'Unit', aliases: ['unit', 'unite', 'units', 'unites'], always: true },
+  { key: 'name', label: { en: 'Product', fr: 'Produit' }, aliases: ['name', 'nom', 'item', 'article'], always: true },
+  { key: 'category', label: { en: 'Category', fr: 'Catégorie' }, aliases: ['cat'], always: true },
+  { key: 'unit', label: { en: 'Unit', fr: 'Unité' }, aliases: ['units', 'unites'], always: true },
   {
     key: 'kcal',
-    label: 'Kcal/unit',
-    aliases: ['kcalunit', 'kcal', 'calories', 'kcalperunit', 'kcalparunite', 'kcalunite', 'energy', 'energie'],
+    label: { en: 'Kcal/unit', fr: 'Kcal/unité' },
+    aliases: ['kcal', 'calories', 'kcalperunit', 'kcalparunite', 'energy', 'energie'],
     always: true,
   },
   {
     key: 'water',
-    label: 'Water L/unit',
-    aliases: ['waterlunit', 'water', 'waterl', 'waterperunit', 'eau', 'eaul', 'eaulunite', 'eauunite'],
+    label: { en: 'Water L/unit', fr: 'Eau L/unité' },
+    aliases: ['water', 'waterl', 'waterperunit', 'eau', 'eaul', 'eauunite'],
     always: true,
   },
   {
     key: 'daily',
-    label: 'Daily use',
-    aliases: ['dailyuse', 'daily', 'perday', 'useperday', 'dailyusage', 'consojour', 'consoparjour', 'conso', 'consommation', 'consommationjour', 'consommationparjour', 'parjour'],
+    label: { en: 'Daily use', fr: 'Conso/jour' },
+    aliases: ['daily', 'perday', 'useperday', 'dailyusage', 'consoparjour', 'conso', 'consommation', 'consommationjour', 'consommationparjour', 'parjour'],
     always: true,
   },
-  { key: 'per', label: 'Per', aliases: ['per', 'par', 'basis', 'base', 'pour', 'for'], always: true },
-  { key: 'target', label: 'Target', aliases: ['target', 'objectif', 'cible', 'goal', 'min', 'minimum', 'own', 'avoir'], always: true },
-  { key: 'notes', label: 'Notes', aliases: ['notes', 'note', 'remarques', 'remarque', 'comment', 'comments', 'commentaire', 'commentaires'] },
+  { key: 'per', label: { en: 'Per', fr: 'Par' }, aliases: ['basis', 'base', 'pour', 'for'], always: true },
+  { key: 'target', label: { en: 'Target', fr: 'Objectif' }, aliases: ['cible', 'goal', 'min', 'minimum', 'own', 'avoir'], always: true },
+  { key: 'notes', label: { en: 'Notes', fr: 'Notes' }, aliases: ['note', 'remarques', 'remarque', 'comment', 'comments', 'commentaire', 'commentaires'] },
 ];
 
+/** Values of the Per column written by the app. */
+const PER_LABELS: Record<Per, Translated> = {
+  person: { en: 'person', fr: 'personne' },
+  household: { en: 'household', fr: 'foyer' },
+  cat: { en: 'cat', fr: 'chat' },
+  dog: { en: 'dog', fr: 'chien' },
+};
+
 const PER_ALIASES: Record<string, Per> = {
-  person: 'person',
   persons: 'person',
   people: 'person',
   pers: 'person',
   each: 'person',
-  personne: 'person',
   personnes: 'person',
   chacun: 'person',
-  household: 'household',
   home: 'household',
   family: 'household',
   fixed: 'household',
   total: 'household',
-  foyer: 'household',
   maison: 'household',
   famille: 'household',
   fixe: 'household',
-  cat: 'cat',
   cats: 'cat',
   percat: 'cat',
-  chat: 'cat',
   chats: 'cat',
   parchat: 'cat',
-  dog: 'dog',
   dogs: 'dog',
   perdog: 'dog',
-  chien: 'dog',
   chiens: 'dog',
   parchien: 'dog',
 };
 
 const STOCK_COLUMNS: ColumnDef[] = [
-  { key: 'product', label: 'Product', aliases: ['product', 'produit', 'name', 'nom', 'item', 'article'], always: true },
-  { key: 'qty', label: 'Qty', aliases: ['qty', 'quantity', 'quantite', 'qte', 'qt'], always: true },
+  { key: 'product', label: { en: 'Product', fr: 'Produit' }, aliases: ['name', 'nom', 'item', 'article'], always: true },
+  { key: 'qty', label: { en: 'Qty', fr: 'Quantité' }, aliases: ['quantity', 'qte', 'qt'], always: true },
   {
     key: 'expires',
-    label: 'Expires',
-    aliases: ['expires', 'expiry', 'expiration', 'bestbefore', 'useby', 'peremption', 'dlc', 'ddm', 'dluo', 'exp'],
+    label: { en: 'Expires', fr: 'Péremption' },
+    aliases: ['expiry', 'expiration', 'bestbefore', 'useby', 'dlc', 'ddm', 'dluo', 'exp'],
     always: true,
   },
-  { key: 'location', label: 'Location', aliases: ['location', 'emplacement', 'lieu', 'place', 'where', 'ou'], always: true },
-  { key: 'added', label: 'Added', aliases: ['added', 'ajoute', 'ajout', 'purchased', 'bought', 'achat', 'achete'] },
+  { key: 'location', label: { en: 'Location', fr: 'Emplacement' }, aliases: ['lieu', 'place', 'where', 'ou'], always: true },
+  { key: 'added', label: { en: 'Added', fr: 'Ajouté' }, aliases: ['ajout', 'purchased', 'bought', 'achat', 'achete'] },
 ];
 
 const LOG_COLUMNS: ColumnDef[] = [
-  { key: 'date', label: 'Date', aliases: ['date', 'jour', 'day'], always: true },
-  { key: 'product', label: 'Product', aliases: ['product', 'produit', 'name', 'nom', 'item', 'article'], always: true },
-  { key: 'qty', label: 'Qty', aliases: ['qty', 'quantity', 'quantite', 'qte', 'qt'], always: true },
-  { key: 'action', label: 'Action', aliases: ['action', 'type', 'event', 'evenement'], always: true },
-  { key: 'note', label: 'Note', aliases: ['note', 'notes', 'comment', 'commentaire', 'remarque'] },
+  { key: 'date', label: { en: 'Date', fr: 'Date' }, aliases: ['jour', 'day'], always: true },
+  { key: 'product', label: { en: 'Product', fr: 'Produit' }, aliases: ['name', 'nom', 'item', 'article'], always: true },
+  { key: 'qty', label: { en: 'Qty', fr: 'Quantité' }, aliases: ['quantity', 'qte', 'qt'], always: true },
+  { key: 'action', label: { en: 'Action', fr: 'Action' }, aliases: ['type', 'event', 'evenement'], always: true },
+  { key: 'note', label: { en: 'Note', fr: 'Note' }, aliases: ['notes', 'comment', 'commentaire', 'remarque'] },
 ];
 
 const COLUMNS: Record<SectionName, ColumnDef[]> = {
@@ -133,36 +155,56 @@ const COLUMNS: Record<SectionName, ColumnDef[]> = {
   log: LOG_COLUMNS,
 };
 
+/** Check-in values written by the app. */
+const RHYTHM_LABELS: Record<Rhythm, Translated> = {
+  monthly: { en: 'monthly', fr: 'mensuel' },
+  quarterly: { en: 'quarterly', fr: 'trimestriel' },
+  semiannual: { en: 'semiannual', fr: 'semestriel' },
+};
+
 const RHYTHM_ALIASES: Record<string, Rhythm> = {
-  monthly: 'monthly',
   month: 'monthly',
-  mensuel: 'monthly',
   mois: 'monthly',
-  quarterly: 'quarterly',
   quarter: 'quarterly',
   '3months': 'quarterly',
-  trimestriel: 'quarterly',
   trimestre: 'quarterly',
   '3mois': 'quarterly',
-  semiannual: 'semiannual',
   halfyearly: 'semiannual',
   halfyear: 'semiannual',
   '6months': 'semiannual',
-  semestriel: 'semiannual',
   semestre: 'semiannual',
   '6mois': 'semiannual',
 };
 
+const LANG_ALIASES: Record<string, Lang> = {
+  english: 'en',
+  anglais: 'en',
+  french: 'fr',
+  francais: 'fr',
+};
+
+/**
+ * Reads a value written with one of the app's labels (any language) or an alias.
+ * Returns undefined when the text is not recognized.
+ */
+function readValue<T extends string>(text: string, labels: Record<T, Translated>, aliases: Record<string, T>): T | undefined {
+  const key = normalizeKey(text);
+  const known = (Object.keys(labels) as T[]).find((value) => isCanonical(text, labels[value]) || normalizeKey(value) === key);
+  return known ?? aliases[key];
+}
+
 interface SettingDef {
   field: keyof Settings;
-  label: string;
+  /** Label written by the app, in each language. */
+  label: Translated;
+  /** Other labels accepted when reading (normalized). */
   aliases: string[];
   /** Parsed value, or undefined when the text is invalid. */
   read: (text: string) => Settings[keyof Settings] | undefined;
-  write: (settings: Settings) => string;
+  write: (settings: Settings, lang: Lang) => string;
 }
 
-function numberSetting(field: keyof Settings, label: string, aliases: string[], min: number): SettingDef {
+function numberSetting(field: keyof Settings, label: Translated, aliases: string[], min: number): SettingDef {
   return {
     field,
     label,
@@ -171,7 +213,7 @@ function numberSetting(field: keyof Settings, label: string, aliases: string[], 
       const value = parseNumber(text);
       return value === null || Number.isNaN(value) || value < min ? undefined : value;
     },
-    write: (settings) => formatNumber(settings[field] as number),
+    write: (settings, lang) => formatNumber(settings[field] as number, lang),
   };
 }
 
@@ -184,67 +226,81 @@ export function parseTiers(text: string): number[] | undefined {
 }
 
 const SETTING_DEFS: SettingDef[] = [
-  numberSetting('people', 'People', ['people', 'persons', 'personnes', 'household', 'foyer', 'nbpersonnes'], 1),
-  numberSetting('cats', 'Cats', ['cats', 'cat', 'chats', 'chat', 'nbchats'], 0),
-  numberSetting('dogs', 'Dogs', ['dogs', 'dog', 'chiens', 'chien', 'nbchiens'], 0),
+  {
+    field: 'lang',
+    label: { en: 'Language', fr: 'Langue' },
+    aliases: ['lang'],
+    read: (text) => {
+      const key = normalizeKey(text);
+      return (LANGS as string[]).includes(key) ? (key as Lang) : LANG_ALIASES[key];
+    },
+    write: (settings) => settings.lang,
+  },
+  numberSetting('people', { en: 'People', fr: 'Personnes' }, ['persons', 'household', 'foyer', 'nbpersonnes'], 1),
+  numberSetting('cats', { en: 'Cats', fr: 'Chats' }, ['cat', 'chat', 'nbchats'], 0),
+  numberSetting('dogs', { en: 'Dogs', fr: 'Chiens' }, ['dog', 'chien', 'nbchiens'], 0),
   numberSetting(
     'kcalPerPersonPerDay',
-    'Kcal per person per day',
-    ['kcalperpersonperday', 'kcalperperson', 'kcalparpersonneparjour', 'kcalparpersonne', 'caloriesperpersonperday'],
+    { en: 'Kcal per person per day', fr: 'Kcal par personne par jour' },
+    ['kcalperperson', 'kcalparpersonne', 'caloriesperpersonperday', 'kcalparpersonneetparjour'],
     1,
   ),
   numberSetting(
     'waterPerPersonPerDay',
-    'Water L per person per day',
-    ['waterlperpersonperday', 'waterperpersonperday', 'eaulparpersonneparjour', 'eauparpersonneparjour'],
+    { en: 'Water L per person per day', fr: 'Eau L par personne par jour' },
+    ['waterperpersonperday', 'eauparpersonneparjour', 'eaulparpersonneetparjour'],
     0,
   ),
   {
     field: 'tiers',
-    label: 'Tiers (days)',
-    aliases: ['tiers', 'tiersdays', 'autonomytiers', 'paliers', 'paliersjours', 'paliersdautonomie', 'niveaux'],
+    label: { en: 'Tiers (days)', fr: 'Paliers (jours)' },
+    aliases: ['tiers', 'autonomytiers', 'paliers', 'paliersdautonomie', 'niveaux'],
     read: parseTiers,
     write: (settings) => settings.tiers.join(', '),
   },
   {
     field: 'rhythm',
-    label: 'Check-in',
-    aliases: ['checkin', 'rhythm', 'frequency', 'rendezvous', 'rythme', 'frequence'],
-    read: (text) => RHYTHM_ALIASES[normalizeKey(text)],
-    write: (settings) => settings.rhythm,
+    label: { en: 'Check-in', fr: 'Rendez-vous' },
+    aliases: ['rhythm', 'frequency', 'rythme', 'frequence'],
+    read: (text) => readValue(text, RHYTHM_LABELS, RHYTHM_ALIASES),
+    write: (settings, lang) => RHYTHM_LABELS[settings.rhythm][lang],
   },
   numberSetting(
     'warningDays',
-    'Expiry warning days',
-    ['expirywarningdays', 'warningdays', 'expirywarning', 'alerteperemptionjours', 'alerteperemption', 'alertejours'],
+    { en: 'Expiry warning days', fr: 'Alerte péremption (jours)' },
+    ['warningdays', 'expirywarning', 'alerteperemption', 'alertejours'],
     0,
   ),
   numberSetting(
     'rotationMarginDays',
-    'Rotation margin days',
-    ['rotationmargindays', 'rotationmargin', 'margerotationjours', 'margederotationjours', 'margerotation', 'margederotation'],
+    { en: 'Rotation margin days', fr: 'Marge de rotation (jours)' },
+    ['rotationmargin', 'margerotationjours', 'margerotation', 'margederotation'],
     0,
   ),
 ];
 
 const SETTING_BY_ALIAS = new Map<string, SettingDef>(
-  SETTING_DEFS.flatMap((def) => [normalizeKey(def.label), ...def.aliases].map((alias) => [alias, def] as const)),
+  SETTING_DEFS.flatMap((def) =>
+    [...LANGS.map((lang) => normalizeKey(def.label[lang])), ...def.aliases].map((alias) => [alias, def] as const),
+  ),
 );
 
+/** Log actions written by the app. */
+const ACTION_LABELS: Record<LogAction, Translated> = {
+  consumed: { en: 'consumed', fr: 'consommé' },
+  discarded: { en: 'discarded', fr: 'jeté' },
+};
+
 const ACTION_ALIASES: Record<string, LogAction> = {
-  consumed: 'consumed',
   consume: 'consumed',
   eaten: 'consumed',
   used: 'consumed',
-  consomme: 'consumed',
   mange: 'consumed',
   utilise: 'consumed',
-  discarded: 'discarded',
   discard: 'discarded',
   wasted: 'discarded',
   thrown: 'discarded',
   lost: 'discarded',
-  jete: 'discarded',
   perdu: 'discarded',
   gaspille: 'discarded',
 };
@@ -314,7 +370,7 @@ function parseSection(
   const keys: (string | null)[] = [];
   headers.forEach((header, i) => {
     const normalized = normalizeKey(header);
-    const def = columns.find((column) => column.aliases.includes(normalized) || normalizeKey(column.label) === normalized);
+    const def = columns.find((column) => column.aliases.includes(normalized) || isCanonical(header, column.label));
     if (def && keys.includes(def.key)) {
       issues.push({ level: 'warning', line: firstLine + start, code: 'duplicateColumn', params: { column: header } });
       keys.push(null);
@@ -381,7 +437,9 @@ function readNumber(
   return value;
 }
 
-function readSettings(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
+/** Reads the settings table and returns the fields it sets. */
+function readSettings(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]): Set<keyof Settings> {
+  const found = new Set<keyof Settings>();
   for (const row of rows) {
     const label = row.values.label ?? '';
     const value = row.values.value ?? '';
@@ -397,7 +455,9 @@ function readSettings(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
     }
     (shelf.settings as unknown as Record<string, unknown>)[def.field] = parsed;
     shelf.layout.settingsLabels[def.field] = label;
+    found.add(def.field);
   }
+  return found;
 }
 
 function readProducts(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
@@ -419,7 +479,7 @@ function readProducts(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
     const perText = (row.values.per ?? '').trim();
     let per: Per = 'person';
     if (perText !== '') {
-      const known = PER_ALIASES[normalizeKey(perText)];
+      const known = readValue(perText, PER_LABELS, PER_ALIASES);
       if (known) per = known;
       else issues.push({ level: 'warning', line: row.line, code: 'invalidPer', params: { value: perText } });
     }
@@ -498,7 +558,7 @@ function readLog(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
       issues.push({ level: 'warning', line: row.line, code: 'invalidDate', params: { column: 'date', value: date } });
     }
     const actionText = row.values.action ?? '';
-    let action = ACTION_ALIASES[normalizeKey(actionText)];
+    let action = readValue(actionText, ACTION_LABELS, ACTION_ALIASES);
     if (!action) {
       issues.push({ level: 'warning', line: row.line, code: 'invalidAction', params: { value: actionText } });
       action = 'consumed';
@@ -514,8 +574,16 @@ function readLog(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
   }
 }
 
-/** Reads a Survival Shelf Markdown file. Never throws: problems are reported as issues. */
-export function parseShelf(text: string): ParseResult {
+export interface ParseOptions {
+  /** Language of a file that does not say which one it is written in. */
+  lang?: Lang;
+}
+
+/**
+ * Reads a Survival Shelf Markdown file, written in any supported language.
+ * Never throws: problems are reported as issues.
+ */
+export function parseShelf(text: string, options: ParseOptions = {}): ParseResult {
   const issues: ParseIssue[] = [];
   const shelf: Shelf = {
     settings: defaultSettings(),
@@ -546,96 +614,129 @@ export function parseShelf(text: string): ParseResult {
   }
 
   // Products first, so that stock rows can refer to them whatever the section order.
-  readSettings(parsed.settings ?? [], shelf, issues);
+  const found = readSettings(parsed.settings ?? [], shelf, issues);
+  if (!found.has('lang')) shelf.settings.lang = options.lang ?? 'en';
   readProducts(parsed.products ?? [], shelf, issues);
   readStock(parsed.stock ?? [], shelf, issues);
   readLog(parsed.log ?? [], shelf, issues);
 
-  if (shelf.layout.blocks.length === 0) shelf.layout = defaultLayout();
+  if (shelf.layout.blocks.length === 0) shelf.layout = defaultLayout(shelf.settings.lang);
   return { shelf, issues };
 }
 
-function settingsRows(shelf: Shelf): Record<string, string>[] {
-  const known = SETTING_DEFS.map((def) => ({
-    label: shelf.layout.settingsLabels[def.field] ?? def.label,
-    value: def.write(shelf.settings),
-  }));
+function settingsRows(shelf: Shelf, lang: Lang): Record<string, string>[] {
+  const known = SETTING_DEFS.map((def) => {
+    // A label written by hand is kept, the app's own labels follow the file language.
+    const label = shelf.layout.settingsLabels[def.field];
+    return {
+      label: label !== undefined && !isCanonical(label, def.label) ? label : def.label[lang],
+      value: def.write(shelf.settings, lang),
+    };
+  });
   return [...known, ...shelf.settingsExtra.map((row: SettingRow) => ({ ...row }))];
 }
 
-function productRow(product: Product): Record<string, string> {
+function productRow(product: Product, lang: Lang): Record<string, string> {
   return {
     name: product.name,
-    category: product.category,
+    category: findCategory(product.category)?.label[lang] ?? product.category,
     unit: product.unit,
-    kcal: formatNumber(product.kcal),
-    water: formatNumber(product.water),
-    daily: formatNumber(product.daily),
+    kcal: formatNumber(product.kcal, lang),
+    water: formatNumber(product.water, lang),
+    daily: formatNumber(product.daily, lang),
     // "person" is the default: only spelled out when it matters.
-    per: product.per !== 'person' || product.daily !== null || product.target !== null ? product.per : '',
-    target: formatNumber(product.target),
+    per: product.per !== 'person' || product.daily !== null || product.target !== null ? PER_LABELS[product.per][lang] : '',
+    target: formatNumber(product.target, lang),
     notes: product.notes,
   };
 }
 
-function lotRow(lot: Lot): Record<string, string> {
-  return { product: lot.product, qty: formatNumber(lot.qty), expires: lot.expires, location: lot.location, added: lot.added };
+function lotRow(lot: Lot, lang: Lang): Record<string, string> {
+  return { product: lot.product, qty: formatNumber(lot.qty, lang), expires: lot.expires, location: lot.location, added: lot.added };
 }
 
-function logRow(entry: LogEntry): Record<string, string> {
-  return { date: entry.date, product: entry.product, qty: formatNumber(entry.qty), action: entry.action, note: entry.note };
+function logRow(entry: LogEntry, lang: Lang): Record<string, string> {
+  return {
+    date: entry.date,
+    product: entry.product,
+    qty: formatNumber(entry.qty, lang),
+    action: ACTION_LABELS[entry.action][lang],
+    note: entry.note,
+  };
 }
 
 function renderTable(
   name: SectionName,
   layout: TableLayout | null,
   rows: { values: Record<string, string>; extra: Extra }[],
+  lang: Lang,
 ): string {
   const columns = COLUMNS[name];
-  const headers = layout ? [...layout.headers] : [];
-  const keys = layout ? [...layout.keys] : [];
+  const headers: string[] = [];
+  const keys: (string | null)[] = [];
+  // Known columns written with the app's header are translated, hand-written headers are kept.
+  layout?.headers.forEach((header, i) => {
+    const key = layout.keys[i];
+    const column = columns.find((candidate) => candidate.key === key);
+    headers.push(column && isCanonical(header, column.label) ? column.label[lang] : header);
+    keys.push(key);
+  });
+  const extraHeaders = layout ? layout.headers : [];
   for (const column of columns) {
     if (keys.includes(column.key)) continue;
     const used = column.always || rows.some((row) => (row.values[column.key] ?? '') !== '');
     if (used) {
-      headers.push(column.label);
+      headers.push(column.label[lang]);
       keys.push(column.key);
     }
   }
-  const cells = rows.map((row) => keys.map((key, i) => (key ? (row.values[key] ?? '') : (row.extra[headers[i]] ?? ''))));
+  const cells = rows.map((row) => keys.map((key, i) => (key ? (row.values[key] ?? '') : (row.extra[extraHeaders[i]] ?? ''))));
   return formatTable(headers, cells);
 }
 
-function renderSection(name: SectionName, shelf: Shelf): string {
-  const layout = shelf.layout.sections[name] ?? defaultSectionLayout(name);
+function renderSection(name: SectionName, shelf: Shelf, lang: Lang): string {
+  const layout = shelf.layout.sections[name] ?? defaultSectionLayout(name, lang);
   let rows: { values: Record<string, string>; extra: Extra }[];
   switch (name) {
     case 'settings':
-      rows = settingsRows(shelf).map((values) => ({ values, extra: {} }));
+      rows = settingsRows(shelf, lang).map((values) => ({ values, extra: {} }));
       break;
     case 'products':
-      rows = shelf.products.map((product) => ({ values: productRow(product), extra: product.extra }));
+      rows = shelf.products.map((product) => ({ values: productRow(product, lang), extra: product.extra }));
       break;
     case 'stock':
-      rows = shelf.lots.map((lot) => ({ values: lotRow(lot), extra: lot.extra }));
+      rows = shelf.lots.map((lot) => ({ values: lotRow(lot, lang), extra: lot.extra }));
       break;
     case 'log':
-      rows = shelf.log.map((entry) => ({ values: logRow(entry), extra: entry.extra }));
+      rows = shelf.log.map((entry) => ({ values: logRow(entry, lang), extra: entry.extra }));
       break;
   }
-  return [`## ${layout.heading}`, layout.before, renderTable(name, layout.table, rows), layout.after]
+  const heading = isCanonical(layout.heading, SECTION_HEADINGS[name]) ? SECTION_HEADINGS[name][lang] : layout.heading;
+  return [
+    `## ${heading}`,
+    translateDefault(layout.before, SECTION_COMMENTS[name], lang),
+    renderTable(name, layout.table, rows, lang),
+    layout.after,
+  ]
     .filter((part) => part !== '')
     .join('\n\n');
 }
 
-/** Writes the shelf back to Markdown, keeping the user's layout and unknown content. */
+/**
+ * Writes the shelf back to Markdown in the language of its settings. What the app
+ * wrote itself (titles, headers, labels, help comments, values) follows that
+ * language; the user's own content and hand-written headers are kept as they are.
+ */
 export function serializeShelf(shelf: Shelf): string {
+  const lang = shelf.settings.lang;
   const blocks = [...shelf.layout.blocks];
   for (const name of SECTION_ORDER) {
     if (!blocks.some((block) => block.type === 'section' && block.name === name)) {
       blocks.push({ type: 'section', name });
     }
   }
-  const parts = blocks.map((block) => (block.type === 'raw' ? block.text : renderSection(block.name, shelf)));
+  const parts = blocks.map((block) =>
+    block.type === 'raw' ? translateDefault(block.text, DEFAULT_PREAMBLE, lang) : renderSection(block.name, shelf, lang),
+  );
   return `${parts.join('\n\n')}\n`;
 }

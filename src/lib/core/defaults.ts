@@ -1,8 +1,9 @@
-import type { Layout, SectionLayout, SectionName, Settings, Shelf } from './types';
+import { LANGS, type Lang, type Layout, type SectionLayout, type SectionName, type Settings, type Shelf, type Translated } from './types';
 
 export const DEFAULT_TIERS = [3, 7, 30, 365];
 
 export const DEFAULT_SETTINGS: Settings = {
+  lang: 'en',
   people: 1,
   cats: 0,
   dogs: 0,
@@ -28,56 +29,77 @@ export function defaultSettings(): Settings {
 
 export const SECTION_ORDER: SectionName[] = ['settings', 'products', 'stock', 'log'];
 
-export const DEFAULT_PREAMBLE = `# Survival Shelf
+const REPO = 'https://github.com/sylvaindeloux/survival-shelf';
 
-> Data file of [Survival Shelf](https://github.com/sylvaindeloux/survival-shelf).
+/** Introduction written at the top of a new file. */
+export const DEFAULT_PREAMBLE: Translated = {
+  en: `# Survival Shelf
+
+> Data file of [Survival Shelf](${REPO}).
 > You can edit it with any text editor: keep the \`## Section\` titles and the table header rows.
 > Dates are written \`YYYY-MM-DD\`, or \`YYYY-MM\` for "end of that month". Decimals use a dot.
-> Full syntax: https://github.com/sylvaindeloux/survival-shelf/blob/master/docs/FILE_FORMAT.md
-`;
+> Full syntax: ${REPO}/blob/master/docs/FILE_FORMAT.md`,
+  fr: `# Survival Shelf
 
-const SECTION_DEFAULTS: Record<SectionName, SectionLayout> = {
-  settings: { heading: 'Settings', before: '', after: '', table: null },
+> Fichier de données de [Survival Shelf](${REPO}).
+> Tu peux le modifier avec n'importe quel éditeur de texte : garde les titres \`## Section\` et les lignes d'en-tête des tableaux.
+> Les dates s'écrivent \`AAAA-MM-JJ\`, ou \`AAAA-MM\` pour « fin de ce mois ». Les décimales prennent une virgule.
+> Syntaxe complète : ${REPO}/blob/master/docs/FILE_FORMAT.fr.md`,
+};
+
+/** Section titles written by the app. */
+export const SECTION_HEADINGS: Record<SectionName, Translated> = {
+  settings: { en: 'Settings', fr: 'Paramètres' },
+  products: { en: 'Products', fr: 'Produits' },
+  stock: { en: 'Stock', fr: 'Stock' },
+  log: { en: 'Log', fr: 'Journal' },
+};
+
+/** Help comments written under the section titles. */
+export const SECTION_COMMENTS: Record<SectionName, Translated> = {
+  settings: { en: '', fr: '' },
   products: {
-    heading: 'Products',
-    before:
-      '<!-- One row per product. Kcal and Water are per unit. Daily use sets what each tier needs, Target is a minimum to own. Per: person, household, cat or dog. -->',
-    after: '',
-    table: null,
+    en: '<!-- One row per product. Kcal and Water are per unit. Daily use sets what each tier needs, Target is a minimum to own. Per: person, household, cat or dog. -->',
+    fr: '<!-- Une ligne par produit. Kcal et Eau sont par unité. Conso/jour fixe ce qu’il faut pour chaque palier, Objectif est un minimum à avoir. Par : personne, foyer, chat ou chien. -->',
   },
   stock: {
-    heading: 'Stock',
-    before: '<!-- One row per lot: same product, same expiry date, same location. -->',
-    after: '',
-    table: null,
+    en: '<!-- One row per lot: same product, same expiry date, same location. -->',
+    fr: '<!-- Une ligne par lot : même produit, même date de péremption, même emplacement. -->',
   },
   log: {
-    heading: 'Log',
-    before: '<!-- What was consumed or discarded. Action is "consumed" or "discarded". -->',
-    after: '',
-    table: null,
+    en: '<!-- What was consumed or discarded. Action is "consumed" or "discarded". -->',
+    fr: '<!-- Ce qui a été consommé ou jeté. Action vaut « consommé » ou « jeté ». -->',
   },
 };
 
-export function defaultSectionLayout(name: SectionName): SectionLayout {
-  return { ...SECTION_DEFAULTS[name] };
+/** The text written by the app in `lang` when `text` is one of its default texts, in any language. */
+export function translateDefault(text: string, defaults: Translated, lang: Lang): string {
+  const trimmed = text.trim();
+  return LANGS.some((candidate) => defaults[candidate] !== '' && defaults[candidate].trim() === trimmed)
+    ? defaults[lang]
+    : text;
 }
 
-export function defaultLayout(): Layout {
+export function defaultSectionLayout(name: SectionName, lang: Lang = 'en'): SectionLayout {
+  return { heading: SECTION_HEADINGS[name][lang], before: SECTION_COMMENTS[name][lang], after: '', table: null };
+}
+
+export function defaultLayout(lang: Lang = 'en'): Layout {
   return {
-    blocks: [{ type: 'raw', text: DEFAULT_PREAMBLE.trim() }, ...SECTION_ORDER.map((name) => ({ type: 'section' as const, name }))],
-    sections: Object.fromEntries(SECTION_ORDER.map((name) => [name, defaultSectionLayout(name)])),
+    blocks: [{ type: 'raw', text: DEFAULT_PREAMBLE[lang] }, ...SECTION_ORDER.map((name) => ({ type: 'section' as const, name }))],
+    sections: Object.fromEntries(SECTION_ORDER.map((name) => [name, defaultSectionLayout(name, lang)])),
     settingsLabels: {},
   };
 }
 
-export function emptyShelf(): Shelf {
+/** A new, empty stock written in `lang`. */
+export function emptyShelf(lang: Lang = 'en'): Shelf {
   return {
-    settings: defaultSettings(),
+    settings: { ...defaultSettings(), lang },
     settingsExtra: [],
     products: [],
     lots: [],
     log: [],
-    layout: defaultLayout(),
+    layout: defaultLayout(lang),
   };
 }

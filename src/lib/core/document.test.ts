@@ -152,11 +152,11 @@ Beans | can | red \\| white
       ['Savon', 0.03, 'person', null],
     ]);
     expect(issues).toEqual([{ level: 'warning', line: 15, code: 'invalidPer', params: { value: 'everyone' } }]);
-    const text = serializeShelf(shelf);
-    expect(text).toContain('| Paliers                    | 3, 7, 90 |');
-    expect(text).toContain('| Rendez-vous                | monthly  |');
-    expect(text).toContain('| Croquettes | kg    | 0.06       | household |          |');
-    expect(text).toContain('| Lampe      | pièce |            | person    | 1        |');
+    const text = serializeShelf({ ...shelf, settings: { ...shelf.settings, lang: 'fr' } });
+    expect(text).toMatch(/\| Paliers +\| 3, 7, 90 \|/);
+    expect(text).toMatch(/\| Rendez-vous +\| mensuel +\|/);
+    expect(text).toMatch(/\| Croquettes \| kg +\| 0,06 +\| foyer +\| +\|/);
+    expect(text).toMatch(/\| Lampe +\| pièce +\| +\| personne +\| 1 +\|/);
     expect(parseShelf(text).shelf.products).toEqual(shelf.products);
   });
 
@@ -176,13 +176,18 @@ Beans | can | red \\| white
 | Croquettes chat | kg | 0,06 | chat |
 | Litière | kg | 0,4 | Chats |
 | Croquettes chien | kg | 0,3 | dog |
-`);
+`, { lang: 'fr' });
     expect(issues).toEqual([]);
     expect([shelf.settings.people, shelf.settings.cats, shelf.settings.dogs]).toEqual([2, 2, 1]);
     expect(shelf.products.map((p) => p.per)).toEqual(['cat', 'cat', 'dog']);
     const text = serializeShelf(shelf);
     expect(text).toMatch(/\| Chats +\| 2 +\|/);
-    expect(text).toMatch(/\| Croquettes chien +\| kg +\| 0\.3 +\| dog +\|/);
+    expect(text).toMatch(/\| Chiens +\| 1 +\|/);
+    expect(text).toMatch(/\| Croquettes chien +\| kg +\| 0,3 +\| chien +\|/);
+    expect(text).toMatch(/\| Litière +\| kg +\| 0,4 +\| chat +\|/);
+    const english = serializeShelf({ ...shelf, settings: { ...shelf.settings, lang: 'en' } });
+    expect(english).toMatch(/\| Cats +\| 2 +\|/);
+    expect(english).toMatch(/\| Croquettes chien +\| kg +\| 0\.3 +\| dog +\|/);
     expect(parseShelf(text).shelf.settings).toEqual(shelf.settings);
     expect(parseShelf(text).shelf.products).toEqual(shelf.products);
   });
@@ -192,8 +197,9 @@ Beans | can | red \\| white
     expect(['quarterly', 'Trimestriel', 'trimestre', '3 mois'].map(rhythmOf)).toEqual(Array(4).fill('quarterly'));
     expect(['semiannual', 'Semestriel', '6 mois', 'half-year', '6 months'].map(rhythmOf)).toEqual(Array(5).fill('semiannual'));
 
-    const { shelf } = parseShelf('## Réglages\n\n| Réglage | Valeur |\n|---|---|\n| Rendez-vous | 6 mois |\n');
-    expect(serializeShelf(shelf)).toMatch(/\| Rendez-vous +\| semiannual +\|/);
+    const { shelf } = parseShelf('## Réglages\n\n| Réglage | Valeur |\n|---|---|\n| Rendez-vous | 6 mois |\n', { lang: 'fr' });
+    expect(serializeShelf(shelf)).toMatch(/\| Rendez-vous +\| semestriel +\|/);
+    expect(serializeShelf({ ...shelf, settings: { ...shelf.settings, lang: 'en' } })).toMatch(/\| Check-in +\| semiannual +\|/);
   });
 
   it('keeps the default tiers when the setting is invalid', () => {
@@ -245,8 +251,8 @@ describe('serializeShelf', () => {
   });
 
   it('writes a complete commented template for a new shelf', () => {
-    const text = serializeShelf(emptyShelf());
-    expect(text).toMatchSnapshot();
+    expect(serializeShelf(emptyShelf('en'))).toMatchSnapshot();
+    expect(serializeShelf(emptyShelf('fr'))).toMatchSnapshot();
   });
 
   it('adds an optional column back only when a row uses it', () => {
@@ -267,5 +273,91 @@ describe('serializeShelf', () => {
     const text = serializeShelf(shelf);
     expect(text).toContain('A \\| B');
     expect(parseShelf(text).shelf.products[0]).toMatchObject({ name: 'A | B', notes: 'line 1 line 2' });
+  });
+});
+
+describe('file language', () => {
+  function sampleShelf(lang: 'en' | 'fr') {
+    const shelf = emptyShelf(lang);
+    shelf.settings.waterPerPersonPerDay = 2.5;
+    shelf.settings.rhythm = 'quarterly';
+    shelf.products.push(
+      { ...emptyProduct('Riz'), category: 'grains', unit: 'kg', kcal: 3600, daily: 0.08 },
+      { ...emptyProduct('Filtre'), category: 'water-treatment', unit: 'pièce', water: 1500, per: 'household', target: 1 },
+      { ...emptyProduct('Bougies'), category: 'Mes trucs', unit: 'pièce' },
+    );
+    shelf.lots.push({ id: 'a', product: 'Riz', qty: 2.5, expires: '2027-03', location: 'Cave', added: '2026-11-01', extra: {} });
+    shelf.log.push(
+      { date: '2026-11-02', product: 'Riz', qty: 0.2, action: 'consumed', note: '', extra: {} },
+      { date: '2026-11-03', product: 'Riz', qty: 1, action: 'discarded', note: '', extra: {} },
+    );
+    return shelf;
+  }
+
+  it('writes titles, headers, labels, values and decimals in French', () => {
+    const text = serializeShelf(sampleShelf('fr'));
+    expect(text).toContain('> Fichier de données de [Survival Shelf]');
+    expect(text).toContain('docs/FILE_FORMAT.fr.md');
+    for (const heading of ['## Paramètres', '## Produits', '## Stock', '## Journal']) expect(text).toContain(heading);
+    expect(text).toMatch(/\| Paramètre +\| Valeur +\|/);
+    expect(text).toMatch(/\| Langue +\| fr +\|/);
+    expect(text).toMatch(/\| Eau L par personne par jour \| 2,5 +\|/);
+    expect(text).toMatch(/\| Rendez-vous +\| trimestriel +\|/);
+    expect(text).toMatch(/\| Produit +\| Catégorie +\| Unité +\| Kcal\/unité \| Eau L\/unité \| Conso\/jour \| Par +\| Objectif \|/);
+    expect(text).toMatch(/\| Riz +\| Féculents +\| kg +\| 3600 +\| +\| 0,08 +\| personne \| +\|/);
+    expect(text).toMatch(/\| Filtre +\| Traitement de l’eau \| pièce \| +\| 1500 +\| +\| foyer +\| 1 +\|/);
+    expect(text).toMatch(/\| Bougies +\| Mes trucs +\|/);
+    expect(text).toMatch(/\| Produit \| Quantité \| Péremption \| Emplacement \| Ajouté +\|/);
+    expect(text).toMatch(/\| Riz +\| 2,5 +\| 2027-03 +\| Cave +\| 2026-11-01 \|/);
+    expect(text).toMatch(/\| 2026-11-02 \| Riz +\| 0,2 +\| consommé \|/);
+    expect(text).toMatch(/\| 2026-11-03 \| Riz +\| 1 +\| jeté +\|/);
+    expect(text).not.toMatch(/Settings|Products|Category|consumed|household/);
+  });
+
+  it('reads a file in any language, whatever the language of the app', () => {
+    for (const lang of ['en', 'fr'] as const) {
+      const shelf = sampleShelf(lang);
+      const text = serializeShelf(shelf);
+      const other = lang === 'en' ? 'fr' : 'en';
+      const again = parseShelf(text, { lang: other });
+      expect(again.issues).toEqual([]);
+      expect(again.shelf.settings).toEqual(shelf.settings);
+      expect(again.shelf.products).toEqual(shelf.products);
+      expect(again.shelf.lots.map(({ id: _id, ...lot }) => lot)).toEqual(shelf.lots.map(({ id: _id, ...lot }) => lot));
+      expect(again.shelf.log).toEqual(shelf.log);
+      expect(serializeShelf(again.shelf)).toBe(text);
+    }
+  });
+
+  it('translates what the app wrote and keeps what the user wrote', () => {
+    const { shelf } = parseShelf(SAMPLE);
+    const english = serializeShelf(shelf);
+    const french = serializeShelf({ ...shelf, settings: { ...shelf.settings, lang: 'fr' } });
+    expect(french).toContain('# My stock\n\nSome notes about my cellar.');
+    expect(french).toContain('## Paramètres');
+    expect(french).toMatch(/\| Personnes +\| 4 +\|/);
+    expect(french).toMatch(/\| Favourite colour +\| green +\|/);
+    expect(french).toMatch(/\| Produit +\| Catégorie \| Unité \| Kcal\/unité \| Eau L\/unité \| Objectif \| Brand +\|/);
+    expect(french).toContain('<!-- one row per lot -->');
+    expect(french).toContain('Text after the table.');
+    expect(french).toContain('## Recipes\n\nKeep this section as is.');
+    expect(french).toContain('## Journal\n\n<!-- Ce qui a été consommé ou jeté.');
+    // Back to English gives the same file.
+    const back = parseShelf(french).shelf;
+    expect(back.settings.lang).toBe('fr');
+    expect(serializeShelf({ ...back, settings: { ...back.settings, lang: 'en' } })).toBe(english);
+  });
+
+  it('reads the language setting, or falls back to the given language', () => {
+    const langOf = (row: string, lang?: 'en' | 'fr') =>
+      parseShelf(`## Settings\n\n| Setting | Value |\n|---|---|\n${row}\n`, { lang }).shelf.settings.lang;
+    expect(langOf('| Langue | fr |')).toBe('fr');
+    expect(langOf('| Language | Français |')).toBe('fr');
+    expect(langOf('| Language | English |', 'fr')).toBe('en');
+    expect(langOf('| People | 2 |', 'fr')).toBe('fr');
+    expect(langOf('| People | 2 |')).toBe('en');
+    const { shelf, issues } = parseShelf('## Settings\n\n| Setting | Value |\n|---|---|\n| Language | Klingon |\n', { lang: 'fr' });
+    expect(shelf.settings.lang).toBe('fr');
+    expect(issues.map((issue) => issue.code)).toEqual(['invalidSetting']);
   });
 });
