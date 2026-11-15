@@ -230,8 +230,9 @@ la corriger peut aider quelqu’un d’autre.
 ## Contribuer
 
 Survival Shelf est un projet perso ouvert à toutes les aides : signale un bug ou propose une idée dans les
-[issues](https://github.com/sylvaindeloux/survival-shelf/issues), traduis l’appli dans ta langue, ou améliore
-le code. Tout est expliqué dans [CONTRIBUTING.md](.github/CONTRIBUTING.md) (en anglais).
+[issues](https://github.com/sylvaindeloux/survival-shelf/issues), [traduis l’appli](.github/TRANSLATING.md)
+dans ta langue (guide en anglais), ou améliore le code. Tout est expliqué dans
+[CONTRIBUTING.md](.github/CONTRIBUTING.md) (en anglais).
 
 ## Licence
 

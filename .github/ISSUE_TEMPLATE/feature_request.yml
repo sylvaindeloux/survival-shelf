@@ -1,0 +1,37 @@
+name: Idea / Idée
+description: Suggest a feature or an improvement. / Propose une fonctionnalité ou une amélioration.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Write in English or French. / Tu peux écrire en français.
+        Ideas are discussed here first: please wait until we agree on the approach before writing code. /
+        On en discute ici d'abord : attends qu'on soit d'accord sur l'approche avant de coder.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does it solve? / Quel problème ça résout ?
+      description: Describe the situation, not the solution yet. / Décris la situation, pas encore la solution.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea / Ton idée
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Other options you thought of / Autres pistes envisagées
+  - type: checkboxes
+    id: principles
+    attributes:
+      label: Project principles / Principes du projet
+      description: Survival Shelf must keep working in an emergency. / L'appli doit marcher en situation d'urgence.
+      options:
+        - label: It works with no internet, no server and no account. / Ça marche sans internet, sans serveur et sans compte.
+          required: true
+        - label: The data stays in one Markdown file readable without the app. / Les données restent dans un seul fichier Markdown lisible sans l'appli.
+          required: true
