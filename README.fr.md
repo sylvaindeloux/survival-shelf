@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/fr/desktop.png" width="760" alt="Accueil de Survival Shelf : 9 jours d’autonomie, avancement de chaque palier, rendez-vous du mois et alertes de péremption">
+  <img src="docs/screenshots/fr/desktop.png" width="760" alt="Accueil de Survival Shelf : les choses à faire, combien de temps le foyer peut tenir chez lui, les sacs d’évacuation et les infos d’urgence">
 </p>
 
 ## Pourquoi
@@ -39,7 +39,8 @@ pouvoir tenir seul au moins 72 heures.
 
 Survival Shelf s’occupe de tout ça. Dis-lui qui vit avec toi, il te fait une liste de courses. Dis-lui ce que
 tu as acheté, il suit les dates. Une fois par mois, il te dit quoi manger, quoi jeter, quoi remplacer et
-quoi acheter ensuite.
+quoi acheter ensuite. Il te prépare aussi pour le jour où ça arrive : les infos d’urgence de ton foyer, un sac
+d’évacuation par personne et un mode crise.
 
 ## Comment ça marche
 
@@ -59,18 +60,18 @@ quelques outils. Décoche ce qui ne te convient pas et ajuste les quantités.
 
 Personne n’achète un an de nourriture le premier jour. L’appli découpe l’objectif en paliers : **3 jours,
 1 semaine, 1 mois et 1 an** (tu peux les changer). Pour chaque palier, elle te montre où tu en es et ce qui
-manque encore. Au-delà d’un mois, stocker toute ton eau n’est pas réaliste : un filtre à eau ou des pastilles
-de purification prennent le relais.
+manque encore, produit par produit. Au-delà d’un mois, stocker toute ton eau n’est pas réaliste : un filtre à
+eau ou des pastilles de purification prennent le relais.
 
 <p align="center">
-  <img src="docs/screenshots/fr/home.png" width="260" alt="Accueil : jours d’autonomie, limités par l’eau, et avancement de chaque palier">
-  <img src="docs/screenshots/fr/plan-dark.png" width="260" alt="Mon plan, thème sombre : besoins du foyer et eau par palier">
+  <img src="docs/screenshots/fr/home.png" width="260" alt="Accueil : les choses à faire, les jours que le foyer peut tenir chez lui, limités par l’eau, et l’avancement du palier en cours">
+  <img src="docs/screenshots/fr/food-dark.png" width="260" alt="Vivres, thème sombre : ce qui manque à chaque produit pour le palier 1 mois">
 </p>
 
 ### 3. Note ce que tu ranges
 
 Quand tu fais tes courses, ajoute chaque produit avec sa quantité, sa date de péremption et l’endroit où tu le
-ranges (cellier, cuisine, sac 72 h…). Pas de date sur l’emballage ? L’appli en estime une à partir des
+ranges (cellier, cuisine, sac d’évacuation…). Pas de date sur l’emballage ? L’appli en estime une à partir des
 [durées de conservation](docs/SHELF_LIFE.md) habituelles (page en anglais). Des pastilles de couleur montrent
 ce qui périme bientôt, et l’appli te dit combien de jours ton foyer pourrait tenir avec ce que tu as, en
 nourriture et en eau.
@@ -80,7 +81,7 @@ mesure ; les **consommables** (piles, gaz, médicaments, hygiène…), remplacé
 **matériel** (outils, lampes, réchaud…), juste prêt ou manquant.
 
 <p align="center">
-  <img src="docs/screenshots/fr/stock.png" width="260" alt="Stock en trois rayons : vivres, consommables et matériel">
+  <img src="docs/screenshots/fr/stock.png" width="260" alt="Le stock en trois rayons, ici les consommables : ce qu’il faut remplacer d’abord, puis chaque produit face à son objectif">
 </p>
 
 ### 4. Une fois par mois, un rendez-vous de 5 minutes
@@ -95,16 +96,41 @@ Une seule liste, en quatre parties :
   quotidien, puis mets-en des neufs sur l’étagère.
 - **À acheter** : ce qui manque encore au palier que tu construis, rangé par rayon.
 
+Le moment venu, la liste te rappelle aussi de relire les infos d’urgence avec ton foyer et de vérifier chaque
+sac d’évacuation.
+
 Coche au fur et à mesure, partage ou copie la liste pour tes courses. L’appli peut mettre un rappel récurrent
 dans ton agenda (iPhone, Google, Outlook…) pour ne pas oublier. Tu préfères tous les 3 ou 6 mois ? C’est toi
 qui vois.
 
 <p align="center">
-  <img src="docs/screenshots/fr/checkin.png" width="260" alt="Ce mois-ci : à jeter, à manger, à remplacer, à acheter">
+  <img src="docs/screenshots/fr/checkin.png" width="260" alt="La liste À faire, le plus urgent en haut : à jeter, à manger, à remplacer, à acheter">
 </p>
 
 Et pour le jour où il n’y a plus de courant : imprime ton inventaire, avec de la place pour noter ce que tu
 prends.
+
+### 5. Prépare-toi pour le jour où ça arrive
+
+L’onglet **Urgence**, c’est là que tu te prépares à l’avance, et ce que tu ouvres le jour même.
+
+- **Infos d’urgence** : le plan de ton foyer, au même endroit : numéros d’urgence, contact éloigné, lieux de
+  rendez-vous, qui fait quoi, comment couper le gaz, l’eau et l’électricité, traitements et allergies de
+  chacun. La fiche [Préparer un plan pour le foyer](guides/fr/les-bases/preparer-un-plan-pour-le-foyer.md)
+  t’aide à le préparer avec ton foyer. Imprime-le, et relis-le tous les 6 mois.
+- **Sacs d’évacuation** : un sac par personne, prêt à attraper s’il faut partir. La liste suit la fiche
+  [Préparer un sac d’évacuation](guides/fr/les-bases/preparer-un-sac-d-evacuation.md). Ce que tu ranges dans un
+  sac reste dans ton stock : l’appli surveille donc aussi ses dates, et te rappelle de vérifier chaque sac une
+  fois par an.
+- **Mode crise** : un bouton, et l’accueil ne montre plus que l’essentiel : combien de jours tu peux tenir,
+  l’eau à boire aujourd’hui, bouteille par bouteille, et quoi manger d’abord. Des raccourcis mènent au numéro
+  d’urgence, aux infos d’urgence, aux sacs et aux fiches.
+
+<p align="center">
+  <img src="docs/screenshots/fr/emergency.png" width="260" alt="L’onglet Urgence : infos d’urgence, sacs d’évacuation et le bouton pour passer en mode crise">
+  <img src="docs/screenshots/fr/bag.png" width="260" alt="Un sac d’évacuation : ce qu’il contient, ce qui manque et quand son eau et sa nourriture périment">
+  <img src="docs/screenshots/fr/crisis.png" width="260" alt="Mode crise : les jours restants, l’eau à boire aujourd’hui, bouteille par bouteille, et quoi manger d’abord">
+</p>
 
 ## Pour commencer
 
