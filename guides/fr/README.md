@@ -17,6 +17,17 @@ Les fiches sont de simples fichiers texte, rangés par thème dans ce dossier. T
 
 Pour tout récupérer d’un coup, utilise le bouton vert « Code » puis « Download ZIP » sur la page GitHub du projet : les fiches sont dans le dossier `guides`.
 
+## Les bases
+
+- [Connaître les priorités de survie](les-bases/connaitre-les-priorites-de-survie.md) : par quoi commencer quand tout s’arrête, dans l’ordre.
+- [Alerter les secours](les-bases/alerter-les-secours.md) : quel numéro appeler et quoi dire.
+- [Reconnaître les signaux d’alerte](les-bases/reconnaitre-les-signaux-d-alerte.md) : sirène, FR-Alert, vigilance météo, et quoi faire quand ils retentissent.
+- [Décider de rester ou de partir](les-bases/decider-de-rester-ou-de-partir.md) : se confiner ou évacuer, et comment faire l’un et l’autre.
+- [Préparer un plan pour le foyer](les-bases/preparer-un-plan-pour-le-foyer.md) : lieux de rendez-vous, contact éloigné, rôle de chacun.
+- [Préparer un sac d’évacuation](les-bases/preparer-un-sac-d-evacuation.md) : de quoi tenir 3 jours, prêt à emporter.
+- [Garder son calme et décider sous stress](les-bases/garder-son-calme-et-decider-sous-stress.md) : respirer, se poser, choisir une chose à la fois.
+- [Mettre ses papiers et ses contacts à l’abri](les-bases/mettre-ses-papiers-et-ses-contacts-a-l-abri.md) : copies, liste de contacts sur papier, argent liquide.
+
 ## Eau
 
 - [Calculer ses besoins en eau](eau/calculer-ses-besoins-en-eau.md) : combien de litres prévoir par personne et par jour.
@@ -28,6 +39,26 @@ Pour tout récupérer d’un coup, utilise le bouton vert « Code » puis « Dow
 - [Désinfecter l’eau](eau/desinfecter-l-eau.md) : Javel, pastilles ou soleil, avec les doses.
 - [Récupérer l’eau de pluie](eau/recuperer-l-eau-de-pluie.md) : la recueillir, et savoir à quoi elle peut servir.
 
+## Froid et chaleur
+
+- [Se protéger du froid](froid-et-chaleur/se-proteger-du-froid.md) : rester au sec, se couvrir, reconnaître l’hypothermie et les gelures.
+- [Se chauffer sans chauffage](froid-et-chaleur/se-chauffer-sans-chauffage.md) : garder une pièce chaude sans risquer l’intoxication.
+- [S’habiller contre le froid et la pluie](froid-et-chaleur/s-habiller-contre-le-froid-et-la-pluie.md) : trois couches, tête et mains couvertes, rester au sec.
+- [Dormir au chaud](froid-et-chaleur/dormir-au-chaud.md) : s’isoler du sol, se couvrir, protéger les bébés.
+- [Se protéger de la chaleur](froid-et-chaleur/se-proteger-de-la-chaleur.md) : boire, se rafraîchir, reconnaître le coup de chaleur.
+- [Rafraîchir un logement sans climatisation](froid-et-chaleur/rafraichir-un-logement-sans-climatisation.md) : fermer le jour, ouvrir la nuit, bien utiliser un ventilateur.
+- [Construire un abri de fortune](froid-et-chaleur/construire-un-abri-de-fortune.md) : choisir l’endroit, s’isoler du sol, couper le vent et la pluie.
+
+## Feu et énergie
+
+- [Allumer un feu](feu-et-energie/allumer-un-feu.md) : dehors ou dans un poêle, sans danger, et l’éteindre vraiment.
+- [S’éclairer sans électricité](feu-et-energie/s-eclairer-sans-electricite.md) : lampes à piles d’abord, bougies en dernier recours.
+- [Recharger un téléphone sans prise](feu-et-energie/recharger-un-telephone-sans-prise.md) : économiser la batterie, puis la recharger autrement.
+- [Utiliser un réchaud ou un groupe électrogène sans s’intoxiquer](feu-et-energie/utiliser-un-rechaud-ou-un-groupe-electrogene-sans-s-intoxiquer.md) : éviter le monoxyde de carbone et reconnaître ses signes.
+- [Couper le gaz, l’eau et l’électricité](feu-et-energie/couper-le-gaz-l-eau-et-l-electricite.md) : où sont les robinets et le disjoncteur, quand et comment les fermer.
+- [Stocker du combustible sans danger](feu-et-energie/stocker-du-combustible-sans-danger.md) : gaz, essence, bois, où et comment les ranger.
+- [Éteindre un début d’incendie](feu-et-energie/eteindre-un-debut-d-incendie.md) : quand essayer, comment faire, quand sortir.
+
 ## Thèmes à venir
 
-Les bases, nourriture, froid et chaleur, feu et énergie, santé et premiers secours, hygiène, communication et orientation, catastrophes, à la maison, en voiture, en extérieur, milieux hostiles.
+Nourriture, santé et premiers secours, hygiène, communication et orientation, catastrophes, à la maison, en voiture, en extérieur, milieux hostiles.

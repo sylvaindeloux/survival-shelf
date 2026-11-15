@@ -165,7 +165,7 @@ officielles.
 **[Lire les fiches](guides/fr/README.md)**
 
 <p align="center">
-  <img src="docs/screenshots/fr/guides.png" width="260" alt="La page Fiches : une recherche et la liste des fiches sur l’eau">
+  <img src="docs/screenshots/fr/guides.png" width="260" alt="La page Fiches : une recherche et les fiches classées par thème">
   <img src="docs/screenshots/fr/guide.png" width="260" alt="Une fiche : rendre l’eau potable, qui commence par son résumé">
 </p>
 
@@ -175,8 +175,8 @@ officielles.
   [`guides`](guides/) : lis-les ici sur GitHub, copie-les sur un téléphone ou une clé USB, ou imprime celles
   qui comptent pour toi.
 
-Le premier thème, l’eau, est disponible. Les autres sont en cours d’écriture : les bases, la nourriture, le
-froid et la chaleur, le feu et l’énergie, la santé et les premiers secours, l’hygiène, la communication et
+Quatre thèmes sont disponibles : les bases, l’eau, le froid et la chaleur, le feu et l’énergie. Les autres
+sont en cours d’écriture : la nourriture, la santé et les premiers secours, l’hygiène, la communication et
 l’orientation, les catastrophes, à la maison, en voiture, en extérieur et les milieux hostiles. Les fiches ne
 remplacent ni les consignes des autorités ni une formation aux premiers secours : lis
 l’[avertissement](#avertissement).
