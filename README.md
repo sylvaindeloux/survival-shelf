@@ -44,8 +44,9 @@ keeps your data in a **plain Markdown file** you can read and edit by hand.
 
 ## Your data
 
-Everything lives in one file, `survival-shelf.md`. See the [file format](docs/FILE_FORMAT.md) and a
-[complete example](examples/survival-shelf.md).
+Everything lives in one file, `survival-shelf.md`, written in the language of the app (English or French).
+See the [file format](docs/FILE_FORMAT.md) ([en français](docs/FILE_FORMAT.fr.md)) and a complete example
+[in English](examples/survival-shelf.md) or [in French](examples/survival-shelf.fr.md).
 
 | Browser                                              | How the file is kept up to date                                             |
 |------------------------------------------------------|-----------------------------------------------------------------------------|
@@ -90,7 +91,7 @@ src/
   lib/app.svelte.ts  App state: loading, saving, syncing with the linked file
   views/         Screens
 docs/            File format and screenshots
-examples/        Example data file
+examples/        Example data files (English and French)
 ```
 
 The business logic in `src/lib/core` is covered by unit tests; please add tests with your changes.
