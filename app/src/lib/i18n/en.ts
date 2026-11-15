@@ -16,6 +16,7 @@ export const en = {
   'nav.checkinQuarterly': 'This quarter',
   'nav.checkinSemiannual': 'Half-year',
   'nav.plan': 'Plan',
+  'nav.guides': 'Guides',
   'nav.settings': 'Settings',
 
   'welcome.tagline': 'Build your survival stock step by step, and never let it expire.',
@@ -32,6 +33,7 @@ export const en = {
   'welcome.demoTitle': 'Just looking',
   'welcome.demoText': 'Explore the app with a sample stock. Nothing is saved to a file.',
   'welcome.demo': 'Try with sample data',
+  'welcome.guides': 'Read the practical guides',
 
   'home.title': 'Overview',
   'home.household_one': 'household of {count} person',
@@ -319,6 +321,9 @@ export const en = {
   'settings.about': 'About',
   'settings.aboutText':
     'Survival Shelf is a free, open-source app. It needs no account and no server: your data never leaves your device.',
+  'settings.disclaimerTitle': 'Disclaimer',
+  'settings.disclaimer':
+    'Survival Shelf is a personal, volunteer project, not an official source. Its estimates (quantities, days of autonomy, shelf lives) and its guides are general information, provided as is, with no warranty: you use them at your own risk. They do not replace instructions from the authorities, professional advice or first-aid training.',
   'settings.license': 'MIT license',
   'settings.singleFile': 'Download the single-file version',
   'settings.singleFileHint': 'one HTML file that runs without installation, from a disk or a USB key.',
@@ -362,6 +367,20 @@ export const en = {
   'toast.productDeleted': '{name} deleted',
   'toast.consumed': 'Consumed: {what}',
   'toast.discarded': 'Discarded: {what}',
+
+  'guides.title': 'Practical guides',
+  'guides.intro': 'Short guides to act when things go wrong. They work offline, like the rest of the app.',
+  'guides.notice':
+    'General information, with no warranty: these guides do not replace instructions from the authorities, professional advice or first-aid training. In a life-threatening emergency, call your local emergency number (112 in Europe, 911 in North America).',
+  'guides.search': 'Search the guides',
+  'guides.results_one': '{count} guide for “{query}”',
+  'guides.results_other': '{count} guides for “{query}”',
+  'guides.noResult': 'No guide for “{query}”. Try another word.',
+  'guides.more': 'More themes are being written.',
+  'guides.all': 'All guides',
+  'guides.print': 'Print',
+  'guides.notFound': 'This guide does not exist, or not anymore.',
+  'guides.back': 'Back to the start',
 
   'print.title': 'Inventory',
   'print.rotation': 'Rotation',
