@@ -39,6 +39,15 @@ To get everything at once, use the green "Code" button then "Download ZIP" on th
 - [Disinfect water](water/disinfect-water.md): bleach, tablets or sunlight, with the doses.
 - [Collect rainwater](water/collect-rainwater.md): how to catch it, and what it can be used for.
 
+## Food
+
+- [Cook without electricity or mains gas](food/cook-without-electricity-or-mains-gas.md): eat cold first, which appliances are safe indoors, which are for outdoors only.
+- [Save the food in your fridge and freezer](food/save-the-food-in-your-fridge-and-freezer.md): doors closed, 4 hours and 48 hours, what to keep and what to throw out.
+- [Tell whether food is still safe to eat](food/tell-whether-food-is-still-safe-to-eat.md): read the dates, spot a dangerous can or jar, never taste to check.
+- [Eat without cooking](food/eat-without-cooking.md): build meals from canned and dry food, with no fire and no dishes.
+- [Ration food](food/ration-food.md): take stock, count the days, who can eat less and who must not.
+- [Keep food without a fridge](food/keep-food-without-a-fridge.md): what keeps at room temperature, how to store it, what to eat first.
+
 ## Cold and heat
 
 - [Protect yourself from the cold](cold-and-heat/protect-yourself-from-the-cold.md): stay dry, cover up, recognize hypothermia and frostbite.
@@ -94,6 +103,16 @@ To get everything at once, use the green "Code" button then "Download ZIP" on th
 - [Manage periods and diapers](hygiene/manage-periods-and-diapers.md): what to keep in reserve, when to change, how to wash and throw away.
 - [Wash clothes and dishes with little water](hygiene/wash-clothes-and-dishes-with-little-water.md): wash in basins, sanitize after a flood, dry everything.
 
+## Communication and navigation
+
+- [Get information without the internet](communication-and-navigation/get-information-without-the-internet.md): battery radio, sirens, town hall, and sorting what you hear.
+- [Reach your family when the network is overloaded](communication-and-navigation/reach-your-family-when-the-network-is-overloaded.md): short texts, an out-of-area contact, a meeting place.
+- [Call for help without a phone signal](communication-and-navigation/call-for-help-without-a-phone-signal.md): try the emergency number, then make yourself seen and heard with a whistle, a light or marks on the ground.
+- [Find your way without GPS](communication-and-navigation/find-your-way-without-gps.md): stop when you are lost, find a direction, walk from landmark to landmark.
+- [Read a map and use a compass](communication-and-navigation/read-a-map-and-use-a-compass.md): scale, contour lines, orienting the map, following a bearing.
+- [Make your phone battery last](communication-and-navigation/make-your-phone-battery-last.md): the settings to change at once, the uses to avoid.
+- [Spot rumors and false information](communication-and-navigation/spot-rumors-and-false-information.md): four questions to ask before you believe or share.
+
 ## Disasters
 
 - [Flood](disasters/flood.md): go upstairs, leave the car, and return home safely.
@@ -128,6 +147,33 @@ To get everything at once, use the green "Code" button then "Download ZIP" on th
 - [Nuclear explosion](disasters/nuclear-explosion.md): get inside, stay sheltered for at least 24 hours, listen to the radio, decontaminate.
 - [Attack by an artificial intelligence](disasters/attack-by-an-artificial-intelligence.md): a hypothetical scenario, and what protects you from a large outage or from manipulation.
 
+## At home
+
+- [Prepare your home](at-home/prepare-your-home.md): shut-off points, alarms, secured furniture, a room to shelter in, clear exits.
+- [Shelter in place at home](at-home/shelter-in-place-at-home.md): close everything, choose the room according to the danger, seal it, wait for the all-clear.
+- [Evacuate your home](at-home/evacuate-your-home.md): what to take, what to shut off, which route to follow, when to come back.
+- [Live several days without water or electricity](at-home/live-several-days-without-water-or-electricity.md): organize each day to drink, eat, keep warm and stay clean.
+- [Hold out in an apartment](at-home/hold-out-in-an-apartment.md): no elevator, no water upstairs, no flame on the balcony, neighbors helping each other.
+- [Hold out in a house](at-home/hold-out-in-a-house.md): one heated room, pipes protected from frost, generator outdoors, never into a flooded basement.
+- [Protect the most vulnerable](at-home/protect-the-most-vulnerable.md): older people, babies, sick or disabled people: what to prepare and what to watch for.
+- [Look after your pets](at-home/look-after-your-pets.md): the kit to prepare, taking them with you, what to do as a last resort.
+- [Get organized with your neighbors](at-home/get-organized-with-your-neighbors.md): know each other, spot who needs help, help each other during the crisis.
+- [Protect your home from theft during a crisis](at-home/protect-your-home-from-theft-during-a-crisis.md): lock up, stay discreet, look out for each other, take no risks.
+- [Stuck in an elevator](at-home/stuck-in-an-elevator.md): stay calm, use the alarm, never force the doors.
+
+## In the car
+
+- [Put together a car kit](in-the-car/put-together-a-car-kit.md): vest and triangle, water, blanket, flashlight, and the extras for winter and summer.
+- [Stuck in snow or cold](in-the-car/stuck-in-snow-or-cold.md): stay in the car, heat for 10 minutes every hour, make yourself visible.
+- [Breakdown or accident on the road](in-the-car/breakdown-or-accident-on-the-road.md): vest on, out on the side away from traffic, wait behind the barrier, call.
+- [Caught in a flood in your car](in-the-car/caught-in-a-flood-in-your-car.md): turn around at the water, leave the car if the water rises.
+- [Car in the water](in-the-car/car-in-the-water.md): seatbelts, windows, out at once, children first.
+- [Broken down in a remote place or in extreme heat](in-the-car/broken-down-in-a-remote-place-or-in-extreme-heat.md): stay near the car, find shade, drink, signal.
+- [Thunderstorm, high winds, wildfire or earthquake while driving](in-the-car/thunderstorm-high-winds-wildfire-or-earthquake-while-driving.md): where to stop, when to stay in the car, when to leave it.
+- [Vehicle fire or fire in a tunnel](in-the-car/vehicle-fire-or-fire-in-a-tunnel.md): stop, get out, move away, and in a tunnel walk to the emergency exit.
+- [Evacuate by car](in-the-car/evacuate-by-car.md): fill the tank, leave early, follow the indicated routes, and when the car is a trap.
+- [Sleep in your car](in-the-car/sleep-in-your-car.md): where to park, engine off, cover up, and the dangers of cold and heat.
+
 ## Coming next
 
-Food, communication and navigation, at home, in the car, outdoors, hostile environments.
+Outdoors, hostile environments.

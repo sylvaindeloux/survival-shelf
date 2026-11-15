@@ -39,6 +39,15 @@ Pour tout récupérer d’un coup, utilise le bouton vert « Code » puis « Dow
 - [Désinfecter l’eau](eau/desinfecter-l-eau.md) : Javel, pastilles ou soleil, avec les doses.
 - [Récupérer l’eau de pluie](eau/recuperer-l-eau-de-pluie.md) : la recueillir, et savoir à quoi elle peut servir.
 
+## Nourriture
+
+- [Cuisiner sans électricité ni gaz de ville](nourriture/cuisiner-sans-electricite-ni-gaz-de-ville.md) : manger froid d’abord, quels appareils utiliser dedans, lesquels seulement dehors.
+- [Sauver le contenu du frigo et du congélateur](nourriture/sauver-le-contenu-du-frigo-et-du-congelateur.md) : portes fermées, 4 heures et 48 heures, quoi garder et quoi jeter.
+- [Savoir si un aliment est encore bon](nourriture/savoir-si-un-aliment-est-encore-bon.md) : lire les dates, repérer une boîte ou un bocal dangereux, ne jamais goûter.
+- [Manger sans cuisson](nourriture/manger-sans-cuisson.md) : composer des repas avec des conserves et des produits secs, sans feu ni vaisselle.
+- [Rationner la nourriture](nourriture/rationner-la-nourriture.md) : faire l’inventaire, compter les jours, qui peut réduire sa ration et qui ne doit pas.
+- [Conserver des aliments sans frigo](nourriture/conserver-des-aliments-sans-frigo.md) : ce qui se garde à température ambiante, comment le ranger, quoi manger en premier.
+
 ## Froid et chaleur
 
 - [Se protéger du froid](froid-et-chaleur/se-proteger-du-froid.md) : rester au sec, se couvrir, reconnaître l’hypothermie et les gelures.
@@ -94,6 +103,16 @@ Pour tout récupérer d’un coup, utilise le bouton vert « Code » puis « Dow
 - [Gérer les règles et les couches](hygiene/gerer-les-regles-et-les-couches.md) : la réserve à prévoir, quand changer, comment laver et jeter.
 - [Laver le linge et la vaisselle avec peu d’eau](hygiene/laver-le-linge-et-la-vaisselle-avec-peu-d-eau.md) : laver en bassines, désinfecter après une inondation, tout faire sécher.
 
+## Communication et orientation
+
+- [S’informer sans internet](communication-et-orientation/s-informer-sans-internet.md) : radio à piles, sirènes, mairie, et trier ce que l’on entend.
+- [Joindre ses proches quand le réseau sature](communication-et-orientation/joindre-ses-proches-quand-le-reseau-sature.md) : SMS courts, contact éloigné, lieu de rendez-vous.
+- [Appeler à l’aide sans réseau](communication-et-orientation/appeler-a-l-aide-sans-reseau.md) : essayer le 112, puis se rendre visible et audible avec un sifflet, une lampe ou des signes au sol.
+- [S’orienter sans GPS](communication-et-orientation/s-orienter-sans-gps.md) : s’arrêter quand on est perdu, trouver une direction, avancer de repère en repère.
+- [Lire une carte et utiliser une boussole](communication-et-orientation/lire-une-carte-et-utiliser-une-boussole.md) : échelle, courbes de niveau, orienter la carte, suivre un cap.
+- [Faire durer la batterie de son téléphone](communication-et-orientation/faire-durer-la-batterie-de-son-telephone.md) : les réglages à faire tout de suite, les usages à éviter.
+- [Repérer les rumeurs et les fausses informations](communication-et-orientation/reperer-les-rumeurs-et-les-fausses-informations.md) : quatre questions à se poser avant de croire ou de partager.
+
 ## Catastrophes
 
 - [Inondation](catastrophes/inondation.md) : monter à l’étage, ne pas prendre la voiture, et rentrer chez soi sans danger.
@@ -128,6 +147,33 @@ Pour tout récupérer d’un coup, utilise le bouton vert « Code » puis « Dow
 - [Explosion nucléaire](catastrophes/explosion-nucleaire.md) : entrer, rester à l’abri au moins 24 heures, écouter la radio, se décontaminer.
 - [Attaque par une intelligence artificielle](catastrophes/attaque-par-une-intelligence-artificielle.md) : un scénario hypothétique, et ce qui protège d’une grande panne ou d’une manipulation.
 
+## À la maison
+
+- [Préparer son logement](a-la-maison/preparer-son-logement.md) : robinets et disjoncteur, détecteurs, meubles fixés, pièce où s’abriter, sorties dégagées.
+- [Se confiner chez soi](a-la-maison/se-confiner-chez-soi.md) : tout fermer, choisir la pièce selon le danger, calfeutrer, attendre la fin de l’alerte.
+- [Évacuer son logement](a-la-maison/evacuer-son-logement.md) : quoi emporter, quoi fermer, quelle route suivre, quand revenir.
+- [Vivre plusieurs jours sans eau ni électricité](a-la-maison/vivre-plusieurs-jours-sans-eau-ni-electricite.md) : s’organiser jour après jour pour boire, manger, se chauffer et rester propre.
+- [Tenir en appartement](a-la-maison/tenir-en-appartement.md) : ascenseur à l’arrêt, eau qui ne monte plus, pas de flamme sur le balcon, entraide entre voisins.
+- [Tenir en maison](a-la-maison/tenir-en-maison.md) : une seule pièce chauffée, tuyaux protégés du gel, groupe électrogène dehors, jamais dans une cave inondée.
+- [Protéger les plus fragiles](a-la-maison/proteger-les-plus-fragiles.md) : personnes âgées, bébés, personnes malades ou handicapées : quoi préparer et quoi surveiller.
+- [S’occuper de ses animaux](a-la-maison/s-occuper-de-ses-animaux.md) : la trousse à préparer, les emmener si tu évacues, quoi faire en dernier recours.
+- [S’organiser avec ses voisins](a-la-maison/s-organiser-avec-ses-voisins.md) : se connaître, repérer qui a besoin d’aide, s’entraider pendant la crise.
+- [Protéger son logement des vols pendant une crise](a-la-maison/proteger-son-logement-des-vols-pendant-une-crise.md) : fermer, rester discret, veiller entre voisins, ne prendre aucun risque.
+- [Coincé dans un ascenseur](a-la-maison/coince-dans-un-ascenseur.md) : garder son calme, appeler avec l’alarme, ne jamais forcer les portes.
+
+## En voiture
+
+- [Préparer le kit de la voiture](en-voiture/preparer-le-kit-de-la-voiture.md) : gilet et triangle, eau, couverture, lampe, et les ajouts pour l’hiver et l’été.
+- [Bloqué par la neige ou le froid](en-voiture/bloque-par-la-neige-ou-le-froid.md) : rester dans la voiture, chauffer 10 minutes par heure, se rendre visible.
+- [Panne ou accident sur la route](en-voiture/panne-ou-accident-sur-la-route.md) : enfiler le gilet, sortir du côté opposé à la circulation, attendre derrière la glissière, appeler.
+- [Surpris par une inondation en voiture](en-voiture/surpris-par-une-inondation-en-voiture.md) : faire demi-tour devant l’eau, quitter la voiture si l’eau monte.
+- [Voiture tombée à l’eau](en-voiture/voiture-tombee-a-l-eau.md) : ceintures, vitres, sortir tout de suite, les enfants d’abord.
+- [En panne dans un endroit isolé ou par forte chaleur](en-voiture/en-panne-dans-un-endroit-isole-ou-par-forte-chaleur.md) : rester près de la voiture, se mettre à l’ombre, boire, se signaler.
+- [Orage, tempête, feu ou séisme pendant qu’on roule](en-voiture/orage-tempete-feu-ou-seisme-pendant-qu-on-roule.md) : où s’arrêter, quand rester dans la voiture, quand la quitter.
+- [Incendie de véhicule ou dans un tunnel](en-voiture/incendie-de-vehicule-ou-dans-un-tunnel.md) : s’arrêter, sortir, s’éloigner, et dans un tunnel rejoindre à pied l’issue de secours.
+- [Évacuer en voiture](en-voiture/evacuer-en-voiture.md) : faire le plein, partir tôt, suivre les itinéraires indiqués, et les cas où la voiture est un piège.
+- [Dormir dans sa voiture](en-voiture/dormir-dans-sa-voiture.md) : où se garer, moteur coupé, se couvrir, et les dangers du froid et de la chaleur.
+
 ## Thèmes à venir
 
-Nourriture, communication et orientation, à la maison, en voiture, en extérieur, milieux hostiles.
+En extérieur, milieux hostiles.
