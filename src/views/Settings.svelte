@@ -11,10 +11,11 @@
   import X from '@lucide/svelte/icons/x';
   import { app, issueMessage } from '../lib/app.svelte';
   import { RHYTHMS } from '../lib/core/checkin';
+  import { PET_WATER_PER_DAY } from '../lib/core/defaults';
   import { updateSettings } from '../lib/core/stock';
   import { parseNumber } from '../lib/core/text';
   import type { Rhythm, Settings } from '../lib/core/types';
-  import { i18n, t, tn, type LangPreference } from '../lib/i18n/index.svelte';
+  import { formatNumber, i18n, t, tn, type LangPreference } from '../lib/i18n/index.svelte';
   import { canShareFiles } from '../lib/storage/files';
   import { RHYTHM_TEXTS, tierLabel } from '../lib/ui/format';
   import { preferences, type Theme } from '../lib/ui/state.svelte';
@@ -25,16 +26,28 @@
 
   const MAX_TIERS = 6;
 
-  type NumberSetting = 'people' | 'kcalPerPersonPerDay' | 'waterPerPersonPerDay' | 'warningDays' | 'rotationMarginDays';
-  const fields: { key: NumberSetting; label: () => string; hint: () => string; min: number; step: string }[] = [
+  type NumberSetting = 'people' | 'cats' | 'dogs' | 'kcalPerPersonPerDay' | 'waterPerPersonPerDay' | 'warningDays' | 'rotationMarginDays';
+  const householdFields: { key: NumberSetting; label: () => string; hint: () => string; min: number; step: string }[] = [
     { key: 'people', label: () => t('settings.people'), hint: () => '', min: 1, step: '1' },
+    { key: 'cats', label: () => t('settings.cats'), hint: () => '', min: 0, step: '1' },
+    { key: 'dogs', label: () => t('settings.dogs'), hint: () => '', min: 0, step: '1' },
+  ];
+  const fields: typeof householdFields = [
     { key: 'kcalPerPersonPerDay', label: () => t('settings.kcal'), hint: () => t('settings.kcalHint'), min: 1, step: '50' },
-    { key: 'waterPerPersonPerDay', label: () => t('settings.water'), hint: () => t('settings.waterHint'), min: 0, step: '0.5' },
+    { key: 'waterPerPersonPerDay', label: () => t('settings.water'), hint: waterHint, min: 0, step: '0.5' },
   ];
   const alertFields: typeof fields = [
     { key: 'warningDays', label: () => t('settings.warningDays'), hint: () => t('settings.warningDaysHint'), min: 0, step: '1' },
     { key: 'rotationMarginDays', label: () => t('settings.margin'), hint: () => t('settings.marginHint'), min: 0, step: '1' },
   ];
+
+  /** What pets drink is added to the water need: say so once there are some. */
+  function waterHint(): string {
+    const { cats, dogs } = app.shelf.settings;
+    if (cats === 0 && dogs === 0) return t('settings.waterHint');
+    const liters = { cat: formatNumber(PET_WATER_PER_DAY.cat, 2), dog: formatNumber(PET_WATER_PER_DAY.dog, 2) };
+    return `${t('settings.waterHint')} ${t('settings.petWater', liters)}`;
+  }
 
   function change(key: NumberSetting, min: number, event: Event) {
     const input = event.currentTarget as HTMLInputElement;
@@ -115,7 +128,8 @@
 
   <section class="card stack">
     <h2>{t('settings.household')}</h2>
-    <div class="grid-3">{@render numberFields(fields)}</div>
+    <div class="grid-3 household">{@render numberFields(householdFields)}</div>
+    <div class="grid-2">{@render numberFields(fields)}</div>
   </section>
 
   <section class="card stack">
@@ -282,6 +296,11 @@
 </div>
 
 <style>
+  /* People, cats and dogs: short labels, they stay on one line even on small phones. */
+  .household {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .tiers {
     list-style: none;
     margin: 0 0 0.25rem;

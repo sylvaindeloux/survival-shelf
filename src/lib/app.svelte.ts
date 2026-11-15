@@ -6,7 +6,7 @@ import { parseShelf, serializeShelf } from './core/document';
 import { menuKcal, tierPlan } from './core/plan';
 import { rotationPlan } from './core/rotation';
 import { expiryAlerts, summarizeProducts } from './core/status';
-import type { ParseIssue, Product, Shelf } from './core/types';
+import type { ParseIssue, Product, Settings, Shelf } from './core/types';
 import { demoShelf } from './demo';
 import { i18n, t, type MessageKey } from './i18n/index.svelte';
 import { idbDelete, idbGet, idbSet } from './storage/idb';
@@ -174,9 +174,9 @@ class App {
   // --- Starting -------------------------------------------------------------
 
   /** Starts a new stock from the plan chosen in the setup wizard. */
-  async startWithPlan(people: number, products: Product[]) {
+  async startWithPlan(household: Pick<Settings, 'people' | 'cats' | 'dogs'>, products: Product[]) {
     const shelf = emptyShelf();
-    shelf.settings.people = people;
+    shelf.settings = { ...shelf.settings, ...household };
     shelf.products = products;
     await this.#replace(shelf, [], { demo: false });
   }

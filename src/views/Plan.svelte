@@ -1,6 +1,8 @@
 <script lang="ts">
+  import Cat from '@lucide/svelte/icons/cat';
   import Check from '@lucide/svelte/icons/check';
   import ChevronRight from '@lucide/svelte/icons/chevron-right';
+  import Dog from '@lucide/svelte/icons/dog';
   import Droplets from '@lucide/svelte/icons/droplets';
   import Flame from '@lucide/svelte/icons/flame';
   import Plus from '@lucide/svelte/icons/plus';
@@ -47,6 +49,8 @@
     </div>
     <div class="stats">
       <span class="stat"><Users size={18} />{tn('plan.people', settings.people)}</span>
+      {#if settings.cats > 0}<span class="stat"><Cat size={18} />{tn('plan.cats', settings.cats)}</span>{/if}
+      {#if settings.dogs > 0}<span class="stat"><Dog size={18} />{tn('plan.dogs', settings.dogs)}</span>{/if}
       <span class="stat food"><Flame size={18} />{t('plan.kcalNeed', { kcal: formatKcal(settings.kcalPerPersonPerDay) })}</span>
       <span class="stat water"><Droplets size={18} />{t('plan.waterNeed', { liters: formatLiters(settings.waterPerPersonPerDay) })}</span>
     </div>
@@ -64,7 +68,7 @@
     <div class="section-title">
       <h2>💧 {t('plan.waterTitle')}</h2>
     </div>
-    <p class="small muted">{t('plan.waterText', { liters: formatLiters(dailyWater), days: STORED_WATER_DAYS })}</p>
+    <p class="small muted">{t('plan.waterText', { liters: `${formatNumber(dailyWater, 2)} L`, days: STORED_WATER_DAYS })}</p>
     <ul class="list">
       {#each app.plan.tiers as tier (tier.days)}
         {@const stored = Math.min(tier.days, STORED_WATER_DAYS) * dailyWater}
