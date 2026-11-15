@@ -34,6 +34,14 @@ export function isSeparatorRow(line: string): boolean {
   return splitRow(line).every((cell) => /^:?-+:?$/.test(cell));
 }
 
+/**
+ * Escapes a value for a table cell: newlines become spaces and `|` becomes `\|`.
+ * Backslashes are kept as typed so the file stays easy to read and edit (`C:\Docs`, not `C:\\Docs`).
+ * The round trip is still exact: `splitRow` only unescapes `\|`, from left to right, so `a\|b` is written
+ * `a\\|b` and read back as `a\|b`, and `formatTable` puts a space before every separator, so a cell ending
+ * with `\` cannot escape it. Code scanning flags the unescaped backslashes anyway: a false positive, covered
+ * by table.test.ts.
+ */
 export function escapeCell(text: string): string {
   return text.replace(/\r?\n/g, ' ').replace(/\|/g, '\\|').trim();
 }
