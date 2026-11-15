@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { LANGS } from '../core/types';
 import { buildLibrary, renderGuide } from './build';
-import { foldText, parseIndex, searchGuides } from './library';
+import { foldText, GUIDE_LANGS, guideLang, parseIndex, searchGuides } from './library';
 import { lintGuides } from './lint';
 
 // The real guides folder, at the root of the repository.
@@ -33,13 +32,13 @@ describe('the guides folder', () => {
   });
 
   it('has the same guides in every language', () => {
-    const counts = LANGS.map((lang) => parseIndex(FILES[`${lang}/README.md`]).map((theme) => theme.entries.length));
+    const counts = GUIDE_LANGS.map((lang) => parseIndex(FILES[`${lang}/README.md`]).map((theme) => theme.entries.length));
     expect(counts[0].length).toBeGreaterThan(0);
     for (const count of counts) expect(count).toEqual(counts[0]);
   });
 
   it('builds into the library the app shows', () => {
-    for (const lang of LANGS) {
+    for (const lang of GUIDE_LANGS) {
       const library = buildLibrary(FILES, lang);
       const guides = library.themes.flatMap((theme) => theme.guides);
       expect(guides.length).toBeGreaterThan(0);
@@ -102,6 +101,14 @@ describe('renderGuide', () => {
     expect(html).toContain('<blockquote class="summary">');
     expect(html).toContain('<h2>Steps</h2>');
     expect(html).toContain('<h2 class="never">Never do this</h2>');
+  });
+});
+
+describe('guideLang', () => {
+  it('falls back to English for a language without guides', () => {
+    expect(guideLang('fr')).toBe('fr');
+    expect(guideLang('de')).toBe('en');
+    expect(guideLang('')).toBe('en');
   });
 });
 

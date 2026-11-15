@@ -1,5 +1,4 @@
-import { LANGS, type Lang } from '../core/types.ts';
-import { parseIndex } from './library.ts';
+import { GUIDE_LANGS, parseIndex, type GuideLang } from './library.ts';
 
 /** What a guide must look like in one language (see guides/CONTRIBUTING.md). */
 interface GuideTemplate {
@@ -19,7 +18,7 @@ interface GuideTemplate {
   translation: RegExp;
 }
 
-export const TEMPLATES: Record<Lang, GuideTemplate> = {
+export const TEMPLATES: Record<GuideLang, GuideTemplate> = {
   en: {
     summary: '> **In short**: ',
     sections: [
@@ -79,7 +78,7 @@ export function guideTitle(markdown: string): string | null {
 }
 
 /** Id (`en/water/store-water`) of the same guide in the other language, from its last line. */
-export function guideTranslation(markdown: string, lang: Lang): { id: string; title: string } | null {
+export function guideTranslation(markdown: string, lang: GuideLang): { id: string; title: string } | null {
   const last = markdown.trimEnd().split(/\r?\n/).at(-1) ?? '';
   const match = TEMPLATES[lang].translation.exec(last);
   return match ? { id: match[2], title: match[1] } : null;
@@ -95,7 +94,7 @@ export function resolveLink(from: string, href: string): string {
   return parts.join('/');
 }
 
-function lintGuide(path: string, markdown: string, lang: Lang): string[] {
+function lintGuide(path: string, markdown: string, lang: GuideLang): string[] {
   const problems: string[] = [];
   const problem = (message: string) => problems.push(`${path}: ${message}`);
   const template = TEMPLATES[lang];
@@ -141,16 +140,16 @@ function lintGuide(path: string, markdown: string, lang: Lang): string[] {
  */
 export function lintGuides(files: Record<string, string>): string[] {
   const problems: string[] = [];
-  const guides = new Map<string, { lang: Lang; theme: string; markdown: string }>();
+  const guides = new Map<string, { lang: GuideLang; theme: string; markdown: string }>();
 
   for (const [path, markdown] of Object.entries(files)) {
     if (path === 'README.md' || path === 'CONTRIBUTING.md' || /^[a-z]{2}\/README\.md$/.test(path)) continue;
     const match = GUIDE_PATH.exec(path);
-    if (!match || !(LANGS as string[]).includes(match[1])) {
+    if (!match || !(GUIDE_LANGS as readonly string[]).includes(match[1])) {
       problems.push(`${path}: guides go in <language>/<theme>/<guide>.md, lowercase, no accents, with hyphens`);
       continue;
     }
-    const lang = match[1] as Lang;
+    const lang = match[1] as GuideLang;
     guides.set(path.slice(0, -3), { lang, theme: match[2], markdown });
     problems.push(...lintGuide(path, markdown, lang));
   }
@@ -176,7 +175,7 @@ export function lintGuides(files: Record<string, string>): string[] {
 
   // Tables of contents: every guide listed once, under the heading of its theme.
   const position = new Map<string, string>();
-  for (const lang of LANGS) {
+  for (const lang of GUIDE_LANGS) {
     const readme = files[`${lang}/README.md`];
     if (readme === undefined) {
       problems.push(`${lang}/README.md: missing table of contents`);

@@ -6,8 +6,7 @@
   import Search from '@lucide/svelte/icons/search';
   import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
   import { loadGuides } from 'virtual:guides';
-  import { LANGS, type Lang } from '../lib/core/types';
-  import { searchGuides, type Guide, type GuideLibrary, type GuideTheme } from '../lib/guides/library';
+  import { guideLang, searchGuides, type Guide, type GuideLang, type GuideLibrary, type GuideTheme } from '../lib/guides/library';
   import { i18n, t, tn } from '../lib/i18n/index.svelte';
   import { router } from '../lib/ui/state.svelte';
 
@@ -16,14 +15,15 @@
 
   // The guides are the Markdown files of the repository's guides/ folder, rendered at build time
   // and loaded one language at a time.
-  let libraries = $state.raw<Partial<Record<Lang, GuideLibrary>>>({});
+  let libraries = $state.raw<Partial<Record<GuideLang, GuideLibrary>>>({});
   let query = $state('');
 
-  // The table of contents follows the app language. An open guide is shown in its own language,
-  // so the link to its other-language version works whatever the app language.
-  const lang = $derived.by<Lang>(() => {
-    const first = router.path.split('/')[0];
-    return (LANGS as string[]).includes(first) ? (first as Lang) : i18n.lang;
+  // The table of contents follows the app language, in English when the guides do not exist in it.
+  // An open guide is shown in its own language, so the link to its other-language version works
+  // whatever the app language.
+  const lang = $derived.by<GuideLang>(() => {
+    const own = guideLang(router.path.split('/')[0]);
+    return router.path.startsWith(`${own}/`) ? own : guideLang(i18n.lang);
   });
   const library = $derived(libraries[lang]);
 
@@ -102,7 +102,7 @@
         {results.length > 0 ? tn('guides.results', results.length, { query: search }) : t('guides.noResult', { query: search })}
       </p>
       {#if results.length > 0}
-        <section class="card">
+        <section class="card" {lang}>
           <ul class="list">
             {#each results as { guide, theme } (guide.id)}
               {@render entry(guide, theme.title)}
@@ -112,7 +112,7 @@
       {/if}
     {:else if library}
       {#each library.themes as theme (theme.slug)}
-        <section class="card">
+        <section class="card" {lang}>
           <h2>{theme.title}</h2>
           <ul class="list">
             {#each theme.guides as guide (guide.id)}

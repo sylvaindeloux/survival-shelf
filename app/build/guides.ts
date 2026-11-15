@@ -1,8 +1,8 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import type { Plugin } from 'vite';
-import { LANGS, type Lang } from '../src/lib/core/types.ts';
 import { buildLibrary } from '../src/lib/guides/build.ts';
+import { GUIDE_LANGS, type GuideLang } from '../src/lib/guides/library.ts';
 
 const VIRTUAL = 'virtual:guides';
 
@@ -34,22 +34,22 @@ export function guides(root: string, options: { inline: boolean }): Plugin {
       if (id === `\0${VIRTUAL}`) {
         if (options.inline) {
           return [
-            ...LANGS.map((lang) => `import ${lang} from '${VIRTUAL}/${lang}';`),
-            `const libraries = { ${LANGS.join(', ')} };`,
+            ...GUIDE_LANGS.map((lang) => `import ${lang} from '${VIRTUAL}/${lang}';`),
+            `const libraries = { ${GUIDE_LANGS.join(', ')} };`,
             'export const loadGuides = (lang) => Promise.resolve(libraries[lang]);',
           ].join('\n');
         }
         return [
-          `const loaders = { ${LANGS.map((lang) => `${lang}: () => import('${VIRTUAL}/${lang}')`).join(', ')} };`,
+          `const loaders = { ${GUIDE_LANGS.map((lang) => `${lang}: () => import('${VIRTUAL}/${lang}')`).join(', ')} };`,
           'export const loadGuides = (lang) => loaders[lang]().then((module) => module.default);',
         ].join('\n');
       }
       if (!id.startsWith(`\0${VIRTUAL}/`)) return null;
       const lang = id.slice(VIRTUAL.length + 2);
-      if (!(LANGS as string[]).includes(lang)) throw new Error(`No guides in "${lang}"`);
+      if (!(GUIDE_LANGS as readonly string[]).includes(lang)) throw new Error(`No guides in "${lang}"`);
       const files = readGuides(root);
       for (const path of Object.keys(files)) this.addWatchFile(join(root, path));
-      return `export default ${JSON.stringify(buildLibrary(files, lang as Lang))};`;
+      return `export default ${JSON.stringify(buildLibrary(files, lang as GuideLang))};`;
     },
   };
 }

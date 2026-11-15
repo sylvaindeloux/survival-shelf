@@ -98,8 +98,9 @@ Then the few places TypeScript cannot see:
 
 - `README.de.md`, a translation of `README.md`. Add it to the language line at the top of every README.
 - `docs/FILE_FORMAT.de.md`, a translation of `docs/FILE_FORMAT.md`.
-- The practical guides in `guides/de/`, following `guides/CONTRIBUTING.md`. They are a big job: one pull
-  request per theme is fine.
+- The practical guides in [`guides/de/`](../guides/), following
+  [`guides/CONTRIBUTING.md`](../guides/CONTRIBUTING.md). They are a big job: one pull request per theme is
+  fine. Until they exist, the app shows the English guides.
 
 README screenshots are taken by a maintainer once the language is in.
 

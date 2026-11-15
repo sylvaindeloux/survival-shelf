@@ -1,6 +1,5 @@
 import { Marked, type Tokens } from 'marked';
-import type { Lang } from '../core/types.ts';
-import { parseIndex, type GuideLibrary } from './library.ts';
+import { parseIndex, type GuideLang, type GuideLibrary } from './library.ts';
 import { resolveLink, TEMPLATES } from './lint.ts';
 
 // Build-time only: turns the Markdown guides into the data of the app's Guides page.
@@ -22,7 +21,7 @@ function appRoute(from: string, href: string): string | null {
  * other links open in a new tab. `path` is the guide's path in the guides folder.
  */
 export function renderGuide(path: string, markdown: string): string {
-  const never = TEMPLATES[path.split('/')[0] as Lang]?.never;
+  const never = TEMPLATES[path.split('/')[0] as GuideLang]?.never;
   const marked = new Marked({ gfm: true });
   marked.use({
     renderer: {
@@ -47,7 +46,7 @@ export function renderGuide(path: string, markdown: string): string {
  * Builds the guides of one language, in the order of its table of contents.
  * `files` maps paths relative to the guides folder to their content.
  */
-export function buildLibrary(files: Record<string, string>, lang: Lang): GuideLibrary {
+export function buildLibrary(files: Record<string, string>, lang: GuideLang): GuideLibrary {
   const readme = files[`${lang}/README.md`];
   if (readme === undefined) throw new Error(`guides/${lang}/README.md is missing`);
   return {

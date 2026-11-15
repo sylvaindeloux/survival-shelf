@@ -1,4 +1,11 @@
-import type { Lang } from '../core/types';
+/** Languages the guides are written in. A language of the app does not have to be one of them. */
+export const GUIDE_LANGS = ['en', 'fr'] as const;
+export type GuideLang = (typeof GUIDE_LANGS)[number];
+
+/** Language to show the guides in: the wanted one when they exist in it, English otherwise. */
+export function guideLang(lang: string): GuideLang {
+  return (GUIDE_LANGS as readonly string[]).includes(lang) ? (lang as GuideLang) : 'en';
+}
 
 /** One practical guide, as the app shows it. */
 export interface Guide {
@@ -20,7 +27,7 @@ export interface GuideTheme {
 
 /** All the guides of one language, in the order of its table of contents. */
 export interface GuideLibrary {
-  lang: Lang;
+  lang: GuideLang;
   themes: GuideTheme[];
 }
 
