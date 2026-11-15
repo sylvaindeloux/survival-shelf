@@ -65,6 +65,9 @@ dans n'importe quel ordre. Les sections manquantes sont ajoutées par l'appli qu
 - **Une cellule vide** veut dire « inconnu » ou « aucun » (par exemple pas de date de péremption).
 - Un `|` dans une cellule doit s'écrire `\|`.
 - Les noms de produits sont comparés sans majuscules ni accents : `Riz` et `riz` sont le même produit.
+- **Ligne de version** : quand elle enregistre, l'appli écrit sous le titre une ligne comme
+  `_Survival Shelf v12_`, avec la version de l'appli qui a enregistré le fichier. Elle est juste informative :
+  l'appli l'ignore à la lecture et la réécrit à chaque enregistrement.
 
 ## Paramètres
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { parseShelf, serializeShelf } from './document';
+import { parseShelf, sameContent, serializeShelf } from './document';
 import { emptyShelf } from './defaults';
 import { emptyProduct } from './stock';
 
@@ -253,6 +253,38 @@ describe('serializeShelf', () => {
   it('writes a complete commented template for a new shelf', () => {
     expect(serializeShelf(emptyShelf('en'))).toMatchSnapshot();
     expect(serializeShelf(emptyShelf('fr'))).toMatchSnapshot();
+  });
+
+  it('writes the app version under the title and reads it back without keeping it', () => {
+    const text = serializeShelf(emptyShelf(), '12');
+    expect(text.startsWith('# Survival Shelf\n\n_Survival Shelf v12_\n\n> Data file of')).toBe(true);
+    const again = parseShelf(text);
+    expect(again.shelf.layout.blocks[0]).toEqual(emptyShelf().layout.blocks[0]);
+    // Saved by a newer version: the line is replaced, never duplicated.
+    const newer = serializeShelf(again.shelf, '13');
+    expect(newer).toBe(text.replace('v12', 'v13'));
+    expect(sameContent(text, newer)).toBe(true);
+    expect(sameContent(text, newer.replace('| People', '| Persons'))).toBe(false);
+  });
+
+  it('keeps the same version line in French, and still translates the preamble', () => {
+    const text = serializeShelf(emptyShelf('fr'), '12');
+    expect(text.startsWith('# Survival Shelf\n\n_Survival Shelf v12_\n\n> Fichier de données de')).toBe(true);
+    const shelf = parseShelf(text).shelf;
+    expect(serializeShelf(shelf, '12')).toBe(text);
+    shelf.settings.lang = 'en';
+    expect(serializeShelf(shelf, '12').startsWith('# Survival Shelf\n\n_Survival Shelf v12_\n\n> Data file of')).toBe(true);
+  });
+
+  it('puts the app version at the top when the file has no title', () => {
+    const { shelf } = parseShelf('Notes first.\n\n## Stock\n\n| Product | Qty |\n|---|---|\n| Rice | 1 |\n');
+    const text = serializeShelf(shelf, '5');
+    expect(text.startsWith('_Survival Shelf v5_\n\nNotes first.\n\n## Stock')).toBe(true);
+    expect(serializeShelf(parseShelf(text).shelf, '5')).toBe(text);
+
+    const bare = serializeShelf(parseShelf('## Stock\n\n| Product | Qty |\n|---|---|\n| Rice | 1 |\n').shelf, '5');
+    expect(bare.startsWith('_Survival Shelf v5_\n\n## Stock')).toBe(true);
+    expect(serializeShelf(parseShelf(bare).shelf, '5')).toBe(bare);
   });
 
   it('adds an optional column back only when a row uses it', () => {

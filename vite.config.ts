@@ -1,12 +1,28 @@
 /// <reference types="vitest/config" />
 import { svelte } from '@sveltejs/vite-plugin-svelte';
+import { execFileSync } from 'node:child_process';
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import { inlineSingleFile } from './build/inline-single-file.ts';
-import pkg from './package.json' with { type: 'json' };
 
 const THEME_COLOR = '#4b5320';
+
+/**
+ * App version: a plain integer that grows by itself, the number of commits on the first-parent
+ * line of HEAD. On master that is +1 for every merged pull request (merge or squash).
+ * "dev" when git is missing or the clone is shallow, which would give a wrong count.
+ */
+function appVersion(): string {
+  const git = (...args: string[]) =>
+    execFileSync('git', args, { cwd: import.meta.dirname, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+  try {
+    if (git('rev-parse', '--is-shallow-repository') !== 'false') return 'dev';
+    return git('rev-list', '--count', '--first-parent', 'HEAD');
+  } catch {
+    return 'dev';
+  }
+}
 const BACKGROUND_COLOR = '#ebeadf';
 
 export default defineConfig(({ mode }) => {
@@ -16,7 +32,7 @@ export default defineConfig(({ mode }) => {
     // Relative paths: works on GitHub Pages, any sub-folder, and from file://.
     base: './',
     define: {
-      __APP_VERSION__: JSON.stringify(pkg.version),
+      __APP_VERSION__: JSON.stringify(appVersion()),
     },
     publicDir: single ? false : 'public',
     plugins: [

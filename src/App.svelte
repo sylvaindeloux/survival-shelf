@@ -91,7 +91,10 @@
           </a>
         {/each}
       </nav>
-      <div class="sidebar-foot">{@render fileChip()}</div>
+      <div class="sidebar-foot">
+        {@render fileChip()}
+        <p class="app-version">v{__APP_VERSION__}</p>
+      </div>
     </aside>
 
     <header class="topbar">
@@ -342,6 +345,13 @@
 
     .sidebar-foot {
       margin-top: auto;
+    }
+
+    .app-version {
+      margin: 0.75rem 0 0;
+      padding: 0 0.85rem;
+      font-size: 0.75rem;
+      color: var(--muted);
     }
   }
 </style>
