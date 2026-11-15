@@ -26,7 +26,7 @@ export const fr: Record<keyof typeof en, string> = {
   'welcome.private': 'Rien ne quitte ton appareil',
   'welcome.newTitle': 'Démarrer mon stock',
   'welcome.newText':
-    'Deux questions et tu obtiens un plan de départ : quoi acheter pour tenir 1 semaine, puis 1 mois, puis 1 an.',
+    'Deux questions et tu obtiens un plan de départ : quoi acheter pour tenir 3 jours, puis 1 semaine, 1 mois et 1 an.',
   'welcome.start': 'C’est parti',
   'welcome.openTitle': 'J’ai déjà un fichier',
   'welcome.openText': 'Ouvre ton fichier survival-shelf.md : tes modifications y seront enregistrées automatiquement.',

@@ -168,7 +168,7 @@ function numberSetting(field: keyof Settings, label: string, aliases: string[], 
   };
 }
 
-/** "7, 30, 365": positive whole numbers of days, any separator. */
+/** "3, 7, 30, 365": positive whole numbers of days, any separator. */
 export function parseTiers(text: string): number[] | undefined {
   const parts = text.split(/[\s,;/]+/).filter((part) => part !== '');
   const days = parts.map((part) => parseNumber(part));

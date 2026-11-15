@@ -177,6 +177,7 @@ describe('plan and tiers', () => {
     shelf = addLot(shelf, { product: 'Matches', qty: 2, expires: '', location: '' }, TODAY);
     const plan = tierPlan(shelf, computeAutonomy(shelf, TODAY), TODAY);
     expect(plan.tiers.map((tier) => [tier.days, tier.complete])).toEqual([
+      [3, true],
       [7, true],
       [30, false],
       [365, false],
@@ -200,7 +201,7 @@ describe('check-in', () => {
     expect(week.periodDays).toBe(7);
     expect(week.discard.map((lot) => lot.product)).toEqual(['Water']);
     expect(week.consume.map((item) => [item.product.name, item.qty])).toEqual([['Rice', 1]]);
-    expect(week.buy?.days).toBe(7);
+    expect(week.buy?.days).toBe(3); // Not even 3 days of water: the expired lot does not count.
 
     shelf.settings.rhythm = 'monthly';
     const month = checkIn(shelf, TODAY, rotationPlan(shelf, TODAY), plan.current);

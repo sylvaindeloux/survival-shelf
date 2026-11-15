@@ -176,9 +176,15 @@ Beans | can | red \\| white
 | Tiers (days) | 7, one month |
 | Check-in | daily |
 `);
-    expect(shelf.settings.tiers).toEqual([7, 30, 365]);
+    expect(shelf.settings.tiers).toEqual([3, 7, 30, 365]);
     expect(shelf.settings.rhythm).toBe('weekly');
     expect(issues.map((issue) => issue.code)).toEqual(['invalidSetting', 'invalidSetting']);
+  });
+
+  it("keeps a file's own tiers, even the former defaults", () => {
+    const { shelf } = parseShelf('## Settings\n\n| Setting | Value |\n|---|---|\n| Tiers (days) | 7, 30, 365 |\n');
+    expect(shelf.settings.tiers).toEqual([7, 30, 365]);
+    expect(serializeShelf(shelf)).toMatch(/\| Tiers \(days\) +\| 7, 30, 365 +\|/);
   });
 
   it('returns a default shelf for an empty file', () => {
@@ -193,7 +199,7 @@ describe('serializeShelf', () => {
     const { shelf } = parseShelf(SAMPLE);
     const text = serializeShelf(shelf);
     expect(text).toContain('# My stock\n\nSome notes about my cellar.');
-    expect(text).toContain('| Favourite colour           | green      |');
+    expect(text).toContain('| Favourite colour           | green         |');
     expect(text).toContain('| Brand        |');
     expect(text).toContain('<!-- one row per lot -->');
     expect(text).toContain('Text after the table.');

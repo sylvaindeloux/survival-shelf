@@ -24,7 +24,8 @@ export const en = {
   'welcome.file': 'Your data in a simple text file',
   'welcome.private': 'Nothing leaves your device',
   'welcome.newTitle': 'Start my stock',
-  'welcome.newText': 'Two questions and you get a starter plan: what to buy to last 1 week, then 1 month, then 1 year.',
+  'welcome.newText':
+    'Two questions and you get a starter plan: what to buy to last 3 days, then 1 week, 1 month and 1 year.',
   'welcome.start': 'Start',
   'welcome.openTitle': 'I already have a file',
   'welcome.openText': 'Open your survival-shelf.md file: changes will be saved into it automatically.',
