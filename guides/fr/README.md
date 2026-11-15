@@ -59,6 +59,41 @@ Pour tout récupérer d’un coup, utilise le bouton vert « Code » puis « Dow
 - [Stocker du combustible sans danger](feu-et-energie/stocker-du-combustible-sans-danger.md) : gaz, essence, bois, où et comment les ranger.
 - [Éteindre un début d’incendie](feu-et-energie/eteindre-un-debut-d-incendie.md) : quand essayer, comment faire, quand sortir.
 
+## Santé et premiers secours
+
+- [Protéger, alerter, secourir](sante-et-premiers-secours/proteger-alerter-secourir.md) : les trois réflexes face à un accident, dans l’ordre.
+- [Arrêter une hémorragie](sante-et-premiers-secours/arreter-une-hemorragie.md) : appuyer fort sur la plaie, et quand poser un garrot.
+- [Personne inconsciente qui respire](sante-et-premiers-secours/personne-inconsciente-qui-respire.md) : libérer le passage de l’air, la tourner sur le côté, surveiller sa respiration.
+- [Arrêt cardiaque](sante-et-premiers-secours/arret-cardiaque.md) : appeler, masser, utiliser un défibrillateur, pour un adulte, un enfant ou un bébé.
+- [Étouffement](sante-et-premiers-secours/etouffement.md) : claques dans le dos et compressions, pour un adulte, un enfant ou un bébé.
+- [Brûlures](sante-et-premiers-secours/brulures.md) : refroidir sous l’eau, couvrir, savoir quand appeler.
+- [Plaies et infections](sante-et-premiers-secours/plaies-et-infections.md) : nettoyer, couvrir, surveiller les signes d’infection.
+- [Fractures et entorses](sante-et-premiers-secours/fractures-et-entorses.md) : caler sans redresser, mettre du froid, savoir quand appeler.
+- [Hypothermie et gelures](sante-et-premiers-secours/hypothermie-et-gelures.md) : réchauffer doucement, et ce qu’il ne faut surtout pas faire.
+- [Coup de chaleur](sante-et-premiers-secours/coup-de-chaleur.md) : le reconnaître et refroidir la personne en attendant les secours.
+- [Intoxication au monoxyde de carbone](sante-et-premiers-secours/intoxication-au-monoxyde-de-carbone.md) : reconnaître les signes, aérer, sortir, appeler.
+- [Reconnaître un AVC ou une crise cardiaque](sante-et-premiers-secours/reconnaitre-un-avc-ou-une-crise-cardiaque.md) : les signes qui doivent faire appeler tout de suite.
+- [Déshydratation et diarrhée](sante-et-premiers-secours/deshydratation-et-diarrhee.md) : faire boire, préparer une solution de réhydratation, repérer les signes graves.
+- [Noyade](sante-et-premiers-secours/noyade.md) : secourir sans se mettre à l’eau, et quoi faire une fois la personne sortie.
+- [Morsures et piqûres](sante-et-premiers-secours/morsures-et-piqures.md) : chien, chat, serpent, tique, guêpe, et quand appeler.
+- [Allergie grave](sante-et-premiers-secours/allergie-grave.md) : reconnaître les signes et utiliser un stylo d’adrénaline.
+- [Électrisation](sante-et-premiers-secours/electrisation.md) : couper le courant avant de toucher la personne, puis secourir.
+- [Intoxication par un produit chimique](sante-et-premiers-secours/intoxication-par-un-produit-chimique.md) : produit avalé, sur la peau, dans l’œil ou respiré, qui appeler et quoi faire.
+- [Vivre une crise avec un traitement médical](sante-et-premiers-secours/vivre-une-crise-avec-un-traitement-medical.md) : réserve de médicaments, ordonnances, médicaments au froid, appareils électriques.
+- [Choc, stress et soutien aux proches](sante-et-premiers-secours/choc-stress-et-soutien-aux-proches.md) : les réactions normales, comment aider, quand consulter.
+- [Composer sa trousse de secours](sante-et-premiers-secours/composer-sa-trousse-de-secours.md) : quoi mettre dedans, où la ranger, quand la vérifier.
+- [Déplacer un blessé](sante-et-premiers-secours/deplacer-un-blesse.md) : seulement face à un danger immédiat, et comment le tirer à l’abri.
+
+## Hygiène
+
+- [Installer des toilettes de secours](hygiene/installer-des-toilettes-de-secours.md) : chasser sans eau au robinet, ou passer au seau et aux sacs.
+- [Se laver avec peu d’eau](hygiene/se-laver-avec-peu-d-eau.md) : une bassine, un gant, du savon, et dans quel ordre.
+- [Se laver les mains sans eau courante](hygiene/se-laver-les-mains-sans-eau-courante.md) : installer un point de lavage, et quand le gel suffit.
+- [Gérer les déchets](hygiene/gerer-les-dechets.md) : les réduire, les fermer et les stocker quand le ramassage s’arrête.
+- [Éviter les maladies quand l’hygiène se dégrade](hygiene/eviter-les-maladies-quand-l-hygiene-se-degrade.md) : eau, mains, nourriture, excréments, nettoyage après une inondation.
+- [Gérer les règles et les couches](hygiene/gerer-les-regles-et-les-couches.md) : la réserve à prévoir, quand changer, comment laver et jeter.
+- [Laver le linge et la vaisselle avec peu d’eau](hygiene/laver-le-linge-et-la-vaisselle-avec-peu-d-eau.md) : laver en bassines, désinfecter après une inondation, tout faire sécher.
+
 ## Thèmes à venir
 
-Nourriture, santé et premiers secours, hygiène, communication et orientation, catastrophes, à la maison, en voiture, en extérieur, milieux hostiles.
+Nourriture, communication et orientation, catastrophes, à la maison, en voiture, en extérieur, milieux hostiles.
