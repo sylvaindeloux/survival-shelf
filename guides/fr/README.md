@@ -174,6 +174,25 @@ Pour tout récupérer d’un coup, utilise le bouton vert « Code » puis « Dow
 - [Évacuer en voiture](en-voiture/evacuer-en-voiture.md) : faire le plein, partir tôt, suivre les itinéraires indiqués, et les cas où la voiture est un piège.
 - [Dormir dans sa voiture](en-voiture/dormir-dans-sa-voiture.md) : où se garer, moteur coupé, se couvrir, et les dangers du froid et de la chaleur.
 
-## Thèmes à venir
+## En extérieur
 
-En extérieur, milieux hostiles.
+- [Préparer une sortie](en-exterieur/preparer-une-sortie.md) : parcours adapté, météo, quelqu’un qui sait où tu vas, et quoi mettre dans le sac.
+- [Perdu dans la nature](en-exterieur/perdu-dans-la-nature.md) : s’arrêter, réfléchir, rester sur place ou revenir sur ses pas, se signaler.
+- [Passer une nuit dehors sans l’avoir prévu](en-exterieur/passer-une-nuit-dehors-sans-l-avoir-prevu.md) : décider tôt, s’abriter, s’isoler du sol, rester au sec et repérable.
+- [Surpris par l’orage](en-exterieur/surpris-par-l-orage.md) : où aller, de quoi s’éloigner, et la position de dernier recours quand il n’y a pas d’abri.
+- [Tombé dans l’eau froide](en-exterieur/tombe-dans-l-eau-froide.md) : flotter d’abord, sortir vite, se réchauffer lentement, et quoi faire si la glace cède.
+- [Traverser un cours d’eau](en-exterieur/traverser-un-cours-d-eau.md) : quand renoncer, où et comment traverser, quoi faire si le courant t’emporte.
+- [Blessé loin des secours](en-exterieur/blesse-loin-des-secours.md) : protéger, donner sa position, garder le blessé au chaud, se signaler sans réseau.
+- [Rencontrer un animal sauvage](en-exterieur/rencontrer-un-animal-sauvage.md) : chien de troupeau, ours, loup, sanglier, serpent : garder ses distances et reculer calmement.
+- [Trouver de la nourriture dans la nature](en-exterieur/trouver-de-la-nourriture-dans-la-nature.md) : pourquoi elle passe en dernier, et les règles pour ne pas s’empoisonner.
+- [Évacuer à pied](en-exterieur/evacuer-a-pied.md) : sac léger, itinéraire indiqué, rester groupés, marcher sur la route sans danger.
+
+## Milieux hostiles
+
+- [Montagne et haute altitude](milieux-hostiles/montagne-et-haute-altitude.md) : préparer, monter lentement, reconnaître le mal des montagnes et redescendre à temps.
+- [Neige et froid extrême](milieux-hostiles/neige-et-froid-extreme.md) : tout couvrir, rester au sec, s’abriter du vent, repérer gelures et hypothermie.
+- [Désert et chaleur extrême](milieux-hostiles/desert-et-chaleur-extreme.md) : combien d’eau emporter, éviter les heures chaudes, rester près du véhicule.
+- [Forêt tropicale](milieux-hostiles/foret-tropicale.md) : ne pas quitter le sentier, se protéger des moustiques, réagir à une morsure de serpent.
+- [Mer et littoral](milieux-hostiles/mer-et-littoral.md) : météo et marées, courant qui emporte, bateau en difficulté, qui appeler en mer.
+- [Zone de conflit](milieux-hostiles/zone-de-conflit.md) : se déplacer, reconnaître une zone minée, réagir aux tirs, suivre les consignes de l’ambassade.
+- [Sous les décombres ou dans un lieu confiné](milieux-hostiles/sous-les-decombres-ou-dans-un-lieu-confine.md) : se signaler sans respirer la poussière, et ne jamais descendre secourir dans un puits ou une cuve.

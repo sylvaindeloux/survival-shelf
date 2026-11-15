@@ -118,7 +118,6 @@
           </ul>
         </section>
       {/each}
-      <p class="muted small">{t('guides.more')}</p>
     {/if}
   </div>
 {/if}

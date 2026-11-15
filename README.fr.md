@@ -182,11 +182,10 @@ officielles.
   [`guides`](guides/) : lis-les ici sur GitHub, copie-les sur un téléphone ou une clé USB, ou imprime celles
   qui comptent pour toi.
 
-Onze thèmes sont disponibles : les bases, l’eau, la nourriture, le froid et la chaleur, le feu et l’énergie, la
+Treize thèmes sont disponibles : les bases, l’eau, la nourriture, le froid et la chaleur, le feu et l’énergie, la
 santé et les premiers secours, l’hygiène, la communication et l’orientation, les catastrophes, à la maison, en
-voiture. Deux autres sont en cours d’écriture : en extérieur et les milieux hostiles. Les fiches ne remplacent
-ni les consignes des autorités ni une formation aux premiers secours : lis
-l’[avertissement](#avertissement).
+voiture, en extérieur et les milieux hostiles. Les fiches ne remplacent ni les consignes des autorités ni une
+formation aux premiers secours : lis l’[avertissement](#avertissement).
 
 ## Questions
 
