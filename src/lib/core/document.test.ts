@@ -202,10 +202,11 @@ Beans | can | red \\| white
 | Setting | Value |
 |---|---|
 | Tiers (days) | 7, one month |
-| Check-in | daily |
+| Check-in | weekly |
 `);
     expect(shelf.settings.tiers).toEqual([3, 7, 30, 365]);
-    expect(shelf.settings.rhythm).toBe('weekly');
+    // Weekly is not a choice any more: monthly is the most frequent check-in.
+    expect(shelf.settings.rhythm).toBe('monthly');
     expect(issues.map((issue) => issue.code)).toEqual(['invalidSetting', 'invalidSetting']);
   });
 

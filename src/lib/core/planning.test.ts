@@ -219,16 +219,13 @@ describe('check-in', () => {
     const autonomy = computeAutonomy(shelf, TODAY);
     const plan = tierPlan(shelf, autonomy, TODAY);
 
-    const week = checkIn(shelf, TODAY, rotationPlan(shelf, TODAY), plan.current);
-    expect(week.periodDays).toBe(7);
-    expect(week.discard.map((lot) => lot.product)).toEqual(['Water']);
-    expect(week.consume.map((item) => [item.product.name, item.qty])).toEqual([['Rice', 1]]);
-    expect(week.buy?.days).toBe(3); // Not even 3 days of water: the expired lot does not count.
-
-    shelf.settings.rhythm = 'monthly';
+    // Monthly by default.
     const month = checkIn(shelf, TODAY, rotationPlan(shelf, TODAY), plan.current);
+    expect(month.periodDays).toBe(30);
+    expect(month.discard.map((lot) => lot.product)).toEqual(['Water']);
     // Tuna's pace (0.4 can a month) rounds to nothing: it shows up when it is due.
     expect(month.consume.map((item) => [item.product.name, item.qty])).toEqual([['Rice', 4.29]]);
+    expect(month.buy?.days).toBe(3); // Not even 3 days of water: the expired lot does not count.
 
     shelf.settings.rhythm = 'quarterly';
     const quarter = checkIn(shelf, TODAY, rotationPlan(shelf, TODAY), plan.current);
@@ -260,17 +257,17 @@ describe('check-in', () => {
 describe('reminder calendar', () => {
   const now = new Date(Date.UTC(2026, 9, 10, 8, 30));
 
-  it('writes a weekly reminder at local time', () => {
+  it('writes a monthly reminder at local time', () => {
     const ics = reminderCalendar({
       start: '2026-10-17T10:00',
-      rhythm: 'weekly',
+      rhythm: 'monthly',
       title: 'Survival Shelf: check-in',
       description: 'Consume, buy, discard; see the app',
       url: 'https://example.org/survival-shelf/',
       now,
     });
     expect(ics).toContain('DTSTART:20261017T100000\r\n');
-    expect(ics).toContain('RRULE:FREQ=WEEKLY\r\n');
+    expect(ics).toContain('RRULE:FREQ=MONTHLY;BYDAY=3SA\r\n');
     expect(ics).toContain('DTSTAMP:20261010T083000Z\r\n');
     expect(ics).toContain('SUMMARY:Survival Shelf: check-in\r\n');
     // Long lines are folded: a line break followed by a space.

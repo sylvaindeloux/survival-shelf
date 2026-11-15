@@ -5,7 +5,7 @@ import { expiryAlerts } from './status';
 import { roundQuantity } from './text';
 import type { Lot, Product, Rhythm, Shelf } from './types';
 
-export const PERIOD_DAYS: Record<Rhythm, number> = { weekly: 7, monthly: 30, quarterly: 91, semiannual: 182 };
+export const PERIOD_DAYS: Record<Rhythm, number> = { monthly: 30, quarterly: 91, semiannual: 182 };
 
 /** Check-in rhythms, from the most to the least frequent. */
 export const RHYTHMS = Object.keys(PERIOD_DAYS) as Rhythm[];

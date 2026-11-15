@@ -31,7 +31,7 @@ export default defineConfig(({ mode }) => {
               id: './',
               name: 'Survival Shelf',
               short_name: 'Survival Shelf',
-              description: 'Build your survival stock tier by tier, offline: what to discard, eat and buy each week.',
+              description: 'Build your survival stock tier by tier, offline: what to discard, eat and buy each month.',
               lang: 'en',
               start_url: './',
               scope: './',

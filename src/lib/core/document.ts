@@ -134,11 +134,6 @@ const COLUMNS: Record<SectionName, ColumnDef[]> = {
 };
 
 const RHYTHM_ALIASES: Record<string, Rhythm> = {
-  weekly: 'weekly',
-  week: 'weekly',
-  hebdo: 'weekly',
-  hebdomadaire: 'weekly',
-  semaine: 'weekly',
   monthly: 'monthly',
   month: 'monthly',
   mensuel: 'monthly',
