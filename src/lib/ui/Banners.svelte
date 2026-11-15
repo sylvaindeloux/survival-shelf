@@ -8,12 +8,15 @@
   import { t } from '../i18n/index.svelte';
   import { canShareFiles } from '../storage/files';
   import Dialog from './Dialog.svelte';
+  import OnlineWarning from './OnlineWarning.svelte';
   import { router } from './state.svelte';
 
   const canShare = canShareFiles();
 </script>
 
 <div class="banners">
+  <OnlineWarning />
+
   {#if app.demo}
     <div class="banner info">
       <Info size={20} />

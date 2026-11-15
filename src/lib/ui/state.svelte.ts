@@ -1,3 +1,4 @@
+import { formatDay, parseDay, type Day } from '../core/dates';
 import type { LogAction } from '../core/types';
 
 export type Route = 'home' | 'checkin' | 'stock' | 'plan' | 'settings';
@@ -68,8 +69,20 @@ function readTheme(): Theme {
   return 'auto';
 }
 
+const ONLINE_WARNING_KEY = 'survival-shelf:online-warning-until';
+
+function readOnlineWarningUntil(): Day | null {
+  try {
+    return parseDay(localStorage.getItem(ONLINE_WARNING_KEY) ?? '');
+  } catch {
+    return null;
+  }
+}
+
 class Preferences {
   theme = $state<Theme>(readTheme());
+  /** Day until which the online-copy warning stays hidden ("Later"). */
+  onlineWarningUntil = $state<Day | null>(readOnlineWarningUntil());
 
   setTheme(theme: Theme) {
     this.theme = theme;
@@ -77,6 +90,15 @@ class Preferences {
       localStorage.setItem(THEME_KEY, theme);
     } catch {
       // Applied for this session only.
+    }
+  }
+
+  hideOnlineWarningUntil(day: Day) {
+    this.onlineWarningUntil = day;
+    try {
+      localStorage.setItem(ONLINE_WARNING_KEY, formatDay(day));
+    } catch {
+      // Hidden for this session only.
     }
   }
 }

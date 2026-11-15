@@ -8,6 +8,9 @@
   import { app } from '../lib/app.svelte';
   import { i18n, t, type LangPreference } from '../lib/i18n/index.svelte';
   import Logo from '../lib/ui/Logo.svelte';
+  import OnlineWarning from '../lib/ui/OnlineWarning.svelte';
+  import { preferences } from '../lib/ui/state.svelte';
+  import { showOnlineWarning } from '../lib/core/hosting';
   import Setup from './Setup.svelte';
 
   let setup = $state(false);
@@ -17,6 +20,12 @@
   <Setup onback={() => (setup = false)} />
 {:else}
 <div class="welcome">
+  {#if showOnlineWarning(location.hostname, preferences.onlineWarningUntil, app.today)}
+    <div class="online">
+      <OnlineWarning />
+    </div>
+  {/if}
+
   <div class="hero">
     <span class="logo"><Logo size={72} /></span>
     <h1>Survival Shelf</h1>
@@ -71,6 +80,11 @@
     gap: 2rem;
     padding: max(2rem, env(safe-area-inset-top)) 1rem calc(2rem + var(--safe-bottom));
     background: var(--bg);
+  }
+
+  .online {
+    width: 100%;
+    max-width: 900px;
   }
 
   .hero {
