@@ -11,7 +11,7 @@
 ## Ce qu’il te faut
 
 - Une radio FM à piles ou à manivelle, et des piles de rechange.
-- Les fréquences de la radio publique, notées sur un papier collé sur le poste.
+- Les fréquences de la radio publique, notées sur un papier collé sur le poste (exemples dans « Selon l’endroit »).
 - Une liste de numéros utiles sur papier : proches, voisins, médecin, mairie.
 - Une carte en papier de ta région.
 
@@ -41,6 +41,14 @@
 
 ## Selon l’endroit
 
+- **En France, quelques fréquences FM** de France Info et de la radio locale publique, qui s’appelle « ici » suivi du nom de la région :
+  - Paris : France Info 105.5, ici Paris Île-de-France 107.1 ;
+  - Lyon : France Info 105.4 ou 103.4, ici Isère 101.8 ;
+  - Marseille : France Info 94.2 ou 94.7, ici Provence 103.6 ;
+  - Toulouse : France Info 91.1, ici Occitanie 91.8 ;
+  - Lille : France Info 105.2, ici Nord 94.7 ou 87.8 ;
+  - Bordeaux : France Info 93.5, ici Gironde 100.1.
+- **Ailleurs en France** : les fréquences changent d’une ville à l’autre et peuvent changer avec le temps. Cherche celles de ta commune dans l’annuaire des radios de l’Arcom (voir les sources), puis note-les sur ton poste.
 - **Près d’un site industriel, d’un barrage ou d’une centrale** : demande à ta mairie, dès maintenant, les consignes et les signaux propres au site.
 - **À l’étranger** : note avant de partir les coordonnées du consulat et inscris-toi sur le service Ariane du ministère des Affaires étrangères.
 - **Avant la panne** : télécharge ou imprime les cartes dont tu peux avoir besoin.
@@ -62,8 +70,10 @@
 - [Gouvernement britannique, « Phone and broadband outages » (en anglais)](https://beready.campaign.gov.uk/be-informed-about-hazards/phone-broadband-outages/)
 - [Ministère de la Transition écologique, « En hiver : les bons réflexes sur la route »](https://www.ecologie.gouv.fr/dossiers/bons-reflexes-circuler-hiver/hiver-bons-reflexes-route)
 - [FCC et FEMA (États-Unis), « Tips for Communicating in an Emergency » (PDF, en anglais)](https://dhhr.wv.gov/healthprep/plan/howtoprepare/familyprep/Documents/FCC%20Tips_for_Communicating_2011.pdf)
+- [Arcom, « France Info, toutes les fréquences de France Info »](https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-info)
+- [Arcom, « Connaître les radios FM ou DAB+ disponibles dans ma ville »](https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab)
 
-L’écoute à heures fixes pour économiser les piles, la prise de notes et le partage d’un poste entre voisins relèvent du bon sens, sans source officielle.
+L’écoute à heures fixes pour économiser les piles, la prise de notes et le partage d’un poste entre voisins relèvent du bon sens, sans source officielle. Les fréquences viennent de l’annuaire de l’Arcom (pages de France Info et des six radios « ici » citées), lu le 15 novembre 2026 : elles peuvent changer, vérifie celles de ta commune.
 
 ---
 

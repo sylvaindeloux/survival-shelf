@@ -11,7 +11,7 @@
 ## What you need
 
 - A battery or hand-crank FM radio, and spare batteries.
-- The frequencies of the public radio stations, written on a paper stuck to the set.
+- The frequencies of the public radio stations, written on a paper stuck to the set (examples for France in "Depending on where you are").
 - A paper list of useful numbers: family, neighbors, doctor, town hall.
 - A paper map of your area.
 
@@ -42,6 +42,14 @@
 ## Depending on where you are
 
 - **In France**: the Radio France stations (France Info and the local public station) and public television relay the instructions. FR-Alert notifications reach every phone in the danger zone, with no sign-up and no app. On motorways, 107.7 FM gives the traffic conditions.
+- **A few FM frequencies in France**, for France Info and for the local public station, called "ici" followed by the name of the area:
+  - Paris: France Info 105.5, ici Paris Île-de-France 107.1;
+  - Lyon: France Info 105.4 or 103.4, ici Isère 101.8;
+  - Marseille: France Info 94.2 or 94.7, ici Provence 103.6;
+  - Toulouse: France Info 91.1, ici Occitanie 91.8;
+  - Lille: France Info 105.2, ici Nord 94.7 or 87.8;
+  - Bordeaux: France Info 93.5, ici Gironde 100.1.
+- **Elsewhere in France**: the frequencies change from one town to the next and can change over time. Look up those of your town in the radio directory of Arcom, the French broadcasting regulator (see the sources), then write them on your set.
 - **Near an industrial site, a dam or a nuclear plant**: ask your town hall, now, for the instructions and signals specific to the site.
 - **Abroad**: before you leave, write down the details of your consulate and register with your country's service for travelers, if there is one. For French citizens, it is the Ariane service of the Ministry of Foreign Affairs.
 - **Before the outage**: download or print the maps you may need.
@@ -63,8 +71,10 @@
 - [UK Government, "Phone and broadband outages"](https://beready.campaign.gov.uk/be-informed-about-hazards/phone-broadband-outages/)
 - [French Ministry for the Ecological Transition, "En hiver : les bons réflexes sur la route" (in French)](https://www.ecologie.gouv.fr/dossiers/bons-reflexes-circuler-hiver/hiver-bons-reflexes-route)
 - [FCC and FEMA (United States), "Tips for Communicating in an Emergency", copy hosted by the State of West Virginia (PDF)](https://dhhr.wv.gov/healthprep/plan/howtoprepare/familyprep/Documents/FCC%20Tips_for_Communicating_2011.pdf)
+- [Arcom (French broadcasting regulator), "France Info, toutes les fréquences de France Info" (in French)](https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-info)
+- [Arcom (French broadcasting regulator), "Connaître les radios FM ou DAB+ disponibles dans ma ville" (in French)](https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab)
 
-Listening at set times to save batteries, taking notes and sharing one radio between neighbors are common sense, with no official source.
+Listening at set times to save batteries, taking notes and sharing one radio between neighbors are common sense, with no official source. The frequencies come from the Arcom directory (pages of France Info and of the six "ici" stations named), read on November 15, 2026: they can change, check those of your town.
 
 ---
 
