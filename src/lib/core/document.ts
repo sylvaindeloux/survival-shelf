@@ -91,6 +91,18 @@ const PER_ALIASES: Record<string, Per> = {
   maison: 'household',
   famille: 'household',
   fixe: 'household',
+  cat: 'cat',
+  cats: 'cat',
+  percat: 'cat',
+  chat: 'cat',
+  chats: 'cat',
+  parchat: 'cat',
+  dog: 'dog',
+  dogs: 'dog',
+  perdog: 'dog',
+  chien: 'dog',
+  chiens: 'dog',
+  parchien: 'dog',
 };
 
 const STOCK_COLUMNS: ColumnDef[] = [
@@ -178,6 +190,8 @@ export function parseTiers(text: string): number[] | undefined {
 
 const SETTING_DEFS: SettingDef[] = [
   numberSetting('people', 'People', ['people', 'persons', 'personnes', 'household', 'foyer', 'nbpersonnes'], 1),
+  numberSetting('cats', 'Cats', ['cats', 'cat', 'chats', 'chat', 'nbchats'], 0),
+  numberSetting('dogs', 'Dogs', ['dogs', 'dog', 'chiens', 'chien', 'nbchiens'], 0),
   numberSetting(
     'kcalPerPersonPerDay',
     'Kcal per person per day',
@@ -563,7 +577,7 @@ function productRow(product: Product): Record<string, string> {
     water: formatNumber(product.water),
     daily: formatNumber(product.daily),
     // "person" is the default: only spelled out when it matters.
-    per: product.per === 'household' || product.daily !== null || product.target !== null ? product.per : '',
+    per: product.per !== 'person' || product.daily !== null || product.target !== null ? product.per : '',
     target: formatNumber(product.target),
     notes: product.notes,
   };

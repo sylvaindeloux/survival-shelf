@@ -2,7 +2,7 @@ import type { CatalogItem } from '../core/catalog';
 import { findCategory } from '../core/categories';
 import { daysLeft, expiryStatus, type ExpiryStatus } from '../core/status';
 import type { Day } from '../core/dates';
-import type { Lot, Product, Rhythm, Settings } from '../core/types';
+import type { Lot, Per, Product, Rhythm, Settings } from '../core/types';
 import { formatDate, formatNumber, formatRelative, i18n, t, type MessageKey } from '../i18n/index.svelte';
 
 export function categoryIcon(category: string): string {
@@ -54,18 +54,30 @@ export function quantity(qty: number, product: Pick<Product, 'unit'> | undefined
   return unit === '' ? formatNumber(qty, 2) : `${formatNumber(qty, 2)} ${unitFor(qty, unit)}`;
 }
 
-/** "0.1 kg per person per day", "6 per day for the household". */
+const DAILY_LABELS: Record<Per, MessageKey> = {
+  person: 'plan.perDayPerson',
+  household: 'plan.perDayHousehold',
+  cat: 'plan.perDayCat',
+  dog: 'plan.perDayDog',
+};
+
+const TARGET_LABELS: Record<Per, MessageKey> = {
+  person: 'plan.ownPerson',
+  household: 'plan.ownHousehold',
+  cat: 'plan.ownCat',
+  dog: 'plan.ownDog',
+};
+
+/** "0.1 kg per person per day", "6 per day for the household", "60 g per cat per day". */
 export function dailyLabel(product: Product): string {
   if (product.daily === null) return '';
-  const what = quantity(product.daily, product);
-  return product.per === 'household' ? t('plan.perDayHousehold', { qty: what }) : t('plan.perDayPerson', { qty: what });
+  return t(DAILY_LABELS[product.per], { qty: quantity(product.daily, product) });
 }
 
 /** "own 1", "own 1 per person". */
 export function targetLabel(product: Product): string {
   if (product.target === null) return '';
-  const what = quantity(product.target, product);
-  return product.per === 'household' ? t('plan.ownHousehold', { qty: what }) : t('plan.ownPerson', { qty: what });
+  return t(TARGET_LABELS[product.per], { qty: quantity(product.target, product) });
 }
 
 /** A tier's duration in words: "1 week", "1 month", "1 year", "10 days". */

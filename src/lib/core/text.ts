@@ -44,5 +44,6 @@ export function roundQuantity(qty: number, unit: string, mode: 'up' | 'nearest' 
   const scaled = qty / step;
   // Tolerate floating point noise before rounding up (0.7000000001 kg stays 0.7 kg).
   const rounded = mode === 'up' ? Math.ceil(scaled - 1e-9) : Math.round(scaled);
-  return Math.round(rounded * step * 1000) / 1000;
+  // `|| 0` turns -0 (rounding up nothing) into 0, which would otherwise print as "-0".
+  return Math.round(rounded * step * 1000) / 1000 || 0;
 }

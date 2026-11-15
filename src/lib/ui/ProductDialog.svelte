@@ -3,7 +3,7 @@
   import { app } from '../app.svelte';
   import { CATALOG, findCatalogItem } from '../core/catalog';
   import { CATEGORIES, findCategory } from '../core/categories';
-  import { isWaterProduct, productTarget } from '../core/plan';
+  import { headcount, isWaterProduct, productTarget } from '../core/plan';
   import { deleteProduct, emptyProduct, findProduct, lotsOf, upsertProduct } from '../core/stock';
   import { parseNumber, sameName } from '../core/text';
   import type { Per, Product } from '../core/types';
@@ -68,6 +68,15 @@
     notes: notes.trim(),
   });
   const waterProduct = $derived(isWaterProduct(draft));
+  /** "Per cat" and "per dog" are only offered once the household has some (or the product already uses them). */
+  const pers = $derived(
+    (['person', 'household', 'cat', 'dog'] as Per[]).filter(
+      (choice) => choice === per || (choice === 'cat' ? app.shelf.settings.cats > 0 : choice === 'dog' ? app.shelf.settings.dogs > 0 : true),
+    ),
+  );
+  const PER_LABELS = { person: 'product.perPerson', household: 'product.perHousehold', cat: 'product.perCat', dog: 'product.perDog' } as const;
+  /** A product per cat or per dog while there is none in the settings: nothing to plan yet. */
+  const noAnimal = $derived((per === 'cat' || per === 'dog') && headcount(draft, app.shelf.settings) === 0);
   const preview = $derived(
     app.shelf.settings.tiers
       .map((days) => ({ days, qty: productTarget(draft, app.shelf.settings, days) }))
@@ -174,9 +183,13 @@
             <input class="input" inputmode="decimal" bind:value={target} placeholder="—" aria-invalid={submitted && invalidNumber(target)} />
           </label>
         </div>
-        <div class="segmented" role="group" aria-label={t('product.per')}>
-          <button type="button" class:active={per === 'person'} onclick={() => (per = 'person')}>{t('product.perPerson')}</button>
-          <button type="button" class:active={per === 'household'} onclick={() => (per = 'household')}>{t('product.perHousehold')}</button>
+        <div class="field">
+          <span id="product-per">{t('product.per')}</span>
+          <div class="segmented" role="group" aria-labelledby="product-per">
+            {#each pers as choice (choice)}
+              <button type="button" class:active={per === choice} onclick={() => (per = choice)}>{t(PER_LABELS[choice])}</button>
+            {/each}
+          </div>
         </div>
         <p class="hint">{t('product.planHint')}</p>
         {#if preview.length > 0}
@@ -185,6 +198,8 @@
               <span><strong>{tierLabel(tier.days)}</strong> {quantity(tier.qty ?? 0, draft)}</span>
             {/each}
           </p>
+        {:else if noAnimal}
+          <p class="small muted">{t(per === 'cat' ? 'product.noCats' : 'product.noDogs')}</p>
         {:else}
           <p class="small muted">{t('product.notPlanned')}</p>
         {/if}

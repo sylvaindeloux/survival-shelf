@@ -47,6 +47,8 @@ A two-column table: `Setting | Value`.
 | Setting                      | Default         | Meaning                                                                 |
 |------------------------------|-----------------|-------------------------------------------------------------------------|
 | `People`                     | 1               | Number of people living on the stock                                    |
+| `Cats`                       | 0               | Number of cats: products planned `cat` count once per cat               |
+| `Dogs`                       | 0               | Number of dogs: products planned `dog` count once per dog               |
 | `Kcal per person per day`    | 2200            | Daily energy need of one person                                         |
 | `Water L per person per day` | 3               | Liters of water per person per day (drinking, cooking, hygiene)         |
 | `Tiers (days)`               | `3, 7, 30, 365` | Autonomy tiers to build, in days, separated by commas or spaces         |
@@ -54,7 +56,7 @@ A two-column table: `Setting | Value`.
 | `Expiry warning days`        | 60              | Lots expiring within this delay are flagged as "expiring soon"          |
 | `Rotation margin days`       | 30              | The rotation aims to finish each lot this long before it expires        |
 
-French names work too (`Personnes`, `Paliers`, `Rendez-vous`…), as do French values for the check-in
+French names work too (`Personnes`, `Chats`, `Chiens`, `Paliers`, `Rendez-vous`…), as do French values for the check-in
 (`hebdo`, `mensuel`, `trimestriel`, `semestriel` or `6 mois`). Unknown settings are kept as is. An invalid value
 is reported and the default is used.
 
@@ -68,7 +70,7 @@ is reported and the default is used.
 | `Kcal/unit`    | Kcal, Calories, Energy                 |          | Energy of one unit, used for the food autonomy               |
 | `Water L/unit` | Water, Eau                             |          | Liters of drinkable water in one unit, used for water autonomy |
 | `Daily use`    | Daily, Per day, Conso/jour, Conso      |          | Units used per day: sets what each tier needs                |
-| `Per`          | Par, Pour, Basis                       |          | `person` (default) or `household`: see below                 |
+| `Per`          | Par, Pour, Basis                       |          | `person` (default), `household`, `cat` or `dog`: see below   |
 | `Target`       | Minimum, Min, Objectif, Avoir          |          | Minimum to own whatever the tier (gear, first aid…)          |
 | `Notes`        | Note, Remarques, Commentaire           |          | Anything you want                                            |
 
@@ -85,6 +87,8 @@ For each tier (see `Tiers (days)` in the settings), the app works out what a pro
 ```
 needed = max(Daily use × days, Target) × people     when Per is "person"
 needed = max(Daily use × days, Target)              when Per is "household"
+needed = max(Daily use × days, Target) × cats       when Per is "cat"
+needed = max(Daily use × days, Target) × dogs       when Per is "dog"
 ```
 
 rounded up to whole units for counted things (cans, rolls…), to 10 g or 10 mL for `kg`, `L` and other
@@ -92,10 +96,16 @@ weights or volumes. For example, rice with `Daily use` 0.1 kg per person, for 2 
 the 1-week tier, 6 kg for the 1-month tier and 73 kg for the 1-year tier. A headlamp with `Target` 1 per
 person needs 2 for every tier.
 
-`Per` accepts `person` (also `personne`, `each`) and `household` (also `foyer`, `fixed`, `total`). Use
-`household` for what does not depend on the number of people: a radio, a first aid kit, pet food.
+`Per` accepts `person` (also `personne`, `each`), `household` (also `foyer`, `fixed`, `total`), `cat` (also
+`chat`) and `dog` (also `chien`). Use `household` for what does not depend on the number of people: a radio, a
+first aid kit. Use `cat` and `dog` for pet food and litter: when the `Cats` or `Dogs` setting changes, the plan
+follows. With no cat in the settings, a product planned `cat` needs nothing.
 
-**Water** is planned from the `Water L per person per day` setting, not with its own daily use:
+**Water** is planned from the `Water L per person per day` setting, plus what pets drink, not with its own
+daily use. A cat counts for 0.25 L per day: about 50 mL per kg for a 4 kg cat
+([Royal Canin Academy](https://academy.royalcanin.com/en/veterinary/the-water-requirements-and-drinking-habits-of-cats)),
+nearly all of it drunk on dry food. A dog counts for 1.5 L per day: a medium dog (20 to 25 kg) on dry food drinks
+about 63 to 73 mL per kg ([Zanghi & Gardner, 2018](https://doi.org/10.3389/fvets.2018.00317)).
 
 - up to 30 days, the tier needs **stored water**: products with `Water L/unit` (bottles, cans…);
 - beyond 30 days, the rest can come from **water treatment**: products of the `water-treatment` category

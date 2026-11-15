@@ -12,9 +12,18 @@ import type { Product, Settings, Shelf } from './types';
  */
 export const STORED_WATER_DAYS = 30;
 
-/** How many times a product's quantities apply: once per person, or once for the household. */
+/** How many times a product's quantities apply: once per person, per cat, per dog, or once for the household. */
 export function headcount(product: Product, settings: Settings): number {
-  return product.per === 'household' ? 1 : settings.people;
+  switch (product.per) {
+    case 'household':
+      return 1;
+    case 'cat':
+      return settings.cats;
+    case 'dog':
+      return settings.dogs;
+    default:
+      return settings.people;
+  }
 }
 
 /** Water products are planned in liters from the water need, not with their own daily use or target. */

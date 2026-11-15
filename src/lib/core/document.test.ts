@@ -45,6 +45,7 @@ describe('parseShelf', () => {
     expect(shelf.settings.people).toBe(4);
     expect(shelf.settings.kcalPerPersonPerDay).toBe(2000);
     expect(shelf.settings.waterPerPersonPerDay).toBe(3);
+    expect([shelf.settings.cats, shelf.settings.dogs]).toEqual([0, 0]);
     expect(shelf.settingsExtra).toEqual([{ label: 'Favourite colour', value: 'green' }]);
     expect(shelf.products.map((p) => p.name)).toEqual(['Rice', 'Water', 'Sardines']);
     expect(shelf.products[1].category).toBe('water');
@@ -156,6 +157,33 @@ Beans | can | red \\| white
     expect(text).toContain('| Rendez-vous                | monthly  |');
     expect(text).toContain('| Croquettes | kg    | 0.06       | household |          |');
     expect(text).toContain('| Lampe      | pièce |            | person    | 1        |');
+    expect(parseShelf(text).shelf.products).toEqual(shelf.products);
+  });
+
+  it('reads the number of cats and dogs, and products per cat or per dog', () => {
+    const { shelf, issues } = parseShelf(`## Réglages
+
+| Réglage | Valeur |
+|---|---|
+| Personnes | 2 |
+| Chats | 2 |
+| Chiens | 1 |
+
+## Produits
+
+| Produit | Unité | Conso/jour | Par |
+|---|---|---|---|
+| Croquettes chat | kg | 0,06 | chat |
+| Litière | kg | 0,4 | Chats |
+| Croquettes chien | kg | 0,3 | dog |
+`);
+    expect(issues).toEqual([]);
+    expect([shelf.settings.people, shelf.settings.cats, shelf.settings.dogs]).toEqual([2, 2, 1]);
+    expect(shelf.products.map((p) => p.per)).toEqual(['cat', 'cat', 'dog']);
+    const text = serializeShelf(shelf);
+    expect(text).toMatch(/\| Chats +\| 2 +\|/);
+    expect(text).toMatch(/\| Croquettes chien +\| kg +\| 0\.3 +\| dog +\|/);
+    expect(parseShelf(text).shelf.settings).toEqual(shelf.settings);
     expect(parseShelf(text).shelf.products).toEqual(shelf.products);
   });
 

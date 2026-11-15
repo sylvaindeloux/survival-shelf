@@ -9,10 +9,12 @@
   import Plus from '@lucide/svelte/icons/plus';
   import type { Component } from 'svelte';
   import { app } from '../lib/app.svelte';
-  import { productFromCatalog, starterAmount, starterItems, type CatalogItem, type Needs } from '../lib/core/catalog';
+  import { waterNeed } from '../lib/core/autonomy';
+  import { productFromCatalog, starterItems, type CatalogItem, type Needs } from '../lib/core/catalog';
   import { CATEGORIES, isWaterTreatment } from '../lib/core/categories';
   import { DEFAULT_SETTINGS } from '../lib/core/defaults';
   import { parseNumber } from '../lib/core/text';
+  import type { Per } from '../lib/core/types';
   import { formatNumber, i18n, t, type MessageKey } from '../lib/i18n/index.svelte';
   import Logo from '../lib/ui/Logo.svelte';
   import { categoryIcon, categoryLabel, formatKcal, inputNumber, quantity, tierLabel } from '../lib/ui/format';
@@ -61,8 +63,16 @@
     needs[need] = Math.max(0, (needs[need] ?? 0) + delta);
   }
 
+  /** How many people or animals an item's amount applies to. */
+  function countFor(per: Per): number {
+    if (per === 'household') return 1;
+    if (per === 'cat') return needs.cat ?? 0;
+    if (per === 'dog') return needs.dog ?? 0;
+    return people;
+  }
+
   function toPlan() {
-    choices = starterItems(needs).map((entry) => ({ entry, selected: true, amount: inputNumber(starterAmount(entry, needs)) }));
+    choices = starterItems(needs).map((entry) => ({ entry, selected: true, amount: inputNumber(entry.daily ?? entry.target) }));
     step = 2;
     window.scrollTo({ top: 0 });
   }
@@ -71,7 +81,7 @@
   function weekly(choice: Choice): string {
     const amount = amountOf(choice);
     if (choice.entry.daily === null || amount === null || amount === 0) return '';
-    const count = choice.entry.per === 'household' ? 1 : people;
+    const count = countFor(choice.entry.per);
     const unit = { unit: choice.entry.unit[i18n.lang] };
     return t('setup.perWeek', { qty: quantity(Math.round(amount * count * 7 * 100) / 100, unit) });
   }
@@ -79,15 +89,28 @@
   /** What water items stand for: they have no amount of their own. */
   function waterHint(entry: CatalogItem): string {
     if (isWaterTreatment(entry)) return t('setup.treatmentHint', { liters: formatNumber(entry.water ?? 0) });
-    return t('setup.waterHint', { liters: formatNumber(DEFAULT_SETTINGS.waterPerPersonPerDay) });
+    if (!needs.cat && !needs.dog) return t('setup.waterHint', { liters: formatNumber(DEFAULT_SETTINGS.waterPerPersonPerDay) });
+    const liters = waterNeed({ ...DEFAULT_SETTINGS, people, cats: needs.cat ?? 0, dogs: needs.dog ?? 0 });
+    return t('setup.waterHintPets', { liters: formatNumber(liters, 2) });
   }
 
-  /** "kg per person per day", "rolls for the household"… next to the amount. */
+  const DAILY_LABELS: Record<Per, MessageKey> = {
+    person: 'setup.dailyPerson',
+    household: 'setup.dailyHousehold',
+    cat: 'setup.dailyCat',
+    dog: 'setup.dailyDog',
+  };
+  const OWN_LABELS: Record<Per, MessageKey> = {
+    person: 'setup.ownPerson',
+    household: 'setup.ownHousehold',
+    cat: 'setup.ownCat',
+    dog: 'setup.ownDog',
+  };
+
+  /** "kg per person per day", "rolls for the household", "kg per cat per day"… next to the amount. */
   function amountLabel(entry: CatalogItem): string {
-    const unit = entry.unit[i18n.lang];
-    const household = entry.per === 'household';
-    if (entry.daily !== null) return t(household ? 'setup.dailyHousehold' : 'setup.dailyPerson', { unit });
-    return t(household ? 'setup.ownHousehold' : 'setup.ownPerson', { unit });
+    const labels = entry.daily !== null ? DAILY_LABELS : OWN_LABELS;
+    return t(labels[entry.per], { unit: entry.unit[i18n.lang] });
   }
 
   function create() {
@@ -100,7 +123,7 @@
         else if (choice.entry.target !== null) product.target = amount;
         return product;
       });
-    void app.startWithPlan(people, products);
+    void app.startWithPlan({ people, cats: needs.cat ?? 0, dogs: needs.dog ?? 0 }, products);
   }
 </script>
 

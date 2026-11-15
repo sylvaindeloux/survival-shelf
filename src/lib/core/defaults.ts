@@ -4,6 +4,8 @@ export const DEFAULT_TIERS = [3, 7, 30, 365];
 
 export const DEFAULT_SETTINGS: Settings = {
   people: 1,
+  cats: 0,
+  dogs: 0,
   kcalPerPersonPerDay: 2200,
   waterPerPersonPerDay: 3,
   tiers: DEFAULT_TIERS,
@@ -11,6 +13,14 @@ export const DEFAULT_SETTINGS: Settings = {
   warningDays: 60,
   rotationMarginDays: 30,
 };
+
+/**
+ * Liters of water a pet drinks per day, added to the household water need.
+ * A 4 kg cat needs about 50 mL per kg (Royal Canin Academy), and nearly all of
+ * it is drunk on dry food. A medium dog (20 to 25 kg) on dry food drinks about
+ * 63 to 73 mL per kg (Zanghi & Gardner, Frontiers in Veterinary Science, 2018).
+ */
+export const PET_WATER_PER_DAY = { cat: 0.25, dog: 1.5 };
 
 export function defaultSettings(): Settings {
   return { ...DEFAULT_SETTINGS, tiers: [...DEFAULT_TIERS] };
@@ -31,7 +41,7 @@ const SECTION_DEFAULTS: Record<SectionName, SectionLayout> = {
   products: {
     heading: 'Products',
     before:
-      '<!-- One row per product. Kcal and Water are per unit. Daily use sets what each tier needs, Target is a minimum to own. Per: person or household. -->',
+      '<!-- One row per product. Kcal and Water are per unit. Daily use sets what each tier needs, Target is a minimum to own. Per: person, household, cat or dog. -->',
     after: '',
     table: null,
   },

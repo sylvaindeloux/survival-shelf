@@ -102,11 +102,11 @@ export const CATALOG: CatalogItem[] = [
   item('tea', { en: 'Tea', fr: 'Thé' }, 'drinks', PACK, { shelfLife: 18 }),
   item('salt', { en: 'Salt', fr: 'Sel' }, 'condiments', KG, { daily: 0.005, starter: true }),
 
-  // Specific needs: per household, whatever the number of people. Pet items are per animal.
-  item('cat-food', { en: 'Dry cat food', fr: 'Croquettes pour chat' }, 'pets', KG, { daily: 0.06, per: 'household', shelfLife: 12, need: 'cat' }),
-  item('cat-litter', { en: 'Clumping cat litter', fr: 'Litière agglomérante' }, 'pets', KG, { daily: 0.4, per: 'household', need: 'cat' }),
+  // Specific needs. Pet items are per cat or per dog: the Cats and Dogs settings multiply them.
+  item('cat-food', { en: 'Dry cat food', fr: 'Croquettes pour chat' }, 'pets', KG, { daily: 0.06, per: 'cat', shelfLife: 12, need: 'cat' }),
+  item('cat-litter', { en: 'Clumping cat litter', fr: 'Litière agglomérante' }, 'pets', KG, { daily: 0.4, per: 'cat', need: 'cat' }),
   // A medium dog (20 to 25 kg): about 0.15 kg for a small dog, 0.45 kg for a large one.
-  item('dog-food', { en: 'Dry dog food', fr: 'Croquettes pour chien' }, 'pets', KG, { daily: 0.3, per: 'household', shelfLife: 12, need: 'dog' }),
+  item('dog-food', { en: 'Dry dog food', fr: 'Croquettes pour chien' }, 'pets', KG, { daily: 0.3, per: 'dog', shelfLife: 12, need: 'dog' }),
   item('daily-medicine', { en: 'Daily medicine', fr: 'Traitement quotidien' }, 'medical', TABLET, { daily: 1, per: 'household', shelfLife: 24, need: 'treatment' }),
 
   // Hygiene.
@@ -144,13 +144,6 @@ export function findCatalogItem(name: string): CatalogItem | undefined {
 /** Items proposed by the setup wizard for a household with these needs. */
 export function starterItems(needs: Needs): CatalogItem[] {
   return CATALOG.filter((entry) => entry.starter || (entry.need !== undefined && (needs[entry.need] ?? 0) > 0));
-}
-
-/** Suggested daily use or minimum to own in the starter plan: pet items count once per animal. */
-export function starterAmount(entry: CatalogItem, needs: Needs): number | null {
-  const amount = entry.daily ?? entry.target;
-  if (amount === null || entry.need === undefined) return amount;
-  return Math.round(amount * (needs[entry.need] ?? 1) * 1000) / 1000;
 }
 
 /** A product ready to add to the shelf, named in the given language. */
