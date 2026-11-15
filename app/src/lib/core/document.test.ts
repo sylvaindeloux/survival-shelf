@@ -160,6 +160,44 @@ Beans | can | red \\| white
     expect(parseShelf(text).shelf.products).toEqual(shelf.products);
   });
 
+  it('reads the type of each product, or guesses it from its calories, water and category', () => {
+    const { shelf, issues } = parseShelf(`## Products
+
+| Product | Type | Category | Kcal/unit | Water L/unit |
+|---|---|---|---|---|
+| Rice | food | grains | 3600 | |
+| Batteries | consommable | energy | | |
+| Stove | Matériel | tools | | |
+| Headlamp | | tools | | |
+| Biscuits | | My things | 950 | |
+| Bottle | | My things | | 1.5 |
+| Tablets | | Water treatment | | 50 |
+| Soap | | hygiene | | |
+| Knife | outils | | | |
+| Rope | sturdy | tools | | |
+`);
+    expect(shelf.products.map((p) => [p.name, p.kind])).toEqual([
+      ['Rice', 'food'],
+      ['Batteries', 'consumable'],
+      ['Stove', 'gear'],
+      ['Headlamp', 'gear'],
+      ['Biscuits', 'food'],
+      ['Bottle', 'food'],
+      ['Tablets', 'consumable'],
+      ['Soap', 'consumable'],
+      ['Knife', 'gear'],
+      ['Rope', 'gear'],
+    ]);
+    expect(issues).toEqual([{ level: 'warning', line: 14, code: 'invalidKind', params: { value: 'sturdy' } }]);
+    expect(serializeShelf(shelf)).toMatch(/\| Batteries \| consumable \| Energy & light +\|/);
+    const text = serializeShelf({ ...shelf, settings: { ...shelf.settings, lang: 'fr' } });
+    expect(text).toMatch(/\| Produit +\| Type +\| Catégorie +\|/);
+    expect(text).toMatch(/\| Rice +\| vivres +\| Féculents +\|/);
+    expect(text).toMatch(/\| Headlamp +\| matériel +\| Outils & matériel +\|/);
+    expect(text).toMatch(/\| Soap +\| consommable \| Hygiène +\|/);
+    expect(parseShelf(text).shelf.products).toEqual(shelf.products);
+  });
+
   it('reads the number of cats and dogs, and products per cat or per dog', () => {
     const { shelf, issues } = parseShelf(`## Réglages
 
@@ -314,8 +352,8 @@ describe('file language', () => {
     shelf.settings.waterPerPersonPerDay = 2.5;
     shelf.settings.rhythm = 'quarterly';
     shelf.products.push(
-      { ...emptyProduct('Riz'), category: 'grains', unit: 'kg', kcal: 3600, daily: 0.08 },
-      { ...emptyProduct('Filtre'), category: 'water-treatment', unit: 'pièce', water: 1500, per: 'household', target: 1 },
+      { ...emptyProduct('Riz'), kind: 'food', category: 'grains', unit: 'kg', kcal: 3600, daily: 0.08 },
+      { ...emptyProduct('Filtre'), kind: 'gear', category: 'water-treatment', unit: 'pièce', water: 1500, per: 'household', target: 1 },
       { ...emptyProduct('Bougies'), category: 'Mes trucs', unit: 'pièce' },
     );
     shelf.lots.push({ id: 'a', product: 'Riz', qty: 2.5, expires: '2027-03', location: 'Cave', added: '2026-11-01', extra: {} });
@@ -335,10 +373,10 @@ describe('file language', () => {
     expect(text).toMatch(/\| Langue +\| fr +\|/);
     expect(text).toMatch(/\| Eau L par personne par jour \| 2,5 +\|/);
     expect(text).toMatch(/\| Rendez-vous +\| trimestriel +\|/);
-    expect(text).toMatch(/\| Produit +\| Catégorie +\| Unité +\| Kcal\/unité \| Eau L\/unité \| Conso\/jour \| Par +\| Objectif \|/);
-    expect(text).toMatch(/\| Riz +\| Féculents +\| kg +\| 3600 +\| +\| 0,08 +\| personne \| +\|/);
-    expect(text).toMatch(/\| Filtre +\| Traitement de l’eau \| pièce \| +\| 1500 +\| +\| foyer +\| 1 +\|/);
-    expect(text).toMatch(/\| Bougies +\| Mes trucs +\|/);
+    expect(text).toMatch(/\| Produit +\| Type +\| Catégorie +\| Unité +\| Kcal\/unité \| Eau L\/unité \| Conso\/jour \| Par +\| Objectif \|/);
+    expect(text).toMatch(/\| Riz +\| vivres +\| Féculents +\| kg +\| 3600 +\| +\| 0,08 +\| personne \| +\|/);
+    expect(text).toMatch(/\| Filtre +\| matériel +\| Traitement de l’eau \| pièce \| +\| 1500 +\| +\| foyer +\| 1 +\|/);
+    expect(text).toMatch(/\| Bougies +\| consommable \| Mes trucs +\|/);
     expect(text).toMatch(/\| Produit \| Quantité \| Péremption \| Emplacement \| Ajouté +\|/);
     expect(text).toMatch(/\| Riz +\| 2,5 +\| 2027-03 +\| Cave +\| 2026-11-01 \|/);
     expect(text).toMatch(/\| 2026-11-02 \| Riz +\| 0,2 +\| consommé \|/);

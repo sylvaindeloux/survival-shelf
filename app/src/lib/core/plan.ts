@@ -165,6 +165,30 @@ export function tierStatus(shelf: Shelf, autonomy: Autonomy, today: Day, days: n
   };
 }
 
+export interface GearStatus {
+  /** Gear in the plan with the quantity to own. */
+  total: number;
+  /** Gear owned in the planned quantity. */
+  ready: number;
+  /** Gear still missing, in the order of the product list. */
+  missing: Product[];
+}
+
+/** Gear is needed whatever the tier: only what is owned counts, not how long it lasts. */
+export function gearStatus(shelf: Shelf, today: Day): GearStatus {
+  const status: GearStatus = { total: 0, ready: 0, missing: [] };
+  for (const { product, usableQty } of summarizeProducts(shelf, today)) {
+    if (product.kind !== 'gear') continue;
+    // A tier of 0 days leaves the minimum to own only.
+    const target = productTarget(product, shelf.settings, 0);
+    if (target === null || target === 0) continue;
+    status.total++;
+    if (usableQty >= target) status.ready++;
+    else status.missing.push(product);
+  }
+  return status;
+}
+
 export interface TierPlan {
   tiers: TierStatus[];
   /** First tier that is not complete, null when they all are. */

@@ -1,4 +1,4 @@
-import { normalizeCategory } from './categories';
+import { defaultKind, normalizeCategory } from './categories';
 import { formatDay, normalizeDate, parseDay, type Day } from './dates';
 import { newLotId } from './ids';
 import { sameName } from './text';
@@ -27,6 +27,7 @@ export function byExpiry(a: Lot, b: Lot): number {
 export function emptyProduct(name: string): Product {
   return {
     name,
+    kind: defaultKind({ category: 'other', kcal: null, water: null }),
     category: 'other',
     unit: '',
     kcal: null,

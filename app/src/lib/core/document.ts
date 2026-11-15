@@ -1,4 +1,4 @@
-import { categoryLabel, normalizeCategory } from './categories';
+import { categoryLabel, defaultKind, normalizeCategory } from './categories';
 import {
   DEFAULT_PREAMBLE,
   SECTION_COMMENTS,
@@ -17,6 +17,7 @@ import { formatNumber, normalizeKey, parseNumber, sameName } from './text';
 import {
   LANGS,
   type Extra,
+  type Kind,
   type LogAction,
   type LogEntry,
   type Lot,
@@ -71,6 +72,7 @@ const SETTINGS_COLUMNS: ColumnDef[] = [
 
 const PRODUCT_COLUMNS: ColumnDef[] = [
   { key: 'name', label: { en: 'Product', fr: 'Produit' }, aliases: ['name', 'nom', 'item', 'article'], always: true },
+  { key: 'kind', label: { en: 'Type', fr: 'Type' }, aliases: ['kind', 'family', 'famille', 'nature', 'genre'], always: true },
   { key: 'category', label: { en: 'Category', fr: 'Catégorie' }, aliases: ['cat'], always: true },
   { key: 'unit', label: { en: 'Unit', fr: 'Unité' }, aliases: ['units', 'unites'], always: true },
   {
@@ -126,6 +128,33 @@ const PER_ALIASES: Record<string, Per> = {
   perdog: 'dog',
   chiens: 'dog',
   parchien: 'dog',
+};
+
+/** Values of the Type column written by the app. */
+const KIND_LABELS: Record<Kind, Translated> = {
+  food: { en: 'food', fr: 'vivres' },
+  consumable: { en: 'consumable', fr: 'consommable' },
+  gear: { en: 'gear', fr: 'matériel' },
+};
+
+const KIND_ALIASES: Record<string, Kind> = {
+  water: 'food',
+  foodandwater: 'food',
+  vivre: 'food',
+  nourriture: 'food',
+  aliment: 'food',
+  aliments: 'food',
+  denree: 'food',
+  denrees: 'food',
+  consumables: 'consumable',
+  consommables: 'consumable',
+  equipment: 'gear',
+  tool: 'gear',
+  tools: 'gear',
+  durable: 'gear',
+  equipement: 'gear',
+  outil: 'gear',
+  outils: 'gear',
 };
 
 const STOCK_COLUMNS: ColumnDef[] = [
@@ -514,9 +543,15 @@ function readProducts(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
       if (known) per = known;
       else issues.push({ level: 'warning', line: row.line, code: 'invalidPer', params: { value: perText } });
     }
+    const category = normalizeCategory(row.values.category ?? '');
+    const kindText = (row.values.kind ?? '').trim();
+    let kind = kindText === '' ? undefined : readValue(kindText, KIND_LABELS, KIND_ALIASES);
+    if (kindText !== '' && !kind) issues.push({ level: 'warning', line: row.line, code: 'invalidKind', params: { value: kindText } });
+    kind ??= defaultKind({ category, kcal, water });
     shelf.products.push({
       name,
-      category: normalizeCategory(row.values.category ?? ''),
+      kind,
+      category,
       unit: (row.values.unit ?? '').trim(),
       kcal,
       water,
@@ -534,6 +569,7 @@ function findOrCreateProduct(shelf: Shelf, name: string, line: number, issues: P
   if (existing) return existing;
   const product: Product = {
     name,
+    kind: defaultKind({ category: 'other', kcal: null, water: null }),
     category: 'other',
     unit: '',
     kcal: null,
@@ -670,6 +706,7 @@ function settingsRows(shelf: Shelf, lang: Lang): Record<string, string>[] {
 function productRow(product: Product, lang: Lang): Record<string, string> {
   return {
     name: product.name,
+    kind: inLang(KIND_LABELS[product.kind], lang),
     category: categoryLabel(product.category, lang),
     unit: product.unit,
     kcal: formatNumber(product.kcal, lang),

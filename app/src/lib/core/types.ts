@@ -30,8 +30,17 @@ export interface Settings {
 /** Who a product's quantities are for: each person, the whole household, each cat or each dog. */
 export type Per = 'person' | 'household' | 'cat' | 'dog';
 
+/**
+ * How a product is looked after:
+ * - food: food and water, eaten and replaced as you go (rotation), counted in the autonomy;
+ * - consumable: not eaten but used up or aging (batteries, medicine, gas…), replaced before its date;
+ * - gear: durable things you only need to own (tools, lamp, stove…), nothing to rotate.
+ */
+export type Kind = 'food' | 'consumable' | 'gear';
+
 export interface Product {
   name: string;
+  kind: Kind;
   /** Category key (see categories.ts) or any free text. */
   category: string;
   unit: string;

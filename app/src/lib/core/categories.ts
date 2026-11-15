@@ -1,37 +1,47 @@
 import { inLang, translations, type Lang, type Translated } from './languages';
 import { normalizeKey } from './text';
+import type { Kind } from './types';
+
+/** Kinds of products, in the order the app shows them. */
+export const KINDS: Kind[] = ['food', 'consumable', 'gear'];
 
 export interface Category {
   key: string;
   label: Translated;
   /** Extra names accepted when reading the file. */
   aliases?: string[];
-  /** Eaten or drunk: part of the rotation plan. */
-  consumable?: boolean;
+  /** Kind of a product of this category, unless it says otherwise. */
+  kind: Kind;
 }
 
 export const CATEGORIES: Category[] = [
-  { key: 'water', label: { en: 'Water', fr: 'Eau' }, consumable: true },
+  { key: 'water', label: { en: 'Water', fr: 'Eau' }, kind: 'food' },
   {
     key: 'water-treatment',
     label: { en: 'Water treatment', fr: 'Traitement de l’eau' },
     aliases: ['water-filter', 'filter', 'filters', 'filtre', 'filtres', 'purification', 'traitement-eau', 'traitement de l eau'],
+    kind: 'consumable',
   },
-  { key: 'grains', label: { en: 'Grains & starches', fr: 'Féculents' }, aliases: ['starches', 'cereals', 'cereales'], consumable: true },
-  { key: 'legumes', label: { en: 'Legumes', fr: 'Légumineuses' }, aliases: ['pulses', 'beans'], consumable: true },
-  { key: 'canned', label: { en: 'Canned food', fr: 'Conserves' }, aliases: ['cans'], consumable: true },
-  { key: 'ready-meals', label: { en: 'Ready meals', fr: 'Plats préparés' }, aliases: ['meals', 'freeze-dried', 'lyophilises'], consumable: true },
-  { key: 'dairy', label: { en: 'Dairy', fr: 'Produits laitiers' }, aliases: ['milk', 'lait'], consumable: true },
-  { key: 'fats', label: { en: 'Oils & fats', fr: 'Matières grasses' }, aliases: ['oil', 'huile'], consumable: true },
-  { key: 'sweets', label: { en: 'Sugar & snacks', fr: 'Sucré & en-cas' }, aliases: ['sugar', 'snacks', 'sucre'], consumable: true },
-  { key: 'drinks', label: { en: 'Drinks', fr: 'Boissons' }, consumable: true },
-  { key: 'condiments', label: { en: 'Condiments & spices', fr: 'Condiments & épices' }, aliases: ['spices', 'epices'], consumable: true },
-  { key: 'pets', label: { en: 'Pets', fr: 'Animaux' }, consumable: true },
-  { key: 'hygiene', label: { en: 'Hygiene', fr: 'Hygiène' } },
-  { key: 'medical', label: { en: 'Health & first aid', fr: 'Santé & secours' }, aliases: ['health', 'first-aid', 'sante', 'medicaments'] },
-  { key: 'energy', label: { en: 'Energy & light', fr: 'Énergie & éclairage' }, aliases: ['batteries', 'piles', 'fuel'] },
-  { key: 'tools', label: { en: 'Tools & gear', fr: 'Outils & matériel' }, aliases: ['gear', 'equipment', 'materiel'] },
-  { key: 'other', label: { en: 'Other', fr: 'Divers' }, aliases: ['misc'] },
+  { key: 'grains', label: { en: 'Grains & starches', fr: 'Féculents' }, aliases: ['starches', 'cereals', 'cereales'], kind: 'food' },
+  { key: 'legumes', label: { en: 'Legumes', fr: 'Légumineuses' }, aliases: ['pulses', 'beans'], kind: 'food' },
+  { key: 'canned', label: { en: 'Canned food', fr: 'Conserves' }, aliases: ['cans'], kind: 'food' },
+  { key: 'ready-meals', label: { en: 'Ready meals', fr: 'Plats préparés' }, aliases: ['meals', 'freeze-dried', 'lyophilises'], kind: 'food' },
+  { key: 'dairy', label: { en: 'Dairy', fr: 'Produits laitiers' }, aliases: ['milk', 'lait'], kind: 'food' },
+  { key: 'fats', label: { en: 'Oils & fats', fr: 'Matières grasses' }, aliases: ['oil', 'huile'], kind: 'food' },
+  { key: 'sweets', label: { en: 'Sugar & snacks', fr: 'Sucré & en-cas' }, aliases: ['sugar', 'snacks', 'sucre'], kind: 'food' },
+  { key: 'drinks', label: { en: 'Drinks', fr: 'Boissons' }, kind: 'food' },
+  { key: 'condiments', label: { en: 'Condiments & spices', fr: 'Condiments & épices' }, aliases: ['spices', 'epices'], kind: 'food' },
+  { key: 'pets', label: { en: 'Pets', fr: 'Animaux' }, kind: 'food' },
+  { key: 'hygiene', label: { en: 'Hygiene', fr: 'Hygiène' }, kind: 'consumable' },
+  {
+    key: 'medical',
+    label: { en: 'Health & first aid', fr: 'Santé & secours' },
+    aliases: ['health', 'first-aid', 'sante', 'medicaments'],
+    kind: 'consumable',
+  },
+  { key: 'energy', label: { en: 'Energy & light', fr: 'Énergie & éclairage' }, aliases: ['batteries', 'piles', 'fuel'], kind: 'consumable' },
+  { key: 'tools', label: { en: 'Tools & gear', fr: 'Outils & matériel' }, aliases: ['gear', 'equipment', 'materiel'], kind: 'gear' },
+  { key: 'other', label: { en: 'Other', fr: 'Divers' }, aliases: ['misc'], kind: 'consumable' },
 ];
 
 const BY_ALIAS = new Map<string, Category>();
@@ -64,10 +74,23 @@ export function isStoredWater(product: Nature): boolean {
   return (product.water ?? 0) > 0 && !isWaterTreatment(product);
 }
 
-/** True for food and water: things that are eaten and can be rotated. */
-export function isConsumable(product: Nature): boolean {
-  if (isWaterTreatment(product)) return false;
-  return (product.kcal ?? 0) > 0 || (product.water ?? 0) > 0 || findCategory(product.category)?.consumable === true;
+/** Kind of the products of a category: consumable for a category the app does not know. */
+export function categoryKind(category: string): Kind {
+  return findCategory(category)?.kind ?? 'consumable';
+}
+
+/**
+ * Kind of a product that does not say it: what has calories or drinking water is
+ * food, the rest follows its category.
+ */
+export function defaultKind(product: Nature): Kind {
+  if (!isWaterTreatment(product) && ((product.kcal ?? 0) > 0 || (product.water ?? 0) > 0)) return 'food';
+  return categoryKind(product.category);
+}
+
+/** Food and water: eaten and replaced as you go, so part of the rotation. */
+export function isFood(product: { kind: Kind; category: string }): boolean {
+  return product.kind === 'food' && !isWaterTreatment(product);
 }
 
 /** Canonical key for a known category, or the trimmed text for a custom one. */

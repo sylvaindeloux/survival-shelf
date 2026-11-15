@@ -60,8 +60,8 @@ export const SECTION_HEADINGS: Record<SectionName, Translated> = {
 export const SECTION_COMMENTS: Record<SectionName, Translated> = {
   settings: { en: '', fr: '' },
   products: {
-    en: '<!-- One row per product. Kcal and Water are per unit. Daily use sets what each tier needs, Target is a minimum to own. Per: person, household, cat or dog. -->',
-    fr: '<!-- Une ligne par produit. Kcal et Eau sont par unité. Conso/jour fixe ce qu’il faut pour chaque palier, Objectif est un minimum à avoir. Par : personne, foyer, chat ou chien. -->',
+    en: '<!-- One row per product. Type: food, consumable or gear. Kcal and Water are per unit. Daily use sets what each tier needs, Target is a minimum to own. Per: person, household, cat or dog. -->',
+    fr: '<!-- Une ligne par produit. Type : vivres, consommable ou matériel. Kcal et Eau sont par unité. Conso/jour fixe ce qu’il faut pour chaque palier, Objectif est un minimum à avoir. Par : personne, foyer, chat ou chien. -->',
   },
   stock: {
     en: '<!-- One row per lot: same product, same expiry date, same location. -->',
