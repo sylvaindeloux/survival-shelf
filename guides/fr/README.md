@@ -194,5 +194,6 @@ Pour tout récupérer d’un coup, utilise le bouton vert « Code » puis « Dow
 - [Désert et chaleur extrême](milieux-hostiles/desert-et-chaleur-extreme.md) : combien d’eau emporter, éviter les heures chaudes, rester près du véhicule.
 - [Forêt tropicale](milieux-hostiles/foret-tropicale.md) : ne pas quitter le sentier, se protéger des moustiques, réagir à une morsure de serpent.
 - [Mer et littoral](milieux-hostiles/mer-et-littoral.md) : météo et marées, courant qui emporte, bateau en difficulté, qui appeler en mer.
+- [Grande ville et foule](milieux-hostiles/grande-ville-et-foule.md) : repérer les sorties, sortir d’une bousculade, réagir dans le métro, ne pas se précipiter pour rentrer après une catastrophe.
 - [Zone de conflit](milieux-hostiles/zone-de-conflit.md) : se déplacer, reconnaître une zone minée, réagir aux tirs, suivre les consignes de l’ambassade.
 - [Sous les décombres ou dans un lieu confiné](milieux-hostiles/sous-les-decombres-ou-dans-un-lieu-confine.md) : se signaler sans respirer la poussière, et ne jamais descendre secourir dans un puits ou une cuve.

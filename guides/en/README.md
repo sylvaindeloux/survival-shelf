@@ -194,5 +194,6 @@ To get everything at once, use the green "Code" button then "Download ZIP" on th
 - [Desert and extreme heat](hostile-environments/desert-and-extreme-heat.md): how much water to carry, avoiding the heat of the day, staying near the vehicle.
 - [Tropical forest](hostile-environments/tropical-forest.md): do not leave the trail, protect yourself from mosquitoes, react to a snake bite.
 - [Sea and coast](hostile-environments/sea-and-coast.md): weather and tides, being carried off by a current, a boat in trouble, who to call at sea.
+- [Big city and crowds](hostile-environments/big-city-and-crowds.md): spotting the exits, getting out of a crowd crush, reacting in the subway, not rushing home after a disaster.
 - [Conflict zone](hostile-environments/conflict-zone.md): getting around, recognizing a mined area, reacting to gunfire, following your embassy.
 - [Under rubble or in a confined space](hostile-environments/under-rubble-or-in-a-confined-space.md): signal without breathing in dust, and never go down a well or a tank to rescue someone.
