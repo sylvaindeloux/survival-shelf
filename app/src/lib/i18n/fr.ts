@@ -17,6 +17,7 @@ export const fr: Record<keyof typeof en, string> = {
   'nav.checkinQuarterly': 'Trimestre',
   'nav.checkinSemiannual': '6 mois',
   'nav.plan': 'Plan',
+  'nav.guides': 'Fiches',
   'nav.settings': 'Réglages',
 
   'welcome.tagline': 'Construis ton stock de survie pas à pas, et ne laisse plus rien périmer.',
@@ -33,6 +34,7 @@ export const fr: Record<keyof typeof en, string> = {
   'welcome.demoTitle': 'Juste pour voir',
   'welcome.demoText': 'Découvre l’appli avec un stock d’exemple. Rien n’est enregistré dans un fichier.',
   'welcome.demo': 'Essayer avec un exemple',
+  'welcome.guides': 'Lire les fiches pratiques',
 
   'home.title': 'Accueil',
   'home.household_one': 'foyer de {count} personne',
@@ -367,6 +369,24 @@ export const fr: Record<keyof typeof en, string> = {
   'toast.productDeleted': '{name} supprimé',
   'toast.consumed': 'Consommé : {what}',
   'toast.discarded': 'Jeté : {what}',
+
+  'guides.title': 'Fiches pratiques',
+  'guides.intro': 'Des fiches courtes pour agir quand tout va mal. Elles marchent hors ligne, comme le reste de l’appli.',
+  'guides.notice':
+    'Ces fiches ne remplacent ni les consignes des autorités ni une formation aux premiers secours. En cas d’urgence vitale, appelle le 112.',
+  'guides.search': 'Chercher dans les fiches',
+  'guides.results_one': '{count} fiche pour « {query} »',
+  'guides.results_other': '{count} fiches pour « {query} »',
+  'guides.noResult': 'Aucune fiche pour « {query} ». Essaie un autre mot.',
+  'guides.more': 'D’autres thèmes sont en cours d’écriture.',
+  'guides.offlineTitle': 'Garde-les sans l’appli',
+  'guides.offlineText':
+    'Les fiches sont de simples fichiers texte : copie-les sur un téléphone ou une clé USB, ou imprime celles qui comptent pour toi.',
+  'guides.download': 'Télécharger toutes les fiches',
+  'guides.all': 'Toutes les fiches',
+  'guides.print': 'Imprimer',
+  'guides.notFound': 'Cette fiche n’existe pas, ou plus.',
+  'guides.back': 'Retour à l’accueil',
 
   'print.title': 'Inventaire',
   'print.rotation': 'Rotation',

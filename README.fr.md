@@ -157,9 +157,28 @@ La façon dont le fichier est tenu à jour dépend de ton navigateur :
 
 ## Fiches pratiques
 
-En plus de l’appli, Survival Shelf propose des fiches pratiques (comment rendre l’eau potable, comment se
-protéger du froid…), écrites en simples pages de texte que tu peux lire sans l’appli, ici sur GitHub ou sur
-n’importe quel appareil. Elles sont en cours d’écriture et seront listées ici.
+Avoir des réserves, c’est bien. Savoir quoi en faire, c’est mieux. Survival Shelf propose des fiches
+pratiques : des pages courtes qui répondent chacune à une seule question (combien d’eau prévoir, comment la
+rendre potable, où en trouver quand le robinet est à sec…), commencent par l’essentiel et citent leurs sources
+officielles.
+
+**[Lire les fiches](guides/fr/README.md)**
+
+<p align="center">
+  <img src="docs/screenshots/fr/guides.png" width="260" alt="La page Fiches : une recherche et la liste des fiches sur l’eau">
+  <img src="docs/screenshots/fr/guide.png" width="260" alt="Une fiche : rendre l’eau potable, qui commence par son résumé">
+</p>
+
+- **Dans l’appli**, elles sont sur la page Fiches, avec une recherche, et elles marchent hors ligne. Tu peux
+  les lire avant même d’avoir un stock.
+- **Sans l’appli**, ce sont de simples fichiers texte rangés par langue et par thème dans le dossier
+  [`guides`](guides/) : lis-les ici sur GitHub, copie-les sur un téléphone ou une clé USB, ou imprime celles
+  qui comptent pour toi. L’appli a un bouton « Télécharger toutes les fiches ».
+
+Le premier thème, l’eau, est disponible. Les autres sont en cours d’écriture : les bases, la nourriture, le
+froid et la chaleur, le feu et l’énergie, la santé et les premiers secours, l’hygiène, la communication et
+l’orientation, les catastrophes, à la maison, en voiture, en extérieur et les milieux hostiles. Les fiches ne
+remplacent ni les consignes des autorités ni une formation aux premiers secours.
 
 ## Questions
 

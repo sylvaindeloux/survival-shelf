@@ -455,11 +455,18 @@ textarea {
 }
 
 @media print {
-  :root {
+  /* Paper is white whatever the theme: these selectors outweigh the dark palettes above. */
+  :root,
+  :root[data-theme='dark'],
+  :root:not([data-theme='light']) {
     --bg: #fff;
+    --surface: #fff;
     --text: #000;
     --muted: #444;
     --border: #999;
+    --primary: #3b4119;
+    --primary-soft: #eef0e2;
+    --danger: #a11d16;
     color-scheme: light;
   }
 
@@ -474,6 +481,10 @@ textarea {
 
   .print-only {
     display: block;
+  }
+
+  .no-print {
+    display: none !important;
   }
 }
 

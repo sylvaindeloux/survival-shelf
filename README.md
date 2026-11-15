@@ -150,9 +150,26 @@ How the file is kept up to date depends on your browser:
 
 ## Practical guides
 
-Alongside the app, Survival Shelf comes with practical guides (how to make water drinkable, how to keep warm…),
-written as simple text pages you can read without the app, right here on GitHub or on any device. They are being
-written and will be linked here.
+Having supplies is one thing, knowing what to do with them is another. Survival Shelf comes with practical
+guides: short pages that each answer one question (how much water do I need, how do I make it safe to drink,
+where do I find some when the tap runs dry…), start with the essentials and list their official sources.
+
+**[Read the guides](guides/en/README.md)**
+
+<p align="center">
+  <img src="docs/screenshots/en/guides.png" width="260" alt="The Guides page: a search box and the list of the water guides">
+  <img src="docs/screenshots/en/guide.png" width="260" alt="A guide: make water safe to drink, starting with its summary">
+</p>
+
+- **In the app**, they are on the Guides page, with a search, and they work offline. You can read them before
+  you have any stock.
+- **Without the app**, they are plain text files in the [`guides`](guides/) folder, sorted by language and
+  theme: read them here on GitHub, copy them to a phone or a USB stick, or print the ones that matter to you.
+  The app has a "Download all guides" button.
+
+The first theme, water, is there. The others are being written: basics, food, cold and heat, fire and power,
+health and first aid, hygiene, communication and navigation, disasters, at home, in the car, outdoors and
+hostile environments. The guides do not replace instructions from the authorities or first-aid training.
 
 ## Questions
 
