@@ -16,6 +16,7 @@
   import ExpiryBadge from '../lib/ui/ExpiryBadge.svelte';
   import { checkinTitle, formatKcal, formatLiters, quantity, tierLabel, wholeDays } from '../lib/ui/format';
   import { dialogs, router } from '../lib/ui/state.svelte';
+  import KindIcon from '../lib/ui/KindIcon.svelte';
 
   const settings = $derived(app.shelf.settings);
   const autonomy = $derived(app.autonomy);
@@ -26,6 +27,12 @@
   const isEmpty = $derived(app.shelf.products.length === 0 && app.shelf.lots.length === 0);
   const lowMenu = $derived(app.menu > 0 && app.menu < settings.kcalPerPersonPerDay * 0.9);
   const toBuy = $derived(buyCount(checkin.buy));
+  const firstOut = $derived(autonomy.supplies.find((supply) => Number.isFinite(supply.days)) ?? null);
+  const gear = $derived(app.gear);
+  // A few names are enough on the home screen: the gear page lists them all.
+  const missingNames = $derived(
+    gear.missing.slice(0, 3).map((product) => product.name).join(', ') + (gear.missing.length > 3 ? '…' : ''),
+  );
 </script>
 
 <div class="stack">
@@ -134,6 +141,41 @@
       {/if}
     </section>
 
+    <section class="card supplies" aria-labelledby="supplies-title">
+      <h2 id="supplies-title">{t('home.suppliesTitle')}</h2>
+      <div class="kind-lines">
+        <div class="kind-line">
+          <span class="kind-box"><KindIcon kind="consumable" size={22} /></span>
+          <div class="grow">
+            {#if firstOut}
+              <p class="kind-value num">{wholeDays(firstOut.days)} {t('home.days')}</p>
+              <p class="small muted">{t('home.firstOut', { name: firstOut.product.name })}</p>
+            {:else}
+              <p class="small muted">{t('home.noSupplies')}</p>
+            {/if}
+            {#if checkin.replace.length > 0}
+              <span class="pill soon">{checkin.replace.length} {t('checkin.replaceShort')}</span>
+            {/if}
+          </div>
+        </div>
+        <div class="kind-line">
+          <span class="kind-box"><KindIcon kind="gear" size={22} /></span>
+          <div class="grow">
+            {#if gear.total > 0}
+              <p class="kind-value num">{tn('kind.gearCount', gear.ready, { total: gear.total })}</p>
+              <div class="bar" class:done={gear.ready === gear.total}><span style:width="{(gear.ready / gear.total) * 100}%"></span></div>
+              {#if gear.missing.length > 0}
+                <p class="small muted">{t('home.gearMissingList', { list: missingNames })}</p>
+              {/if}
+            {:else}
+              <p class="small muted">{t('home.noGear')}</p>
+            {/if}
+          </div>
+        </div>
+      </div>
+      <a class="btn ghost small see" href="#/stock/gear">{t('home.seeGear')}<ChevronRight size={16} /></a>
+    </section>
+
     <div class="cards">
       <section class="card checkin">
         <div class="section-title">
@@ -146,6 +188,9 @@
           </div>
           <div>
             <strong class="num">{checkin.consume.length}</strong><span class="small muted">{t('checkin.consumeShort')}</span>
+          </div>
+          <div>
+            <strong class="num">{checkin.replace.length}</strong><span class="small muted">{t('checkin.replaceShort')}</span>
           </div>
           <div>
             <strong class="num">{toBuy}</strong><span class="small muted">{t('checkin.buyShort')}</span>
@@ -394,6 +439,78 @@
     }
   }
 
+  .supplies {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .kind-lines {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  @media (min-width: 760px) {
+    .kind-lines {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 2rem;
+    }
+  }
+
+  .kind-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .kind-line + .kind-line {
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (min-width: 760px) {
+    .kind-line + .kind-line {
+      padding-top: 0;
+      border-top: none;
+    }
+  }
+
+  .kind-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-sm);
+    background: var(--primary-soft);
+    color: var(--primary);
+  }
+
+  .kind-line .grow {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .kind-line .bar {
+    align-self: stretch;
+  }
+
+  .kind-value {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .see {
+    align-self: flex-start;
+  }
+
   .checkin {
     display: flex;
     flex-direction: column;
@@ -411,7 +528,7 @@
 
   .counters {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0.5rem;
   }
 

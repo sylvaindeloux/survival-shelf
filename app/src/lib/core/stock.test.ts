@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { dayFromParts } from './dates';
 import { emptyShelf } from './defaults';
-import { addLot, deleteProduct, emptyProduct, takeFromLot, takeFromProduct, upsertProduct } from './stock';
+import { addLot, deleteProduct, emptyProduct, replaceLot, takeFromLot, takeFromProduct, upsertProduct } from './stock';
 
 const TODAY = dayFromParts(2026, 10, 10);
 
@@ -46,6 +46,20 @@ describe('stock operations', () => {
     const { shelf } = takeFromLot(start, start.lots[0].id, 2, 'discarded', TODAY, 'mice');
     expect(shelf.lots.map((lot) => lot.expires)).toEqual(['2027-01']);
     expect(shelf.log[0]).toMatchObject({ action: 'discarded', qty: 2, note: 'mice' });
+  });
+
+  it('replaces a lot: the old one is logged as used, the new one added', () => {
+    let start = upsertProduct(emptyShelf(), { ...emptyProduct('AA batteries'), kind: 'consumable', category: 'energy' });
+    start = addLot(start, { product: 'AA batteries', qty: 8, expires: '2026-12', location: 'Drawer' }, TODAY);
+    const shelf = replaceLot(start, start.lots[0].id, { product: 'AA batteries', qty: 12, expires: '2036-10', location: 'Drawer' }, TODAY);
+    expect(shelf.lots.map((lot) => [lot.qty, lot.expires, lot.location])).toEqual([[12, '2036-10', 'Drawer']]);
+    expect(shelf.log).toEqual([{ date: '2026-10-10', product: 'AA batteries', qty: 8, action: 'consumed', note: '', extra: {} }]);
+  });
+
+  it('still adds the new lot when the old one is gone', () => {
+    const shelf = replaceLot(shelfWithRice(), 'missing', { product: 'Rice', qty: 1, expires: '', location: '' }, TODAY);
+    expect(shelf.lots).toHaveLength(3);
+    expect(shelf.log).toEqual([]);
   });
 
   it('renames a product everywhere', () => {

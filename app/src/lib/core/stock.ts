@@ -189,6 +189,16 @@ export function takeFromLot(shelf: Shelf, lotId: string, qty: number, action: Lo
   return take(shelf, [lot], qty, action, today, note, lot.product);
 }
 
+/**
+ * Replaces a lot with a new one (batteries, medicine… renewed before their date):
+ * the old lot is logged as used, then the new one is added.
+ */
+export function replaceLot(shelf: Shelf, oldLotId: string, input: LotInput, today: Day): Shelf {
+  const old = shelf.lots.find((lot) => lot.id === oldLotId);
+  const used = old ? takeFromLot(shelf, old.id, old.qty, 'consumed', today).shelf : shelf;
+  return addLot(used, input, today);
+}
+
 export function updateSettings(shelf: Shelf, settings: Settings): Shelf {
   return { ...shelf, settings: { ...settings } };
 }

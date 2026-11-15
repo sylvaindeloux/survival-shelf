@@ -3,11 +3,22 @@ import { categoryLabel as labelOf } from '../core/categories';
 import { daysLeft, expiryStatus, type ExpiryStatus } from '../core/status';
 import type { Day } from '../core/dates';
 import { inLang } from '../core/languages';
-import type { Lot, Per, Product, Rhythm, Settings } from '../core/types';
+import type { Kind, Lot, Per, Product, Rhythm, Settings } from '../core/types';
 import { formatDate, formatNumber, formatRelative, i18n, t, type MessageKey } from '../i18n/index.svelte';
 
 export function categoryLabel(category: string): string {
   return labelOf(category, i18n.lang);
+}
+
+/** Texts of each kind of product: name, how it is looked after, examples, empty stock. */
+export const KIND_TEXTS = {
+  food: { label: 'kind.food', hint: 'kind.foodHint', examples: 'kind.foodExamples', empty: 'stock.emptyFood' },
+  consumable: { label: 'kind.consumable', hint: 'kind.consumableHint', examples: 'kind.consumableExamples', empty: 'stock.emptyConsumable' },
+  gear: { label: 'kind.gear', hint: 'kind.gearHint', examples: 'kind.gearExamples', empty: 'stock.emptyGear' },
+} satisfies Record<Kind, Record<string, MessageKey>>;
+
+export function kindLabel(kind: Kind): string {
+  return t(KIND_TEXTS[kind].label);
 }
 
 /** Plurals of the usual units (units are free text, others are shown as written). */

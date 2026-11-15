@@ -1,5 +1,6 @@
+import { KINDS } from '../core/categories';
 import { formatDay, parseDay, type Day } from '../core/dates';
-import type { LogAction } from '../core/types';
+import type { Kind, LogAction } from '../core/types';
 
 export type Route = 'home' | 'checkin' | 'stock' | 'plan' | 'guides' | 'settings';
 const ROUTES: Route[] = ['home', 'checkin', 'stock', 'plan', 'guides', 'settings'];
@@ -24,8 +25,8 @@ class Router {
     });
   }
 
-  go(route: Route) {
-    location.hash = route === 'home' ? '/' : `/${route}`;
+  go(route: Route, path = '') {
+    location.hash = route === 'home' ? '/' : `/${route}${path ? `/${path}` : ''}`;
   }
 }
 
@@ -36,6 +37,10 @@ export interface LotDialogState {
   lotId?: string;
   product?: string;
   qty?: number;
+  /** Kind of a new product, until its catalog entry or category says otherwise. */
+  kind?: Kind;
+  /** Lot replaced by the new one: it is logged as used when the new lot is saved. */
+  replaces?: string;
 }
 
 export interface TakeDialogState {
@@ -49,6 +54,8 @@ export interface TakeDialogState {
 export interface ProductDialogState {
   /** Product to edit; absent to create one. */
   name?: string;
+  /** Kind of a new product, until its catalog entry or category says otherwise. */
+  kind?: Kind;
 }
 
 /** Which dialog is open, shared by all views. */
@@ -59,6 +66,11 @@ class Dialogs {
 }
 
 export const dialogs = new Dialogs();
+
+/** `#/stock/gear` opens the gear of the stock: the Stock and Plan screens have one sub-page per kind. */
+export function kindOfPath(path: string): Kind | null {
+  return (KINDS as string[]).includes(path) ? (path as Kind) : null;
+}
 
 export type Theme = 'auto' | 'light' | 'dark';
 const THEME_KEY = 'survival-shelf:theme';

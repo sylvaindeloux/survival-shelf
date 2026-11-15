@@ -1,14 +1,16 @@
 <script lang="ts">
   import Trash from '@lucide/svelte/icons/trash';
   import { app } from '../app.svelte';
-  import { CATEGORIES } from '../core/categories';
+  import { CATEGORIES, defaultKind, isWaterTreatment } from '../core/categories';
   import { isValidDate, monthsLater } from '../core/dates';
   import { CATALOG, findCatalogItem } from '../core/catalog';
-  import { addLot, deleteLot, emptyProduct, findProduct, updateLot, upsertProduct } from '../core/stock';
+  import { addLot, deleteLot, emptyProduct, findProduct, replaceLot, updateLot, upsertProduct } from '../core/stock';
   import { parseNumber } from '../core/text';
+  import type { Kind } from '../core/types';
   import { localize, t } from '../i18n/index.svelte';
   import Dialog from './Dialog.svelte';
   import CategoryIcon from './CategoryIcon.svelte';
+  import KindPicker from './KindPicker.svelte';
   import { categoryLabel, inputNumber, keepsText, quantity } from './format';
   import { dialogs, type LotDialogState } from './state.svelte';
 
@@ -19,6 +21,9 @@
   // The dialog is recreated for every request: reading the props once is intended.
   // svelte-ignore state_referenced_locally
   const editing = request.lotId ? app.shelf.lots.find((lot) => lot.id === request.lotId) : undefined;
+  /** Lot this one replaces: logged as used when the new one is saved. */
+  // svelte-ignore state_referenced_locally
+  const replaced = !editing && request.replaces ? app.shelf.lots.find((lot) => lot.id === request.replaces) : undefined;
   // svelte-ignore state_referenced_locally
   let productName = $state(editing?.product ?? request.product ?? '');
   // svelte-ignore state_referenced_locally
@@ -29,7 +34,7 @@
   let expires = $state(editing?.expires ?? '');
   /** The date was filled in by the app from the typical shelf life, not by the user. */
   let estimated = $state(false);
-  let location = $state(editing?.location ?? '');
+  let location = $state(editing?.location ?? replaced?.location ?? '');
   let submitted = $state(false);
 
   // Fields of a new product.
@@ -37,6 +42,14 @@
   let unit = $state('');
   let kcal = $state('');
   let water = $state('');
+  // svelte-ignore state_referenced_locally
+  let kind = $state<Kind>(request.kind ?? defaultKind({ category: 'other', kcal: null, water: null }));
+  /** Picked by the user or given by the page: a new category no longer changes it, the catalog still does. */
+  // svelte-ignore state_referenced_locally
+  let kindChosen = request.kind !== undefined;
+  /** Calories only make sense for food, liters for food and water treatment (the volume it makes drinkable). */
+  const showKcal = $derived(kind === 'food');
+  const showWater = $derived(kind === 'food' || isWaterTreatment({ category }));
 
   const existing = $derived(findProduct(app.shelf, productName));
   const isNew = $derived(productName.trim() !== '' && !existing);
@@ -45,7 +58,7 @@
     product: productName.trim() === '',
     qty: qtyValue === null || Number.isNaN(qtyValue) || qtyValue <= 0,
     expires: precision !== 'none' && !isValidDate(expires),
-    numbers: [kcal, water].some((value) => {
+    numbers: [showKcal ? kcal : '', showWater ? water : ''].some((value) => {
       const number = parseNumber(value);
       return number !== null && (Number.isNaN(number) || number < 0);
     }),
@@ -65,6 +78,7 @@
     const entry = findCatalogItem(productName);
     if (!entry) return;
     category = entry.category;
+    kind = entry.kind;
     unit = localize(entry.unit);
     kcal = inputNumber(entry.kcal);
     water = inputNumber(entry.water);
@@ -91,6 +105,11 @@
   // Asked to add a product that is not in the list yet (water from the check-in): fill it from the catalog.
   productChanged();
 
+  /** A new category gives its kind until the user picks one. */
+  function categoryChanged() {
+    if (!kindChosen) kind = defaultKind({ category, kcal: optionalNumber(kcal), water: optionalNumber(water) });
+  }
+
   function setPrecision(next: Precision) {
     estimated = false;
     if (next === 'month' && /^\d{4}-\d{2}/.test(expires)) expires = expires.slice(0, 7);
@@ -114,15 +133,18 @@
       if (isNew) {
         next = upsertProduct(next, {
           ...emptyProduct(name),
+          kind,
           category,
           unit: unit.trim(),
-          kcal: optionalNumber(kcal),
-          water: optionalNumber(water),
+          kcal: showKcal ? optionalNumber(kcal) : null,
+          water: showWater ? optionalNumber(water) : null,
         });
       }
-      if (editing) return updateLot(next, editing.id, { product, qty: qtyValue, expires: lotExpires, location });
-      return addLot(next, { product, qty: qtyValue, expires: lotExpires, location }, app.today);
-    }, editing ? undefined : t('toast.lotAdded', { what: `${quantity(qtyValue, existing ?? { ...emptyProduct(name), unit })} · ${product}` }));
+      const input = { product, qty: qtyValue, expires: lotExpires, location };
+      if (editing) return updateLot(next, editing.id, input);
+      if (replaced) return replaceLot(next, replaced.id, input, app.today);
+      return addLot(next, input, app.today);
+    }, editing ? undefined : t(replaced ? 'toast.replaced' : 'toast.lotAdded', { what: `${quantity(qtyValue, existing ?? { ...emptyProduct(name), unit })} · ${product}` }));
 
     if (keepOpen) {
       productName = '';
@@ -143,7 +165,7 @@
   }
 </script>
 
-<Dialog title={editing ? t('lot.editTitle') : t('lot.addTitle')} onclose={() => (dialogs.lot = null)}>
+<Dialog title={editing ? t('lot.editTitle') : replaced ? t('lot.replaceTitle') : t('lot.addTitle')} onclose={() => (dialogs.lot = null)}>
   <form
     id="lot-form"
     class="stack"
@@ -153,6 +175,9 @@
       save(false);
     }}
   >
+    {#if replaced}
+      <p class="replace-hint">{t('lot.replaceHint', { what: `${quantity(replaced.qty, findProduct(app.shelf, replaced.product))} · ${replaced.product}` })}</p>
+    {/if}
     <label class="field">
       <span>{t('lot.product')}</span>
       <input
@@ -179,10 +204,11 @@
     {#if isNew}
       <fieldset class="new-product stack">
         <legend>{t('lot.newProduct')}</legend>
+        <KindPicker bind:value={kind} onpick={() => (kindChosen = true)} />
         <div class="grid-2">
           <label class="field">
             <span>{t('product.category')}</span>
-            <select class="select" bind:value={category}>
+            <select class="select" bind:value={category} onchange={categoryChanged}>
               {#each CATEGORIES as option (option.key)}
                 <option value={option.key}>{localize(option.label)}</option>
               {/each}
@@ -193,16 +219,22 @@
             <input class="input" list="unit-suggestions" bind:value={unit} placeholder={t('product.unitPlaceholder')} />
           </label>
         </div>
-        <div class="grid-2">
-          <label class="field">
-            <span>{t('product.kcal')}</span>
-            <input class="input" inputmode="decimal" bind:value={kcal} placeholder="0" />
-          </label>
-          <label class="field">
-            <span>{t('product.water')}</span>
-            <input class="input" inputmode="decimal" bind:value={water} placeholder="0" />
-          </label>
-        </div>
+        {#if showKcal || showWater}
+          <div class="grid-2">
+            {#if showKcal}
+              <label class="field">
+                <span>{t('product.kcal')}</span>
+                <input class="input" inputmode="decimal" bind:value={kcal} placeholder="0" />
+              </label>
+            {/if}
+            {#if showWater}
+              <label class="field">
+                <span>{t('product.water')}</span>
+                <input class="input" inputmode="decimal" bind:value={water} placeholder="0" />
+              </label>
+            {/if}
+          </div>
+        {/if}
         <p class="hint">{t('lot.newProductHint')}</p>
       </fieldset>
     {/if}
@@ -273,7 +305,7 @@
     {#if editing}
       <button type="button" class="btn danger" onclick={remove}><Trash size={18} />{t('action.delete')}</button>
       <span class="spacer"></span>
-    {:else}
+    {:else if !replaced}
       <button type="button" class="btn" onclick={() => save(true)}>{t('lot.saveAndNext')}</button>
     {/if}
     <button type="submit" form="lot-form" class="btn primary">{editing ? t('action.save') : t('action.add')}</button>
@@ -281,6 +313,13 @@
 </Dialog>
 
 <style>
+  .replace-hint {
+    padding: 0.6rem 0.75rem;
+    border-radius: var(--radius-sm);
+    background: var(--warn-soft);
+    color: var(--text);
+  }
+
   .hint.category {
     display: inline-flex;
     align-items: center;

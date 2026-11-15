@@ -37,8 +37,8 @@ Saying "keep some supplies at home" is easy. Doing it is another story:
 - after a few months, you no longer know what you have, nor how long it would last.
 
 Survival Shelf takes care of all that. Tell it who lives with you, and it gives you a shopping plan. Tell it
-what you bought, and it keeps track of the dates. Once a month, it tells you what to eat, what to throw away
-and what to buy next.
+what you bought, and it keeps track of the dates. Once a month, it tells you what to eat, what to throw away,
+what to replace and what to buy next.
 
 ## How it works
 
@@ -71,24 +71,30 @@ When you shop, add each item with its quantity, its expiry date and where you ke
 [shelf lives](docs/SHELF_LIFE.md). Colored badges show what expires soon, and the app tells you how many days
 your household could live on what you have, for food and for water.
 
+The stock has three aisles, each looked after in its own way: **food & water**, eaten and replaced as you go;
+**consumables** (batteries, gas, medicine, hygiene…), replaced before their date; and **gear** (tools, lamps,
+stove…), simply ready or missing.
+
 <p align="center">
-  <img src="docs/screenshots/en/stock.png" width="260" alt="Stock by product, with quantities, expiry dates and filters">
+  <img src="docs/screenshots/en/stock.png" width="260" alt="Stock in three aisles: food and water, consumables and gear">
 </p>
 
 ### 4. Once a month, a 5-minute check-in
 
-One list, three parts:
+One list, four parts:
 
 - **To discard**: what has expired.
 - **To eat**: what to use in your everyday meals this month, oldest first, before it expires. Then replace it.
   This is stock rotation: your supplies stay fresh and nothing is wasted.
-- **To buy**: what the tier you are building is still missing.
+- **To replace**: batteries, medicine and other consumables close to their date. Use them up in daily life,
+  then put new ones on the shelf.
+- **To buy**: what the tier you are building is still missing, grouped by aisle.
 
 Tick things off as you go, share or copy the list for your shopping. The app can put a recurring reminder in
 your calendar (iPhone, Google, Outlook…) so you don't forget. Prefer every 3 or 6 months? Your call.
 
 <p align="center">
-  <img src="docs/screenshots/en/checkin.png" width="260" alt="This month: to discard, to eat, to buy">
+  <img src="docs/screenshots/en/checkin.png" width="260" alt="This month: to discard, to eat, to replace, to buy">
 </p>
 
 And for the day the power is out: print your inventory, with room to note what you take.

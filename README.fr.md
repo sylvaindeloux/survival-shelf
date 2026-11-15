@@ -38,7 +38,8 @@ pouvoir tenir seul au moins 72 heures.
 - au bout de quelques mois, tu ne sais plus ce que tu as, ni combien de temps ça tiendrait.
 
 Survival Shelf s’occupe de tout ça. Dis-lui qui vit avec toi, il te fait une liste de courses. Dis-lui ce que
-tu as acheté, il suit les dates. Une fois par mois, il te dit quoi manger, quoi jeter et quoi acheter ensuite.
+tu as acheté, il suit les dates. Une fois par mois, il te dit quoi manger, quoi jeter, quoi remplacer et
+quoi acheter ensuite.
 
 ## Comment ça marche
 
@@ -74,26 +75,32 @@ ranges (cellier, cuisine, sac 72 h…). Pas de date sur l’emballage ? L’appl
 ce qui périme bientôt, et l’appli te dit combien de jours ton foyer pourrait tenir avec ce que tu as, en
 nourriture et en eau.
 
+Le stock est rangé en trois rayons, chacun suivi à sa façon : les **vivres**, mangés et remplacés au fur et à
+mesure ; les **consommables** (piles, gaz, médicaments, hygiène…), remplacés avant leur date ; et le
+**matériel** (outils, lampes, réchaud…), juste prêt ou manquant.
+
 <p align="center">
-  <img src="docs/screenshots/fr/stock.png" width="260" alt="Stock par produit, avec quantités, dates de péremption et filtres">
+  <img src="docs/screenshots/fr/stock.png" width="260" alt="Stock en trois rayons : vivres, consommables et matériel">
 </p>
 
 ### 4. Une fois par mois, un rendez-vous de 5 minutes
 
-Une seule liste, en trois parties :
+Une seule liste, en quatre parties :
 
 - **À jeter** : ce qui est périmé.
 - **À manger** : ce qu’il faut utiliser dans tes repas de tous les jours ce mois-ci, le plus ancien d’abord,
   avant que ça périme. Ensuite, tu le rachètes. C’est la rotation du stock : tes réserves restent fraîches et
   rien n’est gaspillé.
-- **À acheter** : ce qui manque encore au palier que tu construis.
+- **À remplacer** : les piles, médicaments et autres consommables proches de leur date. Utilise-les au
+  quotidien, puis mets-en des neufs sur l’étagère.
+- **À acheter** : ce qui manque encore au palier que tu construis, rangé par rayon.
 
 Coche au fur et à mesure, partage ou copie la liste pour tes courses. L’appli peut mettre un rappel récurrent
 dans ton agenda (iPhone, Google, Outlook…) pour ne pas oublier. Tu préfères tous les 3 ou 6 mois ? C’est toi
 qui vois.
 
 <p align="center">
-  <img src="docs/screenshots/fr/checkin.png" width="260" alt="Ce mois-ci : à jeter, à manger, à acheter">
+  <img src="docs/screenshots/fr/checkin.png" width="260" alt="Ce mois-ci : à jeter, à manger, à remplacer, à acheter">
 </p>
 
 Et pour le jour où il n’y a plus de courant : imprime ton inventaire, avec de la place pour noter ce que tu
