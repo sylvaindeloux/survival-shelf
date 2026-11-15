@@ -30,9 +30,10 @@ npm install -D <package> -w app # add a dependency (only after agreement, see be
 app/src/lib/core/      Pure TypeScript logic, no UI, unit-tested (*.test.ts next to the code):
                        document.ts (Markdown file parser/writer), defaults.ts, categories.ts, catalog.ts,
                        stock.ts, plan.ts (tiers), autonomy.ts, rotation.ts, checkin.ts, ics.ts, language.ts
+app/src/lib/core/languages.ts  Languages: names, decimal comma, translated docs; fallback to English
 app/src/lib/guides/    Practical guides in the app: table of contents, search, Markdown to HTML at build
                        time, and the checks `npm test` runs on the guides/ folder
-app/src/lib/i18n/      en.ts (reference) and one file per language, same keys
+app/src/lib/i18n/      en.ts (reference), one dictionary per language, dictionaries.ts lists them
 app/src/lib/storage/   IndexedDB working copy, linked file (File System Access API), import/export
 app/src/lib/ui/        Shared components and dialogs
 app/src/lib/app.svelte.ts  App state: loading, saving, syncing with the linked file
@@ -56,9 +57,12 @@ Generated, never edit by hand: `app/dist/`, `app/dist-single/`, `package-lock.js
    value it writes needs a label in every language, and reading accepts all of them. A format change updates
    `docs/FILE_FORMAT.md`, `docs/FILE_FORMAT.fr.md`, `docs/examples/` and the tests.
 4. **The data file is untrusted input.** Never render its content as HTML (`{@html}`) or evaluate it.
-5. **Every language together.** Every message exists in each dictionary of `app/src/lib/i18n/` (`en.ts` is
-   the reference) and every data file label in each language of `LANGS`. User docs and practical guides exist
-   in English and French. French addresses the reader with "tu". Adding a language: `.github/TRANSLATING.md`.
+5. **English and French always complete.** A new message goes in `en.ts` and `fr.ts`, a new data file label
+   (`Translated`) gets `en` and `fr`. Other languages may lag behind: missing texts fall back to English, do
+   not machine-translate them unless asked. User docs and practical guides exist in English and French.
+   French addresses the reader with "tu". Languages are declared in `app/src/lib/core/languages.ts`: never
+   test a language code (`lang === 'fr'`), add a property to `LANGUAGES` instead. Adding a language:
+   `.github/TRANSLATING.md`.
 6. **Never invent facts.** Shelf lives, amounts, calories, water needs and guide advice come from reliable
    sources cited next to them (see `docs/SHELF_LIFE.md`). If you cannot find a source, say so and leave a
    question for the human instead of guessing. Never make up a URL.

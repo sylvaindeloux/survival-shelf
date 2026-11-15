@@ -1,4 +1,5 @@
-import { LANGS, type Lang, type Layout, type SectionLayout, type SectionName, type Settings, type Shelf, type Translated } from './types';
+import { inLang, translations } from './languages';
+import { type Lang, type Layout, type SectionLayout, type SectionName, type Settings, type Shelf, type Translated } from './types';
 
 export const DEFAULT_TIERS = [3, 7, 30, 365];
 
@@ -75,18 +76,18 @@ export const SECTION_COMMENTS: Record<SectionName, Translated> = {
 /** The text written by the app in `lang` when `text` is one of its default texts, in any language. */
 export function translateDefault(text: string, defaults: Translated, lang: Lang): string {
   const trimmed = text.trim();
-  return LANGS.some((candidate) => defaults[candidate] !== '' && defaults[candidate].trim() === trimmed)
-    ? defaults[lang]
+  return translations(defaults).some((candidate) => candidate !== '' && candidate.trim() === trimmed)
+    ? inLang(defaults, lang)
     : text;
 }
 
 export function defaultSectionLayout(name: SectionName, lang: Lang = 'en'): SectionLayout {
-  return { heading: SECTION_HEADINGS[name][lang], before: SECTION_COMMENTS[name][lang], after: '', table: null };
+  return { heading: inLang(SECTION_HEADINGS[name], lang), before: inLang(SECTION_COMMENTS[name], lang), after: '', table: null };
 }
 
 export function defaultLayout(lang: Lang = 'en'): Layout {
   return {
-    blocks: [{ type: 'raw', text: DEFAULT_PREAMBLE[lang] }, ...SECTION_ORDER.map((name) => ({ type: 'section' as const, name }))],
+    blocks: [{ type: 'raw', text: inLang(DEFAULT_PREAMBLE, lang) }, ...SECTION_ORDER.map((name) => ({ type: 'section' as const, name }))],
     sections: Object.fromEntries(SECTION_ORDER.map((name) => [name, defaultSectionLayout(name, lang)])),
     settingsLabels: {},
   };

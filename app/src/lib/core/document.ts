@@ -1,4 +1,4 @@
-import { findCategory, normalizeCategory } from './categories';
+import { categoryLabel, normalizeCategory } from './categories';
 import {
   DEFAULT_PREAMBLE,
   SECTION_COMMENTS,
@@ -10,6 +10,7 @@ import {
   translateDefault,
 } from './defaults';
 import { isValidDate, normalizeDate } from './dates';
+import { inLang, LANGUAGES, translations } from './languages';
 import { newLotId } from './ids';
 import { formatTable, isSeparatorRow, isTableLine, splitRow } from './table';
 import { formatNumber, normalizeKey, parseNumber, sameName } from './text';
@@ -47,7 +48,7 @@ interface ColumnDef {
 /** True when `text` is what the app writes, in any language. */
 function isCanonical(text: string, label: Translated): boolean {
   const key = normalizeKey(text);
-  return LANGS.some((lang) => normalizeKey(label[lang]) === key);
+  return translations(label).some((translation) => normalizeKey(translation) === key);
 }
 
 const SECTION_ALIASES: Record<string, SectionName> = Object.fromEntries(
@@ -59,7 +60,7 @@ const SECTION_ALIASES: Record<string, SectionName> = Object.fromEntries(
       ['log', ['history', 'historique']],
     ] as [SectionName, string[]][]
   ).flatMap(([name, aliases]) =>
-    [...LANGS.map((lang) => normalizeKey(SECTION_HEADINGS[name][lang])), ...aliases].map((alias) => [alias, name]),
+    [...translations(SECTION_HEADINGS[name]).map(normalizeKey), ...aliases].map((alias) => [alias, name]),
   ),
 );
 
@@ -176,12 +177,10 @@ const RHYTHM_ALIASES: Record<string, Rhythm> = {
   '6mois': 'semiannual',
 };
 
-const LANG_ALIASES: Record<string, Lang> = {
-  english: 'en',
-  anglais: 'en',
-  french: 'fr',
-  francais: 'fr',
-};
+/** Names of the languages accepted in the Language setting, besides their codes. */
+const LANG_ALIASES: Record<string, Lang> = Object.fromEntries(
+  LANGS.flatMap((lang) => [LANGUAGES[lang].name, ...LANGUAGES[lang].aliases].map((name) => [normalizeKey(name), lang])),
+);
 
 /**
  * Reads a value written with one of the app's labels (any language) or an alias.
@@ -263,7 +262,7 @@ const SETTING_DEFS: SettingDef[] = [
     label: { en: 'Check-in', fr: 'Rendez-vous' },
     aliases: ['rhythm', 'frequency', 'rythme', 'frequence'],
     read: (text) => readValue(text, RHYTHM_LABELS, RHYTHM_ALIASES),
-    write: (settings, lang) => RHYTHM_LABELS[settings.rhythm][lang],
+    write: (settings, lang) => inLang(RHYTHM_LABELS[settings.rhythm], lang),
   },
   numberSetting(
     'warningDays',
@@ -281,7 +280,7 @@ const SETTING_DEFS: SettingDef[] = [
 
 const SETTING_BY_ALIAS = new Map<string, SettingDef>(
   SETTING_DEFS.flatMap((def) =>
-    [...LANGS.map((lang) => normalizeKey(def.label[lang])), ...def.aliases].map((alias) => [alias, def] as const),
+    [...translations(def.label).map(normalizeKey), ...def.aliases].map((alias) => [alias, def] as const),
   ),
 );
 
@@ -661,7 +660,7 @@ function settingsRows(shelf: Shelf, lang: Lang): Record<string, string>[] {
     // A label written by hand is kept, the app's own labels follow the file language.
     const label = shelf.layout.settingsLabels[def.field];
     return {
-      label: label !== undefined && !isCanonical(label, def.label) ? label : def.label[lang],
+      label: label !== undefined && !isCanonical(label, def.label) ? label : inLang(def.label, lang),
       value: def.write(shelf.settings, lang),
     };
   });
@@ -671,13 +670,13 @@ function settingsRows(shelf: Shelf, lang: Lang): Record<string, string>[] {
 function productRow(product: Product, lang: Lang): Record<string, string> {
   return {
     name: product.name,
-    category: findCategory(product.category)?.label[lang] ?? product.category,
+    category: categoryLabel(product.category, lang),
     unit: product.unit,
     kcal: formatNumber(product.kcal, lang),
     water: formatNumber(product.water, lang),
     daily: formatNumber(product.daily, lang),
     // "person" is the default: only spelled out when it matters.
-    per: product.per !== 'person' || product.daily !== null || product.target !== null ? PER_LABELS[product.per][lang] : '',
+    per: product.per !== 'person' || product.daily !== null || product.target !== null ? inLang(PER_LABELS[product.per], lang) : '',
     target: formatNumber(product.target, lang),
     notes: product.notes,
   };
@@ -692,7 +691,7 @@ function logRow(entry: LogEntry, lang: Lang): Record<string, string> {
     date: entry.date,
     product: entry.product,
     qty: formatNumber(entry.qty, lang),
-    action: ACTION_LABELS[entry.action][lang],
+    action: inLang(ACTION_LABELS[entry.action], lang),
     note: entry.note,
   };
 }
@@ -710,7 +709,7 @@ function renderTable(
   layout?.headers.forEach((header, i) => {
     const key = layout.keys[i];
     const column = columns.find((candidate) => candidate.key === key);
-    headers.push(column && isCanonical(header, column.label) ? column.label[lang] : header);
+    headers.push(column && isCanonical(header, column.label) ? inLang(column.label, lang) : header);
     keys.push(key);
   });
   const extraHeaders = layout ? layout.headers : [];
@@ -718,7 +717,7 @@ function renderTable(
     if (keys.includes(column.key)) continue;
     const used = column.always || rows.some((row) => (row.values[column.key] ?? '') !== '');
     if (used) {
-      headers.push(column.label[lang]);
+      headers.push(inLang(column.label, lang));
       keys.push(column.key);
     }
   }
@@ -743,7 +742,7 @@ function renderSection(name: SectionName, shelf: Shelf, lang: Lang): string {
       rows = shelf.log.map((entry) => ({ values: logRow(entry, lang), extra: entry.extra }));
       break;
   }
-  const heading = isCanonical(layout.heading, SECTION_HEADINGS[name]) ? SECTION_HEADINGS[name][lang] : layout.heading;
+  const heading = isCanonical(layout.heading, SECTION_HEADINGS[name]) ? inLang(SECTION_HEADINGS[name], lang) : layout.heading;
   return [
     `## ${heading}`,
     translateDefault(layout.before, SECTION_COMMENTS[name], lang),

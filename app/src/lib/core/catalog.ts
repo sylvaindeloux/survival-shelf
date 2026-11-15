@@ -1,3 +1,4 @@
+import { inLang, translations, type Lang, type Translated } from './languages';
 import { sameName } from './text';
 import type { Per, Product } from './types';
 
@@ -9,9 +10,9 @@ import type { Per, Product } from './types';
 export interface CatalogItem {
   /** Stable identifier (English slug). */
   id: string;
-  name: { en: string; fr: string };
+  name: Translated;
   category: string;
-  unit: { en: string; fr: string };
+  unit: Translated;
   kcal: number | null;
   water: number | null;
   /** Suggested daily use, null for things that are not used up day by day. */
@@ -22,7 +23,7 @@ export interface CatalogItem {
   /** Typical shelf life in months when stored well, null when it does not really expire. */
   shelfLife: number | null;
   /** What to check from time to time, for things that do not expire but still age. */
-  advice?: { en: string; fr: string };
+  advice?: Translated;
   /** Proposed by default in the starter plan. */
   starter?: boolean;
   /** Only proposed for a household with this need. */
@@ -136,9 +137,9 @@ export const CATALOG: CatalogItem[] = [
   item('power-bank', { en: 'Power bank', fr: 'Batterie externe' }, 'energy', UNIT, { target: 1, per: 'household', advice: { en: 'Recharge it every 3 months and store it about half charged.', fr: 'À recharger tous les 3 mois, et à stocker à moitié chargée.' } }),
 ];
 
-/** Catalog entry whose English or French name matches, if any. */
+/** Catalog entry whose name matches in any language, if any. */
 export function findCatalogItem(name: string): CatalogItem | undefined {
-  return CATALOG.find((entry) => sameName(entry.name.en, name) || sameName(entry.name.fr, name));
+  return CATALOG.find((entry) => translations(entry.name).some((translation) => sameName(translation, name)));
 }
 
 /** Items proposed by the setup wizard for a household with these needs. */
@@ -147,11 +148,11 @@ export function starterItems(needs: Needs): CatalogItem[] {
 }
 
 /** A product ready to add to the shelf, named in the given language. */
-export function productFromCatalog(entry: CatalogItem, lang: 'en' | 'fr'): Product {
+export function productFromCatalog(entry: CatalogItem, lang: Lang): Product {
   return {
-    name: entry.name[lang],
+    name: inLang(entry.name, lang),
     category: entry.category,
-    unit: entry.unit[lang],
+    unit: inLang(entry.unit, lang),
     kcal: entry.kcal,
     water: entry.water,
     daily: entry.daily,

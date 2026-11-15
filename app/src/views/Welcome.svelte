@@ -12,6 +12,7 @@
   import OnlineWarning from '../lib/ui/OnlineWarning.svelte';
   import { preferences } from '../lib/ui/state.svelte';
   import { showOnlineWarning } from '../lib/core/hosting';
+  import { LANGS, LANGUAGES } from '../lib/core/languages';
   import Setup from './Setup.svelte';
 
   let setup = $state(false);
@@ -67,8 +68,9 @@
       onchange={(event) => app.setLanguage((event.currentTarget as HTMLSelectElement).value as LangPreference)}
     >
       <option value="auto">🌐 {t('settings.auto')}</option>
-      <option value="en">English</option>
-      <option value="fr">Français</option>
+      {#each LANGS as lang (lang)}
+        <option value={lang}>{LANGUAGES[lang].name}</option>
+      {/each}
     </select>
   </label>
 </div>

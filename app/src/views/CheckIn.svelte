@@ -10,7 +10,7 @@
   import { CATALOG } from '../lib/core/catalog';
   import { waterWithoutProduct } from '../lib/core/checkin';
   import { findProduct } from '../lib/core/stock';
-  import { formatDate, i18n, t } from '../lib/i18n/index.svelte';
+  import { formatDate, localize, t } from '../lib/i18n/index.svelte';
   import ExpiryBadge from '../lib/ui/ExpiryBadge.svelte';
   import ReminderCard from '../lib/ui/ReminderCard.svelte';
   import CategoryIcon from '../lib/ui/CategoryIcon.svelte';
@@ -32,7 +32,7 @@
   /** Opens the "add to stock" dialog for a catalog water item, with enough units for these liters. */
   function buyWater(entry: typeof bottle, liters: number) {
     if (!entry) return;
-    dialogs.lot = { product: entry.name[i18n.lang], qty: Math.ceil(liters / (entry.water ?? 1)) };
+    dialogs.lot = { product: localize(entry.name), qty: Math.ceil(liters / (entry.water ?? 1)) };
   }
 
   function listText(): string {

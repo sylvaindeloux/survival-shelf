@@ -6,7 +6,7 @@
   import { CATALOG, findCatalogItem } from '../core/catalog';
   import { addLot, deleteLot, emptyProduct, findProduct, updateLot, upsertProduct } from '../core/stock';
   import { parseNumber } from '../core/text';
-  import { i18n, t } from '../i18n/index.svelte';
+  import { localize, t } from '../i18n/index.svelte';
   import Dialog from './Dialog.svelte';
   import CategoryIcon from './CategoryIcon.svelte';
   import { categoryLabel, inputNumber, keepsText, quantity } from './format';
@@ -54,9 +54,9 @@
 
   const suggestions = $derived([
     ...app.shelf.products.map((product) => product.name),
-    ...CATALOG.map((entry) => entry.name[i18n.lang]).filter((name) => !findProduct(app.shelf, name)),
+    ...CATALOG.map((entry) => localize(entry.name)).filter((name) => !findProduct(app.shelf, name)),
   ]);
-  const unitSuggestions = $derived([...new Set(CATALOG.map((entry) => entry.unit[i18n.lang]))]);
+  const unitSuggestions = $derived([...new Set(CATALOG.map((entry) => localize(entry.unit)))]);
   /** Typical shelf life, to help when the date is hard to read on the packaging. */
   const catalogEntry = $derived(findCatalogItem(productName));
 
@@ -65,7 +65,7 @@
     const entry = findCatalogItem(productName);
     if (!entry) return;
     category = entry.category;
-    unit = entry.unit[i18n.lang];
+    unit = localize(entry.unit);
     kcal = inputNumber(entry.kcal);
     water = inputNumber(entry.water);
   }
@@ -184,7 +184,7 @@
             <span>{t('product.category')}</span>
             <select class="select" bind:value={category}>
               {#each CATEGORIES as option (option.key)}
-                <option value={option.key}>{option.label[i18n.lang]}</option>
+                <option value={option.key}>{localize(option.label)}</option>
               {/each}
             </select>
           </label>

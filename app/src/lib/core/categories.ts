@@ -1,8 +1,9 @@
+import { inLang, translations, type Lang, type Translated } from './languages';
 import { normalizeKey } from './text';
 
 export interface Category {
   key: string;
-  label: { en: string; fr: string };
+  label: Translated;
   /** Extra names accepted when reading the file. */
   aliases?: string[];
   /** Eaten or drunk: part of the rotation plan. */
@@ -35,14 +36,20 @@ export const CATEGORIES: Category[] = [
 
 const BY_ALIAS = new Map<string, Category>();
 for (const category of CATEGORIES) {
-  for (const name of [category.key, category.label.en, category.label.fr, ...(category.aliases ?? [])]) {
+  for (const name of [category.key, ...translations(category.label), ...(category.aliases ?? [])]) {
     BY_ALIAS.set(normalizeKey(name), category);
   }
 }
 
-/** Finds a known category from its key, its English or French label, or an alias. */
+/** Finds a known category from its key, its label in any language, or an alias. */
 export function findCategory(text: string): Category | undefined {
   return BY_ALIAS.get(normalizeKey(text));
+}
+
+/** Label of a category in `lang`, or the text as is for a category the app does not know. */
+export function categoryLabel(category: string, lang: Lang): string {
+  const found = findCategory(category);
+  return found ? inLang(found.label, lang) : category;
 }
 
 type Nature = { category: string; kcal: number | null; water: number | null };

@@ -3,9 +3,10 @@ import english from '../../../../docs/examples/survival-shelf.md?raw';
 import french from '../../../../docs/examples/survival-shelf.fr.md?raw';
 import { CATALOG } from './catalog';
 import { parseShelf, serializeShelf } from './document';
-import type { Lang } from './types';
+import { LANGS, type Translated } from './languages';
 
-const EXAMPLES: Record<Lang, string> = { en: english, fr: french };
+/** One example file per language; English and French are required, the others are welcome. */
+const EXAMPLES: Translated = { en: english, fr: french };
 
 const LOCATIONS_FR_TO_EN: Record<string, string> = { Cellier: 'Cellar', Cuisine: 'Kitchen', Garage: 'Garage', 'Sac 72h': '72h bag' };
 
@@ -17,10 +18,13 @@ function inEnglish(name: string) {
 }
 
 describe('example files', () => {
-  for (const lang of ['en', 'fr'] as const) {
+  for (const lang of LANGS) {
+    const example = EXAMPLES[lang];
+    if (example === undefined) continue;
+
     it(`imports the ${lang} example without any issue, whatever the app language`, () => {
-      for (const appLang of ['en', 'fr'] as const) {
-        const { shelf, issues } = parseShelf(EXAMPLES[lang], { lang: appLang });
+      for (const appLang of LANGS) {
+        const { shelf, issues } = parseShelf(example, { lang: appLang });
         expect(issues).toEqual([]);
         expect(shelf.settings.lang).toBe(lang);
         expect(shelf.products.length).toBeGreaterThan(0);
@@ -30,7 +34,7 @@ describe('example files', () => {
     });
 
     it(`exports the ${lang} example exactly as it is written`, () => {
-      expect(serializeShelf(parseShelf(EXAMPLES[lang]).shelf)).toBe(EXAMPLES[lang]);
+      expect(serializeShelf(parseShelf(example).shelf)).toBe(example);
     });
   }
 
