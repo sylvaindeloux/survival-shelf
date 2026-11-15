@@ -1,116 +1,194 @@
-# Survival Shelf
-
-**Build your survival stock step by step, and never let it expire.**
-
-Survival Shelf is a free, open-source app to build and keep a survival stock (food, water, hygiene, first
-aid, energy, gear…). It helps you start from nothing, tier by tier (3 days, then 1 week, 1 month and 1 year),
-and once a month tells you what to discard, what to eat before it expires and what to buy next. It runs
-**100% offline** in any modern browser, installs as an app (PWA), needs **no account and no server**, and
-keeps your data in a **plain Markdown file** you can read and edit by hand.
-
 <p align="center">
-  <img src="docs/screenshots/overview-mobile.png" width="200" alt="Overview with autonomy and tiers">
-  <img src="docs/screenshots/checkin-mobile.png" width="200" alt="Monthly check-in: discard, eat, buy">
-  <img src="docs/screenshots/setup-mobile-fr.png" width="200" alt="Starter plan, in French">
-  <img src="docs/screenshots/plan-mobile-fr-dark.png" width="200" alt="Plan with per-tier targets, dark theme">
+  <img src="public/icons/icon-192.png" width="88" alt="">
 </p>
 
-## Features
-
-- **Starter plan**: answer a few questions (how many people, cats and dogs, any daily medicine) and get a
-  balanced plan of about 2200 kcal per person per day, plus water, hygiene, first aid, energy and gear.
-  Untick what does not suit you and adjust the amounts.
-- **Autonomy tiers**: 3 days, 1 week, 1 month and 1 year by default (editable). Each product has a use per day or a
-  minimum to own, per person or for the household; the app works out what every tier needs and shows how far
-  along you are. Beyond a month of stored water, filters and purification tablets take over.
-- **Check-in every month, quarter or 6 months**: one list with the expired lots to discard, what to eat
-  so nothing expires (progressive rotation, oldest first), and what to buy for the tier being built. Tick things
-  off in one tap, share or copy the list.
-- **Calendar reminder**: without a server the app cannot notify you, so it gives you a recurring `.ics` event
-  for your calendar (iPhone, Google, Outlook…).
-- **Stock by product and lot**: quantity, expiry date (day or month precision), location. Color-coded expiry
-  badges, search, filters by status and location. Consume or discard oldest first (FEFO), with undo.
-- **Autonomy**: how many days your household can live on the stock, for food (calories) and water. The
-  estimate simulates eating oldest first and counts what would expire before its turn.
-- **Built-in catalog** of about 60 common items with approximate calories and researched
-  [shelf lives](docs/SHELF_LIFE.md): when you skip the date of a lot, the app estimates one, and tells you what
-  to check on things that do not expire (recharge the power bank, review the first aid kit…).
-- **Printable inventory** with room to tally what you take, for when there is no power.
-- English and French, light and dark themes, phone and desktop layouts.
+<h1 align="center">Survival Shelf</h1>
 
 <p align="center">
-  <img src="docs/screenshots/overview-desktop.png" width="720" alt="Overview on a computer">
+  <b>English</b> · <a href="README.fr.md">Français</a>
 </p>
 
-## Your data
+<p align="center">
+  <b>Build your emergency supplies step by step, and never let them expire.</b><br>
+  Free · Runs on your own device · Works offline · No account · A plain text file you can read without the app
+</p>
 
-Everything lives in one file, `survival-shelf.md`, written in the language of the app (English or French).
-See the [file format](docs/FILE_FORMAT.md) ([en français](docs/FILE_FORMAT.fr.md)) and a complete example
-[in English](examples/survival-shelf.md) or [in French](examples/survival-shelf.fr.md).
+<p align="center">
+  <a href="https://sylvaindeloux.github.io/survival-shelf/"><b>Try it online →</b></a><br>
+  <sub>then <a href="#get-started">keep your own copy</a>: the app is meant to run on your devices, offline</sub>
+</p>
 
-| Browser                                              | How the file is kept up to date                                             |
-|------------------------------------------------------|-----------------------------------------------------------------------------|
-| Chrome, Edge, Brave, Opera on a computer             | The file is **linked**: every change is saved into it automatically, and edits made in a text editor are picked up when you come back to the app. |
-| Firefox, Safari, iOS, most phones                    | The app keeps a working copy in the browser. **Import** and **export** (or share) the file, the app reminds you to back it up. |
+<p align="center">
+  <img src="docs/screenshots/en/desktop.png" width="760" alt="Survival Shelf overview: 9 days of autonomy, progress of each tier, this month's check-in and expiry alerts">
+</p>
 
-Browsers can delete the data of websites you do not use for a while (Safari after 7 days). Install the app
-(Add to Home Screen) and keep your file exported or linked.
+## Why
 
-## Getting started
+A long power cut, a storm, a flood, tap water you can no longer drink: in a crisis, the first days are the
+hardest and help can take a while to arrive. That is why public authorities, such as the
+[European Union](https://commission.europa.eu/topics/preparedness-union_en) and the
+[French government](https://www.info.gouv.fr/risques/se-preparer-a-une-situation-durgence), ask every household
+to be able to manage on its own for at least 72 hours.
 
-- **Use it online**: open the app hosted on GitHub Pages, then install it from the browser menu. Once loaded,
-  it works without any connection.
-- **Single file**: download `survival-shelf.html` (link in Settings → About) and open it from a disk or a USB
-  key, no installation needed.
-- **Self-host**: `npm run build` produces static files in `dist/` that any web server can serve.
+Saying "keep some supplies at home" is easy. Doing it is another story:
 
-## Development
+- you don't know how much to buy, nor where to start;
+- food quietly expires at the back of the cupboard;
+- after a few months, you no longer know what you have, nor how long it would last.
 
-Requirements: Node.js 22.12+ (CI uses the Node.js 26 LTS).
+Survival Shelf takes care of all that. Tell it who lives with you, and it gives you a shopping plan. Tell it
+what you bought, and it keeps track of the dates. Once a month, it tells you what to eat, what to throw away
+and what to buy next.
 
-```sh
-npm install
-npm run dev          # development server
-npm test             # unit tests (Vitest)
-npm run check        # type checks (svelte-check + tsc)
-npm run build        # PWA in dist/
-npm run build:single # single self-contained HTML file in dist-single/
-npm run build:all    # both, with the single file copied to dist/survival-shelf.html
+## How it works
+
+### 1. Answer a few questions, get a starter plan
+
+How many people, cats and dogs, and whether someone takes a daily medicine. The app suggests a balanced list:
+about 2,200 kcal of food per person per day (rice, pasta, cans, oil, sugar…), 3 L of water per person per day,
+plus hygiene, first aid, light, energy and a few tools. Untick what does not suit you and adjust the amounts.
+
+<p align="center">
+  <img src="docs/screenshots/en/setup-household.png" width="260" alt="Starter plan, step 1: people, pets and specific needs">
+  <img src="docs/screenshots/en/setup-plan.png" width="260" alt="Starter plan, step 2: the suggested products and amounts">
+</p>
+
+### 2. Build it tier by tier
+
+Nobody buys a year of food on day one. The app splits the goal into tiers: **3 days, 1 week, 1 month and
+1 year** (you can change them). For each tier it shows how far along you are and what is still missing.
+Beyond a month, storing all your water is not realistic: a water filter or purification tablets take over.
+
+<p align="center">
+  <img src="docs/screenshots/en/home.png" width="260" alt="Overview: days of autonomy, limited by water, and progress of each tier">
+  <img src="docs/screenshots/en/plan-dark.png" width="260" alt="My plan, dark theme: household needs and water per tier">
+</p>
+
+### 3. Note what goes on the shelf
+
+When you shop, add each item with its quantity, its expiry date and where you keep it (cellar, kitchen,
+72-hour bag…). No date on the packaging? The app estimates one from typical
+[shelf lives](docs/SHELF_LIFE.md). Colored badges show what expires soon, and the app tells you how many days
+your household could live on what you have, for food and for water.
+
+<p align="center">
+  <img src="docs/screenshots/en/stock.png" width="260" alt="Stock by product, with quantities, expiry dates and filters">
+</p>
+
+### 4. Once a month, a 5-minute check-in
+
+One list, three parts:
+
+- **To discard**: what has expired.
+- **To eat**: what to use in your everyday meals this month, oldest first, before it expires. Then replace it.
+  This is stock rotation: your supplies stay fresh and nothing is wasted.
+- **To buy**: what the tier you are building is still missing.
+
+Tick things off as you go, share or copy the list for your shopping. The app can put a recurring reminder in
+your calendar (iPhone, Google, Outlook…) so you don't forget. Prefer every 3 or 6 months? Your call.
+
+<p align="center">
+  <img src="docs/screenshots/en/checkin.png" width="260" alt="This month: to discard, to eat, to buy">
+</p>
+
+And for the day the power is out: print your inventory, with room to note what you take.
+
+## Get started
+
+Survival Shelf is made to **run on your own devices**, with no online service behind it. Once you have your
+copy, it works **fully offline**.
+
+> [!CAUTION]
+> **Don't depend on the online version.** The page at sylvaindeloux.github.io is hosted by GitHub, an American
+> company: it needs internet, and nothing guarantees it will stay reachable during a crisis or a conflict. Use it
+> to try the app and to get your own copy, then keep that copy at home.
+
+- **Keep your own copy** (recommended). Download `survival-shelf.html`, from the app (*Settings → About →
+  Download the single-file version*) or
+  [directly](https://sylvaindeloux.github.io/survival-shelf/survival-shelf.html) (right-click → *Save link
+  as…*). It is one file that opens in any browser on a computer, from the disk, a USB key or a shared folder:
+  nothing to install, no network needed. Keep a few copies, for example on a USB key next to your data file.
+- **Host it at home.** Put that same file on a web server you own (a NAS, a Raspberry Pi…) to reach it from
+  every device of the house over your home network, or build the full app from the sources (see
+  [CONTRIBUTING.md](CONTRIBUTING.md)).
+- **Install it on your phone.** Open the web page, then:
+  - iPhone or iPad (Safari): Share button → *Add to Home Screen*;
+  - Android (Chrome): menu ⋮ → *Install app* or *Add to Home screen*.
+
+  The app is then stored on your phone and opens like any other app, with or without network. Handy, but
+  reinstalling or updating it depends on GitHub: keep the single file too.
+
+Then choose **Start my stock**, or **Try with sample data** to look around first.
+
+## Your data stays yours, even without the app
+
+No account, no server, no tracking: **nothing leaves your device**. Everything is kept in **one text file**,
+`survival-shelf.md`, written in English or French like the app. You can open it, read it, print it and even
+**edit it with any text editor** (Notepad, TextEdit…), without the app. If the app stopped working tomorrow,
+your list would still be right there:
+
+```markdown
+| Product            | Qty | Expires    | Location | Added      |
+|--------------------|-----|------------|----------|------------|
+| Water bottle 1.5 L | 24  | 2027-08-06 | Garage   | 2026-09-10 |
+| Rice               | 5   | 2028-09-09 | Cellar   | 2026-09-10 |
 ```
 
-Stack: [Svelte 5](https://svelte.dev) + TypeScript + [Vite](https://vite.dev), [vite-plugin-pwa](https://vite-pwa-org.netlify.app)
-for the service worker, [Lucide](https://lucide.dev) icons. No CSS framework, no runtime dependency beyond Svelte.
+See a [complete example](examples/survival-shelf.md) and the [file format](docs/FILE_FORMAT.md) if you want to
+edit it by hand.
 
-```
-src/
-  lib/core/      Pure logic, no UI: Markdown parser/writer, stock operations, autonomy, rotation,
-                 tiers (plan.ts), check-in, calendar reminder (ics.ts), catalog
-  lib/storage/   IndexedDB working copy and file access (File System Access API, import/export)
-  lib/i18n/      English (reference) and French messages
-  lib/ui/        Shared components and dialogs
-  lib/app.svelte.ts  App state: loading, saving, syncing with the linked file
-  views/         Screens
-docs/            File format and screenshots
-examples/        Example data files (English and French)
-```
+How the file is kept up to date depends on your browser:
 
-The business logic in `src/lib/core` is covered by unit tests; please add tests with your changes.
+- **Computer with Chrome or Edge**: link the file once and every change is saved into it automatically. Keep it
+  in a synced folder (iCloud Drive, Dropbox…) to find it everywhere.
+- **Phone, Safari or Firefox**: the app keeps its data inside the browser. **Export** your file regularly (the
+  app reminds you) and keep a copy somewhere safe: cloud, email, USB key.
 
-**Version.** The app version is a plain number that grows by itself: the number of commits on the first-parent
-line of `master` (`git rev-list --count --first-parent HEAD`), so +1 for every merged pull request and every
-deploy. It is shown at the bottom of the sidebar and in Settings, and written in the data file. A build without
-the git history (shallow clone, source archive) shows `dev`.
+> [!WARNING]
+> A browser can erase the data of a site you have not opened for a while (Safari does it after 7 days).
+> Install the app on your home screen and always keep an up-to-date copy of your file.
 
-## Ideas for later
+## Practical guides
 
-- Autonomy over time chart ("how long will I last in 6 months if I do nothing?").
-- Several kits (cellar, car, 72-hour bag) with a go-bag checklist.
-- Grace period for "best before" items, still edible after the date.
-- Nutrition beyond calories (proteins…), and a finer balance between food groups.
-- Barcode scanning without any online database.
+Alongside the app, Survival Shelf comes with practical guides (how to make water drinkable, how to keep warm…),
+written as simple text pages you can read without the app, right here on GitHub or on any device. They are being
+written and will be linked here.
+
+## Questions
+
+**Is it really free?**
+Yes. Free and open source (MIT license), with no ads and no account.
+
+**Do I need an internet connection?**
+Only to get your copy the first time. After that, it works offline. Don't count on the online page in a
+crisis: keep the single-file version, which needs no network at all.
+
+**Can my family use it on several phones?**
+Each device keeps its own copy. To share, keep the file in a shared folder and open it from there, or export it
+on one device and import it on the other.
+
+**Are the amounts right for me?**
+They are reasonable starting points (about 2,200 kcal and 3 L of water per person per day, typical shelf lives
+from manufacturers and food safety agencies), not medical advice. Adjust them to your household: children,
+elderly people, health needs.
+
+**Do I have to throw away everything past its date?**
+No. Most foods carry a *best before* date: past it, they are still safe if the packaging is intact. Medicines
+and water purification tablets are different: do not rely on them after their date. Details in
+[shelf lives](docs/SHELF_LIFE.md).
+
+**Can I add my own products?**
+Yes, any product, with how much your household uses per day or the minimum you want to own.
+
+## Contribute
+
+Survival Shelf is a personal project that welcomes help: report a bug or suggest an idea in the
+[issues](https://github.com/sylvaindeloux/survival-shelf/issues), translate the app into your language, or
+improve the code. Everything you need is in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
 [MIT](LICENSE) © Sylvain Deloux
 
-Bundled fonts: [Barlow and Barlow Semi Condensed](src/assets/fonts/README.md), SIL Open Font License 1.1. Icons: [Lucide](https://lucide.dev), ISC license.
+Bundled fonts: [Barlow and Barlow Semi Condensed](src/assets/fonts/README.md), SIL Open Font License 1.1.
+Icons: [Lucide](https://lucide.dev), ISC license.
