@@ -39,6 +39,9 @@ added by the app when it saves.
 - **Empty cells** mean "unknown" or "none" (for instance no expiry date).
 - A `|` inside a cell must be written `\|`.
 - Product names are compared without case and accents: `Riz` and `riz` are the same product.
+- **Version line**: when it saves, the app writes a line like `_Survival Shelf v12_` under the title, with
+  the version of the app that saved the file. It is informative only: the app ignores it when reading and
+  rewrites it at each save.
 
 ## Settings
 

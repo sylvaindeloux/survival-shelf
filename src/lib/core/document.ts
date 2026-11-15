@@ -278,6 +278,38 @@ function splitChunks(text: string): Chunk[] {
   return chunks;
 }
 
+// --- Version line -----------------------------------------------------------
+
+/** Line written under the title with the version of the app that saved the file. Informative only. */
+const VERSION_LINE = /^_Survival Shelf v[^\s_]+_\s*$/;
+
+export function versionLine(version: string): string {
+  return `_Survival Shelf v${version}_`;
+}
+
+/** Removes the first version line, and the blank line after it, so that it never piles up. */
+function withoutVersionLine(lines: string[]): string[] {
+  const index = lines.findIndex((line) => VERSION_LINE.test(line));
+  if (index === -1) return lines;
+  const end = lines[index + 1]?.trim() === '' ? index + 2 : index + 1;
+  return [...lines.slice(0, index), ...lines.slice(end)];
+}
+
+/** Puts the version line under the title that opens the preamble, or above the preamble. */
+function withVersionLine(preamble: string, version: string): string {
+  const lines = preamble.split('\n');
+  const title = lines.findIndex((line) => line.trim() !== '');
+  if (title === -1 || !/^#\s/.test(lines[title])) return `${versionLine(version)}\n\n${preamble}`;
+  const rest = lines.slice(title + 1);
+  while (rest.length > 0 && rest[0].trim() === '') rest.shift();
+  return [...lines.slice(0, title + 1), '', versionLine(version), ...(rest.length > 0 ? ['', ...rest] : [])].join('\n');
+}
+
+/** True when two files have the same content, whatever the app version that saved them. */
+export function sameContent(a: string, b: string): boolean {
+  return a === b || withoutVersionLine(a.split('\n')).join('\n') === withoutVersionLine(b.split('\n')).join('\n');
+}
+
 function trimBlankLines(lines: string[]): string {
   let start = 0;
   let end = lines.length;
@@ -529,7 +561,7 @@ export function parseShelf(text: string): ParseResult {
 
   for (const chunk of splitChunks(text)) {
     if (chunk.heading === null) {
-      const preamble = trimBlankLines(chunk.lines);
+      const preamble = trimBlankLines(withoutVersionLine(chunk.lines));
       if (preamble !== '') shelf.layout.blocks.push({ type: 'raw', text: preamble });
       continue;
     }
@@ -628,8 +660,11 @@ function renderSection(name: SectionName, shelf: Shelf): string {
     .join('\n\n');
 }
 
-/** Writes the shelf back to Markdown, keeping the user's layout and unknown content. */
-export function serializeShelf(shelf: Shelf): string {
+/**
+ * Writes the shelf back to Markdown, keeping the user's layout and unknown content.
+ * With `version`, a line under the title tells which app version saved the file.
+ */
+export function serializeShelf(shelf: Shelf, version?: string): string {
   const blocks = [...shelf.layout.blocks];
   for (const name of SECTION_ORDER) {
     if (!blocks.some((block) => block.type === 'section' && block.name === name)) {
@@ -637,5 +672,11 @@ export function serializeShelf(shelf: Shelf): string {
     }
   }
   const parts = blocks.map((block) => (block.type === 'raw' ? block.text : renderSection(block.name, shelf)));
+  if (version !== undefined) {
+    // The preamble is the raw block before the first section, if any: unknown sections start with `## `.
+    const first = blocks[0];
+    if (first.type === 'raw' && !/^##\s/.test(first.text)) parts[0] = withVersionLine(parts[0], version);
+    else parts.unshift(versionLine(version));
+  }
   return `${parts.join('\n\n')}\n`;
 }

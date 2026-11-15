@@ -2,7 +2,7 @@ import { computeAutonomy } from './core/autonomy';
 import { checkIn } from './core/checkin';
 import { today as currentDay, type Day } from './core/dates';
 import { emptyShelf } from './core/defaults';
-import { parseShelf, serializeShelf } from './core/document';
+import { parseShelf, sameContent, serializeShelf } from './core/document';
 import { menuKcal, tierPlan } from './core/plan';
 import { rotationPlan } from './core/rotation';
 import { expiryAlerts, summarizeProducts } from './core/status';
@@ -65,6 +65,11 @@ const DEFAULT_META: Meta = {
 /** How long without export before the app reminds to back up the data. */
 const EXPORT_REMINDER_DAYS = 7;
 const WRITE_DELAY_MS = 300;
+
+/** The Markdown file, stamped with the version of this build. */
+function serialize(shelf: Shelf): string {
+  return serializeShelf(shelf, __APP_VERSION__);
+}
 
 class App {
   shelf = $state<Shelf>(emptyShelf());
@@ -207,7 +212,7 @@ class App {
   async linkNewFile() {
     try {
       const handle = await pickNewFile(this.fileName || DEFAULT_FILE_NAME);
-      const text = serializeShelf(this.shelf);
+      const text = serialize(this.shelf);
       const lastModified = await writeHandle(handle, text);
       this.#handle = handle;
       this.fileName = handle.name;
@@ -247,13 +252,13 @@ class App {
   }
 
   exportFile() {
-    downloadText(serializeShelf(this.shelf), this.fileName || DEFAULT_FILE_NAME);
+    downloadText(serialize(this.shelf), this.fileName || DEFAULT_FILE_NAME);
     void this.#markExported();
   }
 
   async shareFile() {
     try {
-      if (await shareText(serializeShelf(this.shelf), this.fileName || DEFAULT_FILE_NAME)) await this.#markExported();
+      if (await shareText(serialize(this.shelf), this.fileName || DEFAULT_FILE_NAME)) await this.#markExported();
     } catch (error) {
       this.#fail(error);
     }
@@ -352,7 +357,7 @@ class App {
     try {
       const { text, lastModified } = await readHandle(this.#handle);
       const fileChanged = lastModified !== this.#meta.fileLastModified;
-      if (text === serializeShelf(this.shelf)) {
+      if (sameContent(text, serialize(this.shelf))) {
         this.#meta.fileLastModified = lastModified;
         this.#meta.dirtyForFile = false;
       } else if (this.#meta.dirtyForFile && fileChanged && this.#meta.fileLastModified !== null) {
@@ -380,7 +385,7 @@ class App {
   }
 
   async #persist() {
-    const text = serializeShelf(this.shelf);
+    const text = serialize(this.shelf);
     this.#meta.started = this.started = true;
     this.#meta.demo = this.demo;
     if (this.#handle) {
@@ -411,12 +416,12 @@ class App {
       const current = await lastModifiedOf(this.#handle);
       if (this.#meta.fileLastModified !== null && current !== this.#meta.fileLastModified) {
         const { text } = await readHandle(this.#handle);
-        if (text !== serializeShelf(this.shelf)) {
+        if (!sameContent(text, serialize(this.shelf))) {
           this.conflict = text;
           return;
         }
       }
-      this.#meta.fileLastModified = await writeHandle(this.#handle, serializeShelf(this.shelf));
+      this.#meta.fileLastModified = await writeHandle(this.#handle, serialize(this.shelf));
       this.#meta.dirtyForFile = false;
       this.fileState = 'linked';
       this.fileError = '';
@@ -433,7 +438,7 @@ class App {
     this.#meta.started = true;
     this.#meta.demo = false;
     this.#meta.dirtyForFile = false;
-    await idbSet('doc', serializeShelf(this.shelf));
+    await idbSet('doc', serialize(this.shelf));
     await this.#saveMeta();
   }
 
