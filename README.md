@@ -65,7 +65,7 @@ Browsers can delete the data of websites you do not use for a while (Safari afte
 
 ## Development
 
-Requirements: Node.js 22.12+ (CI uses the Node.js 24 LTS).
+Requirements: Node.js 22.12+ (CI uses the Node.js 26 LTS).
 
 ```sh
 npm install
