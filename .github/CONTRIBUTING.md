@@ -178,8 +178,8 @@ review. Agents find their instructions in [`AGENTS.md`](../AGENTS.md) (Claude Co
 
 The app version is a plain number that grows by itself: the number of commits on the first-parent line of
 `master` (`git rev-list --count --first-parent HEAD`), so +1 for every merged pull request and every deploy. It
-is shown at the bottom of the sidebar and in Settings, and written in the data file. A build without the git
-history (shallow clone, source archive) shows `dev`.
+is shown in Settings and written in the data file. A build without the git history (shallow clone, source
+archive) shows `dev`.
 
 ## Ideas for later
 

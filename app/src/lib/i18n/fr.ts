@@ -12,11 +12,8 @@ export const fr: Record<keyof typeof en, string> = {
 
   'nav.label': 'Navigation principale',
   'nav.home': 'Accueil',
-  'nav.stock': 'Stock',
-  'nav.checkinMonthly': 'Mois',
-  'nav.checkinQuarterly': 'Trimestre',
-  'nav.checkinSemiannual': '6 mois',
-  'nav.plan': 'Plan',
+  'nav.todo': 'À faire',
+  'nav.stock': 'Stocks',
   'nav.guides': 'Fiches',
   'nav.settings': 'Réglages',
 
@@ -224,7 +221,7 @@ export const fr: Record<keyof typeof en, string> = {
   'reminder.eventTitle': 'Survival Shelf : point sur le stock',
   'reminder.eventText': 'Ouvre Survival Shelf pour voir quoi jeter, manger, remplacer et acheter.',
 
-  'stock.title': 'Stock',
+  'stock.title': 'Stocks',
   'stock.summary_one': '{count} produit · {lots} lots',
   'stock.summary_other': '{count} produits · {lots} lots',
   'stock.print': 'Imprimer',

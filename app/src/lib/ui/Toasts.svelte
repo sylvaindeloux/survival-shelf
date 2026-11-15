@@ -39,7 +39,8 @@
     pointer-events: none;
   }
 
-  @media (min-width: 900px) {
+  /* No tab bar at the bottom: same breakpoint as the app layout. */
+  @media (min-width: 720px) {
     .toasts {
       bottom: 24px;
     }
