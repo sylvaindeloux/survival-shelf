@@ -1,5 +1,5 @@
 // Regenerates the PNG app icons from the SVG sources.
-// Usage: CHROMIUM=/path/to/chrome-headless-shell node build/icons/render.mjs
+// Usage: CHROMIUM=/path/to/chrome-headless-shell node app/build/icons/render.mjs
 // (the old headless mode is needed for an exact viewport size).
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';

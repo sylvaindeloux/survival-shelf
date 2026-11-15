@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import english from '../../../examples/survival-shelf.md?raw';
-import french from '../../../examples/survival-shelf.fr.md?raw';
+import english from '../../../../docs/examples/survival-shelf.md?raw';
+import french from '../../../../docs/examples/survival-shelf.fr.md?raw';
 import { CATALOG } from './catalog';
 import { parseShelf, serializeShelf } from './document';
 import type { Lang } from './types';

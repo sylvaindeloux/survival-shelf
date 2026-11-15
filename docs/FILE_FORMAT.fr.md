@@ -7,8 +7,8 @@ lire, l'imprimer, le modifier avec n'importe quel éditeur de texte (Bloc-notes,
 Obsidian…), le garder dans un dossier synchronisé ou dans git. Il s'affiche aussi sous forme de jolis
 tableaux sur GitHub ou dans n'importe quel lecteur Markdown.
 
-Un exemple complet se trouve dans [`examples/survival-shelf.fr.md`](../examples/survival-shelf.fr.md) (en
-anglais : [`examples/survival-shelf.md`](../examples/survival-shelf.md)).
+Un exemple complet se trouve dans [`examples/survival-shelf.fr.md`](examples/survival-shelf.fr.md) (en
+anglais : [`examples/survival-shelf.md`](examples/survival-shelf.md)).
 
 > **Tu es responsable de ce que tu tapes.** L'appli est tolérante, mais une ligne qu'elle ne comprend pas
 > est ignorée (et signalée). Quand l'appli est liée à ton fichier, elle **arrête d'y enregistrer** dès
