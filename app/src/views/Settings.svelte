@@ -21,6 +21,7 @@
   import { preferences, type Theme } from '../lib/ui/state.svelte';
 
   const REPO = 'https://github.com/sylvaindeloux/survival-shelf';
+  const SPONSORS = 'https://github.com/sponsors/sylvaindeloux';
   const canShare = canShareFiles();
   let confirmReset = $state(false);
 
@@ -279,7 +280,8 @@
     {/if}
     <p class="small muted">
       Survival Shelf v{__APP_VERSION__} · {t('settings.license')} ·
-      <a href={REPO} target="_blank" rel="noopener">GitHub</a>
+      <a href={REPO} target="_blank" rel="noopener">GitHub</a> ·
+      <a href={SPONSORS} target="_blank" rel="noopener">{t('settings.sponsor')}</a>
     </p>
   </section>
 

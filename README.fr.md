@@ -234,6 +234,9 @@ Survival Shelf est un projet perso ouvert à toutes les aides : signale un bug o
 dans ta langue (guide en anglais), ou améliore le code. Tout est expliqué dans
 [CONTRIBUTING.md](.github/CONTRIBUTING.md) (en anglais).
 
+Tu peux aussi soutenir le projet via [GitHub Sponsors](https://github.com/sponsors/sylvaindeloux). Il reste
+gratuit dans tous les cas.
+
 ## Licence
 
 [MIT](LICENSE) © Sylvain Deloux

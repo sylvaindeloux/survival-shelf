@@ -330,6 +330,7 @@ export const fr: Record<keyof typeof en, string> = {
   'settings.disclaimer':
     'Survival Shelf est un projet personnel et bénévole, pas une source officielle. Ses estimations (quantités, jours d’autonomie, durées de conservation) et ses fiches sont des informations générales, fournies en l’état, sans garantie : tu les utilises sous ta seule responsabilité. Elles ne remplacent ni les consignes des autorités, ni l’avis d’un professionnel, ni une formation aux premiers secours.',
   'settings.license': 'licence MIT',
+  'settings.sponsor': 'Soutenir le projet',
   'settings.singleFile': 'Télécharger la version fichier unique',
   'settings.singleFileHint': 'un seul fichier HTML qui marche sans installation, depuis un disque ou une clé USB.',
   'settings.reset': 'Réinitialiser l’appli',

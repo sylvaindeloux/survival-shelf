@@ -222,6 +222,9 @@ Survival Shelf is a personal project that welcomes help: report a bug or suggest
 [issues](https://github.com/sylvaindeloux/survival-shelf/issues), [translate the app](.github/TRANSLATING.md)
 into your language, or improve the code. Everything you need is in [CONTRIBUTING.md](.github/CONTRIBUTING.md).
 
+You can also support the project through [GitHub Sponsors](https://github.com/sponsors/sylvaindeloux). It stays
+free either way.
+
 ## License
 
 [MIT](LICENSE) © Sylvain Deloux
