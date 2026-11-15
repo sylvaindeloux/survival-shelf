@@ -380,6 +380,24 @@ export const fr: Record<keyof typeof en, string> = {
   'pwa.reload': 'Recharger',
   'pwa.offlineReady': 'Prêt à fonctionner hors ligne',
 
+  'online.text':
+    'Version en ligne : parfaite pour essayer, mais elle dépend d’internet et de GitHub. Pour être sûr de l’avoir en cas de problème, garde ta propre copie chez toi.',
+  'online.getCopy': 'Télécharger ma copie',
+  'online.why': 'Pourquoi ?',
+  'online.later': 'Plus tard',
+  'online.title': 'Garde ta propre copie',
+  'online.intro':
+    'Cette version en ligne a besoin d’internet et de GitHub, qui peuvent être hors d’atteinte en cas de problème. Ta propre copie s’en passe.',
+  'online.appTitle': 'Télécharge l’appli',
+  'online.appText':
+    'Un seul fichier HTML qui s’ouvre dans n’importe quel navigateur sur un ordinateur, même sans réseau. Garde-le sur ton ordinateur et sur une clé USB.',
+  'online.appButton': 'Télécharger survival-shelf.html',
+  'online.dataTitle': 'Emporte tes données',
+  'online.dataText':
+    'Tes données sont dans ce navigateur, pour cette adresse seulement. Enregistre-les dans un fichier, puis ouvre ce fichier depuis ta copie.',
+  'online.dataLinked': 'Tes données sont déjà enregistrées dans {name} : ouvre ce fichier depuis ta copie.',
+  'online.phone': 'Sur un téléphone, installe cette page sur ton écran d’accueil, et garde le fichier sur un ordinateur en secours.',
+
   'issue.missingValue': 'Valeur manquante dans la colonne « {column} » : ligne ignorée.',
   'issue.invalidNumber': 'Nombre invalide « {value} » dans la colonne « {column} » : ligne ignorée.',
   'issue.invalidExpiry': 'Date de péremption invalide « {value} » (attendu AAAA-MM-JJ ou AAAA-MM) : ligne ignorée.',

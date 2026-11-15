@@ -375,6 +375,24 @@ export const en = {
   'pwa.reload': 'Reload',
   'pwa.offlineReady': 'Ready to work offline',
 
+  'online.text':
+    'Online version: great to try the app, but it depends on internet and GitHub. To be sure to have it when something goes wrong, keep your own copy at home.',
+  'online.getCopy': 'Download my copy',
+  'online.why': 'Why?',
+  'online.later': 'Later',
+  'online.title': 'Keep your own copy',
+  'online.intro':
+    'This online version needs internet and GitHub, which may be out of reach when things go wrong. Your own copy works without them.',
+  'online.appTitle': 'Download the app',
+  'online.appText':
+    'One HTML file that opens in any browser on a computer, even without network. Keep it on your computer and on a USB key.',
+  'online.appButton': 'Download survival-shelf.html',
+  'online.dataTitle': 'Take your data along',
+  'online.dataText':
+    'Your data lives in this browser, for this address only. Save it to a file, then open that file from your copy.',
+  'online.dataLinked': 'Your data is already saved in {name}: open this file from your copy.',
+  'online.phone': 'On a phone, install this page on your home screen, and keep the file on a computer as a backup.',
+
   'issue.missingValue': 'Missing value in column "{column}": row ignored.',
   'issue.invalidNumber': 'Invalid number "{value}" in column "{column}": row ignored.',
   'issue.invalidExpiry': 'Invalid expiry date "{value}" (expected YYYY-MM-DD or YYYY-MM): row ignored.',
