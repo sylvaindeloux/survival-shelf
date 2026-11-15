@@ -119,6 +119,26 @@ function waterStatus(shelf: Shelf, autonomy: Autonomy, days: number): TierWater 
   };
 }
 
+export interface WaterGoal {
+  /** Liters of stored water the tier needs (its first STORED_WATER_DAYS days), and the liters in stock. */
+  stored: { have: number; target: number };
+  /**
+   * Liters to make drinkable beyond STORED_WATER_DAYS, and what can cover them: water treatment
+   * in stock plus stored water beyond the first days. Null for shorter tiers.
+   */
+  treatment: { have: number; target: number } | null;
+}
+
+/** Water a tier of `days` needs, in liters, the way the tiers count it: stored water first, then water treatment. */
+export function waterGoal(autonomy: Autonomy, days: number): WaterGoal {
+  const need = autonomy.water.dailyNeed;
+  const storedTarget = Math.min(days, STORED_WATER_DAYS) * need;
+  const stored = { have: round(autonomy.water.usable), target: round(storedTarget) };
+  if (days <= STORED_WATER_DAYS || need <= 0) return { stored, treatment: null };
+  const surplus = Math.max(0, autonomy.water.usable - storedTarget);
+  return { stored, treatment: { have: round(autonomy.treatmentLiters + surplus), target: round((days - STORED_WATER_DAYS) * need) } };
+}
+
 function waterLine(product: Product | undefined, liters: number, have: number): TierLine | null {
   if (!product || liters <= 0 || !product.water) return null;
   const missing = roundQuantity(liters / product.water, product.unit, 'up');

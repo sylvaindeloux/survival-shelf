@@ -5,7 +5,7 @@ import { emptyShelf } from './defaults';
 import { CATALOG, starterItems } from './catalog';
 import { buyCount, checkIn, replacements, waterWithoutProduct } from './checkin';
 import { reminderCalendar } from './ics';
-import { gearStatus, menuKcal, productTarget, tierPlan, tierStatus } from './plan';
+import { gearStatus, menuKcal, productTarget, tierPlan, tierStatus, waterGoal } from './plan';
 import { rotationPlan } from './rotation';
 import { expiryAlerts, summarizeProducts } from './status';
 import { addLot, emptyProduct, upsertProduct } from './stock';
@@ -190,6 +190,21 @@ describe('plan and tiers', () => {
       ['Water', 50],
       ['Filter', 1],
     ]);
+  });
+
+  it('gives the water goal of a tier in liters, with treatment beyond a month', () => {
+    let shelf = household(); // 5 L a day
+    shelf = upsertProduct(shelf, { ...emptyProduct('Filter'), category: 'water-treatment', unit: 'unit', water: 1000 });
+    shelf = addLot(shelf, { product: 'Water', qty: 54, expires: '', location: '' }, TODAY);
+    shelf = addLot(shelf, { product: 'Water', qty: 10, expires: inDays(-1), location: '' }, TODAY); // expired: not counted
+    let autonomy = computeAutonomy(shelf, TODAY);
+    expect(waterGoal(autonomy, 7)).toEqual({ stored: { have: 54, target: 35 }, treatment: null });
+    expect(waterGoal(autonomy, 30)).toEqual({ stored: { have: 54, target: 150 }, treatment: null });
+
+    shelf = addLot(shelf, { product: 'Filter', qty: 1, expires: '', location: '' }, TODAY);
+    shelf = addLot(shelf, { product: 'Water', qty: 146, expires: '', location: '' }, TODAY); // 200 L: 50 L beyond the month
+    autonomy = computeAutonomy(shelf, TODAY);
+    expect(waterGoal(autonomy, 365)).toEqual({ stored: { have: 200, target: 150 }, treatment: { have: 1050, target: 1675 } });
   });
 
   it('completes a tier when food, water and every planned product are there', () => {
