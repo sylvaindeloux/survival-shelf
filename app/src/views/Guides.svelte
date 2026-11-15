@@ -8,7 +8,7 @@
   import { guideLang, searchGuides, type Guide, type GuideLang, type GuideLibrary, type GuideTheme } from '../lib/guides/library';
   import { i18n, t, tn } from '../lib/i18n/index.svelte';
   import { router } from '../lib/ui/state.svelte';
-
+  import ThemeIcon from '../lib/ui/ThemeIcon.svelte';
 
   // The guides are the Markdown files of the repository's guides/ folder, rendered at build time
   // and loaded one language at a time.
@@ -43,6 +43,42 @@
 
   const search = $derived(query.trim());
   const results = $derived(library && search ? searchGuides(library, search) : null);
+
+  // The theme being read, lit in the table of contents: the first one until the page scrolls.
+  let active = $state('');
+  let themesEl = $state<HTMLElement>();
+  let lockedUntil = 0;
+  const current = $derived(library?.themes.some((theme) => theme.slug === active) ? active : (library?.themes[0]?.slug ?? ''));
+
+  $effect(() => {
+    const root = themesEl;
+    if (!root || !library || typeof IntersectionObserver !== 'function') return;
+    const sections = [...root.querySelectorAll<HTMLElement>('[data-theme]')];
+    const visible = new Set<Element>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) visible.add(entry.target);
+          else visible.delete(entry.target);
+        }
+        // A jump keeps its theme lit, even when the page cannot scroll far enough to bring it up.
+        if (performance.now() < lockedUntil) return;
+        const first = sections.find((section) => visible.has(section));
+        if (first) active = first.dataset.theme ?? '';
+      },
+      // A band under the top bar: the theme crossing it is the one being read.
+      { rootMargin: '-96px 0px -60% 0px' },
+    );
+    for (const section of sections) observer.observe(section);
+    return () => observer.disconnect();
+  });
+
+  function jump(slug: string) {
+    active = slug;
+    lockedUntil = performance.now() + 1000;
+    const still = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    document.getElementById(`theme-${slug}`)?.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'start' });
+  }
 </script>
 
 {#snippet entry(guide: Guide, theme?: string)}
@@ -108,25 +144,43 @@
         </section>
       {/if}
     {:else if library}
-      {#each library.themes as theme (theme.slug)}
-        <section class="card" {lang}>
-          <h2>{theme.title}</h2>
-          <ul class="list">
-            {#each theme.guides as guide (guide.id)}
-              {@render entry(guide)}
-            {/each}
-          </ul>
-        </section>
-      {/each}
+      <!-- Chips on phones, a sticky column on wider screens: both jump to a theme. -->
+      <div class="library">
+        <nav class="toc" aria-label={t('guides.themes')} {lang}>
+          <p class="toc-title">{t('guides.themes')}</p>
+          {#each library.themes as theme (theme.slug)}
+            <button type="button" class:on={current === theme.slug} aria-current={current === theme.slug ? 'true' : undefined} onclick={() => jump(theme.slug)}>
+              <ThemeIcon theme={theme.slug} size={18} />
+              <span class="toc-name">{theme.title}</span>
+              <span class="toc-count">{theme.guides.length}</span>
+            </button>
+          {/each}
+        </nav>
+
+        <div class="themes" bind:this={themesEl}>
+          {#each library.themes as theme (theme.slug)}
+            <section class="theme-block" id="theme-{theme.slug}" data-theme={theme.slug} {lang}>
+              <h2 class="theme-head">
+                <span class="theme-badge"><ThemeIcon theme={theme.slug} size={22} /></span>
+                <span class="theme-name">{theme.title}</span>
+                <span class="theme-count">{tn('guides.count', theme.guides.length)}</span>
+              </h2>
+              <div class="card entries">
+                <ul class="list">
+                  {#each theme.guides as guide (guide.id)}
+                    {@render entry(guide)}
+                  {/each}
+                </ul>
+              </div>
+            </section>
+          {/each}
+        </div>
+      </div>
     {/if}
   </div>
 {/if}
 
 <style>
-  h2 {
-    margin-bottom: 0.25rem;
-  }
-
   /* The warning stays in view without shouting: small grey text, no frame. */
   .notice {
     display: flex;
@@ -195,6 +249,191 @@
 
   .entry-text::first-letter {
     text-transform: uppercase;
+  }
+
+  .library {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Phones: the themes as a row of chips that scrolls sideways, fading out at the screen edge. */
+  .toc {
+    display: flex;
+    gap: 0.4rem;
+    margin-right: -1rem;
+    padding: 2px 2.5rem 2px 2px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 2.5rem), transparent);
+    mask-image: linear-gradient(90deg, #000 calc(100% - 2.5rem), transparent);
+  }
+
+  .toc::-webkit-scrollbar {
+    display: none;
+  }
+
+  .toc-title {
+    display: none;
+  }
+
+  .toc button {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 40px;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--control);
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .toc button :global(.theme-icon) {
+    color: var(--primary);
+  }
+
+  .toc-count {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .toc button.on {
+    background: var(--text);
+    border-color: var(--text);
+    color: var(--surface);
+  }
+
+  .toc button.on :global(.theme-icon),
+  .toc button.on .toc-count {
+    color: inherit;
+  }
+
+  .themes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-width: 0;
+  }
+
+  .theme-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    /* Clears the sticky top bar after a jump. */
+    scroll-margin-top: 5.5rem;
+  }
+
+  .theme-head {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.35rem;
+  }
+
+  .theme-badge {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: var(--radius-sm);
+    background: var(--primary-soft);
+    color: var(--primary);
+  }
+
+  .theme-name {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .theme-count {
+    font-family: var(--font);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .entries {
+    padding: 0 1rem;
+  }
+
+  /* Tablets and computers: a sticky column of themes beside the guides. */
+  @media (min-width: 720px) {
+    .library {
+      display: grid;
+      grid-template-columns: 15rem minmax(0, 1fr);
+      align-items: start;
+      gap: 1.5rem;
+    }
+
+    .toc {
+      position: sticky;
+      top: calc(68px + env(safe-area-inset-top, 0px) + 1rem);
+      flex-direction: column;
+      gap: 2px;
+      max-height: calc(100vh - 7rem);
+      margin: 0;
+      padding: 0.75rem 0.5rem;
+      overflow: auto;
+      border: 1.5px solid var(--border);
+      border-bottom-width: 4px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+
+    .toc-title {
+      display: block;
+      margin: 0;
+      padding: 0 0.5rem 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .toc button {
+      width: 100%;
+      min-height: 42px;
+      padding: 0.35rem 0.5rem;
+      border: none;
+      border-radius: 6px;
+      background: none;
+      font-size: 0.95rem;
+      white-space: normal;
+      text-align: left;
+    }
+
+    .toc-name {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .toc button:hover {
+      background: var(--surface-2);
+    }
+
+    .toc button.on {
+      background: var(--primary-soft);
+      color: var(--primary);
+      box-shadow: inset 3px 0 0 var(--primary);
+    }
+
+    .toc button.on :global(.theme-icon),
+    .toc button.on .toc-count {
+      color: var(--primary);
+    }
   }
 
   .guide {
