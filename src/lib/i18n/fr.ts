@@ -316,6 +316,7 @@ export const fr: Record<keyof typeof en, string> = {
   'settings.formatDoc': 'Syntaxe du fichier',
   'settings.appearance': 'Apparence',
   'settings.language': 'Langue',
+  'settings.languageHint': 'Ton fichier de données est aussi écrit dans cette langue.',
   'settings.theme': 'Thème',
   'settings.auto': 'Automatique',
   'settings.light': 'Clair',
@@ -339,6 +340,7 @@ export const fr: Record<keyof typeof en, string> = {
   'file.opened': '{name} ouvert',
   'file.imported': '{name} importé',
   'file.reloaded': '{name} a été modifié en dehors de l’appli : rechargé',
+  'file.langApplied': 'L’appli passe en français, la langue enregistrée dans ce fichier.',
   'file.error': 'Erreur de fichier : {message}',
 
   'banner.demo': 'Tu regardes des données d’exemple. Démarre ton propre stock quand tu veux.',

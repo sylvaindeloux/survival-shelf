@@ -231,7 +231,7 @@
       </div>
     {/if}
 
-    <a class="small doc-link" href="{REPO}/blob/master/docs/FILE_FORMAT.md" target="_blank" rel="noopener">
+    <a class="small doc-link" href="{REPO}/blob/master/docs/{i18n.lang === 'fr' ? 'FILE_FORMAT.fr.md' : 'FILE_FORMAT.md'}" target="_blank" rel="noopener">
       <FileText size={15} />{t('settings.formatDoc')}<ExternalLink size={13} />
     </a>
   </section>
@@ -244,12 +244,13 @@
         <select
           class="select"
           value={i18n.preference}
-          onchange={(event) => i18n.setPreference((event.currentTarget as HTMLSelectElement).value as LangPreference)}
+          onchange={(event) => app.setLanguage((event.currentTarget as HTMLSelectElement).value as LangPreference)}
         >
           <option value="auto">{t('settings.auto')}</option>
           <option value="en">English</option>
           <option value="fr">Français</option>
         </select>
+        <span class="hint">{t('settings.languageHint')}</span>
       </label>
       <label class="field">
         <span>{t('settings.theme')}</span>

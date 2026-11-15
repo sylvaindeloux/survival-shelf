@@ -52,7 +52,7 @@
     <span class="visually-hidden">{t('settings.language')}</span>
     <select
       value={i18n.preference}
-      onchange={(event) => i18n.setPreference((event.currentTarget as HTMLSelectElement).value as LangPreference)}
+      onchange={(event) => app.setLanguage((event.currentTarget as HTMLSelectElement).value as LangPreference)}
     >
       <option value="auto">🌐 {t('settings.auto')}</option>
       <option value="en">English</option>

@@ -12,6 +12,7 @@ exports[`serializeShelf > writes a complete commented template for a new shelf 1
 
 | Setting                    | Value         |
 |----------------------------|---------------|
+| Language                   | en            |
 | People                     | 1             |
 | Cats                       | 0             |
 | Dogs                       | 0             |
@@ -42,5 +43,51 @@ exports[`serializeShelf > writes a complete commented template for a new shelf 1
 
 | Date | Product | Qty | Action |
 |------|---------|-----|--------|
+"
+`;
+
+exports[`serializeShelf > writes a complete commented template for a new shelf 2`] = `
+"# Survival Shelf
+
+> Fichier de données de [Survival Shelf](https://github.com/sylvaindeloux/survival-shelf).
+> Tu peux le modifier avec n'importe quel éditeur de texte : garde les titres \`## Section\` et les lignes d'en-tête des tableaux.
+> Les dates s'écrivent \`AAAA-MM-JJ\`, ou \`AAAA-MM\` pour « fin de ce mois ». Les décimales prennent une virgule.
+> Syntaxe complète : https://github.com/sylvaindeloux/survival-shelf/blob/master/docs/FILE_FORMAT.fr.md
+
+## Paramètres
+
+| Paramètre                   | Valeur        |
+|-----------------------------|---------------|
+| Langue                      | fr            |
+| Personnes                   | 1             |
+| Chats                       | 0             |
+| Chiens                      | 0             |
+| Kcal par personne par jour  | 2200          |
+| Eau L par personne par jour | 3             |
+| Paliers (jours)             | 3, 7, 30, 365 |
+| Rendez-vous                 | mensuel       |
+| Alerte péremption (jours)   | 60            |
+| Marge de rotation (jours)   | 30            |
+
+## Produits
+
+<!-- Une ligne par produit. Kcal et Eau sont par unité. Conso/jour fixe ce qu’il faut pour chaque palier, Objectif est un minimum à avoir. Par : personne, foyer, chat ou chien. -->
+
+| Produit | Catégorie | Unité | Kcal/unité | Eau L/unité | Conso/jour | Par | Objectif |
+|---------|-----------|-------|------------|-------------|------------|-----|----------|
+
+## Stock
+
+<!-- Une ligne par lot : même produit, même date de péremption, même emplacement. -->
+
+| Produit | Quantité | Péremption | Emplacement |
+|---------|----------|------------|-------------|
+
+## Journal
+
+<!-- Ce qui a été consommé ou jeté. Action vaut « consommé » ou « jeté ». -->
+
+| Date | Produit | Quantité | Action |
+|------|---------|----------|--------|
 "
 `;

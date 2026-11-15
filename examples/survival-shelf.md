@@ -9,6 +9,7 @@
 
 | Setting                    | Value         |
 |----------------------------|---------------|
+| Language                   | en            |
 | People                     | 2             |
 | Cats                       | 0             |
 | Dogs                       | 0             |
@@ -23,43 +24,43 @@
 
 <!-- One row per product. Kcal and Water are per unit. Daily use sets what each tier needs, Target is a minimum to own. Per: person, household, cat or dog. -->
 
-| Product                 | Category        | Unit      | Kcal/unit | Water L/unit | Daily use | Per       | Target |
-|-------------------------|-----------------|-----------|-----------|--------------|-----------|-----------|--------|
-| Water bottle 1.5 L      | water           | bottle    |           | 1.5          |           |           |        |
-| Water filter (1500 L)   | water-treatment | unit      |           | 1500         |           |           |        |
-| Rice                    | grains          | kg        | 3600      |              | 0.1       | person    |        |
-| Pasta                   | grains          | kg        | 3550      |              | 0.09      | person    |        |
-| Oats                    | grains          | kg        | 3800      |              | 0.055     | person    |        |
-| Dried lentils           | legumes         | kg        | 3500      |              | 0.04      | person    |        |
-| Canned tuna 140 g       | canned          | can       | 150       |              | 0.25      | person    |        |
-| Canned vegetables 400 g | canned          | can       | 120       |              | 0.5       | person    |        |
-| Canned fruit 400 g      | canned          | can       | 250       |              | 0.15      | person    |        |
-| Canned ready meal 800 g | ready-meals     | can       | 700       |              | 0.15      | person    |        |
-| Milk powder             | dairy           | kg        | 4900      |              | 0.025     | person    |        |
-| Vegetable oil           | fats            | L         | 8200      |              | 0.03      | person    |        |
-| Peanut butter 350 g     | fats            | jar       | 2100      |              | 0.04      | person    |        |
-| Sugar                   | sweets          | kg        | 4000      |              | 0.03      | person    |        |
-| Jam 370 g               | sweets          | jar       | 900       |              | 0.05      | person    |        |
-| Chocolate 100 g         | sweets          | bar       | 550       |              | 0.1       | person    |        |
-| Biscuits 200 g          | sweets          | pack      | 950       |              | 0.15      | person    |        |
-| Nuts                    | sweets          | kg        | 6000      |              | 0.02      | person    |        |
-| Salt                    | condiments      | kg        |           |              | 0.005     | person    |        |
-| Toilet paper            | hygiene         | roll      |           |              | 0.2       | person    |        |
-| Soap                    | hygiene         | bar       |           |              | 0.03      | person    |        |
-| Toothpaste 75 ml        | hygiene         | tube      |           |              | 0.015     | person    |        |
-| Bin bags (roll of 20)   | hygiene         | roll      |           |              | 0.05      | household |        |
-| First aid kit           | medical         | unit      |           |              |           | household | 1      |
-| Paracetamol 500 mg      | medical         | box       |           |              |           | household | 2      |
-| AA batteries            | energy          | unit      |           |              |           | household | 12     |
-| Candles                 | energy          | unit      |           |              | 0.2       | household |        |
-| Gas cartridge           | energy          | cartridge |           |              | 0.2       | person    |        |
-| Matches                 | energy          | box       |           |              |           | household | 3      |
-| Headlamp                | tools           | unit      |           |              |           | person    | 1      |
-| Hand-crank radio        | tools           | unit      |           |              |           | household | 1      |
-| Camping stove           | tools           | unit      |           |              |           | household | 1      |
-| Manual can opener       | tools           | unit      |           |              |           | household | 1      |
-| Multi-tool knife        | tools           | unit      |           |              |           | household | 1      |
-| Survival blanket        | tools           | unit      |           |              |           | person    | 1      |
+| Product                 | Category            | Unit      | Kcal/unit | Water L/unit | Daily use | Per       | Target |
+|-------------------------|---------------------|-----------|-----------|--------------|-----------|-----------|--------|
+| Water bottle 1.5 L      | Water               | bottle    |           | 1.5          |           |           |        |
+| Water filter (1500 L)   | Water treatment     | unit      |           | 1500         |           |           |        |
+| Rice                    | Grains & starches   | kg        | 3600      |              | 0.1       | person    |        |
+| Pasta                   | Grains & starches   | kg        | 3550      |              | 0.09      | person    |        |
+| Oats                    | Grains & starches   | kg        | 3800      |              | 0.055     | person    |        |
+| Dried lentils           | Legumes             | kg        | 3500      |              | 0.04      | person    |        |
+| Canned tuna 140 g       | Canned food         | can       | 150       |              | 0.25      | person    |        |
+| Canned vegetables 400 g | Canned food         | can       | 120       |              | 0.5       | person    |        |
+| Canned fruit 400 g      | Canned food         | can       | 250       |              | 0.15      | person    |        |
+| Canned ready meal 800 g | Ready meals         | can       | 700       |              | 0.15      | person    |        |
+| Milk powder             | Dairy               | kg        | 4900      |              | 0.025     | person    |        |
+| Vegetable oil           | Oils & fats         | L         | 8200      |              | 0.03      | person    |        |
+| Peanut butter 350 g     | Oils & fats         | jar       | 2100      |              | 0.04      | person    |        |
+| Sugar                   | Sugar & snacks      | kg        | 4000      |              | 0.03      | person    |        |
+| Jam 370 g               | Sugar & snacks      | jar       | 900       |              | 0.05      | person    |        |
+| Chocolate 100 g         | Sugar & snacks      | bar       | 550       |              | 0.1       | person    |        |
+| Biscuits 200 g          | Sugar & snacks      | pack      | 950       |              | 0.15      | person    |        |
+| Nuts                    | Sugar & snacks      | kg        | 6000      |              | 0.02      | person    |        |
+| Salt                    | Condiments & spices | kg        |           |              | 0.005     | person    |        |
+| Toilet paper            | Hygiene             | roll      |           |              | 0.2       | person    |        |
+| Soap                    | Hygiene             | bar       |           |              | 0.03      | person    |        |
+| Toothpaste 75 ml        | Hygiene             | tube      |           |              | 0.015     | person    |        |
+| Bin bags (roll of 20)   | Hygiene             | roll      |           |              | 0.05      | household |        |
+| First aid kit           | Health & first aid  | unit      |           |              |           | household | 1      |
+| Paracetamol 500 mg      | Health & first aid  | box       |           |              |           | household | 2      |
+| AA batteries            | Energy & light      | unit      |           |              |           | household | 12     |
+| Candles                 | Energy & light      | unit      |           |              | 0.2       | household |        |
+| Gas cartridge           | Energy & light      | cartridge |           |              | 0.2       | person    |        |
+| Matches                 | Energy & light      | box       |           |              |           | household | 3      |
+| Headlamp                | Tools & gear        | unit      |           |              |           | person    | 1      |
+| Hand-crank radio        | Tools & gear        | unit      |           |              |           | household | 1      |
+| Camping stove           | Tools & gear        | unit      |           |              |           | household | 1      |
+| Manual can opener       | Tools & gear        | unit      |           |              |           | household | 1      |
+| Multi-tool knife        | Tools & gear        | unit      |           |              |           | household | 1      |
+| Survival blanket        | Tools & gear        | unit      |           |              |           | person    | 1      |
 
 ## Stock
 
