@@ -16,7 +16,7 @@ privately, see the [security policy](SECURITY.md).
 The root stays short so that people who only want the app, the guides or the docs find them at a glance.
 
 ```
-.github/   CI, Dependabot, this guide, issue and pull request templates
+.github/   CI, Dependabot, this guide, translation guide, issue and pull request templates
 .claude/   entry point for Claude Code, which imports AGENTS.md
 app/       the app: code, assets, build and tool configs
 docs/      file format, shelf lives, example data files, README screenshots
@@ -54,8 +54,9 @@ asked to change, so when in doubt, ask in an issue first.
 
 ### Content
 
-- **English and French together.** Every app message exists in both languages, and so do the user docs
-  (README, file format) and the practical guides. French texts address the reader with "tu", like the app.
+- **Every language together.** Every app message and every label written in the data file exists in each
+  language of the app (English and French today, see [translating](TRANSLATING.md)), and the user docs and
+  practical guides exist in English and French. French texts address the reader with "tu", like the app.
 - **No made-up facts.** People may rely on this information in an emergency. Shelf lives, daily amounts,
   calories, water needs and advice come from reliable sources, cited next to them (see
   [`docs/SHELF_LIFE.md`](../docs/SHELF_LIFE.md)). Prefer official sources: health and food safety agencies,
@@ -138,20 +139,8 @@ The app must stay robust and easy to maintain for years, so:
 
 ## Translating the app
 
-English is the reference language. To add a language:
-
-1. Add its code to `LANGS` in `app/src/lib/core/types.ts`.
-2. Copy `app/src/lib/i18n/en.ts` to the new language and translate every message (same keys), then register
-   it in `app/src/lib/i18n/index.svelte.ts`.
-3. Translate what the app writes in the data file: section titles, column and setting labels in
-   `app/src/lib/core/document.ts` and `app/src/lib/core/defaults.ts`, and category labels in
-   `app/src/lib/core/categories.ts`. Reading a file accepts every language, so a file written in one language
-   still opens in another.
-4. Translate the product names of the built-in catalog in `app/src/lib/core/catalog.ts` and the sample
-   locations in `app/src/lib/demo.ts`.
-5. Optionally, add a `README.<lang>.md`, a `docs/FILE_FORMAT.<lang>.md`, an example file in `docs/examples/`
-   and screenshots in `docs/screenshots/<lang>/`, and link the new README from the language line of the
-   others.
+English is the reference language. To add a language, follow the [translation guide](TRANSLATING.md): what to
+translate, the few code changes to plug the language in, and how to check the result.
 
 ## Practical guides
 

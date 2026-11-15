@@ -18,7 +18,7 @@ computer, light and dark theme when it matters). -->
 - [ ] `npm run check`, `npm test` and `npm run build:all` pass.
 - [ ] Logic changes in `app/src/lib/core` come with tests.
 - [ ] Still works offline: no network request, CDN, analytics or remote font.
-- [ ] English and French are both updated (app messages, data file labels, docs, guides).
+- [ ] Every language is updated (app messages, data file labels), and English and French docs and guides.
 - [ ] If the data file format changed: `docs/FILE_FORMAT.md`, `docs/FILE_FORMAT.fr.md` and `docs/examples/`
       are updated.
 - [ ] New figures or advice (shelf lives, quantities, guides) come with their sources.
