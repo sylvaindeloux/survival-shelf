@@ -59,8 +59,7 @@
   }
 
   .dialog::backdrop {
-    background: rgb(10 15 12 / 45%);
-    backdrop-filter: blur(2px);
+    background: rgb(12 14 9 / 55%);
   }
 
   .inner {
@@ -68,8 +67,9 @@
     flex-direction: column;
     max-height: min(92dvh, 760px);
     background: var(--surface);
+    border: 1.5px solid var(--border);
     border-radius: var(--radius);
-    box-shadow: 0 20px 60px rgb(0 0 0 / 25%);
+    box-shadow: 0 16px 40px rgb(0 0 0 / 25%);
     overflow: hidden;
   }
 
@@ -92,7 +92,7 @@
     gap: 0.5rem;
     justify-content: flex-end;
     padding: 0.75rem 1.25rem calc(0.75rem + var(--safe-bottom));
-    border-top: 1px solid var(--border);
+    border-top: 1.5px solid var(--border);
     background: var(--surface);
   }
 

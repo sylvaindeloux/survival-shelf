@@ -2,7 +2,8 @@
   import { app } from '../app.svelte';
   import { CATEGORIES } from '../core/categories';
   import { formatDate, t, tn } from '../i18n/index.svelte';
-  import { categoryIcon, categoryLabel, formatPace, quantity, wholeDays } from './format';
+  import CategoryIcon from './CategoryIcon.svelte';
+  import { categoryLabel, formatPace, quantity, wholeDays } from './format';
 
   const categoryOrder = new Map(CATEGORIES.map((category, index) => [category.key, index]));
 
@@ -30,7 +31,7 @@
 
   {#each groups as [category, summaries] (category)}
     <section>
-      <h2>{categoryIcon(category)} {categoryLabel(category)}</h2>
+      <h2 class="category"><CategoryIcon {category} size={18} />{categoryLabel(category)}</h2>
       <table>
         <thead>
           <tr>
@@ -100,6 +101,12 @@
   h2 {
     font-size: 12pt;
     margin: 12pt 0 4pt;
+  }
+
+  h2.category {
+    display: flex;
+    align-items: center;
+    gap: 6pt;
   }
 
   section {

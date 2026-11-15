@@ -145,10 +145,10 @@
         <span>{t('product.category')}</span>
         <select class="select" bind:value={category}>
           {#each CATEGORIES as option (option.key)}
-            <option value={option.key}>{option.icon} {option.label[i18n.lang]}</option>
+            <option value={option.key}>{option.label[i18n.lang]}</option>
           {/each}
           {#if customCategory}
-            <option value={customCategory}>📦 {customCategory}</option>
+            <option value={customCategory}>{customCategory}</option>
           {/if}
         </select>
       </label>

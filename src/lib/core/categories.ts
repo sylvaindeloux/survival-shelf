@@ -2,7 +2,6 @@ import { normalizeKey } from './text';
 
 export interface Category {
   key: string;
-  icon: string;
   label: { en: string; fr: string };
   /** Extra names accepted when reading the file. */
   aliases?: string[];
@@ -11,28 +10,27 @@ export interface Category {
 }
 
 export const CATEGORIES: Category[] = [
-  { key: 'water', icon: '💧', label: { en: 'Water', fr: 'Eau' }, consumable: true },
+  { key: 'water', label: { en: 'Water', fr: 'Eau' }, consumable: true },
   {
     key: 'water-treatment',
-    icon: '🚰',
     label: { en: 'Water treatment', fr: 'Traitement de l’eau' },
     aliases: ['water-filter', 'filter', 'filters', 'filtre', 'filtres', 'purification', 'traitement-eau', 'traitement de l eau'],
   },
-  { key: 'grains', icon: '🌾', label: { en: 'Grains & starches', fr: 'Féculents' }, aliases: ['starches', 'cereals', 'cereales'], consumable: true },
-  { key: 'legumes', icon: '🫘', label: { en: 'Legumes', fr: 'Légumineuses' }, aliases: ['pulses', 'beans'], consumable: true },
-  { key: 'canned', icon: '🥫', label: { en: 'Canned food', fr: 'Conserves' }, aliases: ['cans'], consumable: true },
-  { key: 'ready-meals', icon: '🍲', label: { en: 'Ready meals', fr: 'Plats préparés' }, aliases: ['meals', 'freeze-dried', 'lyophilises'], consumable: true },
-  { key: 'dairy', icon: '🥛', label: { en: 'Dairy', fr: 'Produits laitiers' }, aliases: ['milk', 'lait'], consumable: true },
-  { key: 'fats', icon: '🫒', label: { en: 'Oils & fats', fr: 'Matières grasses' }, aliases: ['oil', 'huile'], consumable: true },
-  { key: 'sweets', icon: '🍫', label: { en: 'Sugar & snacks', fr: 'Sucré & en-cas' }, aliases: ['sugar', 'snacks', 'sucre'], consumable: true },
-  { key: 'drinks', icon: '☕', label: { en: 'Drinks', fr: 'Boissons' }, consumable: true },
-  { key: 'condiments', icon: '🧂', label: { en: 'Condiments & spices', fr: 'Condiments & épices' }, aliases: ['spices', 'epices'], consumable: true },
-  { key: 'pets', icon: '🐾', label: { en: 'Pets', fr: 'Animaux' }, consumable: true },
-  { key: 'hygiene', icon: '🧼', label: { en: 'Hygiene', fr: 'Hygiène' } },
-  { key: 'medical', icon: '🩹', label: { en: 'Health & first aid', fr: 'Santé & secours' }, aliases: ['health', 'first-aid', 'sante', 'medicaments'] },
-  { key: 'energy', icon: '🔋', label: { en: 'Energy & light', fr: 'Énergie & éclairage' }, aliases: ['batteries', 'piles', 'fuel'] },
-  { key: 'tools', icon: '🛠️', label: { en: 'Tools & gear', fr: 'Outils & matériel' }, aliases: ['gear', 'equipment', 'materiel'] },
-  { key: 'other', icon: '📦', label: { en: 'Other', fr: 'Divers' }, aliases: ['misc'] },
+  { key: 'grains', label: { en: 'Grains & starches', fr: 'Féculents' }, aliases: ['starches', 'cereals', 'cereales'], consumable: true },
+  { key: 'legumes', label: { en: 'Legumes', fr: 'Légumineuses' }, aliases: ['pulses', 'beans'], consumable: true },
+  { key: 'canned', label: { en: 'Canned food', fr: 'Conserves' }, aliases: ['cans'], consumable: true },
+  { key: 'ready-meals', label: { en: 'Ready meals', fr: 'Plats préparés' }, aliases: ['meals', 'freeze-dried', 'lyophilises'], consumable: true },
+  { key: 'dairy', label: { en: 'Dairy', fr: 'Produits laitiers' }, aliases: ['milk', 'lait'], consumable: true },
+  { key: 'fats', label: { en: 'Oils & fats', fr: 'Matières grasses' }, aliases: ['oil', 'huile'], consumable: true },
+  { key: 'sweets', label: { en: 'Sugar & snacks', fr: 'Sucré & en-cas' }, aliases: ['sugar', 'snacks', 'sucre'], consumable: true },
+  { key: 'drinks', label: { en: 'Drinks', fr: 'Boissons' }, consumable: true },
+  { key: 'condiments', label: { en: 'Condiments & spices', fr: 'Condiments & épices' }, aliases: ['spices', 'epices'], consumable: true },
+  { key: 'pets', label: { en: 'Pets', fr: 'Animaux' }, consumable: true },
+  { key: 'hygiene', label: { en: 'Hygiene', fr: 'Hygiène' } },
+  { key: 'medical', label: { en: 'Health & first aid', fr: 'Santé & secours' }, aliases: ['health', 'first-aid', 'sante', 'medicaments'] },
+  { key: 'energy', label: { en: 'Energy & light', fr: 'Énergie & éclairage' }, aliases: ['batteries', 'piles', 'fuel'] },
+  { key: 'tools', label: { en: 'Tools & gear', fr: 'Outils & matériel' }, aliases: ['gear', 'equipment', 'materiel'] },
+  { key: 'other', label: { en: 'Other', fr: 'Divers' }, aliases: ['misc'] },
 ];
 
 const BY_ALIAS = new Map<string, Category>();

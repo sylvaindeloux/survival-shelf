@@ -1,5 +1,6 @@
 <script lang="ts">
   import CalendarCheck from '@lucide/svelte/icons/calendar-check';
+  import Can from '@lucide/svelte/icons/can';
   import Check from '@lucide/svelte/icons/check';
   import ChevronRight from '@lucide/svelte/icons/chevron-right';
   import ClipboardList from '@lucide/svelte/icons/clipboard-list';
@@ -37,7 +38,7 @@
 
   {#if isEmpty}
     <section class="card empty">
-      <span class="empty-icon">🥫</span>
+      <span class="empty-icon"><Can size={44} strokeWidth={1.75} /></span>
       <h2>{t('home.emptyTitle')}</h2>
       <p class="muted">{t('home.emptyText')}</p>
       <div class="row wrap center">
@@ -196,7 +197,8 @@
   }
 
   .empty-icon {
-    font-size: 2.5rem;
+    display: inline-flex;
+    color: var(--primary);
   }
 
   .center {
@@ -222,9 +224,6 @@
   .hero {
     display: grid;
     gap: 1.25rem;
-    background:
-      radial-gradient(120% 140% at 100% 0%, color-mix(in srgb, var(--primary) 14%, transparent), transparent 60%),
-      var(--surface);
   }
 
   @media (min-width: 760px) {
@@ -240,26 +239,24 @@
 
   .eyebrow {
     font-size: 0.8rem;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.1em;
     color: var(--primary);
   }
 
   .big {
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.03em;
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 0.95;
     margin: 0.25rem 0 0.35rem;
   }
 
   .big .unit {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    letter-spacing: 0;
-    color: var(--muted);
-    margin-left: 0.4rem;
+    margin-left: 0.5rem;
   }
 
   .resources {
@@ -275,6 +272,7 @@
     align-items: flex-start;
     padding: 0.75rem;
     border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
     background: var(--surface-2);
   }
 
@@ -287,8 +285,10 @@
   }
 
   .resource-days {
-    font-size: 1.3rem;
-    font-weight: 800;
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.15;
     color: var(--text);
   }
 
@@ -318,8 +318,12 @@
   }
 
   .ladder li.current {
-    border-color: color-mix(in srgb, var(--primary) 45%, var(--border));
-    background: var(--surface);
+    --bar-gap: var(--primary-soft);
+    background: var(--primary-soft);
+  }
+
+  .ladder li.current .tier-name {
+    font-weight: 700;
   }
 
   .mark {
@@ -328,9 +332,9 @@
     justify-content: center;
     width: 22px;
     height: 22px;
-    border-radius: 50%;
-    border: 2px solid var(--border);
-    color: var(--on-primary);
+    border-radius: 5px;
+    border: 2px solid var(--control);
+    color: var(--surface);
   }
 
   .complete .mark {
@@ -343,7 +347,7 @@
   }
 
   .tier-name {
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .pct {
@@ -417,16 +421,20 @@
     align-items: center;
     padding: 0.6rem 0.25rem;
     border-radius: var(--radius-sm);
+    border: 1.5px solid var(--border);
     background: var(--surface-2);
     text-align: center;
   }
 
   .counters strong {
-    font-size: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
     line-height: 1.1;
   }
 
   .counters .alert {
+    border-color: var(--danger);
     background: var(--danger-soft);
     color: var(--danger);
   }

@@ -112,3 +112,5 @@ the git history (shallow clone, source archive) shows `dev`.
 ## License
 
 [MIT](LICENSE) © Sylvain Deloux
+
+Bundled fonts: [Barlow and Barlow Semi Condensed](src/assets/fonts/README.md), SIL Open Font License 1.1. Icons: [Lucide](https://lucide.dev), ISC license.

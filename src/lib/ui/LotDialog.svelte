@@ -8,7 +8,8 @@
   import { parseNumber } from '../core/text';
   import { i18n, t } from '../i18n/index.svelte';
   import Dialog from './Dialog.svelte';
-  import { categoryIcon, categoryLabel, inputNumber, keepsText, quantity } from './format';
+  import CategoryIcon from './CategoryIcon.svelte';
+  import { categoryLabel, inputNumber, keepsText, quantity } from './format';
   import { dialogs, type LotDialogState } from './state.svelte';
 
   let { request }: { request: LotDialogState } = $props();
@@ -171,7 +172,7 @@
         {/each}
       </datalist>
       {#if existing}
-        <span class="hint">{categoryIcon(existing.category)} {categoryLabel(existing.category)}{existing.unit ? ` · ${existing.unit}` : ''}</span>
+        <span class="hint category"><CategoryIcon category={existing.category} size={16} />{categoryLabel(existing.category)}{existing.unit ? ` · ${existing.unit}` : ''}</span>
       {/if}
     </label>
 
@@ -183,7 +184,7 @@
             <span>{t('product.category')}</span>
             <select class="select" bind:value={category}>
               {#each CATEGORIES as option (option.key)}
-                <option value={option.key}>{option.icon} {option.label[i18n.lang]}</option>
+                <option value={option.key}>{option.label[i18n.lang]}</option>
               {/each}
             </select>
           </label>
@@ -280,6 +281,12 @@
 </Dialog>
 
 <style>
+  .hint.category {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
   .new-product {
     margin: 0;
     padding: 0.75rem 1rem 1rem;

@@ -17,7 +17,8 @@
   import type { Per } from '../lib/core/types';
   import { formatNumber, i18n, t, type MessageKey } from '../lib/i18n/index.svelte';
   import Logo from '../lib/ui/Logo.svelte';
-  import { categoryIcon, categoryLabel, formatKcal, inputNumber, quantity, tierLabel } from '../lib/ui/format';
+  import CategoryIcon from '../lib/ui/CategoryIcon.svelte';
+  import { categoryLabel, formatKcal, inputNumber, quantity, tierLabel } from '../lib/ui/format';
 
   let { onback }: { onback: () => void } = $props();
 
@@ -203,7 +204,7 @@
 
       {#each groups as [category, list] (category)}
         <section class="group">
-          <h2 class="group-title"><span aria-hidden="true">{categoryIcon(category)}</span> {categoryLabel(category)}</h2>
+          <h2 class="group-title"><CategoryIcon {category} />{categoryLabel(category)}</h2>
           <ul class="card items">
             {#each list as choice (choice.entry.id)}
               {@const editable = choice.entry.daily !== null || choice.entry.target !== null}
@@ -253,9 +254,7 @@
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    background:
-      radial-gradient(90% 40% at 50% 0%, color-mix(in srgb, var(--primary) 12%, transparent), transparent 70%),
-      var(--bg);
+    background: var(--bg);
   }
 
   .head {
@@ -272,7 +271,9 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-weight: 800;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
   }
 
   .step {
@@ -329,7 +330,7 @@
   .need-icon {
     display: inline-flex;
     padding: 0.5rem;
-    border-radius: 12px;
+    border-radius: var(--radius-sm);
     background: var(--surface-2);
     color: var(--primary);
   }
@@ -347,8 +348,8 @@
     justify-content: center;
     width: 26px;
     height: 26px;
-    border-radius: 50%;
-    border: 2px solid var(--border);
+    border-radius: 5px;
+    border: 2px solid var(--control);
     color: var(--on-primary);
   }
 
@@ -363,7 +364,10 @@
   }
 
   .group-title {
-    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
     margin: 0 0 0.5rem 0.25rem;
   }
 
@@ -434,9 +438,8 @@
     max-width: 720px;
     margin: auto auto 0;
     padding: 0.75rem 1rem calc(0.75rem + var(--safe-bottom));
-    background: color-mix(in srgb, var(--surface) 94%, transparent);
-    backdrop-filter: blur(12px);
-    border-top: 1px solid var(--border);
+    background: var(--surface);
+    border-top: 1.5px solid var(--border);
   }
 
   .menu {
@@ -449,7 +452,7 @@
 
   @media (min-width: 720px) {
     .summary {
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: var(--radius) var(--radius) 0 0;
     }
   }
