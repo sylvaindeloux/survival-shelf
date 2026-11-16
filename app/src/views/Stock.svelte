@@ -27,6 +27,7 @@
   import { lotExpiry } from '../lib/core/stock';
   import type { Kind, Product } from '../lib/core/types';
   import { formatDate, formatNumber, t, tn } from '../lib/i18n/index.svelte';
+  import CardColumns from '../lib/ui/CardColumns.svelte';
   import CategoryIcon from '../lib/ui/CategoryIcon.svelte';
   import ExpiryBadge from '../lib/ui/ExpiryBadge.svelte';
   import SubTabs, { type SubTab } from '../lib/ui/SubTabs.svelte';
@@ -144,6 +145,42 @@
 
   /** Consumables and gear due for replacement, on top of their list. */
   const toReplace = $derived(app.checkin.replace.filter((item) => item.due && item.product.kind === kind));
+
+  /**
+   * About how tall the rows of a card are, in rows with a gauge: a row without one is a single line, and
+   * how long a product lasts adds a short line.
+   */
+  function rows(items: ProductSummary[]): number {
+    return items.reduce((sum, summary) => {
+      const days = lasts.get(summary.product.name);
+      return sum + (goalOf(summary.product) === null ? 0.6 : 1) + (days !== undefined && Number.isFinite(days) ? 0.35 : 0);
+    }, 0);
+  }
+
+  /**
+   * The cards of the page, in their order. The weight is about how tall each card is, in rows with a gauge
+   * (its title and the gap under it count as 0.8), so that two columns end close to each other on wider screens.
+   */
+  type StockCard =
+    | { key: 'replace' | 'expiry' | 'water'; weight: number }
+    | { key: `gear:${string}`; weight: number; gear: (typeof gearGroups)[number] }
+    | { key: `category:${string}`; weight: number; group: (typeof otherGroups)[number] };
+  const stockCards = $derived.by(() => {
+    const list: StockCard[] = [];
+    if (toReplace.length > 0 && !filtering) list.push({ key: 'replace', weight: 0.8 + 1.2 * toReplace.length });
+    if (kind === 'gear') {
+      for (const gear of gearGroups) list.push({ key: `gear:${gear.key}`, weight: 0.8 + rows(gear.items), gear });
+    } else if (order === 'expiry') {
+      list.push({ key: 'expiry', weight: 0.8 + rows(byDate) });
+    } else {
+      if (showWater) {
+        const goals = water.treatment ? 2 : 1;
+        list.push({ key: 'water', weight: 0.8 + 0.85 * goals + (waterItems.length > 0 ? rows(waterItems) : filtering ? 0 : 0.5) });
+      }
+      for (const group of otherGroups) list.push({ key: `category:${group.category}`, weight: 0.8 + rows(group.items), group });
+    }
+    return list;
+  });
 
   const counts = $derived({
     expired: scope.filter((summary) => summary.status === 'expired').length,
@@ -394,51 +431,47 @@
   {:else if visible.length === 0 && filtering}
     <p class="muted center">{t('stock.noMatch')}</p>
   {:else}
-    <div class="cards" class:single={order === 'expiry' && kind !== 'gear'}>
-      {#if toReplace.length > 0 && !filtering}
-        <section class="card group replace">
-          <h2 class="group-head"><RefreshCw size={20} class="warn" />{t('stock.toReplaceTitle')}</h2>
-          <ul>
-            {#each toReplace as entry (entry.lot.id)}
-              <li class="replace-item">
-                <span class="l1">
-                  <span class="name">{entry.product.name}</span>
-                  <ExpiryBadge lot={entry.lot} />
-                </span>
-                <span class="l1">
-                  <span class="small muted grow">{[quantity(entry.lot.qty, entry.product), entry.lot.location].filter(Boolean).join(' · ')}</span>
-                  <button class="btn small" onclick={() => (dialogs.lot = { product: entry.product.name, qty: entry.lot.qty, replaces: entry.lot.id })}>
-                    <RefreshCw size={16} />{t('checkin.replaced')}
-                  </button>
-                </span>
-              </li>
-            {/each}
-          </ul>
-        </section>
-      {/if}
-
-      {#if kind === 'gear'}
-        {#each gearGroups as group (group.key)}
-          <section class="card group">
-            <h2 class="group-head"><group.icon size={20} class={group.tone} />{group.title}<span class="count {group.tone}">{group.items.length}</span></h2>
+    <CardColumns items={stockCards} single={order === 'expiry' && kind !== 'gear'}>
+      {#snippet card(which: StockCard)}
+        {#if which.key === 'replace'}
+          <section class="card group replace">
+            <h2 class="group-head"><RefreshCw size={20} class="warn" />{t('stock.toReplaceTitle')}</h2>
             <ul>
-              {#each group.items as summary (summary.product.name)}
+              {#each toReplace as entry (entry.lot.id)}
+                <li class="replace-item">
+                  <span class="l1">
+                    <span class="name">{entry.product.name}</span>
+                    <ExpiryBadge lot={entry.lot} />
+                  </span>
+                  <span class="l1">
+                    <span class="small muted grow">{[quantity(entry.lot.qty, entry.product), entry.lot.location].filter(Boolean).join(' · ')}</span>
+                    <button class="btn small" onclick={() => (dialogs.lot = { product: entry.product.name, qty: entry.lot.qty, replaces: entry.lot.id })}>
+                      <RefreshCw size={16} />{t('checkin.replaced')}
+                    </button>
+                  </span>
+                </li>
+              {/each}
+            </ul>
+          </section>
+        {:else if 'gear' in which}
+          <section class="card group">
+            <h2 class="group-head"><which.gear.icon size={20} class={which.gear.tone} />{which.gear.title}<span class="count {which.gear.tone}">{which.gear.items.length}</span></h2>
+            <ul>
+              {#each which.gear.items as summary (summary.product.name)}
                 {@render item(summary)}
               {/each}
             </ul>
           </section>
-        {/each}
-      {:else if order === 'expiry'}
-        <section class="card group">
-          <h2 class="group-head"><CalendarClock size={20} />{t('stock.byExpiry')}</h2>
-          <ul>
-            {#each byDate as summary (summary.product.name)}
-              {@render item(summary)}
-            {/each}
-          </ul>
-        </section>
-      {:else}
-        {#if showWater}
+        {:else if which.key === 'expiry'}
+          <section class="card group">
+            <h2 class="group-head"><CalendarClock size={20} />{t('stock.byExpiry')}</h2>
+            <ul>
+              {#each byDate as summary (summary.product.name)}
+                {@render item(summary)}
+              {/each}
+            </ul>
+          </section>
+        {:else if which.key === 'water'}
           <section class="card group">
             <h2 class="group-head"><CategoryIcon category="water" size={20} />{categoryLabel('water')}</h2>
             <div class="goal">
@@ -461,19 +494,18 @@
               <p class="note small"><TriangleAlert size={16} />{t('plan.noWaterProduct')}</p>
             {/if}
           </section>
-        {/if}
-        {#each otherGroups as group (group.category)}
+        {:else if 'group' in which}
           <section class="card group">
-            <h2 class="group-head"><CategoryIcon category={group.category} size={20} />{categoryLabel(group.category)}</h2>
+            <h2 class="group-head"><CategoryIcon category={which.group.category} size={20} />{categoryLabel(which.group.category)}</h2>
             <ul>
-              {#each group.items as summary (summary.product.name)}
+              {#each which.group.items as summary (summary.product.name)}
                 {@render item(summary)}
               {/each}
             </ul>
           </section>
-        {/each}
-      {/if}
-    </div>
+        {/if}
+      {/snippet}
+    </CardColumns>
   {/if}
 
   <div class="row wrap end-actions">
@@ -667,11 +699,6 @@
     flex: none;
     margin-top: 0.15rem;
     color: var(--warn);
-  }
-
-  /* Category cards: one column on phones, two on wider screens, filled top to bottom. */
-  .cards > :global(*) {
-    margin-bottom: 0.875rem;
   }
 
   .group {
@@ -901,16 +928,5 @@
 
   .end-actions {
     justify-content: center;
-  }
-
-  @media (min-width: 720px) {
-    .cards:not(.single) {
-      columns: 2;
-      column-gap: 1rem;
-    }
-
-    .cards > :global(*) {
-      break-inside: avoid;
-    }
   }
 </style>

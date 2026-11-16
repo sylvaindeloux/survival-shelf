@@ -15,11 +15,13 @@
   import { CATALOG } from '../lib/core/catalog';
   import { isStoredWater, KINDS } from '../lib/core/categories';
   import { buyCount, waterWithoutProduct } from '../lib/core/checkin';
+  import type { BagStatus } from '../lib/core/bags';
   import type { TierLine } from '../lib/core/plan';
   import { findProduct } from '../lib/core/stock';
   import type { Lot } from '../lib/core/types';
   import { formatDate, localize, t, tn } from '../lib/i18n/index.svelte';
   import { bagHref, markChecked } from '../lib/ui/bags';
+  import CardColumns from '../lib/ui/CardColumns.svelte';
   import { markReviewed } from '../lib/ui/emergency';
   import ExpiryBadge from '../lib/ui/ExpiryBadge.svelte';
   import ReminderCard from '../lib/ui/ReminderCard.svelte';
@@ -44,9 +46,6 @@
   const count = $derived(todoCounts().total);
   // A tier can be short of food with nothing to buy (a light menu): the buy card then only shows why.
   const showBuy = $derived(buy !== null && (toBuy > 0 || foodShort));
-  const cards = $derived(
-    [checkin.discard.length > 0, checkin.consume.length > 0, checkin.replace.length > 0, showBuy, review].filter(Boolean).length + bags.length,
-  );
 
   /** What to buy, by kind: the shopping list follows the shop's aisles. Water without a product goes with the food. */
   const buyGroups = $derived(
@@ -54,6 +53,26 @@
       (group) => group.lines.length > 0 || (group.kind === 'food' && (water.stored > 0 || water.treatment > 0)),
     ),
   );
+
+  /**
+   * One card per action, the most urgent first. The weight is about how tall the card is, in rows of a list
+   * (its title, its text and the gap under it count as one), so that two columns end close to each other on
+   * wider screens.
+   */
+  type ActionCard = { key: 'discard' | 'consume' | 'replace' | 'buy' | 'review'; weight: number } | { key: `bag:${string}`; weight: number; bag: BagStatus };
+  const actions = $derived.by(() => {
+    const list: ActionCard[] = [];
+    if (checkin.discard.length > 0) list.push({ key: 'discard', weight: 1 + checkin.discard.length });
+    if (checkin.consume.length > 0) list.push({ key: 'consume', weight: 1 + checkin.consume.length + (overload ? 0.5 : 0) });
+    if (checkin.replace.length > 0) list.push({ key: 'replace', weight: 1 + checkin.replace.length });
+    if (buy && showBuy) {
+      const lines = buyGroups.reduce((sum, group) => sum + group.lines.length, 0) + (water.stored > 0 ? 1 : 0) + (water.treatment > 0 ? 1 : 0);
+      list.push({ key: 'buy', weight: 1 + lines + (buyGroups.length > 1 ? 0.35 * buyGroups.length : 0) + (foodShort ? 0.5 : 0) });
+    }
+    if (review) list.push({ key: 'review', weight: 1.8 });
+    for (const bag of bags) list.push({ key: `bag:${bag.bag.name}`, weight: 1.8, bag });
+    return list;
+  });
 
   function buyLineText(line: TierLine): string {
     return `- ${line.product.name}: +${quantity(line.missing, line.product)}`;
@@ -154,7 +173,7 @@
     {/if}
   </header>
 
-  {#if cards === 0}
+  {#if actions.length === 0}
     <section class="card up-to-date">
       <CircleCheck size={40} />
       <h2>{t('checkin.upToDateTitle')}</h2>
@@ -162,104 +181,96 @@
       <p class="small muted">{t(texts.subtitle)}</p>
     </section>
   {:else}
-    <!-- One card per action, the most urgent first: two columns on wider screens. -->
-    <div class="cards" class:single={cards === 1}>
-      {#if checkin.discard.length > 0}
-        <section class="card action discard">
-          <h2 class="action-head"><Trash size={20} />{t('checkin.discardTitle')}<span class="count">{checkin.discard.length}</span></h2>
-          <p class="lead small muted">{t('checkin.discardText')}</p>
-          <ul>
-            {#each checkin.discard as lot (lot.id)}
-              {@render lotRow(lot.product, quantity(lot.qty, findProduct(app.shelf, lot.product)), lot, t('checkin.discarded'), () => (dialogs.take = { action: 'discarded', lotId: lot.id }))}
-            {/each}
-          </ul>
-        </section>
-      {/if}
-
-      {#if checkin.consume.length > 0}
-        <section class="card action consume">
-          <h2 class="action-head"><Utensils size={20} />{t('checkin.consumeTitle')}<span class="count">{checkin.consume.length}</span></h2>
-          <p class="lead small muted">{t(texts.consume, { margin: settings.rotationMarginDays })}</p>
-          <ul>
-            {#each checkin.consume as item (item.product.name)}
-              {@render lotRow(item.product.name, quantity(item.qty, item.product), item.lot, t(isStoredWater(item.product) ? 'checkin.drunk' : 'checkin.eaten'), () => (dialogs.take = { action: 'consumed', lotId: item.lot.id, qty: item.qty }))}
-            {/each}
-          </ul>
-          {#if overload}
-            <p class="note small"><TriangleAlert size={16} />{t('checkin.overload')}</p>
-          {/if}
-        </section>
-      {/if}
-
-      {#if checkin.replace.length > 0}
-        <section class="card action replace">
-          <h2 class="action-head"><RefreshCw size={20} />{t('checkin.replaceTitle')}<span class="count">{checkin.replace.length}</span></h2>
-          <p class="lead small muted">{t('checkin.replaceText')}</p>
-          <ul>
-            {#each checkin.replace as item (item.lot.id)}
-              {@render lotRow(item.product.name, quantity(item.lot.qty, item.product), item.lot, t('checkin.replaced'), () => (dialogs.lot = { product: item.product.name, qty: item.lot.qty, replaces: item.lot.id }))}
-            {/each}
-          </ul>
-        </section>
-      {/if}
-
-      {#if buy && showBuy}
-        <section class="card action buy">
-          <h2 class="action-head"><ShoppingCart size={20} />{t('checkin.buyTitle')}{#if toBuy > 0}<span class="count">{toBuy}</span>{/if}</h2>
-          <p class="lead small muted">{t('checkin.buyText', { tier: tierLabel(buy.days) })}</p>
-          {#each buyGroups as group (group.kind)}
-            {#if buyGroups.length > 1}<h3 class="kind-title">{kindLabel(group.kind)}</h3>{/if}
+    <!-- One card per action, the most urgent first: on wider screens, down the left column, then the right one. -->
+    <CardColumns items={actions}>
+      {#snippet card(which: ActionCard)}
+        {#if which.key === 'discard'}
+          <section class="card action discard">
+            <h2 class="action-head"><Trash size={20} />{t('checkin.discardTitle')}<span class="count">{checkin.discard.length}</span></h2>
+            <p class="lead small muted">{t('checkin.discardText')}</p>
             <ul>
-              {#each group.lines as line (line.product.name)}
-                {@render buyRow(
-                  line.product.name,
-                  `+${quantity(line.missing, line.product)}`,
-                  line.liters !== undefined ? t('checkin.liters', { liters: formatLiters(line.liters) }) : ofTarget(line.have, line.target, line.product),
-                  () => (dialogs.lot = { product: line.product.name, qty: line.missing }),
-                )}
+              {#each checkin.discard as lot (lot.id)}
+                {@render lotRow(lot.product, quantity(lot.qty, findProduct(app.shelf, lot.product)), lot, t('checkin.discarded'), () => (dialogs.take = { action: 'discarded', lotId: lot.id }))}
               {/each}
-              {#if group.kind === 'food' && water.stored > 0}
-                {@render buyRow(t('checkin.drinkingWater'), `+${formatLiters(water.stored)}`, t('checkin.noWaterProduct'), () => buyWater(bottle, water.stored))}
-              {/if}
-              {#if group.kind === 'food' && water.treatment > 0}
-                {@render buyRow(t('checkin.waterTreatment'), formatLiters(water.treatment), t('checkin.treatmentHint'), () => buyWater(filter, water.treatment))}
-              {/if}
             </ul>
-          {/each}
-          {#if foodShort}
-            <p class="note small">
-              <TriangleAlert size={16} />
-              <span>
-                {t('checkin.foodShort', { days: Math.floor(buy.foodDays), tier: tierLabel(buy.days) })}
-                <button class="link" onclick={() => router.go('stock', 'food')}>{t('home.adjustTargets')}</button>
-              </span>
-            </p>
-          {/if}
-        </section>
-      {/if}
-
-      {#if review}
-        <section class="card action review">
-          <h2 class="action-head"><Siren size={20} />{t('checkin.reviewTitle')}</h2>
-          <p class="lead small muted">{t('checkin.reviewText', { date: formatDate(settings.emergencyReviewed) })}</p>
-          <div class="row wrap review-actions">
-            <a class="btn small" href="#/emergency/info">{t('checkin.openInfo')}</a>
-            <button class="btn small" onclick={markReviewed}><Check size={16} />{t('emergency.reviewed')}</button>
-          </div>
-        </section>
-      {/if}
-
-      {#each bags as bag (bag.bag.name)}
-        <section class="card action review">
-          <h2 class="action-head"><Backpack size={20} />{t('checkin.bagTitle', { bag: bag.bag.name })}</h2>
-          <p class="lead small muted">{t('checkin.bagText', { date: formatDate(bag.bag.checked) })}</p>
-          <div class="row wrap review-actions">
-            <a class="btn small" href={bagHref(bag.bag.name)}>{t('checkin.openInfo')}</a>
-            <button class="btn small" onclick={() => markChecked(bag.bag.name)}><Check size={16} />{t('bags.checked')}</button>
-          </div>
-        </section>
-      {/each}
-    </div>
+          </section>
+        {:else if which.key === 'consume'}
+          <section class="card action consume">
+            <h2 class="action-head"><Utensils size={20} />{t('checkin.consumeTitle')}<span class="count">{checkin.consume.length}</span></h2>
+            <p class="lead small muted">{t(texts.consume, { margin: settings.rotationMarginDays })}</p>
+            <ul>
+              {#each checkin.consume as item (item.product.name)}
+                {@render lotRow(item.product.name, quantity(item.qty, item.product), item.lot, t(isStoredWater(item.product) ? 'checkin.drunk' : 'checkin.eaten'), () => (dialogs.take = { action: 'consumed', lotId: item.lot.id, qty: item.qty }))}
+              {/each}
+            </ul>
+            {#if overload}
+              <p class="note small"><TriangleAlert size={16} />{t('checkin.overload')}</p>
+            {/if}
+          </section>
+        {:else if which.key === 'replace'}
+          <section class="card action replace">
+            <h2 class="action-head"><RefreshCw size={20} />{t('checkin.replaceTitle')}<span class="count">{checkin.replace.length}</span></h2>
+            <p class="lead small muted">{t('checkin.replaceText')}</p>
+            <ul>
+              {#each checkin.replace as item (item.lot.id)}
+                {@render lotRow(item.product.name, quantity(item.lot.qty, item.product), item.lot, t('checkin.replaced'), () => (dialogs.lot = { product: item.product.name, qty: item.lot.qty, replaces: item.lot.id }))}
+              {/each}
+            </ul>
+          </section>
+        {:else if which.key === 'buy' && buy}
+          <section class="card action buy">
+            <h2 class="action-head"><ShoppingCart size={20} />{t('checkin.buyTitle')}{#if toBuy > 0}<span class="count">{toBuy}</span>{/if}</h2>
+            <p class="lead small muted">{t('checkin.buyText', { tier: tierLabel(buy.days) })}</p>
+            {#each buyGroups as group (group.kind)}
+              {#if buyGroups.length > 1}<h3 class="kind-title">{kindLabel(group.kind)}</h3>{/if}
+              <ul>
+                {#each group.lines as line (line.product.name)}
+                  {@render buyRow(
+                    line.product.name,
+                    `+${quantity(line.missing, line.product)}`,
+                    line.liters !== undefined ? t('checkin.liters', { liters: formatLiters(line.liters) }) : ofTarget(line.have, line.target, line.product),
+                    () => (dialogs.lot = { product: line.product.name, qty: line.missing }),
+                  )}
+                {/each}
+                {#if group.kind === 'food' && water.stored > 0}
+                  {@render buyRow(t('checkin.drinkingWater'), `+${formatLiters(water.stored)}`, t('checkin.noWaterProduct'), () => buyWater(bottle, water.stored))}
+                {/if}
+                {#if group.kind === 'food' && water.treatment > 0}
+                  {@render buyRow(t('checkin.waterTreatment'), formatLiters(water.treatment), t('checkin.treatmentHint'), () => buyWater(filter, water.treatment))}
+                {/if}
+              </ul>
+            {/each}
+            {#if foodShort}
+              <p class="note small">
+                <TriangleAlert size={16} />
+                <span>
+                  {t('checkin.foodShort', { days: Math.floor(buy.foodDays), tier: tierLabel(buy.days) })}
+                  <button class="link" onclick={() => router.go('stock', 'food')}>{t('home.adjustTargets')}</button>
+                </span>
+              </p>
+            {/if}
+          </section>
+        {:else if which.key === 'review'}
+          <section class="card action review">
+            <h2 class="action-head"><Siren size={20} />{t('checkin.reviewTitle')}</h2>
+            <p class="lead small muted">{t('checkin.reviewText', { date: formatDate(settings.emergencyReviewed) })}</p>
+            <div class="row wrap review-actions">
+              <a class="btn small" href="#/emergency/info">{t('checkin.openInfo')}</a>
+              <button class="btn small" onclick={markReviewed}><Check size={16} />{t('emergency.reviewed')}</button>
+            </div>
+          </section>
+        {:else if 'bag' in which}
+          <section class="card action review">
+            <h2 class="action-head"><Backpack size={20} />{t('checkin.bagTitle', { bag: which.bag.bag.name })}</h2>
+            <p class="lead small muted">{t('checkin.bagText', { date: formatDate(which.bag.bag.checked) })}</p>
+            <div class="row wrap review-actions">
+              <a class="btn small" href={bagHref(which.bag.bag.name)}>{t('checkin.openInfo')}</a>
+              <button class="btn small" onclick={() => markChecked(which.bag.bag.name)}><Check size={16} />{t('bags.checked')}</button>
+            </div>
+          </section>
+        {/if}
+      {/snippet}
+    </CardColumns>
   {/if}
 
   <ReminderCard />
@@ -286,14 +297,6 @@
 
   .up-to-date p {
     margin: 0;
-  }
-
-  .cards > :global(*) {
-    margin-bottom: 0.875rem;
-  }
-
-  .cards > :global(:last-child) {
-    margin-bottom: 0;
   }
 
   /* An action card: a thick colored edge on the left says how urgent it is. */
@@ -467,16 +470,5 @@
     font-weight: 600;
     text-decoration: underline;
     cursor: pointer;
-  }
-
-  @media (min-width: 720px) {
-    .cards:not(.single) {
-      columns: 2;
-      column-gap: 1rem;
-    }
-
-    .cards > :global(*) {
-      break-inside: avoid;
-    }
   }
 </style>
