@@ -1,244 +1,575 @@
 <script lang="ts">
+  import Backpack from '@lucide/svelte/icons/backpack';
   import CalendarCheck from '@lucide/svelte/icons/calendar-check';
   import Can from '@lucide/svelte/icons/can';
-  import Check from '@lucide/svelte/icons/check';
   import ChevronRight from '@lucide/svelte/icons/chevron-right';
-  import Droplets from '@lucide/svelte/icons/droplets';
-  import Flame from '@lucide/svelte/icons/flame';
+  import CircleCheck from '@lucide/svelte/icons/circle-check';
+  import House from '@lucide/svelte/icons/house';
+  import ListChecks from '@lucide/svelte/icons/list-checks';
+  import MapPin from '@lucide/svelte/icons/map-pin';
   import Package from '@lucide/svelte/icons/package';
   import Plus from '@lucide/svelte/icons/plus';
+  import Siren from '@lucide/svelte/icons/siren';
   import Sparkles from '@lucide/svelte/icons/sparkles';
   import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
   import { app } from '../lib/app.svelte';
-  import { buyCount } from '../lib/core/checkin';
-  import { findProduct } from '../lib/core/stock';
-  import { formatDate, formatNumber, t, tn } from '../lib/i18n/index.svelte';
-  import ExpiryBadge from '../lib/ui/ExpiryBadge.svelte';
-  import { checkinTitle, formatKcal, formatLiters, quantity, tierLabel, wholeDays } from '../lib/ui/format';
-  import { dialogs, router } from '../lib/ui/state.svelte';
+  import { KINDS } from '../lib/core/categories';
+  import { PLAN_TOPICS } from '../lib/core/emergency';
+  import { kindOverview, type KindOverview } from '../lib/core/overview';
+  import type { Kind } from '../lib/core/types';
+  import { formatDate, formatDuration, formatNumber, i18n, t, tn, type MessageKey } from '../lib/i18n/index.svelte';
+  import { bagHref } from '../lib/ui/bags';
+  import { startCrisis } from '../lib/ui/crisis';
+  import { reviewText, topicTitle } from '../lib/ui/emergency';
+  import { formatKcal, kindLabel, tierLabel, wholeDays } from '../lib/ui/format';
   import KindIcon from '../lib/ui/KindIcon.svelte';
+  import { dialogs, router } from '../lib/ui/state.svelte';
+  import { todoCounts } from '../lib/ui/todo';
+
+  type Tone = 'danger' | 'warn' | 'ok';
 
   const settings = $derived(app.shelf.settings);
   const autonomy = $derived(app.autonomy);
-  const plan = $derived(app.plan);
-  const checkin = $derived(app.checkin);
+  const tier = $derived(app.plan.current);
   const lostDays = $derived(autonomy.food.naiveDays - autonomy.food.days);
-  const alertLots = $derived([...app.alerts.expired, ...app.alerts.soon]);
   const isEmpty = $derived(app.shelf.products.length === 0 && app.shelf.lots.length === 0);
   const lowMenu = $derived(app.menu > 0 && app.menu < settings.kcalPerPersonPerDay * 0.9);
-  const toBuy = $derived(buyCount(checkin.buy));
-  const firstOut = $derived(autonomy.supplies.find((supply) => Number.isFinite(supply.days)) ?? null);
-  const gear = $derived(app.gear);
-  // A few names are enough on the home screen: the gear page lists them all.
-  const missingNames = $derived(
-    gear.missing.slice(0, 3).map((product) => product.name).join(', ') + (gear.missing.length > 3 ? '…' : ''),
+
+  const todo = $derived(todoCounts());
+  /** "1 to discard · 3 to eat · …": only the actions with something to do. */
+  const todoParts = $derived(
+    [
+      ...(
+        [
+          [todo.discard, 'checkin.discardShort'],
+          [todo.consume, 'checkin.consumeShort'],
+          [todo.replace, 'checkin.replaceShort'],
+          [todo.buy, 'checkin.buyShort'],
+        ] as [number, MessageKey][]
+      )
+        .filter(([count]) => count > 0)
+        .map(([count, key]) => `${formatNumber(count, 0)} ${t(key)}`),
+      ...(todo.review > 0 ? [t('home.reviewInfo')] : []),
+      ...(todo.bags > 0 ? [tn('home.bagsToCheck', todo.bags)] : []),
+    ].join(' · '),
   );
+
+  const kinds = $derived(KINDS.map((kind) => ({ kind, overview: kindOverview(kind, app.summaries, app.checkin.replace, app.gear) })));
+
+  /** What needs a look in a part of the stock, worst first. */
+  function kindStatus(kind: Kind, overview: KindOverview): { text: string; tone: Tone }[] {
+    const parts: { text: string; tone: Tone }[] = [];
+    if (overview.expired > 0) parts.push({ text: tn('stock.expiredCount', overview.expired), tone: 'danger' });
+    if (kind === 'gear') {
+      if (overview.missing > 0) parts.push({ text: tn('kind.gearMissing', overview.missing), tone: 'warn' });
+    } else if (overview.replace > 0) {
+      parts.push({ text: tn('stock.toReplaceCount', overview.replace), tone: 'warn' });
+    } else if (overview.soon > 0) {
+      parts.push({ text: tn('stock.soonCount', overview.soon), tone: 'warn' });
+    }
+    if (parts.length > 0) return parts;
+    if (overview.products > 0 && overview.stocked === 0) return [{ text: t('home.nothingStocked'), tone: 'warn' }];
+    return [{ text: t('home.allGood'), tone: 'ok' }];
+  }
+
+  const bagsReady = $derived(app.bags.reduce((sum, bag) => sum + bag.ready, 0));
+  const bagsTotal = $derived(app.bags.reduce((sum, bag) => sum + bag.total, 0));
+
+  const emergency = $derived(app.emergency);
+  const missingInfo = $derived(emergency.missing.map((topic) => topicTitle(topic).toLocaleLowerCase(i18n.lang)).join(', '));
 </script>
 
 <div class="stack">
-  <header class="page-head">
-    <div>
-      <h1>{t('home.title')}</h1>
-      <p class="muted">{formatDate(app.today)} · {tn('home.household', settings.people)}</p>
-    </div>
-  </header>
+  <h1 class="visually-hidden">{t('home.title')}</h1>
+  <div class="top">
+    <p class="muted strong">{formatDate(app.today)} · {tn('home.household', settings.people)}</p>
+    <button type="button" class="sos" onclick={startCrisis}><Siren size={18} />{t('crisis.title')}</button>
+  </div>
 
-  {#if isEmpty}
-    <section class="card empty">
-      <span class="empty-icon"><Can size={44} strokeWidth={1.75} /></span>
-      <h2>{t('home.emptyTitle')}</h2>
-      <p class="muted">{t('home.emptyText')}</p>
-      <div class="row wrap center">
-        <button class="btn primary" onclick={() => router.go('stock')}><Package size={18} />{t('home.openStock')}</button>
+  <a class="card todo" class:done={todo.total === 0} href="#/checkin">
+    <span class="todo-icon">
+      {#if todo.total > 0}<ListChecks size={24} />{:else}<CircleCheck size={24} />{/if}
+    </span>
+    <span class="grow">
+      <span class="todo-title">{todo.total > 0 ? tn('home.todo', todo.total) : t('checkin.upToDateTitle')}</span>
+      <span class="small">{todo.total > 0 ? todoParts : t('checkin.upToDateText')}</span>
+    </span>
+    <ChevronRight size={20} class="chevron" />
+  </a>
+
+  {#if !isEmpty && app.shelf.lots.length === 0}
+    <section class="card ready">
+      <span class="empty-icon">🧭</span>
+      <div class="grow">
+        <h2>{t('home.readyTitle')}</h2>
+        <p class="small muted">{t('home.readyText')}</p>
+      </div>
+      <div class="row wrap">
+        <button class="btn primary" onclick={() => router.go('checkin')}><CalendarCheck size={18} />{t('home.readyAction')}</button>
         <button class="btn" onclick={() => (dialogs.lot = {})}><Plus size={18} />{t('stock.addLot')}</button>
-        {#if !app.demo}
-          <button class="btn ghost" onclick={() => app.startDemo()}><Sparkles size={18} />{t('welcome.demo')}</button>
-        {/if}
       </div>
     </section>
-  {:else}
-    {#if app.shelf.lots.length === 0}
-      <section class="card ready">
-        <span class="empty-icon">🧭</span>
-        <div class="grow">
-          <h2>{t('home.readyTitle')}</h2>
-          <p class="small muted">{t('home.readyText')}</p>
-        </div>
-        <div class="row wrap">
-          <button class="btn primary" onclick={() => router.go('checkin')}><CalendarCheck size={18} />{t('home.readyAction')}</button>
-          <button class="btn" onclick={() => (dialogs.lot = {})}><Plus size={18} />{t('stock.addLot')}</button>
-        </div>
-      </section>
-    {/if}
+  {/if}
 
-    <section class="card hero" aria-labelledby="autonomy-title">
-      <div class="autonomy">
-        <p id="autonomy-title" class="eyebrow">{t('home.autonomy')}</p>
-        <p class="big num">
-          {wholeDays(autonomy.days)}<span class="unit">{t('home.days')}</span>
-        </p>
-        {#if autonomy.limitedBy}
-          <p class="small muted">{t(autonomy.limitedBy === 'food' ? 'home.limitedByFood' : 'home.limitedByWater')}</p>
-        {/if}
-        <div class="resources">
-          <div class="resource food">
-            <Flame size={20} />
-            <div>
-              <p class="resource-days num">{wholeDays(autonomy.food.days)} {t('home.daysShort')}</p>
-              <p class="small muted">{t('home.food')} · {formatKcal(autonomy.food.usable)}</p>
-            </div>
-          </div>
-          <div class="resource water">
-            <Droplets size={20} />
-            <div>
-              <p class="resource-days num">{wholeDays(autonomy.water.days)} {t('home.daysShort')}</p>
-              <p class="small muted">
-                {t('home.water')} · {formatLiters(autonomy.water.usable)}
-                {#if autonomy.treatmentLiters > 0}<br />{t('home.treatment', { liters: formatLiters(autonomy.treatmentLiters) })}{/if}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tiers">
-        <p class="eyebrow">{t('home.tiers')}</p>
-        <ol class="ladder">
-          {#each plan.tiers as tier (tier.days)}
-            {@const current = tier === plan.current}
-            <li class:current class:complete={tier.complete}>
-              <span class="mark" aria-hidden="true">{#if tier.complete}<Check size={14} />{/if}</span>
-              <span class="tier-name">{tierLabel(tier.days)}</span>
-              <span class="bar" class:done={tier.complete}><span style:width="{tier.progress * 100}%"></span></span>
-              <span class="pct num small">{formatNumber(Math.floor(tier.progress * 100), 0)} %</span>
-            </li>
-          {/each}
-        </ol>
-        {#if plan.current}
-          <p class="small">
-            {t('home.currentTier', { tier: tierLabel(plan.current.days) })}
-            {#if toBuy > 0}<span class="muted">· {tn('home.toBuy', toBuy)}</span>{/if}
-          </p>
-        {:else if plan.tiers.length > 0}
-          <p class="small ok-text">{t('home.allTiers')}</p>
-        {/if}
-      </div>
-
-      {#if lostDays >= 1}
-        <p class="note small">
-          <TriangleAlert size={16} />
-          {t('home.lostToExpiry', { days: formatNumber(Math.floor(lostDays), 0) })}
-        </p>
-      {/if}
-      {#if lowMenu}
-        <p class="note small">
-          <TriangleAlert size={16} />
-          <span>
-            {t('home.lowMenu', { menu: formatKcal(app.menu), need: formatKcal(settings.kcalPerPersonPerDay) })}
-            <button class="link" onclick={() => router.go('stock', 'food')}>{t('home.adjustTargets')}</button>
-          </span>
-        </p>
-      {/if}
-    </section>
-
-    <section class="card supplies" aria-labelledby="supplies-title">
-      <h2 id="supplies-title">{t('home.suppliesTitle')}</h2>
-      <div class="kind-lines">
-        <div class="kind-line">
-          <span class="kind-box"><KindIcon kind="consumable" size={22} /></span>
-          <div class="grow">
-            {#if firstOut}
-              <p class="kind-value num">{wholeDays(firstOut.days)} {t('home.days')}</p>
-              <p class="small muted">{t('home.firstOut', { name: firstOut.product.name })}</p>
-            {:else}
-              <p class="small muted">{t('home.noSupplies')}</p>
-            {/if}
-            {#if checkin.replace.length > 0}
-              <span class="pill soon">{checkin.replace.length} {t('checkin.replaceShort')}</span>
+  <div class="columns">
+    <div class="column">
+      {#if isEmpty}
+        <section class="card empty">
+          <span class="empty-icon"><Can size={44} strokeWidth={1.75} /></span>
+          <h2>{t('home.emptyTitle')}</h2>
+          <p class="muted">{t('home.emptyText')}</p>
+          <div class="row wrap center">
+            <button class="btn primary" onclick={() => router.go('stock')}><Package size={18} />{t('home.openStock')}</button>
+            <button class="btn" onclick={() => (dialogs.lot = {})}><Plus size={18} />{t('stock.addLot')}</button>
+            {#if !app.demo}
+              <button class="btn ghost" onclick={() => app.startDemo()}><Sparkles size={18} />{t('welcome.demo')}</button>
             {/if}
           </div>
-        </div>
-        <div class="kind-line">
-          <span class="kind-box"><KindIcon kind="gear" size={22} /></span>
-          <div class="grow">
-            {#if gear.total > 0}
-              <p class="kind-value num">{tn('kind.gearCount', gear.ready, { total: gear.total })}</p>
-              <div class="bar" class:done={gear.ready === gear.total}><span style:width="{(gear.ready / gear.total) * 100}%"></span></div>
-              {#if gear.missing.length > 0}
-                <p class="small muted">{t('home.gearMissingList', { list: missingNames })}</p>
-              {/if}
-            {:else}
-              <p class="small muted">{t('home.noGear')}</p>
+        </section>
+      {:else}
+        <!-- Holding out at home: how long the stock lasts, then each part of it. -->
+        <section class="card part" aria-labelledby="home-stay">
+          <div class="part-head">
+            <span class="part-icon"><House size={24} /></span>
+            <h2 id="home-stay">{t('home.stayTitle')}</h2>
+          </div>
+          <p class="big num">{wholeDays(autonomy.days)}<span>{tn('home.days', Math.floor(autonomy.days))}</span></p>
+          <!-- With nothing stored yet, which one runs out first says nothing. -->
+          {#if autonomy.food.days >= 1 || autonomy.water.days >= 1}
+            {#if autonomy.limitedBy === 'water'}
+              <p class="small muted">{t('home.limitedByWater', { duration: formatDuration(autonomy.food.days) })}</p>
+            {:else if autonomy.limitedBy === 'food'}
+              <p class="small muted">{t('home.limitedByFood', { duration: formatDuration(autonomy.water.days) })}</p>
             {/if}
-          </div>
-        </div>
-      </div>
-      <a class="btn ghost small see" href="#/stock/gear">{t('home.seeGear')}<ChevronRight size={16} /></a>
-    </section>
-
-    <div class="cards">
-      <section class="card checkin">
-        <div class="section-title">
-          <h2>{checkinTitle(settings.rhythm)}</h2>
-          <CalendarCheck size={20} />
-        </div>
-        <div class="counters">
-          <div class:alert={checkin.discard.length > 0}>
-            <strong class="num">{checkin.discard.length}</strong><span class="small muted">{t('checkin.discardShort')}</span>
-          </div>
-          <div>
-            <strong class="num">{checkin.consume.length}</strong><span class="small muted">{t('checkin.consumeShort')}</span>
-          </div>
-          <div>
-            <strong class="num">{checkin.replace.length}</strong><span class="small muted">{t('checkin.replaceShort')}</span>
-          </div>
-          <div>
-            <strong class="num">{toBuy}</strong><span class="small muted">{t('checkin.buyShort')}</span>
-          </div>
-        </div>
-        <button class="btn primary" onclick={() => router.go('checkin')}>{t('home.openCheckin')}<ChevronRight size={18} /></button>
-      </section>
-
-      <section class="card">
-        <div class="section-title">
-          <h2>{t('home.alerts')}</h2>
-          {#if alertLots.length > 0}
-            <span class="pill {app.alerts.expired.length > 0 ? 'expired' : 'soon'}">{alertLots.length}</span>
           {/if}
-        </div>
-        {#if alertLots.length === 0}
-          <p class="muted small">{t('home.noAlerts', { days: settings.warningDays })}</p>
-        {:else}
-          <ul class="list">
-            {#each alertLots.slice(0, 5) as lot (lot.id)}
+          {#if tier}
+            <a class="tier" href="#/checkin">
+              <span>{t('home.tier', { tier: tierLabel(tier.days) })}</span>
+              <span class="bar"><span style:width="{tier.progress * 100}%"></span></span>
+              <span class="num">{formatNumber(Math.floor(tier.progress * 100), 0)} %</span>
+            </a>
+          {:else if app.plan.tiers.length > 0}
+            <p class="small ok-text">{t('home.allTiers')}</p>
+          {/if}
+          {#if lostDays >= 1}
+            <p class="note small">
+              <TriangleAlert size={16} />
+              {t('home.lostToExpiry', { days: formatNumber(Math.floor(lostDays), 0) })}
+            </p>
+          {/if}
+          {#if lowMenu}
+            <p class="note small">
+              <TriangleAlert size={16} />
+              <span>
+                {t('home.lowMenu', { menu: formatKcal(app.menu), need: formatKcal(settings.kcalPerPersonPerDay) })}
+                <a href="#/stock/food">{t('home.adjustTargets')}</a>
+              </span>
+            </p>
+          {/if}
+          <ul class="rows">
+            {#each kinds as { kind, overview } (kind)}
               <li>
-                <button class="alert-item" onclick={() => (dialogs.take = { action: 'consumed', lotId: lot.id })}>
+                <a class="row-link" href="#/stock/{kind}">
+                  <KindIcon {kind} size={22} />
                   <span class="grow">
-                    <strong>{lot.product}</strong>
-                    <span class="muted small">{quantity(lot.qty, findProduct(app.shelf, lot.product))}{lot.location ? ` · ${lot.location}` : ''}</span>
+                    <span class="name">{kindLabel(kind)}</span>
+                    <span class="small strong">
+                      {#each kindStatus(kind, overview) as part, index (part.text)}
+                        {#if index > 0}{' · '}{/if}<span class={part.tone}>{part.text}</span>
+                      {/each}
+                    </span>
                   </span>
-                  <ExpiryBadge {lot} />
-                </button>
+                  {#if kind === 'gear' && overview.total > 0}
+                    <span class="qty num">{t('home.of', { count: overview.ready, total: overview.total })}<small>{tn('home.ready', overview.ready)}</small></span>
+                  {:else}
+                    <span class="qty num">{formatNumber(overview.products, 0)}<small>{tn('home.products', overview.products)}</small></span>
+                  {/if}
+                  <ChevronRight size={20} class="chevron" />
+                </a>
               </li>
             {/each}
           </ul>
-          {#if alertLots.length > 5}
-            <button class="btn ghost small more" onclick={() => router.go('stock')}>{t('home.seeAll')}<ChevronRight size={16} /></button>
+        </section>
+      {/if}
+    </div>
+
+    <div class="column">
+      <!-- Leaving in a hurry: the go-bags. -->
+      <section class="card part" aria-labelledby="home-leave">
+        <div class="part-head">
+          <span class="part-icon"><Backpack size={24} /></span>
+          <h2 id="home-leave">{t('home.leaveTitle')}</h2>
+          {#if bagsTotal > 0}
+            <span class="kpi num">{formatNumber(Math.floor((bagsReady / bagsTotal) * 100), 0)} %</span>
           {/if}
-        {/if}
+        </div>
+        <ul class="rows">
+          {#each app.bags as bag (bag.bag.name)}
+            <li>
+              <a class="row-link" href={bagHref(bag.bag.name)}>
+                <span class="grow bag">
+                  <span class="bag-head">
+                    <span class="name">{bag.bag.name}</span>
+                    <span class="small strong num">{t('bags.ready', { ready: bag.ready, total: bag.total })}</span>
+                  </span>
+                  <span class="bar" class:done={bag.total > 0 && bag.ready === bag.total}>
+                    <span style:width="{bag.total > 0 ? (bag.ready / bag.total) * 100 : 0}%"></span>
+                  </span>
+                </span>
+                <ChevronRight size={20} class="chevron" />
+              </a>
+            </li>
+          {:else}
+            <li class="add-row">
+              <button type="button" class="add" onclick={() => (dialogs.bag = {})}><Plus size={18} />{t('bags.add')}</button>
+              <span class="small muted">{t('bags.onePerPerson')}</span>
+            </li>
+          {/each}
+        </ul>
+      </section>
+
+      <!-- Finding each other: the household's emergency info. -->
+      <section class="card part" aria-labelledby="home-meet">
+        <div class="part-head">
+          <span class="part-icon"><MapPin size={24} /></span>
+          <h2 id="home-meet">{t('home.meetTitle')}</h2>
+          <span class="kpi num">{t('emergency.filled', { count: emergency.filled.length, total: PLAN_TOPICS.length })}</span>
+        </div>
+        <ul class="rows">
+          <li>
+            <a class="row-link" href="#/emergency/info">
+              <span class="grow">
+                <span class="name">{t('emergency.infoTitle')}</span>
+                <span class="small">
+                  {#if emergency.missing.length > 0}
+                    <span class="warn strong">{tn('emergency.missing', emergency.missing.length, { list: missingInfo })}</span>
+                  {:else}
+                    <span class="ok strong">{t('emergency.allFilled')}</span>
+                  {/if}
+                  {' · '}<span class:warn={emergency.reviewDue} class:strong={emergency.reviewDue}>{reviewText()}</span>
+                </span>
+              </span>
+              <ChevronRight size={20} class="chevron" />
+            </a>
+          </li>
+        </ul>
       </section>
     </div>
-  {/if}
+  </div>
 </div>
 
 <style>
+  /* The date wraps rather than push the crisis button under it. */
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .top p {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .strong {
+    font-weight: 600;
+  }
+
+  /* A way into crisis mode from the home screen, discreet until it is needed. */
+  .sos {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    flex: none;
+    min-height: 40px;
+    padding: 0 0.75rem;
+    border: 1.5px solid var(--danger);
+    border-radius: var(--radius-sm);
+    background: var(--danger-soft);
+    color: var(--danger);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .sos:hover {
+    background: color-mix(in srgb, var(--danger) 18%, var(--surface));
+  }
+
+  .todo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0.875rem;
+    border-color: var(--warn);
+    background: var(--warn-soft);
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .todo.done {
+    border-color: var(--ok);
+    background: var(--ok-soft);
+  }
+
+  .todo-icon {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--warn);
+  }
+
+  .todo.done .todo-icon {
+    color: var(--ok);
+  }
+
+  .todo .grow {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.125rem;
+    min-width: 0;
+  }
+
+  .todo-title {
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .todo:hover .todo-title {
+    text-decoration: underline;
+  }
+
+  .todo :global(.chevron) {
+    flex: none;
+  }
+
+  .columns,
+  .column {
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+    min-width: 0;
+  }
+
+  .part {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .part-head {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .part-head h2 {
+    flex: 1;
+    min-width: 0;
+    font-size: 1.375rem;
+  }
+
+  .part-icon {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius);
+    background: var(--primary-soft);
+    color: var(--primary);
+  }
+
+  .kpi {
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .big {
+    margin-top: 0.25rem;
+    font-family: var(--font-display);
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: 0.95;
+  }
+
+  .big span {
+    margin-left: 0.35rem;
+    font-size: 1.4rem;
+  }
+
+  .tier {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    color: var(--text);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .tier .bar {
+    flex: 1;
+  }
+
+  .tier:hover > span:first-child {
+    text-decoration: underline;
+  }
+
+  .ok-text,
+  .ok {
+    color: var(--ok);
+  }
+
+  .ok-text {
+    font-weight: 600;
+  }
+
+  .warn {
+    color: var(--warn);
+  }
+
+  .danger {
+    color: var(--danger);
+  }
+
+  .note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    color: var(--warn);
+  }
+
+  .note :global(svg) {
+    flex: none;
+    margin-top: 0.15rem;
+  }
+
+  .rows {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .rows li {
+    border-top: 1px solid var(--border);
+  }
+
+  .rows li:first-child {
+    border-top: none;
+  }
+
+  .row-link {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.625rem 0;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .row-link > :global(.kind-icon) {
+    color: var(--muted);
+  }
+
+  .row-link .grow {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.125rem;
+    min-width: 0;
+  }
+
+  .name {
+    font-weight: 600;
+    overflow-wrap: anywhere;
+  }
+
+  .row-link:hover .name {
+    text-decoration: underline;
+  }
+
+  .row-link :global(.chevron) {
+    flex: none;
+    color: var(--muted);
+  }
+
+  .qty {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .qty small {
+    font-family: var(--font);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  .bag {
+    gap: 0.375rem;
+  }
+
+  .bag-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .add-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 0.75rem;
+  }
+
+  .add {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    min-height: 44px;
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--primary);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .add:hover {
+    text-decoration: underline;
+  }
+
   .empty {
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
     padding: 2rem 1rem;
+    text-align: center;
   }
 
   .empty-icon {
@@ -260,313 +591,16 @@
   }
 
   .ready .grow {
-    flex: 1 1 16rem;
     display: flex;
+    flex: 1 1 16rem;
     flex-direction: column;
     gap: 0.25rem;
   }
 
-  .hero {
-    display: grid;
-    gap: 1.25rem;
-  }
-
-  @media (min-width: 760px) {
-    .hero {
-      grid-template-columns: 1fr 1fr;
-      column-gap: 2rem;
-    }
-
-    .hero .note {
-      grid-column: 1 / -1;
-    }
-  }
-
-  .big {
-    font-family: var(--font-display);
-    font-size: 5rem;
-    font-weight: 700;
-    line-height: 0.95;
-    margin: 0.25rem 0 0.35rem;
-  }
-
-  .big .unit {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-left: 0.5rem;
-  }
-
-  .resources {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    margin-top: 0.85rem;
-  }
-
-  .resource {
-    display: flex;
-    gap: 0.6rem;
-    align-items: flex-start;
-    padding: 0.75rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-    background: var(--surface-2);
-  }
-
-  .resource.food {
-    color: var(--food);
-  }
-
-  .resource.water {
-    color: var(--water);
-  }
-
-  .resource-days {
-    font-family: var(--font-display);
-    font-size: 1.75rem;
-    font-weight: 700;
-    line-height: 1.15;
-    color: var(--text);
-  }
-
-  .tiers {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .ladder {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .ladder li {
-    display: grid;
-    grid-template-columns: auto 5.5rem 1fr 3rem;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.55rem 0.7rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid transparent;
-  }
-
-  .ladder li.current {
-    --bar-gap: var(--primary-soft);
-    background: var(--primary-soft);
-  }
-
-  .ladder li.current .tier-name {
-    font-weight: 700;
-  }
-
-  .mark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 22px;
-    border-radius: 5px;
-    border: 2px solid var(--control);
-    color: var(--surface);
-  }
-
-  .complete .mark {
-    border-color: var(--ok);
-    background: var(--ok);
-  }
-
-  .current .mark {
-    border-color: var(--primary);
-  }
-
-  .tier-name {
-    font-weight: 600;
-  }
-
-  .pct {
-    text-align: right;
-    color: var(--muted);
-  }
-
-  .ok-text {
-    color: var(--ok);
-    font-weight: 600;
-  }
-
-  .note {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.4rem;
-    color: var(--warn);
-  }
-
-  .note :global(svg) {
-    flex: none;
-    margin-top: 0.15rem;
-  }
-
-  .link {
-    padding: 0;
-    border: none;
-    background: none;
-    color: var(--primary);
-    font-weight: 600;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-
-  .cards {
-    display: grid;
-    gap: 1rem;
-  }
-
-  @media (min-width: 760px) {
-    .cards {
+  /* Tablets and computers: holding out at home on the left, leaving and meeting on the right. */
+  @media (min-width: 720px) {
+    .columns {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      align-items: start;
     }
-  }
-
-  .supplies {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-  }
-
-  .kind-lines {
-    display: grid;
-    gap: 0.9rem;
-  }
-
-  @media (min-width: 760px) {
-    .kind-lines {
-      grid-template-columns: 1fr 1fr;
-      column-gap: 2rem;
-    }
-  }
-
-  .kind-line {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
-  .kind-line + .kind-line {
-    padding-top: 0.9rem;
-    border-top: 1px solid var(--border);
-  }
-
-  @media (min-width: 760px) {
-    .kind-line + .kind-line {
-      padding-top: 0;
-      border-top: none;
-    }
-  }
-
-  .kind-box {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: none;
-    width: 42px;
-    height: 42px;
-    border-radius: var(--radius-sm);
-    background: var(--primary-soft);
-    color: var(--primary);
-  }
-
-  .kind-line .grow {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.35rem;
-  }
-
-  .kind-line .bar {
-    align-self: stretch;
-  }
-
-  .kind-value {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 1.1;
-  }
-
-  .see {
-    align-self: flex-start;
-  }
-
-  .checkin {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .checkin .section-title {
-    margin: 0;
-    color: var(--primary);
-  }
-
-  .checkin h2 {
-    color: var(--text);
-  }
-
-  .counters {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0.5rem;
-  }
-
-  .counters div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.6rem 0.25rem;
-    border-radius: var(--radius-sm);
-    border: 1.5px solid var(--border);
-    background: var(--surface-2);
-    text-align: center;
-  }
-
-  .counters strong {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.1;
-  }
-
-  .counters .alert {
-    border-color: var(--danger);
-    background: var(--danger-soft);
-    color: var(--danger);
-  }
-
-  .alert-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    width: 100%;
-    padding: 0;
-    border: none;
-    background: none;
-    text-align: left;
-    cursor: pointer;
-  }
-
-  .alert-item .grow strong {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .more {
-    margin-top: 0.25rem;
   }
 </style>

@@ -25,6 +25,7 @@
   import ReminderCard from '../lib/ui/ReminderCard.svelte';
   import { checkinTitle, formatLiters, kindLabel, ofTarget, quantity, RHYTHM_TEXTS, tierLabel } from '../lib/ui/format';
   import { dialogs, router } from '../lib/ui/state.svelte';
+  import { todoCounts } from '../lib/ui/todo';
 
   const settings = $derived(app.shelf.settings);
   const checkin = $derived(app.checkin);
@@ -40,7 +41,7 @@
   /** Bags checked more than a year ago. */
   const bags = $derived(app.bags.filter((bag) => bag.checkDue));
   /** Everything to do, all actions together. */
-  const count = $derived(checkin.discard.length + checkin.consume.length + checkin.replace.length + toBuy + (review ? 1 : 0) + bags.length);
+  const count = $derived(todoCounts().total);
   // A tier can be short of food with nothing to buy (a light menu): the buy card then only shows why.
   const showBuy = $derived(buy !== null && (toBuy > 0 || foodShort));
   const cards = $derived(

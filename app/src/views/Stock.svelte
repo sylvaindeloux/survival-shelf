@@ -21,6 +21,7 @@
   import Utensils from '@lucide/svelte/icons/utensils';
   import { app } from '../lib/app.svelte';
   import { CATEGORIES, KINDS } from '../lib/core/categories';
+  import { kindOverview } from '../lib/core/overview';
   import { isWaterProduct, productTarget, waterGoal } from '../lib/core/plan';
   import { expiryStatus, type ProductSummary } from '../lib/core/status';
   import { lotExpiry } from '../lib/core/stock';
@@ -155,19 +156,16 @@
 
   /** What needs a look in each part, on its tab. */
   function tabStatus(of: Kind): Pick<SubTab, 'status' | 'tone'> {
-    const list = ofKind(of);
-    const expired = list.filter((summary) => summary.status === 'expired').length;
-    if (expired > 0) return { status: tn('stock.expiredCount', expired), tone: 'danger' };
+    const overview = kindOverview(of, app.summaries, app.checkin.replace, app.gear);
+    if (overview.expired > 0) return { status: tn('stock.expiredCount', overview.expired), tone: 'danger' };
     if (of === 'gear') {
-      if (app.gear.missing.length > 0) return { status: tn('kind.gearMissing', app.gear.missing.length), tone: 'warn' };
-      if (app.gear.total > 0) return { status: tn('kind.gearCount', app.gear.ready, { total: app.gear.total }), tone: 'ok' };
+      if (overview.missing > 0) return { status: tn('kind.gearMissing', overview.missing), tone: 'warn' };
+      if (overview.total > 0) return { status: tn('kind.gearCount', overview.ready, { total: overview.total }), tone: 'ok' };
     } else {
-      const replace = app.checkin.replace.filter((item) => item.due && item.product.kind === of).length;
-      if (replace > 0) return { status: tn('stock.toReplaceCount', replace), tone: 'warn' };
-      const soon = list.filter((summary) => summary.status === 'soon').length;
-      if (soon > 0) return { status: tn('stock.soonCount', soon), tone: 'warn' };
+      if (overview.replace > 0) return { status: tn('stock.toReplaceCount', overview.replace), tone: 'warn' };
+      if (overview.soon > 0) return { status: tn('stock.soonCount', overview.soon), tone: 'warn' };
     }
-    return { status: tn('stock.products', list.length), tone: 'muted' };
+    return { status: tn('stock.products', overview.products), tone: 'muted' };
   }
 
   const tabs = $derived<SubTab[]>(
