@@ -5,10 +5,12 @@
   import ListChecks from '@lucide/svelte/icons/list-checks';
   import Package from '@lucide/svelte/icons/package';
   import SettingsIcon from '@lucide/svelte/icons/settings';
+  import Siren from '@lucide/svelte/icons/siren';
   import { onMount, type Component } from 'svelte';
   import { app } from './lib/app.svelte';
   import { i18n, t, type MessageKey } from './lib/i18n/index.svelte';
   import Banners from './lib/ui/Banners.svelte';
+  import EmergencyDialog from './lib/ui/EmergencyDialog.svelte';
   import LotDialog from './lib/ui/LotDialog.svelte';
   import Logo from './lib/ui/Logo.svelte';
   import PrintSheet from './lib/ui/PrintSheet.svelte';
@@ -17,6 +19,7 @@
   import Toasts from './lib/ui/Toasts.svelte';
   import { dialogs, preferences, router, type Route } from './lib/ui/state.svelte';
   import CheckIn from './views/CheckIn.svelte';
+  import Emergency from './views/Emergency.svelte';
   import Guides from './views/Guides.svelte';
   import Home from './views/Home.svelte';
   import Settings from './views/Settings.svelte';
@@ -28,21 +31,31 @@
     { route: 'home', label: 'nav.home', icon: House },
     { route: 'checkin', label: 'nav.todo', icon: ListChecks },
     { route: 'stock', label: 'nav.stock', icon: Package },
+    { route: 'emergency', label: 'nav.emergency', icon: Siren },
     { route: 'guides', label: 'nav.guides', icon: BookOpen },
   ];
 
-  const VIEWS: Record<Route, Component> = { home: Home, checkin: CheckIn, stock: Stock, guides: Guides, settings: Settings };
+  const VIEWS: Record<Route, Component> = {
+    home: Home,
+    checkin: CheckIn,
+    stock: Stock,
+    emergency: Emergency,
+    guides: Guides,
+    settings: Settings,
+  };
   const View = $derived(VIEWS[router.route]);
 
-  // Only what needs doing: expired lots to discard, lots due for rotation and supplies due for replacement.
+  // Only what needs doing: expired lots to discard, lots due for rotation and supplies due for replacement,
+  // and the emergency info to read again.
   const badges = $derived<Partial<Record<Route, number>>>({
     checkin:
       app.checkin.discard.length +
       app.checkin.consume.filter((item) => item.due).length +
-      app.checkin.replace.filter((item) => item.due).length,
+      app.checkin.replace.filter((item) => item.due).length +
+      (app.emergency.reviewDue ? 1 : 0),
   });
-  // Printing from the guides prints the guide on screen, anywhere else the inventory sheet.
-  const printsPage = $derived(router.route === 'guides');
+  // Printing a guide or the emergency info prints the page on screen, anywhere else the inventory sheet.
+  const printsPage = $derived(router.route === 'guides' || (router.route === 'emergency' && router.path === 'info'));
 
   onMount(() => {
     void app.init();
@@ -114,6 +127,9 @@
 {/if}
 {#if dialogs.take}
   <TakeDialog request={dialogs.take} />
+{/if}
+{#if dialogs.emergency}
+  <EmergencyDialog request={dialogs.emergency} />
 {/if}
 <Toasts />
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { dayFromParts, formatDay, monthsLater, normalizeDate, parseDay, today } from './dates';
+import { addMonths, dayFromParts, formatDay, monthsLater, normalizeDate, parseDay, today } from './dates';
 import { formatNumber, parseNumber } from './text';
 
 describe('dates', () => {
@@ -25,6 +25,13 @@ describe('dates', () => {
     expect(monthsLater(dayFromParts(2026, 10, 10), 24)).toBe('2028-10');
     expect(monthsLater(dayFromParts(2026, 10, 31), 3)).toBe('2027-01');
     expect(monthsLater(dayFromParts(2026, 12, 1), 12)).toBe('2027-12');
+  });
+
+  it('adds months to a day, ending on the last day of a shorter month', () => {
+    expect(formatDay(addMonths(dayFromParts(2026, 11, 15), 6))).toBe('2027-05-15');
+    expect(formatDay(addMonths(dayFromParts(2026, 8, 31), 6))).toBe('2027-02-28');
+    expect(formatDay(addMonths(dayFromParts(2027, 8, 31), 6))).toBe('2028-02-29');
+    expect(formatDay(addMonths(dayFromParts(2026, 12, 1), 1))).toBe('2027-01-01');
   });
 
   it('uses the local calendar day', () => {

@@ -2,7 +2,7 @@ import { CATALOG, productFromCatalog, starterItems } from './core/catalog';
 import { formatDay, type Day } from './core/dates';
 import { emptyShelf } from './core/defaults';
 import { addLot, upsertProduct } from './core/stock';
-import type { Shelf } from './core/types';
+import type { EmergencyTopic, Shelf } from './core/types';
 import { inLang, type Lang, type Translated } from './core/languages';
 
 interface DemoLot {
@@ -56,6 +56,21 @@ const DEMO_LOTS: Record<string, DemoLot[]> = {
   'survival-blanket': [{ qty: 2, in: null, where: 'bag' }],
 };
 
+/**
+ * A household plan under way, with nothing but fictional names: no phone number, so that the demo never
+ * calls anyone for real. The contacts are left to fill in, which shows how the sheet asks for them.
+ */
+const DEMO_EMERGENCY: { topic: EmergencyTopic; name: Translated; details: Translated }[] = [
+  { topic: 'remote', name: { en: 'Claire, Alex’s sister', fr: 'Claire, sœur d’Alex' }, details: { en: 'in Lyon', fr: 'à Lyon' } },
+  { topic: 'meeting', name: { en: 'Outside our home', fr: 'Devant chez nous' }, details: { en: 'the gate, street side', fr: 'le portail, côté rue' } },
+  { topic: 'meeting', name: { en: 'Outside the neighborhood', fr: 'Hors du quartier' }, details: { en: 'the church square', fr: 'la place de l’église' } },
+  { topic: 'role', name: { en: 'Alex', fr: 'Alex' }, details: { en: 'takes the bags, shuts off the gas', fr: 'prend les sacs, coupe le gaz' } },
+  { topic: 'role', name: { en: 'Sam', fr: 'Sam' }, details: { en: 'follows the radio, warns the neighbor', fr: 'suit la radio, prévient la voisine' } },
+  { topic: 'shutoff', name: { en: 'Gas', fr: 'Gaz' }, details: { en: 'valve under the sink', fr: 'robinet sous l’évier' } },
+  { topic: 'shutoff', name: { en: 'Water', fr: 'Eau' }, details: { en: 'meter in the garage', fr: 'compteur au garage' } },
+  { topic: 'shutoff', name: { en: 'Electricity', fr: 'Électricité' }, details: { en: 'panel in the hall', fr: 'tableau dans l’entrée' } },
+];
+
 /** A realistic sample stock for 2 people, with dates relative to today so every state shows up. */
 export function demoShelf(today: Day, lang: Lang): Shelf {
   let shelf = emptyShelf(lang);
@@ -80,5 +95,10 @@ export function demoShelf(today: Day, lang: Lang): Shelf {
       );
     }
   }
+  shelf.emergency.push(
+    ...DEMO_EMERGENCY.map(({ topic, name, details }) => ({ topic, name: inLang(name, lang), details: inLang(details, lang), phone: '', extra: {} })),
+  );
+  // Read more than six months ago: the to-do list asks to read it again.
+  shelf.settings.emergencyReviewed = formatDay(today - 200);
   return shelf;
 }

@@ -263,7 +263,7 @@ Beans | can | red \\| white
   it('returns a default shelf for an empty file', () => {
     const { shelf, issues } = parseShelf('');
     expect(issues).toEqual([]);
-    expect(shelf.layout.blocks).toHaveLength(5);
+    expect(shelf.layout.blocks).toHaveLength(6);
   });
 });
 
@@ -428,6 +428,95 @@ describe('file language', () => {
     expect(langOf('| People | 2 |')).toBe('en');
     const { shelf, issues } = parseShelf('## Settings\n\n| Setting | Value |\n|---|---|\n| Language | Klingon |\n', { lang: 'fr' });
     expect(shelf.settings.lang).toBe('fr');
+    expect(issues.map((issue) => issue.code)).toEqual(['invalidSetting']);
+  });
+});
+
+describe('emergency info', () => {
+  const FILE = `## Settings
+
+| Setting | Value |
+|---|---|
+| Emergency info reviewed | 2026-11-15 |
+
+## Emergency info
+
+| Topic | Name | Details | Phone | Floor |
+|---|---|---|---|---|
+| Emergency number | Emergencies | all emergencies, everywhere in the EU | 112 | |
+| Out-of-area contact | Claire | in Lyon | 06 00 00 00 00 | |
+| Rendez-vous | Outside | the gate | | |
+| Neighbors | Mrs Lee | | 01 00 00 00 00 | 2nd |
+| | Dr Martin | | 01 00 00 00 01 | |
+`;
+
+  it('reads the topics in any language, and keeps the topics and columns of the user', () => {
+    const { shelf, issues } = parseShelf(FILE);
+    expect(issues).toEqual([]);
+    expect(shelf.settings.emergencyReviewed).toBe('2026-11-15');
+    expect(shelf.emergency.map((entry) => entry.topic)).toEqual(['number', 'remote', 'meeting', 'Neighbors', 'contact']);
+    expect(shelf.emergency[3]).toEqual({ topic: 'Neighbors', name: 'Mrs Lee', details: '', phone: '01 00 00 00 00', extra: { Floor: '2nd' } });
+  });
+
+  it('accepts the titles of the topics shown by the app, and a few other names', () => {
+    const titles = [
+      ['Emergency numbers', 'number'],
+      ['Numéros d’urgence', 'number'],
+      ['Out-of-area contact', 'remote'],
+      ['Contacts éloignés', 'remote'],
+      ['Contacts', 'contact'],
+      ['Meeting points', 'meeting'],
+      ['Lieux de rendez-vous', 'meeting'],
+      ['Who does what', 'role'],
+      ['Qui fait quoi', 'role'],
+      ['Shut off', 'shutoff'],
+      ['Couper', 'shutoff'],
+      ['Santé', 'health'],
+    ];
+    const rows = titles.map(([title]) => `| ${title} | x | y | |`).join('\n');
+    const { shelf } = parseShelf(`## Emergency info\n\n| Topic | Name | Details | Phone |\n|---|---|---|---|\n${rows}\n`);
+    expect(shelf.emergency.map((entry) => entry.topic)).toEqual(titles.map(([, topic]) => topic));
+  });
+
+  it('writes the topics, the suggested numbers and the review date in the language of the file', () => {
+    const { shelf } = parseShelf(FILE);
+    const french = serializeShelf({ ...shelf, settings: { ...shelf.settings, lang: 'fr' } });
+    expect(french).toContain('## Infos d’urgence\n\n| Rubrique');
+    expect(french).toMatch(/\| Infos d’urgence relues le +\| 2026-11-15 +\|/);
+    expect(french).toMatch(/\| Rubrique +\| Nom +\| Détail +\| Téléphone +\| Floor \|/);
+    expect(french).toMatch(/\| Numéro d’urgence +\| Urgences +\| toutes les urgences, partout dans l’UE \| 112 +\|/);
+    expect(french).toMatch(/\| Contact éloigné +\| Claire +\| in Lyon +\| 06 00 00 00 00 \|/);
+    expect(french).toMatch(/\| Rendez-vous +\| Outside +\| the gate +\|/);
+    expect(french).toMatch(/\| Neighbors +\| Mrs Lee +\| +\| 01 00 00 00 00 \| 2nd +\|/);
+    expect(french).toMatch(/\| Contact +\| Dr Martin +\|/);
+    // Back to English gives the English texts of the 112 again.
+    const back = parseShelf(french).shelf;
+    const english = serializeShelf({ ...back, settings: { ...back.settings, lang: 'en' } });
+    expect(english).toMatch(/\| Emergency number +\| Emergencies +\| all emergencies, everywhere in the EU \| 112 +\|/);
+    expect(english).toMatch(/\| Emergency info reviewed +\| 2026-11-15 +\|/);
+  });
+
+  it('starts a file without emergency info with the European 112, written after the settings', () => {
+    const { shelf } = parseShelf(SAMPLE);
+    expect(shelf.emergency).toEqual([
+      { topic: 'number', name: 'Emergencies', details: 'all emergencies, everywhere in the EU', phone: '112', extra: {} },
+    ]);
+    expect(shelf.settings.emergencyReviewed).toBe('');
+    const text = serializeShelf(shelf);
+    expect(text.indexOf('## Settings')).toBeLessThan(text.indexOf('## Emergency info'));
+    expect(text.indexOf('## Emergency info')).toBeLessThan(text.indexOf('## Products'));
+    expect(text).toMatch(/\| Emergency info reviewed +\| +\|/);
+    expect(parseShelf(text).shelf.emergency).toEqual(shelf.emergency);
+  });
+
+  it('keeps emergency info emptied by the user empty', () => {
+    const { shelf } = parseShelf('## Emergency info\n\n| Topic | Name | Details | Phone |\n|---|---|---|---|\n');
+    expect(shelf.emergency).toEqual([]);
+  });
+
+  it('reports a review date that is not a date', () => {
+    const { shelf, issues } = parseShelf("## Paramètres\n\n| Paramètre | Valeur |\n|---|---|\n| Infos d'urgence relues le | hier |\n");
+    expect(shelf.settings.emergencyReviewed).toBe('');
     expect(issues.map((issue) => issue.code)).toEqual(['invalidSetting']);
   });
 });

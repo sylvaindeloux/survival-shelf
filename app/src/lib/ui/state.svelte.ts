@@ -2,8 +2,8 @@ import { KINDS } from '../core/categories';
 import { formatDay, parseDay, type Day } from '../core/dates';
 import type { Kind, LogAction } from '../core/types';
 
-export type Route = 'home' | 'checkin' | 'stock' | 'guides' | 'settings';
-const ROUTES: Route[] = ['home', 'checkin', 'stock', 'guides', 'settings'];
+export type Route = 'home' | 'checkin' | 'stock' | 'emergency' | 'guides' | 'settings';
+const ROUTES: Route[] = ['home', 'checkin', 'stock', 'emergency', 'guides', 'settings'];
 
 /** `#/guides/fr/eau/stocker-de-l-eau` is the route `guides` with the path `fr/eau/stocker-de-l-eau`. */
 function readHash(): { route: Route; path: string } {
@@ -51,6 +51,11 @@ export interface TakeDialogState {
   qty?: number;
 }
 
+export interface EmergencyDialogState {
+  /** Topic to show first, with a new line to fill in when it has none. */
+  topic?: string;
+}
+
 export interface ProductDialogState {
   /** Product to edit; absent to create one. */
   name?: string;
@@ -63,6 +68,7 @@ class Dialogs {
   lot = $state<LotDialogState | null>(null);
   product = $state<ProductDialogState | null>(null);
   take = $state<TakeDialogState | null>(null);
+  emergency = $state<EmergencyDialogState | null>(null);
 }
 
 export const dialogs = new Dialogs();

@@ -10,12 +10,15 @@ import {
   translateDefault,
 } from './defaults';
 import { isValidDate, normalizeDate } from './dates';
+import { defaultEmergency, isTopic, localizedEntry } from './emergency';
 import { inLang, LANGUAGES, translations } from './languages';
 import { newLotId } from './ids';
 import { formatTable, isSeparatorRow, isTableLine, splitRow } from './table';
 import { formatNumber, normalizeKey, parseNumber, sameName } from './text';
 import {
   LANGS,
+  type EmergencyEntry,
+  type EmergencyTopic,
   type Extra,
   type Kind,
   type LogAction,
@@ -56,6 +59,24 @@ const SECTION_ALIASES: Record<string, SectionName> = Object.fromEntries(
   (
     [
       ['settings', ['parameters', 'reglages', 'configuration', 'config']],
+      [
+        'emergency',
+        [
+          'emergency',
+          'emergencyinformation',
+          'emergencyplan',
+          'emergencycontacts',
+          'householdplan',
+          'familyplan',
+          'urgence',
+          'urgences',
+          'infodurgence',
+          'informationsdurgence',
+          'contactsdurgence',
+          'plandufoyer',
+          'planfamilial',
+        ],
+      ],
       ['products', ['catalog', 'catalogue']],
       ['stock', ['stocks', 'inventory', 'inventaire', 'lots']],
       ['log', ['history', 'historique']],
@@ -178,8 +199,76 @@ const LOG_COLUMNS: ColumnDef[] = [
   { key: 'note', label: { en: 'Note', fr: 'Note' }, aliases: ['notes', 'comment', 'commentaire', 'remarque'] },
 ];
 
+const EMERGENCY_COLUMNS: ColumnDef[] = [
+  { key: 'topic', label: { en: 'Topic', fr: 'Rubrique' }, aliases: ['type', 'category', 'categorie', 'kind', 'theme', 'section'], always: true },
+  { key: 'name', label: { en: 'Name', fr: 'Nom' }, aliases: ['who', 'qui', 'what', 'quoi', 'item'], always: true },
+  {
+    key: 'details',
+    label: { en: 'Details', fr: 'Détail' },
+    aliases: ['detail', 'details', 'description', 'info', 'infos', 'notes', 'note', 'where', 'ou', 'precisions'],
+    always: true,
+  },
+  {
+    key: 'phone',
+    label: { en: 'Phone', fr: 'Téléphone' },
+    aliases: ['tel', 'phonenumber', 'number', 'numero', 'mobile', 'portable', 'call', 'appeler'],
+    always: true,
+  },
+];
+
+/** Values of the Topic column written by the app. */
+const TOPIC_LABELS: Record<EmergencyTopic, Translated> = {
+  number: { en: 'Emergency number', fr: 'Numéro d’urgence' },
+  remote: { en: 'Out-of-area contact', fr: 'Contact éloigné' },
+  contact: { en: 'Contact', fr: 'Contact' },
+  meeting: { en: 'Meeting point', fr: 'Rendez-vous' },
+  role: { en: 'Who does what', fr: 'Qui fait quoi' },
+  shutoff: { en: 'Shut-off', fr: 'Couper' },
+  health: { en: 'Health', fr: 'Santé' },
+};
+
+const TOPIC_ALIASES: Record<string, EmergencyTopic> = {
+  emergency: 'number',
+  emergencynumbers: 'number',
+  numbers: 'number',
+  urgence: 'number',
+  urgences: 'number',
+  numerosdurgence: 'number',
+  numero: 'number',
+  numeros: 'number',
+  secours: 'number',
+  outoftowncontact: 'remote',
+  remotecontact: 'remote',
+  distantcontact: 'remote',
+  contactadistance: 'remote',
+  contactseloignes: 'remote',
+  contacts: 'contact',
+  usefulnumbers: 'contact',
+  numerosutiles: 'contact',
+  meeting: 'meeting',
+  meetingpoints: 'meeting',
+  meetingplace: 'meeting',
+  meetingplaces: 'meeting',
+  lieuderendezvous: 'meeting',
+  lieuxderendezvous: 'meeting',
+  rdv: 'meeting',
+  pointderassemblement: 'meeting',
+  roles: 'role',
+  tasks: 'role',
+  taches: 'role',
+  shutoffs: 'shutoff',
+  utilities: 'shutoff',
+  coupure: 'shutoff',
+  coupures: 'shutoff',
+  compteurs: 'shutoff',
+  medical: 'health',
+  medicaments: 'health',
+  allergies: 'health',
+};
+
 const COLUMNS: Record<SectionName, ColumnDef[]> = {
   settings: SETTINGS_COLUMNS,
+  emergency: EMERGENCY_COLUMNS,
   products: PRODUCT_COLUMNS,
   stock: STOCK_COLUMNS,
   log: LOG_COLUMNS,
@@ -305,6 +394,13 @@ const SETTING_DEFS: SettingDef[] = [
     ['rotationmargin', 'margerotationjours', 'margerotation', 'margederotation'],
     0,
   ),
+  {
+    field: 'emergencyReviewed',
+    label: { en: 'Emergency info reviewed', fr: 'Infos d’urgence relues le' },
+    aliases: ['emergencyreviewed', 'emergencyinforeviewedon', 'infosdurgencerelues', 'infosdurgencereluesle', 'relecture'],
+    read: (text) => (text.trim() === '' ? '' : isValidDate(text) ? normalizeDate(text) : undefined),
+    write: (settings) => settings.emergencyReviewed,
+  },
 ];
 
 const SETTING_BY_ALIAS = new Map<string, SettingDef>(
@@ -616,6 +712,21 @@ function readStock(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
   }
 }
 
+function readEmergency(rows: RawRow[], shelf: Shelf) {
+  for (const row of rows) {
+    const text = (row.values.topic ?? '').trim();
+    // A topic of the user's own is kept as written; a line without one is a contact.
+    const topic = text === '' ? 'contact' : (readValue(text, TOPIC_LABELS, TOPIC_ALIASES) ?? text);
+    shelf.emergency.push({
+      topic,
+      name: (row.values.name ?? '').trim(),
+      details: (row.values.details ?? '').trim(),
+      phone: (row.values.phone ?? '').trim(),
+      extra: row.extra,
+    });
+  }
+}
+
 function readLog(rows: RawRow[], shelf: Shelf, issues: ParseIssue[]) {
   for (const row of rows) {
     const qty = readNumber(row, 'qty', issues, { required: true, min: 0 });
@@ -658,6 +769,7 @@ export function parseShelf(text: string, options: ParseOptions = {}): ParseResul
     products: [],
     lots: [],
     log: [],
+    emergency: [],
     layout: { blocks: [], sections: {}, settingsLabels: {} },
   };
   const parsed: Partial<Record<SectionName, RawRow[]>> = {};
@@ -686,6 +798,9 @@ export function parseShelf(text: string, options: ParseOptions = {}): ParseResul
   readProducts(parsed.products ?? [], shelf, issues);
   readStock(parsed.stock ?? [], shelf, issues);
   readLog(parsed.log ?? [], shelf, issues);
+  // A file from before the emergency info gets the same start as a new one: the European 112.
+  if (parsed.emergency === undefined) shelf.emergency = defaultEmergency(shelf.settings.lang);
+  else readEmergency(parsed.emergency, shelf);
 
   if (shelf.layout.blocks.length === 0) shelf.layout = defaultLayout(shelf.settings.lang);
   return { shelf, issues };
@@ -721,6 +836,11 @@ function productRow(product: Product, lang: Lang): Record<string, string> {
 
 function lotRow(lot: Lot, lang: Lang): Record<string, string> {
   return { product: lot.product, qty: formatNumber(lot.qty, lang), expires: lot.expires, location: lot.location, added: lot.added };
+}
+
+function emergencyRow(entry: EmergencyEntry, lang: Lang): Record<string, string> {
+  const { name, details } = localizedEntry(entry, lang);
+  return { topic: isTopic(entry.topic) ? inLang(TOPIC_LABELS[entry.topic], lang) : entry.topic, name, details, phone: entry.phone };
 }
 
 function logRow(entry: LogEntry, lang: Lang): Record<string, string> {
@@ -769,6 +889,9 @@ function renderSection(name: SectionName, shelf: Shelf, lang: Lang): string {
     case 'settings':
       rows = settingsRows(shelf, lang).map((values) => ({ values, extra: {} }));
       break;
+    case 'emergency':
+      rows = shelf.emergency.map((entry) => ({ values: emergencyRow(entry, lang), extra: entry.extra }));
+      break;
     case 'products':
       rows = shelf.products.map((product) => ({ values: productRow(product, lang), extra: product.extra }));
       break;
@@ -799,11 +922,16 @@ function renderSection(name: SectionName, shelf: Shelf, lang: Lang): string {
 export function serializeShelf(shelf: Shelf, version?: string): string {
   const lang = shelf.settings.lang;
   const blocks = [...shelf.layout.blocks];
-  for (const name of SECTION_ORDER) {
-    if (!blocks.some((block) => block.type === 'section' && block.name === name)) {
-      blocks.push({ type: 'section', name });
-    }
-  }
+  SECTION_ORDER.forEach((name, order) => {
+    if (blocks.some((block) => block.type === 'section' && block.name === name)) return;
+    // A missing section goes right after the sections that come before it, or at the end.
+    const before = SECTION_ORDER.slice(0, order);
+    let at = blocks.length;
+    blocks.forEach((block, index) => {
+      if (block.type === 'section' && before.includes(block.name)) at = index + 1;
+    });
+    blocks.splice(at, 0, { type: 'section', name });
+  });
   const parts = blocks.map((block) =>
     block.type === 'raw' ? translateDefault(block.text, DEFAULT_PREAMBLE, lang) : renderSection(block.name, shelf, lang),
   );

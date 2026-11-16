@@ -32,12 +32,13 @@ quels.
 
 ## Structure
 
-Le fichier contient jusqu'à quatre sections, chacune commence par un titre de niveau 2 (`## `) suivi d'un
+Le fichier contient jusqu'à cinq sections, chacune commence par un titre de niveau 2 (`## `) suivi d'un
 tableau :
 
 | Section       | Titre anglais | Aussi accepté                          | Contenu                            |
 |---------------|---------------|----------------------------------------|------------------------------------|
 | `Paramètres`  | `Settings`    | Réglages, Configuration                | Réglages du foyer et de l'appli    |
+| `Infos d’urgence` | `Emergency info` | Urgence, Plan du foyer, Plan familial | Le plan du foyer : numéros, contacts, rendez-vous… |
 | `Produits`    | `Products`    | Catalogue, Catalog                     | Une ligne par sorte de produit     |
 | `Stock`       | `Stock`       | Inventaire, Inventory, Lots            | Une ligne par lot de ton stock     |
 | `Journal`     | `Log`         | Historique, History                    | Ce qui a été consommé ou jeté      |
@@ -85,12 +86,52 @@ Un tableau à deux colonnes : `Paramètre | Valeur` (`Setting | Value` en anglai
 | `Rendez-vous`                 | `mensuel`          | À quelle fréquence l'appli liste quoi jeter, manger, remplacer et acheter : `mensuel`, `trimestriel` ou `semestriel` |
 | `Alerte péremption (jours)`   | 60                 | Les lots qui périment dans ce délai sont signalés « bientôt périmés » |
 | `Marge de rotation (jours)`   | 30                 | La rotation vise à finir chaque lot ce nombre de jours avant sa péremption |
+| `Infos d’urgence relues le`   | vide               | Jour où le foyer a relu ses infos d'urgence, `AAAA-MM-JJ` : voir plus bas |
 
 Les noms anglais marchent aussi (`Language`, `People`, `Cats`, `Dogs`, `Tiers (days)`, `Check-in`…), tout comme les valeurs
 anglaises du rendez-vous (`monthly`, `quarterly`, `semiannual`) ou abrégées (`trimestre`, `6 mois`).
 Les paramètres inconnus sont gardés tels quels. Une valeur invalide est signalée et la valeur par défaut est
 utilisée. Un fichier sans paramètre `Langue` est lu comme s'il était écrit dans la langue actuelle de
 l'appli.
+
+## Infos d'urgence
+
+Le plan du foyer de l'onglet **Urgence**, comme le conseille la fiche
+[Préparer un plan pour le foyer](../guides/fr/les-bases/preparer-un-plan-pour-le-foyer.md) : une ligne par
+info du plan.
+
+| Colonne     | En-tête anglais | Aussi accepté                         | Contenu                                                 |
+|-------------|-----------------|---------------------------------------|---------------------------------------------------------|
+| `Rubrique`  | `Topic`         | Type, Catégorie, Thème                | Une des rubriques ci-dessous, ou n'importe quel texte pour une rubrique à toi |
+| `Nom`       | `Name`          | Qui, Quoi                             | Une personne, un lieu, un numéro, un robinet…           |
+| `Détail`    | `Details`       | Description, Info, Notes, Où, Précisions | Où, comment, ce qu'il faut savoir                    |
+| `Téléphone` | `Phone`         | Tél, Numéro, Portable, Appeler        | Un numéro de téléphone, écrit comme tu veux             |
+
+| Rubrique           | Anglais               | Ce qu'on y met                                                       | Chaque ligne demande |
+|--------------------|-----------------------|----------------------------------------------------------------------|----------------------|
+| `Numéro d’urgence` | `Emergency number`    | Le 112 et les numéros de ton pays                                    | un numéro de téléphone       |
+| `Contact éloigné`  | `Out-of-area contact` | Quelqu'un d'assez loin pour ne pas être touché, que chacun appelle ou prévient par SMS | un numéro de téléphone |
+| `Contact`          | `Contact`             | Médecin, école, voisin, assurance…                                   | un numéro de téléphone       |
+| `Rendez-vous`      | `Meeting point`       | Un juste devant chez toi, un hors du quartier                        | un détail                    |
+| `Qui fait quoi`    | `Who does what`       | Qui prend les sacs, les animaux, aide les personnes fragiles, suit les infos | un détail            |
+| `Couper`           | `Shut-off`            | Gaz, eau, électricité : où et comment                                | un détail                    |
+| `Santé`            | `Health`              | Traitements et allergies de chacun                                   | un détail                    |
+
+- Les titres affichés dans l'appli marchent aussi (`Numéros d’urgence`, `Lieux de rendez-vous`,
+  `Meeting points`…), avec une apostrophe droite ou courbe. Une ligne sans rubrique est un `Contact`. Toute
+  autre rubrique est à toi : elle est gardée telle que tu l'as écrite et affichée à la fin de la fiche, et ses
+  lignes demandent un détail ou un numéro.
+- Une ligne sans ce que demande sa rubrique est affichée **à remplir**. Une rubrique du plan est remplie
+  quand elle a des lignes et qu'aucune n'est à remplir. Les numéros d'urgence sont à part et ne comptent pas
+  dans les six rubriques.
+- **Les numéros de téléphone** sont appelés par leurs chiffres : les espaces, points et tirets ne comptent
+  pas (`06 12 34 56 78`, `+33 6.12.34.56.78`). Écris `SMS` devant un numéro qui ne prend que les SMS, comme
+  `SMS 114` (le numéro d'urgence français par SMS) : l'appli lui envoie un SMS au lieu de l'appeler.
+- Un fichier sans cette section reçoit le numéro d'urgence européen, le 112, comme un nouveau fichier. Si tu
+  n'en veux pas, garde la section et supprime ses lignes : une section vide reste vide.
+- Le paramètre `Infos d’urgence relues le` prend la date du jour quand tu touches **J'ai relu** ou que tu
+  enregistres les infos d'urgence. Six mois plus tard, la liste À faire te propose de les relire avec ton
+  foyer. Quand il est vide, l'appli ne demande jamais.
 
 ## Produits
 

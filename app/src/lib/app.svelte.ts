@@ -3,6 +3,7 @@ import { checkIn } from './core/checkin';
 import { today as currentDay, type Day } from './core/dates';
 import { emptyShelf } from './core/defaults';
 import { sameContent, serializeShelf } from './core/document';
+import { emergencyStatus } from './core/emergency';
 import { openShelf, withLanguage } from './core/language';
 import { gearStatus, menuKcal, tierPlan } from './core/plan';
 import { rotationPlan } from './core/rotation';
@@ -97,6 +98,7 @@ class App {
   plan = $derived(tierPlan(this.shelf, this.autonomy, this.today));
   checkin = $derived(checkIn(this.shelf, this.today, this.rotation, this.plan.current));
   gear = $derived(gearStatus(this.shelf, this.today));
+  emergency = $derived(emergencyStatus(this.shelf, this.today));
   /** Calories per person per day planned by the products' daily use. */
   menu = $derived(menuKcal(this.shelf));
   locations = $derived(

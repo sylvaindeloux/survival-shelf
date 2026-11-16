@@ -22,6 +22,15 @@ exports[`serializeShelf > writes a complete commented template for a new shelf 1
 | Check-in                   | monthly       |
 | Expiry warning days        | 60            |
 | Rotation margin days       | 30            |
+| Emergency info reviewed    |               |
+
+## Emergency info
+
+<!-- The household plan, one row per line. Topic: emergency number, out-of-area contact, contact, meeting point, who does what, shut-off or health. Write SMS before a number that only takes text messages. -->
+
+| Topic            | Name        | Details                               | Phone |
+|------------------|-------------|---------------------------------------|-------|
+| Emergency number | Emergencies | all emergencies, everywhere in the EU | 112   |
 
 ## Products
 
@@ -68,6 +77,15 @@ exports[`serializeShelf > writes a complete commented template for a new shelf 2
 | Rendez-vous                 | mensuel       |
 | Alerte péremption (jours)   | 60            |
 | Marge de rotation (jours)   | 30            |
+| Infos d’urgence relues le   |               |
+
+## Infos d’urgence
+
+<!-- Le plan du foyer, une ligne par info. Rubrique : numéro d’urgence, contact éloigné, contact, rendez-vous, qui fait quoi, couper ou santé. Écris SMS devant un numéro qui ne prend que les SMS. -->
+
+| Rubrique         | Nom      | Détail                                 | Téléphone |
+|------------------|----------|----------------------------------------|-----------|
+| Numéro d’urgence | Urgences | toutes les urgences, partout dans l’UE | 112       |
 
 ## Produits
 

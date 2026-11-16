@@ -25,6 +25,8 @@ export interface Settings {
   warningDays: number;
   /** Rotation aims to consume each lot this many days before it expires. */
   rotationMarginDays: number;
+  /** Day the emergency info was last reviewed, `YYYY-MM-DD`, or empty when it never was. */
+  emergencyReviewed: string;
 }
 
 /** Who a product's quantities are for: each person, the whole household, each cat or each dog. */
@@ -82,7 +84,27 @@ export interface LogEntry {
   extra: Extra;
 }
 
-export type SectionName = 'settings' | 'products' | 'stock' | 'log';
+/**
+ * Topics of the household plan: emergency numbers, the out-of-area contact everybody calls, other
+ * contacts (doctor, school, neighbor…), meeting points, who does what, how to shut off gas, water and
+ * electricity, and each person's health needs.
+ */
+export type EmergencyTopic = 'number' | 'remote' | 'contact' | 'meeting' | 'role' | 'shutoff' | 'health';
+
+/** One line of the emergency info: a number to call, a contact, a place, a role… */
+export interface EmergencyEntry {
+  /** Topic key (see EmergencyTopic) or any free text, for a topic of the user's own. */
+  topic: string;
+  /** Who or what: a person, a service, a place, a meter. */
+  name: string;
+  /** Free text: where, what to do. */
+  details: string;
+  /** Number to call, as written; `SMS 114` for a number that only takes text messages. */
+  phone: string;
+  extra: Extra;
+}
+
+export type SectionName = 'settings' | 'emergency' | 'products' | 'stock' | 'log';
 
 /** How a table was laid out in the file, so it can be written back the same way. */
 export interface TableLayout {
@@ -123,6 +145,8 @@ export interface Shelf {
   products: Product[];
   lots: Lot[];
   log: LogEntry[];
+  /** The household's emergency info, in the order of the file. */
+  emergency: EmergencyEntry[];
   layout: Layout;
 }
 
