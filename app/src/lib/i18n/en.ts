@@ -406,7 +406,6 @@ export const en = {
   'guides.results_one': '{count} guide for “{query}”',
   'guides.results_other': '{count} guides for “{query}”',
   'guides.noResult': 'No guide for “{query}”. Try another word.',
-  'guides.more': 'More themes are being written.',
   'guides.all': 'All guides',
   'guides.print': 'Print',
   'guides.notFound': 'This guide does not exist, or not anymore.',

@@ -174,6 +174,26 @@ To get everything at once, use the green "Code" button then "Download ZIP" on th
 - [Evacuate by car](in-the-car/evacuate-by-car.md): fill the tank, leave early, follow the indicated routes, and when the car is a trap.
 - [Sleep in your car](in-the-car/sleep-in-your-car.md): where to park, engine off, cover up, and the dangers of cold and heat.
 
-## Coming next
+## Outdoors
 
-Outdoors, hostile environments.
+- [Plan an outing](outdoors/plan-an-outing.md): a suitable route, the weather, someone who knows where you are going, and what to pack.
+- [Lost in the wild](outdoors/lost-in-the-wild.md): stop, think, stay put or retrace your steps, signal.
+- [Spend an unplanned night outdoors](outdoors/spend-an-unplanned-night-outdoors.md): decide early, find shelter, insulate yourself from the ground, stay dry and easy to find.
+- [Caught in a thunderstorm](outdoors/caught-in-a-thunderstorm.md): where to go, what to stay away from, and the last-resort position when there is no shelter.
+- [Fallen into cold water](outdoors/fallen-into-cold-water.md): float first, get out fast, warm up slowly, and what to do if the ice gives way.
+- [Cross a river](outdoors/cross-a-river.md): when to give up, where and how to cross, what to do if the current takes you.
+- [Injured far from help](outdoors/injured-far-from-help.md): protect, give your position, keep the casualty warm, signal when there is no phone coverage.
+- [Meet a wild animal](outdoors/meet-a-wild-animal.md): guardian dog, bear, wolf, wild boar, snake: keep your distance and back away calmly.
+- [Find food in the wild](outdoors/find-food-in-the-wild.md): why it comes last, and the rules to avoid poisoning yourself.
+- [Evacuate on foot](outdoors/evacuate-on-foot.md): a light pack, the indicated route, staying together, walking safely on the road.
+
+## Hostile environments
+
+- [Mountains and high altitude](hostile-environments/mountains-and-high-altitude.md): prepare, climb slowly, recognize altitude sickness and go down in time.
+- [Snow and extreme cold](hostile-environments/snow-and-extreme-cold.md): cover everything, stay dry, get out of the wind, spot frostbite and hypothermia.
+- [Desert and extreme heat](hostile-environments/desert-and-extreme-heat.md): how much water to carry, avoiding the heat of the day, staying near the vehicle.
+- [Tropical forest](hostile-environments/tropical-forest.md): do not leave the trail, protect yourself from mosquitoes, react to a snake bite.
+- [Sea and coast](hostile-environments/sea-and-coast.md): weather and tides, being carried off by a current, a boat in trouble, who to call at sea.
+- [Big city and crowds](hostile-environments/big-city-and-crowds.md): spotting the exits, getting out of a crowd crush, reacting in the subway, not rushing home after a disaster.
+- [Conflict zone](hostile-environments/conflict-zone.md): getting around, recognizing a mined area, reacting to gunfire, following your embassy.
+- [Under rubble or in a confined space](hostile-environments/under-rubble-or-in-a-confined-space.md): signal without breathing in dust, and never go down a well or a tank to rescue someone.

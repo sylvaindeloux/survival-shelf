@@ -411,7 +411,6 @@ export const fr: Record<keyof typeof en, string> = {
   'guides.results_one': '{count} fiche pour « {query} »',
   'guides.results_other': '{count} fiches pour « {query} »',
   'guides.noResult': 'Aucune fiche pour « {query} ». Essaie un autre mot.',
-  'guides.more': 'D’autres thèmes sont en cours d’écriture.',
   'guides.all': 'Toutes les fiches',
   'guides.print': 'Imprimer',
   'guides.notFound': 'Cette fiche n’existe pas, ou plus.',
