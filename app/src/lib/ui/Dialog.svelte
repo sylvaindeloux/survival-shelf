@@ -2,6 +2,7 @@
   import X from '@lucide/svelte/icons/x';
   import type { Snippet } from 'svelte';
   import { t } from '../i18n/index.svelte';
+  import { focusFirstField } from './focus';
 
   interface Props {
     title: string;
@@ -12,9 +13,13 @@
 
   let { title, onclose, children, footer }: Props = $props();
   let dialog: HTMLDialogElement;
+  let body: HTMLDivElement;
 
   $effect(() => {
     dialog.showModal();
+    // showModal() focuses the first button, the close one: a form starts on its first field instead.
+    // A dialog that needs another field (a topic of the emergency info) moves the focus after this.
+    focusFirstField(body);
     return () => dialog.close();
   });
 </script>
@@ -37,7 +42,7 @@
       <h2>{title}</h2>
       <button type="button" class="icon-btn" onclick={onclose} aria-label={t('action.close')}><X size={20} /></button>
     </header>
-    <div class="body">
+    <div class="body" bind:this={body}>
       {@render children()}
     </div>
     {#if footer}
