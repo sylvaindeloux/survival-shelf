@@ -440,8 +440,9 @@
       line-height: 1.5;
     }
 
+    /* The tab names the page, so no title opens it: the page starts right under the open tab, as on phones. */
     main {
-      padding: 2rem max(2rem, env(safe-area-inset-right, 0px)) 4rem max(2rem, env(safe-area-inset-left, 0px));
+      padding: 1rem max(2rem, env(safe-area-inset-right, 0px)) 4rem max(2rem, env(safe-area-inset-left, 0px));
     }
   }
 
