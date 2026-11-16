@@ -1,23 +1,25 @@
 <script lang="ts">
   import Check from '@lucide/svelte/icons/check';
+  import CircleCheck from '@lucide/svelte/icons/circle-check';
   import Copy from '@lucide/svelte/icons/copy';
   import MapPin from '@lucide/svelte/icons/map-pin';
-  import Plus from '@lucide/svelte/icons/plus';
   import RefreshCw from '@lucide/svelte/icons/refresh-cw';
   import Share2 from '@lucide/svelte/icons/share-2';
+  import ShoppingCart from '@lucide/svelte/icons/shopping-cart';
   import Trash from '@lucide/svelte/icons/trash';
   import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
+  import Utensils from '@lucide/svelte/icons/utensils';
   import { app } from '../lib/app.svelte';
   import { CATALOG } from '../lib/core/catalog';
-  import { KINDS } from '../lib/core/categories';
-  import { waterWithoutProduct } from '../lib/core/checkin';
+  import { isStoredWater, KINDS } from '../lib/core/categories';
+  import { buyCount, waterWithoutProduct } from '../lib/core/checkin';
   import type { TierLine } from '../lib/core/plan';
   import { findProduct } from '../lib/core/stock';
-  import { formatDate, localize, t } from '../lib/i18n/index.svelte';
+  import type { Lot } from '../lib/core/types';
+  import { localize, t, tn } from '../lib/i18n/index.svelte';
   import ExpiryBadge from '../lib/ui/ExpiryBadge.svelte';
   import ReminderCard from '../lib/ui/ReminderCard.svelte';
-  import CategoryIcon from '../lib/ui/CategoryIcon.svelte';
-  import { checkinTitle, formatLiters, kindLabel, quantity, RHYTHM_TEXTS, tierLabel } from '../lib/ui/format';
+  import { checkinTitle, formatLiters, kindLabel, ofTarget, quantity, RHYTHM_TEXTS, tierLabel } from '../lib/ui/format';
   import { dialogs, router } from '../lib/ui/state.svelte';
 
   const settings = $derived(app.shelf.settings);
@@ -29,14 +31,14 @@
   const overload = $derived(app.rotation.shareOfNeeds > 1);
   const canShare = typeof navigator.share === 'function';
 
-  // Steps are numbered in order, without a gap for the ones that have nothing to do.
-  const steps = $derived.by(() => {
-    let next = 1;
-    const discard = checkin.discard.length > 0 ? next++ : 0;
-    const consume = next++;
-    const replace = checkin.replace.length > 0 ? next++ : 0;
-    return { discard, consume, replace, buy: next };
-  });
+  const toBuy = $derived(buyCount(buy));
+  /** Everything to do, all actions together. */
+  const count = $derived(checkin.discard.length + checkin.consume.length + checkin.replace.length + toBuy);
+  // A tier can be short of food with nothing to buy (a light menu): the buy card then only shows why.
+  const showBuy = $derived(buy !== null && (toBuy > 0 || foodShort));
+  const cards = $derived(
+    [checkin.discard.length > 0, checkin.consume.length > 0, checkin.replace.length > 0, showBuy].filter(Boolean).length,
+  );
 
   /** What to buy, by kind: the shopping list follows the shop's aisles. Water without a product goes with the food. */
   const buyGroups = $derived(
@@ -72,8 +74,8 @@
       lines.push('', t('checkin.replaceTitle'));
       for (const item of checkin.replace) lines.push(`- ${item.product.name}: ${quantity(item.lot.qty, item.product)}`);
     }
-    if (buy) {
-      lines.push('', t('checkin.buyTitle', { tier: tierLabel(buy.days) }));
+    if (buy && toBuy > 0) {
+      lines.push('', `${t('checkin.buyTitle')} (${t('stock.tierChoice', { tier: tierLabel(buy.days) })})`);
       for (const group of buyGroups) {
         if (buyGroups.length > 1) lines.push(`[${kindLabel(group.kind)}]`);
         lines.push(...group.lines.map(buyLineText));
@@ -103,209 +105,287 @@
   }
 </script>
 
+{#snippet lotRow(name: string, qty: string, lot: Lot, verb: string, act: () => void)}
+  <li>
+    <span class="l1"><span class="name">{name}</span><span class="q num">{qty}</span></span>
+    <span class="l1">
+      <span class="meta small muted">
+        <ExpiryBadge {lot} />
+        {#if lot.location}<span class="where"><MapPin size={13} />{lot.location}</span>{/if}
+      </span>
+      <button class="btn small" onclick={act}><Check size={16} />{verb}</button>
+    </span>
+  </li>
+{/snippet}
+
+{#snippet buyRow(name: string, qty: string, meta: string, act: () => void)}
+  <li>
+    <span class="l1"><span class="name">{name}</span><span class="q num">{qty}</span></span>
+    <span class="l1">
+      <span class="meta small muted">{meta}</span>
+      <button class="btn small" onclick={act}><Check size={16} />{t('checkin.bought')}</button>
+    </span>
+  </li>
+{/snippet}
+
 <div class="stack">
   <header class="page-head">
     <div>
-      <h1>{checkinTitle(settings.rhythm)}</h1>
-      <p class="muted">{t(texts.subtitle)}</p>
+      <h1>{t('checkin.title')}</h1>
+      <p class="muted">{count > 0 ? tn('checkin.count', count) : t('checkin.nothing')}</p>
     </div>
-    <div class="row">
-      {#if canShare}
-        <button class="icon-btn outlined" onclick={share} aria-label={t('action.share')} title={t('action.share')}><Share2 size={18} /></button>
-      {/if}
-      <button class="icon-btn outlined" onclick={copy} aria-label={t('action.copy')} title={t('action.copy')}><Copy size={18} /></button>
-    </div>
+    {#if count > 0}
+      <div class="row">
+        {#if canShare}
+          <button class="icon-btn outlined" onclick={share} aria-label={t('action.share')} title={t('action.share')}><Share2 size={18} /></button>
+        {/if}
+        <button class="icon-btn outlined" onclick={copy} aria-label={t('action.copy')} title={t('action.copy')}><Copy size={18} /></button>
+      </div>
+    {/if}
   </header>
 
-  {#if checkin.discard.length > 0}
-    <section class="card step discard">
-      <h2><span class="num-badge">{steps.discard}</span>{t('checkin.discardTitle')}</h2>
-      <p class="small muted">{t('checkin.discardText')}</p>
-      <ul class="list">
-        {#each checkin.discard as lot (lot.id)}
-          {@const product = findProduct(app.shelf, lot.product)}
-          <li>
-            <span class="icon"><CategoryIcon category={product?.category ?? ''} /></span>
-            <span class="grow">
-              <strong>{lot.product}</strong>
-              <span class="small muted">{[quantity(lot.qty, product), formatDate(lot.expires), lot.location].filter(Boolean).join(' · ')}</span>
-            </span>
-            <button class="btn small" onclick={() => (dialogs.take = { action: 'discarded', lotId: lot.id })}>
-              <Trash size={16} /><span class="hide-sm">{t('checkin.discarded')}</span>
-            </button>
-          </li>
-        {/each}
-      </ul>
+  {#if cards === 0}
+    <section class="card up-to-date">
+      <CircleCheck size={40} />
+      <h2>{t('checkin.upToDateTitle')}</h2>
+      <p class="muted">{t('checkin.upToDateText')}</p>
+      <p class="small muted">{t(texts.subtitle)}</p>
     </section>
-  {/if}
-
-  <section class="card step">
-    <h2><span class="num-badge">{steps.consume}</span>{t('checkin.consumeTitle')}</h2>
-    <p class="small muted">
-      {t(texts.consume, { margin: settings.rotationMarginDays })}
-    </p>
-    {#if checkin.consume.length === 0}
-      <p class="empty small">{t('checkin.consumeEmpty')}</p>
-    {:else}
-      <ul class="list">
-        {#each checkin.consume as item (item.product.name)}
-          <li>
-            <span class="icon"><CategoryIcon category={item.product.category} /></span>
-            <span class="grow">
-              <strong>{item.product.name} <span class="qty num">{quantity(item.qty, item.product)}</span></strong>
-              <span class="small muted lot">
-                <ExpiryBadge lot={item.lot} />
-                {#if item.lot.location}<span class="where"><MapPin size={13} />{item.lot.location}</span>{/if}
-              </span>
-            </span>
-            <button class="btn small primary" onclick={() => (dialogs.take = { action: 'consumed', lotId: item.lot.id, qty: item.qty })}>
-              <Check size={16} /><span class="hide-sm">{t('checkin.done')}</span>
-            </button>
-          </li>
-        {/each}
-      </ul>
-      {#if overload}
-        <p class="note small"><TriangleAlert size={16} />{t('checkin.overload')}</p>
+  {:else}
+    <!-- One card per action, the most urgent first: two columns on wider screens. -->
+    <div class="cards" class:single={cards === 1}>
+      {#if checkin.discard.length > 0}
+        <section class="card action discard">
+          <h2 class="action-head"><Trash size={20} />{t('checkin.discardTitle')}<span class="count">{checkin.discard.length}</span></h2>
+          <p class="lead small muted">{t('checkin.discardText')}</p>
+          <ul>
+            {#each checkin.discard as lot (lot.id)}
+              {@render lotRow(lot.product, quantity(lot.qty, findProduct(app.shelf, lot.product)), lot, t('checkin.discarded'), () => (dialogs.take = { action: 'discarded', lotId: lot.id }))}
+            {/each}
+          </ul>
+        </section>
       {/if}
-    {/if}
-  </section>
 
-  {#if checkin.replace.length > 0}
-    <section class="card step replace">
-      <h2><span class="num-badge">{steps.replace}</span>{t('checkin.replaceTitle')}</h2>
-      <p class="small muted">{t('checkin.replaceText')}</p>
-      <ul class="list">
-        {#each checkin.replace as item (item.lot.id)}
-          <li>
-            <span class="icon"><CategoryIcon category={item.product.category} /></span>
-            <span class="grow">
-              <strong>{item.product.name} <span class="qty num">{quantity(item.lot.qty, item.product)}</span></strong>
-              <span class="small muted lot">
-                <ExpiryBadge lot={item.lot} />
-                {#if item.lot.location}<span class="where"><MapPin size={13} />{item.lot.location}</span>{/if}
-              </span>
-            </span>
-            <button class="btn small" onclick={() => (dialogs.lot = { product: item.product.name, qty: item.lot.qty, replaces: item.lot.id })}>
-              <RefreshCw size={16} /><span class="hide-sm">{t('checkin.replaced')}</span>
-            </button>
-          </li>
-        {/each}
-      </ul>
-    </section>
-  {/if}
+      {#if checkin.consume.length > 0}
+        <section class="card action consume">
+          <h2 class="action-head"><Utensils size={20} />{t('checkin.consumeTitle')}<span class="count">{checkin.consume.length}</span></h2>
+          <p class="lead small muted">{t(texts.consume, { margin: settings.rotationMarginDays })}</p>
+          <ul>
+            {#each checkin.consume as item (item.product.name)}
+              {@render lotRow(item.product.name, quantity(item.qty, item.product), item.lot, t(isStoredWater(item.product) ? 'checkin.drunk' : 'checkin.eaten'), () => (dialogs.take = { action: 'consumed', lotId: item.lot.id, qty: item.qty }))}
+            {/each}
+          </ul>
+          {#if overload}
+            <p class="note small"><TriangleAlert size={16} />{t('checkin.overload')}</p>
+          {/if}
+        </section>
+      {/if}
 
-  <section class="card step">
-    {#if buy}
-      <h2><span class="num-badge">{steps.buy}</span>{t('checkin.buyTitle', { tier: tierLabel(buy.days) })}</h2>
-      <div class="tier-progress">
-        <span class="bar"><span style:width="{buy.progress * 100}%"></span></span>
-        <span class="small muted num">{Math.floor(buy.progress * 100)} %</span>
-      </div>
-      <p class="small muted">{t('checkin.buyText')}</p>
-      {#each buyGroups as group (group.kind)}
-        {#if buyGroups.length > 1}<h3 class="kind-title">{kindLabel(group.kind)}</h3>{/if}
-        <ul class="list">
-          {#each group.lines as line (line.product.name)}
-            <li>
-              <span class="icon"><CategoryIcon category={line.product.category} /></span>
-              <span class="grow">
-                <strong>{line.product.name} <span class="qty num">+{quantity(line.missing, line.product)}</span></strong>
-                <span class="small muted">
-                  {#if line.liters !== undefined}
-                    {t('checkin.liters', { liters: formatLiters(line.liters) })}
-                  {:else}
-                    {t('checkin.have', { have: quantity(line.have, line.product), target: quantity(line.target, line.product) })}
-                  {/if}
-                </span>
-              </span>
-              <button class="btn small" onclick={() => (dialogs.lot = { product: line.product.name, qty: line.missing })}>
-                <Plus size={16} /><span class="hide-sm">{t('checkin.bought')}</span>
-              </button>
-            </li>
+      {#if checkin.replace.length > 0}
+        <section class="card action replace">
+          <h2 class="action-head"><RefreshCw size={20} />{t('checkin.replaceTitle')}<span class="count">{checkin.replace.length}</span></h2>
+          <p class="lead small muted">{t('checkin.replaceText')}</p>
+          <ul>
+            {#each checkin.replace as item (item.lot.id)}
+              {@render lotRow(item.product.name, quantity(item.lot.qty, item.product), item.lot, t('checkin.replaced'), () => (dialogs.lot = { product: item.product.name, qty: item.lot.qty, replaces: item.lot.id }))}
+            {/each}
+          </ul>
+        </section>
+      {/if}
+
+      {#if buy && showBuy}
+        <section class="card action buy">
+          <h2 class="action-head"><ShoppingCart size={20} />{t('checkin.buyTitle')}{#if toBuy > 0}<span class="count">{toBuy}</span>{/if}</h2>
+          <p class="lead small muted">{t('checkin.buyText', { tier: tierLabel(buy.days) })}</p>
+          {#each buyGroups as group (group.kind)}
+            {#if buyGroups.length > 1}<h3 class="kind-title">{kindLabel(group.kind)}</h3>{/if}
+            <ul>
+              {#each group.lines as line (line.product.name)}
+                {@render buyRow(
+                  line.product.name,
+                  `+${quantity(line.missing, line.product)}`,
+                  line.liters !== undefined ? t('checkin.liters', { liters: formatLiters(line.liters) }) : ofTarget(line.have, line.target, line.product),
+                  () => (dialogs.lot = { product: line.product.name, qty: line.missing }),
+                )}
+              {/each}
+              {#if group.kind === 'food' && water.stored > 0}
+                {@render buyRow(t('checkin.drinkingWater'), `+${formatLiters(water.stored)}`, t('checkin.noWaterProduct'), () => buyWater(bottle, water.stored))}
+              {/if}
+              {#if group.kind === 'food' && water.treatment > 0}
+                {@render buyRow(t('checkin.waterTreatment'), formatLiters(water.treatment), t('checkin.treatmentHint'), () => buyWater(filter, water.treatment))}
+              {/if}
+            </ul>
           {/each}
-          {#if group.kind === 'food' && water.stored > 0}
-            <li>
-              <span class="icon"><CategoryIcon category="water" /></span>
-              <span class="grow">
-                <strong>{t('checkin.drinkingWater')} <span class="qty num">+{formatLiters(water.stored)}</span></strong>
-                <span class="small muted">{t('checkin.noWaterProduct')}</span>
+          {#if foodShort}
+            <p class="note small">
+              <TriangleAlert size={16} />
+              <span>
+                {t('checkin.foodShort', { days: Math.floor(buy.foodDays), tier: tierLabel(buy.days) })}
+                <button class="link" onclick={() => router.go('stock', 'food')}>{t('home.adjustTargets')}</button>
               </span>
-              <button class="btn small" onclick={() => buyWater(bottle, water.stored)}>
-                <Plus size={16} /><span class="hide-sm">{t('checkin.bought')}</span>
-              </button>
-            </li>
+            </p>
           {/if}
-          {#if group.kind === 'food' && water.treatment > 0}
-            <li>
-              <span class="icon" aria-hidden="true">🚰</span>
-              <span class="grow">
-                <strong>{t('checkin.waterTreatment')} <span class="qty num">{formatLiters(water.treatment)}</span></strong>
-                <span class="small muted">{t('checkin.treatmentHint')}</span>
-              </span>
-              <button class="btn small" onclick={() => buyWater(filter, water.treatment)}>
-                <Plus size={16} /><span class="hide-sm">{t('checkin.bought')}</span>
-              </button>
-            </li>
-          {/if}
-        </ul>
-      {/each}
-      {#if foodShort}
-        <p class="note small">
-          <TriangleAlert size={16} />
-          <span>
-            {t('checkin.foodShort', { days: Math.floor(buy.foodDays), tier: tierLabel(buy.days) })}
-            <button class="link" onclick={() => router.go('stock', 'food')}>{t('home.adjustTargets')}</button>
-          </span>
-        </p>
+        </section>
       {/if}
-    {:else}
-      <h2><span class="num-badge">{steps.buy}</span>{t('checkin.buyDoneTitle')}</h2>
-      <p class="empty">🎉 {t('checkin.buyDone')}</p>
-    {/if}
-  </section>
+    </div>
+  {/if}
 
   <ReminderCard />
 </div>
 
 <style>
-  .step {
+  .up-to-date {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 2rem 1rem;
+    text-align: center;
   }
 
-  .step h2 {
+  .up-to-date :global(svg) {
+    margin-bottom: 0.4rem;
+    color: var(--ok);
+  }
+
+  .up-to-date h2 {
+    font-size: 1.5rem;
+  }
+
+  .up-to-date p {
+    margin: 0;
+  }
+
+  .cards > :global(*) {
+    margin-bottom: 0.875rem;
+  }
+
+  .cards > :global(:last-child) {
+    margin-bottom: 0;
+  }
+
+  /* An action card: a thick colored edge on the left says how urgent it is. */
+  .action {
+    padding: 0 0.875rem 0.25rem;
+    border-left-width: 6px;
+  }
+
+  .discard {
+    border-left-color: var(--danger);
+  }
+
+  .consume,
+  .replace {
+    border-left-color: var(--warn);
+  }
+
+  .buy {
+    border-left-color: var(--primary);
+  }
+
+  .action-head {
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    padding: 0.75rem 0 0.3rem;
+    font-size: 1.2rem;
   }
 
-  .num-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.6rem;
-    height: 1.6rem;
-    border-radius: 5px;
-    background: var(--primary-soft);
+  .discard .action-head :global(svg) {
+    color: var(--danger);
+  }
+
+  .consume .action-head :global(svg) {
     color: var(--primary);
-    font-size: 0.85rem;
   }
 
-  .replace {
-    border-color: color-mix(in srgb, var(--warn) 35%, var(--border));
+  .replace .action-head :global(svg) {
+    color: var(--warn);
   }
 
-  .replace .num-badge {
+  .count {
+    min-width: 1.3rem;
+    margin-left: auto;
+    padding: 0 0.35rem;
+    border-radius: 4px;
+    font-family: var(--font);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
     background: var(--warn-soft);
     color: var(--warn);
+  }
+
+  .discard .count {
+    background: var(--danger);
+    color: var(--surface);
+  }
+
+  .lead {
+    margin: 0 0 0.25rem;
+  }
+
+  .action ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .action li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.65rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .action li:first-child {
+    border-top: none;
+  }
+
+  .l1 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-width: 0;
+  }
+
+  .name {
+    flex: 1;
+    min-width: 0;
+    font-weight: 600;
+  }
+
+  .q {
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .meta {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .where {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .l1 .btn {
+    flex: none;
   }
 
   .kind-title {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-top: 0.4rem;
+    margin: 0.4rem 0 0;
     font-family: var(--font);
     font-size: 0.8rem;
     font-weight: 700;
@@ -321,55 +401,11 @@
     background: var(--border);
   }
 
-  .discard {
-    border-color: color-mix(in srgb, var(--danger) 35%, var(--border));
-  }
-
-  .discard .num-badge {
-    background: var(--danger-soft);
-    color: var(--danger);
-  }
-
-  .qty {
-    margin-left: 0.25rem;
-    color: var(--primary);
-  }
-
-  .lot {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.4rem;
-    margin-top: 0.15rem;
-  }
-
-  .where {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.2rem;
-  }
-
-  .tier-progress {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .tier-progress .bar {
-    flex: 1;
-  }
-
-  .empty {
-    padding: 0.75rem;
-    border-radius: var(--radius-sm);
-    background: var(--surface-2);
-    color: var(--muted);
-  }
-
   .note {
     display: flex;
     align-items: flex-start;
     gap: 0.4rem;
+    margin: 0.25rem 0 0.65rem;
     color: var(--warn);
   }
 
@@ -388,9 +424,14 @@
     cursor: pointer;
   }
 
-  @media (max-width: 420px) {
-    .hide-sm {
-      display: none;
+  @media (min-width: 720px) {
+    .cards:not(.single) {
+      columns: 2;
+      column-gap: 1rem;
+    }
+
+    .cards > :global(*) {
+      break-inside: avoid;
     }
   }
 </style>
