@@ -141,7 +141,7 @@
 <div class="stack">
   <header class="page-head">
     <div>
-      <h1>{t('checkin.title')}</h1>
+      <h1 class="visually-hidden">{t('checkin.title')}</h1>
       <p class="muted">{count > 0 ? tn('checkin.count', count) : t('checkin.nothing')}</p>
     </div>
     {#if count > 0}

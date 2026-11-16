@@ -607,9 +607,10 @@ textarea {
   font-weight: 700;
 }
 
+/* The tab names the page: its head is one line of facts, centered on the page's buttons. */
 .page-head {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
 }

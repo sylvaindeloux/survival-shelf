@@ -118,7 +118,7 @@
 {:else}
   <div class="stack">
     <header>
-      <h1>{t('guides.title')}</h1>
+      <h1 class="visually-hidden">{t('guides.title')}</h1>
       <p class="muted">{t('guides.intro')}</p>
     </header>
 

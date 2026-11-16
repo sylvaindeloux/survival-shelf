@@ -285,7 +285,7 @@
 
   <header class="page-head">
     <div class="title">
-      <h1>{kindLabel(kind)}</h1>
+      <h1 class="visually-hidden">{kindLabel(kind)}</h1>
       <p class="muted">
         {#if kind === 'gear' && app.gear.total > 0}{tn('kind.gearCount', app.gear.ready, { total: app.gear.total })} ·{/if}
         {tn('stock.summary', scope.length, { lots: lotCount })}
@@ -486,7 +486,7 @@
   .page-head {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     gap: 0.5rem 1rem;
   }
@@ -496,7 +496,7 @@
     min-width: 0;
   }
 
-  /* Stays on the right, also when a long title pushes it to its own line. */
+  /* Stays on the right, also when a long summary pushes it to its own line. */
   .page-head > .row {
     flex: none;
     margin-left: auto;

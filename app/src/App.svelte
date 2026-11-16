@@ -314,10 +314,12 @@
     white-space: nowrap;
   }
 
-  /* Active tab: a solid bar on the top edge. */
+  /* Active tab: a solid bar on the top edge, drawn over the bar's border line rather than under it. */
   .tab[aria-current='page'] {
     color: var(--primary);
-    box-shadow: inset 0 3px 0 var(--primary);
+    box-shadow:
+      0 -1.5px 0 var(--primary),
+      inset 0 1.5px 0 var(--primary);
   }
 
   /* What needs doing, on the corner of the icon. */
@@ -405,9 +407,12 @@
       color: var(--text);
     }
 
+    /* The olive bar is the top border itself: no gray line above it. */
     .tab[aria-current='page'] {
       background: var(--bg);
       border-color: var(--border);
+      border-top: 3px solid var(--primary);
+      box-shadow: none;
       color: var(--text);
     }
 
