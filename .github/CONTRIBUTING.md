@@ -141,6 +141,9 @@ The app must stay robust and easy to maintain for years, so:
   `package-lock.json` is committed. Dependabot proposes grouped updates once a month.
 - Known exceptions: TypeScript stays on 6.x until svelte-check supports version 7, and the `glob` override in
   the root `package.json` fixes a vulnerability in `workbox-build` until it ships a patched version.
+- Accepted advisory: `deepmerge` (GHSA-gcqx-w48m-w2h4, low) has no patched release. It only runs at build time,
+  inside `@sveltejs/vite-plugin-svelte` and `workbox-build`, on our own config, and is not in the shipped app.
+  Do not run `npm audit fix --force` for it: it downgrades `vite-plugin-pwa` to 0.2.1.
 
 ## Translating the app
 

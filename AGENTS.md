@@ -94,5 +94,8 @@ Generated, never edit by hand: `app/dist/`, `app/dist-single/`, `package-lock.js
 - TypeScript stays on 6.x: svelte-check 4 does not support TypeScript 7 yet.
 - The `overrides` entry for `glob` in the root `package.json` is a security fix for `workbox-build`: keep it
   until workbox-build depends on a patched glob.
+- `npm audit` reports `deepmerge` (GHSA-gcqx-w48m-w2h4, low): no patched release exists. It only runs at build time,
+  inside `@sveltejs/vite-plugin-svelte` and `workbox-build`, on our own config, and is not in the shipped app, so
+  the risk is accepted. Never run `npm audit fix --force` for it: it downgrades `vite-plugin-pwa` to 0.2.1.
 - The app version is computed from the git history (`git rev-list --count --first-parent HEAD`): do not add a
   `version` field, tags or semantic versioning.
