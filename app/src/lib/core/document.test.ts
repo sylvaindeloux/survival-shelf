@@ -263,7 +263,7 @@ Beans | can | red \\| white
   it('returns a default shelf for an empty file', () => {
     const { shelf, issues } = parseShelf('');
     expect(issues).toEqual([]);
-    expect(shelf.layout.blocks).toHaveLength(6);
+    expect(shelf.layout.blocks).toHaveLength(8);
   });
 });
 
@@ -518,5 +518,79 @@ describe('emergency info', () => {
     const { shelf, issues } = parseShelf("## Paramètres\n\n| Paramètre | Valeur |\n|---|---|\n| Infos d'urgence relues le | hier |\n");
     expect(shelf.settings.emergencyReviewed).toBe('');
     expect(issues.map((issue) => issue.code)).toEqual(['invalidSetting']);
+  });
+});
+
+describe('go-bags', () => {
+  const FILE = `## Sacs
+
+| Sac | Rangé | Vérifié le | Notes | Couleur |
+|---|---|---|---|---|
+| Sac d'Alex | entrée | 2026-11-15 | | rouge |
+| Sac d'Alex | garage | | | |
+
+## Contenu des sacs
+
+| Sac | Rubrique | Article | Prêt | Produit |
+|---|---|---|---|---|
+| Sac d'Alex | Eau et nourriture | Eau pour 3 jours, en petites bouteilles | | Bouteille d’eau 1,5 L |
+| Sac d'Alex | Outils | Sifflet | oui | |
+| Sac d'Alex | Outils | Couteau multifonction | ✓ | |
+| Sac d'Alex | Papiers et argent | Argent liquide | non | |
+| Sac d'Alex | | Chaussures solides | | |
+| Sac d'Alex | Bébé | Couches | x | |
+| Sac de Sam | Tools | Whistle | peut-être | |
+`;
+
+  it('reads the bags and their lists in any language, and keeps the groups and columns of the user', () => {
+    const { shelf, issues } = parseShelf(FILE);
+    expect(shelf.bags.map((bag) => [bag.name, bag.stored, bag.checked, bag.extra])).toEqual([
+      ["Sac d'Alex", 'entrée', '2026-11-15', { Couleur: 'rouge' }],
+      ['Sac de Sam', '', '', {}],
+    ]);
+    expect(shelf.bagItems.map((item) => [item.bag, item.group, item.name, item.ready, item.product])).toEqual([
+      ["Sac d'Alex", 'water-food', 'Eau pour 3 jours, en petites bouteilles', false, 'Bouteille d’eau 1,5 L'],
+      ["Sac d'Alex", 'tools', 'Sifflet', true, ''],
+      ["Sac d'Alex", 'tools', 'Couteau multifonction', true, ''],
+      ["Sac d'Alex", 'papers', 'Argent liquide', false, ''],
+      // An item of the guide's list without a group goes back to its group.
+      ["Sac d'Alex", 'protection', 'Chaussures solides', false, ''],
+      ["Sac d'Alex", 'Bébé', 'Couches', true, ''],
+      ['Sac de Sam', 'tools', 'Whistle', false, ''],
+    ]);
+    expect(issues.map((issue) => [issue.line, issue.code])).toEqual([
+      [6, 'duplicateBag'],
+      [18, 'bagCreated'],
+      [18, 'invalidReady'],
+    ]);
+  });
+
+  it('writes the bags in the language of the file, and leaves Ready to the stock for items that follow a product', () => {
+    const { shelf } = parseShelf(FILE);
+    const english = serializeShelf({ ...shelf, settings: { ...shelf.settings, lang: 'en' } });
+    expect(english).toMatch(/## Go-bags\n\n\| Bag +\| Stored +\| Checked +\| Notes \| Couleur \|/);
+    expect(english).toMatch(/## Go-bag contents\n\n\| Bag +\| Group +\| Item +\| Ready \| Product +\|/);
+    expect(english).toMatch(/\| Sac d'Alex \| Water and food +\| Water for 3 days, in small bottles \| +\| Bouteille d’eau 1,5 L \|/);
+    expect(english).toMatch(/\| Sac d'Alex \| Tools +\| Whistle +\| yes +\| +\|/);
+    expect(english).toMatch(/\| Sac d'Alex \| Documents and money +\| Cash +\| no +\| +\|/);
+    expect(english).toMatch(/\| Sac d'Alex \| Bébé +\| Couches +\| yes +\| +\|/);
+    const back = parseShelf(english).shelf;
+    const french = serializeShelf({ ...back, settings: { ...back.settings, lang: 'fr' } });
+    expect(french).toContain('## Sacs');
+    expect(french).toMatch(/\| Sac d'Alex \| Outils +\| Sifflet +\| oui +\|/);
+    expect(french).toMatch(/\| Sac d'Alex \| Papiers et argent +\| Argent liquide +\| non +\|/);
+  });
+
+  it('adds the bag sections, empty, after the emergency info of a file without them', () => {
+    const text = serializeShelf(parseShelf('## Paramètres\n\n| Paramètre | Valeur |\n|---|---|\n| Langue | fr |\n').shelf);
+    const titles = text.split('\n').filter((line) => line.startsWith('## '));
+    expect(titles).toEqual(['## Paramètres', '## Infos d’urgence', '## Sacs', '## Contenu des sacs', '## Produits', '## Stock', '## Journal']);
+    expect(text).toContain('| Sac | Rangé | Vérifié le | Notes |\n|-----|-------|------------|-------|\n');
+  });
+
+  it('reports a date that cannot be read, and keeps it', () => {
+    const { shelf, issues } = parseShelf('## Bags\n\n| Bag | Checked |\n|---|---|\n| Alex | last spring |\n');
+    expect(shelf.bags[0].checked).toBe('last spring');
+    expect(issues.map((issue) => issue.code)).toEqual(['invalidDate']);
   });
 });

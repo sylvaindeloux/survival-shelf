@@ -42,7 +42,7 @@ export function emptyProduct(name: string): Product {
 
 /**
  * Creates or updates a product. When `previousName` is given and differs, the
- * product is renamed everywhere (lots and log).
+ * product is renamed everywhere (lots, log and the bag items that follow it).
  */
 export function upsertProduct(shelf: Shelf, product: Product, previousName?: string): Shelf {
   const cleaned: Product = { ...product, name: product.name.trim(), category: normalizeCategory(product.category) };
@@ -62,15 +62,19 @@ export function upsertProduct(shelf: Shelf, product: Product, previousName?: str
     log: renamed
       ? shelf.log.map((entry) => (sameName(entry.product, previousName) ? { ...entry, product: cleaned.name } : entry))
       : shelf.log,
+    bagItems: renamed
+      ? shelf.bagItems.map((item) => (sameName(item.product, previousName) ? { ...item, product: cleaned.name } : item))
+      : shelf.bagItems,
   };
 }
 
-/** Removes a product and all its lots. The log is kept as history. */
+/** Removes a product and all its lots. The log is kept as history; bag items that followed it are ticked by hand again. */
 export function deleteProduct(shelf: Shelf, name: string): Shelf {
   return {
     ...shelf,
     products: shelf.products.filter((product) => !sameName(product.name, name)),
     lots: shelf.lots.filter((lot) => !sameName(lot.product, name)),
+    bagItems: shelf.bagItems.map((item) => (sameName(item.product, name) ? { ...item, product: '', ready: false } : item)),
   };
 }
 

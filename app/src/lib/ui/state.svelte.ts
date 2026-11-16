@@ -41,6 +41,8 @@ export interface LotDialogState {
   kind?: Kind;
   /** Lot replaced by the new one: it is logged as used when the new lot is saved. */
   replaces?: string;
+  /** Location of a new lot, such as the bag it goes in. */
+  location?: string;
 }
 
 export interface TakeDialogState {
@@ -49,6 +51,11 @@ export interface TakeDialogState {
   lotId?: string;
   /** Suggested quantity. */
   qty?: number;
+}
+
+export interface BagDialogState {
+  /** Bag to edit; absent to add a new one with the list of the guide. */
+  bag?: string;
 }
 
 export interface EmergencyDialogState {
@@ -69,6 +76,7 @@ class Dialogs {
   product = $state<ProductDialogState | null>(null);
   take = $state<TakeDialogState | null>(null);
   emergency = $state<EmergencyDialogState | null>(null);
+  bag = $state<BagDialogState | null>(null);
 }
 
 export const dialogs = new Dialogs();

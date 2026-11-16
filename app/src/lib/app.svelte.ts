@@ -1,4 +1,5 @@
 import { computeAutonomy } from './core/autonomy';
+import { bagsStatus } from './core/bags';
 import { checkIn } from './core/checkin';
 import { today as currentDay, type Day } from './core/dates';
 import { emptyShelf } from './core/defaults';
@@ -99,6 +100,7 @@ class App {
   checkin = $derived(checkIn(this.shelf, this.today, this.rotation, this.plan.current));
   gear = $derived(gearStatus(this.shelf, this.today));
   emergency = $derived(emergencyStatus(this.shelf, this.today));
+  bags = $derived(bagsStatus(this.shelf, this.today));
   /** Calories per person per day planned by the products' daily use. */
   menu = $derived(menuKcal(this.shelf));
   locations = $derived(

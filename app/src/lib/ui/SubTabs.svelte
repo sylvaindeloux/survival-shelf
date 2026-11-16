@@ -3,30 +3,55 @@
 
   export interface SubTab {
     key: string;
-    href: string;
+    /** Where the tab leads; a tab with `onclick` instead is a button, like "Add a bag". */
+    href?: string;
+    onclick?: () => void;
     label: string;
+    /** Label of the phone card when `label` is too long for it. */
+    short?: string;
     icon?: Component;
     /** Short state under the label: "1 expired", "2 missing"… */
     status?: string;
     tone?: 'danger' | 'warn' | 'ok' | 'muted';
+    /** Share done, 0 to 1, drawn as a gauge under the state on phones. */
+    progress?: number;
+    /** A tab that adds something, like a new bag: dashed on phones. */
+    add?: boolean;
     current: boolean;
   }
 </script>
 
 <script lang="ts">
-  /** Second-level tabs: summary cards on phones, underlined tabs on wider screens. */
-  let { label, items }: { label: string; items: SubTab[] } = $props();
+  /**
+   * Second-level tabs: summary cards on phones, underlined tabs on wider screens. With `wrap`, as many
+   * cards as there are things, three a row on a phone.
+   */
+  let { label, items, wrap = false }: { label: string; items: SubTab[]; wrap?: boolean } = $props();
 </script>
 
-<nav class="subtabs" aria-label={label}>
+{#snippet content(item: SubTab)}
+  {#if item.icon}<item.icon size={24} />{/if}
+  <span class="text">
+    {#if item.short}
+      <span class="label short">{item.short}</span>
+      <span class="label long">{item.label}</span>
+    {:else}
+      <span class="label" title={item.label}>{item.label}</span>
+    {/if}
+    {#if item.status}<small class={item.tone ?? 'muted'}>{item.status}</small>{/if}
+    {#if item.progress !== undefined}
+      <span class="bar gauge" class:done={item.progress >= 1} aria-hidden="true"><span style:width="{Math.min(1, item.progress) * 100}%"></span></span>
+    {/if}
+  </span>
+{/snippet}
+
+<nav class="subtabs" class:wrap aria-label={label}>
   {#each items as item (item.key)}
-    <a href={item.href} aria-current={item.current ? 'page' : undefined}>
-      {#if item.icon}<item.icon size={24} />{/if}
-      <span class="text">
-        <span class="label">{item.label}</span>
-        {#if item.status}<small class={item.tone ?? 'muted'}>{item.status}</small>{/if}
-      </span>
-    </a>
+    {#if item.onclick}
+      <button type="button" class="tab" class:add={item.add} onclick={item.onclick}>{@render content(item)}</button>
+    {:else}
+      <a class="tab" href={item.href} class:add={item.add} aria-current={item.current ? 'page' : undefined}>{@render content(item)}</a>
+    {/if}
   {/each}
 </nav>
 
@@ -38,7 +63,35 @@
     gap: 8px;
   }
 
-  a {
+  .subtabs.wrap {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tab.add {
+    align-items: center;
+    justify-content: center;
+    border-style: dashed;
+    background: transparent;
+    color: var(--muted);
+  }
+
+  .tab.add .text {
+    align-items: center;
+  }
+
+  .gauge {
+    height: 5px;
+    margin-top: 4px;
+    /* The quarter marks take the color of the card they are drawn on. */
+    --bar-gap: var(--surface-2);
+  }
+
+  .tab[aria-current='page'] .gauge {
+    --bar-gap: var(--surface);
+  }
+
+  .tab {
     display: flex;
     flex-direction: column;
     gap: 3px;
@@ -48,22 +101,29 @@
     border-radius: var(--radius);
     background: var(--surface-2);
     color: var(--text);
+    font: inherit;
+    text-align: left;
     text-decoration: none;
+    cursor: pointer;
   }
 
-  a :global(svg) {
+  .tab :global(svg) {
     flex: none;
     color: var(--muted);
   }
 
-  a[aria-current='page'] {
+  .tab[aria-current='page'] {
     background: var(--surface);
     border-color: var(--primary);
     border-bottom-width: 4px;
   }
 
-  a[aria-current='page'] :global(svg) {
+  .tab[aria-current='page'] :global(svg) {
     color: var(--primary);
+  }
+
+  .long {
+    display: none;
   }
 
   .text {
@@ -112,7 +172,7 @@
 
   /* Small phones: tighter cards, then a smaller label below 360 px, so the labels stay whole. */
   @media (max-width: 380px) {
-    a {
+    .tab {
       padding: 8px 7px 9px;
     }
 
@@ -141,7 +201,20 @@
       border-bottom: 1.5px solid var(--border);
     }
 
-    a {
+    .subtabs.wrap {
+      flex-wrap: wrap;
+    }
+
+    .gauge,
+    .short {
+      display: none;
+    }
+
+    .long {
+      display: inline;
+    }
+
+    .tab {
       flex-direction: row;
       align-items: center;
       gap: 8px;
@@ -154,16 +227,22 @@
       color: var(--muted);
     }
 
-    a :global(svg) {
+    .tab :global(svg) {
       width: 20px;
       height: 20px;
     }
 
-    a:hover {
+    .tab:hover {
       color: var(--text);
     }
 
-    a[aria-current='page'] {
+    /* The tab that adds something is underlined like the others, only its plus sign tells it. */
+    .tab.add {
+      border: none;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tab[aria-current='page'] {
       background: none;
       border-bottom-color: var(--primary);
       color: var(--primary);

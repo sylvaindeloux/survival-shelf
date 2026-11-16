@@ -30,8 +30,11 @@ export function defaultSettings(): Settings {
   return { ...DEFAULT_SETTINGS, tiers: [...DEFAULT_TIERS] };
 }
 
-/** The emergency info comes right after the settings: it is what someone reads first in a crisis. */
-export const SECTION_ORDER: SectionName[] = ['settings', 'emergency', 'products', 'stock', 'log'];
+/**
+ * The emergency info comes right after the settings: it is what someone reads first in a crisis. The bags
+ * follow, then the stock they draw on.
+ */
+export const SECTION_ORDER: SectionName[] = ['settings', 'emergency', 'bags', 'bagItems', 'products', 'stock', 'log'];
 
 const REPO = 'https://github.com/sylvaindeloux/survival-shelf';
 
@@ -55,6 +58,8 @@ export const DEFAULT_PREAMBLE: Translated = {
 export const SECTION_HEADINGS: Record<SectionName, Translated> = {
   settings: { en: 'Settings', fr: 'Paramètres' },
   emergency: { en: 'Emergency info', fr: 'Infos d’urgence' },
+  bags: { en: 'Go-bags', fr: 'Sacs' },
+  bagItems: { en: 'Go-bag contents', fr: 'Contenu des sacs' },
   products: { en: 'Products', fr: 'Produits' },
   stock: { en: 'Stock', fr: 'Stock' },
   log: { en: 'Log', fr: 'Journal' },
@@ -66,6 +71,14 @@ export const SECTION_COMMENTS: Record<SectionName, Translated> = {
   emergency: {
     en: '<!-- The household plan, one row per line. Topic: emergency number, out-of-area contact, contact, meeting point, who does what, shut-off or health. Write SMS before a number that only takes text messages. -->',
     fr: '<!-- Le plan du foyer, une ligne par info. Rubrique : numéro d’urgence, contact éloigné, contact, rendez-vous, qui fait quoi, couper ou santé. Écris SMS devant un numéro qui ne prend que les SMS. -->',
+  },
+  bags: {
+    en: '<!-- One row per bag, one per person. Its name is also the location of its lots in the stock. Checked: day of the last check, once a year. -->',
+    fr: '<!-- Une ligne par sac, un par personne. Son nom est aussi l’emplacement de ses lots dans le stock. Vérifié le : jour de la dernière vérification, une fois par an. -->',
+  },
+  bagItems: {
+    en: '<!-- One row per item and per bag. Ready: yes or no, ticked by hand. Product: a product of the stock, ready when one of its lots is stored in the bag. -->',
+    fr: '<!-- Une ligne par article et par sac. Prêt : oui ou non, coché à la main. Produit : un produit du stock, prêt quand un de ses lots est rangé dans le sac. -->',
   },
   products: {
     en: '<!-- One row per product. Type: food, consumable or gear. Kcal and Water are per unit. Daily use sets what each tier needs, Target is a minimum to own. Per: person, household, cat or dog. -->',
@@ -110,6 +123,8 @@ export function emptyShelf(lang: Lang = 'en'): Shelf {
     lots: [],
     log: [],
     emergency: defaultEmergency(lang),
+    bags: [],
+    bagItems: [],
     layout: defaultLayout(lang),
   };
 }

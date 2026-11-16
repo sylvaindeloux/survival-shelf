@@ -43,6 +43,43 @@
 | Shut-off            | Electricity              | panel in the hall                                 |                |
 | Health              | Alex                     | allergic to penicillin                            |                |
 
+## Go-bags
+
+<!-- One row per bag, one per person. Its name is also the location of its lots in the stock. Checked: day of the last check, once a year. -->
+
+| Bag     | Stored | Checked    | Notes |
+|---------|--------|------------|-------|
+| 72h bag | Hall   | 2026-09-10 |       |
+
+## Go-bag contents
+
+<!-- One row per item and per bag. Ready: yes or no, ticked by hand. Product: a product of the stock, ready when one of its lots is stored in the bag. -->
+
+| Bag     | Group                 | Item                               | Ready | Product            |
+|---------|-----------------------|------------------------------------|-------|--------------------|
+| 72h bag | Water and food        | Water for 3 days, in small bottles | no    |                    |
+| 72h bag | Water and food        | Food that needs no cooking         | no    |                    |
+| 72h bag | Water and food        | Can opener                         | yes   |                    |
+| 72h bag | Information and light | Battery or hand-crank radio        | no    |                    |
+| 72h bag | Information and light | Flashlight                         |       | Headlamp           |
+| 72h bag | Information and light | Spare batteries                    | yes   |                    |
+| 72h bag | Information and light | Phone charger and backup battery   | no    |                    |
+| 72h bag | Health                | First aid kit                      |       | First aid kit      |
+| 72h bag | Health                | Medicines and prescriptions        |       | Paracetamol 500 mg |
+| 72h bag | Health                | Spare glasses                      | no    |                    |
+| 72h bag | Protection            | Warm clothes                       | yes   |                    |
+| 72h bag | Protection            | Emergency blanket                  |       | Survival blanket   |
+| 72h bag | Protection            | Rain gear                          | yes   |                    |
+| 72h bag | Protection            | Sturdy shoes                       | no    |                    |
+| 72h bag | Tools                 | Multi-purpose tool                 | no    |                    |
+| 72h bag | Tools                 | Lighter or matches                 | yes   |                    |
+| 72h bag | Tools                 | Whistle                            | yes   |                    |
+| 72h bag | Tools                 | Masks                              | no    |                    |
+| 72h bag | Documents and money   | Copies of documents                | yes   |                    |
+| 72h bag | Documents and money   | Cash                               | no    |                    |
+| 72h bag | Documents and money   | Spare keys                         | no    |                    |
+| 72h bag | Documents and money   | Contact list on paper              | yes   |                    |
+
 ## Products
 
 <!-- One row per product. Type: food, consumable or gear. Kcal and Water are per unit. Daily use sets what each tier needs, Target is a minimum to own. Per: person, household, cat or dog. -->

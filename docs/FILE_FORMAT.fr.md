@@ -32,13 +32,15 @@ quels.
 
 ## Structure
 
-Le fichier contient jusqu'à cinq sections, chacune commence par un titre de niveau 2 (`## `) suivi d'un
+Le fichier contient jusqu'à sept sections, chacune commence par un titre de niveau 2 (`## `) suivi d'un
 tableau :
 
 | Section       | Titre anglais | Aussi accepté                          | Contenu                            |
 |---------------|---------------|----------------------------------------|------------------------------------|
 | `Paramètres`  | `Settings`    | Réglages, Configuration                | Réglages du foyer et de l'appli    |
 | `Infos d’urgence` | `Emergency info` | Urgence, Plan du foyer, Plan familial | Le plan du foyer : numéros, contacts, rendez-vous… |
+| `Sacs`        | `Go-bags`     | Sacs d’évacuation, Sacs d’urgence, Kits d’urgence, Bags | Une ligne par sac d'évacuation |
+| `Contenu des sacs` | `Go-bag contents` | Contenu du sac, Liste des sacs, Bag contents, Packing list | Une ligne par article et par sac |
 | `Produits`    | `Products`    | Catalogue, Catalog                     | Une ligne par sorte de produit     |
 | `Stock`       | `Stock`       | Inventaire, Inventory, Lots            | Une ligne par lot de ton stock     |
 | `Journal`     | `Log`         | Historique, History                    | Ce qui a été consommé ou jeté      |
@@ -132,6 +134,56 @@ info du plan.
 - Le paramètre `Infos d’urgence relues le` prend la date du jour quand tu touches **J'ai relu** ou que tu
   enregistres les infos d'urgence. Six mois plus tard, la liste À faire te propose de les relire avec ton
   foyer. Quand il est vide, l'appli ne demande jamais.
+
+## Sacs
+
+Les sacs d'évacuation de l'onglet **Urgence**, comme le conseille la fiche
+[Préparer un sac d'évacuation](../guides/fr/les-bases/preparer-un-sac-d-evacuation.md) : un sac par personne,
+de quoi tenir 3 jours. Une section liste les sacs, la suivante ce qu'on met dedans.
+
+| Colonne      | En-tête anglais | Aussi accepté                                 | Contenu                                         |
+|--------------|-----------------|-----------------------------------------------|-------------------------------------------------|
+| `Sac`        | `Bag`           | Nom, Name, Kit                                | Nom unique du sac, comme `Sac d’Alex`           |
+| `Rangé`      | `Stored`        | Où, Lieu, Emplacement, Place, Location        | Où le sac est rangé : entrée, placard, voiture… |
+| `Vérifié le` | `Checked`       | Vérifié, Vérification, Last check, Checked on | Jour de la dernière vérification, `AAAA-MM-JJ`  |
+| `Notes`      | `Notes`         | Note, Remarques, Commentaire                  | Ce que tu veux                                  |
+
+### Contenu des sacs
+
+| Colonne    | En-tête anglais | Aussi accepté                              | Contenu                                                   |
+|------------|-----------------|--------------------------------------------|-----------------------------------------------------------|
+| `Sac`      | `Bag`           | Kit                                        | Nom du sac où va l'article                                |
+| `Rubrique` | `Group`         | Catégorie, Thème, Section, Topic, Category | Une des rubriques ci-dessous, ou n'importe quel texte pour une rubrique à toi |
+| `Article`  | `Item`          | Nom, Quoi, Objet, Name, What               | Ce qui va dans le sac                                     |
+| `Prêt`     | `Ready`         | Fait, Coché, OK, Packed, Done, Check       | `oui` ou `non`, pour un article coché à la main           |
+| `Produit`  | `Product`       | Stock, Produit du stock                    | Un produit du stock que l'article suit : voir plus bas    |
+
+| Rubrique                   | Anglais                 | Articles de la fiche                                             |
+|----------------------------|-------------------------|------------------------------------------------------------------|
+| `Eau et nourriture`        | `Water and food`        | Eau pour 3 jours, nourriture sans cuisson, ouvre-boîte           |
+| `S’informer et s’éclairer` | `Information and light` | Radio, lampe de poche, piles de rechange, chargeur               |
+| `Se soigner`               | `Health`                | Trousse de secours, médicaments et ordonnances, lunettes de secours |
+| `Se protéger`              | `Protection`            | Vêtements chauds, couverture de survie, vêtement de pluie, chaussures solides |
+| `Outils`                   | `Tools`                 | Couteau multifonction, briquet ou allumettes, sifflet, masques   |
+| `Papiers et argent`        | `Documents and money`   | Copies des papiers, argent liquide, double des clés, contacts sur papier |
+
+- **Un lot est dans un sac** quand son `Emplacement` dans le stock est le nom du sac. Ses dates sont suivies
+  comme celles de n'importe quel lot : la liste À faire dit quand le manger, le remplacer ou le jeter.
+  Renommer un sac dans l'appli renomme aussi cet emplacement ; supprimer un sac garde ses lots dans le stock.
+- **Un article qui suit un produit** est prêt quand un lot de ce produit est dans le sac et n'est pas périmé,
+  et le sac montre sa date. Sa case `Prêt` reste vide. **Les autres articles se cochent à la main** : `Prêt`
+  vaut `oui` (`x` et `✓` marchent aussi) ou `non`, et une case vide vaut `non`.
+- **Ajouter un sac** dans l'appli écrit les articles de la fiche, dans la langue de l'appli : ce qui se périme
+  (eau, nourriture, piles de rechange, médicaments) suit le produit correspondant du stock, et n'importe quel
+  article suit le produit d'un lot déjà rangé dans le sac. Renomme, retire ou ajoute des articles comme tu
+  veux : ceux que l'appli a écrits sont traduits quand la langue change, les tiens sont gardés tels que tu les
+  as écrits. Une ligne sans rubrique prend celle de l'article de la fiche du même nom.
+- Les lots rangés dans un sac qu'aucun article ne suit sont affichés à part, sous **Aussi dans le sac**.
+- `Vérifié le` prend la date du jour quand tu touches **J'ai vérifié**. Un an plus tard, la liste À faire te
+  propose de vérifier le sac : dates, piles, taille des vêtements des enfants. Un sac jamais vérifié n'est pas
+  demandé.
+- Un fichier sans ces sections marche comme avant : l'appli les ajoute, vides, quand elle enregistre. Une ligne
+  de `Contenu des sacs` dont le sac manque dans `Sacs` ajoute le sac, et l'appli te le signale.
 
 ## Produits
 
