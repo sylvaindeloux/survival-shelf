@@ -164,7 +164,7 @@ The practical guides are plain Markdown pages, readable without the app, in
 ## Screenshots
 
 README screenshots live in `docs/screenshots/<lang>/`, one set per language. They are taken from the sample
-stock (*Try with sample data*), in light theme except `plan-dark.png`: phones at 390 × 844 and the computer at
+stock (*Try with sample data*), in light theme except `food-dark.png`: phones at 390 × 844 and the computer at
 1280 × 800, both at 2× pixel density, saved as 256-color PNGs to keep the repository light.
 
 ## AI-assisted contributions

@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/en/desktop.png" width="760" alt="Survival Shelf overview: 9 days of autonomy, progress of each tier, this month's check-in and expiry alerts">
+  <img src="docs/screenshots/en/desktop.png" width="760" alt="Survival Shelf overview: things to do, how long the household can hold out at home, the go-bags and the emergency info">
 </p>
 
 ## Why
@@ -38,7 +38,8 @@ Saying "keep some supplies at home" is easy. Doing it is another story:
 
 Survival Shelf takes care of all that. Tell it who lives with you, and it gives you a shopping plan. Tell it
 what you bought, and it keeps track of the dates. Once a month, it tells you what to eat, what to throw away,
-what to replace and what to buy next.
+what to replace and what to buy next. It also gets you ready for the day it happens: emergency info for your
+household, a go-bag per person and a crisis mode.
 
 ## How it works
 
@@ -56,18 +57,19 @@ plus hygiene, first aid, light, energy and a few tools. Untick what does not sui
 ### 2. Build it tier by tier
 
 Nobody buys a year of food on day one. The app splits the goal into tiers: **3 days, 1 week, 1 month and
-1 year** (you can change them). For each tier it shows how far along you are and what is still missing.
-Beyond a month, storing all your water is not realistic: a water filter or purification tablets take over.
+1 year** (you can change them). For each tier it shows how far along you are and what is still missing,
+product by product. Beyond a month, storing all your water is not realistic: a water filter or purification
+tablets take over.
 
 <p align="center">
-  <img src="docs/screenshots/en/home.png" width="260" alt="Overview: days of autonomy, limited by water, and progress of each tier">
-  <img src="docs/screenshots/en/plan-dark.png" width="260" alt="My plan, dark theme: household needs and water per tier">
+  <img src="docs/screenshots/en/home.png" width="260" alt="Overview: things to do, days the household can hold out at home, limited by water, and progress of the current tier">
+  <img src="docs/screenshots/en/food-dark.png" width="260" alt="Food and water, dark theme: what each product still needs for the 1-month tier">
 </p>
 
 ### 3. Note what goes on the shelf
 
 When you shop, add each item with its quantity, its expiry date and where you keep it (cellar, kitchen,
-72-hour bag…). No date on the packaging? The app estimates one from typical
+go-bag…). No date on the packaging? The app estimates one from typical
 [shelf lives](docs/SHELF_LIFE.md). Colored badges show what expires soon, and the app tells you how many days
 your household could live on what you have, for food and for water.
 
@@ -76,7 +78,7 @@ The stock has three aisles, each looked after in its own way: **food & water**, 
 stove…), simply ready or missing.
 
 <p align="center">
-  <img src="docs/screenshots/en/stock.png" width="260" alt="Stock in three aisles: food and water, consumables and gear">
+  <img src="docs/screenshots/en/stock.png" width="260" alt="The stock in three aisles, here the consumables: what to replace first, then each product against its target">
 </p>
 
 ### 4. Once a month, a 5-minute check-in
@@ -90,14 +92,38 @@ One list, four parts:
   then put new ones on the shelf.
 - **To buy**: what the tier you are building is still missing, grouped by aisle.
 
+When the time comes, the list also reminds you to read the emergency info again with your household and to
+check each go-bag.
+
 Tick things off as you go, share or copy the list for your shopping. The app can put a recurring reminder in
 your calendar (iPhone, Google, Outlook…) so you don't forget. Prefer every 3 or 6 months? Your call.
 
 <p align="center">
-  <img src="docs/screenshots/en/checkin.png" width="260" alt="This month: to discard, to eat, to replace, to buy">
+  <img src="docs/screenshots/en/checkin.png" width="260" alt="The to-do list, most urgent first: to discard, to eat, to replace, to buy">
 </p>
 
 And for the day the power is out: print your inventory, with room to note what you take.
+
+### 5. Get ready for the day it happens
+
+The **Emergency** tab is where you get ready in advance, and what you open on the day itself.
+
+- **Emergency info**: your household plan in one place: emergency numbers, a contact out of the area, meeting
+  points, who does what, how to shut off gas, water and electricity, the treatments and allergies of each
+  person. The guide [Make a household plan](guides/en/basics/make-a-household-plan.md) helps you agree on it.
+  Print it, and read it again every 6 months.
+- **Go-bags**: one bag per person, ready to grab if you have to leave. The list follows the guide
+  [Pack a go-bag](guides/en/basics/pack-a-go-bag.md). What you put in a bag stays in your stock, so the app
+  watches its dates too, and reminds you to check each bag once a year.
+- **Crisis mode**: one button, and the home screen shows only what matters: how many days you can hold out,
+  the water to drink today, bottle by bottle, and what to eat first. Shortcuts lead to the emergency number,
+  the emergency info, the go-bags and the guides.
+
+<p align="center">
+  <img src="docs/screenshots/en/emergency.png" width="260" alt="The Emergency tab: emergency info, go-bags and the button to switch to crisis mode">
+  <img src="docs/screenshots/en/bag.png" width="260" alt="A go-bag: what is in it, what is missing and when its water and food expire">
+  <img src="docs/screenshots/en/crisis.png" width="260" alt="Crisis mode: days left, the water to drink today, bottle by bottle, and what to eat first">
+</p>
 
 ## Get started
 
