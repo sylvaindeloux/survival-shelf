@@ -26,7 +26,7 @@
   <div class="stack">
     <header class="page-head">
       <div>
-        <h1>{t('emergency.title')}</h1>
+        <h1 class="visually-hidden">{t('emergency.title')}</h1>
         <p class="muted">{t('emergency.subtitle')}</p>
       </div>
     </header>

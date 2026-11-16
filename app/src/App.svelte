@@ -290,7 +290,9 @@
     height: calc(var(--nav-height) + var(--safe-bottom));
     padding: 0 env(safe-area-inset-right, 0px) var(--safe-bottom) env(safe-area-inset-left, 0px);
     background: var(--surface);
-    border-top: 1.5px solid var(--border);
+    /* The top line is drawn inside the bar, from the same edge as the open tab's bar, which covers it
+       exactly: a border would be rounded by the browser and leave the bar sticking out above it. */
+    box-shadow: inset 0 1.5px 0 var(--border);
   }
 
   .tab {
@@ -314,7 +316,7 @@
     white-space: nowrap;
   }
 
-  /* Active tab: a solid bar on the top edge. */
+  /* Active tab: a solid bar on the top edge, over the bar's top line. */
   .tab[aria-current='page'] {
     color: var(--primary);
     box-shadow: inset 0 3px 0 var(--primary);
@@ -378,10 +380,9 @@
       /* Labels shorten rather than push the gear off the screen. */
       min-width: 0;
       height: auto;
-      margin-bottom: -1.5px;
       padding: 0;
       background: none;
-      border: none;
+      box-shadow: none;
     }
 
     .tab {
@@ -405,10 +406,26 @@
       color: var(--text);
     }
 
+    /* The olive bar is the top border itself: no gray line above it. */
     .tab[aria-current='page'] {
       background: var(--bg);
       border-color: var(--border);
+      border-top: 3px solid var(--primary);
+      box-shadow: none;
       color: var(--text);
+    }
+
+    /* The open tab joins the page: between its sides, it hides the header line under it. The tab ends
+       on top of that line instead of overlapping it, so its sides stop exactly where the line starts,
+       and the cover is taller than the line since browsers round a 1.5px border to 1 or 2 pixels. */
+    .tab[aria-current='page']::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 2px;
+      background: var(--bg);
     }
 
     .tab[aria-current='page'] :global(svg) {
