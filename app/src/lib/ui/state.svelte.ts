@@ -109,10 +109,26 @@ function readOnlineWarningUntil(): Day | null {
   }
 }
 
+const CRISIS_KEY = 'survival-shelf:crisis-since';
+
+function readCrisisSince(): number | null {
+  try {
+    const since = Number(localStorage.getItem(CRISIS_KEY));
+    return Number.isFinite(since) && since > 0 ? since : null;
+  } catch {
+    return null;
+  }
+}
+
 class Preferences {
   theme = $state<Theme>(readTheme());
   /** Day until which the online-copy warning stays hidden ("Later"). */
   onlineWarningUntil = $state<Day | null>(readOnlineWarningUntil());
+  /**
+   * When crisis mode was turned on (a timestamp), null while it is off. It belongs to this device, not
+   * to the data file: a crisis is lived on the phone at hand, and the file may be shared.
+   */
+  crisisSince = $state<number | null>(readCrisisSince());
 
   setTheme(theme: Theme) {
     this.theme = theme;
@@ -120,6 +136,24 @@ class Preferences {
       localStorage.setItem(THEME_KEY, theme);
     } catch {
       // Applied for this session only.
+    }
+  }
+
+  startCrisis(since = Date.now()) {
+    this.crisisSince = since;
+    try {
+      localStorage.setItem(CRISIS_KEY, String(since));
+    } catch {
+      // On for this session only.
+    }
+  }
+
+  endCrisis() {
+    this.crisisSince = null;
+    try {
+      localStorage.removeItem(CRISIS_KEY);
+    } catch {
+      // Off for this session only.
     }
   }
 

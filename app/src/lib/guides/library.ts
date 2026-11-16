@@ -7,6 +7,12 @@ export function guideLang(lang: string): GuideLang {
   return (GUIDE_LANGS as readonly string[]).includes(lang) ? (lang as GuideLang) : 'en';
 }
 
+/** The guide crisis mode points to when the stored water runs out, in each language of the guides. */
+export const FIND_WATER_GUIDE: Record<GuideLang, string> = {
+  en: 'en/water/find-water-at-home',
+  fr: 'fr/eau/trouver-de-l-eau-chez-soi',
+};
+
 /** One practical guide, as the app shows it. */
 export interface Guide {
   /** Path of the guide inside the guides folder, without `.md`: `fr/eau/stocker-de-l-eau`. */

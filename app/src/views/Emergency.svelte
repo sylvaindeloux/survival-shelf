@@ -3,12 +3,14 @@
   import ChevronRight from '@lucide/svelte/icons/chevron-right';
   import MapPin from '@lucide/svelte/icons/map-pin';
   import Plus from '@lucide/svelte/icons/plus';
+  import Siren from '@lucide/svelte/icons/siren';
   import { app } from '../lib/app.svelte';
   import { PLAN_TOPICS } from '../lib/core/emergency';
   import { i18n, t, tn } from '../lib/i18n/index.svelte';
   import { bagHref } from '../lib/ui/bags';
+  import { crisisSince, startCrisis } from '../lib/ui/crisis';
   import { reviewText, topicTitle } from '../lib/ui/emergency';
-  import { dialogs, router } from '../lib/ui/state.svelte';
+  import { dialogs, preferences, router } from '../lib/ui/state.svelte';
   import Bags from './Bags.svelte';
   import EmergencyInfo from './EmergencyInfo.svelte';
 
@@ -29,67 +31,86 @@
       </div>
     </header>
 
-    <div class="blocks">
-      <a class="card block" href="#/emergency/info">
-        <span class="block-head">
-          <span class="block-icon"><MapPin size={24} /></span>
-          <h2>{t('emergency.infoTitle')}</h2>
-          <span class="kpi num">{t('emergency.filled', { count: status.filled.length, total: PLAN_TOPICS.length })}</span>
-          <ChevronRight size={20} class="chevron" />
-        </span>
-        <!-- One segment per topic of the household plan. -->
-        <span class="segments" aria-hidden="true">
-          {#each PLAN_TOPICS as topic (topic)}
-            <span class:on={status.filled.includes(topic)}></span>
-          {/each}
-        </span>
-        <span class="small">
-          {#if status.missing.length > 0}
-            <span class="warn-text">{tn('emergency.missing', status.missing.length, { list: missing })}</span>
-          {:else}
-            {t('emergency.allFilled')}
-          {/if}
-          · <span class:warn-text={status.reviewDue}>{reviewText()}</span>
-        </span>
-      </a>
+    <div class="hub">
+      <div class="blocks">
+        <a class="card block" href="#/emergency/info">
+          <span class="block-head">
+            <span class="block-icon"><MapPin size={24} /></span>
+            <h2>{t('emergency.infoTitle')}</h2>
+            <span class="kpi num">{t('emergency.filled', { count: status.filled.length, total: PLAN_TOPICS.length })}</span>
+            <ChevronRight size={20} class="chevron" />
+          </span>
+          <!-- One segment per topic of the household plan. -->
+          <span class="segments" aria-hidden="true">
+            {#each PLAN_TOPICS as topic (topic)}
+              <span class:on={status.filled.includes(topic)}></span>
+            {/each}
+          </span>
+          <span class="small">
+            {#if status.missing.length > 0}
+              <span class="warn-text">{tn('emergency.missing', status.missing.length, { list: missing })}</span>
+            {:else}
+              {t('emergency.allFilled')}
+            {/if}
+            · <span class:warn-text={status.reviewDue}>{reviewText()}</span>
+          </span>
+        </a>
 
-      <section class="card block">
-        <span class="block-head">
-          <span class="block-icon"><Backpack size={24} /></span>
-          <h2><a class="title-link" href="#/emergency/bags">{t('bags.title')}</a></h2>
-        </span>
-        <ul class="bags">
-          {#each app.bags as bag (bag.bag.name)}
-            {@const complete = bag.total > 0 && bag.ready === bag.total}
-            <li>
-              <a class="bag" href={bagHref(bag.bag.name)}>
-                <span class="grow">
-                  <span class="bag-head">
-                    <span class="name">{bag.bag.name}</span>
-                    <span class="small strong num">{t('bags.ready', { ready: bag.ready, total: bag.total })}</span>
+        <section class="card block">
+          <span class="block-head">
+            <span class="block-icon"><Backpack size={24} /></span>
+            <h2><a class="title-link" href="#/emergency/bags">{t('bags.title')}</a></h2>
+          </span>
+          <ul class="bags">
+            {#each app.bags as bag (bag.bag.name)}
+              {@const complete = bag.total > 0 && bag.ready === bag.total}
+              <li>
+                <a class="bag" href={bagHref(bag.bag.name)}>
+                  <span class="grow">
+                    <span class="bag-head">
+                      <span class="name">{bag.bag.name}</span>
+                      <span class="small strong num">{t('bags.ready', { ready: bag.ready, total: bag.total })}</span>
+                    </span>
+                    <span class="bar" class:done={complete} aria-hidden="true"><span style:width="{bag.total > 0 ? (bag.ready / bag.total) * 100 : 0}%"></span></span>
+                    <span class="small muted">
+                      {#if bag.bag.stored}<span class="where"><MapPin size={14} />{bag.bag.stored}</span>{' · '}{/if}
+                      {complete ? t('bags.complete') : tn('bags.missing', bag.total - bag.ready)}
+                      {#if bag.checkDue}{' · '}<span class="warn-text">{t('bags.toCheck')}</span>{/if}
+                    </span>
                   </span>
-                  <span class="bar" class:done={complete} aria-hidden="true"><span style:width="{bag.total > 0 ? (bag.ready / bag.total) * 100 : 0}%"></span></span>
-                  <span class="small muted">
-                    {#if bag.bag.stored}<span class="where"><MapPin size={14} />{bag.bag.stored}</span>{' · '}{/if}
-                    {complete ? t('bags.complete') : tn('bags.missing', bag.total - bag.ready)}
-                    {#if bag.checkDue}{' · '}<span class="warn-text">{t('bags.toCheck')}</span>{/if}
-                  </span>
-                </span>
-                <ChevronRight size={20} class="chevron" />
-              </a>
+                  <ChevronRight size={20} class="chevron" />
+                </a>
+              </li>
+            {/each}
+            <li class="add-row">
+              <button type="button" class="add" onclick={() => (dialogs.bag = {})}><Plus size={18} />{t('bags.add')}</button>
+              <span class="small muted">{t('bags.onePerPerson')}</span>
             </li>
-          {/each}
-          <li class="add-row">
-            <button type="button" class="add" onclick={() => (dialogs.bag = {})}><Plus size={18} />{t('bags.add')}</button>
-            <span class="small muted">{t('bags.onePerPerson')}</span>
-          </li>
-        </ul>
+          </ul>
+        </section>
+      </div>
+
+      <!-- The day it happens: one big red button. -->
+      <section class="crisis" aria-labelledby="crisis-start">
+        <p id="crisis-start" class="eyebrow">{t('crisis.eyebrow')}</p>
+        {#if preferences.crisisSince === null}
+          <button type="button" class="btn alarm" onclick={startCrisis}><Siren size={24} />{t('crisis.start')}</button>
+          <p class="small muted">{t('crisis.startHint')}</p>
+        {:else}
+          <a class="btn alarm" href="#/"><Siren size={24} />{t('crisis.open')}</a>
+          <p class="small muted">{t('crisis.onSince', { since: crisisSince(preferences.crisisSince) })}</p>
+        {/if}
       </section>
     </div>
   </div>
 {/if}
 
 <style>
+  .hub {
+    display: grid;
+    gap: 1.25rem;
+  }
+
   .blocks {
     display: grid;
     gap: 0.875rem;
@@ -268,5 +289,55 @@
 
   .add:hover {
     text-decoration: underline;
+  }
+
+  /* Phones: under the blocks, after a rule. */
+  .crisis {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 40rem;
+    padding-top: 1rem;
+    border-top: 1.5px solid var(--border);
+  }
+
+  .crisis .eyebrow {
+    color: var(--danger);
+  }
+
+  .crisis .btn {
+    min-height: 56px;
+    font-size: 1.2rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .crisis .btn :global(svg) {
+    flex: none;
+  }
+
+  /* Tablets and computers: a red framed block. */
+  @media (min-width: 720px) {
+    .crisis {
+      padding: 1.25rem;
+      border: 1.5px solid var(--danger);
+      border-bottom-width: 4px;
+      border-radius: var(--radius);
+      background: var(--danger-soft);
+    }
+  }
+
+  /* Wide screens: getting ready on the left, the day it happens on the right. */
+  @media (min-width: 960px) {
+    .hub {
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      align-items: start;
+      gap: 1rem;
+    }
+
+    .blocks,
+    .crisis {
+      max-width: none;
+    }
   }
 </style>

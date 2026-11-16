@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { buildLibrary, renderGuide } from './build';
-import { foldText, GUIDE_LANGS, guideLang, parseIndex, searchGuides } from './library';
+import { FIND_WATER_GUIDE, foldText, GUIDE_LANGS, guideLang, parseIndex, searchGuides } from './library';
 import { lintGuides } from './lint';
 
 // The real guides folder, at the root of the repository.
@@ -29,6 +29,10 @@ function sample(): Record<string, string> {
 describe('the guides folder', () => {
   it('follows every rule of guides/CONTRIBUTING.md', () => {
     expect(lintGuides(FILES)).toEqual([]);
+  });
+
+  it('has the guides the app links to', () => {
+    for (const id of Object.values(FIND_WATER_GUIDE)) expect(FILES[`${id}.md`], id).toBeDefined();
   });
 
   it('has the same guides in every language', () => {

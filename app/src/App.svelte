@@ -11,6 +11,7 @@
   import { i18n, t, type MessageKey } from './lib/i18n/index.svelte';
   import BagDialog from './lib/ui/BagDialog.svelte';
   import Banners from './lib/ui/Banners.svelte';
+  import { crisisSince, quitCrisis } from './lib/ui/crisis';
   import EmergencyDialog from './lib/ui/EmergencyDialog.svelte';
   import LotDialog from './lib/ui/LotDialog.svelte';
   import Logo from './lib/ui/Logo.svelte';
@@ -20,6 +21,7 @@
   import Toasts from './lib/ui/Toasts.svelte';
   import { dialogs, preferences, router, type Route } from './lib/ui/state.svelte';
   import CheckIn from './views/CheckIn.svelte';
+  import Crisis from './views/Crisis.svelte';
   import Emergency from './views/Emergency.svelte';
   import Guides from './views/Guides.svelte';
   import Home from './views/Home.svelte';
@@ -44,7 +46,9 @@
     guides: Guides,
     settings: Settings,
   };
-  const View = $derived(VIEWS[router.route]);
+  const crisis = $derived(preferences.crisisSince);
+  // In crisis mode, the home tab shows what matters that day.
+  const View = $derived(router.route === 'home' && crisis !== null ? Crisis : VIEWS[router.route]);
 
   // Only what needs doing: expired lots to discard, lots due for rotation and supplies due for replacement,
   // the emergency info to read again and the bags to check.
@@ -97,7 +101,14 @@
   {/if}
 {:else}
   <div class="layout" class:screen-only={!printsPage}>
-    <header class="topbar">
+    <header class="topbar" class:crisis={crisis !== null}>
+      {#if crisis !== null}
+        <div class="crisis-bar">
+          <Siren size={24} />
+          <p><strong>{t('crisis.title')}</strong> · {crisisSince(crisis)}</p>
+          <button type="button" class="quit" onclick={quitCrisis}>{t('crisis.quit')}</button>
+        </div>
+      {/if}
       <div class="topbar-inner">
         <a class="brand" href="#/" aria-label="Survival Shelf"><Logo size={32} /><span class="brand-name">Survival Shelf</span></a>
         <nav class="tabs" aria-label={t('nav.label')}>
@@ -207,6 +218,66 @@
     color: var(--primary);
   }
 
+  /* Crisis mode: a red bar that says so, with the way out. */
+  .crisis-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 6px 6px 6px 1rem;
+    background: var(--danger);
+    color: var(--on-primary);
+  }
+
+  .crisis-bar :global(svg) {
+    flex: none;
+  }
+
+  .crisis-bar p {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.95rem;
+  }
+
+  .crisis-bar strong {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+  }
+
+  .quit {
+    flex: none;
+    min-height: 44px;
+    padding: 0 0.75rem;
+    border: 1.5px solid currentColor;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: inherit;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .quit:hover {
+    background: color-mix(in srgb, currentColor 15%, transparent);
+  }
+
+  /* On phones the red bar takes the place of the brand and the gear; the tabs stay at the bottom. */
+  @media (max-width: 719px) {
+    .topbar.crisis {
+      background: var(--danger);
+      border-bottom: none;
+    }
+
+    .topbar.crisis .topbar-inner {
+      padding: 0;
+    }
+
+    .topbar.crisis .brand,
+    .topbar.crisis .gear {
+      display: none;
+    }
+  }
+
   .tabs {
     position: fixed;
     left: 0;
@@ -282,6 +353,10 @@
 
   /* Tablet and desktop: folder tabs in the top bar, the open one joins the page. */
   @media (min-width: 720px) {
+    .crisis-bar {
+      padding: 6px max(1.25rem, calc((100% - 1040px) / 2 + 1.25rem)) 6px max(2rem, calc((100% - 1040px) / 2 + 2rem));
+    }
+
     .topbar-inner {
       max-width: 1040px;
       height: 68px;
