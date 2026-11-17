@@ -171,6 +171,18 @@ README screenshots live in `docs/screenshots/<lang>/`, one set per language. The
 stock (*Try with sample data*), in light theme except `food-dark.png`: phones at 390 × 844 and the computer at
 1280 × 800, both at 2× pixel density, saved as 256-color PNGs to keep the repository light.
 
+## Pull request previews
+
+Every pull request opened from a branch of this repository is published on GitHub Pages at
+`https://sylvaindeloux.github.io/survival-shelf/pr-preview/pr-<number>/`: a comment in the pull request gives the
+link once it is online. Each push updates it, and it is removed when the pull request is closed or merged. A
+preview keeps its own data in the browser, apart from the main online copy and the other previews, and runs
+without a service worker (no offline mode, every reload shows the last push). Pull requests from forks and from
+Dependabot get no preview: build them locally with `npm run build:all` and `npm run preview`.
+
+The site is published from the `gh-pages` branch by `.github/workflows/deploy.yml`, which keeps the previews in
+`pr-preview/`. That branch is generated: never edit it by hand.
+
 ## AI-assisted contributions
 
 Contributions written with an AI agent are welcome, and you do not have to say so. We recommend that you

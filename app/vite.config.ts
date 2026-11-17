@@ -26,6 +26,16 @@ function appVersion(): string {
 }
 const BACKGROUND_COLOR = '#ebeadf';
 
+/**
+ * Number of the pull request when building its preview (`PR_PREVIEW`, set by .github/workflows/preview.yml),
+ * empty for every other build. Previews are served from `pr-preview/pr-<number>/` on the same site.
+ */
+function previewNumber(): string {
+  const value = process.env.PR_PREVIEW ?? '';
+  if (value !== '' && !/^\d+$/.test(value)) throw new Error(`PR_PREVIEW must be a pull request number, not "${value}"`);
+  return value;
+}
+
 export default defineConfig(({ mode }) => {
   // `--mode single` builds one self-contained HTML file (no service worker).
   const single = mode === 'single';
@@ -34,6 +44,7 @@ export default defineConfig(({ mode }) => {
     base: './',
     define: {
       __APP_VERSION__: JSON.stringify(appVersion()),
+      __PREVIEW__: JSON.stringify(previewNumber()),
     },
     publicDir: single ? false : 'public',
     plugins: [
@@ -71,6 +82,8 @@ export default defineConfig(({ mode }) => {
             workbox: {
               globPatterns: ['**/*.{js,css,html,svg,png,woff2,webmanifest}'],
               navigateFallback: 'index.html',
+              // Pull request previews live in sub-folders of the site: let them load their own page.
+              navigateFallbackDenylist: [/\/pr-preview\//],
             },
           }),
     ],

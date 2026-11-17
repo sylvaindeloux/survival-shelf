@@ -1,6 +1,7 @@
 import { KINDS } from '../core/categories';
 import { formatDay, parseDay, type Day } from '../core/dates';
 import type { Kind, LogAction } from '../core/types';
+import { STORAGE_PREFIX } from '../storage/prefix';
 
 export type Route = 'home' | 'checkin' | 'stock' | 'emergency' | 'guides' | 'settings';
 const ROUTES: Route[] = ['home', 'checkin', 'stock', 'emergency', 'guides', 'settings'];
@@ -87,7 +88,7 @@ export function kindOfPath(path: string): Kind | null {
 }
 
 export type Theme = 'auto' | 'light' | 'dark';
-const THEME_KEY = 'survival-shelf:theme';
+const THEME_KEY = `${STORAGE_PREFIX}:theme`;
 
 function readTheme(): Theme {
   try {
@@ -99,7 +100,7 @@ function readTheme(): Theme {
   return 'auto';
 }
 
-const ONLINE_WARNING_KEY = 'survival-shelf:online-warning-until';
+const ONLINE_WARNING_KEY = `${STORAGE_PREFIX}:online-warning-until`;
 
 function readOnlineWarningUntil(): Day | null {
   try {
@@ -109,7 +110,7 @@ function readOnlineWarningUntil(): Day | null {
   }
 }
 
-const CRISIS_KEY = 'survival-shelf:crisis-since';
+const CRISIS_KEY = `${STORAGE_PREFIX}:crisis-since`;
 
 function readCrisisSince(): number | null {
   try {

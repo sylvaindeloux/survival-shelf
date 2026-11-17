@@ -44,7 +44,8 @@ guides/                Practical guides in plain Markdown: <lang>/README.md (tab
                        app) and <lang>/<theme>/<guide>.md. Rules and template: guides/CONTRIBUTING.md
 ```
 
-Generated, never edit by hand: `app/dist/`, `app/dist-single/`, `package-lock.json` (use npm).
+Generated, never edit by hand: `app/dist/`, `app/dist-single/`, `package-lock.json` (use npm), the `gh-pages`
+branch (the published site and the pull request previews).
 
 ## Rules you must follow
 
@@ -97,5 +98,8 @@ Generated, never edit by hand: `app/dist/`, `app/dist-single/`, `package-lock.js
 - TypeScript stays on 6.x: svelte-check 4 does not support TypeScript 7 yet.
 - The `overrides` entry for `glob` in the root `package.json` is a security fix for `workbox-build`: keep it
   until workbox-build depends on a patched glob.
+- Each pull request from a branch of this repository is published at
+  `https://sylvaindeloux.github.io/survival-shelf/pr-preview/pr-<number>/` (`.github/workflows/preview.yml`). A
+  preview build (`PR_PREVIEW` set) has its own browser storage and no service worker: keep it that way.
 - The app version is computed from the git history (`git rev-list --count --first-parent HEAD`): do not add a
   `version` field, tags or semantic versioning.

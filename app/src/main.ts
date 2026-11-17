@@ -7,8 +7,9 @@ import { t } from './lib/i18n/index.svelte';
 
 mount(App, { target: document.getElementById('app')! });
 
-// Service workers do not run from file:// (single-file build opened from a disk).
-if (location.protocol !== 'file:' && 'serviceWorker' in navigator) {
+// Service workers do not run from file:// (single-file build opened from a disk). Pull request previews do
+// without one: each push shows on the next reload, and nothing stays cached once the preview is removed.
+if (!__PREVIEW__ && location.protocol !== 'file:' && 'serviceWorker' in navigator) {
   const updateServiceWorker = registerSW({
     onNeedRefresh() {
       app.toast(t('pwa.update'), 'info', { label: t('pwa.reload'), run: () => void updateServiceWorker(true) }, true);

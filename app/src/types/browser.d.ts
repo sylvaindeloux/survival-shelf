@@ -29,3 +29,5 @@ interface Window {
 }
 
 declare const __APP_VERSION__: string;
+/** Number of the pull request this build previews, empty for every other build. */
+declare const __PREVIEW__: string;

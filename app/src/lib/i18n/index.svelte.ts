@@ -1,5 +1,6 @@
 import { formatDay, parseDay, type Day } from '../core/dates';
 import { inLang, LANGS, type Lang, type Translated } from '../core/languages';
+import { STORAGE_PREFIX } from '../storage/prefix';
 import { DICTIONARIES } from './dictionaries';
 import { en } from './en';
 
@@ -8,7 +9,7 @@ export { LANGS, type Lang };
 export type LangPreference = Lang | 'auto';
 type PluralKey = { [K in MessageKey]: K extends `${infer Base}_one` ? Base : never }[MessageKey];
 
-const PREF_KEY = 'survival-shelf:lang';
+const PREF_KEY = `${STORAGE_PREFIX}:lang`;
 
 function browserLang(): Lang {
   const languages = typeof navigator === 'undefined' ? [] : navigator.languages ?? [navigator.language];

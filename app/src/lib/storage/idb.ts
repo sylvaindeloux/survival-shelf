@@ -3,7 +3,9 @@
  * localStorage) because file handles can only be persisted there.
  * Falls back to memory when IndexedDB is unavailable (some private modes).
  */
-const DB_NAME = 'survival-shelf';
+import { STORAGE_PREFIX } from './prefix';
+
+const DB_NAME = STORAGE_PREFIX;
 const STORE = 'kv';
 
 let dbPromise: Promise<IDBDatabase> | null = null;

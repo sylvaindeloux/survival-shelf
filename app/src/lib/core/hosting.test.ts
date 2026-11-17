@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { dayFromParts } from './dates';
-import { isPublicCopy, ONLINE_WARNING_SNOOZE_DAYS, showOnlineWarning } from './hosting';
+import { isPublicCopy, ONLINE_WARNING_SNOOZE_DAYS, showOnlineWarning, storagePrefix } from './hosting';
 
 describe('hosting', () => {
   it('recognizes the public copy on GitHub Pages, forks included', () => {
@@ -22,5 +22,11 @@ describe('hosting', () => {
     expect(showOnlineWarning(host, today + ONLINE_WARNING_SNOOZE_DAYS, today)).toBe(false);
     expect(showOnlineWarning(host, today, today)).toBe(true);
     expect(showOnlineWarning('localhost', null, today)).toBe(false);
+  });
+
+  it('keeps the storage names of the main copy, and gives each pull request preview its own', () => {
+    expect(storagePrefix('')).toBe('survival-shelf');
+    expect(storagePrefix('47')).toBe('survival-shelf-preview-47');
+    expect(storagePrefix('48')).not.toBe(storagePrefix('47'));
   });
 });

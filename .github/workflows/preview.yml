@@ -1,0 +1,95 @@
+# Publishes each pull request on GitHub Pages, in pr-preview/pr-<number>/ next to the main copy, and posts
+# the link in the pull request. The preview is removed when the pull request is closed or merged.
+# Previews keep their own browser storage and run without a service worker (see storagePrefix in
+# app/src/lib/core/hosting.ts and app/src/main.ts), so they never touch the main copy's data.
+#
+# Only pull requests from branches of this repository get a preview: those from forks and from Dependabot
+# run with a read-only token. CI still builds and tests them.
+name: Preview
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: read
+
+# One run at a time per pull request; a new push or closing it replaces the run in progress.
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  # Runs the code of the pull request, so it only gets a read-only token.
+  build:
+    if: >-
+      github.event.action != 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.user.login != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          # Full history: the app version is the number of commits on master (see vite.config.ts).
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 26
+          cache: npm
+      - run: npm ci
+      - run: npm run build:all
+        env:
+          PR_PREVIEW: ${{ github.event.pull_request.number }}
+      - uses: actions/upload-artifact@v7
+        with:
+          name: preview
+          path: app/dist
+          retention-days: 1
+
+  # Writes to the gh-pages branch, without running any code of the pull request.
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # push the preview to the gh-pages branch
+      pull-requests: write # post the link in the pull request
+      pages: read # wait for GitHub Pages to publish it before posting the link
+    steps:
+      # The deploy action needs a git repository to work in: the default branch, not the pull request.
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/download-artifact@v8
+        with:
+          name: preview
+          path: ${{ runner.temp }}/preview
+      - uses: rossjrw/pr-preview-action@873417d2df72380da1f3978378fb58560bcde976 # v1.8.2
+        with:
+          source-dir: ${{ runner.temp }}/preview
+          wait-for-pages-deployment: true
+          # The QR code would be drawn by a third-party service.
+          qr-code: false
+          git-config-name: github-actions[bot]
+          git-config-email: 41898282+github-actions[bot]@users.noreply.github.com
+
+  remove:
+    if: >-
+      github.event.action == 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.user.login != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # remove the preview from the gh-pages branch
+      pull-requests: write # say so in the pull request
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: rossjrw/pr-preview-action@873417d2df72380da1f3978378fb58560bcde976 # v1.8.2
+        with:
+          qr-code: false
+          git-config-name: github-actions[bot]
+          git-config-email: 41898282+github-actions[bot]@users.noreply.github.com
