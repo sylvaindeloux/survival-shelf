@@ -195,6 +195,15 @@ export function wholeDays(days: number): string {
   return Number.isFinite(days) ? formatNumber(Math.floor(days), 0) : '∞';
 }
 
+/** "2 years", "18 months" or "No date", then the catalog's detail: "1 year, semi-skimmed: 18 months". */
+export function shelfLifeText(entry: CatalogItem): string {
+  const months = entry.shelfLife;
+  const format = (value: number, unit: 'month' | 'year') =>
+    new Intl.NumberFormat(i18n.lang, { style: 'unit', unit, unitDisplay: 'long' }).format(value);
+  const duration = months === null ? t('setup.noExpiry') : months % 12 === 0 ? format(months / 12, 'year') : format(months, 'month');
+  return entry.keeps ? `${duration}, ${inLang(entry.keeps, i18n.lang)}` : duration;
+}
+
 /** How long a catalog product usually keeps, and its upkeep when there is something to do. */
 export function keepsText(entry: CatalogItem): string {
   const keeps = entry.shelfLife === null ? t('keeps.never') : t('keeps.months', { months: entry.shelfLife });
