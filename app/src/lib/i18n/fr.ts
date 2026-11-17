@@ -52,8 +52,8 @@ export const fr: Record<keyof typeof en, string> = {
   'welcome.guides': 'Lire les fiches pratiques',
 
   'home.title': 'Accueil',
-  'home.household_one': 'foyer de {count} personne',
-  'home.household_other': 'foyer de {count} personnes',
+  'home.household_one': 'Foyer de {count} personne',
+  'home.household_other': 'Foyer de {count} personnes',
   'home.stayTitle': 'Tenir chez moi',
   'home.leaveTitle': 'Partir vite',
   'home.meetTitle': 'Se retrouver',

@@ -51,8 +51,8 @@ export const en = {
   'welcome.guides': 'Read the practical guides',
 
   'home.title': 'Overview',
-  'home.household_one': 'household of {count} person',
-  'home.household_other': 'household of {count} people',
+  'home.household_one': 'Household of {count} person',
+  'home.household_other': 'Household of {count} people',
   'home.stayTitle': 'Hold out at home',
   'home.leaveTitle': 'Leave in a hurry',
   'home.meetTitle': 'Find each other',
