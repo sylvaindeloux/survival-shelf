@@ -60,19 +60,22 @@ Generated, never edit by hand: `app/dist/`, `app/dist-single/`, `package-lock.js
 5. **English and French always complete.** A new message goes in `en.ts` and `fr.ts`, a new data file label
    (`Translated`) gets `en` and `fr`. Other languages may lag behind: missing texts fall back to English, do
    not machine-translate them unless asked. User docs and practical guides exist in English and French.
-   French addresses the reader with "tu". Languages are declared in `app/src/lib/core/languages.ts`: never
-   test a language code (`lang === 'fr'`), add a property to `LANGUAGES` instead. Adding a language:
-   `.github/TRANSLATING.md`.
-6. **Never invent facts.** Shelf lives, amounts, calories, water needs and guide advice come from reliable
+   Languages are declared in `app/src/lib/core/languages.ts`: never test a language code (`lang === 'fr'`),
+   add a property to `LANGUAGES` instead. Adding a language: `.github/TRANSLATING.md`.
+6. **A tone people can rely on.** Calm, plain and precise, never casual: people may read it in a crisis.
+   French says "vous", never "tu", in the app, the data file, the docs and the guides; buttons, titles and
+   menus use the infinitive or a noun (`Ajouter`, `Réglages`), and the app is "l'application", not
+   "l'appli".
+7. **Never invent facts.** Shelf lives, amounts, calories, water needs and guide advice come from reliable
    sources cited next to them (see `docs/SHELF_LIFE.md`). If you cannot find a source, say so and leave a
    question for the human instead of guessing. Never make up a URL.
-7. **Logic goes in `app/src/lib/core`**, as plain TypeScript without UI, with tests.
-8. **Dependencies:** as few as possible, stable releases only (no alpha, beta or rc), no known vulnerability.
+8. **Logic goes in `app/src/lib/core`**, as plain TypeScript without UI, with tests.
+9. **Dependencies:** as few as possible, stable releases only (no alpha, beta or rc), no known vulnerability.
    Do not add or upgrade a dependency to a new major version without the human's agreement.
-9. **Design:** reuse the tokens in `app/src/app.css`, keep text contrast at WCAG AA, check light and dark
-   themes and phone and desktop layouts. No CSS framework; icons come from `@lucide/svelte`.
-10. **English in the code:** identifiers, comments, commit messages and pull requests. Comments explain why.
-11. **Follow the surrounding style:** 2-space indent, single quotes, semicolons, small focused functions.
+10. **Design:** reuse the tokens in `app/src/app.css`, keep text contrast at WCAG AA, check light and dark
+    themes and phone and desktop layouts. No CSS framework; icons come from `@lucide/svelte`.
+11. **English in the code:** identifiers, comments, commit messages and pull requests. Comments explain why.
+12. **Follow the surrounding style:** 2-space indent, single quotes, semicolons, small focused functions.
     Do not reformat or rename code you are not changing.
 
 ## How to work

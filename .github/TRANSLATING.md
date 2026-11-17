@@ -67,8 +67,8 @@ and add it to `DICTIONARIES` in `app/src/lib/i18n/dictionaries.ts`. Then copy th
   both. The app picks `_one` when your language's grammar says "one", `_other` otherwise. If your language
   has more plural forms (Polish, Czech, Russian…), `_other` is used for all of them for now: tell us in the
   issue.
-- **Tone:** short, calm and practical. Talk to the reader informally where your language makes the
-  difference (like the French "tu").
+- **Tone:** short, calm and practical, never casual: people may read it in a crisis and must trust it. Where
+  your language makes the difference, address the reader formally (like the French "vous", never "tu").
 - **Length:** phone screens are narrow (390 px). Prefer short words for buttons and tabs, and check them in
   the app.
 

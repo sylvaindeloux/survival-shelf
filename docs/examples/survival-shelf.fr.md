@@ -1,7 +1,7 @@
 # Survival Shelf
 
 > Fichier de données de [Survival Shelf](https://github.com/sylvaindeloux/survival-shelf).
-> Tu peux le modifier avec n'importe quel éditeur de texte : garde les titres `## Section` et les lignes d'en-tête des tableaux.
+> Vous pouvez le modifier avec n'importe quel éditeur de texte : gardez les titres `## Section` et les lignes d'en-tête des tableaux.
 > Les dates s'écrivent `AAAA-MM-JJ`, ou `AAAA-MM` pour « fin de ce mois ». Les décimales prennent une virgule.
 > Syntaxe complète : https://github.com/sylvaindeloux/survival-shelf/blob/master/docs/FILE_FORMAT.fr.md
 
@@ -23,25 +23,25 @@
 
 ## Infos d’urgence
 
-<!-- Le plan du foyer, une ligne par info. Rubrique : numéro d’urgence, contact éloigné, contact, rendez-vous, qui fait quoi, couper ou santé. Écris SMS devant un numéro qui ne prend que les SMS. -->
+<!-- Le plan du foyer, une ligne par info. Rubrique : numéro d’urgence, contact éloigné, contact, rendez-vous, qui fait quoi, couper ou santé. Écrivez SMS devant un numéro qui ne prend que les SMS. -->
 
-| Rubrique         | Nom                 | Détail                                                  | Téléphone      |
-|------------------|---------------------|---------------------------------------------------------|----------------|
-| Numéro d’urgence | Urgences            | toutes les urgences, partout dans l’UE                  | 112            |
-| Numéro d’urgence | Samu                | urgence médicale                                        | 15             |
-| Numéro d’urgence | Police              | police ou gendarmerie                                   | 17             |
-| Numéro d’urgence | Pompiers            | incendie, accident, personne en péril                   | 18             |
-| Numéro d’urgence | Par SMS             | sourds ou malentendants, ou quand tu ne peux pas parler | SMS 114        |
-| Contact éloigné  | Claire, sœur d’Alex | à Lyon                                                  | 06 00 00 00 00 |
-| Contact          | Dr Martin           | médecin traitant                                        | 01 00 00 00 00 |
-| Rendez-vous      | Devant chez nous    | le portail, côté rue                                    |                |
-| Rendez-vous      | Hors du quartier    |                                                         |                |
-| Qui fait quoi    | Alex                | prend les sacs, coupe le gaz                            |                |
-| Qui fait quoi    | Sam                 | suit la radio, prévient la voisine                      |                |
-| Couper           | Gaz                 | robinet sous l’évier                                    |                |
-| Couper           | Eau                 | compteur au garage                                      |                |
-| Couper           | Électricité         | tableau dans l’entrée                                   |                |
-| Santé            | Alex                | allergique à la pénicilline                             |                |
+| Rubrique         | Nom                 | Détail                                                      | Téléphone      |
+|------------------|---------------------|-------------------------------------------------------------|----------------|
+| Numéro d’urgence | Urgences            | toutes les urgences, partout dans l’UE                      | 112            |
+| Numéro d’urgence | Samu                | urgence médicale                                            | 15             |
+| Numéro d’urgence | Police              | police ou gendarmerie                                       | 17             |
+| Numéro d’urgence | Pompiers            | incendie, accident, personne en péril                       | 18             |
+| Numéro d’urgence | Par SMS             | sourds ou malentendants, ou quand vous ne pouvez pas parler | SMS 114        |
+| Contact éloigné  | Claire, sœur d’Alex | à Lyon                                                      | 06 00 00 00 00 |
+| Contact          | Dr Martin           | médecin traitant                                            | 01 00 00 00 00 |
+| Rendez-vous      | Devant chez nous    | le portail, côté rue                                        |                |
+| Rendez-vous      | Hors du quartier    |                                                             |                |
+| Qui fait quoi    | Alex                | prend les sacs, coupe le gaz                                |                |
+| Qui fait quoi    | Sam                 | suit la radio, prévient la voisine                          |                |
+| Couper           | Gaz                 | robinet sous l’évier                                        |                |
+| Couper           | Eau                 | compteur au garage                                          |                |
+| Couper           | Électricité         | tableau dans l’entrée                                       |                |
+| Santé            | Alex                | allergique à la pénicilline                                 |                |
 
 ## Sacs
 

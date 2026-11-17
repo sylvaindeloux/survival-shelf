@@ -134,7 +134,7 @@ export const COUNTRY_NUMBERS: CountryNumbers[] = [
         name: { en: 'By text', fr: 'Par SMS' },
         details: {
           en: 'deaf or hard of hearing, or when you cannot speak',
-          fr: 'sourds ou malentendants, ou quand tu ne peux pas parler',
+          fr: 'sourds ou malentendants, ou quand vous ne pouvez pas parler',
         },
       },
     ],

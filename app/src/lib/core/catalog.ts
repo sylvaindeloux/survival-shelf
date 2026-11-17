@@ -149,7 +149,7 @@ export const CATALOG: CatalogItem[] = [
   item('can-opener', { en: 'Manual can opener', fr: 'Ouvre-boîte manuel' }, 'tools', UNIT, { target: 1, per: 'household', starter: true }),
   item('multitool', { en: 'Multi-tool knife', fr: 'Couteau multifonction' }, 'tools', UNIT, { target: 1, per: 'household', starter: true }),
   item('survival-blanket', { en: 'Survival blanket', fr: 'Couverture de survie' }, 'tools', UNIT, { target: 1, starter: true }),
-  item('jerrycan', { en: 'Jerrycan 20 L (empty)', fr: 'Jerrican 20 L (vide)' }, 'tools', UNIT, { target: 1, per: 'household', advice: { en: 'Water you fill it with yourself is renewed every 6 months.', fr: 'L’eau que tu y mets toi-même se renouvelle tous les 6 mois.' } }),
+  item('jerrycan', { en: 'Jerrycan 20 L (empty)', fr: 'Jerrican 20 L (vide)' }, 'tools', UNIT, { target: 1, per: 'household', advice: { en: 'Water you fill it with yourself is renewed every 6 months.', fr: 'L’eau que vous y mettez vous-même se renouvelle tous les 6 mois.' } }),
   item('power-bank', { en: 'Power bank', fr: 'Batterie externe' }, 'energy', UNIT, { kind: 'gear', target: 1, per: 'household', advice: { en: 'Recharge it every 3 months and store it about half charged.', fr: 'À recharger tous les 3 mois, et à stocker à moitié chargée.' } }),
 ];
 

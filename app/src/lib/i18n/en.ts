@@ -45,7 +45,7 @@ export const en = {
   'welcome.openTitle': 'I already have a file',
   'welcome.openText': 'Open your survival-shelf.md file: changes will be saved into it automatically.',
   'welcome.importText': 'Import your survival-shelf.md file. Remember to export it again after your changes.',
-  'welcome.demoTitle': 'Just looking',
+  'welcome.demoTitle': 'Look around first',
   'welcome.demoText': 'Explore the app with a sample stock. Nothing is saved to a file.',
   'welcome.demo': 'Try with sample data',
   'welcome.guides': 'Read the practical guides',
@@ -169,7 +169,7 @@ export const en = {
   'checkin.liters': 'for {liters}',
   'checkin.bought': 'Bought',
   'checkin.drinkingWater': 'Drinking water',
-  'checkin.noWaterProduct': 'Bottles, cans: whatever suits you',
+  'checkin.noWaterProduct': 'Bottles or cans, as you prefer',
   'checkin.waterTreatment': 'Water treatment',
   'checkin.treatmentHint': 'Filter or tablets able to make this much water drinkable',
   'checkin.foodShort':
@@ -393,8 +393,8 @@ export const en = {
   'banner.overwrite': 'Overwrite the file',
   'banner.error': 'Cannot reach {name}: {message}',
   'banner.retry': 'Retry',
-  'banner.backup': 'Your data only lives in this browser. Export it from time to time to keep it safe.',
-  'banner.backupLink': 'Your data only lives in this browser. Save it to a file to keep it safe.',
+  'banner.backup': 'Your data is only stored in this browser. Export it from time to time to keep it safe.',
+  'banner.backupLink': 'Your data is only stored in this browser. Save it to a file to keep it safe.',
 
   'conflict.title': 'The file changed in two places',
   'conflict.text':
@@ -582,7 +582,7 @@ export const en = {
   'pwa.offlineReady': 'Ready to work offline',
 
   'online.text':
-    'Online version: great to try the app, but it depends on internet and GitHub. To be sure to have it when something goes wrong, keep your own copy at home.',
+    'Online version: good for trying the app, but it depends on internet and GitHub. To be sure to have it when something goes wrong, keep your own copy at home.',
   'online.getCopy': 'Download my copy',
   'online.why': 'Why?',
   'online.later': 'Later',
