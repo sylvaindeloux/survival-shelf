@@ -124,9 +124,7 @@
 {/snippet}
 
 <div class="stack">
-  <header>
-    <h1>{t('settings.title')}</h1>
-  </header>
+  <h1 class="visually-hidden">{t('settings.title')}</h1>
 
   <section class="card stack">
     <h2>{t('settings.household')}</h2>

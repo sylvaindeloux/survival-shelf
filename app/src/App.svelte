@@ -120,7 +120,7 @@
             </a>
           {/each}
         </nav>
-        <a class="gear" href="#/settings" title={t('nav.settings')} aria-label={t('nav.settings')} aria-current={router.route === 'settings' ? 'page' : undefined}>
+        <a class="tab gear" href="#/settings" title={t('nav.settings')} aria-label={t('nav.settings')} aria-current={router.route === 'settings' ? 'page' : undefined}>
           <SettingsIcon size={24} />
         </a>
       </div>
@@ -196,26 +196,10 @@
     padding: 6px 6px 6px 1rem;
   }
 
+  /* The settings are a tab without a label, in the corner. */
   .gear {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     flex: none;
-    width: 44px;
-    height: 44px;
     margin-left: auto;
-    border-radius: var(--radius-sm);
-    color: var(--muted);
-  }
-
-  .gear:hover {
-    background: var(--surface-2);
-    color: var(--text);
-  }
-
-  .gear[aria-current='page'] {
-    background: var(--primary-soft);
-    color: var(--primary);
   }
 
   /* Crisis mode: a red bar that says so, with the way out. */
@@ -265,7 +249,7 @@
   @media (max-width: 719px) {
     .topbar.crisis {
       background: var(--danger);
-      border-bottom: none;
+      box-shadow: none;
     }
 
     .topbar.crisis .topbar-inner {
@@ -338,6 +322,28 @@
     text-align: center;
   }
 
+  /* Phones: the gear fills the corner of the top bar from edge to edge, as a bottom tab fills its cell, and
+     the open one has its bar on the edge that touches the page. The header line is drawn inside the bar,
+     from the same edge as that olive bar, which covers it exactly: a border would be rounded by the browser
+     and show around it. */
+  @media (max-width: 719px) {
+    .topbar {
+      border-bottom: none;
+      box-shadow: inset 0 -1.5px 0 var(--border);
+    }
+
+    .gear {
+      width: 56px;
+      height: 56px;
+      /* Over the padding of the top bar, which keeps its height, and the icon its place. */
+      margin: -6px -6px -6px auto;
+    }
+
+    .gear[aria-current='page'] {
+      box-shadow: inset 0 -3px 0 var(--primary);
+    }
+  }
+
   /* Reading the guides before starting: a plain page with a way back. */
   .guest-bar {
     display: flex;
@@ -368,8 +374,7 @@
       gap: 1.25rem;
     }
 
-    .brand,
-    .gear {
+    .brand {
       align-self: center;
     }
 
