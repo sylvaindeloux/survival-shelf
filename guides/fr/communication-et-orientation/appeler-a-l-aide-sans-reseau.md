@@ -1,65 +1,65 @@
 # Appeler à l’aide sans réseau
 
-> **En bref** : compose quand même le 112 : il passe par le réseau de n’importe quel opérateur disponible. Si rien ne passe, gagne un point haut ou dégagé, ou envoie quelqu’un chercher de l’aide. Sinon, reste où tu es et rends-toi visible et audible : sifflet ou lampe par séries régulières, tissu de couleur vive, grandes lettres au sol, fumée le jour, feu la nuit.
+> **En bref** : composez quand même le 112 : il passe par le réseau de n’importe quel opérateur disponible. Si rien ne passe, gagnez un point haut ou dégagé, ou envoyez quelqu’un chercher de l’aide. Sinon, restez où vous êtes et rendez-vous visible et audible : sifflet ou lampe par séries régulières, tissu de couleur vive, grandes lettres au sol, fumée le jour, feu la nuit.
 
 ## Quand s’en servir
 
 - Accident, blessure ou panne dans un endroit sans couverture mobile : montagne, forêt, route isolée, mer.
 - Réseau tombé après une catastrophe.
-- Tu es coincé (décombres, véhicule, pièce) et personne ne sait où tu es.
+- Vous êtes coincé (décombres, véhicule, pièce) et personne ne sait où vous êtes.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un sifflet : il porte plus loin que la voix et fatigue moins.
 - Une lampe, un miroir ou un objet brillant.
 - Un tissu ou un vêtement de couleur vive, une couverture de survie.
-- En zone isolée : une balise de détresse personnelle, enregistrée à ton nom.
+- En zone isolée : une balise de détresse personnelle, enregistrée à votre nom.
 
 ## Étapes
 
 ### Essayer encore de téléphoner
 
-1. **Compose le 112.** Même si ton opérateur n’a pas de réseau à cet endroit, l’appel d’urgence passe par celui d’un autre. Si aucun opérateur ne couvre la zone, l’appel ne passera pas.
-2. **Envoie aussi un SMS au 114**, avec le lieu précis et ce qui se passe : un message écrit passe parfois quand la voix ne passe pas.
-3. **Déplace-toi** vers un point plus haut ou plus dégagé, si tu peux le faire sans danger, et réessaie.
-4. **Si vous êtes plusieurs**, envoie quelqu’un chercher de l’aide, avec le lieu exact, le nombre de personnes et leur état écrits sur un papier. Ne laisse pas un blessé seul si tu peux l’éviter.
-5. **En ville, va directement** au commissariat, à la gendarmerie, à la caserne de pompiers ou à l’hôpital le plus proche, si c’est possible sans danger.
+1. **Composez le 112.** Même si votre opérateur n’a pas de réseau à cet endroit, l’appel d’urgence passe par celui d’un autre. Si aucun opérateur ne couvre la zone, l’appel ne passera pas.
+2. **Envoyez aussi un SMS au 114**, avec le lieu précis et ce qui se passe : un message écrit passe parfois quand la voix ne passe pas.
+3. **Déplacez-vous** vers un point plus haut ou plus dégagé, si vous pouvez le faire sans danger, et réessayez.
+4. **Si vous êtes plusieurs**, envoyez quelqu’un chercher de l’aide, avec le lieu exact, le nombre de personnes et leur état écrits sur un papier. Ne laissez pas un blessé seul si vous pouvez l’éviter.
+5. **En ville, allez directement** au commissariat, à la gendarmerie, à la caserne de pompiers ou à l’hôpital le plus proche, si c’est possible sans danger.
 
 ### Se faire repérer
 
-1. **Reste sur place** une fois l’alerte donnée ou si quelqu’un connaît ton itinéraire : on te cherchera là. Reste près de ton véhicule, bien plus facile à voir qu’une personne.
-2. **Fais du bruit par séries régulières** : six coups de sifflet à la suite, répétés toutes les minutes, c’est le signal de détresse des secours en montagne britanniques ; aux États-Unis, c’est la série de trois. Dans les deux cas, un signal qui se répète veut dire « au secours ». Continue jusqu’à ce qu’on arrive à toi.
-3. **La nuit**, fais la même chose avec une lampe.
-4. **Le jour, renvoie le soleil** avec un miroir ou n’importe quel objet brillant, en visant l’avion, l’hélicoptère ou les personnes au loin.
-5. **Marque le sol** dans un endroit dégagé : les lettres SOS, hautes d’au moins 3,50 mètres, faites de pierres, de branches ou de vêtements qui tranchent sur le sol, ou tracées dans la neige ou le sable. Des lignes droites et des angles nets se voient mieux d’en haut.
-6. **Fais de la fumée le jour, du feu la nuit**, si tu peux le faire sans risque d’incendie : de la végétation verte sur un feu donne une fumée épaisse.
-7. **Accroche un tissu de couleur vive** en hauteur, ou agite-le au bout d’un bâton.
+1. **Restez sur place** une fois l’alerte donnée ou si quelqu’un connaît votre itinéraire : on vous cherchera là. Restez près de votre véhicule, bien plus facile à voir qu’une personne.
+2. **Faites du bruit par séries régulières** : six coups de sifflet à la suite, répétés toutes les minutes, c’est le signal de détresse des secours en montagne britanniques ; aux États-Unis, c’est la série de trois. Dans les deux cas, un signal qui se répète veut dire « au secours ». Continuez jusqu’à ce qu’on arrive à vous.
+3. **La nuit**, faites la même chose avec une lampe.
+4. **Le jour, renvoyez le soleil** avec un miroir ou n’importe quel objet brillant, en visant l’avion, l’hélicoptère ou les personnes au loin.
+5. **Marquez le sol** dans un endroit dégagé : les lettres SOS, hautes d’au moins 3,50 mètres, faites de pierres, de branches ou de vêtements qui tranchent sur le sol, ou tracées dans la neige ou le sable. Des lignes droites et des angles nets se voient mieux d’en haut.
+6. **Faites de la fumée le jour, du feu la nuit**, si vous pouvez le faire sans risque d’incendie : de la végétation verte sur un feu donne une fumée épaisse.
+7. **Accrochez un tissu de couleur vive** en hauteur, ou agitez-le au bout d’un bâton.
 
 ### À l’arrivée d’un hélicoptère
 
-1. **Lève les deux bras en V** : cela veut dire « oui, j’ai besoin d’aide ». Un bras levé et l’autre baissé veut dire « non ».
-2. **Range tout ce qui peut s’envoler** et tiens-toi à distance d’un espace plat et dégagé d’environ 45 mètres de large.
-3. **N’approche pas** avant que l’équipage te le demande, et toujours par l’avant ou le côté, jamais par l’arrière.
+1. **Levez les deux bras en V** : cela veut dire « oui, j’ai besoin d’aide ». Un bras levé et l’autre baissé veut dire « non ».
+2. **Rangez tout ce qui peut s’envoler** et tenez-vous à distance d’un espace plat et dégagé d’environ 45 mètres de large.
+3. **N’approchez pas** avant que l’équipage vous le demande, et toujours par l’avant ou le côté, jamais par l’arrière.
 
 ## À ne jamais faire
 
 - Partir seul à la recherche de secours, de nuit, dans le brouillard ou épuisé.
-- Te déplacer après avoir donné ta position aux secours.
+- Vous déplacer après avoir donné votre position aux secours.
 - Crier jusqu’à l’épuisement : le sifflet ou des coups frappés portent mieux.
 - Allumer un feu de signalisation par temps sec ou venteux, près de la végétation.
 - Déclencher une balise de détresse sans danger réel : elle mobilise des secours pour rien.
 
 ## Sans matériel
 
-- **Coincé sous des décombres ou dans une pièce** : frappe sur un tuyau ou un mur par séries de trois coups, toutes les une à deux minutes, puis écoute.
+- **Coincé sous des décombres ou dans une pièce** : frappez sur un tuyau ou un mur par séries de trois coups, toutes les une à deux minutes, puis écoutez.
 - **En voiture** : trois coups de klaxon, trois appels de phares, un tissu vif à l’antenne ou à la vitre, le capot relevé.
-- **À découvert** : agite les deux bras au-dessus de la tête.
+- **À découvert** : agitez les deux bras au-dessus de la tête.
 
 ## Selon l’endroit
 
-- **En montagne ou en forêt** : avant de partir, dis à quelqu’un où tu vas et quand tu rentres. Sans réseau, c’est cette personne qui donnera l’alerte.
+- **En montagne ou en forêt** : avant de partir, dites à quelqu’un où vous allez et quand vous rentrez. Sans réseau, c’est cette personne qui donnera l’alerte.
 - **En mer** : canal 16 de la radio VHF.
-- **Une fois en ligne**, dis : ce qui s’est passé, le nombre de victimes et leur état, le lieu exact (altitude, itinéraire), le temps qu’il fait sur place, ton nom et ton numéro.
+- **Une fois en ligne**, dites : ce qui s’est passé, le nombre de victimes et leur état, le lieu exact (altitude, itinéraire), le temps qu’il fait sur place, votre nom et votre numéro.
 
 ## Voir aussi
 

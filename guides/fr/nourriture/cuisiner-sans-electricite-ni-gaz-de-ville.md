@@ -1,13 +1,13 @@
 # Cuisiner sans électricité ni gaz de ville
 
-> **En bref** : mange d’abord ce qui ne demande pas de cuisson. Pour chauffer un repas à l’intérieur, il reste la cuisinière à gaz en bouteille, la cheminée ou le poêle à bois, et le réchaud à fondue. Réchaud de camping, barbecue et brasero s’utilisent dehors uniquement : à l’intérieur, leur monoxyde de carbone tue.
+> **En bref** : mangez d’abord ce qui ne demande pas de cuisson. Pour chauffer un repas à l’intérieur, il reste la cuisinière à gaz en bouteille, la cheminée ou le poêle à bois, et le réchaud à fondue. Réchaud de camping, barbecue et brasero s’utilisent dehors uniquement : à l’intérieur, leur monoxyde de carbone tue.
 
 ## Quand s’en servir
 
 - Coupure de courant ou de gaz qui dure : plaques, four et micro-ondes ne marchent plus.
 - Avant la crise, pour choisir un moyen de cuisson de secours et le combustible qui va avec.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un moyen de cuisson de secours et son combustible : bouteille de gaz pour la cuisinière, bois sec, réchaud à fondue, réchaud de camping avec ses cartouches.
 - Des allumettes ou un briquet.
@@ -16,36 +16,36 @@
 
 ## Étapes
 
-1. **Commence par manger froid.** Les conserves du commerce se mangent telles quelles, sans être réchauffées (voir [Manger sans cuisson](manger-sans-cuisson.md)). Garde le combustible pour ce qui doit vraiment cuire ou bouillir.
-2. **Choisis le moyen le plus sûr que tu as** :
-   - **Cuisinière à gaz en bouteille** : elle marche sans courant. Si l’allumage est électrique, allume le brûleur avec une allumette. Elle sert à cuisiner, jamais à chauffer la pièce.
-   - **Cheminée ou poêle à bois** en bon état, au conduit entretenu : pose la casserole sur le poêle ou près des braises.
-   - **Réchaud à fondue ou chauffe-plat** : il suffit pour réchauffer une conserve ou une soupe. Pose-le sur une surface stable qui ne brûle pas.
+1. **Commencez par manger froid.** Les conserves du commerce se mangent telles quelles, sans être réchauffées (voir [Manger sans cuisson](manger-sans-cuisson.md)). Gardez le combustible pour ce qui doit vraiment cuire ou bouillir.
+2. **Choisissez le moyen le plus sûr que vous avez** :
+   - **Cuisinière à gaz en bouteille** : elle marche sans courant. Si l’allumage est électrique, allumez le brûleur avec une allumette. Elle sert à cuisiner, jamais à chauffer la pièce.
+   - **Cheminée ou poêle à bois** en bon état, au conduit entretenu : posez la casserole sur le poêle ou près des braises.
+   - **Réchaud à fondue ou chauffe-plat** : il suffit pour réchauffer une conserve ou une soupe. Posez-le sur une surface stable qui ne brûle pas.
    - **Réchaud de camping, barbecue, brasero, plancha à gaz** : dehors uniquement, loin des fenêtres et des portes.
-3. **Réchauffe une conserve sans danger** : retire l’étiquette, lave la boîte et ouvre-la avant de la chauffer.
-4. **Économise le combustible** : coupe les aliments en petits morceaux, couvre la casserole, prépare un seul plat pour tout le monde.
-5. **Lave-toi les mains** à l’eau et au savon avant de cuisiner, et cuis à cœur la viande hachée et les saucisses.
-6. **Ne prépare que ce qui sera mangé tout de suite.** Sans réfrigérateur, un reste ne se garde pas plus de 2 heures à température ambiante.
-7. **Surveille la flamme** jusqu’au bout, éloigne tout ce qui peut brûler, et éteins complètement avant de quitter la pièce ou d’aller dormir.
+3. **Réchauffez une conserve sans danger** : retirez l’étiquette, lavez la boîte et ouvrez-la avant de la chauffer.
+4. **Économisez le combustible** : coupez les aliments en petits morceaux, couvrez la casserole, préparez un seul plat pour tout le monde.
+5. **Lavez-vous les mains** à l’eau et au savon avant de cuisiner, et cuisez à cœur la viande hachée et les saucisses.
+6. **Ne préparez que ce qui sera mangé tout de suite.** Sans réfrigérateur, un reste ne se garde pas plus de 2 heures à température ambiante.
+7. **Surveillez la flamme** jusqu’au bout, éloignez tout ce qui peut brûler, et éteignez complètement avant de quitter la pièce ou d’aller dormir.
 
 ## À ne jamais faire
 
 - Utiliser un réchaud de camping, un barbecue ou un brasero dans le logement, le garage, la cave ou la véranda, même fenêtre ouverte.
 - Faire brûler du charbon de bois à l’intérieur.
-- Te chauffer avec la cuisinière ou le four.
+- Vous chauffer avec la cuisinière ou le four.
 - Chauffer une boîte de conserve fermée.
 - Laisser une flamme sans surveillance.
-- Ignorer des maux de tête, des nausées ou des vertiges pendant que quelque chose brûle : aère, sors et appelle le 15, le 18 ou le 112.
+- Ignorer des maux de tête, des nausées ou des vertiges pendant que quelque chose brûle : aérez, sortez et appelez le 15, le 18 ou le 112.
 
 ## Sans matériel
 
-- Aucun moyen de cuisson sûr : mange froid, c’est sans danger avec des conserves du commerce.
-- Garde les aliments secs à cuire (riz, pâtes, légumes secs) pour le jour où tu pourras de nouveau cuisiner.
+- Aucun moyen de cuisson sûr : mangez froid, c’est sans danger avec des conserves du commerce.
+- Gardez les aliments secs à cuire (riz, pâtes, légumes secs) pour le jour où vous pourrez de nouveau cuisiner.
 
 ## Selon l’endroit
 
-- **En appartement** : sans cheminée ni jardin, il reste la cuisinière à gaz en bouteille et le réchaud à fondue. Sinon, mange froid.
-- **En maison** : installe le réchaud de camping ou le barbecue dehors, loin des fenêtres, jamais dans le garage.
+- **En appartement** : sans cheminée ni jardin, il reste la cuisinière à gaz en bouteille et le réchaud à fondue. Sinon, mangez froid.
+- **En maison** : installez le réchaud de camping ou le barbecue dehors, loin des fenêtres, jamais dans le garage.
 - **Dehors** : voir [Allumer un feu](../feu-et-energie/allumer-un-feu.md).
 
 ## Voir aussi

@@ -1,21 +1,21 @@
 # Composer sa trousse de secours
 
-> **En bref** : de quoi protéger tes mains, arrêter un saignement, nettoyer et couvrir une plaie, et te protéger du froid, plus les numéros d’urgence et les traitements du foyer. Range-la au sec, hors de portée des enfants mais facile à attraper, et vérifie-la deux fois par an.
+> **En bref** : de quoi protéger vos mains, arrêter un saignement, nettoyer et couvrir une plaie, et vous protéger du froid, plus les numéros d’urgence et les traitements du foyer. Rangez-la au sec, hors de portée des enfants mais facile à attraper, et vérifiez-la deux fois par an.
 
 ## Quand s’en servir
 
 - Avant la crise : une trousse à la maison, une dans la voiture, une petite dans le sac d’évacuation.
-- Adapte-la à ton foyer : nombre de personnes, âges, problèmes de santé.
+- Adaptez-la à votre foyer : nombre de personnes, âges, problèmes de santé.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 ### Les informations
 
-- Les numéros d’urgence (15, 18, 112, 114) et celui du centre antipoison de ta région.
-- Les numéros de tes proches et de ton médecin.
+- Les numéros d’urgence (15, 18, 112, 114) et celui du centre antipoison de votre région.
+- Les numéros de vos proches et de votre médecin.
 - Un guide des gestes de premiers secours, sur papier.
 
-### Pour te protéger
+### Pour vous protéger
 
 - Des gants jetables sans latex.
 - Des masques.
@@ -38,24 +38,24 @@
 - Un thermomètre.
 - Une compresse froide instantanée.
 - Un gel pour les brûlures (hydrogel).
-- Un tire-tique si tu vas en forêt ou dans les hautes herbes.
+- Un tire-tique si vous allez en forêt ou dans les hautes herbes.
 - Des sachets de sucre.
 
 ### Les médicaments
 
 - Les traitements habituels de chaque membre du foyer et leurs médicaments d’urgence, avec une copie des ordonnances.
-- Pour le reste (antidouleur, sachets de réhydratation, etc.), demande conseil à ton pharmacien : il adaptera à ton foyer.
+- Pour le reste (antidouleur, sachets de réhydratation, etc.), demandez conseil à votre pharmacien : il adaptera à votre foyer.
 
 ## Étapes
 
-1. **Choisis un contenant** léger, solide et facile à transporter.
-2. **Rassemble le contenu** de la liste, en commençant par les gants, les compresses, les pansements, les bandes et la couverture de survie.
-3. **Ajoute les numéros** et le guide des gestes, sur papier.
-4. **Range la trousse** dans un endroit sec, à l’abri de la chaleur et de l’humidité, hors de portée des enfants mais accessible : placard en hauteur, par exemple.
-5. **Dis à tout le foyer où elle est.**
-6. **Vérifie-la deux fois par an** : dates de péremption, état général du matériel.
-7. **Remplace tout de suite** ce que tu as utilisé.
-8. **Forme-toi** : le matériel ne sert que si tu sais t’en servir.
+1. **Choisissez un contenant** léger, solide et facile à transporter.
+2. **Rassemblez le contenu** de la liste, en commençant par les gants, les compresses, les pansements, les bandes et la couverture de survie.
+3. **Ajoutez les numéros** et le guide des gestes, sur papier.
+4. **Rangez la trousse** dans un endroit sec, à l’abri de la chaleur et de l’humidité, hors de portée des enfants mais accessible : placard en hauteur, par exemple.
+5. **Dites à tout le foyer où elle est.**
+6. **Vérifiez-la deux fois par an** : dates de péremption, état général du matériel.
+7. **Remplacez tout de suite** ce que vous avez utilisé.
+8. **Formez-vous** : le matériel ne sert que si vous savez vous en servir.
 
 ## À ne jamais faire
 
@@ -72,8 +72,8 @@
 ## Selon l’endroit
 
 - **Voiture** : ciseaux, compresses stériles, sparadrap, bandes, pansements, coussin hémostatique, antiseptique, sérum physiologique, sachets de sucre, couverture de survie.
-- **Randonnée** : ajoute de l’eau ou des pastilles pour la purifier, de quoi manger, une couverture de survie, une lampe, de la crème solaire, un répulsif et un tire-tique.
-- **Sac d’évacuation** : une version réduite, avec tes médicaments et tes ordonnances (voir [Préparer un sac d’évacuation](../les-bases/preparer-un-sac-d-evacuation.md)).
+- **Randonnée** : ajoutez de l’eau ou des pastilles pour la purifier, de quoi manger, une couverture de survie, une lampe, de la crème solaire, un répulsif et un tire-tique.
+- **Sac d’évacuation** : une version réduite, avec vos médicaments et vos ordonnances (voir [Préparer un sac d’évacuation](../les-bases/preparer-un-sac-d-evacuation.md)).
 
 ## Voir aussi
 

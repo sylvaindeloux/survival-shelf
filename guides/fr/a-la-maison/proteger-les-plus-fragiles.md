@@ -1,14 +1,14 @@
 # Protéger les plus fragiles
 
-> **En bref** : repère avant la crise les personnes qui auront besoin d’aide autour de toi : personnes âgées, bébés, femmes enceintes, personnes malades, handicapées ou isolées. Chacune doit avoir un petit réseau de proches qui savent quoi faire, une réserve de médicaments et une solution si le courant manque. Pendant la crise, va les voir chaque jour, et fais-les partir tôt si le logement n’est plus tenable.
+> **En bref** : repérez avant la crise les personnes qui auront besoin d’aide autour de vous : personnes âgées, bébés, femmes enceintes, personnes malades, handicapées ou isolées. Chacune doit avoir un petit réseau de proches qui savent quoi faire, une réserve de médicaments et une solution si le courant manque. Pendant la crise, allez les voir chaque jour, et faites-les partir tôt si le logement n’est plus tenable.
 
 ## Quand s’en servir
 
 - Canicule, grand froid, coupure de courant ou d’eau, évacuation, épidémie.
-- Tu vis avec une personne fragile, ou tu en connais une dans ton immeuble ou ta rue.
-- Tu es toi-même concerné : prépare ton réseau d’entraide.
+- Vous vivez avec une personne fragile, ou vous en connaissez une dans votre immeuble ou votre rue.
+- Vous êtes vous-même concerné : préparez votre réseau d’entraide.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - La liste des personnes à aider, avec leur adresse et leur numéro, sur papier.
 - Pour chacune : la liste de ses traitements, une copie de ses ordonnances, le numéro de son médecin.
@@ -19,23 +19,23 @@
 
 ### Avant
 
-1. **Fais la liste** des personnes fragiles de ton foyer et de ton entourage, et parle-leur de ce dont elles auraient besoin.
-2. **Monte un réseau d’entraide** de quelques proches et voisins. Au moins l’un d’eux a un double des clés, sait où sont les réserves et les médicaments, et sait faire marcher le matériel médical.
-3. **Prépare les traitements** : réserve de médicaments, ordonnances, glacière pour ceux qui se gardent au froid (voir [Vivre une crise avec un traitement médical](../sante-et-premiers-secours/vivre-une-crise-avec-un-traitement-medical.md)).
-4. **Appareil médical électrique** : prévois une alimentation de secours, et conviens avec des proches d’un lieu où aller si la coupure dure. Une personne sous respirateur peut demander à l’agence régionale de santé son inscription comme patient à haut risque vital, pour être prévenue des coupures.
-5. **Prévois l’évacuation** : qui vient chercher la personne, avec quel véhicule, comment emporter fauteuil, déambulateur, appareils et chargeurs.
-6. **Fais-la inscrire en mairie** sur le registre des personnes isolées, pour qu’elle soit contactée lors d’une canicule.
-7. **Parle avec le cabinet médical, le service de dialyse ou le prestataire** de ce qui est prévu en cas de crise.
+1. **Faites la liste** des personnes fragiles de votre foyer et de votre entourage, et parlez-leur de ce dont elles auraient besoin.
+2. **Montez un réseau d’entraide** de quelques proches et voisins. Au moins l’un d’eux a un double des clés, sait où sont les réserves et les médicaments, et sait faire marcher le matériel médical.
+3. **Préparez les traitements** : réserve de médicaments, ordonnances, glacière pour ceux qui se gardent au froid (voir [Vivre une crise avec un traitement médical](../sante-et-premiers-secours/vivre-une-crise-avec-un-traitement-medical.md)).
+4. **Appareil médical électrique** : prévoyez une alimentation de secours, et convenez avec des proches d’un lieu où aller si la coupure dure. Une personne sous respirateur peut demander à l’agence régionale de santé son inscription comme patient à haut risque vital, pour être prévenue des coupures.
+5. **Prévoyez l’évacuation** : qui vient chercher la personne, avec quel véhicule, comment emporter fauteuil, déambulateur, appareils et chargeurs.
+6. **Faites-la inscrire en mairie** sur le registre des personnes isolées, pour qu’elle soit contactée lors d’une canicule.
+7. **Parlez avec le cabinet médical, le service de dialyse ou le prestataire** de ce qui est prévu en cas de crise.
 
 ### Pendant
 
-1. **Prends des nouvelles chaque jour**, par une visite ou un appel. Une personne seule qui ne répond pas, c’est une raison d’aller voir.
-2. **Fais boire et manger.** Ne réduis jamais les rations d’un enfant ou d’une femme enceinte.
-3. **Surveille la température du logement.** Au froid : une seule pièce chauffée, plusieurs couches, boissons chaudes. À la chaleur : pièce fraîche, peau mouillée, eau à portée de main.
-4. **Continue les traitements** sans rien changer de toi-même.
-5. **Rassure** : explique ce qui se passe avec des mots simples, garde des horaires et des habitudes.
-6. **Fais partir tôt** vers un proche ou un lieu d’accueil si le logement devient trop froid ou trop chaud, ou si un appareil a besoin de courant.
-7. **Pour déplacer une personne**, demande-lui comment elle veut être portée ou guidée, et écoute-la.
+1. **Prenez des nouvelles chaque jour**, par une visite ou un appel. Une personne seule qui ne répond pas, c’est une raison d’aller voir.
+2. **Faites boire et manger.** Ne réduisez jamais les rations d’un enfant ou d’une femme enceinte.
+3. **Surveillez la température du logement.** Au froid : une seule pièce chauffée, plusieurs couches, boissons chaudes. À la chaleur : pièce fraîche, peau mouillée, eau à portée de main.
+4. **Continuez les traitements** sans rien changer de vous-même.
+5. **Rassurez** : expliquez ce qui se passe avec des mots simples, gardez des horaires et des habitudes.
+6. **Faites partir tôt** vers un proche ou un lieu d’accueil si le logement devient trop froid ou trop chaud, ou si un appareil a besoin de courant.
+7. **Pour déplacer une personne**, demandez-lui comment elle veut être portée ou guidée, et écoutez-la.
 
 ### Les signes qui doivent faire appeler le 15
 
@@ -53,10 +53,10 @@
 
 ## Selon l’endroit
 
-- **Personne âgée** : fais-la boire très souvent pendant la chaleur ; au froid, vérifie souvent la température de son logement.
+- **Personne âgée** : faites-la boire très souvent pendant la chaleur ; au froid, vérifiez souvent la température de son logement.
 - **Bébé** : du lait prêt à l’emploi ou de l’eau en bouteille pour les biberons, des couches d’avance, plusieurs couches fines et un bonnet au froid.
-- **Personne dépendante de l’ascenseur** : prévois qui l’aidera dans l’escalier.
-- **Personne seule** : conviens avec un voisin qu’il passe la voir.
+- **Personne dépendante de l’ascenseur** : prévoyez qui l’aidera dans l’escalier.
+- **Personne seule** : convenez avec un voisin qu’il passe la voir.
 
 ## Voir aussi
 

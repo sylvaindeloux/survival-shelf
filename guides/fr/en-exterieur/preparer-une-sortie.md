@@ -1,18 +1,18 @@
 # Préparer une sortie
 
-> **En bref** : choisis un parcours à la portée du moins entraîné du groupe, regarde la météo, et dis à quelqu’un où tu vas et à quelle heure tu rentres. Emporte de quoi boire, manger, te couvrir, t’éclairer, t’orienter et alerter. Sur place, sache faire demi-tour : le réseau ne passe pas partout et les secours peuvent mettre des heures à arriver.
+> **En bref** : choisissez un parcours à la portée du moins entraîné du groupe, regardez la météo, et dites à quelqu’un où vous allez et à quelle heure vous rentrez. Emportez de quoi boire, manger, vous couvrir, vous éclairer, vous orienter et alerter. Sur place, sachez faire demi-tour : le réseau ne passe pas partout et les secours peuvent mettre des heures à arriver.
 
 ## Quand s’en servir
 
 - Avant une randonnée, une balade en forêt, une sortie en montagne ou au bord de l’eau, même courte.
-- Avant d’aller à pied dans un endroit que tu ne connais pas, ou loin d’une route.
+- Avant d’aller à pied dans un endroit que vous ne connaissez pas, ou loin d’une route.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - **De l’eau et de la nourriture**, avec une réserve : de quoi manger un jour de plus, sans cuisson.
-- **Des vêtements** contre le soleil (lunettes, casquette, crème solaire), le vent (coupe-vent), le froid (pull, pantalon, bonnet, gants) et la pluie, même s’il fait beau au départ. Des couleurs vives te rendent plus facile à repérer.
+- **Des vêtements** contre le soleil (lunettes, casquette, crème solaire), le vent (coupe-vent), le froid (pull, pantalon, bonnet, gants) et la pluie, même s’il fait beau au départ. Des couleurs vives vous rendent plus facile à repérer.
 - **Un téléphone chargé**, avec les numéros d’urgence (112), et une batterie de secours.
-- **Une carte détaillée en papier et une boussole**, même si tu as un GPS ou une application de randonnée.
+- **Une carte détaillée en papier et une boussole**, même si vous avez un GPS ou une application de randonnée.
 - **Une lampe**, frontale de préférence, avec des piles de rechange.
 - **Un sifflet et un couteau.**
 - **Une trousse de premiers secours** avec des pansements compressifs, des bandes, du sparadrap et une couverture de survie.
@@ -22,45 +22,45 @@
 
 ### Avant de partir
 
-1. **Choisis le parcours pour le plus faible du groupe**, pas pour le plus fort : expérience, forme, âge. Demande conseil à des professionnels qui connaissent le lieu.
-2. **Regarde les prévisions météo**, la veille puis le matin. Prévois un itinéraire de remplacement, et renonce si les conditions s’annoncent mauvaises.
-3. **Fixe une heure de demi-tour** : passé cette heure, tu rentres, même si le but est proche.
-4. **Dis à quelqu’un où tu vas** : le parcours, le point de départ, l’heure de retour prévue, qui t’accompagne, ta voiture et l’endroit où elle est garée. Convenez de l’heure à partir de laquelle cette personne donne l’alerte.
-5. **Ne pars pas seul** si tu peux l’éviter.
-6. **Charge ton téléphone** et enregistre les numéros d’urgence.
-7. **Vérifie ton assurance** : toutes ne couvrent pas les frais de recherche et d’évacuation, surtout à l’étranger.
-8. **Refuge** : réserve ta place à l’avance, et annule si tu changes de plan.
+1. **Choisissez le parcours pour le plus faible du groupe**, pas pour le plus fort : expérience, forme, âge. Demandez conseil à des professionnels qui connaissent le lieu.
+2. **Regardez les prévisions météo**, la veille puis le matin. Prévoyez un itinéraire de remplacement, et renoncez si les conditions s’annoncent mauvaises.
+3. **Fixez une heure de demi-tour** : passé cette heure, vous rentrez, même si le but est proche.
+4. **Dites à quelqu’un où vous allez** : le parcours, le point de départ, l’heure de retour prévue, qui vous accompagne, votre voiture et l’endroit où elle est garée. Convenez de l’heure à partir de laquelle cette personne donne l’alerte.
+5. **Ne partez pas seul** si vous pouvez l’éviter.
+6. **Chargez votre téléphone** et enregistrez les numéros d’urgence.
+7. **Vérifiez votre assurance** : toutes ne couvrent pas les frais de recherche et d’évacuation, surtout à l’étranger.
+8. **Refuge** : réservez votre place à l’avance, et annulez si vous changez de plan.
 
 ### Pendant la sortie
 
 1. **Restez ensemble**, à l’allure du plus lent. Choisissez un point de rendez-vous au cas où quelqu’un s’égare.
-2. **Bois et mange régulièrement**, sans attendre la soif.
-3. **Surveille les enfants** : ils se dépensent sans compter, se déshydratent et s’épuisent vite.
-4. **Reste sur les sentiers balisés** et sur l’itinéraire annoncé. Si tu en changes, préviens.
-5. **Surveille le ciel et l’heure.** Sache renoncer, faire demi-tour ou raccourcir la sortie.
-6. **En forêt** : ne fume pas, n’allume pas de barbecue et respecte les interdictions d’accès.
-7. **Près des troupeaux** : garde tes distances (voir [Rencontrer un animal sauvage](rencontrer-un-animal-sauvage.md)).
+2. **Buvez et mangez régulièrement**, sans attendre la soif.
+3. **Surveillez les enfants** : ils se dépensent sans compter, se déshydratent et s’épuisent vite.
+4. **Restez sur les sentiers balisés** et sur l’itinéraire annoncé. Si vous en changez, prévenez.
+5. **Surveillez le ciel et l’heure.** Sachez renoncer, faire demi-tour ou raccourcir la sortie.
+6. **En forêt** : ne fumez pas, n’allumez pas de barbecue et respectez les interdictions d’accès.
+7. **Près des troupeaux** : gardez vos distances (voir [Rencontrer un animal sauvage](rencontrer-un-animal-sauvage.md)).
 
 ### Au retour
 
-1. **Préviens tout de suite** la personne à qui tu avais donné ton itinéraire.
+1. **Prévenez tout de suite** la personne à qui vous aviez donné votre itinéraire.
 
 ## À ne jamais faire
 
-- Compter seulement sur ton téléphone : le réseau ne passe pas partout, surtout en montagne.
-- Partir sans avoir dit à personne où tu vas.
-- T’entêter quand la météo tourne, que l’heure avance ou que quelqu’un fatigue.
+- Compter seulement sur votre téléphone : le réseau ne passe pas partout, surtout en montagne.
+- Partir sans avoir dit à personne où vous allez.
+- Vous entêter quand la météo tourne, que l’heure avance ou que quelqu’un fatigue.
 - Laisser quelqu’un seul en arrière ou partir devant.
 
 ## Sans matériel
 
-- Sans carte : photographie le panneau du départ et note les noms des lieux traversés.
-- Sans sifflet ni couverture de survie : raccourcis la sortie et reste sur un parcours fréquenté.
+- Sans carte : photographiez le panneau du départ et notez les noms des lieux traversés.
+- Sans sifflet ni couverture de survie : raccourcissez la sortie et restez sur un parcours fréquenté.
 
 ## Selon l’endroit
 
 - **En montagne** : voir [Montagne et haute altitude](../milieux-hostiles/montagne-et-haute-altitude.md). En hiver, hors des pistes, voir [Avalanche](../catastrophes/avalanche.md).
-- **Au bord de la mer** : regarde aussi les horaires de marée (voir [Mer et littoral](../milieux-hostiles/mer-et-littoral.md)).
+- **Au bord de la mer** : regardez aussi les horaires de marée (voir [Mer et littoral](../milieux-hostiles/mer-et-littoral.md)).
 - **Par forte chaleur** : voir [Désert et chaleur extrême](../milieux-hostiles/desert-et-chaleur-extreme.md).
 - **Orages annoncés** : voir [Surpris par l’orage](surpris-par-l-orage.md).
 

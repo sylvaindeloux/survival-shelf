@@ -4,18 +4,18 @@
 
 Des fiches courtes pour agir quand tout va mal. Chaque fiche répond à une seule question, commence par l’essentiel (« En bref ») et cite ses sources.
 
-> **Important** : ces fiches donnent des informations générales, sans garantie. Elles peuvent contenir des erreurs, ne plus être à jour ou ne pas convenir à ta situation : tu les appliques sous ta seule responsabilité. Elles ne remplacent ni les consignes des autorités, ni l’avis d’un professionnel, ni une formation aux premiers secours. En cas d’urgence vitale, appelle le 112.
+> **Important** : ces fiches donnent des informations générales, sans garantie. Elles peuvent contenir des erreurs, ne plus être à jour ou ne pas convenir à votre situation : vous les appliquez sous votre seule responsabilité. Elles ne remplacent ni les consignes des autorités, ni l’avis d’un professionnel, ni une formation aux premiers secours. En cas d’urgence vitale, appelez le 112.
 
-## Lire les fiches sans l’appli
+## Lire les fiches sans l’application
 
-Les fiches sont de simples fichiers texte, rangés par thème dans ce dossier. Tu peux :
+Les fiches sont de simples fichiers texte, rangés par thème dans ce dossier. Vous pouvez :
 
 - les lire ici, sur GitHub, en cliquant sur leur titre ;
-- les lire dans l’appli Survival Shelf, page « Fiches », même hors ligne ;
-- les copier sur ton téléphone, ton ordinateur ou une clé USB, puis les ouvrir avec n’importe quel éditeur de texte ;
-- imprimer celles qui comptent pour toi.
+- les lire dans l’application Survival Shelf, page « Fiches », même hors ligne ;
+- les copier sur votre téléphone, votre ordinateur ou une clé USB, puis les ouvrir avec n’importe quel éditeur de texte ;
+- imprimer celles qui comptent pour vous.
 
-Pour tout récupérer d’un coup, utilise le bouton vert « Code » puis « Download ZIP » sur la page GitHub du projet : les fiches sont dans le dossier `guides`.
+Pour tout récupérer d’un coup, utilisez le bouton vert « Code » puis « Download ZIP » sur la page GitHub du projet : les fiches sont dans le dossier `guides`.
 
 ## Les bases
 
@@ -156,7 +156,7 @@ Pour tout récupérer d’un coup, utilise le bouton vert « Code » puis « Dow
 - [Tenir en appartement](a-la-maison/tenir-en-appartement.md) : ascenseur à l’arrêt, eau qui ne monte plus, pas de flamme sur le balcon, entraide entre voisins.
 - [Tenir en maison](a-la-maison/tenir-en-maison.md) : une seule pièce chauffée, tuyaux protégés du gel, groupe électrogène dehors, jamais dans une cave inondée.
 - [Protéger les plus fragiles](a-la-maison/proteger-les-plus-fragiles.md) : personnes âgées, bébés, personnes malades ou handicapées : quoi préparer et quoi surveiller.
-- [S’occuper de ses animaux](a-la-maison/s-occuper-de-ses-animaux.md) : la trousse à préparer, les emmener si tu évacues, quoi faire en dernier recours.
+- [S’occuper de ses animaux](a-la-maison/s-occuper-de-ses-animaux.md) : la trousse à préparer, les emmener si vous évacuez, quoi faire en dernier recours.
 - [S’organiser avec ses voisins](a-la-maison/s-organiser-avec-ses-voisins.md) : se connaître, repérer qui a besoin d’aide, s’entraider pendant la crise.
 - [Protéger son logement des vols pendant une crise](a-la-maison/proteger-son-logement-des-vols-pendant-une-crise.md) : fermer, rester discret, veiller entre voisins, ne prendre aucun risque.
 - [Coincé dans un ascenseur](a-la-maison/coince-dans-un-ascenseur.md) : garder son calme, appeler avec l’alarme, ne jamais forcer les portes.
@@ -176,12 +176,12 @@ Pour tout récupérer d’un coup, utilise le bouton vert « Code » puis « Dow
 
 ## En extérieur
 
-- [Préparer une sortie](en-exterieur/preparer-une-sortie.md) : parcours adapté, météo, quelqu’un qui sait où tu vas, et quoi mettre dans le sac.
+- [Préparer une sortie](en-exterieur/preparer-une-sortie.md) : parcours adapté, météo, quelqu’un qui sait où vous allez, et quoi mettre dans le sac.
 - [Perdu dans la nature](en-exterieur/perdu-dans-la-nature.md) : s’arrêter, réfléchir, rester sur place ou revenir sur ses pas, se signaler.
 - [Passer une nuit dehors sans l’avoir prévu](en-exterieur/passer-une-nuit-dehors-sans-l-avoir-prevu.md) : décider tôt, s’abriter, s’isoler du sol, rester au sec et repérable.
 - [Surpris par l’orage](en-exterieur/surpris-par-l-orage.md) : où aller, de quoi s’éloigner, et la position de dernier recours quand il n’y a pas d’abri.
 - [Tombé dans l’eau froide](en-exterieur/tombe-dans-l-eau-froide.md) : flotter d’abord, sortir vite, se réchauffer lentement, et quoi faire si la glace cède.
-- [Traverser un cours d’eau](en-exterieur/traverser-un-cours-d-eau.md) : quand renoncer, où et comment traverser, quoi faire si le courant t’emporte.
+- [Traverser un cours d’eau](en-exterieur/traverser-un-cours-d-eau.md) : quand renoncer, où et comment traverser, quoi faire si le courant vous emporte.
 - [Blessé loin des secours](en-exterieur/blesse-loin-des-secours.md) : protéger, donner sa position, garder le blessé au chaud, se signaler sans réseau.
 - [Rencontrer un animal sauvage](en-exterieur/rencontrer-un-animal-sauvage.md) : chien de troupeau, ours, loup, sanglier, serpent : garder ses distances et reculer calmement.
 - [Trouver de la nourriture dans la nature](en-exterieur/trouver-de-la-nourriture-dans-la-nature.md) : pourquoi elle passe en dernier, et les règles pour ne pas s’empoisonner.

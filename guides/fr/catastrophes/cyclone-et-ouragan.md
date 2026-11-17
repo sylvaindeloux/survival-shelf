@@ -1,14 +1,14 @@
 # Cyclone et ouragan
 
-> **En bref** : prépare-toi dès la pré-alerte, sois chez toi ou dans un abri avant l’alerte rouge, puis ne sors plus jusqu’à la levée de l’alerte, même pendant l’accalmie de l’œil. Après le passage, les fils tombés, les ravines en crue et l’eau du robinet restent dangereux.
+> **En bref** : préparez-vous dès la pré-alerte, soyez chez vous ou dans un abri avant l’alerte rouge, puis ne sortez plus jusqu’à la levée de l’alerte, même pendant l’accalmie de l’œil. Après le passage, les fils tombés, les ravines en crue et l’eau du robinet restent dangereux.
 
 ## Quand s’en servir
 
-- Tu vis ou tu voyages outre-mer, ou dans une région du monde touchée par les cyclones, ouragans ou typhons.
+- Vous vivez ou vous voyagez outre-mer, ou dans une région du monde touchée par les cyclones, ouragans ou typhons.
 - Une alerte cyclonique est annoncée.
-- Chaque territoire a son propre système d’alerte : apprends celui du tien. Cette fiche décrit celui de La Réunion.
+- Chaque territoire a son propre système d’alerte : apprenez celui du tien. Cette fiche décrit celui de La Réunion.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Des réserves : eau, conserves, médicaments, piles pour la radio et les lampes.
 - Une radio à piles.
@@ -19,44 +19,44 @@
 
 ### En début de saison
 
-1. Repère le centre d’hébergement le plus proche.
-2. Vérifie tes réserves et ton kit d’urgence.
-3. Élague les arbres, nettoie gouttières et évacuations.
+1. Repérez le centre d’hébergement le plus proche.
+2. Vérifiez vos réserves et votre kit d’urgence.
+3. Élaguez les arbres, nettoyez gouttières et évacuations.
 
 ### Pré-alerte : « je m’informe » (menace possible sous 24 à 72 heures)
 
-1. Suis les prévisions.
-2. Évite les longues randonnées en montagne et les sorties en mer de plus de 24 heures. Évite le rivage en cas de forte houle.
-3. Vérifie tes réserves : conserves, eau, piles, médicaments.
-4. Insuffisance rénale ou respiratoire : contacte sans attendre ton centre de soins habituel.
+1. Suivez les prévisions.
+2. Évitez les longues randonnées en montagne et les sorties en mer de plus de 24 heures. Évitez le rivage en cas de forte houle.
+3. Vérifiez vos réserves : conserves, eau, piles, médicaments.
+4. Insuffisance rénale ou respiratoire : contactez sans attendre votre centre de soins habituel.
 
 ### Alerte orange : « je me prépare » (danger sous 24 heures)
 
-1. Rentre tout ce que le vent peut emporter, et tes animaux.
-2. Protège portes et fenêtres : volets, planches.
-3. Prépare une évacuation possible. Les écoles et les crèches ferment.
+1. Rentrez tout ce que le vent peut emporter, et vos animaux.
+2. Protégez portes et fenêtres : volets, planches.
+3. Préparez une évacuation possible. Les écoles et les crèches ferment.
 
 ## Pendant
 
-1. **Rentre avant l’alerte rouge.** À La Réunion, elle est annoncée 3 heures à l’avance : utilise ce délai pour rejoindre ton logement ou un abri. Ensuite, toute circulation est interdite.
-2. **Reste confiné** dans un bâtiment en dur, dans une pièce intérieure, loin des portes et des fenêtres vitrées.
-3. **Ne sors pas pendant l’œil du cyclone** : le calme ne dure pas et les vents reprennent brutalement.
-4. **Téléphone seulement en cas de nécessité.**
-5. **Si l’eau monte**, monte à l’étage, mais ne t’enferme pas dans des combles sans ouverture.
+1. **Rentrez avant l’alerte rouge.** À La Réunion, elle est annoncée 3 heures à l’avance : utilisez ce délai pour rejoindre votre logement ou un abri. Ensuite, toute circulation est interdite.
+2. **Restez confiné** dans un bâtiment en dur, dans une pièce intérieure, loin des portes et des fenêtres vitrées.
+3. **Ne sortez pas pendant l’œil du cyclone** : le calme ne dure pas et les vents reprennent brutalement.
+4. **Téléphonez seulement en cas de nécessité.**
+5. **Si l’eau monte**, montez à l’étage, mais ne vous enfermez pas dans des combles sans ouverture.
 6. **En alerte violette** (vents de plus de 200 km/h), personne ne sort, pas même les secours.
-7. **Attends la levée de l’alerte** pour sortir.
+7. **Attendez la levée de l’alerte** pour sortir.
 
 ## Après
 
 Pendant la phase de sauvegarde, la menace s’éloigne mais les dangers restent : inondations, coulées de boue, fils à terre, routes coupées.
 
-1. **Ne franchis pas** les radiers submergés ni les ravines en crue.
-2. **Ne touche pas** aux fils tombés.
-3. **Méfie-toi de l’eau du robinet** : préfère l’eau en bouteille ou traite l’eau avant de la boire. À La Réunion, elle peut rester impropre à la consommation au moins 48 heures après la fin des pluies.
-4. **Ne prends la voiture** que si c’est nécessaire et autorisé.
-5. **Laisse les lignes téléphoniques libres** et ne gêne pas les secours.
-6. **Jette la nourriture** mouillée ou restée sans froid.
-7. **Ménage-toi pendant le nettoyage** : fais des pauses, porte gants, lunettes et bottes.
+1. **Ne franchissez pas** les radiers submergés ni les ravines en crue.
+2. **Ne touchez pas** aux fils tombés.
+3. **Méfiez-vous de l’eau du robinet** : préférez l’eau en bouteille ou traitez l’eau avant de la boire. À La Réunion, elle peut rester impropre à la consommation au moins 48 heures après la fin des pluies.
+4. **Ne prenez la voiture** que si c’est nécessaire et autorisé.
+5. **Laissez les lignes téléphoniques libres** et ne gênez pas les secours.
+6. **Jetez la nourriture** mouillée ou restée sans froid.
+7. **Ménagez-vous pendant le nettoyage** : faites des pauses, portez gants, lunettes et bottes.
 
 ## À ne jamais faire
 
@@ -67,8 +67,8 @@ Pendant la phase de sauvegarde, la menace s’éloigne mais les dangers restent 
 
 ## Selon l’endroit
 
-- **Case légère, caravane, mobil-home** : ils ne résistent pas à ces vents. Rejoins un bâtiment en dur ou un centre d’hébergement avant l’alerte rouge.
-- **Sur le littoral** : la mer peut monter en quelques minutes. Si les autorités demandent d’évacuer, pars tout de suite.
+- **Case légère, caravane, mobil-home** : ils ne résistent pas à ces vents. Rejoignez un bâtiment en dur ou un centre d’hébergement avant l’alerte rouge.
+- **Sur le littoral** : la mer peut monter en quelques minutes. Si les autorités demandent d’évacuer, partez tout de suite.
 - **Loin des côtes** : un ouragan peut encore faire des dégâts à plus de 160 km à l’intérieur des terres.
 
 ## Voir aussi

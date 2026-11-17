@@ -1,6 +1,6 @@
 # Morsures et piqûres
 
-> **En bref** : lave toute morsure longuement à l’eau et au savon et montre-la à un médecin, surtout une morsure de chat. Piqûre de guêpe ou d’abeille : retire le dard en le grattant, mets du froid. Morsure de serpent : appelle le 15, immobilise le membre, n’aspire pas, n’incise pas, ne serre pas. Gonflement du visage ou de la gorge, gêne pour respirer, malaise : appelle le 15 ou le 112 tout de suite.
+> **En bref** : lavez toute morsure longuement à l’eau et au savon et montrez-la à un médecin, surtout une morsure de chat. Piqûre de guêpe ou d’abeille : retirez le dard en le grattant, mettez du froid. Morsure de serpent : appelez le 15, immobilisez le membre, n’aspirez pas, n’incisez pas, ne serrez pas. Gonflement du visage ou de la gorge, gêne pour respirer, malaise : appelez le 15 ou le 112 tout de suite.
 
 ## Quand s’en servir
 
@@ -9,7 +9,7 @@
 - Morsure de vipère, la seule famille de serpents venimeux en France métropolitaine.
 - Méduse, oursin, vive au bord de la mer.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - De l’eau et du savon, un antiseptique, des compresses.
 - Un tire-tique, vendu en pharmacie.
@@ -19,41 +19,41 @@
 
 ### Morsure de chien ou de chat
 
-1. **Lave la plaie** à l’eau et au savon le plus vite possible, enlève les saletés, rince très abondamment.
-2. **Sèche**, puis applique un antiseptique et couvre d’un pansement propre.
-3. **Si ça saigne**, appuie avec un linge propre et surélève le membre.
-4. **Consulte un médecin** si la morsure est profonde, touche la main, le pied ou une articulation, vient d’un chat (le risque d’infection est très élevé), si ton vaccin contre le tétanos n’est pas à jour ou si tu ne sais pas (dans les 48 heures), si tu es diabétique ou immunodéprimé, ou si la plaie devient rouge, gonflée, douloureuse ou coule.
-5. **Appelle le 15 ou le 112** si la morsure touche le visage, le cou ou les organes génitaux, si la plaie est déchirée ou va jusqu’à l’os, saigne beaucoup, ou si tu ne sens plus ou ne bouges plus la zone.
-6. **Rage** : dis au médecin quel animal t’a mordu, quand et dans quelles circonstances. Un animal domestique est surveillé par un vétérinaire pendant 15 jours. Pour un animal errant ou sauvage, le médecin t’oriente vers un centre antirabique.
+1. **Lavez la plaie** à l’eau et au savon le plus vite possible, enlevez les saletés, rincez très abondamment.
+2. **Séchez**, puis appliquez un antiseptique et couvrez d’un pansement propre.
+3. **Si ça saigne**, appuyez avec un linge propre et surélevez le membre.
+4. **Consultez un médecin** si la morsure est profonde, touche la main, le pied ou une articulation, vient d’un chat (le risque d’infection est très élevé), si votre vaccin contre le tétanos n’est pas à jour ou si vous ne savez pas (dans les 48 heures), si vous êtes diabétique ou immunodéprimé, ou si la plaie devient rouge, gonflée, douloureuse ou coule.
+5. **Appelez le 15 ou le 112** si la morsure touche le visage, le cou ou les organes génitaux, si la plaie est déchirée ou va jusqu’à l’os, saigne beaucoup, ou si vous ne sentez plus ou ne bouges plus la zone.
+6. **Rage** : dites au médecin quel animal vous a mordu, quand et dans quelles circonstances. Un animal domestique est surveillé par un vétérinaire pendant 15 jours. Pour un animal errant ou sauvage, le médecin vous oriente vers un centre antirabique.
 
 ### Piqûre de guêpe, d’abeille ou de frelon
 
-1. **Retire le dard** s’il est resté dans la peau, en le grattant de côté avec l’ongle ou le bord d’une carte, sans le pincer.
-2. **Lave** à l’eau et au savon.
-3. **Mets du froid** jusqu’à 20 minutes et surélève la zone. Ne gratte pas.
-4. **Appelle le 15** si la piqûre est dans la bouche ou la gorge, s’il y a de nombreuses piqûres, si la personne a déjà fait une réaction grave, ou si elle présente des signes d’allergie (voir [Allergie grave](allergie-grave.md)).
+1. **Retirez le dard** s’il est resté dans la peau, en le grattant de côté avec l’ongle ou le bord d’une carte, sans le pincer.
+2. **Lavez** à l’eau et au savon.
+3. **Mettez du froid** jusqu’à 20 minutes et surélevez la zone. Ne grattez pas.
+4. **Appelez le 15** si la piqûre est dans la bouche ou la gorge, s’il y a de nombreuses piqûres, si la personne a déjà fait une réaction grave, ou si elle présente des signes d’allergie (voir [Allergie grave](allergie-grave.md)).
 
 ### Piqûre de tique
 
-1. **Retire la tique dès que possible avec un tire-tique** : glisse le crochet sous la tique, au plus près de la peau, et tourne doucement jusqu’à ce qu’elle se détache.
-2. **Désinfecte**, lave-toi les mains, et cherche d’autres tiques sur tout le corps : cuir chevelu, oreilles, cou, aisselles, coudes, aine, genoux.
-3. **Surveille la zone pendant un mois.** Une plaque rouge qui s’étend en anneau, de la fièvre, des courbatures ou une grande fatigue : consulte en disant que tu as été piqué par une tique.
-4. **Consulte sans attendre de signes** pour une femme enceinte, un enfant de moins de 8 ans, une personne immunodéprimée, ou si la tique est restée accrochée plus de 36 heures.
+1. **Retirez la tique dès que possible avec un tire-tique** : glissez le crochet sous la tique, au plus près de la peau, et tournez doucement jusqu’à ce qu’elle se détache.
+2. **Désinfectez**, lavez-vous les mains, et cherchez d’autres tiques sur tout le corps : cuir chevelu, oreilles, cou, aisselles, coudes, aine, genoux.
+3. **Surveillez la zone pendant un mois.** Une plaque rouge qui s’étend en anneau, de la fièvre, des courbatures ou une grande fatigue : consultez en disant que vous avez été piqué par une tique.
+4. **Consultez sans attendre de signes** pour une femme enceinte, un enfant de moins de 8 ans, une personne immunodéprimée, ou si la tique est restée accrochée plus de 36 heures.
 
 ### Morsure de serpent
 
-1. **Appelle le 15 ou le 112**, pour toute morsure.
-2. **Allonge et rassure la personne.** Elle ne doit pas marcher.
-3. **Immobilise le membre mordu** et garde-le le plus immobile possible.
-4. **Enlève bagues, montre, bracelets** et desserre les vêtements : ça va gonfler.
-5. **Si possible, lave** à l’eau et au savon et désinfecte.
-6. **Retiens l’aspect du serpent** ou prends une photo de loin, sans t’approcher.
+1. **Appelez le 15 ou le 112**, pour toute morsure.
+2. **Allongez et rassurez la personne.** Elle ne doit pas marcher.
+3. **Immobilisez le membre mordu** et gardez-le le plus immobile possible.
+4. **Enlevez bagues, montre, bracelets** et desserrez les vêtements : ça va gonfler.
+5. **Si possible, lavez** à l’eau et au savon et désinfectez.
+6. **Retenez l’aspect du serpent** ou prenez une photo de loin, sans vous approcher.
 
 ### Au bord de la mer
 
-- **Méduse** : ne frotte pas. Rince à l’eau de mer, recouvre de sable, laisse sécher, puis racle avec un carton rigide. Rince de nouveau et désinfecte.
-- **Oursin** : retire les piquants à la pince à épiler et désinfecte.
-- **Vive** : plonge le membre dans l’eau la plus chaude que tu supportes, sans te brûler, désinfecte, et consulte rapidement.
+- **Méduse** : ne frottez pas. Rincez à l’eau de mer, recouvrez de sable, laissez sécher, puis raclez avec un carton rigide. Rincez de nouveau et désinfectez.
+- **Oursin** : retirez les piquants à la pince à épiler et désinfectez.
+- **Vive** : plongez le membre dans l’eau la plus chaude que vous supportez, sans vous brûler, désinfectez, et consultez rapidement.
 
 ## À ne jamais faire
 
@@ -65,12 +65,12 @@
 
 ## Sans matériel
 
-- **Pas de tire-tique** : le NHS britannique admet une pince fine, en saisissant la tique au ras de la peau et en tirant lentement vers le haut, sans l’écraser. Les autorités françaises déconseillent la pince : procure-toi un tire-tique dès que possible.
+- **Pas de tire-tique** : le NHS britannique admet une pince fine, en saisissant la tique au ras de la peau et en tirant lentement vers le haut, sans l’écraser. Les autorités françaises déconseillent la pince : procurez-vous un tire-tique dès que possible.
 
 ## Selon l’endroit
 
-- **Loin de tout, après une morsure de serpent** : la personne ne marche pas. Porte-la, ou fais venir les secours jusqu’à elle.
-- **En forêt et dans les hautes herbes** : vêtements longs et clairs, pantalon dans les chaussettes, chaussures fermées, et reste au milieu des chemins. Ne soulève pas les pierres et ne mets pas les mains dans les souches.
+- **Loin de tout, après une morsure de serpent** : la personne ne marche pas. Portez-la, ou faites venir les secours jusqu’à elle.
+- **En forêt et dans les hautes herbes** : vêtements longs et clairs, pantalon dans les chaussettes, chaussures fermées, et restez au milieu des chemins. Ne soulevez pas les pierres et ne mettez pas les mains dans les souches.
 
 ## Voir aussi
 

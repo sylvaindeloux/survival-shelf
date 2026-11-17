@@ -1,6 +1,6 @@
 # Avalanche
 
-> **En bref** : hors des pistes, jamais seul et jamais sans DVA, pelle et sonde, et renonce au moindre doute. Si l’avalanche t’emporte : fuis sur le côté, lâche ce qui est lourd, protège ton visage et nage pour rester en surface. Si tu es témoin : ne quitte pas la victime des yeux, appelle le 112 et cherche tout de suite, si le lieu est sûr.
+> **En bref** : hors des pistes, jamais seul et jamais sans DVA, pelle et sonde, et renoncez au moindre doute. Si l’avalanche vous emporte : fuyez sur le côté, lâchez ce qui est lourd, protégez votre visage et nagez pour rester en surface. Si vous êtes témoin : ne quittez pas la victime des yeux, appelez le 112 et cherchez tout de suite, si le lieu est sûr.
 
 ## Quand s’en servir
 
@@ -8,7 +8,7 @@
 - Vigilance orange ou rouge « avalanches », fortes chutes de neige, redoux brutal, vent fort, pluie sur la neige.
 - Plus de 9 accidents sur 10 viennent d’une plaque de neige, souvent déclenchée par la victime ou par son groupe.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Pour chaque membre du groupe : un DVA (détecteur de victimes d’avalanche), une pelle et une sonde, et l’entraînement pour s’en servir.
 - Un téléphone chargé, des vêtements chauds, une lampe.
@@ -16,53 +16,53 @@
 
 ## Avant
 
-1. **Lis le bulletin d’estimation du risque d’avalanche** de Météo-France, publié chaque jour à 16 h : niveau de risque pour 24 heures, altitudes et orientations des pentes les plus dangereuses.
-2. **Regarde le drapeau et les pictogrammes** d’avalanche au départ des remontées, et interroge les pisteurs.
-3. **Ne pars jamais seul.** Dis à quelqu’un ton itinéraire et ton heure de retour.
-4. **Choisis un itinéraire à ton niveau.** Les pentes de 30° et plus sont celles où partent les avalanches : évite-les, ainsi que les zones situées juste dessous.
-5. **Porte ton DVA sous la couche extérieure**, en mode émission, et teste-le avant chaque sortie. Pelle et sonde dans le sac.
-6. **Entraîne-toi régulièrement** à la recherche. Partir avec un professionnel est recommandé.
-7. **Renonce** si les conditions sont incertaines. Une trace déjà faite ne garantit rien.
+1. **Lisez le bulletin d’estimation du risque d’avalanche** de Météo-France, publié chaque jour à 16 h : niveau de risque pour 24 heures, altitudes et orientations des pentes les plus dangereuses.
+2. **Regardez le drapeau et les pictogrammes** d’avalanche au départ des remontées, et interrogez les pisteurs.
+3. **Ne partez jamais seul.** Dites à quelqu’un votre itinéraire et votre heure de retour.
+4. **Choisissez un itinéraire à votre niveau.** Les pentes de 30° et plus sont celles où partent les avalanches : évitez-les, ainsi que les zones situées juste dessous.
+5. **Portez votre DVA sous la couche extérieure**, en mode émission, et testez-le avant chaque sortie. Pelle et sonde dans le sac.
+6. **Entraînez-vous régulièrement** à la recherche. Partir avec un professionnel est recommandé.
+7. **Renoncez** si les conditions sont incertaines. Une trace déjà faite ne garantit rien.
 
 ## Pendant
 
 ### Sur une pente douteuse
 
 - Espacez-vous ou passez un par un, en vous surveillant. Attendez-vous sur un point haut ou abrité.
-- Avalanche récente à côté, fissure qui file dans la neige : fais demi-tour.
+- Avalanche récente à côté, fissure qui file dans la neige : faites demi-tour.
 
-### Si l’avalanche te prend
+### Si l’avalanche vous prend
 
-1. **Fuis sur le côté**, vers un terrain sûr.
-2. **Lâche l’équipement lourd.** Déclenche ton sac airbag si tu en as un.
-3. **Bats-toi pour rester en surface**, avec des mouvements de nage.
-4. **Protège tes voies respiratoires** : quand la coulée ralentit, ramène tes mains devant ton visage.
-5. **Reste calme.**
+1. **Fuyez sur le côté**, vers un terrain sûr.
+2. **Lâchez l’équipement lourd.** Déclenchez votre sac airbag si vous en avez un.
+3. **Battez-vous pour rester en surface**, avec des mouvements de nage.
+4. **Protégez vos voies respiratoires** : quand la coulée ralentit, ramenez vos mains devant votre visage.
+5. **Restez calme.**
 
-### Si tu es témoin
+### Si vous êtes témoin
 
-1. **Ne quitte pas la victime des yeux** et repère l’endroit où tu l’as vue pour la dernière fois.
-2. **Appelle le 112.**
-3. **Vérifie que le lieu est sûr**, puis **cherche tout de suite** : DVA, sonde, pelle.
-4. **Dégage la victime**, donne les premiers secours et protège-la du froid.
+1. **Ne quittez pas la victime des yeux** et repérez l’endroit où vous l’avez vue pour la dernière fois.
+2. **Appelez le 112.**
+3. **Vérifiez que le lieu est sûr**, puis **cherchez tout de suite** : DVA, sonde, pelle.
+4. **Dégagez la victime**, donnez les premiers secours et protégez-la du froid.
 
 ## Après
 
-1. **D’autres avalanches peuvent partir** : ne reste pas dans la zone plus que nécessaire.
-2. **Réchauffe la victime** : l’hypothermie menace. En dessous de 35 °C de température du corps, c’est une urgence.
-3. **Ne retourne sur place** qu’avec l’autorisation des secours ou des autorités.
+1. **D’autres avalanches peuvent partir** : ne restez pas dans la zone plus que nécessaire.
+2. **Réchauffez la victime** : l’hypothermie menace. En dessous de 35 °C de température du corps, c’est une urgence.
+3. **Ne retournez sur place** qu’avec l’autorisation des secours ou des autorités.
 
 ## À ne jamais faire
 
 - Sortir en montagne en vigilance orange ou rouge « avalanches ».
-- Partir sans DVA, pelle et sonde, ou sans savoir t’en servir.
+- Partir sans DVA, pelle et sonde, ou sans savoir vous en servir.
 - Passer outre une fermeture de piste ou de route.
 - Croire qu’une pente est sûre parce que d’autres y sont passés.
 
 ## Selon l’endroit
 
-- **En station** : respecte les consignes de sécurité, les balisages et les fermetures.
-- **Dans une vallée ou un village exposé** : évite la zone menacée et éloigne-toi des fonds de vallée. En vigilance rouge, reste chez toi.
+- **En station** : respectez les consignes de sécurité, les balisages et les fermetures.
+- **Dans une vallée ou un village exposé** : évitez la zone menacée et éloignez-vous des fonds de vallée. En vigilance rouge, restez chez vous.
 
 ## Voir aussi
 

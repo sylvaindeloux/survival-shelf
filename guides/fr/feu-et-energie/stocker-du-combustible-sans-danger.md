@@ -1,14 +1,14 @@
 # Stocker du combustible sans danger
 
-> **En bref** : stocke peu, dans le récipient d’origine ou un bidon homologué bien fermé, au frais, à l’air, loin de toute flamme et hors de portée des enfants. L’essence ne se garde jamais dans le logement ni au sous-sol. En France, une bouteille de propane reste dehors, une bouteille de butane de moins de 16 kg peut rester à l’intérieur, et on ne garde qu’une seule bouteille de réserve par pièce.
+> **En bref** : stockez peu, dans le récipient d’origine ou un bidon homologué bien fermé, au frais, à l’air, loin de toute flamme et hors de portée des enfants. L’essence ne se garde jamais dans le logement ni au sous-sol. En France, une bouteille de propane reste dehors, une bouteille de butane de moins de 16 kg peut rester à l’intérieur, et on ne garde qu’une seule bouteille de réserve par pièce.
 
 ## Quand s’en servir
 
-- Tu gardes du carburant pour un groupe électrogène, une tondeuse ou la voiture.
-- Tu as des bouteilles ou des cartouches de gaz pour un réchaud, un barbecue ou un chauffage.
-- Tu fais une réserve de bois, d’alcool à brûler, de pétrole, de bougies.
+- Vous gardez du carburant pour un groupe électrogène, une tondeuse ou la voiture.
+- Vous avez des bouteilles ou des cartouches de gaz pour un réchaud, un barbecue ou un chauffage.
+- Vous faites une réserve de bois, d’alcool à brûler, de pétrole, de bougies.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Des bidons homologués pour le carburant, de préférence en métal, avec un bouchon qui ferme bien.
 - Un endroit frais et aéré, hors du logement : abri de jardin ou garage.
@@ -17,26 +17,26 @@
 
 ## Étapes
 
-1. **Stocke le moins possible.** Garde seulement ce dont tu as vraiment besoin.
-2. **Applique les règles communes à tous les combustibles** :
+1. **Stockez le moins possible.** Gardez seulement ce dont vous avez vraiment besoin.
+2. **Appliquez les règles communes à tous les combustibles** :
    - loin de toute flamme, veilleuse, cuisinière, chauffage ou moteur électrique ;
    - dans un endroit frais et aéré ;
    - dans des récipients fermés, étiquetés, debout et stables ;
    - hors de portée des enfants ;
    - sans fumer à proximité.
-3. **Range les bouteilles de gaz selon la règle française** :
+3. **Rangez les bouteilles de gaz selon la règle française** :
    - **butane** : une bouteille de moins de 16 kg peut être dans le logement ou ses dépendances ;
    - **propane** : toute bouteille de plus de 3 kg reste à l’extérieur du bâtiment, placée de façon que le gaz ne puisse pas entrer en cas de fuite ;
    - une seule bouteille de plus de 3 kg non branchée par local ;
-   - robinet fermé sur toute bouteille non branchée, même si tu la crois vide ;
+   - robinet fermé sur toute bouteille non branchée, même si vous la croyez vide ;
    - jamais près d’une source de chaleur qui peut dépasser 50 °C ;
    - dans un endroit où le gaz ne peut pas s’accumuler.
-4. **Range l’essence et le gazole hors du logement** : jamais dans la maison, l’appartement, la cave ou le sous-sol. Bidon homologué, bien fermé, dans un endroit frais et aéré. Ne laisse pas un bidon dans le coffre de la voiture.
-5. **Garde l’alcool à brûler, le pétrole et les allume-feu liquides** dans leur flacon d’origine, bien fermé, loin de la cuisine et du chauffage.
-6. **Stocke le bois au sec et à l’air** : dehors, fendu, posé sur des palettes, sous un abri couvert et aéré ; dedans, dans un local sec et ventilé. Rentre les bûches 24 à 48 heures avant de les brûler.
-7. **Range bougies, allumettes et briquets** en hauteur, hors de portée des enfants.
-8. **Jette les chiffons imbibés d’huile ou de carburant** dans un récipient métallique fermé.
-9. **Note la date d’achat** sur chaque récipient et vérifie de temps en temps que rien ne fuit.
+4. **Rangez l’essence et le gazole hors du logement** : jamais dans la maison, l’appartement, la cave ou le sous-sol. Bidon homologué, bien fermé, dans un endroit frais et aéré. Ne laissez pas un bidon dans le coffre de la voiture.
+5. **Gardez l’alcool à brûler, le pétrole et les allume-feu liquides** dans leur flacon d’origine, bien fermé, loin de la cuisine et du chauffage.
+6. **Stockez le bois au sec et à l’air** : dehors, fendu, posé sur des palettes, sous un abri couvert et aéré ; dedans, dans un local sec et ventilé. Rentrez les bûches 24 à 48 heures avant de les brûler.
+7. **Rangez bougies, allumettes et briquets** en hauteur, hors de portée des enfants.
+8. **Jetez les chiffons imbibés d’huile ou de carburant** dans un récipient métallique fermé.
+9. **Notez la date d’achat** sur chaque récipient et vérifiez de temps en temps que rien ne fuit.
 
 ## À ne jamais faire
 
@@ -44,19 +44,19 @@
 - Stocker du carburant dans le logement, la cave ou près de la chaudière.
 - Rentrer une bouteille de propane à l’intérieur.
 - Garder plusieurs bouteilles de gaz de réserve dans la même pièce.
-- Verser de l’essence ou de l’alcool près d’une flamme, ou t’en servir pour allumer un feu.
-- Faire vomir une personne qui a avalé du carburant : appelle le 15 ou un centre antipoison.
+- Verser de l’essence ou de l’alcool près d’une flamme, ou vous en servir pour allumer un feu.
+- Faire vomir une personne qui a avalé du carburant : appelez le 15 ou un centre antipoison.
 
 ## Sans matériel
 
-- Pas de bidon homologué : ne stocke pas de carburant. Garde plutôt le réservoir de la voiture au moins à moitié plein.
-- Pas d’endroit séparé du logement : contente-toi du butane dans la règle ci-dessus, de bougies et de bois.
+- Pas de bidon homologué : ne stockez pas de carburant. Gardez plutôt le réservoir de la voiture au moins à moitié plein.
+- Pas d’endroit séparé du logement : contentez-vous du butane dans la règle ci-dessus, de bougies et de bois.
 
 ## Selon l’endroit
 
-- **En appartement** : pas d’essence, pas de propane. Vérifie aussi le règlement de l’immeuble.
+- **En appartement** : pas d’essence, pas de propane. Vérifiez aussi le règlement de l’immeuble.
 - **En maison** : un abri séparé de l’habitation est le meilleur endroit pour les carburants.
-- **Selon le pays** : les quantités autorisées changent. Au Québec par exemple, un garage ou un cabanon ne doit pas contenir plus de 30 litres de liquides inflammables comme l’essence, et aucune bouteille de propane ne se range à l’intérieur d’un bâtiment. Renseigne-toi sur la règle locale et sur ce que prévoit ton assurance.
+- **Selon le pays** : les quantités autorisées changent. Au Québec par exemple, un garage ou un cabanon ne doit pas contenir plus de 30 litres de liquides inflammables comme l’essence, et aucune bouteille de propane ne se range à l’intérieur d’un bâtiment. Renseignez-vous sur la règle locale et sur ce que prévoit votre assurance.
 
 ## Voir aussi
 

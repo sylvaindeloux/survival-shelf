@@ -1,6 +1,6 @@
 # Explosion nucléaire
 
-> **En bref** : ne regarde pas l’éclair. Jette-toi à terre derrière un abri, puis entre vite dans le bâtiment en brique ou en béton le plus proche, au sous-sol ou au centre, loin des murs extérieurs et du toit. Restes-y au moins 24 heures, sauf consigne contraire, en écoutant une radio à piles. Si tu étais dehors pendant les retombées, retire tes vêtements et lave-toi.
+> **En bref** : ne regardez pas l’éclair. Jetez-vous à terre derrière un abri, puis entrez vite dans le bâtiment en brique ou en béton le plus proche, au sous-sol ou au centre, loin des murs extérieurs et du toit. Restez-y au moins 24 heures, sauf consigne contraire, en écoutant une radio à piles. Si vous étiez dehors pendant les retombées, retirez vos vêtements et lavez-vous.
 
 ## Quand s’en servir
 
@@ -8,80 +8,80 @@
 - Trois dangers se suivent : l’éclair et la chaleur, l’onde de choc, puis les retombées, des poussières radioactives qui retombent du ciel.
 - Pour un accident dans une centrale, les gestes ne sont pas les mêmes : voir [Accident nucléaire](accident-nucleaire.md).
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Une radio à piles ou à manivelle : elle marche encore quand le téléphone, la télévision et internet sont coupés.
 - De l’eau et de la nourriture emballée, rangées à l’intérieur.
 - Du savon, des lingettes ou des linges propres, des sacs en plastique.
-- Tes médicaments.
+- Vos médicaments.
 
 ## Avant
 
-1. **Repère les abris possibles** près de chez toi, de ton travail et de l’école : sous-sols, métro, tunnels, étages du milieu sans fenêtre dans un grand immeuble.
-2. **Retiens ce qui protège** : la distance, l’épaisseur des murs (béton, brique, terre) et le temps.
-3. **Garde des réserves** pour tenir plusieurs jours sans sortir (voir [Stocker de l’eau](../eau/stocker-de-l-eau.md)).
-4. **Préviens tes proches** : chacun s’abrite là où il se trouve, et vous vous retrouvez ensuite.
+1. **Repérez les abris possibles** près de chez vous, de votre travail et de l’école : sous-sols, métro, tunnels, étages du milieu sans fenêtre dans un grand immeuble.
+2. **Retenez ce qui protège** : la distance, l’épaisseur des murs (béton, brique, terre) et le temps.
+3. **Gardez des réserves** pour tenir plusieurs jours sans sortir (voir [Stocker de l’eau](../eau/stocker-de-l-eau.md)).
+4. **Prévenez vos proches** : chacun s’abrite là où il se trouve, et vous vous retrouvez ensuite.
 
 ## Pendant
 
 ### Une attaque est annoncée
 
-- Entre dans le bâtiment le plus proche et éloigne-toi des fenêtres.
+- Entrez dans le bâtiment le plus proche et éloignez-vous des fenêtres.
 
 ### L’éclair
 
-1. **Ne regarde ni l’éclair ni la boule de feu** : ils peuvent rendre aveugle.
-2. **Abrite-toi derrière ce que tu trouves** et allonge-toi face contre terre, la tête protégée, pour mettre ta peau à l’abri de la chaleur et des débris.
-3. **Reste à terre** : loin de l’explosion, l’onde de choc peut mettre 30 secondes ou plus à arriver.
-4. **En voiture** : arrête-toi sans danger et baisse-toi.
+1. **Ne regardez ni l’éclair ni la boule de feu** : ils peuvent rendre aveugle.
+2. **Abritez-vous derrière ce que vous trouvez** et allongez-vous face contre terre, la tête protégée, pour mettre votre peau à l’abri de la chaleur et des débris.
+3. **Restez à terre** : loin de l’explosion, l’onde de choc peut mettre 30 secondes ou plus à arriver.
+4. **En voiture** : arrêtez-vous sans danger et baissez-vous.
 
 ### Entre
 
-1. **Va vite à l’abri.** Après l’onde de choc, tu as 10 minutes ou plus pour rejoindre le meilleur abri : en dehors de la zone la plus proche de l’explosion, les retombées mettent plus de 15 minutes à atteindre le sol.
-2. **Choisis le bâtiment en brique ou en béton le plus proche.** Une voiture ou un mobil-home ne protègent pas assez.
-3. **Descends au sous-sol**, ou va au centre du bâtiment, loin des murs extérieurs et du toit.
-4. **Dehors, couvre ton nez et ta bouche** avec un masque ou un tissu.
-5. **Abrite-toi même loin de l’explosion** : le vent emporte les retombées à des centaines de kilomètres.
+1. **Allez vite à l’abri.** Après l’onde de choc, vous avez 10 minutes ou plus pour rejoindre le meilleur abri : en dehors de la zone la plus proche de l’explosion, les retombées mettent plus de 15 minutes à atteindre le sol.
+2. **Choisissez le bâtiment en brique ou en béton le plus proche.** Une voiture ou un mobil-home ne protègent pas assez.
+3. **Descendez au sous-sol**, ou allez au centre du bâtiment, loin des murs extérieurs et du toit.
+4. **Dehors, couvrez votre nez et votre bouche** avec un masque ou un tissu.
+5. **Abritez-vous même loin de l’explosion** : le vent emporte les retombées à des centaines de kilomètres.
 
 ### Reste
 
-1. **Coupe la ventilation, la climatisation et le chauffage à air pulsé.** Ferme les fenêtres et le conduit de la cheminée.
-2. **Reste à l’intérieur au moins 24 heures**, sauf consigne contraire des autorités. La plupart des gens pourront sortir au bout de quelques jours. Dans les zones les plus touchées, cela peut durer jusqu’à un mois.
-3. **Ne sors pas chercher tes proches** : chacun reste où il est, vous vous retrouverez ensuite.
-4. **Garde les animaux à l’intérieur.**
-5. **Malade ou blessé** : attends de savoir où te faire soigner avant de quitter l’abri.
+1. **Coupez la ventilation, la climatisation et le chauffage à air pulsé.** Fermez les fenêtres et le conduit de la cheminée.
+2. **Restez à l’intérieur au moins 24 heures**, sauf consigne contraire des autorités. La plupart des gens pourront sortir au bout de quelques jours. Dans les zones les plus touchées, cela peut durer jusqu’à un mois.
+3. **Ne sortez pas chercher vos proches** : chacun reste où il est, vous vous retrouverez ensuite.
+4. **Gardez les animaux à l’intérieur.**
+5. **Malade ou blessé** : attendez de savoir où vous faire soigner avant de quitter l’abri.
 
 ### Écoute
 
-- Suis les consignes à la radio à piles ou à manivelle.
-- N’évacue que si on te le demande.
+- Suivez les consignes à la radio à piles ou à manivelle.
+- N’évacuez que si on vous le demande.
 
-### Tu étais dehors pendant les retombées
+### Vous étiez dehors pendant les retombées
 
-1. **Retire la couche extérieure de tes vêtements** : cela enlève jusqu’à 90 % des matières radioactives. Enferme-les dans un sac en plastique, loin des personnes et des animaux.
-2. **Douche-toi** avec beaucoup d’eau et de savon, sans frotter ni gratter la peau.
-3. **Lave tes cheveux** au shampoing ou au savon, **sans après-shampoing** : il fixe les matières radioactives sur les cheveux.
-4. **Mouche-toi doucement** et essuie tes paupières, tes cils et tes oreilles avec un linge propre et humide.
-5. **Sans douche** : essuie la peau et les cheveux qui n’étaient pas couverts avec une lingette ou un linge propre et humide.
-6. **Animaux** : brosse-les doucement, puis lave-les.
+1. **Retirez la couche extérieure de vos vêtements** : cela enlève jusqu’à 90 % des matières radioactives. Enfermez-les dans un sac en plastique, loin des personnes et des animaux.
+2. **Douchez-vous** avec beaucoup d’eau et de savon, sans frotter ni gratter la peau.
+3. **Lavez vos cheveux** au shampoing ou au savon, **sans après-shampoing** : il fixe les matières radioactives sur les cheveux.
+4. **Mouchez-vous doucement** et essuyez vos paupières, vos cils et vos oreilles avec un linge propre et humide.
+5. **Sans douche** : essuyez la peau et les cheveux qui n’étaient pas couverts avec une lingette ou un linge propre et humide.
+6. **Animaux** : brossez-les doucement, puis lavez-les.
 
 ### Boire et manger
 
 - Les aliments emballés et ce qui était rangé à l’intérieur sont sûrs.
-- Ne consomme ni aliment ni boisson restés dehors à découvert, et ne bois pas l’eau d’une source à ciel ouvert.
+- Ne consommez ni aliment ni boisson restés dehors à découvert, et ne buvez pas l’eau d’une source à ciel ouvert.
 
 ## Après
 
-1. **Ne sors que sur consigne.** Les retombées sont le plus dangereuses pendant les premières heures. Au bout de deux semaines, il reste environ 1 % de la radioactivité du début.
-2. **Si l’évacuation est décidée**, suis l’itinéraire indiqué.
-3. **Comprimés d’iode** : n’en prends que sur consigne des autorités. Ils ne protègent que la thyroïde, contre l’iode radioactif, pas contre les autres matières radioactives ni contre les rayonnements venus de l’extérieur.
-4. **Prends soin du moral** de ton foyer (voir [Choc, stress et soutien aux proches](../sante-et-premiers-secours/choc-stress-et-soutien-aux-proches.md)).
+1. **Ne sortez que sur consigne.** Les retombées sont le plus dangereuses pendant les premières heures. Au bout de deux semaines, il reste environ 1 % de la radioactivité du début.
+2. **Si l’évacuation est décidée**, suivez l’itinéraire indiqué.
+3. **Comprimés d’iode** : n’en prenez que sur consigne des autorités. Ils ne protègent que la thyroïde, contre l’iode radioactif, pas contre les autres matières radioactives ni contre les rayonnements venus de l’extérieur.
+4. **Prenez soin du moral** de votre foyer (voir [Choc, stress et soutien aux proches](../sante-et-premiers-secours/choc-stress-et-soutien-aux-proches.md)).
 
 ## À ne jamais faire
 
 - Regarder l’éclair ou la boule de feu.
-- Rester dehors ou dans une voiture en te croyant à l’abri.
-- Sortir chercher tes proches pendant les premières 24 heures.
+- Rester dehors ou dans une voiture en vous croyant à l’abri.
+- Sortir chercher vos proches pendant les premières 24 heures.
 - Utiliser de l’après-shampoing après avoir été exposé aux retombées.
 - Manger ou boire ce qui est resté dehors à découvert.
 - Prendre de l’iode sans consigne.

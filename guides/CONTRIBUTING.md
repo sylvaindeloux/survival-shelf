@@ -27,7 +27,7 @@ guides/
 
 - **One guide, one question.** Someone stressed and in a hurry must find the answer in the first lines.
 - **Plain Markdown, readable as raw text**: no HTML, no front matter, no images for now, as few tables as possible. **(tested)**
-- **French guides say "tu"** and are written for France first. English guides are international: metric units first, imperial units in brackets.
+- **French guides say "vous", never "tu"**, in a calm and plain tone: someone may read them in a crisis. They are written for France first. English guides are international: metric units first, imperial units in brackets.
 - **The two versions are not word-for-word translations.** Adapt products, units and rules to the readers.
 - **At least two official sources per guide** (civil protection, health agencies, Red Cross, WHO...), opened and read, listed under "Sources". **(tested: two links)**
 - **Survivalist and outdoor blogs** are welcome for ideas and practical tips, but only after cross-checking with official sources. List them apart, under the official sources.
@@ -48,7 +48,7 @@ Sections always come in this order. Drop the ones a guide does not need, but kee
 
 ## Quand s'en servir
 
-## Ce qu'il te faut
+## Ce qu'il vous faut
 
 ## Étapes
 

@@ -1,14 +1,14 @@
 # Perdu dans la nature
 
-> **En bref** : dès que tu ne reconnais plus rien, arrête-toi : assieds-toi, bois, réfléchis, observe, puis décide. Reviens sur tes pas seulement si tu es sûr du chemin. Sinon, ou si la nuit tombe, si tu es blessé ou épuisé, reste où tu es : appelle le 112, rends-toi visible, siffle, et protège-toi du froid avant la nuit.
+> **En bref** : dès que vous ne reconnaissez plus rien, arrêtez-vous : asseyez-vous, buvez, réfléchissez, observez, puis décidez. Revenez sur vos pas seulement si vous êtes sûr du chemin. Sinon, ou si la nuit tombe, si vous êtes blessé ou épuisé, restez où vous êtes : appelez le 112, rendez-vous visible, sifflez, et protégez-vous du froid avant la nuit.
 
 ## Quand s’en servir
 
-- Tu as perdu le sentier ou le balisage, tu ne reconnais plus le paysage.
-- Le brouillard ou la nuit te surprend loin de ton point de départ.
+- Vous avez perdu le sentier ou le balisage, vous ne reconnaissez plus le paysage.
+- Le brouillard ou la nuit vous surprend loin de votre point de départ.
 - Quelqu’un du groupe manque à l’appel.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un téléphone, un sifflet, une lampe.
 - Une carte et une boussole.
@@ -18,27 +18,27 @@
 
 ### Dès le premier doute
 
-1. **Arrête-toi.** La panique est ton pire ennemi : assieds-toi, bois, mange un peu, respire.
-2. **Réfléchis** : par où es-tu arrivé ? Quel est le dernier endroit que tu as reconnu, et depuis combien de temps ? Ne bouge pas sans une raison précise.
-3. **Observe** : carte, boussole, balisage, panneaux, relief, bruits de route ou d’eau.
-4. **Décide.** Fais la liste de tes options :
-   - tu es sûr du chemin : reviens sur tes pas jusqu’au dernier point connu ;
-   - tu n’es pas sûr, la nuit tombe, tu es blessé ou épuisé : reste sur place.
+1. **Arrêtez-vous.** La panique est votre pire ennemi : asseyez-vous, buvez, mangez un peu, respirez.
+2. **Réfléchissez** : par où êtes-vous arrivé ? Quel est le dernier endroit que vous avez reconnu, et depuis combien de temps ? Ne bougez pas sans une raison précise.
+3. **Observez** : carte, boussole, balisage, panneaux, relief, bruits de route ou d’eau.
+4. **Décidez.** Faites la liste de vos options :
+   - vous êtes sûr du chemin : revenez sur vos pas jusqu’au dernier point connu ;
+   - vous n’êtes pas sûr, la nuit tombe, vous êtes blessé ou épuisé : restez sur place.
 
-### Si tu restes sur place
+### Si vous restez sur place
 
-1. **Appelle le 112**, même si ton téléphone n’affiche pas de réseau. Donne ta position, ou ce que tu vois autour de toi. Ensuite, ne change plus de place tant que les secours ne t’ont pas rappelé.
-2. **Économise la batterie** (voir [Faire durer la batterie de son téléphone](../communication-et-orientation/faire-durer-la-batterie-de-son-telephone.md)).
-3. **Mets-toi à découvert**, dans un endroit dégagé tout proche, et porte ou étale ce que tu as de plus coloré.
-4. **Signale-toi** : six coups de sifflet ou six éclats de lampe à la suite, une minute de pause, et recommence. Continue même si on te répond, jusqu’à ce qu’on te rejoigne.
-5. **Prépare la nuit pendant qu’il fait jour** : abri, isolation du sol, vêtements secs (voir [Passer une nuit dehors sans l’avoir prévu](passer-une-nuit-dehors-sans-l-avoir-prevu.md)).
-6. **Repose-toi avant d’être épuisé**, et bois.
+1. **Appelez le 112**, même si votre téléphone n’affiche pas de réseau. Donnez votre position, ou ce que vous voyez autour de vous. Ensuite, ne changez plus de place tant que les secours ne vous ont pas rappelé.
+2. **Économisez la batterie** (voir [Faire durer la batterie de son téléphone](../communication-et-orientation/faire-durer-la-batterie-de-son-telephone.md)).
+3. **Mettez-vous à découvert**, dans un endroit dégagé tout proche, et portez ou étalez ce que vous avez de plus coloré.
+4. **Signalez-vous** : six coups de sifflet ou six éclats de lampe à la suite, une minute de pause, et recommencez. Continuez même si on vous répond, jusqu’à ce qu’on vous rejoigne.
+5. **Préparez la nuit pendant qu’il fait jour** : abri, isolation du sol, vêtements secs (voir [Passer une nuit dehors sans l’avoir prévu](passer-une-nuit-dehors-sans-l-avoir-prevu.md)).
+6. **Reposez-vous avant d’être épuisé**, et buvez.
 
-### Si tu décides de bouger
+### Si vous décidez de bouger
 
-1. **Seulement si** tu sais où tu es et où tu vas, ou si tu es certain que personne ne viendra te chercher.
-2. **Laisse un message** bien visible à l’endroit que tu quittes : ta destination, ton itinéraire, l’heure, ton état.
-3. **En dernier recours**, suis un vallon ou un cours d’eau vers l’aval : le trajet est souvent difficile, mais il peut mener à un chemin ou à une route.
+1. **Seulement si** vous savez où vous êtes et où vous allez, ou si vous êtes certain que personne ne viendra vous chercher.
+2. **Laissez un message** bien visible à l’endroit que vous quittez : votre destination, votre itinéraire, l’heure, votre état.
+3. **En dernier recours**, suivez un vallon ou un cours d’eau vers l’aval : le trajet est souvent difficile, mais il peut mener à un chemin ou à une route.
 
 ### Si quelqu’un du groupe manque
 
@@ -48,26 +48,26 @@
 
 ### À apprendre aux enfants
 
-1. **Dès que tu te sens perdu, arrête-toi et reste près d’un arbre** : on te retrouvera plus vite si tu ne bouges pas.
-2. **Reste au chaud et au sec.**
-3. **Fais-toi grand et visible**, et réponds quand on t’appelle. Siffle si tu as un sifflet.
-4. **Personne ne sera fâché contre toi.**
+1. **Dès que vous vous sentez perdu, arrêtez-vous et restez près d’un arbre** : on vous retrouvera plus vite si vous ne bougez pas.
+2. **Restez au chaud et au sec.**
+3. **Faites-vous grand et visible**, et répondez quand on vous appelle. Sifflez si vous avez un sifflet.
+4. **Personne ne sera fâché contre vous.**
 
 ## À ne jamais faire
 
 - Continuer d’avancer en espérant reconnaître quelque chose.
-- Couper à travers un terrain que tu ne connais pas pour gagner du temps.
+- Couper à travers un terrain que vous ne connaissez pas pour gagner du temps.
 - Marcher de nuit, dans le brouillard, blessé ou épuisé.
 - Vous séparer pour chercher le chemin.
 
 ## Sans matériel
 
-- **Sans téléphone ni sifflet** : place-toi à découvert et agite les deux bras au-dessus de la tête dès que tu vois ou entends quelqu’un.
-- **Pour être vu du ciel** : trace de grandes lettres au sol (« SOS ») avec des pierres, des branches ou des vêtements, d’une couleur qui tranche.
+- **Sans téléphone ni sifflet** : placez-vous à découvert et agitez les deux bras au-dessus de la tête dès que vous voyez ou entendez quelqu’un.
+- **Pour être vu du ciel** : tracez de grandes lettres au sol (« SOS ») avec des pierres, des branches ou des vêtements, d’une couleur qui tranche.
 
 ## Selon l’endroit
 
-- **En France** : si tu ne peux ni parler ni entendre, envoie un SMS au 114.
+- **En France** : si vous ne pouvez ni parler ni entendre, envoyez un SMS au 114.
 - **Aux États-Unis** : le signal de détresse est une série de trois coups de sifflet, et non de six.
 - **En forêt tropicale** : voir [Forêt tropicale](../milieux-hostiles/foret-tropicale.md).
 - **Par grand froid** : voir [Neige et froid extrême](../milieux-hostiles/neige-et-froid-extreme.md).

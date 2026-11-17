@@ -1,13 +1,13 @@
 # Trouver de l’eau dehors
 
-> **En bref** : cherche une eau claire qui coule, prise en amont, loin des habitations et des troupeaux. Recueille aussi la pluie, la rosée et la neige. Traite toujours l’eau avant de la boire, même limpide. Ne bois jamais d’eau de mer ni d’urine.
+> **En bref** : cherchez une eau claire qui coule, prise en amont, loin des habitations et des troupeaux. Recueillez aussi la pluie, la rosée et la neige. Traitez toujours l’eau avant de la boire, même limpide. Ne buvez jamais d’eau de mer ni d’urine.
 
 ## Quand s’en servir
 
-- Une randonnée tourne mal, tu es en panne loin de tout, tu évacues à pied.
-- Le réseau est coupé, ta réserve est vide et il faut aller chercher l’eau dehors.
+- Une randonnée tourne mal, vous êtes en panne loin de tout, vous évacuez à pied.
+- Le réseau est coupé, votre réserve est vide et il faut aller chercher l’eau dehors.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un récipient : gourde, bouteille, casserole, sac étanche.
 - Un tissu propre (foulard, t-shirt) et, si possible, une bâche ou un sac en plastique.
@@ -15,19 +15,19 @@
 
 ## Étapes
 
-1. **Prépare ton eau avant d’avoir soif.** Économise ta sueur plutôt que ton eau : reste à l’ombre et évite les efforts aux heures chaudes.
-2. **Descends** : l’eau s’accumule au fond des vallées, au pied des falaises et là où la végétation est plus verte et plus dense.
-3. **Choisis la meilleure eau**, dans cet ordre :
+1. **Préparez votre eau avant d’avoir soif.** Économisez votre sueur plutôt que votre eau : restez à l’ombre et évitez les efforts aux heures chaudes.
+2. **Descendez** : l’eau s’accumule au fond des vallées, au pied des falaises et là où la végétation est plus verte et plus dense.
+3. **Choisissez la meilleure eau**, dans cet ordre :
    1. Une source ou un ruisseau qui coule, pris le plus haut possible, en amont des sentiers, des campements, des pâturages et des habitations.
-   2. Une rivière ou un lac : prends l’eau des premiers centimètres sous la surface, loin du bord vaseux.
+   2. Une rivière ou un lac : prenez l’eau des premiers centimètres sous la surface, loin du bord vaseux.
    3. Une eau stagnante (mare, flaque), seulement s’il n’y a rien d’autre.
-4. **Recueille la pluie** dans des récipients propres ou avec une bâche tendue en pente vers un récipient (voir [Récupérer l’eau de pluie](recuperer-l-eau-de-pluie.md)).
-5. **Récolte la rosée** au lever du jour : noue un tissu propre autour de tes chevilles, marche dans l’herbe haute, puis essore le tissu dans un récipient.
-6. **Fais fondre la neige ou la glace** avant de boire. Manger de la neige refroidit le corps et déshydrate encore plus.
-7. **Fais transpirer une plante** : enferme une branche bien feuillue, d’une plante non toxique, dans un sac en plastique transparent, au soleil. L’eau se condense dans le sac. Le rendement est faible : c’est un complément.
-8. **Traite l’eau** : filtre-la sur un tissu, puis fais-la bouillir 1 minute ou désinfecte-la.
+4. **Recueillez la pluie** dans des récipients propres ou avec une bâche tendue en pente vers un récipient (voir [Récupérer l’eau de pluie](recuperer-l-eau-de-pluie.md)).
+5. **Récoltez la rosée** au lever du jour : nouez un tissu propre autour de vos chevilles, marchez dans l’herbe haute, puis essorez le tissu dans un récipient.
+6. **Faites fondre la neige ou la glace** avant de boire. Manger de la neige refroidit le corps et déshydrate encore plus.
+7. **Faites transpirer une plante** : enfermez une branche bien feuillue, d’une plante non toxique, dans un sac en plastique transparent, au soleil. L’eau se condense dans le sac. Le rendement est faible : c’est un complément.
+8. **Traitez l’eau** : filtrez-la sur un tissu, puis faites-la bouillir 1 minute ou désinfectez-la.
 
-Si tu n’as vraiment aucun moyen de traiter l’eau, repousse le moment de boire une eau douteuse, mais ne te laisse pas déshydrater. Choisis alors l’eau la plus claire, qui coule.
+Si vous n’avez vraiment aucun moyen de traiter l’eau, repoussez le moment de boire une eau douteuse, mais ne vous laissez pas déshydrater. Choisissez alors l’eau la plus claire, qui coule.
 
 ## À ne jamais faire
 
@@ -41,18 +41,18 @@ Si tu n’as vraiment aucun moyen de traiter l’eau, repousse le moment de boir
 ## Sans matériel
 
 - Pas de récipient : un sac en plastique, une bouteille trouvée et bien rincée, ou un vêtement imperméable peuvent contenir de l’eau.
-- Pas de filtre : laisse reposer l’eau puis verse-la à travers un tissu propre. Cela la clarifie, mais ne la rend pas potable.
+- Pas de filtre : laissez reposer l’eau puis versez-la à travers un tissu propre. Cela la clarifie, mais ne la rend pas potable.
 
 ## Selon l’endroit
 
-- **En montagne** : les sources et les torrents au-dessus des alpages sont les meilleurs points d’eau. Fais fondre la neige des névés. En altitude, fais bouillir l’eau 3 minutes.
-- **En forêt et à la campagne** : méfie-toi des ruisseaux qui longent des pâturages ou des cultures.
-- **En bord de mer** : l’eau de mer ne se boit que distillée. Recueille plutôt la pluie.
-- **En zone aride** : dans le lit d’une rivière à sec, creuse au pied de la berge située à l’extérieur d’un virage. Marche aux heures fraîches.
-- **En hiver** : garde ta gourde contre toi pour qu’elle ne gèle pas, et fais fondre la neige ou la glace avant de la boire.
-- **En ville** : les fontaines et les robinets publics peuvent dépanner. Si l’eau n’est pas indiquée comme potable, traite-la.
+- **En montagne** : les sources et les torrents au-dessus des alpages sont les meilleurs points d’eau. Faites fondre la neige des névés. En altitude, faites bouillir l’eau 3 minutes.
+- **En forêt et à la campagne** : méfiez-vous des ruisseaux qui longent des pâturages ou des cultures.
+- **En bord de mer** : l’eau de mer ne se boit que distillée. Recueillez plutôt la pluie.
+- **En zone aride** : dans le lit d’une rivière à sec, creusez au pied de la berge située à l’extérieur d’un virage. Marchez aux heures fraîches.
+- **En hiver** : gardez votre gourde contre vous pour qu’elle ne gèle pas, et faites fondre la neige ou la glace avant de la boire.
+- **En ville** : les fontaines et les robinets publics peuvent dépanner. Si l’eau n’est pas indiquée comme potable, traitez-la.
 
-Fais tes besoins à 60 mètres au moins de tout point d’eau, et enterre-les à 20 cm de profondeur.
+Faites vos besoins à 60 mètres au moins de tout point d’eau, et enterrez-les à 20 cm de profondeur.
 
 ## Voir aussi
 

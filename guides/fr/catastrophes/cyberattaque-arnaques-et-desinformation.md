@@ -1,66 +1,66 @@
 # Cyberattaque, arnaques et désinformation
 
-> **En bref** : un mot de passe long et différent par compte, la double authentification, des mises à jour automatiques et des sauvegardes débranchées. Un message, un appel ou même la voix d’un proche te réclame de l’argent ou un code en urgence : raccroche et vérifie par un autre moyen. Avant de partager une information, demande-toi qui l’a publiée, quand et dans quel but.
+> **En bref** : un mot de passe long et différent par compte, la double authentification, des mises à jour automatiques et des sauvegardes débranchées. Un message, un appel ou même la voix d’un proche vous réclame de l’argent ou un code en urgence : raccrochez et vérifiez par un autre moyen. Avant de partager une information, demandez-vous qui l’a publiée, quand et dans quel but.
 
 ## Quand s’en servir
 
 - Message ou appel inattendu d’une « banque », d’une « administration », d’un « livreur » ou d’un « proche en détresse ».
-- Compte piraté, ordinateur bloqué, paiements que tu ne reconnais pas.
+- Compte piraté, ordinateur bloqué, paiements que vous ne reconnaissez pas.
 - Vidéo, photo ou message choc qui circule pendant une crise.
-- Cyberattaque contre un service dont tu dépends : hôpital, banque, opérateur, mairie.
+- Cyberattaque contre un service dont vous dépendez : hôpital, banque, opérateur, mairie.
 
 ## Avant
 
-1. **Utilise un mot de passe long** (au moins 12 caractères) **et différent pour chaque compte**. Un coffre-fort de mots de passe les retient pour toi.
-2. **Active la double authentification** partout où elle est proposée.
-3. **Active les mises à jour automatiques** de tes appareils, et n’installe que des logiciels et des applications venus des sites et des magasins officiels.
-4. **Sauvegarde régulièrement** tes données sur un support externe, que tu débranches ensuite : une sauvegarde restée branchée peut être détruite par la même attaque.
-5. **Change le nom d’utilisateur et le mot de passe par défaut** de ta box internet.
-6. **Montre-toi peu en ligne** : limite les photos, les vidéos et les informations personnelles publiques. Un court enregistrement de ta voix suffit à la copier.
-7. **Garde sur papier** les numéros de ta banque et de tes proches.
+1. **Utilisez un mot de passe long** (au moins 12 caractères) **et différent pour chaque compte**. Un coffre-fort de mots de passe les retient pour vous.
+2. **Activez la double authentification** partout où elle est proposée.
+3. **Activez les mises à jour automatiques** de vos appareils, et n’installez que des logiciels et des applications venus des sites et des magasins officiels.
+4. **Sauvegardez régulièrement** vos données sur un support externe, que vous débranchez ensuite : une sauvegarde restée branchée peut être détruite par la même attaque.
+5. **Changez le nom d’utilisateur et le mot de passe par défaut** de votre box internet.
+6. **Montrez-vous peu en ligne** : limitez les photos, les vidéos et les informations personnelles publiques. Un court enregistrement de votre voix suffit à la copier.
+7. **Gardez sur papier** les numéros de votre banque et de vos proches.
 
 ## Pendant
 
 ### Un message ou un appel suspect
 
-1. **Ne clique pas, ne réponds pas, ne donne rien.** Un organisme sérieux ne demande jamais un mot de passe ou des données bancaires par message ou par téléphone.
-2. **Repère les signes** : urgence, offre trop belle, pièce jointe inattendue, adresse d’expéditeur bizarre, demande de virement, de cryptomonnaie ou de cartes cadeaux.
-3. **Vérifie par un autre chemin** : contacte toi-même l’organisme, avec le numéro ou l’adresse que tu connais déjà.
-4. **C’est la voix ou le visage d’un proche ?** Les voix et les vidéos peuvent être imitées par une intelligence artificielle. Raccroche et rappelle la personne sur son numéro habituel, ou passe par un autre membre de la famille.
-5. **Signale** : SMS suspect au 33700, courriel sur Signal Spam.
+1. **Ne cliquez pas, ne répondez pas, ne donnez rien.** Un organisme sérieux ne demande jamais un mot de passe ou des données bancaires par message ou par téléphone.
+2. **Repérez les signes** : urgence, offre trop belle, pièce jointe inattendue, adresse d’expéditeur bizarre, demande de virement, de cryptomonnaie ou de cartes cadeaux.
+3. **Vérifiez par un autre chemin** : contactez vous-même l’organisme, avec le numéro ou l’adresse que vous connaissez déjà.
+4. **C’est la voix ou le visage d’un proche ?** Les voix et les vidéos peuvent être imitées par une intelligence artificielle. Raccrochez et rappelez la personne sur son numéro habituel, ou passez par un autre membre de la famille.
+5. **Signalez** : SMS suspect au 33700, courriel sur Signal Spam.
 
-### Tu t’es fait piéger
+### Vous vous êtes fait piéger
 
-1. **Appelle ta banque** tout de suite pour faire opposition.
-2. **Change le mot de passe** concerné, partout où tu l’utilisais.
-3. **Garde les preuves** : messages, captures d’écran, liens.
-4. **Fais analyser ou nettoyer** l’appareil touché, ou confie-le à un professionnel.
-5. **Dépose plainte** au commissariat ou à la gendarmerie, et fais-toi aider sur cybermalveillance.gouv.fr ou par le service 17Cyber. Info Escroqueries répond au 0 805 805 817 (gratuit).
+1. **Appelez votre banque** tout de suite pour faire opposition.
+2. **Changez le mot de passe** concerné, partout où vous l’utilisiez.
+3. **Gardez les preuves** : messages, captures d’écran, liens.
+4. **Faites analyser ou nettoyer** l’appareil touché, ou confiez-le à un professionnel.
+5. **Déposez plainte** au commissariat ou à la gendarmerie, et faites-vous aider sur cybermalveillance.gouv.fr ou par le service 17Cyber. Info Escroqueries répond au 0 805 805 817 (gratuit).
 
 ### Une information douteuse circule
 
-1. **Ne la partage pas** tant que tu n’as pas vérifié la source, l’auteur et la date.
-2. **Pose-toi quatre questions** : qui me l’envoie ? La source est-elle officielle ? Un grand média national l’a-t-il publiée ? Quel est son but ?
-3. **Méfie-toi des images spectaculaires.** Signes possibles d’un hypertrucage (« deepfake ») : image floue ou pixellisée, regard peu naturel, bouche mal synchronisée, lumière et ombres anormales sur le visage.
-4. **En situation de crise**, fie-toi aux canaux officiels : préfecture, mairie, radio publique.
-5. **Signale** un contenu illicite sur la plateforme concernée et sur PHAROS.
+1. **Ne la partagez pas** tant que vous n’avez pas vérifié la source, l’auteur et la date.
+2. **Posez-vous quatre questions** : qui me l’envoie ? La source est-elle officielle ? Un grand média national l’a-t-il publiée ? Quel est son but ?
+3. **Méfiez-vous des images spectaculaires.** Signes possibles d’un hypertrucage (« deepfake ») : image floue ou pixellisée, regard peu naturel, bouche mal synchronisée, lumière et ombres anormales sur le visage.
+4. **En situation de crise**, fiez-vous aux canaux officiels : préfecture, mairie, radio publique.
+5. **Signalez** un contenu illicite sur la plateforme concernée et sur PHAROS.
 
 ## Après
 
-1. **Surveille tes comptes** et tes relevés.
-2. **Préviens tes contacts** si ton compte a pu leur envoyer des messages piégés.
-3. **Si ton image ou ta voix a été détournée** : garde les preuves, signale à la plateforme, porte plainte, et saisis la CNIL si tes données sont utilisées sans ton accord.
+1. **Surveillez vos comptes** et vos relevés.
+2. **Prévenez vos contacts** si votre compte a pu leur envoyer des messages piégés.
+3. **Si votre image ou votre voix a été détournée** : gardez les preuves, signalez à la plateforme, portez plainte, et saisissez la CNIL si vos données sont utilisées sans votre accord.
 
 ## À ne jamais faire
 
-- Donner un code reçu par SMS, un mot de passe ou un code de carte à quelqu’un qui te contacte.
+- Donner un code reçu par SMS, un mot de passe ou un code de carte à quelqu’un qui vous contacte.
 - Envoyer de l’argent sous la pression.
 - Utiliser le numéro ou le lien fourni dans le message suspect pour « vérifier ».
-- Relayer une alerte ou une chaîne de messages que tu n’as pas vérifiée.
+- Relayer une alerte ou une chaîne de messages que vous n’avez pas vérifiée.
 
 ## Selon l’endroit
 
-- **Sans internet** : pour signaler ou porter plainte, va au commissariat, à la gendarmerie ou à la mairie.
+- **Sans internet** : pour signaler ou porter plainte, allez au commissariat, à la gendarmerie ou à la mairie.
 - **Si la panne touche les paiements ou le téléphone** : voir [Panne des réseaux et des paiements](panne-des-reseaux-et-des-paiements.md).
 
 ## Voir aussi

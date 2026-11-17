@@ -1,13 +1,13 @@
 # Récupérer l’eau de pluie
 
-> **En bref** : l’eau de pluie sert d’abord à tout ce qui n’est pas boire : chasse d’eau, ménage, arrosage. En France, elle est officiellement non potable. En vraie pénurie, celle qui tombe directement dans un récipient propre peut se boire après traitement. Méfie-toi de celle qui a ruisselé sur un toit.
+> **En bref** : l’eau de pluie sert d’abord à tout ce qui n’est pas boire : chasse d’eau, ménage, arrosage. En France, elle est officiellement non potable. En vraie pénurie, celle qui tombe directement dans un récipient propre peut se boire après traitement. Méfiez-vous de celle qui a ruisselé sur un toit.
 
 ## Quand s’en servir
 
-- Une coupure d’eau dure et tu veux garder ta réserve potable pour boire.
-- Tu es dehors sans point d’eau et il pleut.
+- Une coupure d’eau dure et vous voulez garder votre réserve potable pour boire.
+- Vous êtes dehors sans point d’eau et il pleut.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Des récipients propres à large ouverture : seaux, bassines, casseroles, saladiers.
 - Une bâche, un poncho ou un grand sac en plastique propre.
@@ -17,26 +17,26 @@
 
 ### En urgence, sans installation
 
-1. **Sors tes récipients** dès qu’il pleut, à découvert, loin des arbres et du bord des toits.
-2. **Tends une bâche** en pente, ou en entonnoir, vers un seau. Laisse la pluie la rincer une minute ou deux avant de recueillir l’eau.
-3. **Estime la récolte** : 1 mm de pluie sur 1 m² donne 1 litre. Une averse de 10 mm sur une bâche de 2 m sur 3 m donne environ 60 litres.
-4. **Couvre les récipients** dès la fin de la pluie.
-5. **Pour la boire**, en dernier recours : passe l’eau à travers un linge propre, puis fais-la bouillir 1 minute ou désinfecte-la (voir [Rendre l’eau potable](rendre-l-eau-potable.md)).
+1. **Sortez vos récipients** dès qu’il pleut, à découvert, loin des arbres et du bord des toits.
+2. **Tendez une bâche** en pente, ou en entonnoir, vers un seau. Laissez la pluie la rincer une minute ou deux avant de recueillir l’eau.
+3. **Estimez la récolte** : 1 mm de pluie sur 1 m² donne 1 litre. Une averse de 10 mm sur une bâche de 2 m sur 3 m donne environ 60 litres.
+4. **Couvrez les récipients** dès la fin de la pluie.
+5. **Pour la boire**, en dernier recours : passez l’eau à travers un linge propre, puis faites-la bouillir 1 minute ou désinfectez-la (voir [Rendre l’eau potable](rendre-l-eau-potable.md)).
 
 ### Avec un toit et une gouttière
 
-1. **Laisse partir les premières minutes de pluie** : elles lavent le toit de ses poussières et de ses fientes d’oiseaux.
-2. **Filtre l’eau à l’entrée** de la cuve avec une grille, et ferme la cuve avec un couvercle et une moustiquaire. Sans protection, vide-la au moins tous les 10 jours pour ne pas élever de moustiques.
-3. **Utilise cette eau** pour la chasse d’eau, le ménage des sols, l’arrosage et le lavage de la voiture.
-4. **Ne la bois pas** si le toit est en amiante-ciment (fibrociment ancien) ou en plomb : faire bouillir l’eau ne retire ni les fibres ni les métaux.
-5. **Entretiens l’installation** : nettoie les filtres, vide et désinfecte la cuve une fois par an. Ne la raccorde jamais au réseau d’eau potable et signale ses robinets par une plaque « Eau non potable ».
+1. **Laissez partir les premières minutes de pluie** : elles lavent le toit de ses poussières et de ses fientes d’oiseaux.
+2. **Filtrez l’eau à l’entrée** de la cuve avec une grille, et fermez la cuve avec un couvercle et une moustiquaire. Sans protection, videz-la au moins tous les 10 jours pour ne pas élever de moustiques.
+3. **Utilisez cette eau** pour la chasse d’eau, le ménage des sols, l’arrosage et le lavage de la voiture.
+4. **Ne la buvez pas** si le toit est en amiante-ciment (fibrociment ancien) ou en plomb : faire bouillir l’eau ne retire ni les fibres ni les métaux.
+5. **Entretenez l’installation** : nettoyez les filtres, videz et désinfectez la cuve une fois par an. Ne la raccordez jamais au réseau d’eau potable et signalez ses robinets par une plaque « Eau non potable ».
 
 ## À ne jamais faire
 
 - Boire l’eau de pluie sans la traiter.
 - Boire l’eau d’un toit en amiante-ciment ou en plomb, même bouillie.
 - Recueillir la pluie pour la boire pendant ou juste après un incendie, un accident industriel ou des retombées de fumée : elle ramène les polluants de l’air.
-- Utiliser l’eau de pluie non traitée pour cuisiner, faire la vaisselle ou te laver.
+- Utiliser l’eau de pluie non traitée pour cuisiner, faire la vaisselle ou vous laver.
 - Raccorder une cuve d’eau de pluie aux tuyaux d’eau potable.
 
 ## Sans matériel
@@ -46,10 +46,10 @@
 
 ## Selon l’endroit
 
-- **En appartement** : pose des bassines et tends une bâche sur le balcon. Ne pose rien en équilibre sur un rebord de fenêtre.
+- **En appartement** : posez des bassines et tendez une bâche sur le balcon. Ne posez rien en équilibre sur un rebord de fenêtre.
 - **En maison** : un récupérateur sous une descente de gouttière fournit l’eau de la chasse d’eau et du ménage pendant une coupure.
-- **En extérieur** : la pluie recueillie dans un récipient propre est l’eau naturelle la plus propre que tu trouveras. Traite-la quand même si tu le peux.
-- **En mer ou sur le littoral** : rince d’abord le sel de la bâche avec les premières gouttes.
+- **En extérieur** : la pluie recueillie dans un récipient propre est l’eau naturelle la plus propre que vous trouverez. Traitez-la quand même si vous le pouvez.
+- **En mer ou sur le littoral** : rincez d’abord le sel de la bâche avec les premières gouttes.
 
 ## Voir aussi
 

@@ -1,6 +1,6 @@
 # Électrisation
 
-> **En bref** : ne touche pas la personne tant que le courant n’est pas coupé. Coupe au disjoncteur ou débranche l’appareil, puis appelle le 15, le 18 ou le 112. Si elle ne respire plus, masse. Même si elle se relève et dit que ça va, elle doit voir un médecin : les lésions ne se voient pas toujours.
+> **En bref** : ne touchez pas la personne tant que le courant n’est pas coupé. Coupez au disjoncteur ou débranchez l’appareil, puis appelez le 15, le 18 ou le 112. Si elle ne respire plus, massez. Même si elle se relève et dit que ça va, elle doit voir un médecin : les lésions ne se voient pas toujours.
 
 ## Quand s’en servir
 
@@ -10,15 +10,15 @@
 
 ## Étapes
 
-1. **Regarde sans toucher.** La personne est-elle encore en contact avec la source de courant ? Y a-t-il de l’eau au sol ?
-2. **Coupe le courant** : interrupteur, disjoncteur, ou débranche l’appareil, sans toucher la personne.
-3. **Si tu ne peux pas couper**, écarte la personne de la source sans la toucher directement : monte sur un support sec et isolant (tapis en plastique, caisse en bois) et utilise un objet en bois bien sec, comme un manche à balai. Veille à ce que personne d’autre ne s’électrise.
-4. **Appelle le 15, le 18 ou le 112.**
-5. **Vérifie qu’elle répond et qu’elle respire.**
+1. **Regardez sans toucher.** La personne est-elle encore en contact avec la source de courant ? Y a-t-il de l’eau au sol ?
+2. **Coupez le courant** : interrupteur, disjoncteur, ou débranchez l’appareil, sans toucher la personne.
+3. **Si vous ne pouvez pas couper**, écartez la personne de la source sans la toucher directement : montez sur un support sec et isolant (tapis en plastique, caisse en bois) et utilisez un objet en bois bien sec, comme un manche à balai. Veillez à ce que personne d’autre ne s’électrise.
+4. **Appelez le 15, le 18 ou le 112.**
+5. **Vérifiez qu’elle répond et qu’elle respire.**
    - Elle ne respire pas ou de façon anormale : voir [Arrêt cardiaque](arret-cardiaque.md).
    - Elle est inconsciente mais respire : voir [Personne inconsciente qui respire](personne-inconsciente-qui-respire.md).
-6. **Refroidis les brûlures** à l’eau courante tempérée et couvre-les d’une compresse stérile ou de film alimentaire (voir [Brûlures](brulures.md)).
-7. **Reste avec elle** jusqu’à l’arrivée des secours.
+6. **Refroidissez les brûlures** à l’eau courante tempérée et couvrez-les d’une compresse stérile ou de film alimentaire (voir [Brûlures](brulures.md)).
+7. **Restez avec elle** jusqu’à l’arrivée des secours.
 
 Après toute électrisation, même légère et sans aucun signe, un avis médical est nécessaire : le cœur doit être contrôlé, et des lésions internes peuvent passer inaperçues.
 
@@ -26,14 +26,14 @@ Après toute électrisation, même légère et sans aucun signe, un avis médica
 
 - Toucher la personne tant qu’elle est en contact avec le courant.
 - Utiliser un objet métallique ou humide pour l’écarter.
-- T’approcher d’un câble électrique tombé à terre : reste à 6 mètres au moins et ne tente pas de le déplacer.
+- Vous approcher d’un câble électrique tombé à terre : restez à 6 mètres au moins et ne tentez pas de le déplacer.
 - Marcher dans une pièce inondée où le courant n’est pas coupé.
 - Brancher un appareil qui a pris l’eau.
 
 ## Selon l’endroit
 
-- **Ligne électrique tombée, accident avec un poteau ou un pylône** : reste à distance, empêche les autres d’approcher et appelle le 18 ou le 112.
-- **Après une inondation** : fais appel à un professionnel avant de rebrancher ton installation électrique.
+- **Ligne électrique tombée, accident avec un poteau ou un pylône** : restez à distance, empêchez les autres d’approcher et appelez le 18 ou le 112.
+- **Après une inondation** : faites appel à un professionnel avant de rebrancher votre installation électrique.
 
 ## Voir aussi
 

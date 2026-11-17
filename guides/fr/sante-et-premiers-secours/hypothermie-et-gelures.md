@@ -1,6 +1,6 @@
 # Hypothermie et gelures
 
-> **En bref** : une personne qui a eu froid et devient confuse, maladroite, somnolente ou parle avec difficulté est en hypothermie : appelle le 15 ou le 112. Mets-la à l’abri, remplace ses vêtements mouillés, enveloppe-la de couvertures, tête comprise. Pas de bain chaud, pas de bouillotte, pas de friction, pas d’alcool. Une gelure se réchauffe dans l’eau tiède, jamais en frottant.
+> **En bref** : une personne qui a eu froid et devient confuse, maladroite, somnolente ou parle avec difficulté est en hypothermie : appelez le 15 ou le 112. Mettez-la à l’abri, remplacez ses vêtements mouillés, enveloppez-la de couvertures, tête comprise. Pas de bain chaud, pas de bouillotte, pas de friction, pas d’alcool. Une gelure se réchauffe dans l’eau tiède, jamais en frottant.
 
 ## Quand s’en servir
 
@@ -9,7 +9,7 @@
 - **Chez un bébé** : peau froide, parfois rouge vif, bébé mou, anormalement calme et endormi, qui refuse de s’alimenter.
 - **Gelure** (doigts, orteils, nez, oreilles, joues) : peau froide, blanche ou gris jaunâtre, dure ou cireuse, engourdie, avec des picotements.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un abri, des vêtements secs, des couvertures, un duvet, une couverture de survie, un bonnet.
 - Une boisson chaude sucrée, sans alcool, et un aliment sucré.
@@ -19,21 +19,21 @@
 
 ### Hypothermie
 
-1. **Appelle le 15 ou le 112.**
-2. **Mets la personne à l’abri** du froid et du vent, à l’intérieur si possible.
-3. **Enlève ses vêtements mouillés** et remplace-les par des vêtements secs.
-4. **Enveloppe-la** dans des couvertures, un duvet ou des serviettes sèches, en commençant par le tronc, la tête et le cou. Couvre sa tête.
-5. **Si elle est bien réveillée**, donne-lui une boisson chaude sucrée, sans alcool, et quelque chose de sucré à manger, comme du chocolat.
-6. **Parle-lui pour la garder éveillée** et reste avec elle jusqu’à l’arrivée des secours.
-7. **Si elle ne répond plus**, regarde si elle respire : voir [Personne inconsciente qui respire](personne-inconsciente-qui-respire.md) ou [Arrêt cardiaque](arret-cardiaque.md).
+1. **Appelez le 15 ou le 112.**
+2. **Mettez la personne à l’abri** du froid et du vent, à l’intérieur si possible.
+3. **Enlevez ses vêtements mouillés** et remplacez-les par des vêtements secs.
+4. **Enveloppez-la** dans des couvertures, un duvet ou des serviettes sèches, en commençant par le tronc, la tête et le cou. Couvrez sa tête.
+5. **Si elle est bien réveillée**, donnez-lui une boisson chaude sucrée, sans alcool, et quelque chose de sucré à manger, comme du chocolat.
+6. **Parlez-lui pour la garder éveillée** et restez avec elle jusqu’à l’arrivée des secours.
+7. **Si elle ne répond plus**, regardez si elle respire : voir [Personne inconsciente qui respire](personne-inconsciente-qui-respire.md) ou [Arrêt cardiaque](arret-cardiaque.md).
 
 ### Gelure
 
-1. **Mets-toi à l’abri** et couvre-toi : réchauffe d’abord tout le corps.
-2. **Enlève gants, bagues, chaussures** de la zone gelée.
-3. **Réchauffe doucement** : mains sous les aisselles, ou zone gelée plongée dans de l’eau tiède, à 38 °C au plus.
-4. **Sèche sans frotter**, pose un pansement léger, surélève.
-5. **Consulte un médecin.** Peau bleu-noir, dure, insensible ou cloques : appelle le 15 ou le 112.
+1. **Mettez-vous à l’abri** et couvrez-vous : réchauffez d’abord tout le corps.
+2. **Enlevez gants, bagues, chaussures** de la zone gelée.
+3. **Réchauffez doucement** : mains sous les aisselles, ou zone gelée plongée dans de l’eau tiède, à 38 °C au plus.
+4. **Séchez sans frotter**, posez un pansement léger, surélevez.
+5. **Consultez un médecin.** Peau bleu-noir, dure, insensible ou cloques : appelez le 15 ou le 112.
 
 ## À ne jamais faire
 
@@ -46,7 +46,7 @@
 ## Sans matériel
 
 - Serrez-vous les uns contre les autres, à l’abri du vent, isolés du sol.
-- Enveloppe la personne dans tout ce que tu as de sec : vêtements, couvertures, journaux.
+- Enveloppez la personne dans tout ce que vous avez de sec : vêtements, couvertures, journaux.
 
 ## Voir aussi
 

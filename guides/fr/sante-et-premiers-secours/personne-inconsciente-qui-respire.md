@@ -1,6 +1,6 @@
 # Personne inconsciente qui respire
 
-> **En bref** : elle ne répond pas mais elle respire. Bascule doucement sa tête en arrière pour libérer le passage de l’air, tourne-la sur le côté (position latérale de sécurité), appelle le 15 ou le 112, et surveille sa respiration sans la quitter. Si elle ne respire plus, commence le massage cardiaque.
+> **En bref** : elle ne répond pas mais elle respire. Basculez doucement sa tête en arrière pour libérer le passage de l’air, tournez-la sur le côté (position latérale de sécurité), appelez le 15 ou le 112, et surveillez sa respiration sans la quitter. Si elle ne respire plus, commencez le massage cardiaque.
 
 ## Quand s’en servir
 
@@ -9,39 +9,39 @@
 
 ## Étapes
 
-1. **Vérifie qu’elle ne répond pas** : pose-lui des questions simples, secoue doucement ses épaules, demande-lui de te serrer la main.
-2. **Appelle à l’aide** autour de toi si tu es seul.
-3. **Libère le passage de l’air.** Elle est sur le dos : desserre son col, sa cravate, sa ceinture. Pose une main sur son front et bascule doucement sa tête en arrière. Avec le bout des doigts de l’autre main, sous l’os du menton, relève le menton.
-4. **Regarde si elle respire**, 10 secondes au plus : son ventre et sa poitrine se soulèvent, tu entends son souffle, tu le sens sur ta joue.
+1. **Vérifiez qu’elle ne répond pas** : posez-lui des questions simples, secouez doucement ses épaules, demandez-lui de vous serrer la main.
+2. **Appelez à l’aide** autour de vous si vous êtes seul.
+3. **Libérez le passage de l’air.** Elle est sur le dos : desserrez son col, sa cravate, sa ceinture. Posez une main sur son front et basculez doucement sa tête en arrière. Avec le bout des doigts de l’autre main, sous l’os du menton, relevez le menton.
+4. **Regardez si elle respire**, 10 secondes au plus : son ventre et sa poitrine se soulèvent, vous entendez son souffle, vous le sentez sur votre joue.
    - Elle ne respire pas, ou sa respiration est lente, bruyante, inefficace : voir [Arrêt cardiaque](arret-cardiaque.md).
-   - Elle respire normalement : continue.
-5. **Tourne-la sur le côté**, en position latérale de sécurité (voir ci-dessous), sauf après un accident ou une chute.
-6. **Alerte** : 15, 18 ou 112.
-7. **Surveille sa respiration en permanence** jusqu’à l’arrivée des secours. Couvre-la : protège-la du froid, de la chaleur, des intempéries.
+   - Elle respire normalement : continuez.
+5. **Tournez-la sur le côté**, en position latérale de sécurité (voir ci-dessous), sauf après un accident ou une chute.
+6. **Alertez** : 15, 18 ou 112.
+7. **Surveillez sa respiration en permanence** jusqu’à l’arrivée des secours. Couvrez-la : protégez-la du froid, de la chaleur, des intempéries.
 
 ### La position latérale de sécurité
 
-1. Retire ses lunettes. Allonge ses jambes côte à côte.
-2. Mets-toi à genoux à côté d’elle. Place le bras le plus proche de toi à angle droit, coude plié, paume vers le haut.
-3. Prends son autre bras et plaque le dos de sa main contre son oreille, de ton côté. Garde ta paume contre la sienne.
-4. De ton autre main, attrape la jambe la plus éloignée derrière le genou et relève-la, pied au sol.
-5. Fais-la rouler vers toi en tirant sur ce genou, jusqu’à ce qu’il touche le sol.
-6. Retire doucement ta main de sous sa tête, en tenant son coude pour que la tête ne bouge pas.
-7. Règle la jambe du dessus : hanche et genou à angle droit.
-8. Entrouvre sa bouche, tournée vers le sol, pour que les liquides s’écoulent.
+1. Retirez ses lunettes. Allongez ses jambes côte à côte.
+2. Mettez-vous à genoux à côté d’elle. Placez le bras le plus proche de vous à angle droit, coude plié, paume vers le haut.
+3. Prenez son autre bras et plaquez le dos de sa main contre son oreille, de votre côté. Gardez votre paume contre la sienne.
+4. De votre autre main, attrapez la jambe la plus éloignée derrière le genou et relevez-la, pied au sol.
+5. Faites-la rouler vers vous en tirant sur ce genou, jusqu’à ce qu’il touche le sol.
+6. Retirez doucement votre main de sous sa tête, en tenant son coude pour que la tête ne bouge pas.
+7. Réglez la jambe du dessus : hanche et genou à angle droit.
+8. Entrouvrez sa bouche, tournée vers le sol, pour que les liquides s’écoulent.
 
 ## À ne jamais faire
 
 - La laisser sur le dos sans surveillance.
 - Lui donner à boire ou à manger.
 - La quitter des yeux : la respiration peut s’arrêter à tout moment.
-- Appuyer sur la partie molle sous le menton : relève le menton par l’os.
+- Appuyer sur la partie molle sous le menton : relevez le menton par l’os.
 
 ## Selon l’endroit
 
-- **Après un accident, une chute ou un coup, ou quand tu ne sais pas ce qui s’est passé** : laisse-la sur le dos, appelle tout de suite et suis les consignes, en surveillant sa respiration sans arrêt.
-- **Bébé** : tourne-le sur le côté, le plus souvent dans tes bras. Garde sa tête dans l’axe du corps, sans la basculer en arrière.
-- **Froid ou sol mouillé** : glisse une couverture ou un vêtement sous elle si tu peux le faire sans la malmener, et couvre-la.
+- **Après un accident, une chute ou un coup, ou quand vous ne savez pas ce qui s’est passé** : laissez-la sur le dos, appelez tout de suite et suivez les consignes, en surveillant sa respiration sans arrêt.
+- **Bébé** : tournez-le sur le côté, le plus souvent dans vos bras. Gardez sa tête dans l’axe du corps, sans la basculer en arrière.
+- **Froid ou sol mouillé** : glissez une couverture ou un vêtement sous elle si vous pouvez le faire sans la malmener, et couvrez-la.
 
 ## Voir aussi
 

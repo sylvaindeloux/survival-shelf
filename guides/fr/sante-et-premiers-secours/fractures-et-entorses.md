@@ -1,13 +1,13 @@
 # Fractures et entorses
 
-> **En bref** : ne bouge pas la partie blessée et ne cherche jamais à la redresser. Cale-la dans la position où elle fait le moins mal, mets du froid enveloppé dans un linge, 20 minutes au plus. Membre déformé, os visible, fourmillements, peau bleue ou froide, douleur au cou ou au dos : appelle le 15 ou le 112, et ne déplace pas la personne.
+> **En bref** : ne bougez pas la partie blessée et ne cherchez jamais à la redresser. Calez-la dans la position où elle fait le moins mal, mettez du froid enveloppé dans un linge, 20 minutes au plus. Membre déformé, os visible, fourmillements, peau bleue ou froide, douleur au cou ou au dos : appelez le 15 ou le 112, et ne déplacez pas la personne.
 
 ## Quand s’en servir
 
 - Après une chute, un coup, un faux mouvement : douleur vive, difficulté ou impossibilité de bouger, gonflement, déformation.
-- Dans le doute, fais comme si c’était cassé.
+- Dans le doute, faites comme si c’était cassé.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - De quoi caler : vêtements roulés, coussins, serviette, foulard ou écharpe pour soutenir un bras.
 - Du froid : poche de glace ou sachet de légumes surgelés, et un linge pour l’envelopper.
@@ -15,34 +15,34 @@
 
 ## Étapes
 
-1. **Demande fermement à la personne de ne pas bouger** la partie blessée.
-2. **Cherche les signes de gravité** : craquement entendu, membre déformé ou dans un angle anormal, os visible, engourdissement ou fourmillements, peau bleue, grise ou froide, impossibilité de poser le pied par terre.
-3. **Appelle le 15 ou le 112** si tu vois un de ces signes, ou si la douleur touche le cou, le dos, la tête, la poitrine ou le ventre.
-4. **Cale la partie blessée** dans la position où tu l’as trouvée, sans la redresser. Un bras : soutiens-le contre la poitrine avec une serviette ou un foulard passé autour du cou.
-5. **Enlève bagues, montre et bracelets** avant que ça gonfle.
-6. **S’il y a une plaie**, couvre-la d’un linge propre. Si elle saigne, appuie dessus avec ce linge.
-7. **Mets du froid** enveloppé dans un linge, 20 minutes au plus, à renouveler toutes les 2 à 3 heures. Sans glace : un linge mouillé d’eau froide.
-8. **Protège-la du froid, de la chaleur et des intempéries**, parle-lui, surveille-la. Ne lui donne ni à boire ni à manger : une opération est possible.
+1. **Demandez fermement à la personne de ne pas bouger** la partie blessée.
+2. **Cherchez les signes de gravité** : craquement entendu, membre déformé ou dans un angle anormal, os visible, engourdissement ou fourmillements, peau bleue, grise ou froide, impossibilité de poser le pied par terre.
+3. **Appelez le 15 ou le 112** si vous voyez un de ces signes, ou si la douleur touche le cou, le dos, la tête, la poitrine ou le ventre.
+4. **Calez la partie blessée** dans la position où vous l’avez trouvée, sans la redresser. Un bras : soutenez-le contre la poitrine avec une serviette ou un foulard passé autour du cou.
+5. **Enlevez bagues, montre et bracelets** avant que ça gonfle.
+6. **S’il y a une plaie**, couvrez-la d’un linge propre. Si elle saigne, appuyez dessus avec ce linge.
+7. **Mettez du froid** enveloppé dans un linge, 20 minutes au plus, à renouveler toutes les 2 à 3 heures. Sans glace : un linge mouillé d’eau froide.
+8. **Protégez-la du froid, de la chaleur et des intempéries**, parlez-lui, surveillez-la. Ne lui donnez ni à boire ni à manger : une opération est possible.
 
 ### Douleur au cou ou au dos après un choc
 
-- La moelle épinière peut être touchée : demande-lui de ne pas bouger du tout, surtout la tête.
-- Alerte tout de suite.
-- Si tu le peux, maintiens sa tête à deux mains dans la position où elle est : à genoux dans l’axe de sa tête, une main de chaque côté, coudes posés sur le sol ou sur tes genoux.
+- La moelle épinière peut être touchée : demandez-lui de ne pas bouger du tout, surtout la tête.
+- Alertez tout de suite.
+- Si vous le pouvez, maintenez sa tête à deux mains dans la position où elle est : à genoux dans l’axe de sa tête, une main de chaque côté, coudes posés sur le sol ou sur vos genoux.
 
 ### Coup à la tête, à la poitrine ou au ventre
 
-Les signes peuvent apparaître plus tard : perte de connaissance, mal de tête qui dure, vomissements, agitation, somnolence, douleur au ventre. Appelle le 15.
+Les signes peuvent apparaître plus tard : perte de connaissance, mal de tête qui dure, vomissements, agitation, somnolence, douleur au ventre. Appelez le 15.
 
 ### Entorse de la cheville
 
-1. Arrête tout de suite l’activité et mets la cheville au repos.
-2. Mets du froid enveloppé dans un linge, 20 minutes environ.
-3. Pose une bande, pas trop serrée, jusqu’à la consultation.
-4. Surélève la jambe.
-5. Les deux premiers jours, évite la chaleur, l’alcool et les massages.
+1. Arrêtez tout de suite l’activité et mettez la cheville au repos.
+2. Mettez du froid enveloppé dans un linge, 20 minutes environ.
+3. Posez une bande, pas trop serrée, jusqu’à la consultation.
+4. Surélevez la jambe.
+5. Les deux premiers jours, évitez la chaleur, l’alcool et les massages.
 
-Consulte rapidement si la douleur est intense, si tu as senti un craquement ou une déchirure, si la cheville a gonflé tout de suite avec un bleu, ou si tu ne peux pas faire quatre pas. Une entorse simple va mieux en 2 semaines environ ; évite les efforts intenses jusqu’à 8 semaines.
+Consultez rapidement si la douleur est intense, si vous avez senti un craquement ou une déchirure, si la cheville a gonflé tout de suite avec un bleu, ou si vous ne pouvez pas faire quatre pas. Une entorse simple va mieux en 2 semaines environ ; évitez les efforts intenses jusqu’à 8 semaines.
 
 ## À ne jamais faire
 
@@ -50,11 +50,11 @@ Consulte rapidement si la douleur est intense, si tu as senti un craquement ou u
 - Déplacer une personne qui a mal au cou ou au dos, sauf danger immédiat.
 - La faire marcher sur une jambe douloureuse pour « voir si ça tient ».
 - Poser la glace directement sur la peau.
-- Serrer trop fort une bande : doigts ou orteils bleus, froids ou engourdis, desserre.
+- Serrer trop fort une bande : doigts ou orteils bleus, froids ou engourdissez, desserrez.
 
 ## Selon l’endroit
 
-- **Loin de tout** : si tu as du réseau, appelle et suis les conseils. Évacuer la personne par tes propres moyens est rarement une bonne idée. Abrite-la, isole-la du sol et couvre-la. Si les secours sont à plus de 2 heures, aide-la à changer de position de temps en temps pour soulager les points d’appui.
+- **Loin de tout** : si vous avez du réseau, appelez et suivez les conseils. Évacuer la personne par vos propres moyens est rarement une bonne idée. Abritez-la, isolez-la du sol et couvrez-la. Si les secours sont à plus de 2 heures, aidez-la à changer de position de temps en temps pour soulager les points d’appui.
 
 ## Voir aussi
 

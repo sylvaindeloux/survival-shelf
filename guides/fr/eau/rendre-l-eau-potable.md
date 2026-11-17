@@ -1,14 +1,14 @@
 # Rendre l’eau potable
 
-> **En bref** : si l’eau est trouble, clarifie-la, puis fais-la bouillir 1 minute à gros bouillons. C’est la méthode la plus sûre contre les microbes. Sans feu, filtre puis désinfecte. Aucune méthode maison ne retire les produits chimiques ni les carburants : dans ce cas, bois seulement de l’eau en bouteille.
+> **En bref** : si l’eau est trouble, clarifiez-la, puis faites-la bouillir 1 minute à gros bouillons. C’est la méthode la plus sûre contre les microbes. Sans feu, filtrez puis désinfectez. Aucune méthode maison ne retire les produits chimiques ni les carburants : dans ce cas, buvez seulement de l’eau en bouteille.
 
 ## Quand s’en servir
 
-- Les autorités demandent de faire bouillir l’eau du robinet, ou tu doutes d’elle après une inondation, une coupure ou une rupture de canalisation.
-- Tu dois boire une eau de secours : rivière, source, pluie, puits, réserve trop ancienne.
+- Les autorités demandent de faire bouillir l’eau du robinet, ou vous doutez d’elle après une inondation, une coupure ou une rupture de canalisation.
+- Vous devez boire une eau de secours : rivière, source, pluie, puits, réserve trop ancienne.
 - Pas quand l’eau est polluée par des produits chimiques, des carburants ou des substances radioactives (avis de « non-consommation ») : la faire bouillir ou la désinfecter ne sert à rien, seule l’eau en bouteille convient.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Une casserole avec un couvercle et de quoi chauffer : gazinière, réchaud, feu.
 - Un linge propre, de l’essuie-tout ou un filtre à café si l’eau est trouble.
@@ -16,18 +16,18 @@
 
 ## Étapes
 
-1. **Prends la meilleure eau disponible** : claire, courante, sans odeur ni couleur.
-2. **Clarifie-la si elle est trouble** : laisse-la reposer, puis verse doucement la partie claire à travers un linge propre, de l’essuie-tout ou un filtre à café.
-3. **Fais-la bouillir à gros bouillons pendant 1 minute.** Au-dessus de 1 500 m d’altitude, compte 3 minutes.
-4. **Laisse-la refroidir à couvert**, sans y ajouter d’eau non traitée.
-5. **Conserve-la** dans un récipient propre et fermé : 24 heures à température ambiante, 3 jours au réfrigérateur.
-6. Si elle a un goût plat, transvase-la plusieurs fois d’un récipient propre à un autre, ou ajoute une pincée de sel par litre.
+1. **Prenez la meilleure eau disponible** : claire, courante, sans odeur ni couleur.
+2. **Clarifiez-la si elle est trouble** : laissez-la reposer, puis versez doucement la partie claire à travers un linge propre, de l’essuie-tout ou un filtre à café.
+3. **Faites-la bouillir à gros bouillons pendant 1 minute.** Au-dessus de 1 500 m d’altitude, comptez 3 minutes.
+4. **Laissez-la refroidir à couvert**, sans y ajouter d’eau non traitée.
+5. **Conservez-la** dans un récipient propre et fermé : 24 heures à température ambiante, 3 jours au réfrigérateur.
+6. Si elle a un goût plat, transvasez-la plusieurs fois d’un récipient propre à un autre, ou ajoutez une pincée de sel par litre.
 
-Si une consigne officielle locale donne une autre durée, suis-la : certaines agences régionales de santé demandent par exemple 5 minutes après un cyclone.
+Si une consigne officielle locale donne une autre durée, suivez-la : certaines agences régionales de santé demandent par exemple 5 minutes après un cyclone.
 
-### Si tu ne peux pas faire bouillir
+### Si vous ne pouvez pas faire bouillir
 
-Choisis selon ce que tu as, du plus sûr au moins sûr :
+Choisissez selon ce que vous avez, du plus sûr au moins sûr :
 
 - **Filtre portable, puis désinfection** (Javel ou pastilles) : la meilleure solution sans feu. Le filtre retient les bactéries et les parasites, le désinfectant tue les virus.
 - **Pastilles de dioxyde de chlore** : elles agissent aussi sur les parasites, avec un temps d’attente plus long (jusqu’à 4 heures).
@@ -40,11 +40,11 @@ Le détail est dans les fiches [Filtrer de l’eau](filtrer-de-l-eau.md) et [Dé
 
 La distillation est la seule méthode maison qui retire le sel. Elle retire aussi les microbes, les métaux lourds et la plupart des produits chimiques.
 
-1. Remplis une casserole à moitié.
-2. Attache une tasse à la poignée du couvercle, pour qu’elle pende à l’endroit, sans toucher l’eau, quand le couvercle est posé à l’envers sur la casserole.
-3. Fais bouillir 20 minutes : la vapeur se condense sous le couvercle et goutte dans la tasse.
+1. Remplissez une casserole à moitié.
+2. Attachez une tasse à la poignée du couvercle, pour qu’elle pende à l’endroit, sans toucher l’eau, quand le couvercle est posé à l’envers sur la casserole.
+3. Faites bouillir 20 minutes : la vapeur se condense sous le couvercle et goutte dans la tasse.
 
-C’est lent et cela consomme beaucoup de combustible. Ne compte pas dessus pour une eau polluée par des carburants.
+C’est lent et cela consomme beaucoup de combustible. Ne comptez pas dessus pour une eau polluée par des carburants.
 
 ### Quelle eau pour quel usage
 
@@ -54,7 +54,7 @@ C’est lent et cela consomme beaucoup de combustible. Ne compte pas dessus pour
 
 ## À ne jamais faire
 
-- Te fier à l’aspect de l’eau : une eau limpide peut rendre malade.
+- Vous fier à l’aspect de l’eau : une eau limpide peut rendre malade.
 - Faire bouillir une eau polluée par des produits chimiques : cela ne retire rien.
 - Compter sur une carafe filtrante ou sur le congélateur : ni l’une ni l’autre ne tue les microbes.
 - Remettre l’eau traitée dans un récipient sale, ou y plonger les mains.
@@ -62,16 +62,16 @@ C’est lent et cela consomme beaucoup de combustible. Ne compte pas dessus pour
 ## Sans matériel
 
 - Pas de casserole : une gourde en métal à simple paroi ou une boîte de conserve propre peuvent aller sur le feu.
-- Ni feu ni produit : utilise le soleil (voir [Désinfecter l’eau](desinfecter-l-eau.md)).
-- Rien du tout : repousse le moment de boire une eau douteuse, mais ne te laisse pas déshydrater. Choisis alors l’eau la plus claire, qui coule.
+- Ni feu ni produit : utilisez le soleil (voir [Désinfecter l’eau](desinfecter-l-eau.md)).
+- Rien du tout : repoussez le moment de boire une eau douteuse, mais ne vous laissez pas déshydrater. Choisissez alors l’eau la plus claire, qui coule.
 
 ## Selon l’endroit
 
-- **À la maison** : garde un réchaud et du combustible pour pouvoir faire bouillir l’eau sans électricité ni gaz de ville.
-- **En voiture** : garde des bouteilles d’eau et quelques pastilles plutôt que de compter sur un traitement compliqué.
-- **En extérieur** : emporte un filtre et des pastilles, et fais bouillir l’eau au bivouac.
-- **En altitude ou par grand froid** : fais bouillir 3 minutes au-dessus de 1 500 m. Dans une eau très froide, les désinfectants agissent plus lentement : double le temps d’attente.
-- **En voyage** : là où l’eau du robinet n’est pas sûre, bois de l’eau en bouteille capsulée, ouverte devant toi.
+- **À la maison** : gardez un réchaud et du combustible pour pouvoir faire bouillir l’eau sans électricité ni gaz de ville.
+- **En voiture** : gardez des bouteilles d’eau et quelques pastilles plutôt que de compter sur un traitement compliqué.
+- **En extérieur** : emportez un filtre et des pastilles, et faites bouillir l’eau au bivouac.
+- **En altitude ou par grand froid** : faites bouillir 3 minutes au-dessus de 1 500 m. Dans une eau très froide, les désinfectants agissent plus lentement : doublez le temps d’attente.
+- **En voyage** : là où l’eau du robinet n’est pas sûre, buvez de l’eau en bouteille capsulée, ouverte devant vous.
 
 ## Voir aussi
 

@@ -1,13 +1,13 @@
 # Stocker de l’eau
 
-> **En bref** : des bouteilles d’eau du commerce, fermées, rangées au frais et à l’abri de la lumière, c’est la réserve la plus simple et la plus sûre. Si tu stockes l’eau du robinet, utilise des récipients alimentaires propres et désinfectés, note la date et renouvelle l’eau tous les 6 mois.
+> **En bref** : des bouteilles d’eau du commerce, fermées, rangées au frais et à l’abri de la lumière, c’est la réserve la plus simple et la plus sûre. Si vous stockez l’eau du robinet, utilisez des récipients alimentaires propres et désinfectés, notez la date et renouvelez l’eau tous les 6 mois.
 
 ## Quand s’en servir
 
 - Maintenant, avant toute crise : c’est la première réserve à constituer.
-- Quand une coupure d’eau, une tempête ou une crue est annoncée : remplis tout ce que tu peux tant que le robinet coule encore.
+- Quand une coupure d’eau, une tempête ou une crue est annoncée : remplissez tout ce que vous pouvez tant que le robinet coule encore.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Des packs d’eau en bouteille, ou des récipients alimentaires : jerricans et bidons marqués du symbole « verre et fourchette », bouteilles de soda ou d’eau en plastique bien rincées.
 - De l’eau de Javel non parfumée à 2,6 % et du liquide vaisselle pour préparer les récipients.
@@ -17,31 +17,31 @@
 
 ### Avec de l’eau en bouteille
 
-1. Achète la quantité calculée pour ton foyer (voir [Calculer ses besoins en eau](calculer-ses-besoins-en-eau.md)).
-2. Range les packs fermés au frais, au sec et à l’abri de la lumière, loin des carburants, des peintures et des pesticides : les odeurs traversent le plastique.
-3. Fais tourner ta réserve : bois les bouteilles les plus anciennes et rachètes-en au fur et à mesure, en respectant la date inscrite sur la bouteille.
+1. Achetez la quantité calculée pour votre foyer (voir [Calculer ses besoins en eau](calculer-ses-besoins-en-eau.md)).
+2. Rangez les packs fermés au frais, au sec et à l’abri de la lumière, loin des carburants, des peintures et des pesticides : les odeurs traversent le plastique.
+3. Faites tourner votre réserve : buvez les bouteilles les plus anciennes et rachetez-en au fur et à mesure, en respectant la date inscrite sur la bouteille.
 
 ### Avec l’eau du robinet
 
-1. **Choisis de bons récipients** : en plastique alimentaire, solides, avec un bouchon qui ferme bien. Préfère plusieurs récipients de 5 à 20 litres à un seul très gros : 1 litre pèse 1 kilo.
-2. **Lave-les** à l’eau et au liquide vaisselle, bouchon compris, puis rince.
-3. **Désinfecte-les** : verse 2 cuillères à café de Javel à 2,6 % dans 1 litre d’eau, mets ce mélange dans le récipient, ferme et secoue pour mouiller toutes les parois et le bouchon. Attends au moins 30 secondes, vide et laisse sécher à l’air.
-4. **Remplis au robinet d’eau froide**, jusqu’en haut, sans toucher l’intérieur du goulot ni du bouchon. L’eau du réseau est déjà traitée : n’ajoute rien.
-5. **Ferme, puis écris** « Eau potable » et la date du jour.
-6. **Range** au frais (entre 10 et 21 °C si possible), à l’abri de la lumière, loin des carburants et des produits chimiques. Ne pose pas les bidons directement sur du béton : mets-les sur des planches.
-7. **Renouvelle tous les 6 mois** : vide (pour arroser, par exemple), lave, désinfecte et remplis de nouveau.
+1. **Choisissez de bons récipients** : en plastique alimentaire, solides, avec un bouchon qui ferme bien. Préférez plusieurs récipients de 5 à 20 litres à un seul très gros : 1 litre pèse 1 kilo.
+2. **Lavez-les** à l’eau et au liquide vaisselle, bouchon compris, puis rincez.
+3. **Désinfectez-les** : versez 2 cuillères à café de Javel à 2,6 % dans 1 litre d’eau, mettez ce mélange dans le récipient, fermez et secouez pour mouiller toutes les parois et le bouchon. Attendez au moins 30 secondes, videz et laissez sécher à l’air.
+4. **Remplissez au robinet d’eau froide**, jusqu’en haut, sans toucher l’intérieur du goulot ni du bouchon. L’eau du réseau est déjà traitée : n’ajoutez rien.
+5. **Fermez, puis écrivez** « Eau potable » et la date du jour.
+6. **Rangez** au frais (entre 10 et 21 °C si possible), à l’abri de la lumière, loin des carburants et des produits chimiques. Ne posez pas les bidons directement sur du béton : mettez-les sur des planches.
+7. **Renouvelez tous les 6 mois** : videz (pour arroser, par exemple), lavez, désinfectez et remplissez de nouveau.
 
-Si ton eau vient d’un puits ou d’une source privée, désinfecte-la avant de la stocker (voir [Désinfecter l’eau](desinfecter-l-eau.md)).
+Si votre eau vient d’un puits ou d’une source privée, désinfectez-la avant de la stocker (voir [Désinfecter l’eau](desinfecter-l-eau.md)).
 
 ### Quand une coupure est annoncée
 
-1. Remplis tous les récipients propres : bouteilles, casseroles, saladiers, seaux.
-2. Remplis la baignoire et les lavabos. Cette eau servira pour la chasse d’eau et le ménage : ne la bois pas sans la traiter.
-3. Si une contamination du réseau est annoncée, ferme le robinet d’arrivée d’eau pour garder propre l’eau déjà chez toi.
+1. Remplissez tous les récipients propres : bouteilles, casseroles, saladiers, seaux.
+2. Remplissez la baignoire et les lavabos. Cette eau servira pour la chasse d’eau et le ménage : ne la buvez pas sans la traiter.
+3. Si une contamination du réseau est annoncée, fermez le robinet d’arrivée d’eau pour garder propre l’eau déjà chez vous.
 
-### Pour te servir
+### Pour vous servir
 
-Verse l’eau, ou puise-la avec une louche propre. N’y plonge jamais les mains et ne bois pas au goulot d’un gros bidon.
+Versez l’eau, ou puisez-la avec une louche propre. N’y plongez jamais les mains et ne buvez pas au goulot d’un gros bidon.
 
 ## À ne jamais faire
 
@@ -54,14 +54,14 @@ Verse l’eau, ou puise-la avec une louche propre. N’y plonge jamais les mains
 ## Sans matériel
 
 - Pas de jerrican : des bouteilles de soda ou d’eau de 1,5 à 2 litres, lavées et désinfectées, font très bien l’affaire.
-- Pas de place : glisse des packs sous les lits et en bas des placards.
+- Pas de place : glissez des packs sous les lits et en bas des placards.
 
 ## Selon l’endroit
 
-- **En appartement** : répartis les packs sous les lits et en bas des placards plutôt que sur une étagère haute. Garde quelques petites bouteilles faciles à emporter en cas d’évacuation.
-- **En maison** : la cave ou un cellier frais conviennent bien. Évite le garage si tu y gardes de l’essence ou des produits chimiques.
-- **En voiture** : garde quelques petites bouteilles et renouvelle-les souvent : une voiture au soleil est trop chaude pour une vraie réserve.
-- **Là où il gèle** : laisse environ 10 % de vide dans le récipient, car l’eau gonfle en gelant.
+- **En appartement** : répartissez les packs sous les lits et en bas des placards plutôt que sur une étagère haute. Gardez quelques petites bouteilles faciles à emporter en cas d’évacuation.
+- **En maison** : la cave ou un cellier frais conviennent bien. Évitez le garage si vous y gardez de l’essence ou des produits chimiques.
+- **En voiture** : gardez quelques petites bouteilles et renouvelez-les souvent : une voiture au soleil est trop chaude pour une vraie réserve.
+- **Là où il gèle** : laissez environ 10 % de vide dans le récipient, car l’eau gonfle en gelant.
 
 ## Voir aussi
 

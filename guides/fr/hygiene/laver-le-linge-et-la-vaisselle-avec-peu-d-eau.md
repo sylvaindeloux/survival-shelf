@@ -1,6 +1,6 @@
 # Laver le linge et la vaisselle avec peu d’eau
 
-> **En bref** : vaisselle en trois temps, dans des bassines : laver à l’eau chaude savonneuse, rincer à l’eau propre, laisser sécher à l’air. Désinfecte-la si elle a touché l’eau d’une inondation. Linge : lave à part, à l’eau chaude et à la lessive, tout ce qui est souillé, et fais tout sécher complètement.
+> **En bref** : vaisselle en trois temps, dans des bassines : laver à l’eau chaude savonneuse, rincer à l’eau propre, laisser sécher à l’air. Désinfectez-la si elle a touché l’eau d’une inondation. Linge : lavez à part, à l’eau chaude et à la lessive, tout ce qui est souillé, et faites tout sécher complètement.
 
 ## Quand s’en servir
 
@@ -8,7 +8,7 @@
 - Eau du robinet déclarée non potable.
 - Après une inondation : vaisselle, linge et plans de travail ont pu être contaminés.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Deux ou trois bassines, ou des seaux.
 - Du liquide vaisselle, de la lessive ou du savon.
@@ -21,37 +21,37 @@
 
 ### La vaisselle
 
-1. **Racle les assiettes** dans la poubelle avant de laver : moins de restes, moins d’eau à utiliser.
-2. **Lave** dans une première bassine d’eau chaude savonneuse, du moins sale au plus sale : verres, couverts, assiettes, casseroles.
-3. **Rince** dans une deuxième bassine d’eau propre.
-4. **Laisse sécher complètement à l’air**, sur un égouttoir ou un torchon propre.
-5. **Jette l’eau sale** loin de la réserve d’eau. L’eau de rinçage peut servir à la chasse d’eau.
+1. **Raclez les assiettes** dans la poubelle avant de laver : moins de restes, moins d’eau à utiliser.
+2. **Lavez** dans une première bassine d’eau chaude savonneuse, du moins sale au plus sale : verres, couverts, assiettes, casseroles.
+3. **Rincez** dans une deuxième bassine d’eau propre.
+4. **Laissez sécher complètement à l’air**, sur un égouttoir ou un torchon propre.
+5. **Jetez l’eau sale** loin de la réserve d’eau. L’eau de rinçage peut servir à la chasse d’eau.
 
 ### Quand il faut désinfecter
 
 Si la vaisselle a touché l’eau d’une inondation :
 
-1. Lave-la d’abord à l’eau chaude savonneuse, puis rince-la à l’eau propre.
-2. Trempe-la entièrement dans de l’eau javellisée :
+1. Lavez-la d’abord à l’eau chaude savonneuse, puis rincez-la à l’eau propre.
+2. Trempez-la entièrement dans de l’eau javellisée :
    - selon l’ARS, pour les objets après une inondation : un verre d’eau de Javel pour un seau de 10 litres d’eau, 30 minutes, puis rinçage ;
    - selon le CDC, pour la vaisselle : 240 ml d’eau de Javel non parfumée à 5 à 9 % pour 19 litres d’eau, 1 minute, sans rinçage.
-3. Rince à l’eau potable si tu as suivi la première méthode, puis laisse sécher à l’air.
-4. Jette les planches à découper en bois, les tétines de biberon et les sucettes qui ont touché l’eau de l’inondation.
+3. Rincez à l’eau potable si vous avez suivi la première méthode, puis laissez sécher à l’air.
+4. Jetez les planches à découper en bois, les tétines de biberon et les sucettes qui ont touché l’eau de l’inondation.
 
-Fais de même pour les plans de travail, avec un linge trempé dans la solution.
+Faites de même pour les plans de travail, avec un linge trempé dans la solution.
 
 ### Le linge
 
-1. **Trie** : mets à part le linge souillé par des selles, des vomissements ou l’eau d’une inondation, ainsi que les vêtements portés pour nettoyer.
-2. **Fais tremper** le linge dans une bassine d’eau avec de la lessive ou du savon.
-3. **Frotte**, surtout les zones sales, puis essore.
-4. **Rince** dans une bassine d’eau propre, essore de nouveau.
-5. **Linge souillé** : lave-le à part, à l’eau chaude et à la lessive, avant de le reporter. Lave-toi les mains ensuite.
-6. **Étends et fais sécher complètement**, sur une corde, à l’air. Un tissu porté contre la peau qui reste humide ou mal lavé peut provoquer des irritations et des infections.
+1. **Triez** : mettez à part le linge souillé par des selles, des vomissements ou l’eau d’une inondation, ainsi que les vêtements portés pour nettoyer.
+2. **Faites tremper** le linge dans une bassine d’eau avec de la lessive ou du savon.
+3. **Frottez**, surtout les zones sales, puis essorez.
+4. **Rincez** dans une bassine d’eau propre, essorez de nouveau.
+5. **Linge souillé** : lavez-le à part, à l’eau chaude et à la lessive, avant de le reporter. Lavez-vous les mains ensuite.
+6. **Étendez et faites sécher complètement**, sur une corde, à l’air. Un tissu porté contre la peau qui reste humide ou mal lavé peut provoquer des irritations et des infections.
 
 ### Quelle eau utiliser
 
-- **Eau du robinet sous avis d’ébullition** : elle convient en général pour la lessive, et pour la vaisselle lavée au détergent puis bien séchée. Suis les consignes locales.
+- **Eau du robinet sous avis d’ébullition** : elle convient en général pour la lessive, et pour la vaisselle lavée au détergent puis bien séchée. Suivez les consignes locales.
 - **Avis de non-utilisation** : eau en bouteille uniquement.
 
 ## À ne jamais faire
@@ -60,7 +60,7 @@ Fais de même pour les plans de travail, avec un linge trempé dans la solution.
 - Utiliser une Javel parfumée ou avec détergent sur la vaisselle.
 - Laver le linge souillé avec le reste.
 - Ranger du linge ou de la vaisselle encore humides.
-- Laver ta vaisselle ou ton linge directement dans un ruisseau ou un lac.
+- Laver votre vaisselle ou votre linge directement dans un ruisseau ou un lac.
 
 ## Sans matériel
 
@@ -69,7 +69,7 @@ Fais de même pour les plans de travail, avec un linge trempé dans la solution.
 
 ## Selon l’endroit
 
-- **En pleine nature** : lave à 60 mètres au moins des ruisseaux et des lacs, avec très peu de savon biodégradable. Filtre l’eau de vaisselle pour retenir les restes, que tu remportes, puis disperse-la sur le sol.
+- **En pleine nature** : lavez à 60 mètres au moins des ruisseaux et des lacs, avec très peu de savon biodégradable. Filtrez l’eau de vaisselle pour retenir les restes, que vous remportez, puis dispersez-la sur le sol.
 - **Avec une personne malade** : elle ne partage ni ses couverts ni sa serviette, et son linge souillé est lavé à part, à chaud.
 
 ## Voir aussi

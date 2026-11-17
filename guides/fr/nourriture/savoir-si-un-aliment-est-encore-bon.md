@@ -1,57 +1,57 @@
 # Savoir si un aliment est encore bon
 
-> **En bref** : « à consommer jusqu’au » est une date limite, à respecter. « À consommer de préférence avant le » est une date de qualité : après, l’aliment reste mangeable. Jette toute boîte bombée, rouillée ou qui fuit, tout bocal qui ne fait pas « pop » à l’ouverture, tout ce qui a une odeur, une couleur ou une texture anormale. Ne goûte jamais pour vérifier.
+> **En bref** : « à consommer jusqu’au » est une date limite, à respecter. « À consommer de préférence avant le » est une date de qualité : après, l’aliment reste mangeable. Jetez toute boîte bombée, rouillée ou qui fuit, tout bocal qui ne fait pas « pop » à l’ouverture, tout ce qui a une odeur, une couleur ou une texture anormale. Ne goûtez jamais pour vérifier.
 
 ## Quand s’en servir
 
-- Tu tries tes réserves, ou tu retrouves un produit dont la date est passée.
+- Vous triez vos réserves, ou vous retrouvez un produit dont la date est passée.
 - Après une coupure de courant, une inondation ou plusieurs jours sans réfrigérateur.
-- Tu hésites devant une boîte abîmée ou un plat resté dehors.
+- Vous hésitez devant une boîte abîmée ou un plat resté dehors.
 
 ## Étapes
 
 ### Lire la date
 
-1. **« À consommer jusqu’au » (DLC)** : produits frais, comme la viande, le poisson, la charcuterie et certains laitages. Ne les mange pas après la date.
+1. **« À consommer jusqu’au » (DLC)** : produits frais, comme la viande, le poisson, la charcuterie et certains laitages. Ne les mangez pas après la date.
 2. **« À consommer de préférence avant le » (DDM)** : pâtes, riz, sucre, sel, farine, conserves. Après la date, ils sont sans risque pour la santé, mais ils peuvent avoir perdu du goût ou des qualités nutritives.
-3. **Une fois ouvert**, la date de l’emballage ne compte plus : suis le délai écrit par le fabricant, souvent 2 ou 3 jours au réfrigérateur.
+3. **Une fois ouvert**, la date de l’emballage ne compte plus : suivez le délai écrit par le fabricant, souvent 2 ou 3 jours au réfrigérateur.
 
 ### Regarder l’emballage
 
-1. **Boîte de conserve** : jette-la si elle est bombée, déformée, rouillée, percée, si elle fuit, ou si elle gicle ou mousse à l’ouverture.
-2. **Bocal** : il doit faire un bruit d’entrée d’air quand tu l’ouvres. Pas de « pop » : jette.
-3. **Sachet ou barquette** gonflés : jette.
+1. **Boîte de conserve** : jetez-la si elle est bombée, déformée, rouillée, percée, si elle fuit, ou si elle gicle ou mousse à l’ouverture.
+2. **Bocal** : il doit faire un bruit d’entrée d’air quand vous l’ouvrez. Pas de « pop » : jetez.
+3. **Sachet ou barquette** gonflés : jetez.
 
 ### Regarder l’aliment
 
-1. **Odeur, couleur ou texture anormale, moisissure** : jette, même si l’emballage a l’air normal.
-2. **Ne goûte pas.** Un aliment dangereux n’a pas toujours une odeur ou un aspect suspect : c’est son histoire qui compte, pas seulement son aspect.
+1. **Odeur, couleur ou texture anormale, moisissure** : jetez, même si l’emballage a l’air normal.
+2. **Ne goûtez pas.** Un aliment dangereux n’a pas toujours une odeur ou un aspect suspect : c’est son histoire qui compte, pas seulement son aspect.
 
 ### Retracer son histoire
 
-1. **Un produit frais ou un plat cuisiné** resté plus de 2 heures à température ambiante : jette.
+1. **Un produit frais ou un plat cuisiné** resté plus de 2 heures à température ambiante : jetez.
 2. **Un reste fait maison** : 3 jours au réfrigérateur au plus. Une préparation aux œufs crus (mayonnaise maison, mousse au chocolat) : 24 heures.
-3. **Un produit décongelé** : mange-le dans les 3 jours, sans le recongeler.
+3. **Un produit décongelé** : mangez-le dans les 3 jours, sans le recongeler.
 4. **Après une coupure de courant** : voir [Sauver le contenu du frigo et du congélateur](sauver-le-contenu-du-frigo-et-du-congelateur.md).
 
 ### Après une inondation
 
-1. **Jette tout ce que l’eau a touché** et qui n’était pas dans un emballage étanche : cartons, sachets, bouteilles et bocaux à bouchon vissé ou à capsule, conserves faites maison.
-2. **Les boîtes de conserve du commerce intactes peuvent être sauvées** : retire l’étiquette, lave la boîte à l’eau chaude savonneuse, rince-la, plonge-la 2 minutes dans l’eau bouillante, laisse sécher, puis note au feutre le contenu et la date. Mange-les rapidement.
-3. **Au potager**, jette les fruits, les légumes et les herbes qui ont poussé au-dessus du sol et que l’eau a recouverts.
+1. **Jetez tout ce que l’eau a touché** et qui n’était pas dans un emballage étanche : cartons, sachets, bouteilles et bocaux à bouchon vissé ou à capsule, conserves faites maison.
+2. **Les boîtes de conserve du commerce intactes peuvent être sauvées** : retirez l’étiquette, lavez la boîte à l’eau chaude savonneuse, rincez-la, plongez-la 2 minutes dans l’eau bouillante, laissez sécher, puis notez au feutre le contenu et la date. Mangez-les rapidement.
+3. **Au potager**, jetez les fruits, les légumes et les herbes qui ont poussé au-dessus du sol et que l’eau a recouverts.
 
 ## À ne jamais faire
 
 - Goûter « juste un peu » pour savoir.
 - Manger le contenu d’une boîte bombée, même s’il a l’air bon.
-- Te fier seulement à l’odeur ou à l’aspect.
-- Donner un aliment douteux à une personne fragile : enfant de moins de 5 ans, femme enceinte, personne âgée ou malade. Pour elles, respecte strictement les dates.
+- Vous fier seulement à l’odeur ou à l’aspect.
+- Donner un aliment douteux à une personne fragile : enfant de moins de 5 ans, femme enceinte, personne âgée ou malade. Pour elles, respectez strictement les dates.
 - Donner du miel à un bébé de moins d’un an.
 
 ## Selon l’endroit
 
-- **Conserves et bocaux faits maison** : ce sont eux qui causent le plus souvent le botulisme, une intoxication grave. Faire bouillir ne suffit pas à stériliser. Au moindre doute, jette.
-- **Après un repas** : vision floue ou double, bouche sèche, difficulté à avaler ou à parler, parfois après des vomissements ou une diarrhée, peuvent être les signes d’un botulisme. Ils apparaissent le plus souvent 12 à 48 heures après. Appelle le 15.
+- **Conserves et bocaux faits maison** : ce sont eux qui causent le plus souvent le botulisme, une intoxication grave. Faire bouillir ne suffit pas à stériliser. Au moindre doute, jetez.
+- **Après un repas** : vision floue ou double, bouche sèche, difficulté à avaler ou à parler, parfois après des vomissements ou une diarrhée, peuvent être les signes d’un botulisme. Ils apparaissent le plus souvent 12 à 48 heures après. Appelez le 15.
 
 ## Voir aussi
 

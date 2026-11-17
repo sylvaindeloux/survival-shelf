@@ -1,51 +1,51 @@
 # Coincé dans un ascenseur
 
-> **En bref** : reste calme : la cabine est ventilée, tu ne manqueras pas d’air. Appuie sur le bouton d’alarme ou d’appel, et attends les secours loin des portes. N’essaie jamais d’ouvrir les portes ni de sortir par toi-même.
+> **En bref** : restez calme : la cabine est ventilée, vous ne manquerez pas d’air. Appuyez sur le bouton d’alarme ou d’appel, et attendez les secours loin des portes. N’essayez jamais d’ouvrir les portes ni de sortir par vous-même.
 
 ## Quand s’en servir
 
 - La cabine s’arrête entre deux étages ou les portes ne s’ouvrent plus.
 - Coupure de courant, panne, séisme.
-- Quelqu’un d’autre est bloqué et t’appelle à l’aide.
+- Quelqu’un d’autre est bloqué et vous appelle à l’aide.
 
 ## Étapes
 
-### Tu es dans la cabine
+### Vous êtes dans la cabine
 
-1. **Respire calmement.** Un ascenseur est ventilé : l’air ne manquera pas. En France, la cabine doit aussi avoir un éclairage de secours.
-2. **Appuie sur le bouton d’un autre étage** : cela suffit parfois à faire repartir la cabine.
-3. **Appuie sur le bouton d’alarme ou d’appel.** Il te met en relation avec un service d’intervention : donne l’adresse, dis combien vous êtes et si quelqu’un va mal.
-4. **Si personne ne répond**, appelle les secours avec ton téléphone s’il a du réseau : le 18 ou le 112.
-5. **Si rien ne marche**, crie ou frappe sur les parois de la cabine, en faisant des pauses pour écouter.
-6. **Éloigne-toi des portes** et assieds-toi si l’attente dure.
-7. **Occupe-toi et occupe les autres** : respire lentement, parle, rassure les enfants.
-8. **N’accepte de sortir** qu’avec l’aide d’une personne formée : technicien de l’ascenseur ou pompier.
+1. **Respirez calmement.** Un ascenseur est ventilé : l’air ne manquera pas. En France, la cabine doit aussi avoir un éclairage de secours.
+2. **Appuyez sur le bouton d’un autre étage** : cela suffit parfois à faire repartir la cabine.
+3. **Appuyez sur le bouton d’alarme ou d’appel.** Il vous met en relation avec un service d’intervention : donnez l’adresse, dites combien vous êtes et si quelqu’un va mal.
+4. **Si personne ne répond**, appelez les secours avec votre téléphone s’il a du réseau : le 18 ou le 112.
+5. **Si rien ne marche**, criez ou frappez sur les parois de la cabine, en faisant des pauses pour écouter.
+6. **Éloignez-vous des portes** et asseyez-vous si l’attente dure.
+7. **Occupez-vous et occupez les autres** : respirez lentement, parlez, rassurez les enfants.
+8. **N’acceptez de sortir** qu’avec l’aide d’une personne formée : technicien de l’ascenseur ou pompier.
 
 ### Quelqu’un d’autre est bloqué
 
-1. **Préviens** le gardien ou le service de sécurité de l’immeuble, ou appelle les secours.
-2. **Parle-lui** à travers la porte : dis que l’aide arrive et qu’il ne doit pas essayer de sortir.
-3. **N’essaie pas de le sortir toi-même.**
-4. **Reste là** jusqu’à l’arrivée des secours.
+1. **Prévenez** le gardien ou le service de sécurité de l’immeuble, ou appelez les secours.
+2. **Parlez-lui** à travers la porte : dites que l’aide arrive et qu’il ne doit pas essayer de sortir.
+3. **N’essayez pas de le sortir vous-même.**
+4. **Restez là** jusqu’à l’arrivée des secours.
 
 ## À ne jamais faire
 
 - Forcer ou écarter les portes de la cabine.
-- Sortir par tes propres moyens d’une cabine arrêtée entre deux étages.
+- Sortir par vos propres moyens d’une cabine arrêtée entre deux étages.
 - Passer par la trappe du plafond.
 - Retenir les portes d’un ascenseur avec un bras ou une jambe.
 - Prendre l’ascenseur pendant un incendie, une coupure de courant ou après un séisme.
 
 ## Sans matériel
 
-- Alarme muette et téléphone sans réseau : frappe sur les parois à intervalles réguliers et appelle, puis écoute.
-- Économise la batterie de ton téléphone : il te servira aussi de lampe si l’éclairage s’éteint.
+- Alarme muette et téléphone sans réseau : frappez sur les parois à intervalles réguliers et appelez, puis écoutez.
+- Économisez la batterie de votre téléphone : il vous servira aussi de lampe si l’éclairage s’éteint.
 
 ## Selon l’endroit
 
 - **En France** : depuis 2013, chaque ascenseur doit avoir une téléalarme reliant la cabine à un service d’intervention, et le contrat d’entretien prévoit le déblocage des personnes 7 jours sur 7 et 24 heures sur 24.
-- **Si tu dépends de l’ascenseur** pour sortir de chez toi : demande au gardien ou au syndic d’être prévenu avant un arrêt prévu, et organise qui t’aidera dans l’escalier.
-- **Quand une coupure ou une tempête est annoncée** : prends l’escalier.
+- **Si vous dépendez de l’ascenseur** pour sortir de chez vous : demandez au gardien ou au syndic d’être prévenu avant un arrêt prévu, et organisez qui vous aidera dans l’escalier.
+- **Quand une coupure ou une tempête est annoncée** : prenez l’escalier.
 
 ## Voir aussi
 

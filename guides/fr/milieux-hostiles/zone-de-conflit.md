@@ -1,15 +1,15 @@
 # Zone de conflit
 
-> **En bref** : le plus sûr est de ne pas y être : pars tant que les routes sont ouvertes. Sur place, déplace-toi de jour, sur des routes goudronnées et fréquentées, et jamais là où les habitants ne vont pas. Ne touche aucun objet au sol et n’entre pas dans les bâtiments abandonnés. Face à des hommes armés, arrête-toi et fais ce qu’ils disent.
+> **En bref** : le plus sûr est de ne pas y être : partez tant que les routes sont ouvertes. Sur place, déplacez-vous de jour, sur des routes goudronnées et fréquentées, et jamais là où les habitants ne vont pas. Ne touchez aucun objet au sol et n’entrez pas dans les bâtiments abandonnés. Face à des hommes armés, arrêtez-vous et faites ce qu’ils disent.
 
 ## Quand s’en servir
 
-- Tu vis ou tu voyages dans une région où l’on se bat, ou qui sort d’un conflit.
-- Tu dois traverser une zone où il reste des mines ou des munitions non explosées.
+- Vous vivez ou vous voyagez dans une région où l’on se bat, ou qui sort d’un conflit.
+- Vous devez traverser une zone où il reste des mines ou des munitions non explosées.
 
-Pour t’abriter des tirs et des bombardements chez toi, voir [Conflit armé et bombardement](../catastrophes/conflit-arme-et-bombardement.md).
+Pour vous abriter des tirs et des bombardements chez vous, voir [Conflit armé et bombardement](../catastrophes/conflit-arme-et-bombardement.md).
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - De quoi tenir 3 jours : eau, nourriture qui se garde, trousse de secours, lampe, radio, couvertures de survie.
 - Les papiers de chacun, de l’argent liquide en petites coupures.
@@ -21,53 +21,53 @@ Pour t’abriter des tirs et des bombardements chez toi, voir [Conflit armé et 
 
 ### Avant, et tant que c’est calme
 
-1. **Lis les Conseils aux voyageurs** de ton pays avant de partir, et renonce si la zone est déconseillée.
-2. **Inscris-toi sur le Fil d’Ariane** si tu es français : ce service gratuit t’envoie des alertes de sécurité.
-3. **Prépare un sac par personne** et vérifie-le tous les six mois.
-4. **Renseigne-toi auprès des habitants** sur les endroits dangereux, et dis toujours à quelqu’un où tu vas.
-5. **Pars tôt.** Quand une évacuation est organisée, elle est le dernier recours : suis à la lettre les consignes de ceux qui la dirigent.
+1. **Lisez les Conseils aux voyageurs** de votre pays avant de partir, et renoncez si la zone est déconseillée.
+2. **Inscrivez-vous sur le Fil d’Ariane** si vous êtes français : ce service gratuit vous envoie des alertes de sécurité.
+3. **Préparez un sac par personne** et vérifiez-le tous les six mois.
+4. **Renseignez-vous auprès des habitants** sur les endroits dangereux, et dites toujours à quelqu’un où vous allez.
+5. **Partez tôt.** Quand une évacuation est organisée, elle est le dernier recours : suivez à la lettre les consignes de ceux qui la dirigent.
 
 ### Se déplacer
 
-1. **Reste sur les routes principales, goudronnées et fréquentées.** Ne prends pas une route que tu ne connais pas si d’autres ne viennent pas de l’emprunter.
-2. **Roule de jour**, ceinture attachée, et pas le premier le matin.
-3. **Ne quitte jamais la chaussée** : ni pour contourner un obstacle, ni pour croiser, ni pour une pause. Si la route est barrée, fais demi-tour.
-4. **Là où des gens armés tiennent les lieux**, arrête-toi et suis leurs instructions.
-5. **Barrage vide avec des mines sur la route** : ne les déplace pas, considère que l’on t’observe et, si personne ne vient, fais demi-tour.
-6. **Des tirs de sommation** veulent dire que tu n’es pas le bienvenu : n’insiste pas.
+1. **Restez sur les routes principales, goudronnées et fréquentées.** Ne prenez pas une route que vous ne connaissez pas si d’autres ne viennent pas de l’emprunter.
+2. **Roulez de jour**, ceinture attachée, et pas le premier le matin.
+3. **Ne quittez jamais la chaussée** : ni pour contourner un obstacle, ni pour croiser, ni pour une pause. Si la route est barrée, faites demi-tour.
+4. **Là où des gens armés tiennent les lieux**, arrêtez-vous et suivez leurs instructions.
+5. **Barrage vide avec des mines sur la route** : ne les déplacez pas, considérez que l’on vous observe et, si personne ne vient, faites demi-tour.
+6. **Des tirs de sommation** veulent dire que vous n’êtes pas le bienvenu : n’insistez pas.
 
 ### Mines et objets explosifs
 
-1. **Apprends les signes.**
+1. **Apprenez les signes.**
    - Officiels : panneau rouge, tête de mort, « DANGER MINES », rubans.
    - Improvisés : tissu ou sac plastique noué à une clôture ou à un arbre, petit tas de pierres, boîte de conserve sur un piquet, bâtons, ruban.
    - Indices : cratères, véhicules détruits ou abandonnés, champs en friche, carcasses d’animaux, sol retourné, endroits que les habitants évitent, route anormalement vide.
-2. **N’entre jamais dans une zone marquée.** Beaucoup de zones minées ne le sont pas.
-3. **N’approche et ne touche aucune mine, aucune munition, aucun objet suspect**, pour quelque raison que ce soit. Pas de « souvenir ».
-4. **Évite** les anciennes positions de combat, les maisons désertes, les pistes de campagne, les jardins et les terrains en friche, le matériel militaire détruit.
-5. **N’utilise ni radio ni téléphone à moins de 100 m** d’une mine ou d’une munition que tu as repérée : éloigne-toi d’abord.
-6. **Tu vois un objet suspect** : arrête-toi, ne touche à rien, repars par où tu es venu, puis préviens les autres et les autorités.
+2. **N’entrez jamais dans une zone marquée.** Beaucoup de zones minées ne le sont pas.
+3. **N’approche et ne touchez aucune mine, aucune munition, aucun objet suspect**, pour quelque raison que ce soit. Pas de « souvenir ».
+4. **Évitez** les anciennes positions de combat, les maisons désertes, les pistes de campagne, les jardins et les terrains en friche, le matériel militaire détruit.
+5. **N’utilisez ni radio ni téléphone à moins de 100 m** d’une mine ou d’une munition que vous avez repérée : éloignez-vous d’abord.
+6. **Vous voyez un objet suspect** : arrêtez-vous, ne touche à rien, repartez par où vous êtes venu, puis prévenez les autres et les autorités.
 
-### Tu penses être dans une zone minée
+### Vous pensez être dans une zone minée
 
 1. **À pied** :
-   - arrête-toi tout de suite et ne bouge plus les pieds ;
-   - regarde le sol autour de toi : mines, fils, signes ;
-   - préviens les autres, appelle les secours, empêche quiconque d’approcher ;
-   - ne bouge que si tu vois comment rejoindre le dernier sol dur que tu savais sûr, route goudronnée ou béton ; sinon, attends les secours.
+   - arrêtez-vous tout de suite et ne bougez plus les pieds ;
+   - regardez le sol autour de vous : mines, fils, signes ;
+   - prévenez les autres, appelez les secours, empêchez quiconque d’approcher ;
+   - ne bougez que si vous voyez comment rejoindre le dernier sol dur que vous saviez sûr, route goudronnée ou béton ; sinon, attendez les secours.
 2. **En voiture** :
-   - arrête-toi, ne recule pas, ne tourne pas le volant ;
-   - reste à l’intérieur, klaxonne pour attirer l’attention et attends des secours qualifiés ;
-   - si tu dois sortir, par exemple à cause d’un feu, sors sans poser le pied à côté du véhicule et repars en arrière dans les traces des roues, une personne à la fois.
-3. **Quelqu’un est blessé dans la zone** : ne cours pas vers lui. Appelle les secours et dis-lui de ne pas bouger.
+   - arrêtez-vous, ne reculez pas, ne tournez pas le volant ;
+   - restez à l’intérieur, klaxonnez pour attirer l’attention et attendez des secours qualifiés ;
+   - si vous devez sortir, par exemple à cause d’un feu, sortez sans poser le pied à côté du véhicule et repartez en arrière dans les traces des roues, une personne à la fois.
+3. **Quelqu’un est blessé dans la zone** : ne courez pas vers lui. Appelez les secours et dites-lui de ne pas bouger.
 
 ### Sous les tirs
 
-1. **Bombardement, dehors** : jette-toi dans un fossé ou derrière un abri en dur.
-2. **En voiture, si les tirs tombent tout près**, sors et allonge-toi dans un fossé ou derrière un abri en dur, pas sous le véhicule.
-3. **Tirs d’armes légères** : reste à l’intérieur, loin des fenêtres, avec au moins deux murs entre toi et les tirs.
-4. **Après une explosion, ne te précipite pas vers le lieu** : il peut y avoir d’autres tirs ou un second engin.
-5. **Attends 5 à 10 minutes après la fin des tirs** avant de sortir, et regarde ce que font les habitants.
+1. **Bombardement, dehors** : jetez-vous dans un fossé ou derrière un abri en dur.
+2. **En voiture, si les tirs tombent tout près**, sortez et allongez-vous dans un fossé ou derrière un abri en dur, pas sous le véhicule.
+3. **Tirs d’armes légères** : restez à l’intérieur, loin des fenêtres, avec au moins deux murs entre vous et les tirs.
+4. **Après une explosion, ne vous précipitez pas vers le lieu** : il peut y avoir d’autres tirs ou un second engin.
+5. **Attendez 5 à 10 minutes après la fin des tirs** avant de sortir, et regardez ce que font les habitants.
 
 ## À ne jamais faire
 
@@ -80,9 +80,9 @@ Pour t’abriter des tirs et des bombardements chez toi, voir [Conflit armé et 
 
 ## Selon l’endroit
 
-- **Français à l’étranger** : seuls l’ambassadeur et l’officier de sécurité décident d’un regroupement ou d’une évacuation. Suis les consignes de l’ambassade et de ton chef d’îlot, pas les rumeurs. Sur un vol d’évacuation, le bagage est souvent limité à 10 kg.
-- **Si tes enfants sont à l’école** : ne te précipite pas pour aller les chercher, sauf si on te le demande.
-- **Chez toi** : voir [Guerre civile](../catastrophes/guerre-civile.md).
+- **Français à l’étranger** : seuls l’ambassadeur et l’officier de sécurité décident d’un regroupement ou d’une évacuation. Suivez les consignes de l’ambassade et de votre chef d’îlot, pas les rumeurs. Sur un vol d’évacuation, le bagage est souvent limité à 10 kg.
+- **Si vos enfants sont à l’école** : ne vous précipitez pas pour aller les chercher, sauf si on vous le demande.
+- **Chez vous** : voir [Guerre civile](../catastrophes/guerre-civile.md).
 
 ## Voir aussi
 

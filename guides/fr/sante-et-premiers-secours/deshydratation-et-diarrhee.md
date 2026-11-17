@@ -1,34 +1,34 @@
 # Déshydratation et diarrhée
 
-> **En bref** : en cas de diarrhée, de vomissements ou de forte chaleur, fais boire souvent, par petites gorgées, plus que d’habitude. Pour un bébé ou un jeune enfant, donne une solution de réhydratation orale, jamais de l’eau seule. Personne très somnolente, confuse, qui n’urine presque plus, ou bébé mou et difficile à réveiller : appelle le 15 ou le 112.
+> **En bref** : en cas de diarrhée, de vomissements ou de forte chaleur, faites boire souvent, par petites gorgées, plus que d’habitude. Pour un bébé ou un jeune enfant, donnez une solution de réhydratation orale, jamais de l’eau seule. Personne très somnolente, confuse, qui n’urine presque plus, ou bébé mou et difficile à réveiller : appelez le 15 ou le 112.
 
 ## Quand s’en servir
 
 - Diarrhée, vomissements, fièvre, forte chaleur, gros effort, ou quand on ne boit pas assez.
-- **Les plus fragiles** : les bébés et les jeunes enfants, les personnes âgées, les malades chroniques. Une personne âgée ressent peu la soif : pense-y devant une perte d’appétit, une fatigue ou une somnolence inhabituelles.
+- **Les plus fragiles** : les bébés et les jeunes enfants, les personnes âgées, les malades chroniques. Une personne âgée ressent peu la soif : pensez-y devant une perte d’appétit, une fatigue ou une somnolence inhabituelles.
 - **Premiers signes** : soif, lèvres sèches, fatigue inhabituelle, urines foncées, peu abondantes et à l’odeur forte, vertiges, mal de tête.
 - **Signes graves** : soif intense, bouche et langue sèches, yeux creux, peau froide et pâle qui garde le pli quand on la pince, presque plus d’urines, désorientation, somnolence, comportement inhabituel.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - De l’eau potable.
-- Des sachets de solution de réhydratation orale (SRO), vendus en pharmacie : garde-en d’avance si tu as un enfant en bas âge.
+- Des sachets de solution de réhydratation orale (SRO), vendus en pharmacie : gardez-en d’avance si vous avez un enfant en bas âge.
 - À défaut, du sucre et du sel.
 
 ## Étapes
 
-1. **Fais boire tout de suite**, souvent et par petites gorgées, plus que d’habitude. En cas de vomissements, de toutes petites quantités, très rapprochées, puis davantage.
-2. **Choisis la bonne boisson.**
-   - Bébé et jeune enfant : solution de réhydratation orale, préparée comme indiqué sur le sachet. Plusieurs fois par heure au début, puis à volonté. Continue l’allaitement ou les biberons habituels, et propose la solution entre les tétées.
+1. **Faites boire tout de suite**, souvent et par petites gorgées, plus que d’habitude. En cas de vomissements, de toutes petites quantités, très rapprochées, puis davantage.
+2. **Choisissez la bonne boisson.**
+   - Bébé et jeune enfant : solution de réhydratation orale, préparée comme indiqué sur le sachet. Plusieurs fois par heure au début, puis à volonté. Continuez l’allaitement ou les biberons habituels, et proposez la solution entre les tétées.
    - Adulte et grand enfant : eau, eau sucrée, bouillon de légumes salé, ou solution de réhydratation.
-3. **Mets la personne au repos**, au frais. S’il fait chaud, déshabille-la et rafraîchis-la avec des linges humides et un ventilateur.
-4. **Fais-la manger** dès qu’elle le peut, son alimentation habituelle.
-5. **Surveille les urines** : elles doivent redevenir claires et régulières.
-6. **Protège les autres** : la diarrhée se transmet par les mains. Lave-toi les mains à l’eau et au savon après les toilettes ou un change et avant de cuisiner, lave à part et à chaud le linge souillé, nettoie chaque jour les toilettes, les robinets et les poignées. La personne malade ne cuisine pas pour les autres.
+3. **Mettez la personne au repos**, au frais. S’il fait chaud, déshabillez-la et rafraîchissez-la avec des linges humides et un ventilateur.
+4. **Faites-la manger** dès qu’elle le peut, son alimentation habituelle.
+5. **Surveillez les urines** : elles doivent redevenir claires et régulières.
+6. **Protégez les autres** : la diarrhée se transmet par les mains. Lavez-vous les mains à l’eau et au savon après les toilettes ou un change et avant de cuisiner, lavez à part et à chaud le linge souillé, nettoyez chaque jour les toilettes, les robinets et les poignées. La personne malade ne cuisine pas pour les autres.
 
-### Si tu n’as pas de sachet
+### Si vous n’avez pas de sachet
 
-Dans 1 litre d’eau potable, dissous 6 cuillères à café de sucre et une demi-cuillère à café de sel. Respecte les doses, et utilise un sachet du commerce dès que tu peux.
+Dans 1 litre d’eau potable, dissolvez 6 cuillères à café de sucre et une demi-cuillère à café de sel. Respectez les doses, et utilisez un sachet du commerce dès que vous pouvez.
 
 ### Consulte rapidement si
 
@@ -56,7 +56,7 @@ Dans 1 litre d’eau potable, dissous 6 cuillères à café de sucre et une demi
 
 ## Selon l’endroit
 
-- **Eau du robinet coupée ou douteuse** : n’utilise que de l’eau en bouteille ou de l’eau rendue potable (voir [Rendre l’eau potable](../eau/rendre-l-eau-potable.md)).
+- **Eau du robinet coupée ou douteuse** : n’utilisez que de l’eau en bouteille ou de l’eau rendue potable (voir [Rendre l’eau potable](../eau/rendre-l-eau-potable.md)).
 - **Plusieurs malades en même temps** dans un lieu où l’hygiène est difficile : voir [Éviter les maladies quand l’hygiène se dégrade](../hygiene/eviter-les-maladies-quand-l-hygiene-se-degrade.md).
 
 ## Voir aussi

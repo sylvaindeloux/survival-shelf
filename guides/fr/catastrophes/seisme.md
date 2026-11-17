@@ -1,13 +1,13 @@
 # Séisme
 
-> **En bref** : pendant la secousse, baisse-toi, abrite-toi sous un meuble solide ou contre un mur porteur, loin des fenêtres, protège ta tête et ta nuque, et tiens bon jusqu’à la fin. Ensuite, sors par l’escalier, éloigne-toi de tout ce qui peut s’effondrer et attends-toi à des répliques. Au bord de la mer, monte tout de suite sur les hauteurs.
+> **En bref** : pendant la secousse, baissez-vous, abritez-vous sous un meuble solide ou contre un mur porteur, loin des fenêtres, protégez votre tête et votre nuque, et tenez bon jusqu’à la fin. Ensuite, sortez par l’escalier, éloignez-vous de tout ce qui peut s’effondrer et attendez-vous à des répliques. Au bord de la mer, montez tout de suite sur les hauteurs.
 
 ## Quand s’en servir
 
 - Le sol tremble, les objets tombent.
-- Tu vis ou tu voyages dans une zone sismique : renseigne-toi sur le site Géorisques ou à la mairie.
+- Vous vivez ou vous voyagez dans une zone sismique : renseignez-vous sur le site Géorisques ou à la mairie.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Près du lit : des chaussures solides et une lampe.
 - Un kit d’urgence avec de l’eau et de la nourriture pour plusieurs jours, un sifflet, une radio à piles.
@@ -15,53 +15,53 @@
 
 ## Avant
 
-1. **Fixe ce qui peut tomber** : meubles hauts, étagères, télévision, miroirs, chauffe-eau. Range les objets lourds ou fragiles en bas.
-2. **Apprends à couper** le gaz, l’eau et l’électricité.
-3. **Repère dans chaque pièce** où t’abriter : table solide, mur porteur, loin des vitres.
-4. **Entraîne-toi en famille** au geste « se baisser, s’abriter, tenir bon ».
-5. **Prépare-toi à vivre plusieurs jours** sans électricité, sans gaz et sans eau.
+1. **Fixez ce qui peut tomber** : meubles hauts, étagères, télévision, miroirs, chauffe-eau. Rangez les objets lourds ou fragiles en bas.
+2. **Apprenez à couper** le gaz, l’eau et l’électricité.
+3. **Repérez dans chaque pièce** où vous abriter : table solide, mur porteur, loin des vitres.
+4. **Entraînez-vous en famille** au geste « se baisser, s’abriter, tenir bon ».
+5. **Préparez-vous à vivre plusieurs jours** sans électricité, sans gaz et sans eau.
 
 ## Pendant
 
 ### À l’intérieur
 
-1. **Baisse-toi** à quatre pattes, **abrite-toi** sous une table solide ou contre un mur porteur, loin des fenêtres, et **tiens bon** jusqu’à la fin de la secousse.
-2. **Protège ta tête et ta nuque** avec tes bras.
-3. **Ne te précipite pas dehors** : pendant la secousse, les chutes de débris sont le premier danger. Seulement si tu es au rez-de-chaussée, tout près d’une sortie, sors et éloigne-toi du bâtiment.
-4. **Au lit**, restes-y et protège ta tête avec l’oreiller.
-5. **En fauteuil roulant**, bloque les roues et protège ta tête et ta nuque.
-6. **Ne prends pas l’ascenseur.**
+1. **Baissez-vous** à quatre pattes, **abritez-vous** sous une table solide ou contre un mur porteur, loin des fenêtres, et **tenez bon** jusqu’à la fin de la secousse.
+2. **Protégez votre tête et votre nuque** avec vos bras.
+3. **Ne vous précipitez pas dehors** : pendant la secousse, les chutes de débris sont le premier danger. Seulement si vous êtes au rez-de-chaussée, tout près d’une sortie, sortez et éloignez-vous du bâtiment.
+4. **Au lit**, restez-y et protégez votre tête avec l’oreiller.
+5. **En fauteuil roulant**, bloquez les roues et protégez votre tête et votre nuque.
+6. **Ne prenez pas l’ascenseur.**
 
 ### Dehors
 
-- Éloigne-toi des bâtiments, des lignes électriques et des arbres. Baisse-toi dans un espace dégagé.
+- Éloignez-vous des bâtiments, des lignes électriques et des arbres. Baissez-vous dans un espace dégagé.
 
 ### En voiture
 
-- Arrête-toi à l’écart des bâtiments, des arbres, des ponts et des fils électriques, et reste à l’intérieur jusqu’à la fin de la secousse.
+- Arrêtez-vous à l’écart des bâtiments, des arbres, des ponts et des fils électriques, et restez à l’intérieur jusqu’à la fin de la secousse.
 
 ## Après
 
-1. **Attends une minute** avant de te relever, puis mets des chaussures solides : il y a du verre partout.
-2. **Sors du bâtiment par l’escalier** et éloigne-toi de tout ce qui peut s’effondrer. Ne retourne pas dans un bâtiment abîmé.
-3. **Attends-toi à des répliques** : à chacune, baisse-toi, abrite-toi, tiens bon.
-4. **Au bord de la mer, pars tout de suite** vers les hauteurs ou l’intérieur des terres, sans attendre d’alerte (voir [Tsunami](tsunami.md)).
-5. **Méfie-toi du gaz** : pas de flamme, de briquet ni d’interrupteur tant que tu n’es pas sûr qu’il n’y a pas de fuite. Odeur de gaz : coupe-le si tu peux, sors et appelle les secours de l’extérieur.
-6. **Coupe l’eau et l’électricité** si les installations sont abîmées.
-7. **Téléphone seulement pour une urgence** : préfère les SMS. Écoute la radio.
-8. **Si tu es coincé** : couvre ta bouche et ton nez avec un tissu, siffle ou frappe trois coups sur un tuyau ou un mur toutes les quelques minutes plutôt que de crier.
+1. **Attendez une minute** avant de vous relever, puis mettez des chaussures solides : il y a du verre partout.
+2. **Sortez du bâtiment par l’escalier** et éloignez-vous de tout ce qui peut s’effondrer. Ne retournez pas dans un bâtiment abîmé.
+3. **Attendez-vous à des répliques** : à chacune, baissez-vous, abritez-vous, tenez bon.
+4. **Au bord de la mer, partez tout de suite** vers les hauteurs ou l’intérieur des terres, sans attendre d’alerte (voir [Tsunami](tsunami.md)).
+5. **Méfiez-vous du gaz** : pas de flamme, de briquet ni d’interrupteur tant que vous n’êtes pas sûr qu’il n’y a pas de fuite. Odeur de gaz : coupez-le si vous pouvez, sortez et appelez les secours de l’extérieur.
+6. **Coupez l’eau et l’électricité** si les installations sont abîmées.
+7. **Téléphonez seulement pour une urgence** : préférez les SMS. Écoutez la radio.
+8. **Si vous êtes coincé** : couvrez votre bouche et votre nez avec un tissu, sifflez ou frappez trois coups sur un tuyau ou un mur toutes les quelques minutes plutôt que de crier.
 
 ## À ne jamais faire
 
 - Courir dehors pendant la secousse.
-- Te mettre dans l’encadrement d’une porte : ce n’est pas un abri.
+- Vous mettre dans l’encadrement d’une porte : ce n’est pas un abri.
 - Prendre l’ascenseur.
 - Rentrer dans un bâtiment abîmé pour récupérer des affaires.
 - Allumer une flamme avant d’avoir vérifié le gaz.
 
 ## Selon l’endroit
 
-- **En immeuble** : attends-toi au déclenchement des alarmes et des extincteurs automatiques. Reste abrité, puis descends par l’escalier.
+- **En immeuble** : attendez-vous au déclenchement des alarmes et des extincteurs automatiques. Restez abrité, puis descendez par l’escalier.
 - **En montagne ou près d’une falaise** : attention aux chutes de pierres et aux glissements de terrain.
 - **Sur la côte** : un séisme fort ou long est le premier signe d’un tsunami.
 

@@ -1,44 +1,44 @@
 # Faire durer la batterie de son téléphone
 
-> **En bref** : dès que la coupure commence, passe en mode économie d’énergie, baisse la luminosité et coupe le Wi-Fi, le Bluetooth et la localisation. Entre deux usages, mets le mode avion. Écris des SMS courts au lieu d’appeler, oublie les vidéos, et informe-toi à la radio plutôt qu’au téléphone. Garde la batterie pour les urgences.
+> **En bref** : dès que la coupure commence, passez en mode économie d’énergie, baissez la luminosité et coupez le Wi-Fi, le Bluetooth et la localisation. Entre deux usages, mettez le mode avion. Écrivez des SMS courts au lieu d’appeler, oubliez les vidéos, et informez-vous à la radio plutôt qu’au téléphone. Gardez la batterie pour les urgences.
 
 ## Quand s’en servir
 
 - Coupure de courant qui dure, évacuation, trajet bloqué, sortie loin de toute prise.
-- Tu n’as qu’une batterie externe, ou rien, pour recharger.
+- Vous n’avez qu’une batterie externe, ou rien, pour recharger.
 - Avant une tempête annoncée, pour partir avec des batteries pleines.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un téléphone chargé à fond et son câble.
 - Une batterie externe chargée, un chargeur de voiture.
-- Une radio à piles, pour ne pas t’informer avec le téléphone.
-- Tes numéros importants sur papier, au cas où le téléphone s’éteint.
+- Une radio à piles, pour ne pas vous informer avec le téléphone.
+- Vos numéros importants sur papier, au cas où le téléphone s’éteint.
 
 ## Étapes
 
 ### Avant la coupure
 
-1. **Recharge tout** dès qu’une tempête ou une coupure est annoncée : téléphones, batteries externes, lampes rechargeables.
-2. **Garde un câble et un chargeur dans la voiture.**
-3. **Note sur papier** les numéros dont tu aurais besoin si le téléphone s’éteignait.
+1. **Rechargez tout** dès qu’une tempête ou une coupure est annoncée : téléphones, batteries externes, lampes rechargeables.
+2. **Gardez un câble et un chargeur dans la voiture.**
+3. **Notez sur papier** les numéros dont vous auriez besoin si le téléphone s’éteignait.
 
 ### Dès que la coupure commence
 
-1. **Active le mode économie d’énergie.**
-2. **Baisse la luminosité** de l’écran.
-3. **Coupe le Wi-Fi, le Bluetooth et la localisation**, et ferme les applications ouvertes en arrière-plan.
-4. **Passe en mode avion** entre deux usages. Rallume le réseau à des moments convenus avec tes proches pour relever les messages.
+1. **Activez le mode économie d’énergie.**
+2. **Baissez la luminosité** de l’écran.
+3. **Coupez le Wi-Fi, le Bluetooth et la localisation**, et fermez les applications ouvertes en arrière-plan.
+4. **Passez en mode avion** entre deux usages. Rallumez le réseau à des moments convenus avec vos proches pour relever les messages.
 5. **Si vous êtes plusieurs**, n’utilisez qu’un téléphone à la fois et gardez les autres éteints.
 
 ### Tant que ça dure
 
-1. **Écris au lieu d’appeler** : un SMS court passe mieux qu’un appel sur un réseau saturé. Si tu dois appeler, fais bref.
-2. **L’appel n’aboutit pas** : attends 10 secondes avant de recomposer, au lieu de rappeler en boucle.
+1. **Écrivez au lieu d’appeler** : un SMS court passe mieux qu’un appel sur un réseau saturé. Si vous devez appeler, faites bref.
+2. **L’appel n’aboutit pas** : attendez 10 secondes avant de recomposer, au lieu de rappeler en boucle.
 3. **Pas de vidéo, de jeu ni de téléchargement.**
-4. **Informe-toi à la radio** à piles ou sur l’autoradio, pas sur le téléphone.
-5. **Sers-toi d’une lampe**, pas du téléphone, pour t’éclairer.
-6. **Recharge dès que tu peux** : batterie externe, prise USB d’un ordinateur portable, voiture garée dehors (voir [Recharger un téléphone sans prise](../feu-et-energie/recharger-un-telephone-sans-prise.md)).
+4. **Informez-vous à la radio** à piles ou sur l’autoradio, pas sur le téléphone.
+5. **Servez-vous d’une lampe**, pas du téléphone, pour vous éclairer.
+6. **Rechargez dès que vous pouvez** : batterie externe, prise USB d’un ordinateur portable, voiture garée dehors (voir [Recharger un téléphone sans prise](../feu-et-energie/recharger-un-telephone-sans-prise.md)).
 
 ## À ne jamais faire
 
@@ -49,14 +49,14 @@
 
 ## Sans matériel
 
-- Aucun moyen de recharger : éteins le téléphone et ne l’allume qu’à heures fixes, quelques minutes, pour envoyer et relever tes messages.
-- Téléphone éteint pour de bon : sers-toi des numéros notés sur papier et du téléphone d’un voisin.
+- Aucun moyen de recharger : éteignez le téléphone et ne l’allumez qu’à heures fixes, quelques minutes, pour envoyer et relever vos messages.
+- Téléphone éteint pour de bon : servez-vous des numéros notés sur papier et du téléphone d’un voisin.
 
 ## Selon l’endroit
 
-- **En voiture** : branche le téléphone pendant que tu roules, et garde la batterie externe pour les arrêts.
-- **En randonnée** : pars batterie pleine et dis à quelqu’un où tu vas. Il n’y a pas de réseau partout : la carte en papier ne tombe jamais en panne.
-- **En lieu d’accueil** : des points de recharge sont parfois installés. Renseigne-toi auprès de la mairie.
+- **En voiture** : branchez le téléphone pendant que vous roulez, et gardez la batterie externe pour les arrêts.
+- **En randonnée** : partez batterie pleine et dites à quelqu’un où vous allez. Il n’y a pas de réseau partout : la carte en papier ne tombe jamais en panne.
+- **En lieu d’accueil** : des points de recharge sont parfois installés. Renseignez-vous auprès de la mairie.
 
 ## Voir aussi
 

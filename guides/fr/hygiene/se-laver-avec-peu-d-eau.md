@@ -1,14 +1,14 @@
 # Se laver avec peu d’eau
 
-> **En bref** : avec un gant de toilette, du savon et une bassine, quelques litres suffisent. Commence par le visage, finis par les pieds et l’entrejambe. Les mains et les dents passent avant tout le reste : les dents se brossent uniquement à l’eau potable. Ne te lave jamais dans une eau d’inondation ou souillée par les égouts.
+> **En bref** : avec un gant de toilette, du savon et une bassine, quelques litres suffisent. Commencez par le visage, finissez par les pieds et l’entrejambe. Les mains et les dents passent avant tout le reste : les dents se brossent uniquement à l’eau potable. Ne vous lavez jamais dans une eau d’inondation ou souillée par les égouts.
 
 ## Quand s’en servir
 
 - Coupure d’eau, eau du robinet déclarée non potable, réserve à économiser, vie en hébergement d’urgence ou en plein air.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
-- De l’eau : compte 2 à 6 litres par personne et par jour pour l’hygiène de base.
+- De l’eau : comptez 2 à 6 litres par personne et par jour pour l’hygiène de base.
 - Du savon, un gant de toilette ou un linge propre, une serviette par personne.
 - Une bassine ou un seau.
 - Des lingettes, utiles quand l’eau manque vraiment.
@@ -16,26 +16,26 @@
 
 ## Étapes
 
-1. **Lave-toi d’abord les mains** (voir [Se laver les mains sans eau courante](se-laver-les-mains-sans-eau-courante.md)).
-2. **Prépare une bassine d’eau**, tiède si tu peux. Au soleil, l’eau chauffe toute seule dans un récipient sombre.
-3. **Lave-toi au gant, du haut vers le bas**, des zones les plus propres vers les plus sales : visage, cou, bras, aisselles, torse, dos, jambes, puis pieds et entrejambe en dernier.
-4. **Rince** avec le gant essoré dans un peu d’eau claire.
-5. **Sèche-toi bien.** Chacun garde son gant et sa serviette, et les fait sécher entre deux toilettes.
-6. **Brosse-toi les dents avec de l’eau potable** : en bouteille, bouillie ou désinfectée.
+1. **Lavez-vous d’abord les mains** (voir [Se laver les mains sans eau courante](se-laver-les-mains-sans-eau-courante.md)).
+2. **Préparez une bassine d’eau**, tiède si vous pouvez. Au soleil, l’eau chauffe toute seule dans un récipient sombre.
+3. **Lavez-vous au gant, du haut vers le bas**, des zones les plus propres vers les plus sales : visage, cou, bras, aisselles, torse, dos, jambes, puis pieds et entrejambe en dernier.
+4. **Rincez** avec le gant essoré dans un peu d’eau claire.
+5. **Séchez-vous bien.** Chacun garde son gant et sa serviette, et les fait sécher entre deux toilettes.
+6. **Brossez-vous les dents avec de l’eau potable** : en bouteille, bouillie ou désinfectée.
 
 ### Quelle eau pour se laver
 
-- **Eau du robinet sous avis d’ébullition** : tu peux en général te doucher ou te laver sans la faire bouillir, à condition de ne pas l’avaler et de ne pas en mettre dans les yeux. Pour les jeunes enfants, préfère la toilette au gant. Suis les consignes locales.
+- **Eau du robinet sous avis d’ébullition** : vous pouvez en général vous doucher ou vous laver sans la faire bouillir, à condition de ne pas l’avaler et de ne pas en mettre dans les yeux. Pour les jeunes enfants, préférez la toilette au gant. Suivez les consignes locales.
 - **Avis de non-utilisation** : eau en bouteille pour tout.
 - **Eau de pluie ou eau trouvée dehors** : seulement si elle est claire et sans risque de pollution chimique, sans l’avaler, et jamais sur une plaie.
 - **Dents, plaies, biberons** : toujours de l’eau potable.
 
 ## À ne jamais faire
 
-- Te laver ou te baigner dans une eau d’inondation, ou dans une rivière ou un lac qui a pu recevoir des égouts ou des produits chimiques.
-- Te brosser les dents avec une eau douteuse.
+- Vous laver ou vous baigner dans une eau d’inondation, ou dans une rivière ou un lac qui a pu recevoir des égouts ou des produits chimiques.
+- Vous brosser les dents avec une eau douteuse.
 - Mouiller une plaie avec une eau non potable.
-- Partager ton gant ou ta serviette.
+- Partager votre gant ou votre serviette.
 
 ## Sans matériel
 
@@ -44,9 +44,9 @@
 
 ## Selon l’endroit
 
-- **Hébergement collectif** : crée un coin d’intimité avec une bâche ou une couverture tendue, ou réserve une pièce à la toilette.
-- **En pleine nature** : lave-toi à 60 mètres au moins des ruisseaux et des lacs, avec très peu de savon biodégradable, et disperse l’eau sale sur le sol.
-- **Après un contact avec une eau d’inondation** : lave-toi dès que possible à l’eau propre et au savon.
+- **Hébergement collectif** : créez un coin d’intimité avec une bâche ou une couverture tendue, ou réservez une pièce à la toilette.
+- **En pleine nature** : lavez-vous à 60 mètres au moins des ruisseaux et des lacs, avec très peu de savon biodégradable, et dispersez l’eau sale sur le sol.
+- **Après un contact avec une eau d’inondation** : lavez-vous dès que possible à l’eau propre et au savon.
 
 ## Voir aussi
 

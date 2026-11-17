@@ -1,57 +1,57 @@
 # Pénurie de carburant, de nourriture ou de médicaments
 
-> **En bref** : une pénurie s’aggrave quand chacun se rue sur les rayons ou les pompes. Constitue tes réserves avant, petit à petit. Pendant, n’achète que le nécessaire et réduis tes trajets. N’arrête jamais un traitement de toi-même : ton pharmacien peut souvent proposer un médicament équivalent.
+> **En bref** : une pénurie s’aggrave quand chacun se rue sur les rayons ou les pompes. Constituez vos réserves avant, petit à petit. Pendant, n’achetez que le nécessaire et réduisez vos trajets. N’arrêtez jamais un traitement de vous-même : votre pharmacien peut souvent proposer un médicament équivalent.
 
 ## Quand s’en servir
 
 - Grève, blocage, panne ou crise qui perturbe l’approvisionnement des stations-service, des magasins ou des pharmacies.
 - Rayons vides, files d’attente, vente limitée.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
-- Une réserve d’eau et de nourriture pour plusieurs jours, que tu fais tourner.
-- Ton traitement habituel avec un peu d’avance, et une copie de tes ordonnances.
+- Une réserve d’eau et de nourriture pour plusieurs jours, que vous faites tourner.
+- Votre traitement habituel avec un peu d’avance, et une copie de vos ordonnances.
 - Un réservoir de voiture au moins à moitié plein.
 
 ## Avant
 
-1. **Constitue ta réserve petit à petit**, en achetant un peu plus à chaque course, pour ne pas vider les rayons le jour où tout le monde s’inquiète.
-2. **Choisis des aliments qui se gardent** et qui peuvent se manger sans cuisson. Fais-les tourner pour qu’ils ne périment pas.
-3. **Garde le réservoir à moitié plein** au minimum.
-4. **Parle à ton médecin ou à ton pharmacien** de ta réserve de médicaments, et renouvelle ton ordonnance sans attendre la dernière boîte (voir [Vivre une crise avec un traitement médical](../sante-et-premiers-secours/vivre-une-crise-avec-un-traitement-medical.md)).
+1. **Constituez votre réserve petit à petit**, en achetant un peu plus à chaque course, pour ne pas vider les rayons le jour où tout le monde s’inquiète.
+2. **Choisissez des aliments qui se gardent** et qui peuvent se manger sans cuisson. Faites-les tourner pour qu’ils ne périment pas.
+3. **Gardez le réservoir à moitié plein** au minimum.
+4. **Parlez à votre médecin ou à votre pharmacien** de votre réserve de médicaments, et renouvelez votre ordonnance sans attendre la dernière boîte (voir [Vivre une crise avec un traitement médical](../sante-et-premiers-secours/vivre-une-crise-avec-un-traitement-medical.md)).
 
 ## Pendant
 
 ### Carburant
 
-1. **Ne te précipite pas à la pompe** si ton réservoir n’est pas vide : en octobre 2022, la préfecture du Jura constatait que les ruptures venaient de l’afflux des automobilistes vers les stations, alors que les approvisionnements restaient réguliers.
-2. **Respecte les arrêtés de la préfecture** : elle peut, par exemple, interdire la vente de carburant en jerrican.
-3. **Réduis tes trajets** : regroupe-les, partage une voiture, marche ou roule à vélo quand c’est possible.
-4. **Garde ce qu’il te reste** pour les trajets indispensables : soins, travail, personnes à aider.
+1. **Ne vous précipitez pas à la pompe** si votre réservoir n’est pas vide : en octobre 2022, la préfecture du Jura constatait que les ruptures venaient de l’afflux des automobilistes vers les stations, alors que les approvisionnements restaient réguliers.
+2. **Respectez les arrêtés de la préfecture** : elle peut, par exemple, interdire la vente de carburant en jerrican.
+3. **Réduisez vos trajets** : regroupez-les, partagez une voiture, marchez ou roulez à vélo quand c’est possible.
+4. **Gardez ce qu’il vous reste** pour les trajets indispensables : soins, travail, personnes à aider.
 
 ### Nourriture
 
-1. **N’achète que ce dont tu as besoin** pour quelques jours.
-2. **Mange d’abord** ce qui se périme vite, puis puise dans ta réserve.
-3. **Prends des nouvelles** de tes voisins âgés ou isolés et partage si tu peux.
+1. **N’achetez que ce dont vous avez besoin** pour quelques jours.
+2. **Mangez d’abord** ce qui se périme vite, puis puisez dans votre réserve.
+3. **Prenez des nouvelles** de vos voisins âgés ou isolés et partagez si vous pouvez.
 
 ### Médicaments
 
-1. **N’arrête pas et ne modifie pas ton traitement** sans avis médical : un arrêt brutal peut être dangereux.
-2. **Demande à ton pharmacien** : lors d’une tension d’approvisionnement, il peut souvent remplacer le médicament manquant par un médicament similaire, et il en informe ton médecin.
-3. **Finis la boîte que tu as** avant de passer au médicament de remplacement.
-4. **Contacte ton médecin** si tu es allergique au remplaçant, ou si tu ressens des symptômes inhabituels.
+1. **N’arrêtez pas et ne modifiez pas votre traitement** sans avis médical : un arrêt brutal peut être dangereux.
+2. **Demandez à votre pharmacien** : lors d’une tension d’approvisionnement, il peut souvent remplacer le médicament manquant par un médicament similaire, et il en informe votre médecin.
+3. **Finissez la boîte que vous avez** avant de passer au médicament de remplacement.
+4. **Contactez votre médecin** si vous êtes allergique au remplaçant, ou si vous ressentez des symptômes inhabituels.
 
 ## Après
 
-1. **Reconstitue tes réserves progressivement**, sans achats massifs.
-2. **Vérifie les dates** de ce que tu as stocké.
+1. **Reconstituez vos réserves progressivement**, sans achats massifs.
+2. **Vérifiez les dates** de ce que vous avez stocké.
 
 ## À ne jamais faire
 
 - Stocker de l’essence dans des bouteilles ou des bidons non prévus pour cela, ou dans le logement (voir [Stocker du combustible sans danger](../feu-et-energie/stocker-du-combustible-sans-danger.md)).
 - Remplir des jerricans quand la préfecture l’interdit.
-- Arrêter un traitement, espacer les prises ou diviser les doses de ta propre initiative.
+- Arrêter un traitement, espacer les prises ou diviser les doses de votre propre initiative.
 - Relayer une rumeur de pénurie sans l’avoir vérifiée.
 
 ## Voir aussi
@@ -70,7 +70,7 @@
 - [FEMA (États-Unis), fiches « Be Prepared for Any Hazard » (PDF, en anglais)](https://ready.gov/sites/default/files/2024-11/fema_full-suite_hazard-info-sheets.pdf)
 - [Croix-Rouge américaine, « Power Outage Safety » (en anglais)](https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/power-outage.html)
 
-Aucune page officielle française donnant des conseils généraux aux particuliers face à une pénurie n’a été trouvée lors de la rédaction. Pour les médicaments, la fiche s’appuie sur un exemple précis traité par l’ANSM en 2021 et 2022 : la conduite à tenir dépend de chaque médicament, demande toujours à ton pharmacien ou à ton médecin. Les conseils pour réduire ses trajets relèvent du bon sens.
+Aucune page officielle française donnant des conseils généraux aux particuliers face à une pénurie n’a été trouvée lors de la rédaction. Pour les médicaments, la fiche s’appuie sur un exemple précis traité par l’ANSM en 2021 et 2022 : la conduite à tenir dépend de chaque médicament, demandez toujours à votre pharmacien ou à votre médecin. Les conseils pour réduire ses trajets relèvent du bon sens.
 
 ---
 

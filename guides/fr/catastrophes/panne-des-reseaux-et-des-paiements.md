@@ -1,6 +1,6 @@
 # Panne des réseaux et des paiements
 
-> **En bref** : quand le téléphone, internet ou la carte bancaire ne marchent plus, informe-toi avec une radio à piles, paie en argent liquide, envoie des SMS courts plutôt que d’appeler, et retrouve tes proches au lieu de rendez-vous convenu d’avance. Prépare tout cela avant : après, c’est trop tard.
+> **En bref** : quand le téléphone, internet ou la carte bancaire ne marchent plus, informez-vous avec une radio à piles, payez en argent liquide, envoyez des SMS courts plutôt que d’appeler, et retrouvez vos proches au lieu de rendez-vous convenu d’avance. Préparez tout cela avant : après, c’est trop tard.
 
 ## Quand s’en servir
 
@@ -8,61 +8,61 @@
 - Distributeurs de billets vides ou éteints, terminaux de carte bancaire hors service.
 - Souvent à la suite d’une coupure de courant, d’une tempête ou d’une cyberattaque.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Une radio à piles ou à manivelle, et les fréquences de la radio publique notées dessus.
 - De l’argent liquide, en petites coupures.
 - Une liste de contacts sur papier.
 - Une batterie externe chargée.
-- Une carte routière en papier de ta région.
+- Une carte routière en papier de votre région.
 
 ## Avant
 
-1. **Garde un peu d’argent liquide chez toi**, de quoi payer l’essentiel pendant quelques jours. Range-le dans un endroit sûr, loin des entrées, et n’en parle pas.
-2. **Écris tes contacts importants sur papier** : proches, médecin, mairie, assurance.
-3. **Conviens avec tes proches** d’un lieu de rendez-vous et d’un contact éloigné qui servira de relais (voir [Préparer un plan pour le foyer](../les-bases/preparer-un-plan-pour-le-foyer.md)).
-4. **Garde des copies papier** de tes papiers importants (voir [Mettre ses papiers et ses contacts à l’abri](../les-bases/mettre-ses-papiers-et-ses-contacts-a-l-abri.md)).
-5. **Garde le réservoir de la voiture** au moins à moitié plein : sans courant ni paiement, les pompes s’arrêtent.
+1. **Gardez un peu d’argent liquide chez vous**, de quoi payer l’essentiel pendant quelques jours. Rangez-le dans un endroit sûr, loin des entrées, et n’en parlez pas.
+2. **Écrivez vos contacts importants sur papier** : proches, médecin, mairie, assurance.
+3. **Convenez avec vos proches** d’un lieu de rendez-vous et d’un contact éloigné qui servira de relais (voir [Préparer un plan pour le foyer](../les-bases/preparer-un-plan-pour-le-foyer.md)).
+4. **Gardez des copies papier** de vos papiers importants (voir [Mettre ses papiers et ses contacts à l’abri](../les-bases/mettre-ses-papiers-et-ses-contacts-a-l-abri.md)).
+5. **Gardez le réservoir de la voiture** au moins à moitié plein : sans courant ni paiement, les pompes s’arrêtent.
 
 ## Pendant
 
-### T’informer
+### Vous informer
 
-1. **Écoute la radio publique** sur un poste à piles ou dans la voiture.
-2. **Fie-toi aux canaux officiels** : préfecture, mairie, services de secours. Sans internet, va à la mairie.
-3. **Méfie-toi des rumeurs.** Avant de croire ou de répéter une information, demande-toi qui l’a émise, si la source est officielle, si un grand média l’a reprise, et à qui elle profite.
+1. **Écoutez la radio publique** sur un poste à piles ou dans la voiture.
+2. **Fiez-vous aux canaux officiels** : préfecture, mairie, services de secours. Sans internet, allez à la mairie.
+3. **Méfiez-vous des rumeurs.** Avant de croire ou de répéter une information, demandez-vous qui l’a émise, si la source est officielle, si un grand média l’a reprise, et à qui elle profite.
 
 ### Communiquer
 
-1. **Envoie des SMS courts** plutôt que d’appeler : ils passent mieux sur un réseau saturé.
-2. **Si tu dois appeler, sois bref.** Si l’appel échoue, attends une dizaine de secondes avant de recomposer.
-3. **Économise ta batterie** : baisse la luminosité, ferme les applications, passe en mode avion entre deux essais.
-4. **Urgence sans réseau** : voir [Alerter les secours](../les-bases/alerter-les-secours.md). Tu peux aussi aller directement au commissariat, à la gendarmerie ou à la mairie.
-5. **Retrouve tes proches** au lieu convenu. Passe voir tes voisins, surtout les personnes seules.
+1. **Envoyez des SMS courts** plutôt que d’appeler : ils passent mieux sur un réseau saturé.
+2. **Si vous devez appeler, soyez bref.** Si l’appel échoue, attendez une dizaine de secondes avant de recomposer.
+3. **Économisez votre batterie** : baissez la luminosité, fermez les applications, passez en mode avion entre deux essais.
+4. **Urgence sans réseau** : voir [Alerter les secours](../les-bases/alerter-les-secours.md). Vous pouvez aussi aller directement au commissariat, à la gendarmerie ou à la mairie.
+5. **Retrouvez vos proches** au lieu convenu. Passez voir vos voisins, surtout les personnes seules.
 
 ### Payer
 
-1. **Paie en liquide** et garde ta réserve pour l’essentiel : eau, nourriture, médicaments, carburant.
-2. **Ne compte pas sur les distributeurs** : ils dépendent du courant et du réseau, et ils sont pris d’assaut dès qu’ils remarchent.
-3. **N’achète que le nécessaire**, pour que chacun puisse se servir.
+1. **Payez en liquide** et gardez votre réserve pour l’essentiel : eau, nourriture, médicaments, carburant.
+2. **Ne comptez pas sur les distributeurs** : ils dépendent du courant et du réseau, et ils sont pris d’assaut dès qu’ils remarchent.
+3. **N’achetez que le nécessaire**, pour que chacun puisse se servir.
 
 ## Après
 
-1. **Vérifie tes relevés de compte** et signale toute opération que tu ne reconnais pas.
-2. **Méfie-toi des messages** qui te demandent tes codes « à la suite de la panne » : ta banque ne te les demande jamais (voir [Cyberattaque, arnaques et désinformation](cyberattaque-arnaques-et-desinformation.md)).
-3. **Reconstitue ta réserve** d’argent liquide et mets à jour ta liste de contacts.
+1. **Vérifiez vos relevés de compte** et signalez toute opération que vous ne reconnaissez pas.
+2. **Méfiez-vous des messages** qui vous demandent vos codes « à la suite de la panne » : votre banque ne vous les demande jamais (voir [Cyberattaque, arnaques et désinformation](cyberattaque-arnaques-et-desinformation.md)).
+3. **Reconstituez votre réserve** d’argent liquide et mettez à jour votre liste de contacts.
 
 ## À ne jamais faire
 
-- Rappeler sans arrêt le même numéro : tu satures le réseau.
-- Relayer une information que tu n’as pas vérifiée.
-- Donner un code bancaire ou un mot de passe à quelqu’un qui t’appelle.
-- Dire autour de toi où tu ranges ton argent.
+- Rappeler sans arrêt le même numéro : vous saturez le réseau.
+- Relayer une information que vous n’avez pas vérifiée.
+- Donner un code bancaire ou un mot de passe à quelqu’un qui vous appelle.
+- Dire autour de vous où vous rangez votre argent.
 
 ## Selon l’endroit
 
-- **En déplacement** : garde sur toi un peu de liquide, une carte en papier et le numéro d’un proche écrit quelque part.
-- **Avec des enfants** : apprends-leur leur nom complet, ton nom et ton numéro, et glisse-les sur papier dans leur sac.
+- **En déplacement** : gardez sur vous un peu de liquide, une carte en papier et le numéro d’un proche écrit quelque part.
+- **Avec des enfants** : apprenez-leur leur nom complet, votre nom et votre numéro, et glissez-les sur papier dans leur sac.
 
 ## Voir aussi
 

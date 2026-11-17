@@ -1,6 +1,6 @@
 # Gérer les déchets
 
-> **En bref** : quand les poubelles ne sont plus ramassées, les déchets attirent mouches, rats et moustiques. Réduis-les, ferme-les dans des sacs solides et des poubelles à couvercle, stocke-les dehors, loin de la maison, de l’eau et de la nourriture. Ne brûle pas le plastique, mets à part ce qui est dangereux, et suis les consignes de la mairie dès qu’elles existent.
+> **En bref** : quand les poubelles ne sont plus ramassées, les déchets attirent mouches, rats et moustiques. Réduisez-les, fermez-les dans des sacs solides et des poubelles à couvercle, stockez-les dehors, loin de la maison, de l’eau et de la nourriture. Ne brûlez pas le plastique, mettez à part ce qui est dangereux, et suivez les consignes de la mairie dès qu’elles existent.
 
 ## Quand s’en servir
 
@@ -8,41 +8,41 @@
 - Après une inondation, une tempête, un séisme.
 - **Les risques** : les ordures attirent mouches, rats, chiens et serpents, surtout par temps chaud. L’eau de pluie qui stagne dans les déchets fait proliférer les moustiques. La pluie qui ruisselle dessus peut contaminer l’eau. Les tas d’ordures bouchent les écoulements et peuvent prendre feu.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Des sacs-poubelle épais.
 - Des poubelles ou des bacs en plastique épais ou en métal, avec un couvercle qui ferme bien.
 - Des gants.
-- Une pelle, si tu as un terrain.
+- Une pelle, si vous avez un terrain.
 
 ## Étapes
 
-1. **Produis moins de déchets** et réutilise ce qui peut l’être.
-2. **Sépare en quatre** :
+1. **Produisez moins de déchets** et réutilisez ce qui peut l’être.
+2. **Séparez en quatre** :
    - les restes de nourriture et tout ce qui pourrit ;
    - les emballages secs et propres, qui peuvent attendre longtemps ;
    - ce qui est souillé : couches, protections périodiques, sacs des toilettes de secours ;
    - ce qui est dangereux : verre cassé, aiguilles, produits chimiques, médicaments.
-3. **Enferme ce qui pourrit et ce qui est souillé** dans des sacs solides, bien noués, puis dans une poubelle fermée par un couvercle.
-4. **Stocke les poubelles dehors**, à l’écart de la maison, de la nourriture, de la réserve d’eau et de tout point d’eau, hors de portée des enfants et des animaux.
-5. **Ne laisse rien traîner** : pas de sacs au sol, pas de récipients ouverts où l’eau de pluie peut stagner.
-6. **Lave les poubelles** régulièrement à l’eau et au savon.
-7. **Lave-toi les mains** après avoir manipulé des déchets.
-8. **Suis les consignes de la mairie** : points de regroupement, reprise de la collecte.
+3. **Enfermez ce qui pourrit et ce qui est souillé** dans des sacs solides, bien noués, puis dans une poubelle fermée par un couvercle.
+4. **Stockez les poubelles dehors**, à l’écart de la maison, de la nourriture, de la réserve d’eau et de tout point d’eau, hors de portée des enfants et des animaux.
+5. **Ne laissez rien traîner** : pas de sacs au sol, pas de récipients ouverts où l’eau de pluie peut stagner.
+6. **Lavez les poubelles** régulièrement à l’eau et au savon.
+7. **Lavez-vous les mains** après avoir manipulé des déchets.
+8. **Suivez les consignes de la mairie** : points de regroupement, reprise de la collecte.
 
-### Si tu as un terrain et que ça dure
+### Si vous avez un terrain et que ça dure
 
-- Enterre les restes de nourriture dans une fosse, loin de tout point d’eau.
-- Recouvre chaque couche de déchets d’environ 10 cm de terre ou de cendre.
-- Fais une petite butte autour pour empêcher l’eau de ruissellement d’y entrer.
-- Quand la fosse est pleine, rebouche-la avec au moins 50 cm de terre.
+- Enterrez les restes de nourriture dans une fosse, loin de tout point d’eau.
+- Recouvrez chaque couche de déchets d’environ 10 cm de terre ou de cendre.
+- Faites une petite butte autour pour empêcher l’eau de ruissellement d’y entrer.
+- Quand la fosse est pleine, rebouchez-la avec au moins 50 cm de terre.
 
 ### Tenir les rats à distance
 
-- Garde la nourriture, y compris celle des animaux, dans des récipients épais en plastique, en métal ou en verre, bien fermés.
-- Nettoie tout de suite ce qui est renversé, fais la vaisselle sans attendre, ne laisse pas de gamelle dehors la nuit.
-- Bouche les trous : une souris passe par une ouverture de la largeur d’un crayon (6 mm).
-- **Crottes ou nid de rongeurs** : aère 30 minutes, mets des gants, ne balaie pas et n’aspire pas. Mouille avec un désinfectant ou de l’eau de Javel diluée (1 volume pour 9 volumes d’eau), laisse agir 5 minutes, ramasse avec du papier absorbant, jette dans une poubelle fermée. Lave tes gants avant de les retirer, puis tes mains.
+- Gardez la nourriture, y compris celle des animaux, dans des récipients épais en plastique, en métal ou en verre, bien fermés.
+- Nettoyez tout de suite ce qui est renversé, faites la vaisselle sans attendre, ne laissez pas de gamelle dehors la nuit.
+- Bouchez les trous : une souris passe par une ouverture de la largeur d’un crayon (6 mm).
+- **Crottes ou nid de rongeurs** : aérez 30 minutes, mettez des gants, ne balayez pas et n’aspirez pas. Mouillez avec un désinfectant ou de l’eau de Javel diluée (1 volume pour 9 volumes d’eau), laissez agir 5 minutes, ramassez avec du papier absorbant, jetez dans une poubelle fermée. Lavez vos gants avant de les retirer, puis vos mains.
 
 ## À ne jamais faire
 
@@ -54,11 +54,11 @@
 
 ## Selon l’endroit
 
-- **Pendant une inondation** : ferme les poubelles et mets-les dans un placard, pour qu’elles ne flottent pas dans le logement.
-- **Animal mort** : mets-le dans des sacs en plastique avec des gants, éloigne-le du logement et préviens la mairie.
-- **Rats et souris qui fuient l’eau** : ne les touche pas.
-- **Appartement** : garde ce qui pourrit en double sac dans un bac fermé, et apporte-le au point de collecte dès qu’il est annoncé.
-- **En pleine nature** : remporte tous tes déchets. Ne les brûle pas et ne les enterre pas.
+- **Pendant une inondation** : fermez les poubelles et mettez-les dans un placard, pour qu’elles ne flottent pas dans le logement.
+- **Animal mort** : mettez-le dans des sacs en plastique avec des gants, éloignez-le du logement et prévenez la mairie.
+- **Rats et souris qui fuient l’eau** : ne les touchez pas.
+- **Appartement** : gardez ce qui pourrit en double sac dans un bac fermé, et apportez-le au point de collecte dès qu’il est annoncé.
+- **En pleine nature** : remportez tous vos déchets. Ne les brûlez pas et ne les enterrez pas.
 
 ## Voir aussi
 
