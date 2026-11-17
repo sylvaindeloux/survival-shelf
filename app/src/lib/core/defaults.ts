@@ -49,7 +49,7 @@ export const DEFAULT_PREAMBLE: Translated = {
   fr: `# Survival Shelf
 
 > Fichier de données de [Survival Shelf](${REPO}).
-> Tu peux le modifier avec n'importe quel éditeur de texte : garde les titres \`## Section\` et les lignes d'en-tête des tableaux.
+> Vous pouvez le modifier avec n'importe quel éditeur de texte : gardez les titres \`## Section\` et les lignes d'en-tête des tableaux.
 > Les dates s'écrivent \`AAAA-MM-JJ\`, ou \`AAAA-MM\` pour « fin de ce mois ». Les décimales prennent une virgule.
 > Syntaxe complète : ${REPO}/blob/master/docs/FILE_FORMAT.fr.md`,
 };
@@ -70,7 +70,7 @@ export const SECTION_COMMENTS: Record<SectionName, Translated> = {
   settings: { en: '', fr: '' },
   emergency: {
     en: '<!-- The household plan, one row per line. Topic: emergency number, out-of-area contact, contact, meeting point, who does what, shut-off or health. Write SMS before a number that only takes text messages. -->',
-    fr: '<!-- Le plan du foyer, une ligne par info. Rubrique : numéro d’urgence, contact éloigné, contact, rendez-vous, qui fait quoi, couper ou santé. Écris SMS devant un numéro qui ne prend que les SMS. -->',
+    fr: '<!-- Le plan du foyer, une ligne par info. Rubrique : numéro d’urgence, contact éloigné, contact, rendez-vous, qui fait quoi, couper ou santé. Écrivez SMS devant un numéro qui ne prend que les SMS. -->',
   },
   bags: {
     en: '<!-- One row per bag, one per person. Its name is also the location of its lots in the stock. Checked: day of the last check, once a year. -->',

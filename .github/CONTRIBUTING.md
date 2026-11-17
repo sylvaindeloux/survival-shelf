@@ -58,7 +58,11 @@ asked to change, so when in doubt, ask in an issue first.
 - **English and French always complete.** Every app message and every label written in the data file exists
   in English and French, and so do the user docs (README, file format) and the practical guides. Other
   languages may be partial: a text they do not translate yet shows in English (see the
-  [translation guide](TRANSLATING.md)). French texts address the reader with "tu", like the app.
+  [translation guide](TRANSLATING.md)).
+- **A tone people can rely on.** The app helps people prepare for a crisis and may be read during one: the
+  wording is calm, plain and precise, never casual. French texts say "vous", never "tu": in the app, the data
+  file, the docs and the guides. Buttons, titles and menus use the infinitive or a noun (`Ajouter`,
+  `Réglages`), and the app is called "l'application", not "l'appli".
 - **No made-up facts.** People may rely on this information in an emergency. Shelf lives, daily amounts,
   calories, water needs and advice come from reliable sources, cited next to them (see
   [`docs/SHELF_LIFE.md`](../docs/SHELF_LIFE.md)). Prefer official sources: health and food safety agencies,
