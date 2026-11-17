@@ -367,15 +367,18 @@
 
     .topbar-inner {
       max-width: 1040px;
-      height: 68px;
+      /* A multiple of 4: at 125 and 150 % zoom the header line stays on a whole pixel, without a seam under
+         the open tab. */
+      height: 64px;
       margin: 0 auto;
       padding: 0 max(1.25rem, env(safe-area-inset-right, 0px)) 0 max(2rem, env(safe-area-inset-left, 0px));
       align-items: flex-end;
       gap: 1.25rem;
     }
 
+    /* The header only holds the tabs: the logo and the name open the home page instead. */
     .brand {
-      align-self: center;
+      display: none;
     }
 
     .tabs {
@@ -451,12 +454,8 @@
     }
   }
 
-  /* Tablet in portrait: the logo alone takes the user home, and the tabs are tighter. */
+  /* Tablet in portrait: the tabs are tighter. */
   @media (min-width: 720px) and (max-width: 959px) {
-    .brand-name {
-      display: none;
-    }
-
     .topbar-inner {
       gap: 0.75rem;
     }

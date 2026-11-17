@@ -23,6 +23,7 @@
   import { reviewText, topicTitle } from '../lib/ui/emergency';
   import { formatKcal, kindLabel, tierLabel, wholeDays } from '../lib/ui/format';
   import KindIcon from '../lib/ui/KindIcon.svelte';
+  import Logo from '../lib/ui/Logo.svelte';
   import { dialogs, router } from '../lib/ui/state.svelte';
   import { todoCounts } from '../lib/ui/todo';
 
@@ -82,7 +83,15 @@
 <div class="stack">
   <h1 class="visually-hidden">{t('home.title')}</h1>
   <div class="top">
-    <p class="muted strong">{formatDate(app.today)} · {tn('home.household', settings.people)}</p>
+    <!-- On tablets and computers the header only holds the tabs: the app's logo and name open its home page.
+         Phones keep them in their top bar. -->
+    <div class="head">
+      <span class="head-logo"><Logo size={44} /></span>
+      <div class="head-text">
+        <span class="app-name">Survival Shelf</span>
+        <p class="muted strong">{formatDate(app.today)} · {tn('home.household', settings.people)}</p>
+      </div>
+    </div>
     <button type="button" class="sos" onclick={startCrisis}><Siren size={18} />{t('crisis.title')}</button>
   </div>
 
@@ -266,9 +275,35 @@
     gap: 0.75rem;
   }
 
-  .top p {
+  .head {
+    display: flex;
     flex: 1;
+    align-items: center;
+    gap: 0.75rem;
     min-width: 0;
+  }
+
+  .head-text {
+    min-width: 0;
+  }
+
+  .head-logo,
+  .app-name {
+    display: none;
+  }
+
+  @media (min-width: 720px) {
+    .head-logo {
+      display: inline-flex;
+    }
+
+    .app-name {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
   }
 
   .strong {
