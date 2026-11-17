@@ -28,7 +28,7 @@ export interface CatalogItem {
   shelfLife: number | null;
   /** What it is good for, in a few words. */
   use: Translated;
-  /** A detail on how long it keeps, when one figure is not enough. */
+  /** A detail on how long it keeps, when one figure is not enough: it follows the shelf life after a comma. */
   keeps?: Translated;
   /** Upkeep or renewal, when there is something to do. */
   care?: Translated;
@@ -159,7 +159,7 @@ export const CATALOG: CatalogItem[] = [
     {
       water: 50,
       shelfLife: 60,
-      keeps: { en: '5 years in strips, 3 in a tub', fr: '5 ans en plaquettes, 3 en pot' },
+      keeps: { en: '3 years in a tub', fr: '3 ans en pot' },
       care: { en: 'Strict date: the chlorine weakens', fr: 'Date stricte : le chlore s’affaiblit' },
       starter: 'optional',
       habits: TREATS_WATER,
@@ -242,9 +242,9 @@ export const CATALOG: CatalogItem[] = [
     { kcal: 3000, shelfLife: 12, care: EAT }),
   // Coffee and tea have no daily amount: no source gives one, and they bring no calories.
   item('coffee', { en: 'Coffee', fr: 'Café' }, 'drinks', KG, { en: 'Avoids withdrawal if you drink it every day', fr: 'Évite le manque si vous en buvez chaque jour' },
-    { shelfLife: 18, keeps: { en: 'then only the aroma fades', fr: 'ensuite, seul l’arôme baisse' }, care: DRINK, starter: 'optional' }),
+    { shelfLife: 18, keeps: { en: 'then only the aroma fades', fr: 'puis seul l’arôme baisse' }, care: DRINK, starter: 'optional' }),
   item('tea', { en: 'Tea', fr: 'Thé' }, 'drinks', PACK, { en: 'Hot drink', fr: 'Boisson chaude' },
-    { shelfLife: 18, keeps: { en: '12 to 24 months depending on the brand', fr: '12 à 24 mois selon la marque' }, care: DRINK, starter: 'optional' }),
+    { shelfLife: 18, keeps: { en: 'from 12 to 24 depending on the brand', fr: 'de 12 à 24 selon la marque' }, care: DRINK, starter: 'optional' }),
   item('salt', { en: 'Salt', fr: 'Sel' }, 'condiments', KG, { en: 'Season the cooking', fr: 'Assaisonner la cuisine' },
     { daily: 0.005, keeps: { en: 'iodised salt slowly loses its iodine', fr: 'le sel iodé perd lentement son iode' }, starter: 'optional' }),
 
@@ -282,7 +282,7 @@ export const CATALOG: CatalogItem[] = [
   item('toilet-paper', { en: 'Toilet paper', fr: 'Papier toilette' }, 'hygiene', ROLL, { en: 'Basic hygiene', fr: 'Hygiène de base' },
     { daily: 0.2, care: DRY, starter: 'essential' }),
   item('soap', { en: 'Soap', fr: 'Savon' }, 'hygiene', BAR, { en: 'Washing hands limits illness', fr: 'Se laver les mains limite les maladies' },
-    { daily: 0.03, shelfLife: 36, keeps: { en: 'then it only loses its scent', fr: 'ensuite, il perd seulement son parfum' }, starter: 'essential' }),
+    { daily: 0.03, shelfLife: 36, keeps: { en: 'then it only loses its scent', fr: 'puis il perd seulement son parfum' }, starter: 'essential' }),
   item('toothpaste', { en: 'Toothpaste', fr: 'Dentifrice' }, 'hygiene', sized({ en: 'tube', fr: 'tube' }, { en: '75 ml', fr: '75 ml' }),
     { en: 'Dental hygiene', fr: 'Hygiène des dents' },
     {
@@ -300,7 +300,7 @@ export const CATALOG: CatalogItem[] = [
       kind: 'gear',
       target: 1,
       per: 'household',
-      keeps: { en: 'its contents have dates', fr: 'son contenu a des dates' },
+      keeps: { en: 'but its contents have dates', fr: 'mais son contenu a des dates' },
       care: { en: 'Check its contents every year', fr: 'Vérifier son contenu chaque année' },
       starter: 'essential',
     }),
@@ -322,7 +322,7 @@ export const CATALOG: CatalogItem[] = [
   item('gas-cartridge', { en: 'Gas cartridge', fr: 'Cartouche de gaz' }, 'energy', CARTRIDGE, { en: 'Fuel for the stove', fr: 'Carburant du réchaud' },
     {
       daily: 0.2,
-      keeps: { en: 'the gas keeps, the seals age', fr: 'le gaz se garde, les joints vieillissent' },
+      keeps: { en: 'but the seals age', fr: 'mais les joints vieillissent' },
       care: {
         en: 'Replace it after about 7 years, sooner if rusty or dented',
         fr: 'Remplacer au bout de 7 ans environ, plus tôt si rouillée ou cabossée',
