@@ -21,7 +21,7 @@ const TODAY = dayFromParts(2026, 11, 15);
 function household(): Shelf {
   let shelf = emptyShelf('fr');
   shelf = addLot(shelf, { product: 'Lampe frontale', qty: 1, expires: '', location: 'Sac 72h' }, TODAY);
-  shelf = addLot(shelf, { product: 'Paracétamol 500 mg', qty: 1, expires: '2026-12-05', location: 'sac 72H' }, TODAY);
+  shelf = addLot(shelf, { product: 'Paracétamol', qty: 1, expires: '2026-12-05', location: 'sac 72H' }, TODAY);
   shelf = addLot(shelf, { product: 'Piles AA', qty: 12, expires: '2034-01', location: 'Garage' }, TODAY);
   shelf = addLot(shelf, { product: 'Radio à dynamo', qty: 1, expires: '', location: 'Garage' }, TODAY);
   shelf = addLot(shelf, { product: 'Bougies', qty: 10, expires: '', location: 'Sac 72h' }, TODAY);
@@ -65,7 +65,7 @@ describe('bags', () => {
     expect(followed).toEqual([
       ['Lampe de poche', 'Lampe frontale'],
       ['Piles de rechange', 'Piles AA'],
-      ['Médicaments et ordonnances', 'Paracétamol 500 mg'],
+      ['Médicaments et ordonnances', 'Paracétamol'],
     ]);
   });
 

@@ -160,10 +160,10 @@ No account, no server, no tracking: **nothing leaves your device**. Everything i
 your list would still be right there:
 
 ```markdown
-| Product            | Qty | Expires    | Location | Added      |
-|--------------------|-----|------------|----------|------------|
-| Water bottle 1.5 L | 24  | 2027-08-06 | Garage   | 2026-09-10 |
-| Rice               | 5   | 2028-09-09 | Cellar   | 2026-09-10 |
+| Product       | Qty | Expires    | Location | Added      |
+|---------------|-----|------------|----------|------------|
+| Bottled water | 24  | 2027-08-06 | Garage   | 2026-09-10 |
+| Rice          | 5   | 2028-09-09 | Cellar   | 2026-09-10 |
 ```
 
 See a [complete example](docs/examples/survival-shelf.md) and the [file format](docs/FILE_FORMAT.md) if you want to

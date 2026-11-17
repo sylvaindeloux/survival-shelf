@@ -36,6 +36,8 @@ const UNIT_PLURALS: Record<string, string> = {
   tube: 'tubes',
   cartridge: 'cartridges',
   tablet: 'tablets',
+  jerrycan: 'jerrycans',
+  jug: 'jugs',
   boîte: 'boîtes',
   pot: 'pots',
   paquet: 'paquets',
@@ -49,11 +51,17 @@ const UNIT_PLURALS: Record<string, string> = {
   brique: 'briques',
   cartouche: 'cartouches',
   comprimé: 'comprimés',
+  jerrican: 'jerricans',
+  bidon: 'bidons',
 };
 
+/** "2 cans (400 g)": the first word takes the plural, the size in brackets stays as it is. */
 function unitFor(qty: number, unit: string): string {
   if (new Intl.PluralRules(i18n.lang).select(qty) === 'one') return unit;
-  return UNIT_PLURALS[unit.toLocaleLowerCase()] ?? unit;
+  const size = unit.indexOf(' (');
+  const word = size < 0 ? unit : unit.slice(0, size);
+  const plural = UNIT_PLURALS[word.toLocaleLowerCase()];
+  return plural ? plural + unit.slice(word.length) : unit;
 }
 
 /** "3 kg", "12 cans", "80 g": quantity with the product unit, small weights and volumes in g and mL. */
@@ -187,8 +195,8 @@ export function wholeDays(days: number): string {
   return Number.isFinite(days) ? formatNumber(Math.floor(days), 0) : '∞';
 }
 
-/** How long a catalog product usually keeps, and what to check on things that do not expire. */
+/** How long a catalog product usually keeps, and its upkeep when there is something to do. */
 export function keepsText(entry: CatalogItem): string {
   const keeps = entry.shelfLife === null ? t('keeps.never') : t('keeps.months', { months: entry.shelfLife });
-  return entry.advice ? `${keeps} ${inLang(entry.advice, i18n.lang)}` : keeps;
+  return entry.care ? `${keeps} ${inLang(entry.care, i18n.lang)}.` : keeps;
 }

@@ -10,9 +10,10 @@
   import type { Component } from 'svelte';
   import { app } from '../lib/app.svelte';
   import { waterNeed } from '../lib/core/autonomy';
-  import { productFromCatalog, starterItems, type CatalogItem, type Needs } from '../lib/core/catalog';
+  import { productFromCatalog, type CatalogItem, type Needs } from '../lib/core/catalog';
   import { CATEGORIES, isWaterTreatment } from '../lib/core/categories';
   import { DEFAULT_SETTINGS } from '../lib/core/defaults';
+  import { DEFAULT_HABITS, spreadCalories, starterList } from '../lib/core/starter';
   import { parseNumber } from '../lib/core/text';
   import type { Per } from '../lib/core/types';
   import { formatNumber, i18n, localize, t, type MessageKey } from '../lib/i18n/index.svelte';
@@ -73,7 +74,16 @@
   }
 
   function toPlan() {
-    choices = starterItems(needs).map((entry) => ({ entry, selected: true, amount: inputNumber(entry.daily ?? entry.target) }));
+    const list = starterList(needs, DEFAULT_HABITS);
+    const dailies = spreadCalories(
+      list.filter((item) => item.essential).map((item) => item.entry),
+      DEFAULT_SETTINGS.kcalPerPersonPerDay,
+    );
+    choices = list.map(({ entry, essential }) => ({
+      entry,
+      selected: essential,
+      amount: inputNumber(dailies.get(entry.id) ?? entry.daily ?? entry.target),
+    }));
     step = 2;
     window.scrollTo({ top: 0 });
   }
@@ -226,7 +236,7 @@
                       <span class="small">{amountLabel(choice.entry)}</span>
                       {#if choice.selected && weekly(choice)}<span class="small muted">{weekly(choice)}</span>{/if}
                     </div>
-                  {:else}
+                  {:else if choice.entry.water !== null}
                     <span class="small muted">{waterHint(choice.entry)}</span>
                   {/if}
                 </div>

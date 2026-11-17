@@ -8,9 +8,19 @@ import type { Product, Settings, Shelf } from './types';
 /**
  * Up to this many days, only stored water counts. Beyond, water treatment
  * (filters, tablets) counts too: it needs a source, but a year of bottled
- * water is not realistic.
+ * water is a lot to store.
  */
 export const STORED_WATER_DAYS = 30;
+
+/**
+ * Days of a tier that stored water covers before water treatment takes over. A household that lists
+ * stored water and no water treatment chose to store all its water: it then covers every tier in full.
+ * With no water product at all, treatment still takes over after STORED_WATER_DAYS, so the app suggests it.
+ */
+export function storedWaterDays(shelf: Shelf): number {
+  const storedOnly = shelf.products.some(isStoredWater) && !shelf.products.some(isWaterTreatment);
+  return storedOnly ? Number.POSITIVE_INFINITY : STORED_WATER_DAYS;
+}
 
 /** How many times a product's quantities apply: once per person, per cat, per dog, or once for the household. */
 export function headcount(product: Product, settings: Settings): number {
@@ -101,12 +111,13 @@ export interface TierStatus {
 function waterStatus(shelf: Shelf, autonomy: Autonomy, days: number): TierWater {
   const dailyNeed = autonomy.water.dailyNeed;
   const storedDays = autonomy.water.days;
-  const counted = days > STORED_WATER_DAYS && dailyNeed > 0;
+  const storedLimit = storedWaterDays(shelf);
+  const counted = days > storedLimit && dailyNeed > 0;
   const treatmentDays = counted ? autonomy.treatmentLiters / dailyNeed : 0;
-  const storedGoal = Math.min(days, STORED_WATER_DAYS);
+  const storedGoal = Math.min(days, storedLimit);
   const missingStored = Math.max(0, storedGoal - storedDays) * dailyNeed;
-  const extraStored = Math.max(0, storedDays - STORED_WATER_DAYS);
-  const missingTreatment = counted ? Math.max(0, days - STORED_WATER_DAYS - extraStored - treatmentDays) * dailyNeed : 0;
+  const extraStored = Math.max(0, storedDays - storedLimit);
+  const missingTreatment = counted ? Math.max(0, days - storedLimit - extraStored - treatmentDays) * dailyNeed : 0;
   return {
     dailyNeed,
     storedDays,
@@ -120,29 +131,45 @@ function waterStatus(shelf: Shelf, autonomy: Autonomy, days: number): TierWater 
 }
 
 export interface WaterGoal {
-  /** Liters of stored water the tier needs (its first STORED_WATER_DAYS days), and the liters in stock. */
+  /** Liters of stored water the tier needs (the days stored water covers, see storedWaterDays), and the liters in stock. */
   stored: { have: number; target: number };
   /**
-   * Liters to make drinkable beyond STORED_WATER_DAYS, and what can cover them: water treatment
-   * in stock plus stored water beyond the first days. Null for shorter tiers.
+   * Liters to make drinkable beyond the days of stored water, and what can cover them: water treatment
+   * in stock plus stored water beyond those days. Null when stored water covers the whole tier.
    */
   treatment: { have: number; target: number } | null;
 }
 
 /** Water a tier of `days` needs, in liters, the way the tiers count it: stored water first, then water treatment. */
-export function waterGoal(autonomy: Autonomy, days: number): WaterGoal {
+export function waterGoal(shelf: Shelf, autonomy: Autonomy, days: number): WaterGoal {
   const need = autonomy.water.dailyNeed;
-  const storedTarget = Math.min(days, STORED_WATER_DAYS) * need;
+  const storedLimit = storedWaterDays(shelf);
+  const storedTarget = Math.min(days, storedLimit) * need;
   const stored = { have: round(autonomy.water.usable), target: round(storedTarget) };
-  if (days <= STORED_WATER_DAYS || need <= 0) return { stored, treatment: null };
+  if (days <= storedLimit || need <= 0) return { stored, treatment: null };
   const surplus = Math.max(0, autonomy.water.usable - storedTarget);
-  return { stored, treatment: { have: round(autonomy.treatmentLiters + surplus), target: round((days - STORED_WATER_DAYS) * need) } };
+  return { stored, treatment: { have: round(autonomy.treatmentLiters + surplus), target: round((days - storedLimit) * need) } };
 }
 
 function waterLine(product: Product | undefined, liters: number, have: number): TierLine | null {
   if (!product || liters <= 0 || !product.water) return null;
   const missing = roundQuantity(liters / product.water, product.unit, 'up');
   return { product, target: round(have + missing), have, missing, liters };
+}
+
+/**
+ * The stored water to buy, as products. With two stored water products or more, the first one covers
+ * the first tier and the second one the rest: bottles for the first days, easy to carry, then tap water
+ * in jerricans, for example.
+ */
+function storedWaterLines(shelf: Shelf, water: TierWater, days: number, usable: (product: Product) => number): (TierLine | null)[] {
+  const [first, second] = shelf.products.filter(isStoredWater);
+  if (!first) return [];
+  if (!second) return [waterLine(first, water.missingStored, usable(first))];
+  const firstTier = Math.min(days, ...shelf.settings.tiers);
+  const firstHave = usable(first) * (first.water ?? 0);
+  const fromFirst = Math.min(water.missingStored, Math.max(0, Math.ceil(round(firstTier * water.dailyNeed - firstHave))));
+  return [waterLine(first, fromFirst, usable(first)), waterLine(second, water.missingStored - fromFirst, usable(second))];
 }
 
 /** What a tier of `days` needs, what is there and what is missing. */
@@ -159,7 +186,7 @@ export function tierStatus(shelf: Shelf, autonomy: Autonomy, today: Day, days: n
   const water = waterStatus(shelf, autonomy, days);
   const usable = (product: Product | undefined) => summaries.find((summary) => summary.product === product)?.usableQty ?? 0;
   for (const line of [
-    waterLine(water.storedProduct, water.missingStored, usable(water.storedProduct)),
+    ...storedWaterLines(shelf, water, days, usable),
     waterLine(water.treatmentProduct, water.missingTreatment, usable(water.treatmentProduct)),
   ]) {
     if (line) lines.push(line);
