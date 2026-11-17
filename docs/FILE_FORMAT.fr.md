@@ -195,7 +195,7 @@ de quoi tenir 3 jours. Une section liste les sacs, la suivante ce qu'on met deda
 | `Produit`      | `Product`       | Nom, Name, Article             | oui         | Nom unique du produit                                       |
 | `Type`         | `Type`          | Famille, Nature, Genre, Kind, Family |       | `vivres`, `consommable` ou `matériel` : voir plus bas       |
 | `Catégorie`    | `Category`      | Cat                            |             | Une des catégories ci-dessous, ou n'importe quel texte      |
-| `Unité`        | `Unit`          | Unités                         |             | Texte libre : `kg`, `L`, `boîte`, `paquet`…                 |
+| `Unité`        | `Unit`          | Unités                         |             | Texte libre : `kg`, `L`, `boîte`, `boîte (400 g)`, `paquet`… |
 | `Kcal/unité`   | `Kcal/unit`     | Kcal, Calories, Énergie        |             | Énergie d'une unité, pour l'autonomie en nourriture         |
 | `Eau L/unité`  | `Water L/unit`  | Eau, Water                     |             | Litres d'eau potable dans une unité, pour l'autonomie en eau |
 | `Conso/jour`   | `Daily use`     | Conso, Consommation, Par jour  |             | Unités utilisées par jour : fixe ce qu'il faut à chaque palier |
@@ -290,10 +290,14 @@ presque tout bu quand il mange des croquettes. Un chien compte pour 1,5 L par jo
 
 
 - jusqu'à 30 jours, le palier demande de **l'eau stockée** : les produits qui ont une `Eau L/unité`
-  (bouteilles, bidons…) ;
+  (bouteilles, jerricans…) ;
 - au-delà de 30 jours, le reste peut venir du **traitement de l'eau** : les produits de la catégorie
   `Traitement de l’eau` (filtres, pastilles de purification), dont l'`Eau L/unité` est le volume qu'ils
-  peuvent rendre potable. Il leur faut une source d'eau, donc ils ne comptent jamais pour le premier mois.
+  peuvent rendre potable. Il leur faut une source d'eau, donc ils ne comptent jamais pour le premier mois ;
+- avec de l'eau stockée et aucun produit de traitement de l'eau, le foyer compte sur l'eau stockée
+  seulement : chaque palier, même au-delà de 30 jours, demande de l'eau stockée ;
+- avec deux produits d'eau stockée, le premier de la section `Produits` achète le premier palier (par
+  exemple des bouteilles), le second le reste (par exemple de l'eau du robinet en jerricans).
 
 Le **menu** est la somme des `Conso/jour × Kcal/unité` de la nourriture prévue par personne : l'application
 vous prévient quand il est bien en dessous de `Kcal par personne par jour`.

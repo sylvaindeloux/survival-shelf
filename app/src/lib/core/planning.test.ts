@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { computeAutonomy, simulate, suppliesAutonomy, waterNeed } from './autonomy';
 import { dayFromParts, formatDay } from './dates';
 import { emptyShelf } from './defaults';
-import { CATALOG, starterItems } from './catalog';
+import { CATALOG } from './catalog';
 import { buyCount, checkIn, replacements, waterWithoutProduct } from './checkin';
 import { reminderCalendar } from './ics';
 import { gearStatus, menuKcal, productTarget, tierPlan, tierStatus, waterGoal } from './plan';
@@ -426,31 +426,22 @@ describe('reminder calendar', () => {
 });
 
 describe('catalog', () => {
-  it('has a starter menu close to 2200 kcal per person per day', () => {
-    const kcal = starterItems({}).reduce((sum, entry) => sum + (entry.per === 'person' ? (entry.daily ?? 0) * (entry.kcal ?? 0) : 0), 0);
-    expect(kcal).toBeGreaterThan(2150);
-    expect(kcal).toBeLessThan(2250);
-  });
-
-  it('only proposes specific needs when asked', () => {
-    expect(starterItems({}).some((entry) => entry.need)).toBe(false);
-    expect(starterItems({ cat: 0, dog: 1 }).filter((entry) => entry.need).map((entry) => entry.id)).toEqual(['dog-food']);
-  });
-
   it('plans pet items per cat or per dog', () => {
     const pets = CATALOG.filter((entry) => entry.need === 'cat' || entry.need === 'dog');
     expect(pets.map((entry) => [entry.id, entry.per])).toEqual([
       ['cat-food', 'cat'],
       ['cat-litter', 'cat'],
+      ['litter-bags', 'cat'],
       ['dog-food', 'dog'],
+      ['dog-waste-bags', 'dog'],
     ]);
   });
 
   it('sorts every item into food, consumables or gear', () => {
     const kinds = (...ids: string[]) => ids.map((id) => CATALOG.find((entry) => entry.id === id)?.kind);
     expect(kinds('rice', 'water-bottle', 'cat-food')).toEqual(['food', 'food', 'food']);
-    expect(kinds('aa-batteries', 'paracetamol', 'purification-tablets', 'cat-litter', 'gas-cartridge')).toEqual(
-      Array(5).fill('consumable'),
+    expect(kinds('aa-batteries', 'paracetamol', 'purification-tablets', 'cat-litter', 'litter-bags', 'dog-waste-bags', 'gas-cartridge')).toEqual(
+      Array(7).fill('consumable'),
     );
     expect(kinds('headlamp', 'water-filter', 'first-aid-kit', 'power-bank')).toEqual(Array(4).fill('gear'));
     // Whatever has calories is eaten.
@@ -459,5 +450,21 @@ describe('catalog', () => {
 
   it('uses unique ids and known categories', () => {
     expect(new Set(CATALOG.map((entry) => entry.id)).size).toBe(CATALOG.length);
+  });
+
+  it('keeps sizes out of the names: they go in the unit', () => {
+    for (const entry of CATALOG) {
+      for (const name of Object.values(entry.name)) expect(name, entry.id).not.toMatch(/\d/);
+    }
+    expect(CATALOG.find((entry) => entry.id === 'tuna')?.unit).toEqual({ en: 'can (140 g)', fr: 'boîte (140 g)' });
+  });
+
+  it('says what every item is for, in English and in French', () => {
+    for (const entry of CATALOG) {
+      expect(entry.use.en, entry.id).not.toBe('');
+      expect(entry.use.fr, entry.id).not.toBe('');
+      if (entry.care) expect([entry.care.en, entry.care.fr].every(Boolean), entry.id).toBe(true);
+      if (entry.keeps) expect([entry.keeps.en, entry.keeps.fr].every(Boolean), entry.id).toBe(true);
+    }
   });
 });

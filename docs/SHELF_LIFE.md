@@ -26,6 +26,7 @@ checked against ANSES, DGCCRF, EU law, USDA and US university extensions. Resear
 | Product | Months | Note | Sources |
 |---|---|---|---|
 | Bottled water | 24 | The water itself does not go off; the date is about taste (plastic, storage room). | [Cristaline](https://cdn.api.groupe-pomona.fr/public/products/0294469/branch/es/medias/eau-de-source-en-bouteille-1-5-l-cristaline_0294469_es_technical.pdf), [Danone](https://www.danone.com/fr/fr/danone-et-vous/delais-de-consommation/puis-je-consommer-une-bouteille-d-eau-minerale-une-boisson-qui-porte-une-date-ddm-depassee.html) |
+| Tap water in jerrycans | 6 | Water you store yourself is replaced every 6 months, in food-grade containers washed and disinfected beforehand, kept cool and away from sunlight. | [CDC](https://cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html) |
 | Purification tablets | 60 | 5 years in strips, 3 in tubs. Chlorine weakens: do not use past the date. | [Aquatabs](https://www.engineeringforchange.org/solutions/product/aquatab/) |
 | White rice | 24 | Brown rice keeps only 6 to 12 months. | [Riz de Camargue](https://camargue.fr/site/clients/riz-canavere/DOCS/2017/FT%20Riz%20de%20Camargue%20rond%20blanc%20Sp%C3%A9cial%20risotto%20IGP.pdf), [USDA](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/shelf-stable-food) |
 | Pasta | 24 | | [Panzani](https://cdn.api.groupe-pomona.fr/public/products/0043365/branch/es/medias/spaghetti-en-sac-5-kg-panzani_0043365_es_technical.pdf), [USDA](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/shelf-stable-food) |
@@ -59,7 +60,9 @@ checked against ANSES, DGCCRF, EU law, USDA and US university extensions. Resear
 |---|---|---|---|
 | Dry cat food | 12 | Planned at 60 g per cat and per day (a 4 kg adult cat). An opened bag keeps about a month. | [Hill's](https://www.hillspet.co.uk/cat-food/sp-feline-adult-chicken-dry), [WSAVA](https://wsava.org/wp-content/uploads/2020/07/Calorie-Needs-for-Healthy-Adult-Cats-updated-July-2020.pdf), [Royal Canin](https://www.royalcanin.com/fr/about-us/faqs) |
 | Dry dog food | 12 | Planned at 300 g per dog and per day (a 20 to 25 kg dog): about 150 g for a small dog, 450 g for a large one. | [Royal Canin Medium](https://pro.royalcanin.co.uk/products/dog/medium-adult/), [Hill's](https://www.hillspet.ae/dog-food/science-plan-adult-medium-chicken-dry), [Whole Dog Journal](https://www.whole-dog-journal.com/food/how-long-does-dry-dog-food-last) |
-| Clumping cat litter | does not expire | Planned at 0.4 kg per cat and per day, about 12 kg a month (an estimate: no manufacturer publishes it). Silica litter lasts much longer (about 75 g a day). Keep it dry. | [Catsan](https://www.catsan.fr/faq-litieres), [Litter-Robot](https://www.litter-robot.com/eu/fr/blog/how-much-cat-litter-to-use/), [PrettyLitter](https://help.prettylitter.com/hc/en-us/articles/8507867182359-Does-PrettyLitter-expire) |
+| Clumping cat litter | does not expire | Planned at 0.4 kg per cat and per day, about 12 kg a month (an estimate: no manufacturer publishes it), counted in 10 kg bags: 0.04 bag a day. Silica litter lasts much longer (about 75 g a day). Keep it dry. | [Catsan](https://www.catsan.fr/faq-litieres), [Litter-Robot](https://www.litter-robot.com/eu/fr/blog/how-much-cat-litter-to-use/), [PrettyLitter](https://help.prettylitter.com/hc/en-us/articles/8507867182359-Does-PrettyLitter-expire) |
+| Litter disposal bags | does not expire | Planned at one bag per cat and per day, in rolls of 20: the tray is cleaned at least once a day. Compostable bags weaken: use them within 6 months. | [Catsan](https://www.catsan.fr/faq-litieres), [Better Packaging](https://support.betterpackaging.com/compostable-packaging-shelf-life) |
+| Dog waste bags | does not expire | Planned at two bags per dog and per day, in rolls of 20: a healthy dog usually has one or two bowel movements a day. Compostable bags: use them within 6 months. | [AKC](https://www.akc.org/expert-advice/health/how-often-should-my-dog-be-pooping/), [Better Packaging](https://support.betterpackaging.com/compostable-packaging-shelf-life) |
 
 ## Health, hygiene and energy
 
@@ -81,7 +84,14 @@ checked against ANSES, DGCCRF, EU law, USDA and US university extensions. Resear
 | Power bank, radio battery | Recharge every 3 months, store about half charged. | [Anker](https://service.anker.com/eu/article-description/How-do-I-store-my-Anker-power-bank-when-it-will-not-be-used-for-an-extended-period-of-time), [Battery University](https://batteryuniversity.com/article/bu-702-how-to-store-batteries) |
 | Headlamp, radio | Store without batteries. | [Duracell](https://www.duracell-me.com/help/storage) |
 | Camping stove | Check the seals before use. | [Japanese guideline](https://tetsudo-ch.com/12913823.html) |
-| Jerrycan | Water you fill yourself is renewed every 6 months. | [CDC](https://cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html) |
+| Empty jerrycan | Wash and disinfect it before filling it; never use one that held a toxic product. | [CDC](https://cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html) |
 
-Toilet paper, candles, matches (kept dry), bin bags, survival blanket, can opener and multi-tool do not
-expire. No source was found for most of them: this is common sense for things stored dry.
+Toilet paper, candles, matches (kept dry), bin bags (plastic), survival blanket, can opener and multi-tool do
+not expire. No source was found for most of them: this is common sense for things stored dry.
+
+## Sizes and amounts
+
+Names never hold a size: it goes in the unit, which is what the amounts count (`can (400 g)`, `jerrycan (20 L)`,
+`bag (10 kg)`). The daily amounts of food in the catalog only give proportions: the setup wizard scales the
+chosen foods together so that they add up to the `Kcal per person per day` setting (2200 by default). Coffee and
+tea have no daily amount: no source gives one, and they bring no calories.

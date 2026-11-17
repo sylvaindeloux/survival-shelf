@@ -170,10 +170,10 @@ le lire, l’imprimer et même **le modifier avec n’importe quel éditeur de t
 l’application. Si l’application ne fonctionnait plus demain, votre liste serait toujours là :
 
 ```markdown
-| Produit               | Quantité | Péremption | Emplacement | Ajouté     |
-|-----------------------|----------|------------|-------------|------------|
-| Bouteille d’eau 1,5 L | 24       | 2027-08-06 | Garage      | 2026-09-10 |
-| Riz                   | 5        | 2028-09-09 | Cellier     | 2026-09-10 |
+| Produit          | Quantité | Péremption | Emplacement | Ajouté     |
+|------------------|----------|------------|-------------|------------|
+| Eau en bouteille | 24       | 2027-08-06 | Garage      | 2026-09-10 |
+| Riz              | 5        | 2028-09-09 | Cellier     | 2026-09-10 |
 ```
 
 Consultez un [exemple complet](docs/examples/survival-shelf.fr.md) et le

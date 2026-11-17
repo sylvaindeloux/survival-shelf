@@ -1,7 +1,8 @@
 import { addBag, localizedItemName } from './core/bags';
-import { CATALOG, productFromCatalog, starterItems } from './core/catalog';
+import { CATALOG } from './core/catalog';
 import { formatDay, type Day } from './core/dates';
 import { emptyShelf } from './core/defaults';
+import { DEFAULT_HABITS, starterList, starterProducts } from './core/starter';
 import { addLot, upsertProduct } from './core/stock';
 import type { EmergencyTopic, Shelf } from './core/types';
 import { inLang, type Lang, type Translated } from './core/languages';
@@ -112,8 +113,12 @@ const DEMO_EMERGENCY: { topic: EmergencyTopic; name: Translated; details: Transl
 export function demoShelf(today: Day, lang: Lang): Shelf {
   let shelf = emptyShelf(lang);
   shelf.settings.people = 2;
-  for (const entry of starterItems({})) {
-    shelf = upsertProduct(shelf, productFromCatalog(entry, lang));
+  // The starter list, with the optional items the household bought anyway.
+  const entries = starterList({}, DEFAULT_HABITS)
+    .filter((item) => item.essential || item.entry.id in DEMO_LOTS)
+    .map((item) => item.entry);
+  for (const product of starterProducts(entries, lang, shelf.settings.kcalPerPersonPerDay)) {
+    shelf = upsertProduct(shelf, product);
   }
   for (const [id, lots] of Object.entries(DEMO_LOTS)) {
     const entry = CATALOG.find((candidate) => candidate.id === id);

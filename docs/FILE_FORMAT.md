@@ -178,7 +178,7 @@ one bag per person, with enough for 3 days. One section lists the bags, the next
 | `Product`      | `Produit`      | Name, Nom, Item                | yes      | Unique name of the product                                   |
 | `Type`         | `Type`         | Kind, Family, Famille, Nature, Genre |    | `food`, `consumable` or `gear`: see below                    |
 | `Category`     | `Catégorie`    | Cat                            |          | One of the categories below, or any text                     |
-| `Unit`         | `Unité`        | Units                          |          | Free text: `kg`, `L`, `can`, `pack`…                         |
+| `Unit`         | `Unité`        | Units                          |          | Free text: `kg`, `L`, `can`, `can (400 g)`, `pack`…          |
 | `Kcal/unit`    | `Kcal/unité`   | Kcal, Calories, Energy         |          | Energy of one unit, used for the food autonomy               |
 | `Water L/unit` | `Eau L/unité`  | Water, Eau                     |          | Liters of drinkable water in one unit, used for water autonomy |
 | `Daily use`    | `Conso/jour`   | Daily, Per day, Conso          |          | Units used per day: sets what each tier needs                |
@@ -268,10 +268,14 @@ daily use. A cat counts for 0.25 L per day: about 50 mL per kg for a 4 kg cat
 nearly all of it drunk on dry food. A dog counts for 1.5 L per day: a medium dog (20 to 25 kg) on dry food drinks
 about 63 to 73 mL per kg ([Zanghi & Gardner, 2018](https://doi.org/10.3389/fvets.2018.00317)).
 
-- up to 30 days, the tier needs **stored water**: products with `Water L/unit` (bottles, cans…);
+- up to 30 days, the tier needs **stored water**: products with `Water L/unit` (bottles, jerrycans…);
 - beyond 30 days, the rest can come from **water treatment**: products of the `Water treatment` category
   (filters, purification tablets), whose `Water L/unit` is the volume they can make drinkable. They need a
   water source, so they never count for the first month.
+- with stored water and no water treatment product, the household relies on stored water only: every tier,
+  even beyond 30 days, needs stored water.
+- with two stored water products, the first one in the `Products` section buys the first tier (for example
+  bottles), the second one the rest (for example tap water in jerrycans).
 
 The **menu** is the sum of `Daily use × Kcal/unit` of the food planned per person: the app warns you when it
 is well below `Kcal per person per day`.
