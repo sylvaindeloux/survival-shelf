@@ -215,7 +215,7 @@
 {/snippet}
 
 <div class="setup">
-  <header class="head" class:wide={step > 1}>
+  <header class="head">
     <button class="icon-btn" onclick={back} aria-label={t('setup.back')}><ArrowLeft size={22} /></button>
     <span class="brand"><Logo size={28} />Survival Shelf</span>
     <span class="step small muted">{t('setup.step', { step, total: STEPS })}</span>
@@ -223,59 +223,61 @@
 
   {#if step === 1}
     <section class="content stack">
-      <div>
+      <div class="intro">
         <h1>{t('setup.householdTitle')}</h1>
         <p class="muted">{t('setup.householdText')}</p>
       </div>
 
-      <div class="card stack">
-        <span class="label">{t('setup.people')}</span>
-        <div class="pet">
-          <span class="need-icon"><Users size={22} /></span>
-          <span class="grow">
-            <strong>{t('setup.persons')}</strong>
-            <span class="small muted">{t('setup.personsHint')}</span>
-          </span>
-          <div class="stepper">
-            <button class="icon-btn outlined" onclick={() => (people = Math.max(1, people - 1))} disabled={people <= 1} aria-label={`${t('setup.persons')} −1`}
-              ><Minus size={18} /></button
-            >
-            <span class="count num" aria-live="polite">{people}</span>
-            <button class="icon-btn outlined" onclick={() => (people += 1)} aria-label={`${t('setup.persons')} +1`}><Plus size={18} /></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card stack pets">
-        <span class="label">{t('setup.pets')}</span>
-        {#each PETS as pet (pet.need)}
+      <div class="household">
+        <div class="card stack people">
+          <span class="label">{t('setup.people')}</span>
           <div class="pet">
-            <span class="need-icon"><pet.icon size={22} /></span>
+            <span class="need-icon"><Users size={22} /></span>
             <span class="grow">
-              <strong>{t(pet.label)}</strong>
-              <span class="small muted">{t(pet.hint)}</span>
+              <strong>{t('setup.persons')}</strong>
+              <span class="small muted">{t('setup.personsHint')}</span>
             </span>
             <div class="stepper">
-              <button class="icon-btn outlined" onclick={() => count(pet.need, -1)} disabled={!needs[pet.need]} aria-label={`${t(pet.label)} −1`}
+              <button class="icon-btn outlined" onclick={() => (people = Math.max(1, people - 1))} disabled={people <= 1} aria-label={`${t('setup.persons')} −1`}
                 ><Minus size={18} /></button
               >
-              <span class="count num" aria-live="polite">{needs[pet.need]}</span>
-              <button class="icon-btn outlined" onclick={() => count(pet.need, 1)} aria-label={`${t(pet.label)} +1`}><Plus size={18} /></button>
+              <span class="count num" aria-live="polite">{people}</span>
+              <button class="icon-btn outlined" onclick={() => (people += 1)} aria-label={`${t('setup.persons')} +1`}><Plus size={18} /></button>
             </div>
           </div>
-        {/each}
-      </div>
+        </div>
 
-      <div class="stack needs">
-        <span class="label">{t('setup.needs')}</span>
-        <button class="card need" class:active={needs.treatment} aria-pressed={!!needs.treatment} onclick={() => (needs.treatment = needs.treatment ? 0 : 1)}>
-          <span class="need-icon"><Pill size={22} /></span>
-          <span class="grow">
-            <strong>{t('setup.needTreatment')}</strong>
-            <span class="small muted">{t('setup.needTreatmentHint')}</span>
-          </span>
-          <span class="check" aria-hidden="true">{#if needs.treatment}<Check size={18} />{/if}</span>
-        </button>
+        <div class="card stack pets">
+          <span class="label">{t('setup.pets')}</span>
+          {#each PETS as pet (pet.need)}
+            <div class="pet">
+              <span class="need-icon"><pet.icon size={22} /></span>
+              <span class="grow">
+                <strong>{t(pet.label)}</strong>
+                <span class="small muted">{t(pet.hint)}</span>
+              </span>
+              <div class="stepper">
+                <button class="icon-btn outlined" onclick={() => count(pet.need, -1)} disabled={!needs[pet.need]} aria-label={`${t(pet.label)} −1`}
+                  ><Minus size={18} /></button
+                >
+                <span class="count num" aria-live="polite">{needs[pet.need]}</span>
+                <button class="icon-btn outlined" onclick={() => count(pet.need, 1)} aria-label={`${t(pet.label)} +1`}><Plus size={18} /></button>
+              </div>
+            </div>
+          {/each}
+        </div>
+
+        <div class="stack needs">
+          <span class="label">{t('setup.needs')}</span>
+          <button class="card need" class:active={needs.treatment} aria-pressed={!!needs.treatment} onclick={() => (needs.treatment = needs.treatment ? 0 : 1)}>
+            <span class="need-icon"><Pill size={22} /></span>
+            <span class="grow">
+              <strong>{t('setup.needTreatment')}</strong>
+              <span class="small muted">{t('setup.needTreatmentHint')}</span>
+            </span>
+            <span class="check" aria-hidden="true">{#if needs.treatment}<Check size={18} />{/if}</span>
+          </button>
+        </div>
       </div>
 
       <div class="actions">
@@ -283,7 +285,7 @@
       </div>
     </section>
   {:else if step === 2}
-    <section class="content wide stack">
+    <section class="content stack">
       <div class="intro">
         <h1>{t('setup.habitsTitle')}</h1>
         <p class="muted">{t('setup.habitsText')}</p>
@@ -298,7 +300,7 @@
       </div>
     </section>
   {:else}
-    <section class="content wide stack">
+    <section class="content stack">
       <div class="intro">
         <h1>{t('setup.listTitle')}</h1>
         <p class="muted">{t('setup.listText')}</p>
@@ -455,6 +457,12 @@
   .actions {
     display: flex;
     justify-content: flex-end;
+  }
+
+  .household {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   /* Your habits: one card per question, the answers as large radio buttons. */
@@ -623,8 +631,9 @@
   }
 
   @media (min-width: 720px) {
-    .head.wide,
-    .content.wide {
+    /* The three steps share one width, the list's: two columns of cards. */
+    .head,
+    .content {
       max-width: 1040px;
     }
 
@@ -632,6 +641,30 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       align-items: start;
+    }
+
+    /* The pets card is the tallest: the specific needs go under the people, on the left. */
+    .household {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-areas:
+        'people pets'
+        'needs pets';
+      grid-template-rows: auto 1fr;
+      align-items: start;
+      gap: 1rem;
+    }
+
+    .people {
+      grid-area: people;
+    }
+
+    .pets {
+      grid-area: pets;
+    }
+
+    .needs {
+      grid-area: needs;
     }
 
     .summary {
