@@ -43,15 +43,19 @@ household, a go-bag per person and a crisis mode.
 
 ## How it works
 
-### 1. Answer a few questions, get a starter plan
+### 1. Answer a few questions, get a starter list
 
-How many people, cats and dogs, and whether someone takes a daily medicine. The app suggests a balanced list:
-about 2,200 kcal of food per person per day (rice, pasta, cans, oil, sugar…), 3 L of water per person per day,
-plus hygiene, first aid, light, energy and a few tools. Untick what does not suit you and adjust the amounts.
+How many people, cats and dogs, and whether someone takes a daily medicine. Then how you live: bottled water,
+tap water in jerrycans or both, stored water only or a filter beyond a month, and whether you can cook without
+electricity. The app suggests a list made for your household, one family at a time, with what each item is
+for, how long it keeps and its upkeep. Sweets, salt, coffee and tea are optional. Untick what does not suit
+you: the app works out the amounts, with about 2,200 kcal of food per person per day spread over the foods you
+keep, and 3 L of water per person per day.
 
 <p align="center">
-  <img src="docs/screenshots/en/setup-household.png" width="260" alt="Starter plan, step 1: people, pets and specific needs">
-  <img src="docs/screenshots/en/setup-plan.png" width="260" alt="Starter plan, step 2: the suggested products and amounts">
+  <img src="docs/screenshots/en/setup-household.png" width="260" alt="Starter list, step 1: people, pets and specific needs">
+  <img src="docs/screenshots/en/setup-habits.png" width="260" alt="Starter list, step 2: how the household stores water and cooks">
+  <img src="docs/screenshots/en/setup-list.png" width="260" alt="Starter list, step 3: the advised items, with what they are for, how long they keep and their upkeep">
 </p>
 
 ### 2. Build it tier by tier

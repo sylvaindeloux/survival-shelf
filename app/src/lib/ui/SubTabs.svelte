@@ -3,7 +3,7 @@
 
   export interface SubTab {
     key: string;
-    /** Where the tab leads; a tab with `onclick` instead is a button, like "Add a bag". */
+    /** Where the tab leads; a tab with `onclick` instead is a button, like "Add a bag" or a part of a page. */
     href?: string;
     onclick?: () => void;
     label: string;
@@ -48,7 +48,9 @@
 <nav class="subtabs" class:wrap aria-label={label}>
   {#each items as item (item.key)}
     {#if item.onclick}
-      <button type="button" class="tab" class:add={item.add} onclick={item.onclick}>{@render content(item)}</button>
+      <button type="button" class="tab" class:add={item.add} onclick={item.onclick} aria-current={item.current ? 'true' : undefined}
+        >{@render content(item)}</button
+      >
     {:else}
       <a class="tab" href={item.href} class:add={item.add} aria-current={item.current ? 'page' : undefined}>{@render content(item)}</a>
     {/if}
@@ -87,7 +89,7 @@
     --bar-gap: var(--surface-2);
   }
 
-  .tab[aria-current='page'] .gauge {
+  .tab[aria-current] .gauge {
     --bar-gap: var(--surface);
   }
 
@@ -112,13 +114,13 @@
     color: var(--muted);
   }
 
-  .tab[aria-current='page'] {
+  .tab[aria-current] {
     background: var(--surface);
     border-color: var(--primary);
     border-bottom-width: 4px;
   }
 
-  .tab[aria-current='page'] :global(svg) {
+  .tab[aria-current] :global(svg) {
     color: var(--primary);
   }
 
@@ -242,7 +244,7 @@
       border-bottom: 3px solid transparent;
     }
 
-    .tab[aria-current='page'] {
+    .tab[aria-current] {
       background: none;
       border-bottom-color: var(--primary);
       color: var(--primary);

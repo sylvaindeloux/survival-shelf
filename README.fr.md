@@ -44,16 +44,20 @@ de votre foyer, un sac d’évacuation par personne et un mode crise.
 
 ## Comment ça marche
 
-### 1. Quelques questions, et votre plan de départ est prêt
+### 1. Quelques questions, et votre liste de départ est prête
 
-Combien de personnes, de chats et de chiens, et si quelqu’un a un traitement quotidien. L’application vous
-propose une liste équilibrée : environ 2 200 kcal de nourriture par personne et par jour (riz, pâtes,
-conserves, huile, sucre…), 3 L d’eau par personne et par jour, plus l’hygiène, les premiers secours,
-l’éclairage, l’énergie et quelques outils. Décochez ce qui ne vous convient pas et ajustez les quantités.
+Combien de personnes, de chats et de chiens, et si quelqu’un a un traitement quotidien. Puis vos habitudes :
+eau en bouteilles, eau du robinet en jerricans ou les deux, uniquement de l’eau stockée ou un filtre au-delà
+d’un mois, et si vous pouvez cuisiner sans électricité. L’application vous propose une liste faite pour votre
+foyer, une famille à la fois, avec l’intérêt de chaque article, sa durée de conservation et son entretien. Le
+sucré, le sel, le café et le thé sont facultatifs. Décochez ce qui ne vous convient pas : l’application calcule
+les quantités, avec environ 2 200 kcal de nourriture par personne et par jour réparties sur les vivres gardés,
+et 3 L d’eau par personne et par jour.
 
 <p align="center">
-  <img src="docs/screenshots/fr/setup-household.png" width="260" alt="Plan de départ, étape 1 : personnes, animaux et besoins particuliers">
-  <img src="docs/screenshots/fr/setup-plan.png" width="260" alt="Plan de départ, étape 2 : les produits et quantités proposés">
+  <img src="docs/screenshots/fr/setup-household.png" width="260" alt="Liste de départ, étape 1 : personnes, animaux et besoins particuliers">
+  <img src="docs/screenshots/fr/setup-habits.png" width="260" alt="Liste de départ, étape 2 : comment le foyer stocke l’eau et cuisine">
+  <img src="docs/screenshots/fr/setup-list.png" width="260" alt="Liste de départ, étape 3 : les articles conseillés, avec leur intérêt, leur durée de conservation et leur entretien">
 </p>
 
 ### 2. Construisez-le palier par palier
