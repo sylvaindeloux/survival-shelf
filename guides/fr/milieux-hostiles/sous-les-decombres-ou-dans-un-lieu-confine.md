@@ -1,14 +1,14 @@
 # Sous les décombres ou dans un lieu confiné
 
-> **En bref** : coincé sous des décombres, bouge le moins possible, couvre ton nez et ta bouche avec un tissu, n’allume aucune flamme et signale-toi en tapant sur un tuyau ou un mur, ou avec un sifflet. Ne crie qu’en dernier recours, à cause de la poussière. Si quelqu’un s’effondre dans un puits, une cuve, une fosse ou une cave, n’y descends pas : appelle le 18 ou le 112.
+> **En bref** : coincé sous des décombres, bougez le moins possible, couvrez votre nez et votre bouche avec un tissu, n’allumez aucune flamme et signalez-vous en tapant sur un tuyau ou un mur, ou avec un sifflet. Ne criez qu’en dernier recours, à cause de la poussière. Si quelqu’un s’effondre dans un puits, une cuve, une fosse ou une cave, n’y descendez pas : appelez le 18 ou le 112.
 
 ## Quand s’en servir
 
-- Un bâtiment s’est effondré après un séisme, une explosion, un glissement de terrain, et tu es coincé à l’intérieur.
-- Tu entends quelqu’un sous des décombres.
+- Un bâtiment s’est effondré après un séisme, une explosion, un glissement de terrain, et vous êtes coincé à l’intérieur.
+- Vous entendez quelqu’un sous des décombres.
 - Quelqu’un a fait un malaise dans un puits, une fosse, une cuve, un silo, une cave ou un vide sanitaire.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un petit sifflet en métal, que chacun porte sur soi dans les régions exposées aux séismes.
 - Près du lit : une lampe, des chaussures solides, un masque antipoussière.
@@ -18,33 +18,33 @@
 
 ### Coincé sous des décombres
 
-1. **Garde ton calme** et vérifie si tu es blessé.
-2. **Bouge le moins possible**, pour ne pas soulever de poussière ni faire bouger ce qui te recouvre.
-3. **Couvre ton nez et ta bouche** avec un mouchoir, un vêtement ou ce que tu as sous la main.
-4. **N’allume ni allumette ni briquet** : il peut y avoir une fuite de gaz.
-5. **Signale-toi** :
-   - tape sur un tuyau ou un mur, trois coups à la suite, et recommence toutes les quelques minutes ;
-   - siffle, si tu as un sifflet ;
-   - éclaire avec une lampe ;
-   - envoie un SMS ou appelle, si le téléphone passe.
-6. **Ne crie qu’en dernier recours** : en criant, tu respires une quantité dangereuse de poussière.
-7. **Attends-toi à des répliques** après un séisme : protège ta tête et ton cou.
+1. **Gardez votre calme** et vérifiez si vous êtes blessé.
+2. **Bougez le moins possible**, pour ne pas soulever de poussière ni faire bouger ce qui vous recouvre.
+3. **Couvrez votre nez et votre bouche** avec un mouchoir, un vêtement ou ce que vous avez sous la main.
+4. **N’allumez ni allumette ni briquet** : il peut y avoir une fuite de gaz.
+5. **Signalez-vous** :
+   - tapez sur un tuyau ou un mur, trois coups à la suite, et recommencez toutes les quelques minutes ;
+   - sifflez, si vous avez un sifflet ;
+   - éclairez avec une lampe ;
+   - envoyez un SMS ou appelez, si le téléphone passe.
+6. **Ne criez qu’en dernier recours** : en criant, vous respirez une quantité dangereuse de poussière.
+7. **Attendez-vous à des répliques** après un séisme : protégez votre tête et votre cou.
 
 ### Quelqu’un est sous les décombres
 
-1. **Appelle le 18 ou le 112** et dis où tu as vu ou entendu la personne.
-2. **N’essaie pas de la dégager en déplaçant les décombres** : tu peux aggraver la situation.
-3. **N’entre pas dans un bâtiment abîmé.**
-4. **Parle-lui** depuis un endroit sûr, dis-lui que les secours arrivent, et guide-les à leur arrivée.
+1. **Appelez le 18 ou le 112** et dites où vous avez vu ou entendu la personne.
+2. **N’essayez pas de la dégager en déplaçant les décombres** : vous pouvez aggraver la situation.
+3. **N’entrez pas dans un bâtiment abîmé.**
+4. **Parlez-lui** depuis un endroit sûr, dites-lui que les secours arrivent, et guidez-les à leur arrivée.
 
 ### Lieu confiné : puits, fosse, cuve, silo, cave
 
-1. **Comprends le danger.** Dans un espace fermé et mal aéré, l’air peut manquer d’oxygène, être toxique ou exploser. Le fumier, le lisier et le purin dégagent du méthane, de l’hydrogène sulfuré et du gaz carbonique.
-2. **N’y entre pas** si tu n’es ni équipé ni formé, même pour un instant.
-3. **Ne te fie pas à une bougie** : qu’elle reste allumée ne prouve pas que l’air est respirable.
-4. **Quelqu’un s’est effondré à l’intérieur : n’y descends pas.** Le risque d’un deuxième accident est maximal : des sauveteurs improvisés meurent ainsi à côté de la première victime.
-5. **Appelle le 18 ou le 112** et annonce : « accident en espace confiné avec asphyxie ».
-6. **Empêche les autres d’entrer** et, si tu peux le faire de l’extérieur, ouvre ce qui laisse entrer l’air.
+1. **Comprenez le danger.** Dans un espace fermé et mal aéré, l’air peut manquer d’oxygène, être toxique ou exploser. Le fumier, le lisier et le purin dégagent du méthane, de l’hydrogène sulfuré et du gaz carbonique.
+2. **N’y entrez pas** si vous n’êtes ni équipé ni formé, même pour un instant.
+3. **Ne vous fiez pas à une bougie** : qu’elle reste allumée ne prouve pas que l’air est respirable.
+4. **Quelqu’un s’est effondré à l’intérieur : n’y descendez pas.** Le risque d’un deuxième accident est maximal : des sauveteurs improvisés meurent ainsi à côté de la première victime.
+5. **Appelez le 18 ou le 112** et annoncez : « accident en espace confiné avec asphyxie ».
+6. **Empêchez les autres d’entrer** et, si vous pouvez le faire de l’extérieur, ouvrez ce qui laisse entrer l’air.
 
 ## À ne jamais faire
 
@@ -56,8 +56,8 @@
 
 ## Sans matériel
 
-- **Sans sifflet** : frappe avec une pierre, une chaussure ou un objet dur sur du métal ou du béton.
-- **Sans tissu** : respire à travers ta manche ou le col de ton vêtement.
+- **Sans sifflet** : frappez avec une pierre, une chaussure ou un objet dur sur du métal ou du béton.
+- **Sans tissu** : respirez à travers votre manche ou le col de votre vêtement.
 
 ## Selon l’endroit
 

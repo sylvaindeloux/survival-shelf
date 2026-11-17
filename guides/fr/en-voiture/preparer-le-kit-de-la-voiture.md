@@ -1,6 +1,6 @@
 # Préparer le kit de la voiture
 
-> **En bref** : gilet de haute visibilité à portée de main et triangle dans le coffre, c’est obligatoire. Ajoute de l’eau, de quoi grignoter, une couverture, une lampe, une trousse de secours, un chargeur de téléphone et une carte routière en papier. En hiver : raclette, vêtements chauds, chaînes ou chaussettes à neige. Et garde le réservoir au moins à moitié plein.
+> **En bref** : gilet de haute visibilité à portée de main et triangle dans le coffre, c’est obligatoire. Ajoutez de l’eau, de quoi grignoter, une couverture, une lampe, une trousse de secours, un chargeur de téléphone et une carte routière en papier. En hiver : raclette, vêtements chauds, chaînes ou chaussettes à neige. Et gardez le réservoir au moins à moitié plein.
 
 ## Quand s’en servir
 
@@ -8,11 +8,11 @@
 - Avant une vigilance neige, grand froid ou canicule.
 - La voiture sert aussi d’abri de secours et de moyen d’évacuation : son kit complète le sac d’évacuation.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 ### Toute l’année
 
-- **Gilet de haute visibilité**, marqué CE, dans l’habitacle, à portée de main : tu dois pouvoir l’enfiler avant de sortir.
+- **Gilet de haute visibilité**, marqué CE, dans l’habitacle, à portée de main : vous devez pouvoir l’enfiler avant de sortir.
 - **Triangle de présignalisation** homologué.
 - **Lampe de poche** et piles de rechange.
 - **Trousse de secours** et couverture de survie.
@@ -20,7 +20,7 @@
 - **Chargeur de téléphone** pour la voiture et câble. Batterie externe si possible.
 - **Carte routière en papier** de la région.
 - **Roue de secours** et matériel pour la changer, câbles de démarrage.
-- **Tes médicaments** si tu suis un traitement.
+- **Vos médicaments** si vous suivez un traitement.
 - **Un peu d’argent liquide.**
 
 ### En hiver
@@ -40,13 +40,13 @@
 
 ## Étapes
 
-1. **Rassemble le kit** dans un sac ou une caisse, calé dans le coffre. Le gilet reste dans l’habitacle.
-2. **Vérifie la voiture** avant un long trajet ou une période de froid : pneus (état, pression, roue de secours), niveaux d’huile, de liquide de refroidissement et de lave-glace, freins, feux, batterie, essuie-glaces.
-3. **Garde le réservoir au moins à moitié plein**, et fais le plein avant une tempête annoncée ou si une évacuation est possible.
-4. **Charge le téléphone** avant de partir.
-5. **Dis à quelqu’un** où tu vas, par où tu passes et quand tu arrives, surtout en hiver ou en zone isolée.
-6. **Vérifie le kit deux fois par an** : dates de l’eau, de la nourriture et de la trousse, piles, pression de la roue de secours.
-7. **Remplace tout de suite** ce que tu utilises.
+1. **Rassemblez le kit** dans un sac ou une caisse, calé dans le coffre. Le gilet reste dans l’habitacle.
+2. **Vérifiez la voiture** avant un long trajet ou une période de froid : pneus (état, pression, roue de secours), niveaux d’huile, de liquide de refroidissement et de lave-glace, freins, feux, batterie, essuie-glaces.
+3. **Gardez le réservoir au moins à moitié plein**, et faites le plein avant une tempête annoncée ou si une évacuation est possible.
+4. **Chargez le téléphone** avant de partir.
+5. **Dites à quelqu’un** où vous allez, par où vous passez et quand vous arrivez, surtout en hiver ou en zone isolée.
+6. **Vérifiez le kit deux fois par an** : dates de l’eau, de la nourriture et de la trousse, piles, pression de la roue de secours.
+7. **Remplacez tout de suite** ce que vous utilisez.
 
 ## À ne jamais faire
 
@@ -54,13 +54,13 @@
 - Laisser des objets lourds sur la plage arrière : en cas de choc, ils deviennent des projectiles.
 - Garder un bidon d’essence dans l’habitacle.
 - Laisser des médicaments dans la voiture en plein été ou par grand froid.
-- Compter sur le téléphone seul pour te guider et appeler.
+- Compter sur le téléphone seul pour vous guider et appeler.
 
 ## Selon l’endroit
 
-- **En montagne, en France** : du 1er novembre au 31 mars, des pneus hiver ou des chaînes ou chaussettes à neige sont obligatoires dans certaines communes des massifs. Garde les chaînes ou les chaussettes dans le coffre.
+- **En montagne, en France** : du 1er novembre au 31 mars, des pneus hiver ou des chaînes ou chaussettes à neige sont obligatoires dans certaines communes des massifs. Gardez les chaînes ou les chaussettes dans le coffre.
 - **Avec un bébé ou un animal** : couches, lait, eau, laisse et gamelle.
-- **Si tu roules peu** : le kit vieillit quand même. Vérifie-le aux mêmes dates que le sac d’évacuation.
+- **Si vous roulez peu** : le kit vieillit quand même. Vérifiez-le aux mêmes dates que le sac d’évacuation.
 
 ## Voir aussi
 

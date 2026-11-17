@@ -1,6 +1,6 @@
 # S’organiser avec ses voisins
 
-> **En bref** : dans une crise, les premiers à pouvoir t’aider sont tes voisins, et tu es le premier à pouvoir les aider. Fais connaissance dès maintenant, échangez vos numéros sur papier, repérez qui aura besoin d’aide et qui sait faire quoi. Pendant la crise, passez les uns chez les autres, partagez l’information et ne laissez personne seul.
+> **En bref** : dans une crise, les premiers à pouvoir vous aider sont vos voisins, et vous êtes le premier à pouvoir les aider. Faites connaissance dès maintenant, échangez vos numéros sur papier, repérez qui aura besoin d’aide et qui sait faire quoi. Pendant la crise, passez les uns chez les autres, partagez l’information et ne laissez personne seul.
 
 ## Quand s’en servir
 
@@ -8,7 +8,7 @@
 - Pendant une coupure, une tempête, une crue, une canicule ou un confinement.
 - Quand les secours sont débordés et que l’aide met du temps à arriver.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Une liste papier des voisins : nom, étage ou maison, numéro de téléphone.
 - Un lieu pour se retrouver : hall, cour, salle commune, devant une maison.
@@ -18,12 +18,12 @@
 
 ### Avant
 
-1. **Présente-toi** à tes voisins de palier, d’escalier ou de rue. Une fête des voisins ou une réunion de copropriété sont de bonnes occasions.
+1. **Présentez-vous** à vos voisins de palier, d’escalier ou de rue. Une fête des voisins ou une réunion de copropriété sont de bonnes occasions.
 2. **Échangez vos numéros**, sur papier, et dites-vous qui prévenir en cas de problème.
 3. **Repérez qui aura besoin d’aide** : personnes âgées, handicapées, malades, isolées, familles avec un bébé. Demandez-leur ce qui les aiderait.
 4. **Repérez qui sait faire quoi** : premiers secours, soins, bricolage, langues parlées. Et qui a quoi : radio à piles, poêle à bois, outils, véhicule.
 5. **Parlez de vos plans** : où chacun irait en cas d’évacuation, qui peut emmener qui.
-6. **Appuyez-vous sur ce qui existe** : conseil syndical, association de quartier, club, école. Demande à la mairie s’il existe un dispositif de participation citoyenne, mené avec la police ou la gendarmerie.
+6. **Appuyez-vous sur ce qui existe** : conseil syndical, association de quartier, club, école. Demandez à la mairie s’il existe un dispositif de participation citoyenne, mené avec la police ou la gendarmerie.
 
 ### Pendant
 
@@ -58,7 +58,7 @@
 
 - **En immeuble** : le hall ou une partie commune peut servir de point de rendez-vous et de tableau d’information.
 - **En maison ou à la campagne** : convenez d’un tour régulier, et de qui a un véhicule capable de passer.
-- **Tu viens d’arriver** : une simple présentation suffit pour commencer.
+- **Vous venez d’arriver** : une simple présentation suffit pour commencer.
 
 ## Voir aussi
 

@@ -1,16 +1,16 @@
 # Mer et littoral
 
-> **En bref** : avant d’aller à l’eau ou en mer, regarde la météo, les marées et le vent, et dis à quelqu’un resté à terre où tu vas. Baigne-toi en zone surveillée. Pris dans un courant, ne lutte pas : flotte, fais signe, nage parallèlement à la plage. En bateau, porte un gilet et ne quitte jamais l’embarcation, même retournée. En mer, les secours s’appellent au 196 ou sur le canal 16 de la VHF.
+> **En bref** : avant d’aller à l’eau ou en mer, regardez la météo, les marées et le vent, et dites à quelqu’un resté à terre où vous allez. Baignez-vous en zone surveillée. Pris dans un courant, ne luttez pas : flottez, faites signe, nagez parallèlement à la plage. En bateau, portez un gilet et ne quittez jamais l’embarcation, même retournée. En mer, les secours s’appellent au 196 ou sur le canal 16 de la VHF.
 
 ## Quand s’en servir
 
 - Avant une baignade, une balade à marée basse, une sortie en bateau, en kayak ou en paddle.
-- Tu es emporté par un courant, coupé de la côte par la marée ou en difficulté sur l’eau.
-- Tu vois quelqu’un en difficulté dans l’eau.
+- Vous êtes emporté par un courant, coupé de la côte par la marée ou en difficulté sur l’eau.
+- Vous voyez quelqu’un en difficulté dans l’eau.
 
-En France, entre le 1er juin et le 30 septembre 2025, 1 418 noyades ont été recensées, dont 409 mortelles.
+En France, entrez le 1er juin et le 30 septembre 2025, 1 418 noyades ont été recensées, dont 409 mortelles.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un gilet ou une aide à la flottabilité pour chaque personne à bord : c’est obligatoire.
 - Une VHF en bateau, et un téléphone chargé.
@@ -22,52 +22,52 @@ En France, entre le 1er juin et le 30 septembre 2025, 1 418 noyades ont été re
 
 ### Avant d’y aller
 
-1. **Regarde les prévisions locales** : météo, force et direction du vent, horaires de marée, courants.
-2. **Renseigne-toi sur le lieu** : courants, rochers, zones dangereuses.
-3. **Dis à quelqu’un resté à terre** où tu vas, tes heures de départ et de retour, puis préviens-le de tout changement et de ton retour.
-4. **En bateau**, vérifie le matériel, le carburant et le moteur avant de larguer les amarres.
+1. **Regardez les prévisions locales** : météo, force et direction du vent, horaires de marée, courants.
+2. **Renseignez-vous sur le lieu** : courants, rochers, zones dangereuses.
+3. **Dites à quelqu’un resté à terre** où vous allez, vos heures de départ et de retour, puis prévenez-le de tout changement et de votre retour.
+4. **En bateau**, vérifiez le matériel, le carburant et le moteur avant de larguer les amarres.
 
 ### À la baignade
 
-1. **Baigne-toi en zone surveillée** et regarde le drapeau :
+1. **Baignez-vous en zone surveillée** et regardez le drapeau :
    - vert : baignade surveillée, sans danger particulier ;
    - jaune : baignade surveillée, danger limité ;
    - rouge : baignade interdite ;
    - violet : pollution ou présence d’espèces dangereuses.
-2. **Entre dans l’eau peu à peu.**
-3. **Ne t’éloigne pas** : évite de nager à plus de 300 m du bord. Le courant et la marée peuvent t’empêcher de revenir.
-4. **Surveille les enfants en permanence.**
-5. **Pas d’alcool** avant de te baigner.
-6. **Méfie-toi des baïnes et des zones où les vagues déferlent.**
+2. **Entrez dans l’eau peu à peu.**
+3. **Ne vous éloignez pas** : évitez de nager à plus de 300 m du bord. Le courant et la marée peuvent vous empêcher de revenir.
+4. **Surveillez les enfants en permanence.**
+5. **Pas d’alcool** avant de vous baigner.
+6. **Méfiez-vous des baïnes et des zones où les vagues déferlent.**
 
 ### Pris dans un courant
 
-1. **Ne lutte pas et ne panique pas.** Le courant t’éloigne du bord, il ne t’entraîne pas vers le fond.
-2. **Ne nage pas droit vers la plage.** Nage parallèlement au rivage pour sortir du courant, puis reviens en biais, avec les vagues.
-3. **Si tu n’y arrives pas**, laisse-toi flotter, fais de grands signes et appelle.
+1. **Ne luttez pas et ne paniquez pas.** Le courant vous éloigne du bord, il ne vous entraîne pas vers le fond.
+2. **Ne nagez pas droit vers la plage.** Nagez parallèlement au rivage pour sortir du courant, puis revenez en biais, avec les vagues.
+3. **Si vous n’y arrivez pas**, laissez-vous flotter, faites de grands signes et appelez.
 
 ### À pied à marée basse
 
-1. **Regarde les horaires de marée avant de partir** et garde l’heure en tête.
-2. **Surveille le sens de la marée** : la mer peut monter étonnamment vite et couper ton chemin de retour, surtout autour d’une pointe rocheuse ou vers une autre crique.
-3. **Coupé par la marée** : monte au plus haut, appelle le 196 ou le 112 et attends les secours plutôt que de traverser à la nage.
+1. **Regardez les horaires de marée avant de partir** et gardez l’heure en tête.
+2. **Surveillez le sens de la marée** : la mer peut monter étonnamment vite et couper votre chemin de retour, surtout autour d’une pointe rocheuse ou vers une autre crique.
+3. **Coupé par la marée** : montez au plus haut, appelez le 196 ou le 112 et attendez les secours plutôt que de traverser à la nage.
 
 ### En bateau, en kayak, en paddle
 
-1. **Porte ton gilet.**
-2. **En difficulté, ne quitte jamais l’embarcation** et n’essaie pas de rejoindre la côte à la nage. Attire l’attention.
-3. **Bateau retourné** : accroche-toi à lui. On repère bien plus facilement une embarcation qu’une personne à la mer. Ne le quitte que s’il coule.
-4. **Alerte** sur le canal 16 de la VHF, ou au 196.
+1. **Portez votre gilet.**
+2. **En difficulté, ne quittez jamais l’embarcation** et n’essayez pas de rejoindre la côte à la nage. Attirez l’attention.
+3. **Bateau retourné** : accrochez-vous à lui. On repère bien plus facilement une embarcation qu’une personne à la mer. Ne le quittez que s’il coule.
+4. **Alertez** sur le canal 16 de la VHF, ou au 196.
 
 ### Quelqu’un est en difficulté
 
-1. **N’entre pas dans l’eau** : beaucoup de noyés sont des personnes venues en secourir une autre.
-2. **Préviens les sauveteurs**, ou appelle le 196 en mer, le 112 depuis la plage.
-3. **Lance-lui un objet qui flotte** et ne le quitte pas des yeux (voir [Noyade](../sante-et-premiers-secours/noyade.md)).
+1. **N’entrez pas dans l’eau** : beaucoup de noyés sont des personnes venues en secourir une autre.
+2. **Prévenez les sauveteurs**, ou appelez le 196 en mer, le 112 depuis la plage.
+3. **Lancez-lui un objet qui flotte** et ne le quittez pas des yeux (voir [Noyade](../sante-et-premiers-secours/noyade.md)).
 
 ## À ne jamais faire
 
-- Te baigner sous un drapeau rouge ou hors des zones surveillées quand la mer est forte.
+- Vous baigner sous un drapeau rouge ou hors des zones surveillées quand la mer est forte.
 - Nager contre un courant jusqu’à l’épuisement.
 - Quitter un bateau qui flotte pour nager vers la côte.
 - Partir sans avoir regardé la marée.
@@ -75,14 +75,14 @@ En France, entre le 1er juin et le 30 septembre 2025, 1 418 noyades ont été re
 
 ## Selon l’endroit
 
-- **En France** : le 196 joint le centre de secours en mer (CROSS) depuis un téléphone. Depuis un bateau, le canal 16 de la VHF permet de te localiser plus vite. À terre : 15, 18 ou 112.
+- **En France** : le 196 joint le centre de secours en mer (CROSS) depuis un téléphone. Depuis un bateau, le canal 16 de la VHF permet de vous localiser plus vite. À terre : 15, 18 ou 112.
 - **Eau froide** : voir [Tombé dans l’eau froide](../en-exterieur/tombe-dans-l-eau-froide.md).
 - **Séisme ressenti au bord de la mer, ou mer qui se retire d’un coup** : voir [Tsunami](../catastrophes/tsunami.md).
 - **Piqûres en mer** :
-  - méduse : sors de l’eau, rince à l’eau de mer et retire les filaments avec précaution ;
-  - oursin : porte des chaussures de bain, retire les piquants et désinfecte ;
-  - poisson venimeux (raie, rascasse, poisson-pierre) : trempe la zone dans de l’eau chaude, sans te brûler, désinfecte et demande un avis médical ;
-  - malaise après une piqûre : appelle les secours.
+  - méduse : sortez de l’eau, rincez à l’eau de mer et retirez les filaments avec précaution ;
+  - oursin : portez des chaussures de bain, retirez les piquants et désinfectez ;
+  - poisson venimeux (raie, rascasse, poisson-pierre) : trempez la zone dans de l’eau chaude, sans vous brûler, désinfectez et demandez un avis médical ;
+  - malaise après une piqûre : appelez les secours.
 
 ## Voir aussi
 

@@ -45,7 +45,7 @@ export const TEMPLATES: Record<GuideLang, GuideTemplate> = {
     summary: '> **En bref** : ',
     sections: [
       'Quand s’en servir',
-      'Ce qu’il te faut',
+      'Ce qu’il vous faut',
       'Étapes',
       'Avant',
       'Pendant',

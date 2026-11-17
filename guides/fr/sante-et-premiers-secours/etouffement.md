@@ -1,6 +1,6 @@
 # Étouffement
 
-> **En bref** : la personne ne peut plus parler, tousser ni respirer. Donne jusqu’à 5 claques vigoureuses dans le dos, entre les omoplates. Si ça ne suffit pas, fais jusqu’à 5 compressions du ventre, puis recommence. Si elle tousse encore, ne tape pas : encourage-la à tousser. Si elle perd connaissance, appelle le 15 ou le 112 et commence le massage cardiaque.
+> **En bref** : la personne ne peut plus parler, tousser ni respirer. Donnez jusqu’à 5 claques vigoureuses dans le dos, entrez les omoplates. Si ça ne suffit pas, faites jusqu’à 5 compressions du ventre, puis recommencez. Si elle tousse encore, ne tapez pas : encouragez-la à tousser. Si elle perd connaissance, appelez le 15 ou le 112 et commencez le massage cardiaque.
 
 ## Quand s’en servir
 
@@ -10,36 +10,36 @@
 
 ## Étapes
 
-1. **Demande-lui : « Est-ce que tu t’étouffes ? »**
-   - Elle parle ou tousse : laisse-la dans la position où elle est le mieux, encourage-la à tousser, demande un avis médical au 15 et ne la quitte pas. Si la toux faiblit et qu’elle s’épuise, passe à l’étape 2.
-   - Elle ne peut ni parler ni tousser : agis tout de suite.
-2. **Donne 1 à 5 claques dans le dos.**
-   - Mets-toi sur le côté, un peu en arrière. Soutiens sa poitrine d’une main et penche-la en avant.
-   - Frappe vigoureusement entre les omoplates, avec le talon de la main ouverte.
-   - Arrête dès que l’objet sort, ou qu’elle tousse ou respire.
-3. **Si ça ne suffit pas, fais 1 à 5 compressions du ventre.**
-   - Passe derrière elle, tes bras sous les siens, autour du haut de son ventre. Penche-la en avant.
-   - Pose un poing fermé, dos de la main vers le haut, juste au-dessus du nombril, sous le sternum. Couvre-le de l’autre main, sans appuyer tes avant-bras sur ses côtes.
-   - Tire d’un coup sec vers toi et vers le haut. Relâche entre deux compressions.
-4. **Recommence** : 5 claques, 5 compressions, jusqu’à ce que l’objet sorte.
-5. **Si elle perd connaissance** : accompagne-la jusqu’au sol, fais alerter, et commence le massage cardiaque par 30 compressions (voir [Arrêt cardiaque](arret-cardiaque.md)). Après chaque série de compressions, regarde dans sa bouche et retire l’objet seulement si tu le vois et peux l’attraper.
-6. **Après** : installe-la dans la position où elle est le mieux, rassure-la, et appelle le 15 même si l’objet est sorti. Des complications peuvent apparaître dans les jours qui suivent.
+1. **Demandez-lui : « Est-ce que vous vous étouffez ? »**
+   - Elle parle ou tousse : laissez-la dans la position où elle est le mieux, encouragez-la à tousser, demandez un avis médical au 15 et ne la quittez pas. Si la toux faiblit et qu’elle s’épuise, passez à l’étape 2.
+   - Elle ne peut ni parler ni tousser : agissez tout de suite.
+2. **Donnez 1 à 5 claques dans le dos.**
+   - Mettez-vous sur le côté, un peu en arrière. Soutenez sa poitrine d’une main et penchez-la en avant.
+   - Frappez vigoureusement entre les omoplates, avec le talon de la main ouverte.
+   - Arrêtez dès que l’objet sort, ou qu’elle tousse ou respire.
+3. **Si ça ne suffit pas, faites 1 à 5 compressions du ventre.**
+   - Passez derrière elle, vos bras sous les siens, autour du haut de son ventre. Penchez-la en avant.
+   - Posez un poing fermé, dos de la main vers le haut, juste au-dessus du nombril, sous le sternum. Couvrez-le de l’autre main, sans appuyer vos avant-bras sur ses côtes.
+   - Tirez d’un coup sec vers vous et vers le haut. Relâchez entre deux compressions.
+4. **Recommencez** : 5 claques, 5 compressions, jusqu’à ce que l’objet sorte.
+5. **Si elle perd connaissance** : accompagnez-la jusqu’au sol, faites alerter, et commencez le massage cardiaque par 30 compressions (voir [Arrêt cardiaque](arret-cardiaque.md)). Après chaque série de compressions, regardez dans sa bouche et retirez l’objet seulement si vous le voyez et pouvez l’attraper.
+6. **Après** : installez-la dans la position où elle est le mieux, rassurez-la, et appelez le 15 même si l’objet est sorti. Des complications peuvent apparaître dans les jours qui suivent.
 
 ### Selon la personne
 
-- **Adulte obèse ou femme en fin de grossesse**, quand tu ne peux pas entourer son ventre : remplace les compressions du ventre par des compressions de la poitrine. Derrière elle, tes avant-bras sous ses aisselles, pose le poing au milieu du sternum, pas sur sa pointe basse, couvre-le de l’autre main et tire d’un coup sec vers l’arrière.
-- **Enfant** : mets-toi à genoux derrière lui pour les compressions. S’il est petit, assieds-toi et couche-le à plat ventre en travers de ta cuisse pour les claques.
+- **Adulte obèse ou femme en fin de grossesse**, quand vous ne pouvez pas entourer son ventre : remplacez les compressions du ventre par des compressions de la poitrine. Derrière elle, vos avant-bras sous ses aisselles, posez le poing au milieu du sternum, pas sur sa pointe basse, couvrez-le de l’autre main et tirez d’un coup sec vers l’arrière.
+- **Enfant** : mettez-vous à genoux derrière lui pour les compressions. S’il est petit, asseyez-vous et couchez-le à plat ventre en travers de votre cuisse pour les claques.
 - **Bébé de moins de 1 an** :
-  - couche-le à plat ventre, à califourchon sur ton avant-bras, la tête plus basse que la poitrine. Tiens sa tête avec tes doigts de chaque côté de la bouche, sans appuyer sur sa gorge ;
-  - donne 1 à 5 claques entre les omoplates, avec le talon de la main ;
-  - si ça ne suffit pas, retourne-le sur le dos, sur ton autre avant-bras, tête toujours plus basse. Avec le bout de deux doigts au milieu de la poitrine, une largeur de doigt au-dessus du bas du sternum, fais 1 à 5 compressions profondes ;
+  - couchez-le à plat ventre, à califourchon sur votre avant-bras, la tête plus basse que la poitrine. Tenez sa tête avec vos doigts de chaque côté de la bouche, sans appuyer sur sa gorge ;
+  - donnez 1 à 5 claques entre les omoplates, avec le talon de la main ;
+  - si ça ne suffit pas, retournez-le sur le dos, sur votre autre avant-bras, tête toujours plus basse. Avec le bout de deux doigts au milieu de la poitrine, une largeur de doigt au-dessus du bas du sternum, faites 1 à 5 compressions profondes ;
   - jamais de compression du ventre chez un bébé.
-- **Tu es seul et tu t’étouffes** : appelle le 112 même sans pouvoir parler et laisse la ligne ouverte. Comprime toi-même le haut de ton ventre avec tes poings, ou en te penchant d’un coup sur le dossier d’une chaise.
+- **Vous êtes seul et vous vous étouffez** : appelez le 112 même sans pouvoir parler et laissez la ligne ouverte. Comprimez vous-même le haut de votre ventre avec vos poings, ou en vous penchant d’un coup sur le dossier d’une chaise.
 
 ## À ne jamais faire
 
 - Donner des claques dans le dos ou comprimer le ventre d’une personne qui parle ou tousse encore.
-- Mettre tes doigts à l’aveugle dans sa bouche.
+- Mettre vos doigts à l’aveugle dans sa bouche.
 - Suspendre un enfant par les pieds.
 - En rester là une fois l’objet sorti : un avis médical est toujours nécessaire.
 

@@ -1,14 +1,14 @@
 # S’occuper de ses animaux
 
-> **En bref** : prépare pour chaque animal une trousse facile à emporter : cage ou laisse, carnet de santé, photo, médicaments, eau et nourriture pour 7 jours. Si tu évacues, emmène-le, en sachant que tous les lieux d’accueil ne l’acceptent pas. En dernier recours, laisse-le libre à l’intérieur avec de l’eau et de la nourriture, jamais attaché dehors.
+> **En bref** : préparez pour chaque animal une trousse facile à emporter : cage ou laisse, carnet de santé, photo, médicaments, eau et nourriture pour 7 jours. Si vous évacuez, emmenez-le, en sachant que tous les lieux d’accueil ne l’acceptent pas. En dernier recours, laissez-le libre à l’intérieur avec de l’eau et de la nourriture, jamais attaché dehors.
 
 ## Quand s’en servir
 
 - Évacuation, confinement, coupure de courant ou d’eau, canicule, grand froid.
-- Absence imprévue : hospitalisation, impossibilité de rentrer chez toi.
+- Absence imprévue : hospitalisation, impossibilité de rentrer chez vous.
 - Avant la crise, pour préparer la trousse et un lieu d’accueil.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Une cage de transport, ou une laisse et un harnais.
 - Le carnet de santé avec les vaccins, une photo de l’animal, la liste de ses médicaments.
@@ -21,46 +21,46 @@
 
 ### Avant
 
-1. **Prépare la trousse** et range-la à un endroit visible, près du sac d’évacuation. Avec plusieurs animaux, étiquette ce qui est à chacun.
-2. **Colle un mémo sur la trousse** pour les médicaments : nom, dose, heure.
-3. **Cherche à l’avance où il pourra aller** : un proche, une pension, un hébergement qui accepte les animaux.
-4. **Désigne une personne de confiance** qui a tes clés et sait où est la trousse, au cas où tu ne pourrais pas rentrer.
-5. **Habitue-le à sa cage** et aux trajets en voiture.
+1. **Préparez la trousse** et rangez-la à un endroit visible, près du sac d’évacuation. Avec plusieurs animaux, étiquetez ce qui est à chacun.
+2. **Collez un mémo sur la trousse** pour les médicaments : nom, dose, heure.
+3. **Cherchez à l’avance où il pourra aller** : un proche, une pension, un hébergement qui accepte les animaux.
+4. **Désignez une personne de confiance** qui a vos clés et sait où est la trousse, au cas où vous ne pourriez pas rentrer.
+5. **Habituez-le à sa cage** et aux trajets en voiture.
 
-### Si tu restes
+### Si vous restez
 
-1. **Fais-le rentrer** dès l’alerte et garde-le à l’intérieur.
-2. **Compte son eau** dans tes réserves.
-3. **Par forte chaleur**, garde-le au frais et donne-lui à boire. Le sol brûlant peut lui brûler les pattes : porte-le ou sors aux heures fraîches.
-4. **Après un accident nucléaire ou des retombées**, garde-le à l’intérieur. S’il était dehors, brosse-le doucement puis lave-le, selon les consignes des autorités.
+1. **Faites-le rentrer** dès l’alerte et gardez-le à l’intérieur.
+2. **Comptez son eau** dans vos réserves.
+3. **Par forte chaleur**, gardez-le au frais et donnez-lui à boire. Le sol brûlant peut lui brûler les pattes : portez-le ou sortez aux heures fraîches.
+4. **Après un accident nucléaire ou des retombées**, gardez-le à l’intérieur. S’il était dehors, brossez-le doucement puis lavez-le, selon les consignes des autorités.
 
-### Si tu pars
+### Si vous partez
 
-1. **Suis les consignes** et ne te mets jamais en danger pour un animal.
-2. **Emmène-le avec sa trousse**, en cage ou en laisse.
-3. **Renseigne-toi sur le lieu d’accueil** : certains n’acceptent pas les animaux, ou seulement les chiens d’assistance. Confie-le alors au proche ou à la pension prévus.
-4. **Si tu ne peux vraiment pas l’emmener**, en dernier recours :
-   - laisse-le à l’intérieur, libre dans une pièce facile à nettoyer et bien ventilée, comme une salle de bain ;
-   - laisse de l’eau et de la nourriture pour au moins 3 jours ;
-   - signale sa présence par un mot sur la porte d’entrée, pour les secours.
+1. **Suivez les consignes** et ne vous mettez jamais en danger pour un animal.
+2. **Emmenez-le avec sa trousse**, en cage ou en laisse.
+3. **Renseignez-vous sur le lieu d’accueil** : certains n’acceptent pas les animaux, ou seulement les chiens d’assistance. Confiez-le alors au proche ou à la pension prévus.
+4. **Si vous ne pouvez vraiment pas l’emmener**, en dernier recours :
+   - laissez-le à l’intérieur, libre dans une pièce facile à nettoyer et bien ventilée, comme une salle de bain ;
+   - laissez de l’eau et de la nourriture pour au moins 3 jours ;
+   - signalez sa présence par un mot sur la porte d’entrée, pour les secours.
 
 ## À ne jamais faire
 
 - Laisser un animal attaché ou enfermé dehors.
 - Le laisser seul dans une voiture par temps chaud, même vitre entrouverte.
-- Retourner dans un logement en feu ou inondé pour le chercher. Apprends aussi aux enfants à sortir sans lui.
+- Retourner dans un logement en feu ou inondé pour le chercher. Apprenez aussi aux enfants à sortir sans lui.
 - Le lâcher dans la nature en pensant qu’il se débrouillera.
 
 ## Sans matériel
 
 - Pas de cage : une laisse, ou pour un petit animal un carton solide percé de trous et bien fermé.
-- Pas de nourriture prête : demande à un voisin ou au lieu d’accueil.
+- Pas de nourriture prête : demandez à un voisin ou au lieu d’accueil.
 
 ## Selon l’endroit
 
-- **Feu de forêt** : si tu dois le laisser, remplis en partie la baignoire ou un grand récipient d’eau.
-- **En lieu d’accueil** : garde-le en laisse ou en cage, avec sa photo et son carnet à portée de main.
-- **Animaux de ferme et chevaux** : demande à ta mairie ou à un vétérinaire ce qui est prévu sur ta commune.
+- **Feu de forêt** : si vous devez le laisser, remplissez en partie la baignoire ou un grand récipient d’eau.
+- **En lieu d’accueil** : gardez-le en laisse ou en cage, avec sa photo et son carnet à portée de main.
+- **Animaux de ferme et chevaux** : demandez à votre mairie ou à un vétérinaire ce qui est prévu sur votre commune.
 
 ## Voir aussi
 

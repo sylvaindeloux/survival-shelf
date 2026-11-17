@@ -1,13 +1,13 @@
 # Utiliser un réchaud ou un groupe électrogène sans s’intoxiquer
 
-> **En bref** : tout ce qui brûle produit du monoxyde de carbone, un gaz invisible et sans odeur qui tue. Réchaud de camping, barbecue et brasero s’utilisent dehors, jamais dans le logement ni le garage. Un groupe électrogène tourne dehors, loin des fenêtres, des portes et des aérations. Maux de tête, nausées, vertiges : aère, arrête les appareils, sors et appelle le 15, le 18 ou le 112.
+> **En bref** : tout ce qui brûle produit du monoxyde de carbone, un gaz invisible et sans odeur qui tue. Réchaud de camping, barbecue et brasero s’utilisent dehors, jamais dans le logement ni le garage. Un groupe électrogène tourne dehors, loin des fenêtres, des portes et des aérations. Maux de tête, nausées, vertiges : aérez, arrêtez les appareils, sortez et appelez le 15, le 18 ou le 112.
 
 ## Quand s’en servir
 
-- Coupure de courant ou de gaz : tu veux cuisiner, te chauffer ou produire de l’électricité autrement.
+- Coupure de courant ou de gaz : vous voulez cuisiner, vous chauffer ou produire de l’électricité autrement.
 - Avant d’acheter ou de ressortir un réchaud, un chauffage d’appoint ou un groupe électrogène.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un détecteur de monoxyde de carbone à piles, près des pièces où l’on dort.
 - Des rallonges prévues pour l’extérieur et pour la puissance des appareils.
@@ -19,36 +19,36 @@
 ### Cuisiner
 
 1. **Réchaud de camping, barbecue, brasero, plancha à gaz : dehors uniquement.** Pas dans le logement, ni dans le garage, la cave, l’abri de jardin ou la véranda, même porte ou fenêtre ouverte.
-2. **La cuisinière à gaz de ta cuisine** peut servir à préparer les repas pendant une coupure de courant. Elle ne sert jamais à chauffer la pièce.
+2. **La cuisinière à gaz de votre cuisine** peut servir à préparer les repas pendant une coupure de courant. Elle ne sert jamais à chauffer la pièce.
 
 ### Faire tourner un groupe électrogène
 
-1. **Installe-le dehors**, à l’extérieur de tout bâtiment : jamais dans le logement, le garage, la cave ou la véranda, ni devant une bouche d’aération.
-2. **Éloigne-le des ouvertures.** Les autorités américaines et canadiennes demandent au moins 6 mètres entre le groupe et toute fenêtre, porte ou aération, avec l’échappement tourné à l’opposé du logement. Ferme les fenêtres les plus proches.
-3. **Branche les appareils directement sur le groupe**, avec des rallonges adaptées.
-4. **Ne le branche jamais sur une prise murale.** Seul un électricien peut le raccorder au tableau, avec un inverseur prévu pour cela.
-5. **Vérifie que ton détecteur de monoxyde de carbone fonctionne** avant de démarrer.
+1. **Installez-le dehors**, à l’extérieur de tout bâtiment : jamais dans le logement, le garage, la cave ou la véranda, ni devant une bouche d’aération.
+2. **Éloignez-le des ouvertures.** Les autorités américaines et canadiennes demandent au moins 6 mètres entre le groupe et toute fenêtre, porte ou aération, avec l’échappement tourné à l’opposé du logement. Fermez les fenêtres les plus proches.
+3. **Branchez les appareils directement sur le groupe**, avec des rallonges adaptées.
+4. **Ne le branchez jamais sur une prise murale.** Seul un électricien peut le raccorder au tableau, avec un inverseur prévu pour cela.
+5. **Vérifiez que votre détecteur de monoxyde de carbone fonctionne** avant de démarrer.
 
 ### Se chauffer
 
 1. **Un chauffage d’appoint à combustion** (pétrole, gaz) ne tourne jamais en continu : 2 heures de suite au plus, dans une pièce aérée.
-2. **Aère le logement 10 minutes par jour**, même en hiver, et ne bouche jamais les grilles d’aération.
-3. **Fais vérifier chaudière, chauffe-eau, poêle et conduits** par un professionnel chaque année, avant l’hiver.
+2. **Aérez le logement 10 minutes par jour**, même en hiver, et ne bouchez jamais les grilles d’aération.
+3. **Faites vérifier chaudière, chauffe-eau, poêle et conduits** par un professionnel chaque année, avant l’hiver.
 
 ### Reconnaître une intoxication et réagir
 
-- **Les signes** : maux de tête, fatigue, nausées, vomissements, vertiges, malaise, troubles de la vue, confusion. Cela ressemble à un début de grippe. Un animal de compagnie au comportement anormal doit aussi t’alerter. À forte dose, le coma arrive en quelques minutes, et une personne endormie peut mourir sans s’être réveillée.
+- **Les signes** : maux de tête, fatigue, nausées, vomissements, vertiges, malaise, troubles de la vue, confusion. Cela ressemble à un début de grippe. Un animal de compagnie au comportement anormal doit aussi vous alerter. À forte dose, le coma arrive en quelques minutes, et une personne endormie peut mourir sans s’être réveillée.
 - **Ce qu’il faut faire** :
-  1. Ouvre les portes et les fenêtres.
-  2. Arrête les appareils de chauffage et de cuisson si tu peux le faire tout de suite.
-  3. Fais sortir tout le monde.
-  4. Appelle de l’extérieur le 15, le 18 ou le 112 (le 114 par SMS pour les personnes sourdes ou malentendantes).
-  5. Ne rentre pas avant qu’un professionnel ait dit que c’est sans danger.
-- **Si le détecteur sonne** : sors tout de suite à l’air libre, sans chercher d’où vient le gaz, puis appelle les secours.
+  1. Ouvrez les portes et les fenêtres.
+  2. Arrêtez les appareils de chauffage et de cuisson si vous pouvez le faire tout de suite.
+  3. Faites sortir tout le monde.
+  4. Appelez de l’extérieur le 15, le 18 ou le 112 (le 114 par SMS pour les personnes sourdes ou malentendantes).
+  5. Ne rentrez pas avant qu’un professionnel ait dit que c’est sans danger.
+- **Si le détecteur sonne** : sortez tout de suite à l’air libre, sans chercher d’où vient le gaz, puis appelez les secours.
 
 ## À ne jamais faire
 
-- Te chauffer avec une cuisinière, un four, un barbecue, un brasero ou un réchaud.
+- Vous chauffer avec une cuisinière, un four, un barbecue, un brasero ou un réchaud.
 - Faire brûler du charbon de bois à l’intérieur.
 - Faire tourner un groupe électrogène dans un garage, même porte ouverte.
 - Laisser tourner le moteur d’une voiture dans un garage, même porte ouverte.
@@ -57,15 +57,15 @@
 
 ## Sans matériel
 
-- Pas de détecteur : applique les règles encore plus strictement, et au moindre signe sors d’abord, réfléchis ensuite.
-- Pas d’endroit sûr dehors pour le groupe ou le réchaud : ne t’en sers pas. Mange froid et habille-toi chaudement.
+- Pas de détecteur : appliquez les règles encore plus strictement, et au moindre signe sortez d’abord, réfléchissez ensuite.
+- Pas d’endroit sûr dehors pour le groupe ou le réchaud : ne vous en servez pas. Mangez froid et habillez-vous chaudement.
 
 ## Selon l’endroit
 
-- **En appartement** : un balcon est trop près des fenêtres pour un groupe électrogène. Mange froid, ou cuisine sur ta cuisinière à gaz si elle marche.
-- **En maison** : choisis à l’avance l’emplacement du groupe, loin des fenêtres des chambres et de celles des voisins.
+- **En appartement** : un balcon est trop près des fenêtres pour un groupe électrogène. Mangez froid, ou cuisinez sur votre cuisinière à gaz si elle marche.
+- **En maison** : choisissez à l’avance l’emplacement du groupe, loin des fenêtres des chambres et de celles des voisins.
 - **Sous une tente ou dans un abri** : aucun réchaud ni chauffage à flamme à l’intérieur.
-- **En voiture** : pour te réchauffer ou recharger un téléphone, moteur en marche, la voiture doit être dehors.
+- **En voiture** : pour vous réchauffer ou recharger un téléphone, moteur en marche, la voiture doit être dehors.
 
 ## Voir aussi
 

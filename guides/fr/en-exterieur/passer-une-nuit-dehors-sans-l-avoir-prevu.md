@@ -1,13 +1,13 @@
 # Passer une nuit dehors sans l’avoir prévu
 
-> **En bref** : décide tôt. Dès que tu comprends que tu ne rentreras pas avant la nuit, arrête-toi et installe-toi tant qu’il fait jour. Cherche un abri qui existe déjà, isole-toi du sol, mets tout ce que tu as de sec, serrez-vous les uns contre les autres. Par grand froid, on tient environ 3 heures sans abri.
+> **En bref** : décidez tôt. Dès que vous comprenez que vous ne rentrerez pas avant la nuit, arrêtez-vous et installez-vous tant qu’il fait jour. Cherchez un abri qui existe déjà, isolez-vous du sol, mettez tout ce que vous avez de sec, serrez-vous les uns contre les autres. Par grand froid, on tient environ 3 heures sans abri.
 
 ## Quand s’en servir
 
-- La nuit tombe et tu es encore loin : perdu, en retard, blessé, ou bloqué par le mauvais temps.
-- Tu attends les secours et ils n’arriveront pas avant le matin.
+- La nuit tombe et vous êtes encore loin : perdu, en retard, blessé, ou bloqué par le mauvais temps.
+- Vous attendez les secours et ils n’arriveront pas avant le matin.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Une couverture de survie, une bâche ou un sac de bivouac.
 - Des vêtements chauds et secs, un bonnet, des gants.
@@ -15,37 +15,37 @@
 
 ## Étapes
 
-1. **Arrête-toi tant qu’il fait jour.** Marcher de nuit sur un terrain inconnu est plus dangereux que d’attendre le matin.
-2. **Préviens si tu as du réseau** : la personne qui t’attend, et le 112 si tu es perdu, si quelqu’un est blessé ou épuisé, ou s’il fait froid.
-3. **Choisis l’endroit** : plat, à l’abri du vent, loin des arbres morts, des lits de rivière et des couloirs d’avalanche.
-4. **Cherche d’abord un abri qui existe déjà** : refuge, cabane, bâtiment, voiture, rocher qui coupe le vent. Sinon, monte un toit en pente avec une bâche ou des branchages (voir [Construire un abri de fortune](../froid-et-chaleur/construire-un-abri-de-fortune.md)).
-5. **Isole-toi du sol**, qui prend ta chaleur : épaisse couche de branchages, de feuilles ou de mousse sèche, sac à dos, corde.
-6. **Reste au sec.** Remplace tout de suite un vêtement mouillé, enfile toutes tes couches, couvre ta tête, ton cou et tes mains, puis enveloppe-toi dans la couverture de survie.
+1. **Arrêtez-vous tant qu’il fait jour.** Marcher de nuit sur un terrain inconnu est plus dangereux que d’attendre le matin.
+2. **Prévenez si vous avez du réseau** : la personne qui vous attend, et le 112 si vous êtes perdu, si quelqu’un est blessé ou épuisé, ou s’il fait froid.
+3. **Choisissez l’endroit** : plat, à l’abri du vent, loin des arbres morts, des lits de rivière et des couloirs d’avalanche.
+4. **Cherchez d’abord un abri qui existe déjà** : refuge, cabane, bâtiment, voiture, rocher qui coupe le vent. Sinon, montez un toit en pente avec une bâche ou des branchages (voir [Construire un abri de fortune](../froid-et-chaleur/construire-un-abri-de-fortune.md)).
+5. **Isolez-vous du sol**, qui prend votre chaleur : épaisse couche de branchages, de feuilles ou de mousse sèche, sac à dos, corde.
+6. **Restez au sec.** Remplacez tout de suite un vêtement mouillé, enfilez toutes vos couches, couvrez votre tête, votre cou et vos mains, puis enveloppez-vous dans la couverture de survie.
 7. **Serrez-vous** les uns contre les autres.
-8. **Mange et bois**, si possible chaud et sucré. Pas d’alcool : il fait perdre de la chaleur.
-9. **Bouge de temps en temps** les bras, les jambes et les doigts, sans aller jusqu’à transpirer.
-10. **Fais du feu seulement si c’est sans danger** : il réchauffe et il signale ta présence (voir [Allumer un feu](../feu-et-energie/allumer-un-feu.md)).
-11. **Reste repérable** : lampe et sifflet à portée de main, vêtement de couleur vive bien visible.
-12. **Surveillez-vous les uns les autres.** Des frissons qui ne s’arrêtent plus, des gestes maladroits, une parole difficile, de la confusion ou de la somnolence sont des signes d’hypothermie : appelle le 112 (voir [Hypothermie et gelures](../sante-et-premiers-secours/hypothermie-et-gelures.md)).
-13. **Attends le jour pour repartir.** Si tu es perdu, reste sur place (voir [Perdu dans la nature](perdu-dans-la-nature.md)).
+8. **Mangez et buvez**, si possible chaud et sucré. Pas d’alcool : il fait perdre de la chaleur.
+9. **Bougez de temps en temps** les bras, les jambes et les doigts, sans aller jusqu’à transpirer.
+10. **Faites du feu seulement si c’est sans danger** : il réchauffe et il signale votre présence (voir [Allumer un feu](../feu-et-energie/allumer-un-feu.md)).
+11. **Restez repérable** : lampe et sifflet à portée de main, vêtement de couleur vive bien visible.
+12. **Surveillez-vous les uns les autres.** Des frissons qui ne s’arrêtent plus, des gestes maladroits, une parole difficile, de la confusion ou de la somnolence sont des signes d’hypothermie : appelez le 112 (voir [Hypothermie et gelures](../sante-et-premiers-secours/hypothermie-et-gelures.md)).
+13. **Attendez le jour pour repartir.** Si vous êtes perdu, restez sur place (voir [Perdu dans la nature](perdu-dans-la-nature.md)).
 
 ## À ne jamais faire
 
-- T’allonger à même le sol ou sur la neige.
+- Vous allonger à même le sol ou sur la neige.
 - Garder des vêtements mouillés.
-- Boire de l’alcool pour te réchauffer.
+- Boire de l’alcool pour vous réchauffer.
 - Allumer un feu ou un réchaud dans un abri fermé, une tente ou une voiture : risque d’intoxication au monoxyde de carbone.
 - Faire du feu en forêt par temps sec ou par grand vent.
-- T’abriter sous un surplomb rocheux ou un arbre isolé pendant un orage.
+- Vous abriter sous un surplomb rocheux ou un arbre isolé pendant un orage.
 
 ## Sans matériel
 
-- **Sans couverture ni duvet** : glisse des feuilles sèches ou du papier journal entre tes couches de vêtements.
-- **Sans bâche** : adosse-toi à un rocher ou à un tronc couché qui coupe le vent, et couvre-toi de branchages.
+- **Sans couverture ni duvet** : glissez des feuilles sèches ou du papier journal entre vos couches de vêtements.
+- **Sans bâche** : adossez-vous à un rocher ou à un tronc couché qui coupe le vent, et couvrez-vous de branchages.
 
 ## Selon l’endroit
 
-- **Près de ta voiture** : reste dedans (voir [Dormir dans sa voiture](../en-voiture/dormir-dans-sa-voiture.md)).
+- **Près de votre voiture** : restez dedans (voir [Dormir dans sa voiture](../en-voiture/dormir-dans-sa-voiture.md)).
 - **Dans la neige** : voir [Neige et froid extrême](../milieux-hostiles/neige-et-froid-extreme.md).
 - **Par temps d’orage** : voir [Surpris par l’orage](surpris-par-l-orage.md).
 

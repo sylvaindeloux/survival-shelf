@@ -1,6 +1,6 @@
 # Se confiner chez soi
 
-> **En bref** : fais entrer tout le monde, ferme portes et fenêtres, arrête la ventilation, le chauffage et la climatisation, et installe-toi dans une pièce en étage avec le moins de fenêtres possible. Bouche les ouvertures avec du ruban adhésif et des linges, écoute la radio, et ne sors pas avant la fin de l’alerte. Ne va pas chercher tes enfants à l’école : ils y sont mis à l’abri.
+> **En bref** : faites entrer tout le monde, fermez portes et fenêtres, arrêtez la ventilation, le chauffage et la climatisation, et installez-vous dans une pièce en étage avec le moins de fenêtres possible. Bouchez les ouvertures avec du ruban adhésif et des linges, écoutez la radio, et ne sortez pas avant la fin de l’alerte. N’allez pas chercher vos enfants à l’école : ils y sont mis à l’abri.
 
 ## Quand s’en servir
 
@@ -8,11 +8,11 @@
 - Nuage toxique, fumée, accident industriel ou nucléaire : le danger est dans l’air, dehors.
 - Tempête, troubles dans la rue : dehors est plus dangereux que dedans.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Une radio à piles et une lampe.
 - Du ruban adhésif large, des linges ou des serviettes.
-- De l’eau, de quoi manger sans cuisson, tes médicaments.
+- De l’eau, de quoi manger sans cuisson, vos médicaments.
 - Un seau avec couvercle et des sacs-poubelle, si les toilettes sont hors de la pièce.
 - De quoi occuper les enfants.
 
@@ -20,11 +20,11 @@
 
 ### Se mettre à l’abri
 
-1. **Rentre tout de suite** dans le bâtiment le plus proche. Fais entrer tout le monde, animaux compris.
-2. **Ferme portes, fenêtres et volets.**
-3. **Arrête la ventilation, le chauffage et la climatisation**, qui font entrer l’air extérieur.
-4. **Éteins toute flamme** et ne fume pas.
-5. **Allume la radio** et garde ton téléphone pour les urgences : ne sature pas le réseau.
+1. **Rentrez tout de suite** dans le bâtiment le plus proche. Faites entrer tout le monde, animaux compris.
+2. **Fermez portes, fenêtres et volets.**
+3. **Arrêtez la ventilation, le chauffage et la climatisation**, qui font entrer l’air extérieur.
+4. **Éteignez toute flamme** et ne fumez pas.
+5. **Allumez la radio** et gardez votre téléphone pour les urgences : ne saturez pas le réseau.
 
 ### Choisir la pièce selon le danger
 
@@ -35,22 +35,22 @@
 
 ### Calfeutrer contre un air dangereux
 
-1. **Bouche les ouvertures** de la pièce : bas de porte, contour des fenêtres, aérations, avec du ruban adhésif et des linges.
-2. **Si tu respires mal**, couvre ton nez et ta bouche avec un linge humide.
-3. **Compte l’air.** Les autorités américaines comptent environ 1 m² au sol par personne pour 5 heures d’air au plus dans une pièce calfeutrée, et ne conseillent en général pas d’y rester plus de 2 à 3 heures.
-4. **Reste éloigné des fenêtres.**
+1. **Bouchez les ouvertures** de la pièce : bas de porte, contour des fenêtres, aérations, avec du ruban adhésif et des linges.
+2. **Si vous respirez mal**, couvrez votre nez et votre bouche avec un linge humide.
+3. **Comptez l’air.** Les autorités américaines comptent environ 1 m² au sol par personne pour 5 heures d’air au plus dans une pièce calfeutrée, et ne conseillent en général pas d’y rester plus de 2 à 3 heures.
+4. **Restez éloigné des fenêtres.**
 
 ### Tenir, puis sortir
 
-1. **Écoute la radio** jusqu’à la fin de l’alerte : un son continu de 30 secondes pour la sirène, ou un message des autorités.
-2. **Si l’ordre d’évacuer arrive**, pars tout de suite (voir [Évacuer son logement](evacuer-son-logement.md)).
-3. **À la fin de l’alerte**, aère tout le logement et remets la ventilation en marche.
+1. **Écoutez la radio** jusqu’à la fin de l’alerte : un son continu de 30 secondes pour la sirène, ou un message des autorités.
+2. **Si l’ordre d’évacuer arrive**, partez tout de suite (voir [Évacuer son logement](evacuer-son-logement.md)).
+3. **À la fin de l’alerte**, aérez tout le logement et remettez la ventilation en marche.
 
 ## À ne jamais faire
 
-- Aller chercher tes enfants à l’école : tu t’exposes et tu gênes les secours.
+- Aller chercher vos enfants à l’école : vous vous exposez et vous gênez les secours.
 - Sortir « pour voir », ou rester à la fenêtre.
-- Rester dans ta voiture : rejoins un bâtiment.
+- Rester dans votre voiture : rejoignez un bâtiment.
 - Allumer une flamme, une bougie ou un réchaud dans une pièce calfeutrée.
 - Rester des heures dans une pièce calfeutrée après la fin de l’alerte.
 - Téléphoner sans nécessité.
@@ -58,12 +58,12 @@
 ## Sans matériel
 
 - Pas de ruban adhésif : des serviettes et des vêtements mouillés, roulés en bas des portes et sur les aérations, limitent déjà l’entrée de l’air.
-- Pas de radio : attends le signal de fin d’alerte de la sirène, ou la consigne donnée par haut-parleur.
+- Pas de radio : attendez le signal de fin d’alerte de la sirène, ou la consigne donnée par haut-parleur.
 
 ## Selon l’endroit
 
-- **En appartement** : la cage d’escalier et les parties communes ne sont pas un abri contre un nuage toxique. Reste chez toi.
-- **Dans un lieu public, au travail, à l’école** : suis les consignes du responsable des lieux.
+- **En appartement** : la cage d’escalier et les parties communes ne sont pas un abri contre un nuage toxique. Restez chez vous.
+- **Dans un lieu public, au travail, à l’école** : suivez les consignes du responsable des lieux.
 - **Confinement de plusieurs jours** (épidémie, troubles) : il n’y a rien à calfeutrer. Voir [Épidémie et pandémie](../catastrophes/epidemie-et-pandemie.md) et [Vivre plusieurs jours sans eau ni électricité](vivre-plusieurs-jours-sans-eau-ni-electricite.md).
 
 ## Voir aussi

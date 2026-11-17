@@ -1,13 +1,13 @@
 # Coupure de courant prolongée
 
-> **En bref** : éclaire-toi à la lampe plutôt qu’à la bougie, garde réfrigérateur et congélateur fermés, débranche les appareils et économise la batterie de ton téléphone. N’utilise jamais un groupe électrogène, un réchaud de camping ou un barbecue à l’intérieur : le monoxyde de carbone tue sans prévenir.
+> **En bref** : éclairez-vous à la lampe plutôt qu’à la bougie, gardez réfrigérateur et congélateur fermés, débranchez les appareils et économisez la batterie de votre téléphone. N’utilisez jamais un groupe électrogène, un réchaud de camping ou un barbecue à l’intérieur : le monoxyde de carbone tue sans prévenir.
 
 ## Quand s’en servir
 
 - Coupure qui dure plus de quelques heures : tempête, neige, canicule, panne du réseau, délestage.
 - Avec le courant peuvent tomber le chauffage, l’eau chaude, le téléphone, internet, les distributeurs de billets, les pompes à essence et les paiements par carte.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Des lampes à piles ou à manivelle et des piles de rechange.
 - Une radio à piles ou à manivelle.
@@ -18,42 +18,42 @@
 
 ## Avant
 
-1. **Prépare l’éclairage, la radio et de quoi recharger** ton téléphone.
-2. **Fais la liste de ce qui dépend du courant** chez toi : chauffage, cuisson, appareil médical, médicaments au froid, porte de garage, serrure électrique, ascenseur.
-3. **Appareil médical ou médicament au réfrigérateur** : demande à ton médecin ou à ton fournisseur quoi faire en cas de coupure (voir [Vivre une crise avec un traitement médical](../sante-et-premiers-secours/vivre-une-crise-avec-un-traitement-medical.md)).
-4. **Mets un thermomètre** dans le réfrigérateur et le congélateur.
-5. **Garde le réservoir de la voiture** au moins à moitié plein.
-6. **Installe un détecteur de monoxyde de carbone** à piles si tu as un appareil à combustion.
+1. **Préparez l’éclairage, la radio et de quoi recharger** votre téléphone.
+2. **Faites la liste de ce qui dépend du courant** chez vous : chauffage, cuisson, appareil médical, médicaments au froid, porte de garage, serrure électrique, ascenseur.
+3. **Appareil médical ou médicament au réfrigérateur** : demandez à votre médecin ou à votre fournisseur quoi faire en cas de coupure (voir [Vivre une crise avec un traitement médical](../sante-et-premiers-secours/vivre-une-crise-avec-un-traitement-medical.md)).
+4. **Mettez un thermomètre** dans le réfrigérateur et le congélateur.
+5. **Gardez le réservoir de la voiture** au moins à moitié plein.
+6. **Installez un détecteur de monoxyde de carbone** à piles si vous avez un appareil à combustion.
 
 ## Pendant
 
-1. **Regarde ton disjoncteur général.** Sur « I », la panne vient du réseau : patiente. Sur « O », le problème est chez toi : débranche les appareils puissants et réenclenche. S’il saute de nouveau, appelle un électricien.
-2. **Débranche les appareils** électriques et électroniques pour les protéger des surtensions au retour du courant. Laisse une lampe allumée pour savoir quand il revient.
-3. **Éclaire-toi à la lampe.** Si tu n’as que des bougies, ne les laisse jamais sans surveillance.
-4. **Garde réfrigérateur et congélateur fermés.** Fermé, un réfrigérateur garde le froid environ 4 heures ; un congélateur plein environ 48 heures, 24 heures s’il est à moitié plein. Mange d’abord les aliments frais.
-5. **Cuisine et chauffe-toi sans danger** :
+1. **Regardez votre disjoncteur général.** Sur « I », la panne vient du réseau : patientez. Sur « O », le problème est chez vous : débranchez les appareils puissants et réenclenche. S’il saute de nouveau, appelez un électricien.
+2. **Débranchez les appareils** électriques et électroniques pour les protéger des surtensions au retour du courant. Laissez une lampe allumée pour savoir quand il revient.
+3. **Éclairez-vous à la lampe.** Si vous n’avez que des bougies, ne les laissez jamais sans surveillance.
+4. **Gardez réfrigérateur et congélateur fermés.** Fermé, un réfrigérateur garde le froid environ 4 heures ; un congélateur plein environ 48 heures, 24 heures s’il est à moitié plein. Mangez d’abord les aliments frais.
+5. **Cuisinez et chauffez-vous sans danger** :
    - groupe électrogène dehors, à au moins 6 m des fenêtres et des portes ;
    - réchaud de camping, barbecue et brasero dehors uniquement ;
    - une gazinière peut servir à cuisiner, jamais à chauffer.
-6. **Économise ton téléphone** : mode économie d’énergie, écran peu lumineux, SMS plutôt qu’appels.
-7. **Informe-toi à la radio** et suis les consignes, y compris sur l’eau du robinet.
-8. **Prends des nouvelles** de tes voisins âgés, malades ou isolés.
-9. **Pars si le logement devient trop froid ou trop chaud**, ou si un appareil médical a besoin de courant : chez un proche ou dans un lieu d’accueil.
+6. **Économisez votre téléphone** : mode économie d’énergie, écran peu lumineux, SMS plutôt qu’appels.
+7. **Informez-vous à la radio** et suivez les consignes, y compris sur l’eau du robinet.
+8. **Prenez des nouvelles** de vos voisins âgés, malades ou isolés.
+9. **Partez si le logement devient trop froid ou trop chaud**, ou si un appareil médical a besoin de courant : chez un proche ou dans un lieu d’accueil.
 
 ## Après
 
-1. **Rebranche progressivement** : le chauffage d’abord, puis le réfrigérateur et le congélateur, et attends 10 à 15 minutes avant le reste.
-2. **Jette les aliments du réfrigérateur** restés plus de 4 heures au-dessus de 4 °C, et tout ce qui a une odeur, une couleur ou une texture anormale. Ne goûte pas pour vérifier.
-3. **Médicaments conservés au froid** : si la coupure a duré une journée ou plus, demande à ton pharmacien s’il faut les remplacer.
-4. **Reste à au moins 10 m des fils tombés** et de tout ce qu’ils touchent.
-5. **Refais tes réserves** de piles, d’eau et de nourriture.
+1. **Rebranche progressivement** : le chauffage d’abord, puis le réfrigérateur et le congélateur, et attendez 10 à 15 minutes avant le reste.
+2. **Jetez les aliments du réfrigérateur** restés plus de 4 heures au-dessus de 4 °C, et tout ce qui a une odeur, une couleur ou une texture anormale. Ne goûtez pas pour vérifier.
+3. **Médicaments conservés au froid** : si la coupure a duré une journée ou plus, demandez à votre pharmacien s’il faut les remplacer.
+4. **Restez à au moins 10 m des fils tombés** et de tout ce qu’ils touchent.
+5. **Refais vos réserves** de piles, d’eau et de nourriture.
 
 ## À ne jamais faire
 
 - Faire tourner un groupe électrogène dans le logement, le garage ou la cave, même porte ouverte.
 - Brancher un groupe électrogène sur une prise murale.
-- Te chauffer avec le four ou la gazinière.
-- Laisser tourner une voiture dans le garage pour recharger un téléphone ou te réchauffer.
+- Vous chauffer avec le four ou la gazinière.
+- Laisser tourner une voiture dans le garage pour recharger un téléphone ou vous réchauffer.
 - Toucher au tableau électrique les mains mouillées ou les pieds dans l’eau.
 - Conserver des aliments dehors ou dans la neige.
 
@@ -61,7 +61,7 @@
 
 - **En hiver** : voir [Se chauffer sans chauffage](../froid-et-chaleur/se-chauffer-sans-chauffage.md).
 - **En été** : voir [Rafraîchir un logement sans climatisation](../froid-et-chaleur/rafraichir-un-logement-sans-climatisation.md).
-- **En immeuble** : ascenseur, digicode et porte de garage peuvent être bloqués. Apprends à ouvrir les accès à la main.
+- **En immeuble** : ascenseur, digicode et porte de garage peuvent être bloqués. Apprenez à ouvrir les accès à la main.
 
 ## Voir aussi
 

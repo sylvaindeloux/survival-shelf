@@ -1,14 +1,14 @@
 # Noyade
 
-> **En bref** : ne saute pas à l’eau. Alerte, parle à la personne, tends-lui une perche ou lance-lui un objet qui flotte. Une fois sortie de l’eau, si elle ne respire pas : 5 insufflations, puis massage cardiaque. Toute personne qui a failli se noyer doit être examinée par un médecin, même si elle semble aller bien.
+> **En bref** : ne sautez pas à l’eau. Alertez, parlez à la personne, tendez-lui une perche ou lancez-lui un objet qui flotte. Une fois sortie de l’eau, si elle ne respire pas : 5 insufflations, puis massage cardiaque. Toute personne qui a failli se noyer doit être examinée par un médecin, même si elle semble aller bien.
 
 ## Quand s’en servir
 
 - Quelqu’un est en difficulté dans l’eau : mer, rivière, lac, piscine, inondation.
 - Une personne vient d’être sortie de l’eau.
-- Tu tombes toi-même à l’eau.
+- Vous tombez vous-même à l’eau.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un téléphone.
 - Un objet long : perche, branche.
@@ -16,36 +16,36 @@
 
 ## Étapes
 
-1. **Alerte** : le maître-nageur s’il y en a un, sinon le 112, le 18 ou le 15, et le 196 depuis la côte. Donne l’endroit précis.
-2. **Parle à la personne.** Crie-lui de rester calme et de se mettre sur le dos, bras et jambes écartés, comme une étoile de mer.
-3. **Tends-lui un objet long**, allongé ou accroupi au bord pour ne pas être entraîné. Lâche si elle te tire à l’eau.
-4. **Ou lance-lui un objet qui flotte.** Avec une bouée et sa corde, lance au-delà de la personne puis ramène.
-5. **N’entre pas dans l’eau** si tu n’es pas formé au sauvetage : l’eau cache des dangers, et un seul sauvetage vaut mieux que deux.
+1. **Alertez** : le maître-nageur s’il y en a un, sinon le 112, le 18 ou le 15, et le 196 depuis la côte. Donnez l’endroit précis.
+2. **Parlez à la personne.** Criez-lui de rester calme et de se mettre sur le dos, bras et jambes écartés, comme une étoile de mer.
+3. **Tendez-lui un objet long**, allongé ou accroupi au bord pour ne pas être entraîné. Lâchez si elle vous tire à l’eau.
+4. **Ou lancez-lui un objet qui flotte.** Avec une bouée et sa corde, lancez au-delà de la personne puis ramenez.
+5. **N’entrez pas dans l’eau** si vous n’êtes pas formé au sauvetage : l’eau cache des dangers, et un seul sauvetage vaut mieux que deux.
 6. **Une fois la personne sortie de l’eau** :
-   - elle est consciente : installe-la confortablement, assise ou allongée, couvre-la, rassure-la, et appelle les secours ;
-   - elle ne répond pas mais respire : tourne-la sur le côté et surveille sa respiration (voir [Personne inconsciente qui respire](personne-inconsciente-qui-respire.md)) ;
-   - elle ne répond pas et ne respire pas normalement : fais alerter et chercher un défibrillateur. Commence par 5 insufflations, puis alterne 30 compressions et 2 insufflations (voir [Arrêt cardiaque](arret-cardiaque.md)). Si tu ne sais pas souffler, masse sans t’arrêter.
-7. **Si elle vomit pendant le massage**, tourne-la sur le côté, dégage sa bouche, puis reprends.
-8. **Fais-la examiner dans tous les cas** : des complications aux poumons peuvent apparaître après coup.
+   - elle est consciente : installez-la confortablement, assise ou allongée, couvrez-la, rassurez-la, et appelez les secours ;
+   - elle ne répond pas mais respire : tournez-la sur le côté et surveillez sa respiration (voir [Personne inconsciente qui respire](personne-inconsciente-qui-respire.md)) ;
+   - elle ne répond pas et ne respire pas normalement : faites alerter et chercher un défibrillateur. Commencez par 5 insufflations, puis alternez 30 compressions et 2 insufflations (voir [Arrêt cardiaque](arret-cardiaque.md)). Si vous ne savez pas souffler, massez sans vous arrêter.
+7. **Si elle vomit pendant le massage**, tournez-la sur le côté, dégagez sa bouche, puis reprenez.
+8. **Faites-la examiner dans tous les cas** : des complications aux poumons peuvent apparaître après coup.
 
-### Si c’est toi qui tombes à l’eau
+### Si c’est vous qui tombes à l’eau
 
-1. Ne te débats pas et ne cherche pas à nager tout de suite.
-2. Bascule sur le dos, ventre vers le haut, bras et jambes écartés, avec de petits mouvements pour flotter.
-3. Reprends le contrôle de ta respiration.
-4. Ensuite seulement, appelle à l’aide ou rejoins le bord.
+1. Ne vous débattez pas et ne cherchez pas à nager tout de suite.
+2. Basculez sur le dos, ventre vers le haut, bras et jambes écartés, avec de petits mouvements pour flotter.
+3. Reprenez le contrôle de votre respiration.
+4. Ensuite seulement, appelez à l’aide ou rejoignez le bord.
 
 ## À ne jamais faire
 
 - Sauter à l’eau sans formation ni matériel.
 - Appuyer sur le ventre de la personne pour faire sortir l’eau : c’est inutile.
-- La laisser repartir sans avis médical parce qu’elle « va bien ».
+- La laisser repartir sans avis médical parce qu’elle « allez bien ».
 - Laisser un enfant sans surveillance près de l’eau, même dans son bain : il doit rester à portée de bras.
 
 ## Selon l’endroit
 
 - **Piscine privée** : barrière ou alarme, et un adulte qui surveille en permanence.
-- **Mer, lac, rivière** : baigne-toi en zone surveillée, jamais seul, jamais après avoir bu de l’alcool, jamais par mauvais temps.
+- **Mer, lac, rivière** : baignez-vous en zone surveillée, jamais seul, jamais après avoir bu de l’alcool, jamais par mauvais temps.
 
 ## Voir aussi
 

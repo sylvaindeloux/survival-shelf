@@ -1,36 +1,36 @@
 # Recharger un téléphone sans prise
 
-> **En bref** : économise d’abord la batterie : mode avion ou économie d’énergie, écran peu lumineux, SMS plutôt qu’appels. Pour recharger : une batterie externe gardée pleine, la prise USB d’un ordinateur portable, ou la voiture, toujours garée dehors. Un chargeur solaire ou à manivelle dépanne, lentement.
+> **En bref** : économisez d’abord la batterie : mode avion ou économie d’énergie, écran peu lumineux, SMS plutôt qu’appels. Pour recharger : une batterie externe gardée pleine, la prise USB d’un ordinateur portable, ou la voiture, toujours garée dehors. Un chargeur solaire ou à manivelle dépanne, lentement.
 
 ## Quand s’en servir
 
 - Coupure de courant qui dure.
 - Évacuation, trajet ou nuit loin de toute prise.
-- Pour préparer ton matériel avant la prochaine panne.
+- Pour préparer votre matériel avant la prochaine panne.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
-- Une batterie externe chargée, et le câble qui va avec ton téléphone.
+- Une batterie externe chargée, et le câble qui va avec votre téléphone.
 - Un chargeur de voiture (adaptateur allume-cigare ou prise USB).
-- Si tu peux : un chargeur solaire, une radio ou une lampe à manivelle avec sortie USB.
-- Tes numéros importants notés sur papier, au cas où le téléphone s’éteint.
+- Si vous pouvez : un chargeur solaire, une radio ou une lampe à manivelle avec sortie USB.
+- Vos numéros importants notés sur papier, au cas où le téléphone s’éteint.
 
 ## Étapes
 
 ### Faire durer la batterie
 
-1. **Passe en mode économie d’énergie** et baisse la luminosité de l’écran.
-2. **Coupe ce qui ne sert pas** : Wi-Fi, Bluetooth, localisation, applications ouvertes en arrière-plan.
-3. **Mets le mode avion** quand tu ne te sers pas du téléphone.
-4. **Écris plutôt que d’appeler** : un SMS passe souvent quand les appels ne passent plus. Si tu dois appeler, fais court.
-5. **Si l’appel n’aboutit pas, attends 10 secondes** avant de recomposer : rappeler en boucle sature encore plus le réseau.
+1. **Passez en mode économie d’énergie** et baissez la luminosité de l’écran.
+2. **Coupez ce qui ne sert pas** : Wi-Fi, Bluetooth, localisation, applications ouvertes en arrière-plan.
+3. **Mettez le mode avion** quand vous ne vous servez pas du téléphone.
+4. **Écrivez plutôt que d’appeler** : un SMS passe souvent quand les appels ne passent plus. Si vous devez appeler, faites court.
+5. **Si l’appel n’aboutit pas, attendez 10 secondes** avant de recomposer : rappeler en boucle sature encore plus le réseau.
 6. **Pas de vidéo, de jeu ni de téléchargement** pendant la crise.
 
 ### Recharger
 
-1. **Batterie externe** : c’est le plus simple. Recharge-la dès que le courant revient, et vérifie-la de temps en temps : elle se décharge toute seule avec les mois.
-2. **Ordinateur portable** : branche le téléphone sur sa prise USB. C’est lent et cela vide l’ordinateur, mais le téléphone passe avant.
-3. **Voiture** : branche-le sur la prise USB ou sur l’allume-cigare avec un adaptateur. Sur certaines voitures, le moteur doit tourner : sors toujours la voiture du garage avant de démarrer.
+1. **Batterie externe** : c’est le plus simple. Rechargez-la dès que le courant revient, et vérifiez-la de temps en temps : elle se décharge toute seule avec les mois.
+2. **Ordinateur portable** : branchez le téléphone sur sa prise USB. C’est lent et cela vide l’ordinateur, mais le téléphone passe avant.
+3. **Voiture** : branchez-le sur la prise USB ou sur l’allume-cigare avec un adaptateur. Sur certaines voitures, le moteur doit tourner : sortez toujours la voiture du garage avant de démarrer.
 4. **Chargeur solaire** : utile par temps ensoleillé.
 5. **Chargeur ou radio à manivelle** : il demande un effort physique, mais il marche partout.
 
@@ -38,18 +38,18 @@
 
 - Faire tourner le moteur d’une voiture dans un garage pour recharger, même porte ouverte : le monoxyde de carbone tue.
 - Vider la batterie en regardant des vidéos ou en suivant les réseaux sociaux en continu.
-- Compter sur le téléphone seul : note tes contacts sur papier et garde une radio à piles.
+- Compter sur le téléphone seul : notez vos contacts sur papier et gardez une radio à piles.
 
 ## Sans matériel
 
-- Aucun moyen de recharger : limite l’usage du téléphone au strict nécessaire.
+- Aucun moyen de recharger : limitez l’usage du téléphone au strict nécessaire.
 - Un téléphone fixe à fil, branché sur une ligne téléphonique classique, peut marcher sans courant. Un téléphone sans fil ou branché sur une box internet s’arrête avec la coupure.
 
 ## Selon l’endroit
 
-- **Chez toi** : garde la batterie externe chargée et rangée avec la lampe et la radio.
-- **En voiture** : laisse un câble et un adaptateur dans la boîte à gants.
-- **En évacuation** : mets le chargeur et la batterie externe dans le sac d’évacuation.
+- **Chez vous** : gardez la batterie externe chargée et rangée avec la lampe et la radio.
+- **En voiture** : laissez un câble et un adaptateur dans la boîte à gants.
+- **En évacuation** : mettez le chargeur et la batterie externe dans le sac d’évacuation.
 
 ## Voir aussi
 

@@ -1,14 +1,14 @@
 # Évacuer son logement
 
-> **En bref** : quand les autorités demandent d’évacuer, pars tout de suite. Prends les papiers de chacun, les médicaments et les ordonnances, le téléphone et le sac d’évacuation. Ferme le logement à clé, laisse un mot avec l’heure et ta destination, préviens un proche et suis les itinéraires indiqués, sans raccourci. Ne reviens pas avant d’y être autorisé.
+> **En bref** : quand les autorités demandent d’évacuer, partez tout de suite. Prenez les papiers de chacun, les médicaments et les ordonnances, le téléphone et le sac d’évacuation. Fermez le logement à clé, laissez un mot avec l’heure et votre destination, prévenez un proche et suivez les itinéraires indiqués, sans raccourci. Ne revenez pas avant d’y être autorisé.
 
 ## Quand s’en servir
 
 - Ordre ou consigne d’évacuation : crue, feu de forêt, accident industriel, risque d’effondrement, engin explosif.
-- Le danger est dans ton logement ou va l’atteindre : feu, eau qui monte, bâtiment abîmé, fuite de gaz.
+- Le danger est dans votre logement ou va l’atteindre : feu, eau qui monte, bâtiment abîmé, fuite de gaz.
 - Le logement n’est plus vivable : trop froid, trop chaud, plus d’eau, appareil médical sans courant.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Le sac d’évacuation de chaque personne (voir [Préparer un sac d’évacuation](../les-bases/preparer-un-sac-d-evacuation.md)).
 - Papiers d’identité, copies des documents importants, médicaments et ordonnances, téléphone et chargeur.
@@ -17,56 +17,56 @@
 
 ## Étapes
 
-### Si tu as quelques minutes
+### Si vous avez quelques minutes
 
-1. **Rassemble tout le monde**, animaux compris, et compte les personnes.
-2. **Prends l’essentiel** : papiers, médicaments, téléphone, sac d’évacuation, clés.
-3. **Habille-toi pour dehors** : chaussures fermées, pantalon, manches longues, de quoi te protéger de la pluie ou du froid.
-4. **Coupe l’eau, le gaz et l’électricité** si les autorités le demandent ou si le logement est abîmé (voir [Couper le gaz, l’eau et l’électricité](../feu-et-energie/couper-le-gaz-l-eau-et-l-electricite.md)).
-5. **Débranche les appareils électriques.** Laisse le réfrigérateur et le congélateur branchés, sauf s’il y a un risque d’inondation.
-6. **Ferme les fenêtres et verrouille les portes.**
-7. **Laisse un mot** bien visible : l’heure de ton départ et ta destination.
-8. **Préviens ton contact éloigné** par SMS.
-9. **Passe voir les voisins** qui pourraient avoir besoin d’aide ou d’une place dans une voiture.
+1. **Rassemblez tout le monde**, animaux compris, et comptez les personnes.
+2. **Prenez l’essentiel** : papiers, médicaments, téléphone, sac d’évacuation, clés.
+3. **Habillez-vous pour dehors** : chaussures fermées, pantalon, manches longues, de quoi vous protéger de la pluie ou du froid.
+4. **Coupez l’eau, le gaz et l’électricité** si les autorités le demandent ou si le logement est abîmé (voir [Couper le gaz, l’eau et l’électricité](../feu-et-energie/couper-le-gaz-l-eau-et-l-electricite.md)).
+5. **Débranchez les appareils électriques.** Laissez le réfrigérateur et le congélateur branchés, sauf s’il y a un risque d’inondation.
+6. **Fermez les fenêtres et verrouillez les portes.**
+7. **Laissez un mot** bien visible : l’heure de votre départ et votre destination.
+8. **Prévenez votre contact éloigné** par SMS.
+9. **Passez voir les voisins** qui pourraient avoir besoin d’aide ou d’une place dans une voiture.
 
-### Si tu n’as pas le temps
+### Si vous n’avez pas le temps
 
-1. **Sors tout de suite** avec les personnes et les animaux. Attrape le sac d’évacuation s’il est sur ton chemin.
-2. **Ne retourne pas chercher** des affaires.
-3. **Préviens les secours et tes proches** une fois à l’abri.
+1. **Sortez tout de suite** avec les personnes et les animaux. Attrapez le sac d’évacuation s’il est sur votre chemin.
+2. **Ne retournez pas chercher** des affaires.
+3. **Prévenez les secours et vos proches** une fois à l’abri.
 
 ### En route
 
-1. **Suis les itinéraires indiqués** par les autorités, sans raccourci : d’autres routes peuvent être coupées.
-2. **N’entre jamais dans une zone inondée** et reste loin des câbles électriques tombés.
-3. **Rejoins le point de rassemblement ou le lieu d’accueil** annoncé, et signale-toi à l’arrivée.
-4. **Écoute la radio** pour suivre les consignes.
+1. **Suivez les itinéraires indiqués** par les autorités, sans raccourci : d’autres routes peuvent être coupées.
+2. **N’entrez jamais dans une zone inondée** et restez loin des câbles électriques tombés.
+3. **Rejoignez le point de rassemblement ou le lieu d’accueil** annoncé, et signalez-vous à l’arrivée.
+4. **Écoutez la radio** pour suivre les consignes.
 
 ### Le retour
 
-1. **Attends l’autorisation** des autorités.
-2. **N’entre pas dans un bâtiment abîmé**, et ne rétablis pas toi-même le gaz : c’est le travail d’un professionnel.
-3. **Jette les aliments** restés sans froid ou touchés par l’eau (voir [Savoir si un aliment est encore bon](../nourriture/savoir-si-un-aliment-est-encore-bon.md)).
+1. **Attendez l’autorisation** des autorités.
+2. **N’entrez pas dans un bâtiment abîmé**, et ne rétablissez pas vous-même le gaz : c’est le travail d’un professionnel.
+3. **Jetez les aliments** restés sans froid ou touchés par l’eau (voir [Savoir si un aliment est encore bon](../nourriture/savoir-si-un-aliment-est-encore-bon.md)).
 
 ## À ne jamais faire
 
 - Attendre « de voir » quand l’ordre d’évacuer est donné.
 - Prendre l’ascenseur.
-- Aller chercher tes enfants à l’école pendant l’alerte : ils sont évacués ou mis à l’abri avec leur classe.
-- Revenir sur tes pas pour un objet oublié.
-- Annoncer sur les réseaux sociaux que ton logement est vide.
+- Aller chercher vos enfants à l’école pendant l’alerte : ils sont évacués ou mis à l’abri avec leur classe.
+- Revenir sur vos pas pour un objet oublié.
+- Annoncer sur les réseaux sociaux que votre logement est vide.
 - Laisser un animal attaché ou enfermé dehors.
 
 ## Sans matériel
 
 - Pas de sac prêt : papiers, médicaments, téléphone, eau, un vêtement chaud. Le reste se remplace.
-- Pas de voiture : marche vers le point de rassemblement, demande une place à un voisin, ou appelle la mairie si tu ne peux pas te déplacer seul.
+- Pas de voiture : marchez vers le point de rassemblement, demandez une place à un voisin, ou appelez la mairie si vous ne pouvez pas vous déplacer seul.
 
 ## Selon l’endroit
 
-- **En hiver, si le chauffage est arrêté** : avant de partir, ferme l’arrivée d’eau et vide les tuyaux pour qu’ils ne gèlent pas.
-- **En immeuble** : descends par l’escalier. Si la fumée remplit l’escalier, reste chez toi, porte fermée (voir [Incendie dans le logement](../catastrophes/incendie-dans-le-logement.md)).
-- **Avec une personne fragile** : organise à l’avance qui vient l’aider et comment elle sera transportée (voir [Protéger les plus fragiles](proteger-les-plus-fragiles.md)).
+- **En hiver, si le chauffage est arrêté** : avant de partir, fermez l’arrivée d’eau et videz les tuyaux pour qu’ils ne gèlent pas.
+- **En immeuble** : descendez par l’escalier. Si la fumée remplit l’escalier, restez chez vous, porte fermée (voir [Incendie dans le logement](../catastrophes/incendie-dans-le-logement.md)).
+- **Avec une personne fragile** : organisez à l’avance qui vient l’aider et comment elle sera transportée (voir [Protéger les plus fragiles](proteger-les-plus-fragiles.md)).
 - **En voiture** : voir [Évacuer en voiture](../en-voiture/evacuer-en-voiture.md).
 
 ## Voir aussi
@@ -89,7 +89,7 @@
 - [FEMA (États-Unis), fiches « Be Prepared for Any Hazard » (PDF, en anglais)](https://ready.gov/sites/default/files/2024-11/fema_full-suite_hazard-info-sheets.pdf)
 - [Gendarmerie nationale, « Cambriolage : comment réagir et limiter les risques ? »](https://www.gendarmerie.interieur.gouv.fr/conseils/habitation/cambriolage-comment-reagir-et-limiter-les-risques)
 
-La partie « Si tu n’as pas le temps », le comptage des personnes, le signalement à l’arrivée au lieu d’accueil et l’appel à la mairie quand on ne peut pas se déplacer seul relèvent du bon sens, sans source officielle.
+La partie « Si vous n’avez pas le temps », le comptage des personnes, le signalement à l’arrivée au lieu d’accueil et l’appel à la mairie quand on ne peut pas se déplacer seul relèvent du bon sens, sans source officielle.
 
 ---
 

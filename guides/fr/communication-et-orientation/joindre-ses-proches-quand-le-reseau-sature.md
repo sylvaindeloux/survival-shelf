@@ -1,49 +1,49 @@
 # Joindre ses proches quand le réseau sature
 
-> **En bref** : écris au lieu d’appeler : un SMS court passe souvent quand les appels n’aboutissent plus. Si tu dois appeler, fais bref, et attends 10 secondes avant de recomposer. Passez tous par le même contact éloigné, qui centralise les nouvelles, et retrouvez-vous au lieu de rendez-vous convenu si rien ne passe.
+> **En bref** : écrivez au lieu d’appeler : un SMS court passe souvent quand les appels n’aboutissent plus. Si vous devez appeler, faites bref, et attendez 10 secondes avant de recomposer. Passez tous par le même contact éloigné, qui centralise les nouvelles, et retrouvez-vous au lieu de rendez-vous convenu si rien ne passe.
 
 ## Quand s’en servir
 
 - Juste après une catastrophe, un attentat ou une grosse panne : tout le monde appelle en même temps et le réseau sature.
-- Tu es séparé de tes proches et tu veux donner ou prendre des nouvelles.
+- Vous êtes séparé de vos proches et vous voulez donner ou prendre des nouvelles.
 - Avant la crise, pour préparer la façon de vous retrouver.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un téléphone chargé et une batterie externe.
-- Tes contacts importants écrits sur papier, dans ton portefeuille et dans le sac d’évacuation.
-- Un contact éloigné et deux lieux de rendez-vous, choisis à l’avance (voir [Préparer un plan pour le foyer](../les-bases/preparer-un-plan-pour-le-foyer.md)).
+- Vos contacts importants écrits sur papier, dans votre portefeuille et dans le sac d’évacuation.
+- Un contact éloigné et deux lieux de rendez-vous, choisissez à l’avance (voir [Préparer un plan pour le foyer](../les-bases/preparer-un-plan-pour-le-foyer.md)).
 
 ## Étapes
 
-1. **Mets-toi d’abord en sécurité.** Les nouvelles attendent quelques minutes.
-2. **Envoie un SMS court** : « Je vais bien, je suis à tel endroit, je vais à tel endroit. » Les messages écrits demandent moins de réseau que la voix.
-3. **Essaie les autres chemins** : courriel, messagerie, réseaux sociaux, appels par le Wi-Fi s’il marche encore, téléphone fixe.
-4. **Si tu dois appeler, sois bref** et ne donne que l’essentiel.
-5. **L’appel n’aboutit pas : attends 10 secondes** avant de recomposer. Rappeler en boucle sature encore plus le réseau.
-6. **Écris au contact éloigné** convenu : il habite hors de la zone touchée et transmet les nouvelles de chacun.
-7. **Déplace-toi de quelques mètres** si le signal est faible, sans te mettre en danger.
-8. **Rien ne passe : va au lieu de rendez-vous** convenu. Si un proche vit seul, va le voir chez lui quand c’est possible sans danger.
-9. **Laisse un mot** bien visible chez toi si tu pars : l’heure de ton départ et ta destination.
-10. **Économise la batterie** entre deux essais (voir [Faire durer la batterie de son téléphone](faire-durer-la-batterie-de-son-telephone.md)).
+1. **Mettez-vous d’abord en sécurité.** Les nouvelles attendent quelques minutes.
+2. **Envoyez un SMS court** : « Je vais bien, je suis à tel endroit, je vais à tel endroit. » Les messages écrits demandent moins de réseau que la voix.
+3. **Essayez les autres chemins** : courriel, messagerie, réseaux sociaux, appels par le Wi-Fi s’il marche encore, téléphone fixe.
+4. **Si vous devez appeler, soyez bref** et ne donnez que l’essentiel.
+5. **L’appel n’aboutit pas : attendez 10 secondes** avant de recomposer. Rappeler en boucle sature encore plus le réseau.
+6. **Écrivez au contact éloigné** convenu : il habite hors de la zone touchée et transmet les nouvelles de chacun.
+7. **Déplacez-vous de quelques mètres** si le signal est faible, sans vous mettre en danger.
+8. **Rien ne passe : allez au lieu de rendez-vous** convenu. Si un proche vit seul, allez le voir chez lui quand c’est possible sans danger.
+9. **Laissez un mot** bien visible chez vous si vous partez : l’heure de votre départ et votre destination.
+10. **Économisez la batterie** entre deux essais (voir [Faire durer la batterie de son téléphone](faire-durer-la-batterie-de-son-telephone.md)).
 
 ## À ne jamais faire
 
 - Rappeler sans arrêt le même numéro.
 - Téléphoner sans nécessité pendant une alerte : les lignes doivent rester libres pour les secours.
 - Appeler un numéro d’urgence pour avoir des nouvelles d’un proche.
-- Aller chercher tes enfants à l’école pendant une alerte : ils y sont mis à l’abri.
+- Aller chercher vos enfants à l’école pendant une alerte : ils y sont mis à l’abri.
 - Envoyer des vidéos ou de grosses pièces jointes.
 
 ## Sans matériel
 
-- Téléphone déchargé ou perdu : emprunte celui d’un voisin et compose les numéros écrits sur ton papier.
-- Aucun moyen de communication : rejoins le lieu de rendez-vous aux heures convenues, et laisse un message à la mairie ou au lieu d’accueil.
+- Téléphone déchargé ou perdu : empruntez celui d’un voisin et composez les numéros écrits sur votre papier.
+- Aucun moyen de communication : rejoignez le lieu de rendez-vous aux heures convenues, et laissez un message à la mairie ou au lieu d’accueil.
 
 ## Selon l’endroit
 
-- **Avec des enfants** : fais-leur apprendre leur nom complet, le tien et ton numéro, et glisse-les sur un papier dans leur sac.
-- **Séparés par une catastrophe, un conflit ou un exil** : la Croix-Rouge recherche gratuitement les proches dont on a perdu la trace, par son service de rétablissement des liens familiaux. Adresse-toi à la Croix-Rouge du pays où tu te trouves. La recherche est confidentielle et n’aboutit pas toujours.
+- **Avec des enfants** : faites-leur apprendre leur nom complet, le vôtre et votre numéro, et glissez-les sur un papier dans leur sac.
+- **Séparés par une catastrophe, un conflit ou un exil** : la Croix-Rouge recherche gratuitement les proches dont on a perdu la trace, par son service de rétablissement des liens familiaux. Adressez-vous à la Croix-Rouge du pays où vous vous trouvez. La recherche est confidentielle et n’aboutit pas toujours.
 
 ## Voir aussi
 

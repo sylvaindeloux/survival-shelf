@@ -1,14 +1,14 @@
 # Neige et froid extrême
 
-> **En bref** : par grand froid, c’est le vent qui fait geler la peau : couvre tout, reste au sec et limite le temps passé dehors. Quand le refroidissement éolien passe sous -27, la peau nue peut geler en 30 minutes, et en 2 minutes dans les pires conditions. Pris par le mauvais temps, arrête-toi, abrite-toi du vent, isole-toi de la neige et attends.
+> **En bref** : par grand froid, c’est le vent qui fait geler la peau : couvrez tout, restez au sec et limitez le temps passé dehors. Quand le refroidissement éolien passe sous -27, la peau nue peut geler en 30 minutes, et en 2 minutes dans les pires conditions. Pris par le mauvais temps, arrêtez-vous, abritez-vous du vent, isolez-vous de la neige et attendez.
 
 ## Quand s’en servir
 
 - Avant une sortie par grand froid, dans la neige ou par vent glacial.
-- Tu es surpris dehors par une tempête de neige, le brouillard ou la nuit.
+- Vous êtes surpris dehors par une tempête de neige, le brouillard ou la nuit.
 - Quelqu’un a les doigts, le nez ou les joues blancs et insensibles.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Plusieurs couches de vêtements, dont une couche extérieure coupe-vent et imperméable.
 - Un bonnet, des moufles, une écharpe ou un masque pour le visage.
@@ -20,57 +20,57 @@
 
 ### Avant de sortir
 
-1. **Regarde les prévisions**, vent compris. Reporte la sortie si le froid ou la tempête s’annoncent.
-2. **Habille-toi en couches** amples : près du corps, de la laine ou du synthétique plutôt que du coton ; au-dessus, une couche chaude ; à l’extérieur, un coupe-vent imperméable.
-3. **Couvre toute la peau** : bonnet, écharpe ou masque sur le nez et la bouche, moufles, plus chaudes que des gants.
-4. **Dis à quelqu’un** où tu vas et quand tu rentres, et ne pars pas seul.
+1. **Regardez les prévisions**, vent compris. Reportez la sortie si le froid ou la tempête s’annoncent.
+2. **Habillez-vous en couches** amples : près du corps, de la laine ou du synthétique plutôt que du coton ; au-dessus, une couche chaude ; à l’extérieur, un coupe-vent imperméable.
+3. **Couvrez toute la peau** : bonnet, écharpe ou masque sur le nez et la bouche, moufles, plus chaudes que des gants.
+4. **Dites à quelqu’un** où vous allez et quand vous rentrez, et ne partez pas seul.
 
 ### Dehors
 
-1. **Limite le temps passé dehors** et mets-toi à l’abri du vent dès que tu t’arrêtes.
-2. **Reste au sec.** Enlève une couche avant l’effort pour ne pas transpirer, et change tout de suite un vêtement mouillé.
-3. **Reste actif**, sans te fatiguer : remue les bras, les jambes, les doigts.
-4. **Mange et bois**, si possible chaud et sucré. Pas d’alcool.
-5. **Ne mange pas de neige** : elle te refroidit. Fais-la fondre, et fais bouillir l’eau 1 minute avant de la boire.
+1. **Limitez le temps passé dehors** et mettez-vous à l’abri du vent dès que vous vous arrêtez.
+2. **Restez au sec.** Enlevez une couche avant l’effort pour ne pas transpirer, et changez tout de suite un vêtement mouillé.
+3. **Restez actif**, sans vous fatiguer : remuez les bras, les jambes, les doigts.
+4. **Mangez et buvez**, si possible chaud et sucré. Pas d’alcool.
+5. **Ne mangez pas de neige** : elle vous refroidit. Faites-la fondre, et faites bouillir l’eau 1 minute avant de la boire.
 6. **Surveillez-vous les uns les autres** :
    - peau blanche ou gris-jaune, dure, insensible, sur le nez, les oreilles, les joues, les doigts ou les orteils : c’est une gelure ;
-   - frissons qui ne s’arrêtent plus, maladresse, parole difficile, confusion, somnolence : c’est une hypothermie, appelle le 15 ou le 112.
+   - frissons qui ne s’arrêtent plus, maladresse, parole difficile, confusion, somnolence : c’est une hypothermie, appelez le 15 ou le 112.
 
 ### Pris par le mauvais temps
 
-1. **Arrête-toi** avant d’être épuisé ou perdu.
-2. **Abrite-toi du vent** : bâtiment, voiture, rocher, ou un abri creusé dans la neige, qui isole bien du froid.
-3. **Isole-toi de la neige** avec ton sac, des branches, une corde.
+1. **Arrêtez-vous** avant d’être épuisé ou perdu.
+2. **Abritez-vous du vent** : bâtiment, voiture, rocher, ou un abri creusé dans la neige, qui isole bien du froid.
+3. **Isolez-vous de la neige** avec votre sac, des branches, une corde.
 4. **Serrez-vous** et couvrez-vous de tout ce que vous avez.
-5. **N’allume pas de réchaud dans un abri fermé ou une tente** : le monoxyde de carbone tue. Toute flamme demande une aération.
-6. **Signale-toi** (voir [Appeler à l’aide sans réseau](../communication-et-orientation/appeler-a-l-aide-sans-reseau.md)).
+5. **N’allumez pas de réchaud dans un abri fermé ou une tente** : le monoxyde de carbone tue. Toute flamme demande une aération.
+6. **Signalez-vous** (voir [Appeler à l’aide sans réseau](../communication-et-orientation/appeler-a-l-aide-sans-reseau.md)).
 
 ### Gelure ou hypothermie
 
-1. **Mets la personne à l’abri** et remplace ses vêtements mouillés.
-2. **Gelure** : réchauffe la zone dans une eau tiède, à 38 °C au plus, sans frotter. Ne marche pas sur un pied gelé.
-3. **Hypothermie** : enveloppe la personne de couvertures, tête comprise. Pas de bain chaud, pas de bouillotte, pas de friction, pas d’alcool.
-4. **Suis la fiche** [Hypothermie et gelures](../sante-et-premiers-secours/hypothermie-et-gelures.md).
+1. **Mettez la personne à l’abri** et remplacez ses vêtements mouillés.
+2. **Gelure** : réchauffez la zone dans une eau tiède, à 38 °C au plus, sans frotter. Ne marchez pas sur un pied gelé.
+3. **Hypothermie** : enveloppez la personne de couvertures, tête comprise. Pas de bain chaud, pas de bouillotte, pas de friction, pas d’alcool.
+4. **Suivez la fiche** [Hypothermie et gelures](../sante-et-premiers-secours/hypothermie-et-gelures.md).
 
 ## À ne jamais faire
 
 - Frotter une gelure, avec la main ou avec de la neige.
 - Approcher une gelure d’un feu, d’un radiateur ou d’un réchaud.
 - Garder des vêtements mouillés.
-- Boire de l’alcool pour te réchauffer.
-- Continuer à avancer dans la tempête sans voir où tu vas.
-- T’aventurer sur un lac gelé sans connaître l’épaisseur de la glace.
+- Boire de l’alcool pour vous réchauffer.
+- Continuer à avancer dans la tempête sans voir où vous allez.
+- Vous aventurer sur un lac gelé sans connaître l’épaisseur de la glace.
 
 ## Sans matériel
 
-- **Sans moufles** : glisse les mains sous les aisselles.
+- **Sans moufles** : glissez les mains sous les aisselles.
 - **Sans couverture** : du papier journal ou des feuilles sèches entre deux couches de vêtements.
 
 ## Selon l’endroit
 
-- **En France** : suis la vigilance « grand froid » et « neige-verglas » (voir [Grand froid, neige et verglas](../catastrophes/grand-froid-neige-et-verglas.md)).
+- **En France** : suivez la vigilance « grand froid » et « neige-verglas » (voir [Grand froid, neige et verglas](../catastrophes/grand-froid-neige-et-verglas.md)).
 - **En montagne, hors des pistes** : voir [Avalanche](../catastrophes/avalanche.md).
-- **En voiture** : reste dans le véhicule (voir [Bloqué par la neige ou le froid](../en-voiture/bloque-par-la-neige-ou-le-froid.md)).
+- **En voiture** : restez dans le véhicule (voir [Bloqué par la neige ou le froid](../en-voiture/bloque-par-la-neige-ou-le-froid.md)).
 - **Sur la glace** : voir [Tombé dans l’eau froide](../en-exterieur/tombe-dans-l-eau-froide.md).
 
 ## Voir aussi

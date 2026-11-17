@@ -1,40 +1,40 @@
 # Garder son calme et décider sous stress
 
-> **En bref** : arrête-toi avant d’agir. Respire lentement quelques minutes, pose les pieds au sol, regarde ce qui t’entoure, puis décide d’une seule chose à la fois. La panique fait plus de dégâts que la plupart des dangers : retiens « S’arrêter, Réfléchir, Observer, Planifier ».
+> **En bref** : arrêtez-vous avant d’agir. Respirez lentement quelques minutes, posez les pieds au sol, regardez ce qui vous entoure, puis décidez d’une seule chose à la fois. La panique fait plus de dégâts que la plupart des dangers : retenez « S’arrêter, Réfléchir, Observer, Planifier ».
 
 ## Quand s’en servir
 
-- Ton cœur s’emballe, tes pensées tournent en boucle, tu ne sais plus quoi faire.
-- Tu dois décider vite : partir ou rester, appeler ou attendre.
-- Quelqu’un près de toi panique.
+- Votre cœur s’emballe, vos pensées tournent en boucle, vous ne savez plus quoi faire.
+- Vous devez décider vite : partir ou rester, appeler ou attendre.
+- Quelqu’un près de vous panique.
 
 ## Étapes
 
-1. **Arrête-toi.** Sauf danger immédiat, ne bouge pas tout de suite. Assieds-toi si tu peux.
-2. **Respire lentement.** Inspire par le nez sans forcer en comptant jusqu’à 5, laisse l’air descendre vers le ventre, puis expire par la bouche en comptant jusqu’à 5. Continue quelques minutes. Si tu as la tête qui tourne, respire moins profondément.
-3. **Reviens dans ton corps.** Appuie tes pieds contre le sol, étire les bras ou presse tes mains l’une contre l’autre.
-4. **Reviens dans le présent.** Nomme 5 choses que tu vois, 3 ou 4 choses que tu entends, ce que tu sens. Touche tes genoux ou un objet. Cela ne fait pas disparaître la tempête, mais cela t’empêche d’être emporté.
-5. **Réfléchis.** Où es-tu ? Qu’est-ce qui te menace vraiment, maintenant ? De quoi disposes-tu : personnes, matériel, eau, abri, moyens d’alerte ?
-6. **Observe.** Le temps qu’il fait, l’heure qu’il est, l’état de chacun, les repères autour de toi.
-7. **Planifie.** Liste tes options et choisis la plus sûre. Si tu n’es pas sûr de toi, si la nuit tombe, si tu es blessé ou épuisé : reste où tu es.
-8. **Agis sur une seule tâche**, avec toute ton attention. Puis passe à la suivante.
-9. **Entretiens la machine.** Bois, mange un peu, repose-toi avant d’être épuisé, règle les petits problèmes (ampoule au pied, vêtement mouillé) avant qu’ils ne grossissent.
+1. **Arrêtez-vous.** Sauf danger immédiat, ne bougez pas tout de suite. Asseyez-vous si vous pouvez.
+2. **Respirez lentement.** Inspirez par le nez sans forcer en comptant jusqu’à 5, laissez l’air descendre vers le ventre, puis expirez par la bouche en comptant jusqu’à 5. Continuez quelques minutes. Si vous avez la tête qui tourne, respirez moins profondément.
+3. **Revenez dans votre corps.** Appuyez vos pieds contre le sol, étirez les bras ou pressez vos mains l’une contre l’autre.
+4. **Revenez dans le présent.** Nommez 5 choses que vous voyez, 3 ou 4 choses que vous entendez, ce que vous sentez. Touchez vos genoux ou un objet. Cela ne fait pas disparaître la tempête, mais cela vous empêche d’être emporté.
+5. **Réfléchissez.** Où êtes-vous ? Qu’est-ce qui vous menace vraiment, maintenant ? De quoi disposez-vous : personnes, matériel, eau, abri, moyens d’alerte ?
+6. **Observez.** Le temps qu’il fait, l’heure qu’il est, l’état de chacun, les repères autour de vous.
+7. **Planifiez.** Listez vos options et choisissez la plus sûre. Si vous n’êtes pas sûr de vous, si la nuit tombe, si vous êtes blessé ou épuisé : restez où vous êtes.
+8. **Agissez sur une seule tâche**, avec toute votre attention. Puis passez à la suivante.
+9. **Entretenez la machine.** Buvez, mangez un peu, reposez-vous avant d’être épuisé, réglez les petits problèmes (ampoule au pied, vêtement mouillé) avant qu’ils ne grossissent.
 10. **Refais le point** dès que la situation change.
 
 ## À ne jamais faire
 
-- Courir ou partir droit devant toi sans raison précise.
+- Courir ou partir droit devant vous sans raison précise.
 - Prendre une grande décision pendant un pic de panique, si elle peut attendre deux minutes.
-- Te reprocher d’avoir peur : la peur est normale, c’est la panique qu’on cherche à éviter.
+- Vous reprocher d’avoir peur : la peur est normale, c’est la panique qu’on cherche à éviter.
 
 ## Sans matériel
 
-Tout ce qui précède se fait sans rien. Entraîne-toi une à deux minutes de temps en temps, quand tout va bien : le jour où tu en auras besoin, le geste viendra tout seul.
+Tout ce qui précède se fait sans rien. Entraînez-vous une à deux minutes de temps en temps, quand tout va bien : le jour où vous en aurez besoin, le geste viendra tout seul.
 
 ## Selon l’endroit
 
-- **Perdu dehors** : ne bouge pas tant que tu n’as pas une raison précise de le faire. Essaie de retrouver par où tu es passé et cherche des repères.
-- **En groupe** : surveille les signes de détresse chez les autres : indécision, repli sur soi, oublis, imprudences.
+- **Perdu dehors** : ne bougez pas tant que vous n’avez pas une raison précise de le faire. Essayez de retrouver par où vous êtes passé et cherchez des repères.
+- **En groupe** : surveillez les signes de détresse chez les autres : indécision, repli sur soi, oublis, imprudences.
 
 ## Voir aussi
 
@@ -50,7 +50,7 @@ Tout ce qui précède se fait sans rien. Entraîne-toi une à deux minutes de te
 - [US Marine Corps, « Field Survival », support de cours RP0401 (PDF, en anglais)](https://www.tecom.marines.mil/Portals/120/Docs/Student%20Materials/CREST%20Manual/RP0401.pdf)
 - [Service-public.fr, fiche « Alerter les secours (Samu, pompiers…) en cas d’urgence », reprise par justice.fr](https://www.justice.fr/fiche/alerter-secours-samu-pompiers-cas-urgence)
 
-Ces exercices aident à traverser un moment de stress. Ils ne soignent pas une détresse qui dure : dans ce cas, parles-en à un médecin. En France, le 3114 est le numéro national de prévention du suicide.
+Ces exercices aident à traverser un moment de stress. Ils ne soignent pas une détresse qui dure : dans ce cas, parlez-en à un médecin. En France, le 3114 est le numéro national de prévention du suicide.
 
 ---
 

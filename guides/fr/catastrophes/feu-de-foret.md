@@ -1,77 +1,77 @@
 # Feu de forêt
 
-> **En bref** : témoin d’un départ de feu, appelle le 18 ou le 112. Si le feu approche, abrite-toi dans un bâtiment en dur, ferme tout, bouche les aérations et le bas des portes, et respire à travers un linge humide. Une voiture n’est pas un abri : elle peut brûler. N’évacue que sur ordre, et sans attendre.
+> **En bref** : témoin d’un départ de feu, appelez le 18 ou le 112. Si le feu approche, abritez-vous dans un bâtiment en dur, fermez tout, bouchez les aérations et le bas des portes, et respirez à travers un linge humide. Une voiture n’est pas un abri : elle peut brûler. N’évacuez que sur ordre, et sans attendre.
 
 ## Quand s’en servir
 
 - Été, sécheresse, vent : la « météo des forêts » annonce un danger élevé ou très élevé.
-- Tu vois de la fumée ou des flammes dans la végétation.
-- Ton logement est en forêt ou à moins de 200 m d’un bois, d’une lande, d’un maquis ou d’une garrigue.
+- Vous voyez de la fumée ou des flammes dans la végétation.
+- Votre logement est en forêt ou à moins de 200 m d’un bois, d’une lande, d’un maquis ou d’une garrigue.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un terrain débroussaillé autour de la maison.
 - Un tuyau d’arrosage qui atteint tout le terrain.
 - Des linges à mouiller, de l’eau, une radio à piles.
-- Ton sac d’évacuation, prêt.
+- Votre sac d’évacuation, prêt.
 
 ## Avant
 
-1. **Débroussaille avant l’été** : c’est la première protection de ta maison. Dans les départements concernés, c’est obligatoire sur 50 m autour des bâtiments situés en forêt ou à moins de 200 m. Les règles exactes figurent dans l’arrêté de ta préfecture.
-2. **Nettoie les gouttières**, éloigne la réserve de bois et les bouteilles de gaz de la maison, range-les dans un abri fermé.
-3. **Ne provoque pas le feu** : 9 feux sur 10 sont d’origine humaine.
+1. **Débroussaillez avant l’été** : c’est la première protection de votre maison. Dans les départements concernés, c’est obligatoire sur 50 m autour des bâtiments situés en forêt ou à moins de 200 m. Les règles exactes figurent dans l’arrêté de votre préfecture.
+2. **Nettoyez les gouttières**, éloignez la réserve de bois et les bouteilles de gaz de la maison, rangez-les dans un abri fermé.
+3. **Ne provoquez pas le feu** : 9 feux sur 10 sont d’origine humaine.
    - Barbecue sur une terrasse, loin de la végétation.
-   - Mégots dans un cendrier. Ne fume jamais en forêt.
+   - Mégots dans un cendrier. Ne fumez jamais en forêt.
    - Travaux qui font des étincelles loin de l’herbe sèche, avec un extincteur à portée de main.
-4. **Consulte la météo des forêts** et les interdictions de la préfecture : accès aux massifs, barbecues, travaux.
-5. **Prévois plusieurs itinéraires** pour partir, et où aller.
+4. **Consultez la météo des forêts** et les interdictions de la préfecture : accès aux massifs, barbecues, travaux.
+5. **Prévoyez plusieurs itinéraires** pour partir, et où aller.
 
 ## Pendant
 
-### Tu vois un départ de feu
+### Vous voyez un départ de feu
 
-- Appelle le 18 ou le 112, ou le 114 par SMS, et localise le feu le plus précisément possible.
-- En forêt, quitte le massif tout de suite.
+- Appelez le 18 ou le 112, ou le 114 par SMS, et localisez le feu le plus précisément possible.
+- En forêt, quittez le massif tout de suite.
 
-### Le feu approche de ta maison
+### Le feu approche de votre maison
 
-1. **Abrite-toi dans la maison** si elle est en dur et débroussaillée : elle te protège mieux que la fuite.
-2. **Rentre le tuyau d’arrosage** avant l’arrivée du feu : il servira ensuite à éteindre les dernières braises.
-3. **Ferme portes, fenêtres et volets.**
-4. **Bouche les aérations et le bas des portes** avec des linges mouillés : les fumées sont toxiques et les braises passent partout.
-5. **Respire à travers un linge humide.**
-6. **Suis les consignes** des secours et de la mairie. Si elles disent d’évacuer, pars immédiatement.
+1. **Abritez-vous dans la maison** si elle est en dur et débroussaillée : elle vous protège mieux que la fuite.
+2. **Rentrez le tuyau d’arrosage** avant l’arrivée du feu : il servira ensuite à éteindre les dernières braises.
+3. **Fermez portes, fenêtres et volets.**
+4. **Bouchez les aérations et le bas des portes** avec des linges mouillés : les fumées sont toxiques et les braises passent partout.
+5. **Respirez à travers un linge humide.**
+6. **Suivez les consignes** des secours et de la mairie. Si elles disent d’évacuer, partez immédiatement.
 
-### Tu es en voiture
+### Vous êtes en voiture
 
-- Ne prends pas la route pour fuir au dernier moment et ne te réfugie pas dans ta voiture si un bâtiment en dur est proche.
-- Si les flammes te surprennent en voiture : arrête-toi dans une zone dégagée et ne sors pas.
+- Ne prenez pas la route pour fuir au dernier moment et ne vous réfugiez pas dans votre voiture si un bâtiment en dur est proche.
+- Si les flammes vous surprennent en voiture : arrêtez-vous dans une zone dégagée et ne sortez pas.
 
-### Tu es piégé
+### Vous êtes piégé
 
-- Appelle le 18 ou le 112, donne ta position et allume les lumières pour aider les secours à te trouver.
+- Appelez le 18 ou le 112, donnez votre position et allumez les lumières pour aider les secours à vous trouver.
 
 ## Après
 
-1. **Ne va pas sur les lieux**, même si le feu est fixé ou éteint : tu gênerais les secours, qui peuvent rester plusieurs jours.
-2. **Éteins les braises** autour de la maison avec le tuyau d’arrosage.
-3. **Méfie-toi** des arbres et des rochers qui tombent, des cendres chaudes, des souches qui couvent. Le sol peut rester brûlant en profondeur.
-4. **Protège-toi des cendres** : gants, manches longues, masque. Les enfants, les femmes enceintes et les personnes fragiles des poumons ou du cœur ne doivent pas respirer cette poussière.
-5. **Vérifie que l’eau est potable** et jette la nourriture exposée à la chaleur ou aux fumées.
-6. **Avant de retourner en forêt**, demande à la préfecture si l’accès est autorisé.
+1. **N’allez pas sur les lieux**, même si le feu est fixé ou éteint : vous gêneriez les secours, qui peuvent rester plusieurs jours.
+2. **Éteignez les braises** autour de la maison avec le tuyau d’arrosage.
+3. **Méfiez-vous** des arbres et des rochers qui tombent, des cendres chaudes, des souches qui couvent. Le sol peut rester brûlant en profondeur.
+4. **Protégez-vous des cendres** : gants, manches longues, masque. Les enfants, les femmes enceintes et les personnes fragiles des poumons ou du cœur ne doivent pas respirer cette poussière.
+5. **Vérifiez que l’eau est potable** et jetez la nourriture exposée à la chaleur ou aux fumées.
+6. **Avant de retourner en forêt**, demandez à la préfecture si l’accès est autorisé.
 
 ## À ne jamais faire
 
-- T’approcher pour regarder ou filmer.
+- Vous approcher pour regarder ou filmer.
 - Fuir en voiture à travers la fumée.
-- Te réfugier dans une voiture alors qu’une maison est proche.
-- Retourner chez toi avant le feu vert des secours.
+- Vous réfugier dans une voiture alors qu’une maison est proche.
+- Retourner chez vous avant le feu vert des secours.
 
 ## Selon l’endroit
 
-- **En immeuble** : tu y es plus en sécurité. Ferme tout et n’évacue que sur ordre.
-- **En camping, en caravane ou sous tente** : ce ne sont pas des abris en dur. Dès l’alerte, rejoins un bâtiment en dur ou quitte la zone en suivant les consignes.
-- **En randonnée** : par risque élevé, l’accès aux massifs peut être interdit. Vérifie avant de partir.
+- **En immeuble** : vous y êtes plus en sécurité. Fermez tout et n’évacuez que sur ordre.
+- **En camping, en caravane ou sous tente** : ce ne sont pas des abris en dur. Dès l’alerte, rejoignez un bâtiment en dur ou quittez la zone en suivant les consignes.
+- **En randonnée** : par risque élevé, l’accès aux massifs peut être interdit. Vérifiez avant de partir.
 
 ## Voir aussi
 

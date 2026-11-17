@@ -1,13 +1,13 @@
 # Sauver le contenu du frigo et du congélateur
 
-> **En bref** : garde les portes fermées. Un réfrigérateur fermé tient le froid environ 4 heures, un congélateur plein environ 48 heures, 24 heures s’il est à moitié plein. Mange d’abord les produits frais. Au retour du courant, jette les produits frais restés plus de 4 heures sans froid, sans jamais goûter pour vérifier.
+> **En bref** : gardez les portes fermées. Un réfrigérateur fermé tient le froid environ 4 heures, un congélateur plein environ 48 heures, 24 heures s’il est à moitié plein. Mangez d’abord les produits frais. Au retour du courant, jetez les produits frais restés plus de 4 heures sans froid, sans jamais goûter pour vérifier.
 
 ## Quand s’en servir
 
 - Coupure de courant qui dure plus de quelques heures, ou appareil en panne.
 - Avant une tempête ou une coupure annoncée, pour préparer le froid.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un thermomètre dans le réfrigérateur et un autre dans le congélateur.
 - Une glacière, des pains de glace ou des bouteilles d’eau gardées au congélateur.
@@ -17,36 +17,36 @@
 
 ### Avant la coupure
 
-1. **Règle le réfrigérateur à 4 °C ou moins** et le congélateur à -18 °C.
-2. **Congèle des bouteilles d’eau** et des pains de glace : ils garderont le froid plus longtemps.
-3. **Regroupe les aliments** dans le congélateur : serrés les uns contre les autres, ils restent froids plus longtemps.
-4. **Congèle ce que tu ne mangeras pas tout de suite** : restes, lait, viande fraîche.
-5. **Affiche sur la porte la liste** de ce que contient le congélateur, pour l’ouvrir moins souvent.
+1. **Réglez le réfrigérateur à 4 °C ou moins** et le congélateur à -18 °C.
+2. **Congelez des bouteilles d’eau** et des pains de glace : ils garderont le froid plus longtemps.
+3. **Regroupez les aliments** dans le congélateur : serrés les uns contre les autres, ils restent froids plus longtemps.
+4. **Congelez ce que vous ne mangerez pas tout de suite** : restes, lait, viande fraîche.
+5. **Affichez sur la porte la liste** de ce que contient le congélateur, pour l’ouvrir moins souvent.
 
 ### Pendant la coupure
 
-1. **Note l’heure** et n’ouvre plus les portes sans nécessité.
-2. **Mange dans cet ordre** : les produits frais du réfrigérateur, puis ceux du congélateur, puis les réserves du placard.
-3. **Après 4 heures sans courant**, mets les produits fragiles du réfrigérateur (viande, poisson, lait, œufs, restes) dans une glacière avec de la glace, à 4 °C ou moins.
-4. **Si la coupure doit durer**, demande à un proche qui a du courant de garder tes aliments, ou ajoute de la glace en blocs.
-5. **Laisse les médicaments au froid** dans la glacière (voir [Vivre une crise avec un traitement médical](../sante-et-premiers-secours/vivre-une-crise-avec-un-traitement-medical.md)).
+1. **Notez l’heure** et n’ouvrez plus les portes sans nécessité.
+2. **Mangez dans cet ordre** : les produits frais du réfrigérateur, puis ceux du congélateur, puis les réserves du placard.
+3. **Après 4 heures sans courant**, mettez les produits fragiles du réfrigérateur (viande, poisson, lait, œufs, restes) dans une glacière avec de la glace, à 4 °C ou moins.
+4. **Si la coupure doit durer**, demandez à un proche qui a du courant de garder vos aliments, ou ajoutez de la glace en blocs.
+5. **Laissez les médicaments au froid** dans la glacière (voir [Vivre une crise avec un traitement médical](../sante-et-premiers-secours/vivre-une-crise-avec-un-traitement-medical.md)).
 
 ### Au retour du courant
 
-1. **Regarde les thermomètres** avant tout. Sans thermomètre, vérifie chaque paquet.
+1. **Regardez les thermomètres** avant tout. Sans thermomètre, vérifiez chaque paquet.
 2. **Congélateur** :
-   - encore dur, avec des cristaux de glace : tu peux le laisser congelé ;
-   - décongelé mais resté à 4 °C ou moins : cuis-le tout de suite et mange-le vite, ne le recongèle pas cru ;
-   - décongelé et resté plus de 2 heures au-dessus de 4 °C : jette la viande, le poisson, les fruits de mer, les laitages, les œufs, les plats préparés et les glaces.
-3. **Réfrigérateur, après plus de 4 heures sans courant**, jette :
+   - encore dur, avec des cristaux de glace : vous pouvez le laisser congelé ;
+   - décongelé mais resté à 4 °C ou moins : cuisez-le tout de suite et mangez-le vite, ne le recongelez pas cru ;
+   - décongelé et resté plus de 2 heures au-dessus de 4 °C : jetez la viande, le poisson, les fruits de mer, les laitages, les œufs, les plats préparés et les glaces.
+3. **Réfrigérateur, après plus de 4 heures sans courant**, jetez :
    - viande, volaille, poisson, charcuterie, crus ou cuits ;
    - lait, crème, yaourts, fromages à pâte molle ou frais ;
    - œufs et plats aux œufs, crèmes et pâtisseries à la crème ;
    - restes, plats cuisinés, soupes, sauces à la viande, pâtes, riz et légumes cuits ;
    - fruits et légumes coupés, salades préparées ;
    - lait pour bébé ouvert, mayonnaise.
-4. **Tu peux garder** : fromages à pâte dure, beurre, fruits et légumes entiers, confitures, moutarde, ketchup, cornichons, pain.
-5. **Dans le doute, jette.** Un aliment dangereux n’a pas toujours une odeur ou un aspect anormal.
+4. **Vous pouvez garder** : fromages à pâte dure, beurre, fruits et légumes entiers, confitures, moutarde, ketchup, cornichons, pain.
+5. **Dans le doute, jetez.** Un aliment dangereux n’a pas toujours une odeur ou un aspect anormal.
 
 ## À ne jamais faire
 
@@ -58,13 +58,13 @@
 
 ## Sans matériel
 
-- Pas de thermomètre : fie-toi à l’heure notée et à l’état de chaque paquet (dur, cristaux de glace).
-- Pas de glacière ni de glace : mange les produits frais dans les 4 premières heures.
+- Pas de thermomètre : fiez-vous à l’heure notée et à l’état de chaque paquet (dur, cristaux de glace).
+- Pas de glacière ni de glace : mangez les produits frais dans les 4 premières heures.
 
 ## Selon l’endroit
 
 - **Compartiment congélateur d’un réfrigérateur** : il tient le froid beaucoup moins longtemps qu’un congélateur séparé.
-- **Zone inondable** : jette tout aliment touché par l’eau de la crue (voir [Savoir si un aliment est encore bon](savoir-si-un-aliment-est-encore-bon.md)).
+- **Zone inondable** : jetez tout aliment touché par l’eau de la crue (voir [Savoir si un aliment est encore bon](savoir-si-un-aliment-est-encore-bon.md)).
 - **Grand congélateur** : pour une coupure longue, de la glace carbonique peut le garder froid. Le ministère américain de l’Agriculture compte environ 23 kg pour tenir 2 jours un congélateur plein de 500 litres.
 
 ## Voir aussi

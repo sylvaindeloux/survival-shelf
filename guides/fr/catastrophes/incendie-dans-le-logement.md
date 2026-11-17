@@ -1,57 +1,57 @@
 # Incendie dans le logement
 
-> **En bref** : les fumées tuent plus que les flammes. Le feu est chez toi et tu ne peux pas l’éteindre tout de suite : fais sortir tout le monde, ferme la porte de la pièce en feu puis la porte d’entrée, descends par l’escalier et appelle le 18 ou le 112 une fois dehors. Le feu est ailleurs et la fumée est dans l’escalier : reste chez toi, porte fermée et calfeutrée, et montre-toi à la fenêtre.
+> **En bref** : les fumées tuent plus que les flammes. Le feu est chez vous et vous ne pouvez pas l’éteindre tout de suite : faites sortir tout le monde, fermez la porte de la pièce en feu puis la porte d’entrée, descendez par l’escalier et appelez le 18 ou le 112 une fois dehors. Le feu est ailleurs et la fumée est dans l’escalier : restez chez vous, porte fermée et calfeutrée, et montrez-vous à la fenêtre.
 
 ## Quand s’en servir
 
-- Flammes, fumée ou alarme du détecteur dans ton logement ou dans l’immeuble.
-- Pour préparer ton foyer : tu peux n’avoir que deux minutes pour sortir.
+- Flammes, fumée ou alarme du détecteur dans votre logement ou dans l’immeuble.
+- Pour préparer votre foyer : vous pouvez n’avoir que deux minutes pour sortir.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un détecteur de fumée à chaque étage, près des chambres.
-- Un extincteur à portée de main, si tu sais t’en servir.
-- Des linges que tu peux mouiller.
+- Un extincteur à portée de main, si vous savez vous en servir.
+- Des linges que vous pouvez mouiller.
 
 ## Avant
 
-1. **Installe des détecteurs de fumée** (norme NF EN 14604) et teste-les chaque mois.
-2. **Prépare un plan de sortie** avec tout le foyer et répétez-le deux fois par an.
-3. **Éloigne ce qui brûle** des sources de chaleur : papier, carton, textiles, alcool, essence.
-4. **Ne laisse jamais une bougie sans surveillance.** Range allumettes et briquets hors de portée des enfants.
-5. **N’utilise jamais d’alcool ni d’essence** pour allumer un feu ou un barbecue.
+1. **Installez des détecteurs de fumée** (norme NF EN 14604) et testez-les chaque mois.
+2. **Préparez un plan de sortie** avec tout le foyer et répétez-le deux fois par an.
+3. **Éloignez ce qui brûle** des sources de chaleur : papier, carton, textiles, alcool, essence.
+4. **Ne laissez jamais une bougie sans surveillance.** Rangez allumettes et briquets hors de portée des enfants.
+5. **N’utilisez jamais d’alcool ni d’essence** pour allumer un feu ou un barbecue.
 
 ## Pendant
 
-### Le feu est chez toi
+### Le feu est chez vous
 
-1. **Tente d’éteindre seulement un tout petit feu**, sans prendre de risque (voir [Éteindre un début d’incendie](../feu-et-energie/eteindre-un-debut-d-incendie.md)).
-2. **Sinon, fais sortir tout le monde** sans rien emporter.
-3. **Ferme la porte de la pièce en feu, puis la porte d’entrée**, sans la verrouiller : une porte fermée retient le feu et la fumée.
-4. **Sors par l’escalier**, jamais par l’ascenseur.
-5. **Appelle le 18 ou le 112** dès que tu es en sécurité.
-6. **Ne retourne jamais à l’intérieur.**
+1. **Tentez d’éteindre seulement un tout petit feu**, sans prendre de risque (voir [Éteindre un début d’incendie](../feu-et-energie/eteindre-un-debut-d-incendie.md)).
+2. **Sinon, faites sortir tout le monde** sans rien emporter.
+3. **Fermez la porte de la pièce en feu, puis la porte d’entrée**, sans la verrouiller : une porte fermée retient le feu et la fumée.
+4. **Sortez par l’escalier**, jamais par l’ascenseur.
+5. **Appelez le 18 ou le 112** dès que vous êtes en sécurité.
+6. **Ne retournez jamais à l’intérieur.**
 
 ### Le feu est ailleurs dans l’immeuble
 
-- **Fumée dans le couloir ou l’escalier, feu en dessous ou au même étage : reste chez toi.** Ferme la porte, mouille-la et calfeutre-la avec des linges humides, appelle le 18 ou le 112 et montre-toi à la fenêtre.
-- **Feu au-dessus de chez toi** : sors par l’issue la plus proche.
+- **Fumée dans le couloir ou l’escalier, feu en dessous ou au même étage : restez chez vous.** Fermez la porte, mouillez-la et calfeutrez-la avec des linges humides, appelez le 18 ou le 112 et montrez-vous à la fenêtre.
+- **Feu au-dessus de chez vous** : sortez par l’issue la plus proche.
 
 ### Il y a de la fumée
 
-- Ne traverse pas la fumée : là où il y a de la fumée, il ne faut pas aller.
-- Si tu es pris dedans, baisse-toi au ras du sol, un linge humide sur le nez et la bouche.
+- Ne traversez pas la fumée : là où il y a de la fumée, il ne faut pas aller.
+- Si vous êtes pris dedans, baissez-vous au ras du sol, un linge humide sur le nez et la bouche.
 
-### Tes vêtements prennent feu
+### Vos vêtements prennent feu
 
-- Arrête-toi, allonge-toi au sol et roule sur toi-même pour étouffer les flammes.
+- Arrêtez-vous, allongez-vous au sol et roulez sur vous-même pour étouffer les flammes.
 
 ## Après
 
-1. **Laisse entrer les pompiers** et dis-leur si quelqu’un manque.
-2. **Ne rentre que lorsqu’ils l’autorisent.**
-3. **Appelle-les même si le feu semble éteint** : il peut couver, par exemple dans un conduit de hotte.
-4. **Brûlure ou gêne pour respirer** : appelle le 15.
+1. **Laissez entrer les pompiers** et dites-leur si quelqu’un manque.
+2. **Ne rentrez que lorsqu’ils l’autorisent.**
+3. **Appelez-les même si le feu semble éteint** : il peut couver, par exemple dans un conduit de hotte.
+4. **Brûlure ou gêne pour respirer** : appelez le 15.
 
 ## À ne jamais faire
 
@@ -64,8 +64,8 @@
 
 ## Selon l’endroit
 
-- **Dans la cuisine** : poêle ou friteuse en feu, coupe le gaz ou la plaque et pose un couvercle. Ne déplace pas le récipient.
-- **Appareil électrique en feu** : coupe le courant au disjoncteur et appelle les pompiers.
+- **Dans la cuisine** : poêle ou friteuse en feu, coupez le gaz ou la plaque et posez un couvercle. Ne déplacez pas le récipient.
+- **Appareil électrique en feu** : coupez le courant au disjoncteur et appelez les pompiers.
 
 ## Voir aussi
 

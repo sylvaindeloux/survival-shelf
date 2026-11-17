@@ -1,36 +1,36 @@
 # Intoxication au monoxyde de carbone
 
-> **En bref** : maux de tête, nausées, vertiges, fatigue chez plusieurs personnes du même logement, avec un appareil à combustion en marche : pense au monoxyde de carbone. Ouvre portes et fenêtres, arrête les appareils, fais sortir tout le monde, puis appelle le 15, le 18 ou le 112 depuis l’extérieur. Ne rentre pas avant l’accord des secours.
+> **En bref** : maux de tête, nausées, vertiges, fatigue chez plusieurs personnes du même logement, avec un appareil à combustion en marche : pensez au monoxyde de carbone. Ouvrez portes et fenêtres, arrêtez les appareils, faites sortir tout le monde, puis appelez le 15, le 18 ou le 112 depuis l’extérieur. Ne rentrez pas avant l’accord des secours.
 
 ## Quand s’en servir
 
 - Le monoxyde de carbone est un gaz invisible et sans odeur, produit par tout ce qui brûle : chaudière, poêle, cheminée, chauffe-eau, chauffage d’appoint, réchaud, barbecue, groupe électrogène, moteur.
 - **Signes** : maux de tête, fatigue, nausées, vomissements, vertiges, faiblesse, troubles de la vue, confusion, douleur dans la poitrine, essoufflement, malaise.
-- **Ce qui doit t’alerter** : plusieurs personnes malades en même temps, des signes qui s’aggravent dans une pièce et s’améliorent dehors, un animal au comportement anormal, un détecteur qui sonne.
+- **Ce qui doit vous alerter** : plusieurs personnes malades en même temps, des signes qui s’aggravent dans une pièce et s’améliorent dehors, un animal au comportement anormal, un détecteur qui sonne.
 - À forte dose, le coma arrive en quelques minutes. Une personne endormie ou ivre peut mourir sans avoir rien senti.
 
 ## Étapes
 
-1. **Ouvre en grand portes et fenêtres.**
-2. **Arrête les appareils** de chauffage et de cuisson, si tu peux le faire vite.
-3. **Fais sortir tout le monde** à l’air libre, animaux compris.
-4. **Appelle les secours depuis l’extérieur** : 15, 18 ou 112, 114 par SMS si tu ne peux ni parler ni entendre. Dis que tu soupçonnes une intoxication au monoxyde de carbone.
-5. **Si une personne est inconsciente**, sors-la à l’air libre si tu peux le faire sans te mettre en danger, puis regarde si elle respire : voir [Personne inconsciente qui respire](personne-inconsciente-qui-respire.md) ou [Arrêt cardiaque](arret-cardiaque.md).
-6. **Ne rentre pas et ne rallume rien** avant que les secours ou un professionnel disent que c’est sans danger.
+1. **Ouvrez en grand portes et fenêtres.**
+2. **Arrêtez les appareils** de chauffage et de cuisson, si vous pouvez le faire vite.
+3. **Faites sortir tout le monde** à l’air libre, animaux compris.
+4. **Appelez les secours depuis l’extérieur** : 15, 18 ou 112, 114 par SMS si vous ne pouvez ni parler ni entendre. Dites que vous soupçonnez une intoxication au monoxyde de carbone.
+5. **Si une personne est inconsciente**, sortez-la à l’air libre si vous pouvez le faire sans vous mettre en danger, puis regardez si elle respire : voir [Personne inconsciente qui respire](personne-inconsciente-qui-respire.md) ou [Arrêt cardiaque](arret-cardiaque.md).
+6. **Ne rentrez pas et ne rallumez rien** avant que les secours ou un professionnel disent que c’est sans danger.
 
-Même si tout le monde va mieux une fois dehors, demande un avis médical.
+Même si tout le monde va mieux une fois dehors, demandez un avis médical.
 
 ## À ne jamais faire
 
 - Rester à l’intérieur pour chercher d’où ça vient.
-- Te fier à ton odorat : ce gaz ne sent rien.
-- Retourner dans le logement parce que tu te sens mieux.
-- Te chauffer avec un réchaud, un barbecue, un brasero ou le four.
+- Vous fier à votre odorat : ce gaz ne sent rien.
+- Retourner dans le logement parce que vous vous sentez mieux.
+- Vous chauffer avec un réchaud, un barbecue, un brasero ou le four.
 - Faire tourner un groupe électrogène ou un moteur dans la maison, le garage, la cave ou la véranda.
 
 ## Selon l’endroit
 
-- **Dans un garage** : ne laisse jamais tourner le moteur d’une voiture, même porte ouverte.
+- **Dans un garage** : ne laissez jamais tourner le moteur d’une voiture, même porte ouverte.
 - **Sous une tente ou dans un abri** : jamais de réchaud ni de barbecue à l’intérieur.
 
 ## Voir aussi

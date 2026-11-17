@@ -1,6 +1,6 @@
 # Bloqué par la neige ou le froid
 
-> **En bref** : reste dans la voiture, c’est ton abri. Ne la quitte que sur consigne des autorités ou si un secours est visible tout près. Fais tourner le moteur environ 10 minutes par heure, une vitre entrouverte et le pot d’échappement dégagé de la neige. Couvre-toi, bouge, rends la voiture visible.
+> **En bref** : restez dans la voiture, c’est votre abri. Ne la quittez que sur consigne des autorités ou si un secours est visible tout près. Faites tourner le moteur environ 10 minutes par heure, une vitre entrouverte et le pot d’échappement dégagé de la neige. Couvrez-vous, bougez, rendez la voiture visible.
 
 ## Quand s’en servir
 
@@ -8,7 +8,7 @@
 - Voiture en panne ou sortie de route en hiver.
 - Avant de partir, quand une vigilance « neige-verglas » ou « grand froid » est annoncée.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Des couvertures ou un sac de couchage, des vêtements chauds et secs, des gants, un bonnet.
 - De l’eau, de la nourriture, une boisson chaude.
@@ -20,38 +20,38 @@
 
 ### Avant de partir
 
-1. **Renseigne-toi** sur la météo, la vigilance et l’état des routes. Si la neige ou le grand froid sont annoncés, reporte ton trajet si tu le peux.
-2. **Équipe la voiture** et fais le plein (voir [Préparer le kit de la voiture](preparer-le-kit-de-la-voiture.md)).
-3. **Dis à quelqu’un** où tu vas, par où tu passes et quand tu comptes arriver.
+1. **Renseignez-vous** sur la météo, la vigilance et l’état des routes. Si la neige ou le grand froid sont annoncés, reportez votre trajet si vous le pouvez.
+2. **Équipez la voiture** et faites le plein (voir [Préparer le kit de la voiture](preparer-le-kit-de-la-voiture.md)).
+3. **Dites à quelqu’un** où vous allez, par où vous passez et quand vous comptez arriver.
 
-### Tu es bloqué
+### Vous êtes bloqué
 
-1. **Reste dans la file de droite** ou gare-toi sur un accotement sûr. Ne t’arrête pas sur la bande d’arrêt d’urgence, sauf consigne.
-2. **Reste dans la voiture.** Ne la quitte que sur consigne des autorités, ou si un secours est visible à une centaine de mètres au plus.
-3. **Écoute la radio** et suis les panneaux lumineux et les consignes des services d’intervention.
-4. **Appelle le 112** si quelqu’un va mal ou si tu es isolé, et donne d’abord ta position.
+1. **Restez dans la file de droite** ou garez-vous sur un accotement sûr. Ne vous arrêtez pas sur la bande d’arrêt d’urgence, sauf consigne.
+2. **Restez dans la voiture.** Ne la quittez que sur consigne des autorités, ou si un secours est visible à une centaine de mètres au plus.
+3. **Écoutez la radio** et suivez les panneaux lumineux et les consignes des services d’intervention.
+4. **Appelez le 112** si quelqu’un va mal ou si vous êtes isolé, et donnez d’abord votre position.
 
 ### Garder la chaleur
 
-1. **Fais tourner le moteur et le chauffage environ 10 minutes par heure**, pas plus. Avant chaque démarrage, vérifie que le pot d’échappement n’est pas bouché par la neige.
-2. **Entrouvre une vitre** du côté abrité du vent pendant que le moteur tourne.
-3. **Couvre tout ton corps**, tête comprise : vêtements, couvertures, et à défaut journaux, cartes routières ou tapis de sol.
+1. **Faites tourner le moteur et le chauffage environ 10 minutes par heure**, pas plus. Avant chaque démarrage, vérifiez que le pot d’échappement n’est pas bouché par la neige.
+2. **Entrouvrez une vitre** du côté abrité du vent pendant que le moteur tourne.
+3. **Couvrez tout votre corps**, tête comprise : vêtements, couvertures, et à défaut journaux, cartes routières ou tapis de sol.
 4. **Serrez-vous** les uns contre les autres.
-5. **Bouge** bras, jambes et doigts, tape dans tes mains, sans te fatiguer.
-6. **Bois.** Ne mange pas de neige et évite l’alcool.
+5. **Bougez** bras, jambes et doigts, tapez dans vos mains, sans vous fatiguer.
+6. **Buvez.** Ne mangez pas de neige et évitez l’alcool.
 7. **Restez éveillés.** Si l’attente dure, dormez à tour de rôle, moteur coupé.
 
-### Te rendre visible
+### Vous rendre visible
 
-1. **Accroche un tissu de couleur vive** à l’antenne ou à une vitre.
-2. **Allume le plafonnier** quand le moteur tourne.
-3. **Relève le capot** une fois que la neige a cessé de tomber.
-4. **Klaxonne ou fais des appels de phares par séries de trois** si tu entends ou vois quelqu’un.
+1. **Accrochez un tissu de couleur vive** à l’antenne ou à une vitre.
+2. **Allumez le plafonnier** quand le moteur tourne.
+3. **Relevez le capot** une fois que la neige a cessé de tomber.
+4. **Klaxonnez ou faites des appels de phares par séries de trois** si vous entendez ou voyez quelqu’un.
 
 ## À ne jamais faire
 
 - Partir à pied dans la tempête.
-- Laisser tourner le moteur en continu, ou t’endormir moteur allumé : le monoxyde de carbone s’accumule sans que tu le sentes.
+- Laisser tourner le moteur en continu, ou vous endormir moteur allumé : le monoxyde de carbone s’accumule sans que vous le sentiez.
 - Faire tourner le moteur quand le pot d’échappement est pris dans la neige.
 - Pousser la voiture ou pelleter à toute force : l’effort dans le froid peut provoquer un accident cardiaque.
 - Doubler une saleuse ou un chasse-neige.
@@ -63,8 +63,8 @@
 
 ## Selon l’endroit
 
-- **Sur autoroute, en France** : écoute le 107.7 FM et suis les panneaux lumineux.
-- **Maux de tête, nausées, vertiges, grande fatigue dans la voiture** : pense au monoxyde de carbone. Coupe le moteur, ouvre les vitres et les portes, respire de l’air frais (voir [Intoxication au monoxyde de carbone](../sante-et-premiers-secours/intoxication-au-monoxyde-de-carbone.md)).
+- **Sur autoroute, en France** : écoutez le 107.7 FM et suivez les panneaux lumineux.
+- **Maux de tête, nausées, vertiges, grande fatigue dans la voiture** : pensez au monoxyde de carbone. Coupez le moteur, ouvrez les vitres et les portes, respirez de l’air frais (voir [Intoxication au monoxyde de carbone](../sante-et-premiers-secours/intoxication-au-monoxyde-de-carbone.md)).
 - **Frissons, parole difficile, confusion, somnolence** : c’est peut-être une hypothermie (voir [Hypothermie et gelures](../sante-et-premiers-secours/hypothermie-et-gelures.md)).
 
 ## Voir aussi

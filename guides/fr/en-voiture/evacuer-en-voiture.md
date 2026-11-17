@@ -1,14 +1,14 @@
 # Évacuer en voiture
 
-> **En bref** : garde le réservoir au moins à moitié plein et fais le plein dès qu’une évacuation devient possible. Pars tôt, une seule voiture par foyer, par les itinéraires indiqués, sans raccourci et sans jamais traverser une route inondée. Dans certains cas, la voiture est un piège : inondation en cours, tsunami, nuage toxique, feu tout proche.
+> **En bref** : gardez le réservoir au moins à moitié plein et faites le plein dès qu’une évacuation devient possible. Partez tôt, une seule voiture par foyer, par les itinéraires indiqués, sans raccourci et sans jamais traverser une route inondée. Dans certains cas, la voiture est un piège : inondation en cours, tsunami, nuage toxique, feu tout proche.
 
 ## Quand s’en servir
 
 - Les autorités ordonnent ou conseillent d’évacuer.
-- Tu décides de partir avant que la situation ne se dégrade.
+- Vous décidez de partir avant que la situation ne se dégrade.
 - Avant la crise, pour préparer la voiture et les itinéraires.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Le sac d’évacuation et le kit de la voiture.
 - Une carte routière en papier, avec plusieurs itinéraires repérés.
@@ -19,37 +19,37 @@
 
 ### Avant
 
-1. **Garde le réservoir au moins à moitié plein** toute l’année. Fais le plein dès qu’une évacuation semble possible : les stations peuvent fermer.
-2. **Repère plusieurs itinéraires** et une destination : un proche, un lieu d’accueil. Note-les sur une carte en papier.
-3. **Sans voiture**, organise-toi à l’avance avec un proche ou un voisin, et renseigne-toi sur les transports prévus.
-4. **Entretiens la voiture** : pneus, niveaux, batterie.
+1. **Gardez le réservoir au moins à moitié plein** toute l’année. Faites le plein dès qu’une évacuation semble possible : les stations peuvent fermer.
+2. **Repérez plusieurs itinéraires** et une destination : un proche, un lieu d’accueil. Notez-les sur une carte en papier.
+3. **Sans voiture**, organisez-vous à l’avance avec un proche ou un voisin, et renseignez-vous sur les transports prévus.
+4. **Entretenez la voiture** : pneus, niveaux, batterie.
 
 ### Au moment de partir
 
-1. **Pars tôt**, dès que la consigne est donnée. Écoute l’itinéraire, la destination et le point de rassemblement annoncés.
-2. **Prends une seule voiture par foyer** : moins de voitures, moins de bouchons.
-3. **Emporte** le sac d’évacuation, la radio, tes médicaments et tes animaux.
-4. **Charge lourd en bas**, rien sur la plage arrière.
-5. **Ferme le logement** : portes et fenêtres à clé, appareils débranchés, gaz, eau et électricité coupés si les autorités le demandent.
-6. **Préviens un proche** de ta destination et de ton itinéraire.
-7. **Propose une place** aux voisins qui n’ont pas de voiture.
+1. **Partez tôt**, dès que la consigne est donnée. Écoutez l’itinéraire, la destination et le point de rassemblement annoncés.
+2. **Prenez une seule voiture par foyer** : moins de voitures, moins de bouchons.
+3. **Emportez** le sac d’évacuation, la radio, vos médicaments et vos animaux.
+4. **Chargez lourd en bas**, rien sur la plage arrière.
+5. **Fermez le logement** : portes et fenêtres à clé, appareils débranchés, gaz, eau et électricité coupés si les autorités le demandent.
+6. **Prévenez un proche** de votre destination et de votre itinéraire.
+7. **Proposez une place** aux voisins qui n’ont pas de voiture.
 
 ### Sur la route
 
-1. **Suis les itinéraires indiqués.** Pas de raccourci : il peut être coupé ou dangereux.
-2. **Ne traverse jamais une route inondée** et ne contourne pas une barrière.
-3. **Méfie-toi** des routes emportées, des arbres et des fils électriques tombés.
-4. **Écoute la radio** pour suivre les consignes.
-5. **Attends-toi à des bouchons** : garde de l’eau à portée de main et reste calme.
-6. **Fais une pause** d’au moins un quart d’heure toutes les deux heures. Si tu t’endors, arrête-toi et dors au moins 20 minutes.
+1. **Suivez les itinéraires indiqués.** Pas de raccourci : il peut être coupé ou dangereux.
+2. **Ne traversez jamais une route inondée** et ne contournez pas une barrière.
+3. **Méfiez-vous** des routes emportées, des arbres et des fils électriques tombés.
+4. **Écoutez la radio** pour suivre les consignes.
+5. **Attendez-vous à des bouchons** : gardez de l’eau à portée de main et restez calme.
+6. **Faites une pause** d’au moins un quart d’heure toutes les deux heures. Si vous vous endormez, arrêtez-vous et dormez au moins 20 minutes.
 
 ### Quand ne pas prendre la voiture
 
-- **Inondation en cours** : monte à l’étage, ne prends pas la route.
-- **Tsunami** : pars à pied vers les hauteurs.
-- **Nuage toxique ou accident nucléaire** : entre dans un bâtiment et attends les consignes.
-- **Feu de forêt tout proche** : abrite-toi dans un bâtiment en dur, ne fuis pas au dernier moment.
-- **Vigilance rouge vent ou neige** : reste chez toi.
+- **Inondation en cours** : montez à l’étage, ne prenez pas la route.
+- **Tsunami** : partez à pied vers les hauteurs.
+- **Nuage toxique ou accident nucléaire** : entrez dans un bâtiment et attendez les consignes.
+- **Feu de forêt tout proche** : abritez-vous dans un bâtiment en dur, ne fuyez pas au dernier moment.
+- **Vigilance rouge vent ou neige** : restez chez vous.
 
 ## À ne jamais faire
 
@@ -61,12 +61,12 @@
 
 ## Sans matériel
 
-- Pas de voiture : préviens la mairie ou les secours que tu as besoin d’un transport, et rejoins le point de rassemblement indiqué.
+- Pas de voiture : prévenez la mairie ou les secours que vous avez besoin d’un transport, et rejoignez le point de rassemblement indiqué.
 - Pas de GPS ou plus de réseau : la carte en papier et les panneaux suffisent.
 
 ## Selon l’endroit
 
-- **Avec une personne âgée, malade ou handicapée** : prévois à l’avance qui conduit et comment emporter son matériel médical.
+- **Avec une personne âgée, malade ou handicapée** : prévoyez à l’avance qui conduit et comment emporter son matériel médical.
 - **Avec des animaux** : en cage ou en laisse, avec leur trousse (voir [S’occuper de ses animaux](../a-la-maison/s-occuper-de-ses-animaux.md)).
 - **En hiver** : couvertures, vêtements chauds, chaînes ou chaussettes à neige.
 
@@ -90,7 +90,7 @@
 - [Ready.gov (États-Unis), « Older Adults » (en anglais)](https://www.ready.gov/older-adults)
 - [Ministère de la Défense de Lettonie, « What to Do in Case of a Crisis » (PDF, en anglais)](https://www.mod.gov.lv/sites/mod/files/document/72H%20buklets_ENG_WEB_2024.pdf)
 
-Les pages officielles françaises lues disent quand il ne faut pas prendre la voiture, mais ne détaillent pas l’évacuation en voiture : le réservoir à moitié plein, la voiture unique par foyer, les itinéraires de rechange et le refus des raccourcis viennent de la FEMA, de la Croix-Rouge américaine et du ministère letton de la Défense. Relève du bon sens, sans source officielle : la partie « Sans matériel ».
+Les pages officielles françaises lues disent quand il ne faut pas prendre la voiture, mais ne détaillent pas l’évacuation en voiture : le réservoir à moitié plein, la voiture unique par foyer, les itinéraires de rechange et le refus des raccourcis viennent de la FEMA, de la Croix-Rouge américaine et du ministère letton de la Défense. Relevez du bon sens, sans source officielle : la partie « Sans matériel ».
 
 ---
 

@@ -1,6 +1,6 @@
 # Allergie grave
 
-> **En bref** : quelques minutes après un aliment, un médicament ou une piqûre d’insecte, la personne a le visage ou la gorge qui gonfle, respire mal, a la voix qui change ou fait un malaise. Si elle a un stylo d’adrénaline, il faut l’utiliser tout de suite, dans la cuisse. Appelle le 15 ou le 112. Elle reste allongée ou demi-assise, sans se lever ni marcher.
+> **En bref** : quelques minutes après un aliment, un médicament ou une piqûre d’insecte, la personne a le visage ou la gorge qui gonfle, respire mal, a la voix qui change ou fait un malaise. Si elle a un stylo d’adrénaline, il faut l’utiliser tout de suite, dans la cuisse. Appelez le 15 ou le 112. Elle reste allongée ou demi-assise, sans se lever ni marcher.
 
 ## Quand s’en servir
 
@@ -15,29 +15,29 @@
   - plaques rouges qui démangent, douleurs au ventre, nausées, vomissements ;
   - chez un enfant : il devient mou, sans réaction.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Le stylo auto-injecteur d’adrénaline de la personne, si elle en a un. Il est conseillé d’en avoir deux sur soi.
 - Un téléphone.
 
 ## Étapes
 
-1. **Utilise le stylo d’adrénaline** tout de suite s’il y en a un, même si les signes paraissent légers. Suis le mode d’emploi imprimé dessus :
-   - retire le bouchon de sécurité ;
-   - place l’embout contre la face extérieure de la cuisse, à angle droit ;
-   - appuie fermement jusqu’au déclic et maintiens 3 à 10 secondes, selon le modèle ;
-   - masse l’endroit de l’injection.
-2. **Appelle le 15 ou le 112** et dis « réaction allergique grave » ou « choc anaphylactique ».
-3. **Installe la personne** :
+1. **Utilisez le stylo d’adrénaline** tout de suite s’il y en a un, même si les signes paraissent légers. Suivez le mode d’emploi imprimé dessus :
+   - retirez le bouchon de sécurité ;
+   - placez l’embout contre la face extérieure de la cuisse, à angle droit ;
+   - appuyez fermement jusqu’au déclic et maintenez 3 à 10 secondes, selon le modèle ;
+   - massez l’endroit de l’injection.
+2. **Appelez le 15 ou le 112** et dites « réaction allergique grave » ou « choc anaphylactique ».
+3. **Installez la personne** :
    - allongée sur le dos, jambes surélevées ;
    - demi-assise si elle a du mal à respirer ;
    - sur le côté gauche si elle est enceinte.
-4. **Retire le dard** s’il s’agit d’une piqûre et qu’il est resté dans la peau, en le grattant de côté.
-5. **Desserre ses vêtements**, rassure-la, et surveille sa respiration et sa conscience.
-6. **Sans amélioration après 5 minutes**, utilise le deuxième stylo s’il y en a un.
+4. **Retirez le dard** s’il s’agit d’une piqûre et qu’il est resté dans la peau, en le grattant de côté.
+5. **Desserrez ses vêtements**, rassurez-la, et surveillez sa respiration et sa conscience.
+6. **Sans amélioration après 5 minutes**, utilisez le deuxième stylo s’il y en a un.
 7. **Si elle perd connaissance** : voir [Personne inconsciente qui respire](personne-inconsciente-qui-respire.md) ou [Arrêt cardiaque](arret-cardiaque.md).
 
-Même si elle va mieux après l’injection, appelle quand même les secours et garde-la allongée.
+Même si elle va mieux après l’injection, appelez quand même les secours et gardez-la allongée.
 
 ## À ne jamais faire
 
@@ -48,12 +48,12 @@ Même si elle va mieux après l’injection, appelle quand même les secours et 
 
 ## Sans matériel
 
-- Pas de stylo d’adrénaline : appelle immédiatement, installe la personne comme ci-dessus et ne la quitte pas. Prépare-toi à masser si elle ne respire plus.
+- Pas de stylo d’adrénaline : appelez immédiatement, installez la personne comme ci-dessus et ne la quittez pas. Préparez-vous à masser si elle ne respire plus.
 
 ## Selon l’endroit
 
-- **Si tu es toi-même allergique** : garde deux stylos sur toi, à température ambiante, ni au réfrigérateur ni en plein soleil, et vérifie leur date de péremption. Montre à tes proches où ils sont et comment s’en servir.
-- **Dans ton sac d’évacuation** : mets-y tes stylos et ton ordonnance (voir [Vivre une crise avec un traitement médical](vivre-une-crise-avec-un-traitement-medical.md)).
+- **Si vous êtes vous-même allergique** : gardez deux stylos sur vous, à température ambiante, ni au réfrigérateur ni en plein soleil, et vérifiez leur date de péremption. Montrez à vos proches où ils sont et comment s’en servir.
+- **Dans votre sac d’évacuation** : mettez-y vos stylos et votre ordonnance (voir [Vivre une crise avec un traitement médical](vivre-une-crise-avec-un-traitement-medical.md)).
 
 ## Voir aussi
 

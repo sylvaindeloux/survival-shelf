@@ -1,46 +1,46 @@
 # Arrêt cardiaque
 
-> **En bref** : la personne ne répond pas et ne respire pas, ou respire de façon anormale. Fais appeler le 15 ou le 112 et chercher un défibrillateur. Masse tout de suite : appuie fort et vite au milieu de la poitrine, 100 à 120 fois par minute, sans t’arrêter. Dès que le défibrillateur arrive, allume-le et suis ses instructions.
+> **En bref** : la personne ne répond pas et ne respire pas, ou respire de façon anormale. Faites appeler le 15 ou le 112 et chercher un défibrillateur. Massez tout de suite : appuyez fort et vite au milieu de la poitrine, 100 à 120 fois par minute, sans vous arrêter. Dès que le défibrillateur arrive, allumez-le et suivez ses instructions.
 
 ## Quand s’en servir
 
 - La personne s’effondre, ne réagit ni à la voix ni au toucher.
 - Elle ne respire pas, ou sa respiration est lente, bruyante, inefficace, par à-coups.
-- Dans le doute, masse. Chaque minute sans massage lui fait perdre environ 10 % de chances de survie.
+- Dans le doute, massez. Chaque minute sans massage lui fait perdre environ 10 % de chances de survie.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
-- Tes mains et un téléphone, c’est tout.
-- Un défibrillateur automatisé externe (DAE) s’il y en a un à proximité. Tout le monde peut s’en servir : il parle et te guide.
+- Vos mains et un téléphone, c’est tout.
+- Un défibrillateur automatisé externe (DAE) s’il y en a un à proximité. Tout le monde peut s’en servir : il parle et vous guide.
 
 ## Étapes
 
-1. **Vérifie** : elle ne répond pas quand tu lui parles et que tu secoues doucement ses épaules. Bascule sa tête en arrière et regarde si elle respire, 10 secondes au plus. Des mouvements brefs, comme des convulsions, sont possibles au tout début : dès qu’ils cessent, regarde sa respiration.
-2. **Alerte.**
+1. **Vérifiez** : elle ne répond pas quand vous lui parlez et que vous secouez doucement ses épaules. Basculez sa tête en arrière et regardez si elle respire, 10 secondes au plus. Des mouvements brefs, comme des convulsions, sont possibles au tout début : dès qu’ils cessent, regardez sa respiration.
+2. **Alertez.**
    - Quelqu’un est là : il appelle le 15, le 18 ou le 112 et rapporte un défibrillateur.
-   - Tu es seul : appelle en mettant le haut-parleur et commence à masser pendant que tu parles.
-   - Ni téléphone ni réseau : va alerter, puis reviens masser.
-3. **Masse.**
-   - La personne est sur le dos, sur un plan dur. Mets-toi à genoux à côté d’elle.
-   - Pose le talon d’une main au milieu de sa poitrine nue, sur la moitié basse du sternum. Pose l’autre main par-dessus, doigts entrecroisés.
-   - Bras tendus, coudes bloqués, épaules au-dessus de tes mains : enfonce la poitrine de 5 à 6 cm.
-   - Relâche complètement entre deux appuis, sans décoller les mains.
+   - Vous êtes seul : appelez en mettant le haut-parleur et commencez à masser pendant que vous parlez.
+   - Ni téléphone ni réseau : allez alerter, puis revenez masser.
+3. **Massez.**
+   - La personne est sur le dos, sur un plan dur. Mettez-vous à genoux à côté d’elle.
+   - Posez le talon d’une main au milieu de sa poitrine nue, sur la moitié basse du sternum. Posez l’autre main par-dessus, doigts entrecroisés.
+   - Bras tendus, coudes bloqués, épaules au-dessus de vos mains : enfoncez la poitrine de 5 à 6 cm.
+   - Relâchez complètement entre deux appuis, sans décoller les mains.
    - Rythme : 100 à 120 par minute, soit environ 2 par seconde.
-4. **Souffle, si tu sais le faire.** Après 30 compressions : tête basculée, menton relevé, pince son nez, couvre sa bouche avec la tienne, et souffle 1 seconde environ, jusqu’à ce que la poitrine se soulève. Deux fois, en 5 secondes au plus, puis reprends 30 compressions.
-   - Si tu ne sais pas, si tu ne peux pas ou si tu ne t’en sens pas capable : masse en continu, sans souffler.
-5. **Dès que le défibrillateur arrive**, allume-le et suis ses instructions, sans arrêter le massage plus que nécessaire.
-   - Dénude et sèche la poitrine. Colle les électrodes comme sur le dessin.
+4. **Soufflez, si vous savez le faire.** Après 30 compressions : tête basculée, menton relevé, pincez son nez, couvrez sa bouche avec la vôtre, et soufflez 1 seconde environ, jusqu’à ce que la poitrine se soulève. Deux fois, en 5 secondes au plus, puis reprenez 30 compressions.
+   - Si vous ne savez pas, si vous ne pouvez pas ou si vous ne vous en sentez pas capable : massez en continu, sans souffler.
+5. **Dès que le défibrillateur arrive**, allumez-le et suivez ses instructions, sans arrêter le massage plus que nécessaire.
+   - Dénudez et séchez la poitrine. Collez les électrodes comme sur le dessin.
    - Personne ne touche la victime pendant l’analyse ni pendant le choc.
-   - Reprends le massage aussitôt après le choc, ou si l’appareil dit qu’aucun choc n’est nécessaire.
-6. **Continue** jusqu’à ce que les secours prennent le relais, ou que la personne respire de nouveau normalement. À plusieurs, relayez-vous toutes les 2 minutes.
+   - Reprenez le massage aussitôt après le choc, ou si l’appareil dit qu’aucun choc n’est nécessaire.
+6. **Continuez** jusqu’à ce que les secours prennent le relais, ou que la personne respire de nouveau normalement. À plusieurs, relayez-vous toutes les 2 minutes.
 
 ### Enfant et bébé
 
-- Commence par 5 insufflations, puis alterne 15 compressions et 2 insufflations.
+- Commencez par 5 insufflations, puis alternez 15 compressions et 2 insufflations.
 - **Enfant** : le talon d’une seule main, enfoncement d’environ 5 cm (un tiers de l’épaisseur de la poitrine).
-- **Bébé de moins de 1 an** : le bout de deux doigts, enfoncement d’environ 4 cm. Garde sa tête dans l’axe du corps, sans la basculer en arrière.
-- Défibrillateur : utilise les électrodes pour enfant s’il y en a. Sinon, colle les électrodes adultes, une au milieu de la poitrine, l’autre au milieu du dos.
-- Si tu ne peux pas souffler, masse quand même.
+- **Bébé de moins de 1 an** : le bout de deux doigts, enfoncement d’environ 4 cm. Gardez sa tête dans l’axe du corps, sans la basculer en arrière.
+- Défibrillateur : utilisez les électrodes pour enfant s’il y en a. Sinon, collez les électrodes adultes, une au milieu de la poitrine, l’autre au milieu du dos.
+- Si vous ne pouvez pas souffler, massez quand même.
 
 ## À ne jamais faire
 
@@ -51,10 +51,10 @@
 
 ## Selon l’endroit
 
-- **Sol mouillé ou métallique** : déplace la personne ou glisse un tissu sous elle si c’est possible, et essuie sa poitrine.
-- **Timbre médicamenteux** à l’endroit d’une électrode : retire-le. **Stimulateur cardiaque** : colle l’électrode à une largeur de main du boîtier.
-- **Sur un lit** : si tu ne peux pas la mettre vite sur un sol dur, les recommandations britanniques de 2025 conseillent de masser sur le lit, en appuyant plus fort, plutôt que de perdre du temps.
-- **Après une noyade** : commence par 5 insufflations (voir [Noyade](noyade.md)).
+- **Sol mouillé ou métallique** : déplacez la personne ou glissez un tissu sous elle si c’est possible, et essuyez sa poitrine.
+- **Timbre médicamenteux** à l’endroit d’une électrode : retirez-le. **Stimulateur cardiaque** : collez l’électrode à une largeur de main du boîtier.
+- **Sur un lit** : si vous ne pouvez pas la mettre vite sur un sol dur, les recommandations britanniques de 2025 conseillent de masser sur le lit, en appuyant plus fort, plutôt que de perdre du temps.
+- **Après une noyade** : commencez par 5 insufflations (voir [Noyade](noyade.md)).
 
 ## Voir aussi
 

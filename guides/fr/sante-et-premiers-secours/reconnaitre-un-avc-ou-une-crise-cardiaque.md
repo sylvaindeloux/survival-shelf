@@ -1,11 +1,11 @@
 # Reconnaître un AVC ou une crise cardiaque
 
-> **En bref** : visage qui se déforme, bras ou jambe qui ne répond plus, parole difficile : c’est peut-être un AVC. Douleur qui serre la poitrine et dure, parfois jusqu’au bras ou à la mâchoire : c’est peut-être un infarctus. Dans les deux cas, appelle le 15 ou le 112 tout de suite, même si ça passe. Mets la personne au repos, ne lui donne rien à boire ni à manger, et note l’heure des premiers signes.
+> **En bref** : visage qui se déforme, bras ou jambe qui ne répond plus, parole difficile : c’est peut-être un AVC. Douleur qui serre la poitrine et dure, parfois jusqu’au bras ou à la mâchoire : c’est peut-être un infarctus. Dans les deux cas, appelez le 15 ou le 112 tout de suite, même si ça passe. Mettez la personne au repos, ne lui donnez rien à boire ni à manger, et notez l’heure des premiers signes.
 
 ## Quand s’en servir
 
-- Les signes apparaissent brutalement. N’attends pas de voir s’ils passent.
-- La personne dit souvent que « ce n’est rien » : ne la crois pas, appelle.
+- Les signes apparaissent brutalement. N’attendez pas de voir s’ils passent.
+- La personne dit souvent que « ce n’est rien » : ne la croyez pas, appelez.
 
 ## Étapes
 
@@ -14,7 +14,7 @@
 - **V**isage paralysé : la bouche se déforme, elle ne peut plus sourire.
 - **I**mpossible de bouger un bras ou une jambe, souvent d’un seul côté.
 - **T**rouble de la parole : elle a du mal à parler ou à comprendre.
-- **É**viter le pire : appelle le 15 ou le 112 immédiatement.
+- **É**viter le pire : appelez le 15 ou le 112 immédiatement.
 
 Autres signes possibles : perte de la vue d’un œil ou des deux, mal de tête violent et inhabituel, perte d’équilibre ou chute inexpliquée.
 
@@ -29,27 +29,27 @@ Si les signes disparaissent en quelques minutes, c’est quand même une urgence
 
 ### Que faire
 
-1. **Appelle le 15 ou le 112** tout de suite. Par SMS au 114 si tu ne peux ni parler ni entendre. Décris les signes et dis depuis quand ils durent.
-2. **Mets la personne au repos.**
+1. **Appelez le 15 ou le 112** tout de suite. Par SMS au 114 si vous ne pouvez ni parler ni entendre. Décrivez les signes et dites depuis quand ils durent.
+2. **Mettez la personne au repos.**
    - AVC : allongée, avec un oreiller sous la tête si possible.
-   - Douleur dans la poitrine : dans la position où elle se sent le mieux, allongée, demi-assise ou assise. Desserre ses vêtements.
-3. **Note l’heure** à laquelle les premiers signes sont apparus.
-4. **Rassemble ses ordonnances** et ses derniers résultats d’analyses pour les secours.
-5. **Réponds aux questions du médecin** : depuis quand, est-ce la première fois, a-t-elle déjà été hospitalisée ou prend-elle un traitement pour ça. Si elle a un traitement prévu pour cette douleur, c’est le médecin du 15 qui dit si elle doit le prendre.
-6. **Reste avec elle** et vérifie régulièrement qu’elle répond et respire.
-7. **Si elle s’effondre**, ne répond plus et ne respire plus ou de façon anormale : commence le massage cardiaque (voir [Arrêt cardiaque](arret-cardiaque.md)).
+   - Douleur dans la poitrine : dans la position où elle se sent le mieux, allongée, demi-assise ou assise. Desserrez ses vêtements.
+3. **Notez l’heure** à laquelle les premiers signes sont apparus.
+4. **Rassemblez ses ordonnances** et ses derniers résultats d’analyses pour les secours.
+5. **Répondez aux questions du médecin** : depuis quand, est-ce la première fois, a-t-elle déjà été hospitalisée ou prend-elle un traitement pour ça. Si elle a un traitement prévu pour cette douleur, c’est le médecin du 15 qui dit si elle doit le prendre.
+6. **Restez avec elle** et vérifiez régulièrement qu’elle répond et respire.
+7. **Si elle s’effondre**, ne répond plus et ne respire plus ou de façon anormale : commencez le massage cardiaque (voir [Arrêt cardiaque](arret-cardiaque.md)).
 
 ## À ne jamais faire
 
 - Attendre que ça passe, ou attendre le lendemain pour voir un médecin.
 - Lui donner à boire ou à manger.
-- Lui donner un médicament de ta propre initiative. En cas de signes d’AVC, aucun médicament, pas même son traitement habituel.
+- Lui donner un médicament de votre propre initiative. En cas de signes d’AVC, aucun médicament, pas même son traitement habituel.
 - La laisser prendre le volant pour aller à l’hôpital.
 - La laisser seule.
 
 ## Selon l’endroit
 
-- **Sans téléphone ni réseau** : envoie quelqu’un alerter et reste avec elle. Si tu es seul, installe-la au repos avant d’aller chercher de l’aide au plus près.
+- **Sans téléphone ni réseau** : envoyez quelqu’un alerter et restez avec elle. Si vous êtes seul, installez-la au repos avant d’aller chercher de l’aide au plus près.
 
 ## Voir aussi
 

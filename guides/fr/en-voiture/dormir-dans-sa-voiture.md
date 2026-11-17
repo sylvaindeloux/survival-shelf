@@ -1,14 +1,14 @@
 # Dormir dans sa voiture
 
-> **En bref** : gare-toi dans un endroit sûr, coupe le moteur avant de dormir et couvre-toi au lieu de te chauffer. Un moteur qui tourne à l’arrêt peut remplir l’habitacle de monoxyde de carbone, un gaz mortel que l’on ne sent pas. Par forte chaleur, ne dors pas dans une voiture fermée.
+> **En bref** : garez-vous dans un endroit sûr, coupez le moteur avant de dormir et couvrez-vous au lieu de vous chauffer. Un moteur qui tourne à l’arrêt peut remplir l’habitacle de monoxyde de carbone, un gaz mortel que l’on ne sent pas. Par forte chaleur, ne dormez pas dans une voiture fermée.
 
 ## Quand s’en servir
 
-- Tu t’endors au volant : une sieste vaut mieux que de continuer.
+- Vous vous endormez au volant : une sieste vaut mieux que de continuer.
 - Route coupée, bouchon sans fin, panne : la nuit se passera dans la voiture.
 - Évacuation sans hébergement pour la nuit.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Des couvertures ou un sac de couchage, des vêtements chauds, un bonnet.
 - De l’eau.
@@ -18,39 +18,39 @@
 
 ### Choisir où s’arrêter
 
-1. **Sors de la circulation** : aire de repos ou de service, parking. Pas sur la bande d’arrêt d’urgence, sauf consigne.
+1. **Sortez de la circulation** : aire de repos ou de service, parking. Pas sur la bande d’arrêt d’urgence, sauf consigne.
 2. **Par grand vent**, pas sous les arbres ni sous un pont.
 3. **Par fortes pluies**, pas le long d’un cours d’eau ni sur une berge.
 4. **Par temps sec**, pas sur de l’herbe sèche ou haute.
 5. **Jamais moteur allumé dans un garage**, même porte ouverte.
-6. **Dis à un proche** où tu es arrêté.
+6. **Dites à un proche** où vous êtes arrêté.
 
 ### Avant de dormir
 
-1. **Coupe le moteur.**
-2. **Couvre tout ton corps**, tête comprise : vêtements, couvertures, sac de couchage.
+1. **Coupez le moteur.**
+2. **Couvrez tout votre corps**, tête comprise : vêtements, couvertures, sac de couchage.
 3. **Serrez-vous** les uns contre les autres si vous êtes plusieurs.
-4. **Renouvelle l’air** de temps en temps en ouvrant une vitre.
+4. **Renouvelez l’air** de temps en temps en ouvrant une vitre.
 
 ### Par grand froid
 
-1. **Chauffe par à-coups, éveillé** : moteur et chauffage environ 10 minutes par heure, une vitre entrouverte, le pot d’échappement dégagé de la neige.
+1. **Chauffez par à-coups, éveillé** : moteur et chauffage environ 10 minutes par heure, une vitre entrouverte, le pot d’échappement dégagé de la neige.
 2. **Dormez à tour de rôle** : quelqu’un veille toujours.
-3. **Bouge** bras, jambes et doigts de temps en temps.
-4. **Surveille les signes d’hypothermie** : frissons, parole difficile, confusion, somnolence.
+3. **Bougez** bras, jambes et doigts de temps en temps.
+4. **Surveillez les signes d’hypothermie** : frissons, parole difficile, confusion, somnolence.
 
 ### Par forte chaleur
 
-1. **Ne dors pas dans une voiture fermée** : sa température peut monter d’environ 11 °C en 10 minutes, et entrouvrir une vitre n’y change presque rien.
-2. **Gare-toi à l’ombre, toutes vitres ouvertes.** Si l’habitacle reste trop chaud, installe-toi dehors, à l’ombre, loin de la circulation.
-3. **Bois régulièrement.**
-4. **Roule aux heures fraîches** plutôt qu’en pleine chaleur.
+1. **Ne dormez pas dans une voiture fermée** : sa température peut monter d’environ 11 °C en 10 minutes, et entrouvrir une vitre n’y change presque rien.
+2. **Garez-vous à l’ombre, toutes vitres ouvertes.** Si l’habitacle reste trop chaud, installez-vous dehors, à l’ombre, loin de la circulation.
+3. **Buvez régulièrement.**
+4. **Roulez aux heures fraîches** plutôt qu’en pleine chaleur.
 
 ### Sieste contre la fatigue au volant
 
-1. **Repère les signes** : bâillements, paupières lourdes, courts endormissements.
-2. **Arrête-toi et dors au moins 20 minutes.** On ne lutte pas contre le sommeil.
-3. **Fais une pause** d’au moins un quart d’heure toutes les deux heures.
+1. **Repérez les signes** : bâillements, paupières lourdes, courts endormissements.
+2. **Arrêtez-vous et dormez au moins 20 minutes.** On ne lutte pas contre le sommeil.
+3. **Faites une pause** d’au moins un quart d’heure toutes les deux heures.
 
 ## À ne jamais faire
 
@@ -58,17 +58,17 @@
 - Faire tourner le moteur dans un garage.
 - Chauffer l’habitacle avec un réchaud ou du charbon de bois.
 - Laisser un enfant ou un animal seul dans la voiture, même endormi, même à l’ombre.
-- Boire de l’alcool pour te réchauffer.
+- Boire de l’alcool pour vous réchauffer.
 
 ## Sans matériel
 
-- Pas de couverture : mets tous tes vêtements, et glisse des journaux, des cartes routières ou les tapis de sol contre toi.
+- Pas de couverture : mettez tous vos vêtements, et glissez des journaux, des cartes routières ou les tapis de sol contre vous.
 
 ## Selon l’endroit
 
-- **Maux de tête, vertiges, nausées, grande faiblesse** : pense au monoxyde de carbone. Coupe le moteur, ouvre tout, sors à l’air frais et appelle le 15 ou le 112.
-- **En France, si tu dors dans ta voiture faute de logement** : appelle le 115, le numéro d’urgence pour les personnes sans abri.
-- **Sur autoroute, en France** : arrête-toi sur une aire, jamais sur la bande d’arrêt d’urgence pour dormir.
+- **Maux de tête, vertiges, nausées, grande faiblesse** : pensez au monoxyde de carbone. Coupez le moteur, ouvrez tout, sortez à l’air frais et appelez le 15 ou le 112.
+- **En France, si vous dormez dans votre voiture faute de logement** : appelez le 115, le numéro d’urgence pour les personnes sans abri.
+- **Sur autoroute, en France** : arrêtez-vous sur une aire, jamais sur la bande d’arrêt d’urgence pour dormir.
 
 ## Voir aussi
 

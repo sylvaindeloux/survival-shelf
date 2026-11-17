@@ -1,14 +1,14 @@
 # S’habiller contre le froid et la pluie
 
-> **En bref** : trois couches valent mieux qu’un gros manteau : une couche contre la peau qui évacue la sueur (laine, soie ou synthétique, pas de coton), une couche qui isole (laine, polaire, duvet), une couche qui coupe le vent et la pluie. Couvre la tête, le cou et les mains, reste au sec et enlève une couche avant de transpirer.
+> **En bref** : trois couches valent mieux qu’un gros manteau : une couche contre la peau qui évacue la sueur (laine, soie ou synthétique, pas de coton), une couche qui isole (laine, polaire, duvet), une couche qui coupe le vent et la pluie. Couvrez la tête, le cou et les mains, restez au sec et enlevez une couche avant de transpirer.
 
 ## Quand s’en servir
 
-- Tu dois sortir, marcher ou travailler dehors par temps froid, humide ou venteux.
-- Le chauffage est coupé et tu dois t’habiller chaudement à l’intérieur.
+- Vous devez sortir, marcher ou travailler dehors par temps froid, humide ou venteux.
+- Le chauffage est coupé et vous devez vous habiller chaudement à l’intérieur.
 - Pour préparer les vêtements du sac d’évacuation.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Sous-vêtements chauds : laine, soie ou polypropylène.
 - Pull en laine, polaire ou doudoune.
@@ -18,33 +18,33 @@
 
 ## Étapes
 
-1. **Mets une première couche qui garde la peau sèche** : laine, soie ou polypropylène. Évite le coton contre la peau : il absorbe l’humidité et garde moins bien la chaleur.
-2. **Ajoute une couche isolante** : laine, polaire ou duvet. Plusieurs couches fines tiennent plus chaud qu’une seule épaisse.
-3. **Termine par une couche extérieure** qui arrête le vent et la pluie, au tissage serré, de préférence déperlante.
-4. **Garde les vêtements amples**, sans rien qui serre.
-5. **Couvre la tête et le cou** : bonnet, écharpe ou cagoule qui remonte sur la bouche et le nez.
-6. **Protège les mains et les pieds** : des moufles tiennent plus chaud que des gants, les manches doivent bien fermer aux poignets, les chaussures et le manteau doivent résister à l’eau.
-7. **Règle les couches en permanence.** Ouvre ou enlève une couche dès que tu as chaud, avant de transpirer, et remets-la à l’arrêt.
-8. **Change-toi dès que tu es mouillé**, par la pluie ou par la sueur. Un corps mouillé se refroidit très vite.
-9. **Entretiens tes vêtements** : garde-les propres et secs, répare les accrocs. Un vêtement sale ou tassé isole moins bien.
+1. **Mettez une première couche qui garde la peau sèche** : laine, soie ou polypropylène. Évitez le coton contre la peau : il absorbe l’humidité et garde moins bien la chaleur.
+2. **Ajoutez une couche isolante** : laine, polaire ou duvet. Plusieurs couches fines tiennent plus chaud qu’une seule épaisse.
+3. **Terminez par une couche extérieure** qui arrête le vent et la pluie, au tissage serré, de préférence déperlante.
+4. **Gardez les vêtements amples**, sans rien qui serre.
+5. **Couvrez la tête et le cou** : bonnet, écharpe ou cagoule qui remonte sur la bouche et le nez.
+6. **Protégez les mains et les pieds** : des moufles tiennent plus chaud que des gants, les manches doivent bien fermer aux poignets, les chaussures et le manteau doivent résister à l’eau.
+7. **Réglez les couches en permanence.** Ouvrez ou enlevez une couche dès que vous avez chaud, avant de transpirer, et remettez-la à l’arrêt.
+8. **Changez-vous dès que vous êtes mouillé**, par la pluie ou par la sueur. Un corps mouillé se refroidit très vite.
+9. **Entretenez vos vêtements** : gardez-les propres et secs, réparez les accrocs. Un vêtement sale ou tassé isole moins bien.
 
 ## À ne jamais faire
 
-- Garder un vêtement mouillé sur toi quand tu as de quoi te changer.
+- Garder un vêtement mouillé sur vous quand vous avez de quoi vous changer.
 - Partir sans bonnet ni gants « parce qu’il ne fait pas si froid » : le vent et la pluie changent tout.
 - Serrer trop fort chaussures et gants.
 - Faire sécher des vêtements tout près d’une flamme ou d’un chauffage d’appoint.
 
 ## Sans matériel
 
-- Pas de vêtement technique : empile ce que tu as : T-shirts, pulls, deux pantalons.
+- Pas de vêtement technique : empilez ce que vous avez : T-shirts, pulls, deux pantalons.
 - Du papier journal glissé sous la veste ajoute une couche d’isolant.
-- Une couverture de survie, par-dessus tes vêtements, coupe le vent et la pluie.
+- Une couverture de survie, par-dessus vos vêtements, coupe le vent et la pluie.
 
 ## Selon l’endroit
 
-- **Chez toi sans chauffage** : habille-toi comme dehors, avec bonnet, chaussettes et chaussons.
-- **En voiture** : garde l’hiver un bonnet, des gants et une couverture dans le coffre.
+- **Chez vous sans chauffage** : habillez-vous comme dehors, avec bonnet, chaussettes et chaussons.
+- **En voiture** : gardez l’hiver un bonnet, des gants et une couverture dans le coffre.
 - **Avec un bébé** : plusieurs couches fines plutôt qu’une épaisse, et un bonnet.
 - **Sous la pluie par temps doux** : on peut se refroidir dangereusement bien au-dessus de 0 °C quand on est mouillé et exposé au vent.
 

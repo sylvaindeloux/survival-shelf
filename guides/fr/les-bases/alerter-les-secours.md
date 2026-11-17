@@ -1,56 +1,56 @@
 # Alerter les secours
 
-> **En bref** : mets-toi en sécurité, puis appelle le 112 (ou le 15, le 17, le 18). Dis où tu es, ce qui se passe, combien de personnes sont touchées et dans quel état. Réponds aux questions et ne raccroche jamais le premier. Si tu ne peux ni parler ni entendre, envoie un SMS au 114.
+> **En bref** : mettez-vous en sécurité, puis appelez le 112 (ou le 15, le 17, le 18). Dites où vous êtes, ce qui se passe, combien de personnes sont touchées et dans quel état. Répondez aux questions et ne raccrochez jamais le premier. Si vous ne pouvez ni parler ni entendre, envoyez un SMS au 114.
 
 ## Quand s’en servir
 
 - Une vie est en danger : malaise, blessure grave, incendie, noyade, accident, agression.
-- Tu es témoin d’un danger pour d’autres personnes.
-- Dans le doute, appelle : c’est la personne au bout du fil qui décide de l’aide à envoyer.
+- Vous êtes témoin d’un danger pour d’autres personnes.
+- Dans le doute, appelez : c’est la personne au bout du fil qui décide de l’aide à envoyer.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Un téléphone, fixe ou portable. Les appels d’urgence sont gratuits. Avec une carte SIM, ils passent même sans crédit ni forfait.
-- Ton adresse exacte, ou des repères pour te situer.
+- Votre adresse exacte, ou des repères pour vous situer.
 
 ## Étapes
 
-1. **Mets-toi en sécurité**, toi et les autres, avant d’appeler : loin du feu, de la fumée, de la route.
-2. **Compose le bon numéro** :
+1. **Mettez-vous en sécurité**, vous et les autres, avant d’appeler : loin du feu, de la fumée, de la route.
+2. **Composez le bon numéro** :
    - **112** : toutes les urgences, partout dans l’Union européenne.
    - **15** : Samu, urgence médicale.
    - **18** : pompiers, incendie, accident, personne en péril.
    - **17** : police ou gendarmerie.
-   - **114** : par SMS, pour les personnes sourdes ou malentendantes, ou quand tu ne peux pas parler.
+   - **114** : par SMS, pour les personnes sourdes ou malentendantes, ou quand vous ne pouvez pas parler.
    - **196** : sauvetage en mer, depuis la côte. En mer, canal 16 de la radio VHF.
-3. **Dis où tu es** : commune, rue, numéro, étage, code d’entrée. Hors agglomération, donne des repères : route, borne, sentier, bâtiment visible.
-4. **Dis ce qui se passe** : malaise, chute, feu, accident de la route.
-5. **Dis combien de personnes sont touchées et leur état apparent** : conscientes ou non, respirent ou non, saignent.
-6. **Donne le numéro d’où tu appelles**, pour qu’on puisse te rappeler.
-7. **Réponds aux questions et applique les consignes** : on peut te guider pour les premiers gestes.
-8. **Ne raccroche jamais le premier.** Attends qu’on te dise que tu peux le faire.
-9. **Garde ton téléphone libre et allumé.** Les secours peuvent te rappeler, parfois depuis le 0 800 112 112 : décroche.
+3. **Dites où vous êtes** : commune, rue, numéro, étage, code d’entrée. Hors agglomération, donnez des repères : route, borne, sentier, bâtiment visible.
+4. **Dites ce qui se passe** : malaise, chute, feu, accident de la route.
+5. **Dites combien de personnes sont touchées et leur état apparent** : conscientes ou non, respirent ou non, saignent.
+6. **Donnez le numéro d’où vous appelez**, pour qu’on puisse vous rappeler.
+7. **Répondez aux questions et appliquez les consignes** : on peut vous guider pour les premiers gestes.
+8. **Ne raccrochez jamais le premier.** Attendez qu’on vous dise que vous pouvez le faire.
+9. **Gardez votre téléphone libre et allumé.** Les secours peuvent vous rappeler, parfois depuis le 0 800 112 112 : décrochez.
 
-Tu as appelé par erreur ? Ne raccroche pas : explique simplement que tout va bien.
+Vous avez appelé par erreur ? Ne raccrochez pas : expliquez simplement que tout va bien.
 
 ## À ne jamais faire
 
 - Raccrocher avant d’y être invité.
-- Appeler un numéro d’urgence pour un simple renseignement : tu bloques une ligne.
+- Appeler un numéro d’urgence pour un simple renseignement : vous bloquez une ligne.
 - Supposer que quelqu’un d’autre a déjà appelé.
-- Te remettre en danger pour téléphoner.
+- Vous remettre en danger pour téléphoner.
 
 ## Sans matériel
 
-- **Pas de réseau** : déplace-toi vers un endroit plus haut ou plus dégagé si tu peux le faire sans danger, ou envoie quelqu’un chercher de l’aide.
-- **Impossible de parler** (danger, blessure, handicap) : envoie un SMS au 114 avec ton nom, ton adresse précise et la raison de ton appel.
-- **Pas de téléphone** : demande à un voisin, un passant, un commerce. Un sifflet ou des appels répétés aident à te faire repérer.
+- **Pas de réseau** : déplacez-vous vers un endroit plus haut ou plus dégagé si vous pouvez le faire sans danger, ou envoyez quelqu’un chercher de l’aide.
+- **Impossible de parler** (danger, blessure, handicap) : envoyez un SMS au 114 avec votre nom, votre adresse précise et la raison de votre appel.
+- **Pas de téléphone** : demandez à un voisin, un passant, un commerce. Un sifflet ou des appels répétés aident à vous faire repérer.
 
 ## Selon l’endroit
 
-- **À l’étranger** : le 112 marche dans toute l’Union européenne, depuis un fixe ou un portable, et dans quelques autres pays. Ailleurs, note le numéro local avant de partir (911 en Amérique du Nord).
+- **À l’étranger** : le 112 marche dans toute l’Union européenne, depuis un fixe ou un portable, et dans quelques autres pays. Ailleurs, notez le numéro local avant de partir (911 en Amérique du Nord).
 - **En mer** : canal 16 de la VHF. Le 196 s’utilise depuis la côte.
-- **En montagne ou en forêt** : avant de partir, dis à quelqu’un où tu vas et quand tu rentres. Sans réseau, c’est cette personne qui donnera l’alerte.
+- **En montagne ou en forêt** : avant de partir, dites à quelqu’un où vous allez et quand vous rentrez. Sans réseau, c’est cette personne qui donnera l’alerte.
 
 ## Voir aussi
 

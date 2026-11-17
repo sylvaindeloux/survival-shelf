@@ -1,6 +1,6 @@
 # Préparer son logement
 
-> **En bref** : repère où couper l’eau, le gaz et l’électricité, installe des détecteurs de fumée et de monoxyde de carbone, fixe ce qui peut tomber et garde les sorties dégagées. Choisis la pièce où te mettre à l’abri et l’endroit où ranger tes réserves et ton sac d’évacuation. Fais-le maintenant : le jour de la crise, il sera trop tard.
+> **En bref** : repérez où couper l’eau, le gaz et l’électricité, installez des détecteurs de fumée et de monoxyde de carbone, fixez ce qui peut tomber et gardez les sorties dégagées. Choisissez la pièce où vous mettre à l’abri et l’endroit où ranger vos réserves et votre sac d’évacuation. Faites-le maintenant : le jour de la crise, il sera trop tard.
 
 ## Quand s’en servir
 
@@ -8,7 +8,7 @@
 - À l’emménagement, ou après des travaux.
 - Quand une vigilance météo annonce une tempête, une crue ou un grand froid.
 
-## Ce qu’il te faut
+## Ce qu’il vous faut
 
 - Une heure ou deux, avec les personnes du foyer.
 - Des étiquettes et un feutre, pour marquer les robinets et le disjoncteur.
@@ -19,38 +19,38 @@
 
 ### Connaître les risques
 
-1. **Demande à ta mairie ou à ta préfecture** les risques connus dans ta commune : inondation, feu de forêt, séisme, site industriel, barrage.
-2. **Regarde ton logement avec ces risques en tête** : rez-de-chaussée ou sous-sol inondable, arbres proches, végétation sèche autour de la maison.
+1. **Demandez à votre mairie ou à votre préfecture** les risques connus dans votre commune : inondation, feu de forêt, séisme, site industriel, barrage.
+2. **Regardez votre logement avec ces risques en tête** : rez-de-chaussée ou sous-sol inondable, arbres proches, végétation sèche autour de la maison.
 
 ### Les réseaux
 
-1. **Repère le robinet de gaz, le robinet d’arrêt d’eau et le disjoncteur général.** Étiquette-les.
-2. **Montre à chacun, adultes et enfants, comment les fermer** (voir [Couper le gaz, l’eau et l’électricité](../feu-et-energie/couper-le-gaz-l-eau-et-l-electricite.md)).
-3. **Fais la liste de ce qui dépend du courant** : chauffage, cuisson, appareil médical, porte de garage, portail, volets roulants, serrure électrique. Apprends à ouvrir les accès à la main.
+1. **Repérez le robinet de gaz, le robinet d’arrêt d’eau et le disjoncteur général.** Étiquetez-les.
+2. **Montrez à chacun, adultes et enfants, comment les fermer** (voir [Couper le gaz, l’eau et l’électricité](../feu-et-energie/couper-le-gaz-l-eau-et-l-electricite.md)).
+3. **Faites la liste de ce qui dépend du courant** : chauffage, cuisson, appareil médical, porte de garage, portail, volets roulants, serrure électrique. Apprenez à ouvrir les accès à la main.
 
 ### Le feu et le monoxyde de carbone
 
-1. **Installe des détecteurs de fumée** et teste-les chaque mois (voir [Incendie dans le logement](../catastrophes/incendie-dans-le-logement.md)).
-2. **Ajoute un détecteur de monoxyde de carbone à piles** si tu as un appareil à combustion : chaudière, poêle, cheminée, chauffe-eau à gaz.
-3. **Fais vérifier chauffage et conduits** par un professionnel chaque année, et ne bouche jamais les grilles d’aération.
-4. **Garde un extincteur** à un endroit que tout le foyer connaît.
+1. **Installez des détecteurs de fumée** et testez-les chaque mois (voir [Incendie dans le logement](../catastrophes/incendie-dans-le-logement.md)).
+2. **Ajoutez un détecteur de monoxyde de carbone à piles** si vous avez un appareil à combustion : chaudière, poêle, cheminée, chauffe-eau à gaz.
+3. **Faites vérifier chauffage et conduits** par un professionnel chaque année, et ne bouchez jamais les grilles d’aération.
+4. **Gardez un extincteur** à un endroit que tout le foyer connaît.
 
 ### Ce qui peut tomber, s’envoler ou être inondé
 
-1. **Fixe les meubles hauts**, les étagères, la télévision, les miroirs et le chauffe-eau. Range en bas les objets lourds ou fragiles.
-2. **Avant une tempête**, rentre ou attache ce que le vent peut emporter, élague les branches dangereuses et nettoie les gouttières.
-3. **En zone inondable**, monte à l’étage ou en hauteur les papiers, les objets de valeur, les médicaments et les réserves, dans des boîtes étanches.
-4. **En zone de feux de forêt**, débroussaille autour de la maison (voir [Feu de forêt](../catastrophes/feu-de-foret.md)).
+1. **Fixez les meubles hauts**, les étagères, la télévision, les miroirs et le chauffe-eau. Rangez en bas les objets lourds ou fragiles.
+2. **Avant une tempête**, rentrez ou attachez ce que le vent peut emporter, élaguez les branches dangereuses et nettoyez les gouttières.
+3. **En zone inondable**, montez à l’étage ou en hauteur les papiers, les objets de valeur, les médicaments et les réserves, dans des boîtes étanches.
+4. **En zone de feux de forêt**, débroussaillez autour de la maison (voir [Feu de forêt](../catastrophes/feu-de-foret.md)).
 
 ### L’abri, les réserves et les sorties
 
-1. **Choisis la pièce où te confiner** : en étage, avec le moins de fenêtres possible. Ranges-y du ruban adhésif et des linges (voir [Se confiner chez soi](se-confiner-chez-soi.md)).
-2. **Range tes réserves** d’eau et de nourriture dans un endroit frais, sec et accessible : au moins 6 litres d’eau par personne, c’est le minimum officiel pour 3 jours.
-3. **Pose le sac d’évacuation près de la sortie**, à un endroit que tu retrouves dans le noir.
+1. **Choisissez la pièce où vous confiner** : en étage, avec le moins de fenêtres possible. Rangez-y du ruban adhésif et des linges (voir [Se confiner chez soi](se-confiner-chez-soi.md)).
+2. **Rangez vos réserves** d’eau et de nourriture dans un endroit frais, sec et accessible : au moins 6 litres d’eau par personne, c’est le minimum officiel pour 3 jours.
+3. **Posez le sac d’évacuation près de la sortie**, à un endroit que vous retrouvez dans le noir.
 4. **Près de chaque lit** : une lampe, des chaussures solides, les lunettes.
-5. **Repère deux façons de sortir** du logement, et garde-les dégagées.
-6. **Confie un double des clés** à une personne de confiance.
-7. **Photographie tes biens de valeur**, note leurs numéros de série et garde une copie de tes contrats d’assurance avec tes papiers importants.
+5. **Repérez deux façons de sortir** du logement, et gardez-les dégagées.
+6. **Confiez un double des clés** à une personne de confiance.
+7. **Photographiez vos biens de valeur**, notez leurs numéros de série et gardez une copie de vos contrats d’assurance avec vos papiers importants.
 
 ## À ne jamais faire
 
@@ -63,7 +63,7 @@
 
 - **En appartement** : voir [Tenir en appartement](tenir-en-appartement.md).
 - **En maison** : voir [Tenir en maison](tenir-en-maison.md).
-- **Locataire ou copropriétaire** : demande au propriétaire, au gardien ou au syndic où se trouvent les robinets et les coupures de l’immeuble.
+- **Locataire ou copropriétaire** : demandez au propriétaire, au gardien ou au syndic où se trouvent les robinets et les coupures de l’immeuble.
 
 ## Voir aussi
 

@@ -1,6 +1,6 @@
 # Rencontrer un animal sauvage
 
-> **En bref** : la plupart des animaux sauvages t’évitent. Fais un peu de bruit pour ne pas les surprendre, garde tes distances, ne les nourris jamais et tiens ton chien près de toi. Face à un animal : reste calme, parle, recule lentement sans courir et laisse-lui toujours une issue. Lave longuement toute morsure à l’eau savonneuse et montre-la vite à un médecin.
+> **En bref** : la plupart des animaux sauvages vous évitent. Faites un peu de bruit pour ne pas les surprendre, gardez vos distances, ne les nourrissez jamais et tenez votre chien près de vous. Face à un animal : restez calme, parlez, reculez lentement sans courir et laissez-lui toujours une issue. Lavez longuement toute morsure à l’eau savonneuse et montrez-la vite à un médecin.
 
 ## Quand s’en servir
 
@@ -12,63 +12,63 @@
 
 ### Pour éviter la mauvaise rencontre
 
-1. **Fais un peu de bruit** en marchant : un animal qui t’entend venir peut s’éloigner.
-2. **Garde tes distances.** N’approche pas un animal, même de loin, même pour une photo.
-3. **Ne suis pas des traces** et ne te place jamais entre une mère et ses petits.
-4. **Ne nourris aucun animal** et remporte tous tes déchets.
-5. **Garde ton chien près de toi**, en laisse là où c’est demandé : un chien qui divague peut provoquer un animal et le ramener vers toi.
-6. **Ne caresse pas un animal sauvage ou errant**, même calme.
+1. **Faites un peu de bruit** en marchant : un animal qui vous entend venir peut s’éloigner.
+2. **Gardez vos distances.** N’approchez pas un animal, même de loin, même pour une photo.
+3. **Ne suivez pas des traces** et ne vous placez jamais entre une mère et ses petits.
+4. **Ne nourrissez aucun animal** et remportez tous vos déchets.
+5. **Gardez votre chien près de vous**, en laisse là où c’est demandé : un chien qui divague peut provoquer un animal et le ramener vers vous.
+6. **Ne caressez pas un animal sauvage ou errant**, même calme.
 
 ### Chien de protection de troupeau
 
-1. **Contourne largement le troupeau.** Des panneaux annoncent en général la présence des chiens.
-2. **À vélo, descends** avant d’arriver près du troupeau.
-3. **Reste calme et passif** quand le chien approche : il vient te flairer pour t’identifier, puis il retourne à son troupeau. Il peut aussi chercher à t’impressionner.
-4. **S’il t’impressionne, fais lentement demi-tour.**
-5. **Ne tente pas** de le nourrir, de le caresser ou de le photographier, ni lui, ni les brebis, ni les agneaux.
+1. **Contournez largement le troupeau.** Des panneaux annoncent en général la présence des chiens.
+2. **À vélo, descendez** avant d’arriver près du troupeau.
+3. **Restez calme et passif** quand le chien approche : il vient vous flairer pour vous identifier, puis il retourne à son troupeau. Il peut aussi chercher à vous impressionner.
+4. **S’il vous impressionne, faites lentement demi-tour.**
+5. **Ne tentez pas** de le nourrir, de le caresser ou de le photographier, ni lui, ni les brebis, ni les agneaux.
 
 ### Ours
 
-1. **À moins de 50 mètres, aide-le à t’identifier** : montre-toi calmement, bouge, parle.
-2. **Éloigne-toi peu à peu**, en t’écartant du chemin qu’il pourrait prendre pour fuir.
-3. **Ne cours pas.**
-4. **Un ours dressé sur ses pattes arrière n’est pas agressif** : il est curieux et cherche à t’identifier.
+1. **À moins de 50 mètres, aidez-le à vous identifier** : montrez-vous calmement, bougez, parlez.
+2. **Éloignez-vous peu à peu**, en vous écartant du chemin qu’il pourrait prendre pour fuir.
+3. **Ne courez pas.**
+4. **Un ours dressé sur ses pattes arrière n’est pas agressif** : il est curieux et cherche à vous identifier.
 
 ### Loup
 
 1. **Le loup évite l’homme** : en France, il s’est éloigné ou a fui dans près de 8 rencontres sur 10 étudiées entre 1993 et 2020. Sur environ 4 000 comportements relevés, 10 ont été perçus comme agressifs, sans aucun blessé.
-2. **Applique les règles générales** : distance, calme, pas de nourriture, chien tenu près de toi.
+2. **Appliquez les règles générales** : distance, calme, pas de nourriture, chien tenu près de vous.
 
 ### Sanglier
 
-1. **Ne t’en approche pas** et ne le nourris pas.
-2. **Fais du bruit pour l’éloigner**, sans te mettre en danger.
+1. **Ne vous en approchez pas** et ne le nourrissez pas.
+2. **Faites du bruit pour l’éloigner**, sans vous mettre en danger.
 
 ### Serpent
 
-1. **Porte des chaussures fermées** et des vêtements couvrants.
-2. **Regarde où tu poses les mains et les pieds**, et ne fouille pas la végétation à mains nues.
-3. **Morsure** : appelle le 15 ou le 112, immobilise le membre, retire bagues et bracelets. N’incise pas, n’aspire pas, ne pose ni garrot ni glace (voir [Morsures et piqûres](../sante-et-premiers-secours/morsures-et-piqures.md)).
+1. **Portez des chaussures fermées** et des vêtements couvrants.
+2. **Regardez où vous posez les mains et les pieds**, et ne fouillez pas la végétation à mains nues.
+3. **Morsure** : appelez le 15 ou le 112, immobilisez le membre, retirez bagues et bracelets. N’incisez pas, n’aspirez pas, ne posez ni garrot ni glace (voir [Morsures et piqûres](../sante-et-premiers-secours/morsures-et-piqures.md)).
 
-### Si tu es mordu ou griffé
+### Si vous êtes mordu ou griffé
 
-1. **Lave abondamment la plaie** à l’eau savonneuse.
-2. **Consulte un médecin le plus vite possible**, même si tu es vacciné contre la rage. Elle se transmet par la salive (morsure, griffure, plaie léchée) et ne se soigne plus une fois les premiers signes apparus.
+1. **Lavez abondamment la plaie** à l’eau savonneuse.
+2. **Consultez un médecin le plus vite possible**, même si vous êtes vacciné contre la rage. Elle se transmet par la salive (morsure, griffure, plaie léchée) et ne se soigne plus une fois les premiers signes apparus.
 
 ## À ne jamais faire
 
 - Courir.
-- T’approcher de petits, même s’ils semblent seuls.
-- Nourrir un animal ou laisser de la nourriture et des déchets derrière toi.
-- Lâcher ton chien près d’un troupeau ou dans une zone à ours.
+- Vous approcher de petits, même s’ils semblent seuls.
+- Nourrir un animal ou laisser de la nourriture et des déchets derrière vous.
+- Lâcher votre chien près d’un troupeau ou dans une zone à ours.
 - Caresser un animal errant en voyage.
 
 ## Selon l’endroit
 
 - **Dans les Pyrénées** : une quarantaine d’ours bruns y vivaient en 2019. Les comportements agressifs sont très rares et se limitent le plus souvent à une charge d’intimidation.
-- **En Amérique du Nord** : ne cours pas, ne grimpe pas à un arbre, garde ton sac sur le dos. Le service des parcs nationaux distingue deux cas si l’ours attaque :
-  - ours brun ou grizzly : fais le mort, à plat ventre, mains croisées sur la nuque, jambes écartées, et ne te défends que si l’attaque continue ;
-  - ours noir : ne fais pas le mort, rejoins un lieu sûr, sinon défends-toi.
+- **En Amérique du Nord** : ne courez pas, ne grimpez pas à un arbre, gardez votre sac sur le dos. Le service des parcs nationaux distingue deux cas si l’ours attaque :
+  - ours brun ou grizzly : faites le mort, à plat ventre, mains croisées sur la nuque, jambes écartées, et ne vous défendez que si l’attaque continue ;
+  - ours noir : ne faites pas le mort, rejoignez un lieu sûr, sinon défendez-vous.
 - **Sous les tropiques** : voir [Forêt tropicale](../milieux-hostiles/foret-tropicale.md).
 
 ## Voir aussi

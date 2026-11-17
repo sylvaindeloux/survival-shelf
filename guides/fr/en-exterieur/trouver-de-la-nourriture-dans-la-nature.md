@@ -1,11 +1,11 @@
 # Trouver de la nourriture dans la nature
 
-> **En bref** : la nourriture passe en dernier. On tient environ 3 semaines sans manger, mais seulement 3 jours sans eau et 3 heures sans abri par grand froid. Ne mange une plante, une baie ou un champignon que si tu le connais parfaitement : au moindre doute, ne mange pas. Garde tes forces pour l’abri, l’eau et les signaux, et rationne ce que tu as emporté.
+> **En bref** : la nourriture passe en dernier. On tient environ 3 semaines sans manger, mais seulement 3 jours sans eau et 3 heures sans abri par grand froid. Ne mangez une plante, une baie ou un champignon que si vous le connaissez parfaitement : au moindre doute, ne mangez pas. Gardez vos forces pour l’abri, l’eau et les signaux, et rationnez ce que vous avez emporté.
 
 ## Quand s’en servir
 
-- Tu es bloqué dehors plus longtemps que prévu et tes provisions baissent.
-- Tu te demandes si tu peux manger ce que tu trouves autour de toi.
+- Vous êtes bloqué dehors plus longtemps que prévu et vos provisions baissent.
+- Vous vous demandez si vous pouvez manger ce que vous trouvez autour de vous.
 
 Cette fiche n’apprend pas à reconnaître les plantes et les champignons : sans connaissance locale, le risque d’erreur mortelle est trop grand.
 
@@ -13,27 +13,27 @@ Cette fiche n’apprend pas à reconnaître les plantes et les champignons : san
 
 ### D’abord le reste
 
-1. **Occupe-toi de l’abri, de l’eau et des signaux** avant de chercher à manger : ce sont eux qui te gardent en vie les premiers jours.
-2. **Fais l’inventaire** de ce que tu as et répartis-le sur plusieurs jours (voir [Rationner la nourriture](../nourriture/rationner-la-nourriture.md)).
-3. **Bois.** Traite toujours l’eau trouvée dehors (voir [Trouver de l’eau dehors](../eau/trouver-de-l-eau-dehors.md)).
+1. **Occupez-vous de l’abri, de l’eau et des signaux** avant de chercher à manger : ce sont eux qui vous gardent en vie les premiers jours.
+2. **Faites l’inventaire** de ce que vous avez et répartissez-le sur plusieurs jours (voir [Rationner la nourriture](../nourriture/rationner-la-nourriture.md)).
+3. **Buvez.** Traitez toujours l’eau trouvée dehors (voir [Trouver de l’eau dehors](../eau/trouver-de-l-eau-dehors.md)).
 
-### Si tu cueilles quand même
+### Si vous cueillez quand même
 
-1. **Ne ramasse que ce que tu connais parfaitement.** N’improvise pas.
-2. **Au moindre doute, ne mange pas.**
-3. **Ne te fie pas à une application de reconnaissance** sur téléphone.
-4. **Ne cueille pas par brassées** : tu risques de mêler une plante toxique aux autres.
-5. **Photographie ta cueillette** avant de la préparer : en cas d’intoxication, la photo aide à identifier ce que tu as mangé.
-6. **Arrête tout de suite de manger** si le goût est amer ou désagréable.
-7. **Lave soigneusement, ou mieux, fais cuire** les baies, les plantes et les champignons qui poussent près du sol : ils peuvent porter les œufs d’un parasite, le ténia du renard. La congélation ne les tue pas.
-8. **Champignons** : seulement ceux que tu connais parfaitement, toujours cuits au moins 20 minutes, et jamais pour un jeune enfant.
-9. **Lave-toi les mains** après avoir touché la terre.
+1. **Ne ramassez que ce que vous connaissez parfaitement.** N’improvisez pas.
+2. **Au moindre doute, ne mangez pas.**
+3. **Ne vous fiez pas à une application de reconnaissance** sur téléphone.
+4. **Ne cueillez pas par brassées** : vous risquez de mêler une plante toxique aux autres.
+5. **Photographiez votre cueillette** avant de la préparer : en cas d’intoxication, la photo aide à identifier ce que vous avez mangé.
+6. **Arrêtez tout de suite de manger** si le goût est amer ou désagréable.
+7. **Lavez soigneusement, ou mieux, faites cuire** les baies, les plantes et les champignons qui poussent près du sol : ils peuvent porter les œufs d’un parasite, le ténia du renard. La congélation ne les tue pas.
+8. **Champignons** : seulement ceux que vous connaissez parfaitement, toujours cuits au moins 20 minutes, et jamais pour un jeune enfant.
+9. **Lavez-vous les mains** après avoir touché la terre.
 
 ### Si quelqu’un se sent mal après avoir mangé
 
-1. **Appelle tout de suite un centre antipoison ou un médecin**, sans attendre que les signes s’aggravent.
-2. **Appelle le 15** si la personne respire mal, perd connaissance ou ne réagit plus.
-3. **Garde la photo et les restes** de ce qui a été mangé, et note l’heure du repas.
+1. **Appelez tout de suite un centre antipoison ou un médecin**, sans attendre que les signes s’aggravent.
+2. **Appelez le 15** si la personne respire mal, perd connaissance ou ne réagit plus.
+3. **Gardez la photo et les restes** de ce qui a été mangé, et notez l’heure du repas.
 
 ## À ne jamais faire
 
@@ -41,12 +41,12 @@ Cette fiche n’apprend pas à reconnaître les plantes et les champignons : san
 - Goûter pour vérifier.
 - Donner des champignons cueillis à un jeune enfant.
 - Manger crus des champignons sauvages.
-- T’épuiser à chercher de la nourriture alors que tu n’as ni abri ni eau.
+- Vous épuiser à chercher de la nourriture alors que vous n’avez ni abri ni eau.
 
 ## Selon l’endroit
 
 - **En France** : un pharmacien ou une association de mycologie peut contrôler une cueillette de champignons. En six mois, de juillet à décembre 2024, 1 363 personnes ont appelé un centre antipoison après en avoir mangé, et trois en sont mortes. Le colchique, pris pour de l’ail des ours, a causé deux morts entre 2020 et 2022.
-- **À l’étranger** : les espèces changent d’une région à l’autre. Une plante qui ressemble à celle que tu connais chez toi peut être toxique.
+- **À l’étranger** : les espèces changent d’une région à l’autre. Une plante qui ressemble à celle que vous connaissez chez vous peut être toxique.
 
 ## Voir aussi
 
