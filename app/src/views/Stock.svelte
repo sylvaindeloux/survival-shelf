@@ -122,7 +122,7 @@
 
   // Food: the water card comes first and holds the water goal of the tier, even before any water product.
   const showWater = $derived(kind === 'food' && (!filtering || groups.some((group) => group.category === 'water')));
-  const water = $derived(waterGoal(app.autonomy, tier));
+  const water = $derived(waterGoal(app.shelf, app.autonomy, tier));
   const waterItems = $derived(groups.find((group) => group.category === 'water')?.items ?? []);
   const otherGroups = $derived(kind === 'food' ? groups.filter((group) => group.category !== 'water') : groups);
 

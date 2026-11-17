@@ -198,13 +198,48 @@ describe('plan and tiers', () => {
     shelf = addLot(shelf, { product: 'Water', qty: 54, expires: '', location: '' }, TODAY);
     shelf = addLot(shelf, { product: 'Water', qty: 10, expires: inDays(-1), location: '' }, TODAY); // expired: not counted
     let autonomy = computeAutonomy(shelf, TODAY);
-    expect(waterGoal(autonomy, 7)).toEqual({ stored: { have: 54, target: 35 }, treatment: null });
-    expect(waterGoal(autonomy, 30)).toEqual({ stored: { have: 54, target: 150 }, treatment: null });
+    expect(waterGoal(shelf, autonomy, 7)).toEqual({ stored: { have: 54, target: 35 }, treatment: null });
+    expect(waterGoal(shelf, autonomy, 30)).toEqual({ stored: { have: 54, target: 150 }, treatment: null });
 
     shelf = addLot(shelf, { product: 'Filter', qty: 1, expires: '', location: '' }, TODAY);
     shelf = addLot(shelf, { product: 'Water', qty: 146, expires: '', location: '' }, TODAY); // 200 L: 50 L beyond the month
     autonomy = computeAutonomy(shelf, TODAY);
-    expect(waterGoal(autonomy, 365)).toEqual({ stored: { have: 200, target: 150 }, treatment: { have: 1050, target: 1675 } });
+    expect(waterGoal(shelf, autonomy, 365)).toEqual({ stored: { have: 200, target: 150 }, treatment: { have: 1050, target: 1675 } });
+  });
+
+  it('plans stored water for the whole tier when the list has no water treatment', () => {
+    let shelf = household(); // 5 L a day, Water but no filter
+    shelf = addLot(shelf, { product: 'Water', qty: 100, expires: '', location: '' }, TODAY); // 20 days
+    const autonomy = computeAutonomy(shelf, TODAY);
+    const year = tierStatus(shelf, autonomy, TODAY, 365);
+    expect(year.water).toMatchObject({ days: 20, missingStored: 1725, missingTreatment: 0 });
+    expect(year.missing.filter((line) => line.liters).map((line) => [line.product.name, line.missing])).toEqual([['Water', 1725]]);
+    expect(waterGoal(shelf, autonomy, 365)).toEqual({ stored: { have: 100, target: 1825 }, treatment: null });
+
+    // A year of stored water completes the water of the tier.
+    shelf = addLot(shelf, { product: 'Water', qty: 1725, expires: '', location: '' }, TODAY);
+    expect(tierStatus(shelf, computeAutonomy(shelf, TODAY), TODAY, 365).water).toMatchObject({ missingStored: 0, missingTreatment: 0 });
+  });
+
+  it('buys the first tier of water as the first stored water product, the rest as the second', () => {
+    let shelf = household(); // 5 L a day, tiers of 3, 7, 30 and 365 days
+    shelf = { ...shelf, products: shelf.products.filter((product) => product.name !== 'Water') };
+    shelf = upsertProduct(shelf, { ...emptyProduct('Bottle'), kind: 'food', category: 'water', unit: 'bottle', water: 1.5 });
+    shelf = upsertProduct(shelf, { ...emptyProduct('Tap water'), kind: 'food', category: 'water', unit: 'jerrican', water: 20 });
+    const lines = (days: number) => {
+      const tier = tierStatus(shelf, computeAutonomy(shelf, TODAY), TODAY, days);
+      return tier.missing.filter((line) => line.liters).map((line) => [line.product.name, line.missing, line.liters]);
+    };
+    expect(lines(3)).toEqual([['Bottle', 10, 15]]);
+    expect(lines(30)).toEqual([
+      ['Bottle', 10, 15],
+      ['Tap water', 7, 135],
+    ]);
+
+    // Bottles beyond the first tier lower what is left to store as tap water.
+    shelf = addLot(shelf, { product: 'Bottle', qty: 20, expires: '', location: '' }, TODAY); // 30 L, 6 days
+    expect(lines(3)).toEqual([]);
+    expect(lines(30)).toEqual([['Tap water', 6, 120]]);
   });
 
   it('completes a tier when food, water and every planned product are there', () => {
